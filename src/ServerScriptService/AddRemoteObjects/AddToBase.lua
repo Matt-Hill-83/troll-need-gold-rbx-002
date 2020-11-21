@@ -37,9 +37,6 @@ renderCharacters = function(parent, itemConfigs)
     for i, itemConfig in ipairs(itemConfigs) do
         local dataFileName = itemConfig.name
         if (not itemConfig.decalId) then
-            print('dataFileName' .. ' - start');
-            print(dataFileName);
-            print('dataFileName' .. ' - end');
             if (Constants.characters[dataFileName]) then
                 itemConfig.decalId =
                     Constants.characters[dataFileName]['decalId']
@@ -122,8 +119,7 @@ function cloneScene(props)
     local template = props.template
     local index = props.index
     local gapZ = props.gapZ
-
-    print('gapZ' .. ': ' .. gapZ); -- zzz
+    local coordinates = props.coordinates
 
     local gapX = 4
 
@@ -131,9 +127,10 @@ function cloneScene(props)
     clone.Parent = parent
     clone.Name = "Scene Clone-" .. index
     local startPosition = getStartPosition(parent, clone)
-    clone.Position = startPosition +
-                         Vector3.new(-(template.Size.X + gapX) * index,
-                                     0 * index, gapZ)
+    local newX = -(template.Size.X + gapX) * index
+    local newZ = gapZ
+
+    clone.Position = startPosition + Vector3.new(newX, 0 * index, newZ)
 
     -- sceneOrigin.Transparency = 0.7
 
@@ -172,7 +169,12 @@ function addScenes(props)
         local pageNum = 1
         local buttonParent = nil
 
+        print('sceneConfig.coordinates---------------------' .. ' - start');
+        print(sceneConfig.coordinates);
+        print('sceneConfig.coordinates' .. ' - end');
+
         local newScene = cloneScene({
+            coordinates = sceneConfig.coordinates,
             gapZ = gapZ,
             parent = parent,
             template = sceneTemplate,
@@ -248,6 +250,7 @@ function addRemoteObjects()
         print('quest' .. ' - start');
         print(quest);
         print('quest' .. ' - end');
+
         local addScenesProps = {
             gapZ = 20 * i,
             sceneTemplate = sceneTemplate,
