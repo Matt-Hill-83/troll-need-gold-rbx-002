@@ -124,7 +124,7 @@ function cloneScene(props)
     print('coordinates.row' .. ': ' .. coordinates.row); -- zzz
     print('coordinates.col' .. ': ' .. coordinates.col); -- zzz
 
-    local gapX = 4
+    local gapX = 8
 
     local clone = template:Clone()
     clone.Parent = parent
@@ -132,12 +132,25 @@ function cloneScene(props)
     local startPosition = getStartPosition(parent, clone)
 
     local newX = -(template.Size.X + gapX) * coordinates.col
-    -- local newX = -(template.Size.X + gapX) * index
-    local newZ = gapZ * coordinates.row
+    local newZ = gapZ + coordinates.row * 50
 
     clone.Position = startPosition + Vector3.new(newX, 0 * index, newZ)
 
-    -- sceneOrigin.Transparency = 0.7
+    Instance.new("SurfaceLight", clone)
+    return clone
+end
+
+function cloneSceneBase(props)
+    local parent = props.parent
+    local template = props.template
+    local index = props.index
+
+    local clone = template:Clone()
+    clone.Parent = parent
+    clone.Name = "SceneBase Clone-" .. index
+    local startPosition = getStartPosition(parent, clone)
+
+    clone.Position = startPosition + Vector3.new(22, 0, 0)
 
     Instance.new("SurfaceLight", clone)
     return clone
@@ -167,6 +180,7 @@ function addScenes(props)
     local sceneTemplate = props.sceneTemplate
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
+    local sceneBaseTemplate = props.sceneBaseTemplate
     local gapZ = props.gapZ
 
     for i, sceneConfig in ipairs(sceneConfigs) do
@@ -185,6 +199,14 @@ function addScenes(props)
             template = sceneTemplate,
             index = i - 1
         })
+
+        local newSceneBase = cloneSceneBase(
+                                 {
+                coordinates = sceneConfig.coordinates,
+                parent = newScene,
+                template = sceneBaseTemplate,
+                index = i - 1
+            })
 
         local sceneProps = {
             newScene = newScene,
@@ -248,21 +270,26 @@ function addRemoteObjects()
     local sceneTemplate = templatesFolder:FindFirstChild("SceneTemplate")
     local sceneBaseTemplate =
         templatesFolder:FindFirstChild("SceneBaseTemplate")
+    print('sceneBaseTemplate' .. ' - start');
+    print(sceneBaseTemplate);
+    print('sceneBaseTemplate' .. ' - end');
+
     -- local characterTemplate =
     --     templatesFolder:FindFirstChild("CharacterTemplate")
-
     for i, quest in pairs(questConfigs) do
         print('quest' .. ' - start');
         print(quest);
         print('quest' .. ' - end');
 
         local addScenesProps = {
-            gapZ = 20 * i,
+            gapZ = 50 * i - 1,
             sceneTemplate = sceneTemplate,
+            sceneBaseTemplate = sceneBaseTemplate,
             sceneConfigs = quest,
             parent = sceneOrigins[1]
         }
         addScenes(addScenesProps)
+
     end
 
 end
