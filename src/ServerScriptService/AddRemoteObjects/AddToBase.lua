@@ -121,14 +121,19 @@ function cloneScene(props)
     local gapZ = props.gapZ
     local coordinates = props.coordinates
 
+    print('coordinates.row' .. ': ' .. coordinates.row); -- zzz
+    print('coordinates.col' .. ': ' .. coordinates.col); -- zzz
+
     local gapX = 4
 
     local clone = template:Clone()
     clone.Parent = parent
     clone.Name = "Scene Clone-" .. index
     local startPosition = getStartPosition(parent, clone)
-    local newX = -(template.Size.X + gapX) * index
-    local newZ = gapZ
+
+    local newX = -(template.Size.X + gapX) * coordinates.col
+    -- local newX = -(template.Size.X + gapX) * index
+    local newZ = gapZ * coordinates.row
 
     clone.Position = startPosition + Vector3.new(newX, 0 * index, newZ)
 

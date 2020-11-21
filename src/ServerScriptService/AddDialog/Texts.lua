@@ -53,16 +53,13 @@ renderTexts = function(props)
     for i, dialog in ipairs(dialogConfigs) do
         local line = dialogConfigs[i]
         local charName = line['char']
-        print('Constants.characters' .. ' - start');
-        print(Constants.characters);
-        print('Constants.characters' .. ' - end');
         -- if (Constants.characters)
         local left = dialogSetup['left']
 
         if (Constants.characters[charName]) then
-            print('Constants.characters[charName]' .. ' - start');
-            print(Constants.characters[charName]['displayName']);
-            print('Constants.characters[charName]' .. ' - end');
+            -- print('Constants.characters[charName]' .. ' - start');
+            -- print(Constants.characters[charName]['displayName']);
+            -- print('Constants.characters[charName]' .. ' - end');
 
         end
 
