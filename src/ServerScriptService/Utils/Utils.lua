@@ -13,17 +13,10 @@ end
 function getModelRoot(props)
     local modelName = props.modelName
     local parent = props.parent
-    print('parent' .. ' - start');
-    print(parent);
-    print('parent' .. ' - end');
-    print('modelName' .. ' - start');
-    print(modelName);
-    print('modelName' .. ' - end');
+
     local model = parent:FindFirstChild(modelName)
     local modelRootPart = model:FindFirstChild(modelName .. "Root")
-    print('modelRootPart' .. ' - start');
-    print(modelRootPart);
-    print('modelRootPart' .. ' - end');
+
     model.PrimaryPart = modelRootPart
     return {model = model, modelRootPart = modelRootPart}
 end

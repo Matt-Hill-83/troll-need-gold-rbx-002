@@ -141,7 +141,7 @@ function cloneScene(props)
 end
 
 function cloneScene2(props)
-    local parent = props.parent
+    -- local parent = props.parent
     local template = props.template
     local index = props.index
     local gapZ = props.gapZ
@@ -152,34 +152,15 @@ function cloneScene2(props)
 
     local gapX = 8
 
-    local clone = template:Clone()
-    clone.Parent = parent
-    clone.Name = "Scene Clone-" .. index
-    local startPosition = getStartPosition(parent, clone)
+    -- local startPosition = getStartPosition(parent, template)
 
     local newX = -(template.Size.X + gapX) * coordinates.col
     local newZ = gapZ + coordinates.row * 50
 
-    clone.Position = startPosition + Vector3.new(newX, 0 * index, newZ)
+    local newPosition = Vector3.new(newX, 0 * index, newZ)
+    -- local newPosition = startPosition + Vector3.new(newX, 0 * index, newZ)
 
-    Instance.new("SurfaceLight", clone)
-    return clone
-end
-
-function cloneSceneBase(props)
-    local parent = props.parent
-    local template = props.template
-    local index = props.index
-
-    local clone = template:Clone()
-    clone.Parent = parent
-    clone.Name = "SceneBase Clone-" .. index
-    local startPosition = getStartPosition(parent, clone)
-
-    clone.Position = startPosition + Vector3.new(22, 0, 0)
-
-    Instance.new("SurfaceLight", clone)
-    return clone
+    return newPosition
 end
 
 function addItemsToScene(props)
@@ -221,14 +202,6 @@ function addScenes(props)
             template = sceneTemplate,
             index = i - 1
         })
-
-        local newSceneBase = cloneSceneBase(
-                                 {
-                coordinates = sceneConfig.coordinates,
-                parent = newScene,
-                template = sceneBaseTemplate,
-                index = i - 1
-            })
 
         local sceneProps = {
             newScene = newScene,
@@ -275,11 +248,10 @@ function addScenes(props)
 end
 
 function addScenes2(props)
-    local sceneTemplateModel = props.sceneTemplateModel
     local parent = props.parent
     local templatesFolder = props.templatesFolder
     local sceneConfigs = props.sceneConfigs
-    local sceneBaseTemplate = props.sceneBaseTemplate
+    local sceneTemplate = props.sceneTemplate
     local gapZ = props.gapZ
 
     for i, sceneConfig in ipairs(sceneConfigs) do
@@ -288,63 +260,69 @@ function addScenes2(props)
         local buttonParent = nil
 
         local modelName = "SceneTemplate"
-        local cloneModelProps = {
-            modelName = modelName,
-            parent = templatesFolder,
-            offset = Vector3.new(10 * i, 10 * i, 10 * i)
-        }
 
-        local clonedScene = Utils.cloneModel(cloneModelProps)
+        local newPosition = cloneScene2({
+            coordinates = sceneConfig.coordinates,
+            gapZ = gapZ,
+            parent = parent,
+            template = sceneTemplate,
+            index = i - 1
+        })
+
+        local clonedScene = Utils.cloneModel(
+                                {
+                modelName = modelName,
+                parent = templatesFolder,
+                offset = newPosition
+                -- offset = Vector3.new(10 * i, 10 * i, 10 * i)
+            })
         local newScene = clonedScene.PrimaryPart
 
-        -- local newSceneBase = cloneSceneBase(
-        --                          {
-        --         coordinates = sceneConfig.coordinates,
-        --         parent = newScene,
-        --         template = sceneBaseTemplate,
-        --         index = i - 1
-        --     })
-        return
-        -- local sceneProps = {
-        --     newScene = newScene,
-        --     pageNum = pageNum,
-        --     sceneConfig = sceneConfig
-        -- }
-        -- buttonParent = addItemsToScene(sceneProps)
+        -- newScene.moveTo
+        print('newPosition' .. ' - start');
+        print(newPosition);
+        print('newPosition' .. ' - end');
+        local sceneProps = {
+            newScene = newScene,
+            pageNum = pageNum,
+            sceneConfig = sceneConfig
+        }
 
-        -- function incrementPage()
-        --     local newPageNum = pageNum + 1
+        buttonParent = addItemsToScene(sceneProps)
 
-        --     if newPageNum <= numPages then
-        --         pageNum = newPageNum
+        function incrementPage()
+            local newPageNum = pageNum + 1
 
-        --         local children = newScene:GetChildren()
-        --         for _, item in pairs(children) do
-        --             local match1 = string.match(item.Name, "Items-")
-        --             local match2 = string.match(item.Name, "Characters-")
-        --             local match3 = string.match(item.Name, "Dialog-")
-        --             if item:IsA('Part') and (match1 or match2 or match3) then
-        --                 item:Destroy()
-        --             end
-        --         end
+            if newPageNum <= numPages then
+                pageNum = newPageNum
 
-        --         local newSceneProps = {
-        --             newScene = newScene,
-        --             pageNum = pageNum,
-        --             sceneConfig = sceneConfig
-        --         }
-        --         buttonParent = addItemsToScene(newSceneProps)
-        --     end
-        -- end
+                local children = newScene:GetChildren()
+                for _, item in pairs(children) do
+                    local match1 = string.match(item.Name, "Items-")
+                    local match2 = string.match(item.Name, "Characters-")
+                    local match3 = string.match(item.Name, "Dialog-")
+                    if item:IsA('Part') and (match1 or match2 or match3) then
+                        item:Destroy()
+                    end
+                end
 
-        -- local renderButtonBlockProps = {
-        --     parent = newScene,
-        --     sibling = buttonParent,
-        --     incrementPage = incrementPage,
-        --     pageNum = pageNum
-        -- }
+                local newSceneProps = {
+                    newScene = newScene,
+                    pageNum = pageNum,
+                    sceneConfig = sceneConfig
+                }
+                buttonParent = addItemsToScene(newSceneProps)
+            end
+        end
 
-        -- ButtonBlock.renderButtonBlock(renderButtonBlockProps)
+        local renderButtonBlockProps = {
+            parent = newScene,
+            sibling = buttonParent,
+            incrementPage = incrementPage,
+            pageNum = pageNum
+        }
+
+        ButtonBlock.renderButtonBlock(renderButtonBlockProps)
 
     end
 end
@@ -379,18 +357,19 @@ function addRemoteObjects()
 
     local sceneBaseRootPart = sceneBase.modelRootPart
 
-    local cloneModelProps = {
-        modelName = modelName,
-        parent = sceneTemplateModel,
-        offset = Vector3.new(10, 10, 10)
-    }
-    local clonedModel = Utils.cloneModel(cloneModelProps)
+    -- local cloneModelProps = {
+    --     modelName = modelName,
+    --     parent = sceneTemplateModel,
+    --     offset = Vector3.new(10, 10, 10)
+    -- }
+    -- local clonedModel = Utils.cloneModel(cloneModelProps)
 
     for i, quest in pairs(questConfigs) do
         local addScenesProps = {
             gapZ = 50 * i - 1,
             sceneTemplateModel = sceneTemplateModel,
             templatesFolder = templatesFolder,
+            sceneTemplate = sceneTemplate,
             sceneBaseTemplate = sceneBaseRootPart,
             sceneConfigs = quest,
             parent = sceneOrigins[1]
