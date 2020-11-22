@@ -15,10 +15,32 @@ function getModelRoot(props)
     local parent = props.parent
 
     local model = parent:FindFirstChild(modelName)
+    print('model.Name' .. ' - start');
+    print(model.Name);
+    print('model.Name' .. ' - end');
     local modelRootPart = model:FindFirstChild(modelName .. "Root")
-
     model.PrimaryPart = modelRootPart
     return {model = model, modelRootPart = modelRootPart}
+end
+
+function cloneModel2(props)
+    local modelName = props.modelName
+    local model = props.model
+    local position = props.position
+
+    -- local sceneBase = getModelRoot({
+    --     modelName = modelName .. "Model",
+    --     parent = parent
+    -- })
+
+    -- local sceneBaseModel = sceneBase.model
+    local sceneBaseModelClone = model:Clone()
+
+    sceneBaseModelClone.Parent = model.Parent
+    sceneBaseModelClone.Name = modelName .. "--clone"
+
+    sceneBaseModelClone:MoveTo(position)
+    return sceneBaseModelClone
 end
 
 function cloneModel(props)
@@ -131,6 +153,7 @@ module.setMaterialPebble = setMaterialPebble
 module.tableToString = tableToString
 module.getModelRoot = getModelRoot
 module.cloneModel = cloneModel
+module.cloneModel2 = cloneModel2
 module.addcfv3 = addcfv3
 
 return module
