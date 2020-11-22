@@ -239,10 +239,8 @@ function addRemoteObjects()
     end
 
     local templatesFolder = myStuff:FindFirstChild("Templates")
-    -- 
     local sceneTemplateModel = templatesFolder:FindFirstChild(
                                    "SceneTemplateModel")
-    local sceneTemplate = sceneTemplateModel:FindFirstChild("SceneTemplate")
 
     local modelName = "SceneBase"
 
@@ -254,20 +252,12 @@ function addRemoteObjects()
 
     local sceneBaseRootPart = sceneBase.modelRootPart
 
-    -- local cloneModelProps = {
-    --     modelName = modelName,
-    --     parent = sceneTemplateModel,
-    --     offset = Vector3.new(10, 10, 10)
-    -- }
-    -- local clonedModel = Utils.cloneModel(cloneModelProps)
-
     for i, quest in pairs(questConfigs) do
         local addScenesProps = {
             gapZ = 50 * i - 1,
             sceneTemplateModel = sceneTemplateModel,
             templatesFolder = templatesFolder,
             sceneTemplate = sceneBaseRootPart,
-            -- sceneTemplate = sceneTemplate,
             sceneBaseTemplate = sceneBaseRootPart,
             sceneConfigs = quest,
             parent = sceneOrigins[1]
