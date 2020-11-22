@@ -146,30 +146,35 @@ function addItemsToScene(props)
     })
 end
 
-function addScenes2(props)
+function addScenes(props)
     local parent = props.parent
     local templatesFolder = props.templatesFolder
     local sceneConfigs = props.sceneConfigs
-    local sceneTemplate = props.sceneTemplate
+    local sceneTemplateModel = props.sceneTemplateModel
+    -- local sceneTemplate = props.sceneTemplate
     local gapZ = props.gapZ
+
+    local modelName = "SceneTemplate"
+
+    local sceneTemplate = Utils.getModelRoot(
+                              {
+            modelName = modelName .. "Model",
+            parent = templatesFolder
+        })
+
+    local sceneTemplateRootPart = sceneTemplate.modelRootPart
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
         local pageNum = 1
         local buttonParent = nil
 
-        local modelName = "SceneTemplate"
-
         local newPosition = getNewPosition(
                                 {
                 coordinates = sceneConfig.coordinates,
                 gapZ = gapZ,
-                template = sceneTemplate
+                template = sceneTemplateRootPart
             })
-
-        print('parent.Position' .. ' - start');
-        print(parent.Position);
-        print('parent.Position' .. ' - end');
 
         local clonedScene = Utils.cloneModel(
                                 {
@@ -220,7 +225,6 @@ function addScenes2(props)
         }
 
         ButtonBlock.renderButtonBlock(renderButtonBlockProps)
-
     end
 end
 
@@ -242,15 +246,17 @@ function addRemoteObjects()
     local sceneTemplateModel = templatesFolder:FindFirstChild(
                                    "SceneTemplateModel")
 
-    local modelName = "SceneBase"
+    local modelName = "SceneTemplate"
 
     local sceneBase = Utils.getModelRoot(
                           {
             modelName = modelName .. "Model",
-            parent = sceneTemplateModel
+            parent = templatesFolder
         })
-
     local sceneBaseRootPart = sceneBase.modelRootPart
+    print('sceneBaseRootPart' .. ' - start');
+    print(sceneBaseRootPart);
+    print('sceneBaseRootPart' .. ' - end');
 
     for i, quest in pairs(questConfigs) do
         local addScenesProps = {
@@ -258,11 +264,11 @@ function addRemoteObjects()
             sceneTemplateModel = sceneTemplateModel,
             templatesFolder = templatesFolder,
             sceneTemplate = sceneBaseRootPart,
-            sceneBaseTemplate = sceneBaseRootPart,
+            -- sceneBaseTemplate = sceneBaseRootPart,
             sceneConfigs = quest,
             parent = sceneOrigins[1]
         }
-        addScenes2(addScenesProps)
+        addScenes(addScenesProps)
 
     end
 
