@@ -114,29 +114,6 @@ getStartPosition = function(parent, child)
     return RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 end
 
-function cloneScene(props)
-    local parent = props.parent
-    local template = props.template
-    local index = props.index
-    local gapZ = props.gapZ
-    local coordinates = props.coordinates
-
-    local gapX = 8
-
-    local clone = template:Clone()
-    clone.Parent = parent
-    clone.Name = "Scene Clone-" .. index
-    local startPosition = getStartPosition(parent, clone)
-
-    local newX = -(template.Size.X + gapX) * coordinates.col
-    local newZ = gapZ + coordinates.row * 50
-
-    clone.Position = startPosition + Vector3.new(newX, 0 * index, newZ)
-
-    Instance.new("SurfaceLight", clone)
-    return clone
-end
-
 function getNewPosition(props)
     local template = props.template
     local coordinates = props.coordinates
@@ -167,7 +144,6 @@ function addItemsToScene(props)
         dialogConfigs = dialogConfigs,
         pageNum = pageNum
     })
-
 end
 
 function addScenes2(props)
@@ -190,6 +166,11 @@ function addScenes2(props)
                 gapZ = gapZ,
                 template = sceneTemplate
             })
+
+        print('parent.Position' .. ' - start');
+        print(parent.Position);
+        print('parent.Position' .. ' - end');
+
         local clonedScene = Utils.cloneModel(
                                 {
                 modelName = modelName,
@@ -285,7 +266,8 @@ function addRemoteObjects()
             gapZ = 50 * i - 1,
             sceneTemplateModel = sceneTemplateModel,
             templatesFolder = templatesFolder,
-            sceneTemplate = sceneTemplate,
+            sceneTemplate = sceneBaseRootPart,
+            -- sceneTemplate = sceneTemplate,
             sceneBaseTemplate = sceneBaseRootPart,
             sceneConfigs = quest,
             parent = sceneOrigins[1]
