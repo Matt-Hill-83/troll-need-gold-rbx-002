@@ -7020,118 +7020,6 @@ HkUPgP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="Part" referent="RBX668499a1f5f241b6881d7f0fed7fa2f2">
-					<Properties>
-						<bool name="Anchored">true</bool>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<float name="BackParamA">-0.5</float>
-						<float name="BackParamB">0.5</float>
-						<token name="BackSurface">0</token>
-						<token name="BackSurfaceInput">0</token>
-						<float name="BottomParamA">-0.5</float>
-						<float name="BottomParamB">0.5</float>
-						<token name="BottomSurface">4</token>
-						<token name="BottomSurfaceInput">0</token>
-						<CoordinateFrame name="CFrame">
-							<X>620</X>
-							<Y>-21.984375</Y>
-							<Z>-554.5</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>1</R11>
-							<R12>0</R12>
-							<R20>0</R20>
-							<R21>0</R21>
-							<R22>1</R22>
-						</CoordinateFrame>
-						<bool name="CanCollide">true</bool>
-						<bool name="CastShadow">true</bool>
-						<int name="CollisionGroupId">0</int>
-						<Color3uint8 name="Color3uint8">4294506744</Color3uint8>
-						<PhysicalProperties name="CustomPhysicalProperties">
-							<CustomPhysics>false</CustomPhysics>
-						</PhysicalProperties>
-						<float name="FrontParamA">-0.5</float>
-						<float name="FrontParamB">0.5</float>
-						<token name="FrontSurface">0</token>
-						<token name="FrontSurfaceInput">0</token>
-						<float name="LeftParamA">-0.5</float>
-						<float name="LeftParamB">0.5</float>
-						<token name="LeftSurface">0</token>
-						<token name="LeftSurfaceInput">0</token>
-						<bool name="Locked">false</bool>
-						<bool name="Massless">false</bool>
-						<token name="Material">864</token>
-						<string name="Name">SceneTemplate</string>
-						<float name="Reflectance">0</float>
-						<float name="RightParamA">-0.5</float>
-						<float name="RightParamB">0.5</float>
-						<token name="RightSurface">0</token>
-						<token name="RightSurfaceInput">0</token>
-						<int name="RootPriority">0</int>
-						<Vector3 name="RotVelocity">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-						<float name="TopParamA">-0.5</float>
-						<float name="TopParamB">0.5</float>
-						<token name="TopSurface">3</token>
-						<token name="TopSurfaceInput">0</token>
-						<float name="Transparency">0</float>
-						<Vector3 name="Velocity">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<token name="formFactorRaw">1</token>
-						<token name="shape">1</token>
-						<Vector3 name="size">
-							<X>36</X>
-							<Y>20</Y>
-							<Z>1</Z>
-						</Vector3>
-					</Properties>
-					<Item class="Decal" referent="RBX0a29797563bb41f3ae0252a63ea3144b">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<Color3 name="Color3">
-								<R>1</R>
-								<G>1</G>
-								<B>1</B>
-							</Color3>
-							<token name="Face">5</token>
-							<string name="Name">Decal</string>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<Content name="Texture"><url>rbxassetid://5902121857</url></Content>
-							<float name="Transparency">0</float>
-						</Properties>
-					</Item>
-					<Item class="SurfaceLight" referent="RBX722a84b206694ec89241741cd4205b65">
-						<Properties>
-							<float name="Angle">90</float>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<float name="Brightness">1</float>
-							<Color3 name="Color">
-								<R>1</R>
-								<G>1</G>
-								<B>1</B>
-							</Color3>
-							<bool name="Enabled">true</bool>
-							<token name="Face">5</token>
-							<string name="Name">SurfaceLight</string>
-							<float name="Range">16</float>
-							<bool name="Shadows">false</bool>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-				</Item>
 				<Item class="UnionOperation" referent="RBX837d6ed172564312b99ac5a195d4e94a">
 					<Properties>
 						<bool name="Anchored">true</bool>
@@ -7265,7 +7153,7 @@ HkUPgP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="Part" referent="RBX0b5c8f31040d40149a8bc7216fb9a76d">
+					<Item class="Part" referent="RBX668499a1f5f241b6881d7f0fed7fa2f2">
 						<Properties>
 							<bool name="Anchored">true</bool>
 							<BinaryString name="AttributesSerialize"></BinaryString>
@@ -7279,8 +7167,8 @@ HkUPgP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
 								<X>620</X>
-								<Y>-1.98436606</Y>
-								<Z>-554.499939</Z>
+								<Y>-21.984375</Y>
+								<Z>-554.5</Z>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
@@ -7341,7 +7229,7 @@ HkUPgP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 								<Z>1</Z>
 							</Vector3>
 						</Properties>
-						<Item class="Decal" referent="RBX7363a5a583ef48bf964830a7477260a7">
+						<Item class="Decal" referent="RBX0a29797563bb41f3ae0252a63ea3144b">
 							<Properties>
 								<BinaryString name="AttributesSerialize"></BinaryString>
 								<Color3 name="Color3">
@@ -7357,7 +7245,7 @@ HkUPgP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 								<float name="Transparency">0</float>
 							</Properties>
 						</Item>
-						<Item class="SurfaceLight" referent="RBX43fade93c97640a4850e7277ce741129">
+						<Item class="SurfaceLight" referent="RBX722a84b206694ec89241741cd4205b65">
 							<Properties>
 								<float name="Angle">90</float>
 								<BinaryString name="AttributesSerialize"></BinaryString>
@@ -7372,45 +7260,6 @@ HkUPgP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 								<string name="Name">SurfaceLight</string>
 								<float name="Range">16</float>
 								<bool name="Shadows">false</bool>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-							</Properties>
-						</Item>
-						<Item class="Weld" referent="RBX526c3983e8ef42478b80d0bf4db9d45f">
-							<Properties>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<CoordinateFrame name="C0">
-									<X>0</X>
-									<Y>-10</Y>
-									<Z>0</Z>
-									<R00>1</R00>
-									<R01>0</R01>
-									<R02>0</R02>
-									<R10>-0</R10>
-									<R11>-0</R11>
-									<R12>-1</R12>
-									<R20>0</R20>
-									<R21>1</R21>
-									<R22>0</R22>
-								</CoordinateFrame>
-								<CoordinateFrame name="C1">
-									<X>0</X>
-									<Y>10.0000086</Y>
-									<Z>6.10351562e-05</Z>
-									<R00>1</R00>
-									<R01>0</R01>
-									<R02>0</R02>
-									<R10>0</R10>
-									<R11>0</R11>
-									<R12>-1</R12>
-									<R20>0</R20>
-									<R21>1</R21>
-									<R22>0</R22>
-								</CoordinateFrame>
-								<bool name="Enabled">true</bool>
-								<string name="Name">Weld</string>
-								<Ref name="Part0">RBX0b5c8f31040d40149a8bc7216fb9a76d</Ref>
-								<Ref name="Part1">RBX668499a1f5f241b6881d7f0fed7fa2f2</Ref>
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
@@ -8639,17 +8488,15 @@ function addRemoteObjects()
     end
 
     local templatesFolder = myStuff:FindFirstChild("Templates")
-    local sceneTemplate = templatesFolder:FindFirstChild("SceneTemplate")
+    -- local sceneTemplate = templatesFolder:FindFirstChild("SceneTemplate")
     -- 
     -- 
     local sceneModel = templatesFolder:FindFirstChild("SceneModel")
-    local sceneTemplate2 = sceneModel:FindFirstChild("SceneTemplate")
-    print('sceneTemplate2-----------------------' .. ': ' .. sceneTemplate2); -- zzz
+    local sceneTemplate = sceneModel:FindFirstChild("SceneTemplate")
 
-    print('sceneModel' .. ' - start');
-    print(sceneModel);
-    print('sceneModel' .. ' - end');
-
+    print('sceneTemplate' .. ' - start');
+    print(Utils.tableToString({sceneTemplate}));
+    print('sceneTemplate' .. ' - end');
     local sceneBaseTemplate =
         templatesFolder:FindFirstChild("SceneBaseTemplate")
 
@@ -8659,6 +8506,7 @@ function addRemoteObjects()
 
         local addScenesProps = {
             gapZ = 50 * i - 1,
+            -- sceneTemplate = sceneTemplate2,
             sceneTemplate = sceneTemplate,
             sceneBaseTemplate = sceneBaseTemplate,
             sceneConfigs = quest,
@@ -8957,6 +8805,7 @@ end
 
 module.addPadding = addPadding
 module.setMaterialPebble = setMaterialPebble
+module.tableToString = tableToString
 
 return module
 ]]></ProtectedString>

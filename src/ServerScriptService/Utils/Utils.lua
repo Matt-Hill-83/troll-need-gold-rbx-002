@@ -91,5 +91,6 @@ end
 
 module.addPadding = addPadding
 module.setMaterialPebble = setMaterialPebble
+module.tableToString = tableToString
 
 return module
