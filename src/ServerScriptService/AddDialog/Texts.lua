@@ -10,6 +10,8 @@ local dialogColors = {
 }
 
 local dialogSetup = {
+    kat = {left = true, backgroundColorIdx = 1},
+    liz2 = {left = true, backgroundColorIdx = 2},
     Britta = {left = true, backgroundColorIdx = 1},
     Raven = {left = true, backgroundColorIdx = 2},
     Freckle = {left = true, backgroundColorIdx = 3}
@@ -52,10 +54,13 @@ renderTexts = function(props)
     local dialogY = 0
     for i, dialog in ipairs(dialogConfigs) do
         local line = dialogConfigs[i]
-        local charName = line['char']
-        -- if (Constants.characters)
-        local left = dialogSetup['left']
 
+        local charName = line['char']
+        print('charName' .. ': ' .. charName); -- zzz
+        -- if (Constants.characters)
+        -- local left = dialogSetup['left']
+
+        -- charName = Constants.characters[charName]['displayName'] or charName
         if (Constants.characters[charName]) then
             -- print('Constants.characters[charName]' .. ' - start');
             -- print(Constants.characters[charName]['displayName']);

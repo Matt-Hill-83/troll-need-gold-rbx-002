@@ -268,18 +268,22 @@ function addRemoteObjects()
 
     local templatesFolder = myStuff:FindFirstChild("Templates")
     local sceneTemplate = templatesFolder:FindFirstChild("SceneTemplate")
+    -- 
+    -- 
+    local sceneModel = templatesFolder:FindFirstChild("SceneModel")
+    local sceneTemplate2 = sceneModel:FindFirstChild("SceneTemplate")
+    print('sceneTemplate2-----------------------' .. ': ' .. sceneTemplate2); -- zzz
+
+    print('sceneModel' .. ' - start');
+    print(sceneModel);
+    print('sceneModel' .. ' - end');
+
     local sceneBaseTemplate =
         templatesFolder:FindFirstChild("SceneBaseTemplate")
-    print('sceneBaseTemplate' .. ' - start');
-    print(sceneBaseTemplate);
-    print('sceneBaseTemplate' .. ' - end');
 
     -- local characterTemplate =
     --     templatesFolder:FindFirstChild("CharacterTemplate")
     for i, quest in pairs(questConfigs) do
-        print('quest' .. ' - start');
-        print(quest);
-        print('quest' .. ' - end');
 
         local addScenesProps = {
             gapZ = 50 * i - 1,
