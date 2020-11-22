@@ -151,18 +151,10 @@ function addScenes(props)
     local templatesFolder = props.templatesFolder
     local sceneConfigs = props.sceneConfigs
     local sceneTemplateModel = props.sceneTemplateModel
-    -- local sceneTemplate = props.sceneTemplate
+    local sceneTemplate = props.sceneTemplate
     local gapZ = props.gapZ
 
     local modelName = "SceneTemplate"
-
-    local sceneTemplate = Utils.getModelRoot(
-                              {
-            modelName = modelName .. "Model",
-            parent = templatesFolder
-        })
-
-    local sceneTemplateRootPart = sceneTemplate.modelRootPart
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
@@ -173,7 +165,7 @@ function addScenes(props)
                                 {
                 coordinates = sceneConfig.coordinates,
                 gapZ = gapZ,
-                template = sceneTemplateRootPart
+                template = sceneTemplate.RootPart
             })
 
         local clonedScene = Utils.cloneModel(
