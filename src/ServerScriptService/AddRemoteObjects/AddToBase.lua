@@ -75,25 +75,6 @@ renderCharacters = function(parent, itemConfigs)
     return RowOfParts.createRowOfParts(props)
 end
 
-getScenePosition = function(parent, child)
-    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
-
-    local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, -1, -1),
-        moveTowardZero = Vector3.new(-1, 1, -1),
-        alignToChildFarEdge = Vector3.new(-1, 1, -1)
-    }
-
-    local offsetProps = {
-        parent = parent,
-        childSize = child.Size,
-        itemDuplicationConfig = itemDuplicationConfig,
-        offset = desiredOffsetFromParentEdge
-    }
-
-    return RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
-end
-
 getStartPosition = function(parent, child)
     local childSize = child.Size
     local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
@@ -151,22 +132,18 @@ function addScenes(props)
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
     local sceneTemplateModel = props.sceneTemplateModel
-    print('sceneTemplateModel' .. ' - start');
-    print(sceneTemplateModel);
-    print('sceneTemplateModel' .. ' - end');
 
     local modelName = "SceneTemplate"
     local modelRootPart = sceneTemplateModel:FindFirstChild(
                               modelName .. "ModelRoot")
     sceneTemplateModel.PrimaryPart = modelRootPart
 
+    local startPosition = getStartPosition(parent, modelRootPart)
+
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
         local pageNum = 1
         local buttonParent = nil
-        print('sceneTemplateModel.PrimaryPart' .. ' - start');
-        print(sceneTemplateModel.PrimaryPart);
-        print('sceneTemplateModel.PrimaryPart' .. ' - end');
 
         local newPosition = getNewPosition(
                                 {
@@ -174,14 +151,12 @@ function addScenes(props)
                 gapZ = gapZ,
                 template = sceneTemplateModel.PrimaryPart
             })
-        print('newPosition' .. ' - start');
-        print(newPosition);
-        print('newPosition' .. ' - end');
-        local clonedScene = Utils.cloneModel2(
+        local clonedScene = Utils.cloneModel(
                                 {
                 modelName = modelName,
                 model = sceneTemplateModel,
-                position = newPosition + parent.Position
+                position = newPosition + startPosition
+                -- position = newPosition + parent.Position
             })
         local newScene = clonedScene.PrimaryPart
 

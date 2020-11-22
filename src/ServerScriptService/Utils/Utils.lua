@@ -1,62 +1,19 @@
 local module = {}
 
--- 
--- 
--- 
-
 function addcfv3(a, b)
     local x, y, z, m11, m12, m13, m21, m22, m23, m31, m32, m33 = a:components()
     return CFrame.new(x + b.x, y + b.y, z + b.z, m11, m12, m13, m21, m22, m23,
                       m31, m32, m33);
 end
 
-function getModelRoot(props)
-    local modelName = props.modelName
-    local parent = props.parent
-
-    local model = parent:FindFirstChild(modelName)
-    print('model.Name' .. ' - start');
-    print(model.Name);
-    print('model.Name' .. ' - end');
-    local modelRootPart = model:FindFirstChild(modelName .. "Root")
-    model.PrimaryPart = modelRootPart
-    return {model = model, modelRootPart = modelRootPart}
-end
-
-function cloneModel2(props)
+function cloneModel(props)
     local modelName = props.modelName
     local model = props.model
     local position = props.position
 
-    -- local sceneBase = getModelRoot({
-    --     modelName = modelName .. "Model",
-    --     parent = parent
-    -- })
-
-    -- local sceneBaseModel = sceneBase.model
     local sceneBaseModelClone = model:Clone()
 
     sceneBaseModelClone.Parent = model.Parent
-    sceneBaseModelClone.Name = modelName .. "--clone"
-
-    sceneBaseModelClone:MoveTo(position)
-    return sceneBaseModelClone
-end
-
-function cloneModel(props)
-    local modelName = props.modelName
-    local parent = props.parent
-    local position = props.position
-
-    local sceneBase = getModelRoot({
-        modelName = modelName .. "Model",
-        parent = parent
-    })
-
-    local sceneBaseModel = sceneBase.model
-    local sceneBaseModelClone = sceneBaseModel:Clone()
-
-    sceneBaseModelClone.Parent = sceneBaseModel.Parent
     sceneBaseModelClone.Name = modelName .. "--clone"
 
     sceneBaseModelClone:MoveTo(position)
@@ -117,8 +74,6 @@ local test = {
 test.child.cyclic = test.cyclic
 test.another = test.child
 
-print(tableToString(test))
-
 -- 
 -- 
 -- 
@@ -151,9 +106,7 @@ end
 module.addPadding = addPadding
 module.setMaterialPebble = setMaterialPebble
 module.tableToString = tableToString
-module.getModelRoot = getModelRoot
 module.cloneModel = cloneModel
-module.cloneModel2 = cloneModel2
 module.addcfv3 = addcfv3
 
 return module
