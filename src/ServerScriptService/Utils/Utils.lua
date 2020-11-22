@@ -4,6 +4,47 @@ local module = {}
 -- 
 -- 
 
+function addcfv3(a, b)
+    local x, y, z, m11, m12, m13, m21, m22, m23, m31, m32, m33 = a:components()
+    return CFrame.new(x + b.x, y + b.y, z + b.z, m11, m12, m13, m21, m22, m23,
+                      m31, m32, m33);
+end
+
+function getModelRoot(props)
+    local modelName = props.modelName
+    local parent = props.parent
+
+    local model = parent:FindFirstChild(modelName)
+    local modelRootPart = model:FindFirstChild(modelName .. "Root")
+    model.PrimaryPart = modelRootPart
+    return {model = model, modelRootPart = modelRootPart}
+end
+
+function cloneModel(props)
+    local modelName = props.modelName
+    local parent = props.parent
+    local offset = props.offset
+
+    -- 
+    local sceneBase = getModelRoot({
+        modelName = modelName .. "Model",
+        parent = parent
+    })
+
+    local sceneBaseModel = sceneBase.model
+    local sceneBaseRootPart = sceneBase.modelRootPart
+
+    local sceneBaseModelClone = sceneBaseModel:Clone()
+    sceneBaseModelClone.Parent = sceneBaseModel.Parent
+    sceneBaseModelClone.Name = modelName .. "--clone"
+
+    local newPosition = sceneBaseModel.PrimaryPart.Position + offset
+
+    sceneBaseModelClone:MoveTo(newPosition)
+    return sceneBaseModelClone
+
+end
+
 local function getNames(tab, name, res, lev)
     res = res or {[tab] = "ROOT"}
     local pls = {}
@@ -92,5 +133,8 @@ end
 module.addPadding = addPadding
 module.setMaterialPebble = setMaterialPebble
 module.tableToString = tableToString
+module.getModelRoot = getModelRoot
+module.cloneModel = cloneModel
+module.addcfv3 = addcfv3
 
 return module

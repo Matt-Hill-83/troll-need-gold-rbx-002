@@ -267,27 +267,36 @@ function addRemoteObjects()
     end
 
     local templatesFolder = myStuff:FindFirstChild("Templates")
-    -- local sceneTemplate = templatesFolder:FindFirstChild("SceneTemplate")
     -- 
     -- 
     local sceneModel = templatesFolder:FindFirstChild("SceneModel")
     local sceneTemplate = sceneModel:FindFirstChild("SceneTemplate")
 
-    print('sceneTemplate' .. ' - start');
-    print(Utils.tableToString({sceneTemplate}));
-    print('sceneTemplate' .. ' - end');
-    local sceneBaseTemplate =
-        templatesFolder:FindFirstChild("SceneBaseTemplate")
+    local modelName = "SceneBase"
 
-    -- local characterTemplate =
-    --     templatesFolder:FindFirstChild("CharacterTemplate")
+    local sceneBase = Utils.getModelRoot(
+                          {
+            modelName = modelName .. "Model",
+            parent = sceneModel
+        })
+
+    local sceneBaseRootPart = sceneBase.modelRootPart
+
+    local cloneModelProps = {
+        modelName = modelName,
+        parent = sceneModel,
+        offset = Vector3.new(10, 10, 10)
+
+    }
+
+    local clonedModel = Utils.cloneModel(cloneModelProps)
+
     for i, quest in pairs(questConfigs) do
 
         local addScenesProps = {
             gapZ = 50 * i - 1,
-            -- sceneTemplate = sceneTemplate2,
             sceneTemplate = sceneTemplate,
-            sceneBaseTemplate = sceneBaseTemplate,
+            sceneBaseTemplate = sceneBaseRootPart,
             sceneConfigs = quest,
             parent = sceneOrigins[1]
         }
