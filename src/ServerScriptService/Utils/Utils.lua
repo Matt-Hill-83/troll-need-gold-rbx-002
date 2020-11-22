@@ -25,16 +25,14 @@ function cloneModel(props)
     local parent = props.parent
     local offset = props.offset
 
-    -- 
     local sceneBase = getModelRoot({
         modelName = modelName .. "Model",
         parent = parent
     })
 
     local sceneBaseModel = sceneBase.model
-    local sceneBaseRootPart = sceneBase.modelRootPart
-
     local sceneBaseModelClone = sceneBaseModel:Clone()
+
     sceneBaseModelClone.Parent = sceneBaseModel.Parent
     sceneBaseModelClone.Name = modelName .. "--clone"
 
