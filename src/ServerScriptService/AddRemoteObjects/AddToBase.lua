@@ -140,6 +140,32 @@ function cloneScene(props)
     return clone
 end
 
+function cloneScene2(props)
+    local parent = props.parent
+    local template = props.template
+    local index = props.index
+    local gapZ = props.gapZ
+    local coordinates = props.coordinates
+
+    print('coordinates.row' .. ': ' .. coordinates.row); -- zzz
+    print('coordinates.col' .. ': ' .. coordinates.col); -- zzz
+
+    local gapX = 8
+
+    local clone = template:Clone()
+    clone.Parent = parent
+    clone.Name = "Scene Clone-" .. index
+    local startPosition = getStartPosition(parent, clone)
+
+    local newX = -(template.Size.X + gapX) * coordinates.col
+    local newZ = gapZ + coordinates.row * 50
+
+    clone.Position = startPosition + Vector3.new(newX, 0 * index, newZ)
+
+    Instance.new("SurfaceLight", clone)
+    return clone
+end
+
 function cloneSceneBase(props)
     local parent = props.parent
     local template = props.template
@@ -187,10 +213,6 @@ function addScenes(props)
         local numPages = #sceneConfig.frames
         local pageNum = 1
         local buttonParent = nil
-
-        print('sceneConfig.coordinates---------------------' .. ' - start');
-        print(sceneConfig.coordinates);
-        print('sceneConfig.coordinates' .. ' - end');
 
         local newScene = cloneScene({
             coordinates = sceneConfig.coordinates,
@@ -252,6 +274,81 @@ function addScenes(props)
     end
 end
 
+function addScenes2(props)
+    local sceneTemplateModel = props.sceneTemplateModel
+    local parent = props.parent
+    local templatesFolder = props.templatesFolder
+    local sceneConfigs = props.sceneConfigs
+    local sceneBaseTemplate = props.sceneBaseTemplate
+    local gapZ = props.gapZ
+
+    for i, sceneConfig in ipairs(sceneConfigs) do
+        local numPages = #sceneConfig.frames
+        local pageNum = 1
+        local buttonParent = nil
+
+        local modelName = "SceneTemplate"
+        local cloneModelProps = {
+            modelName = modelName,
+            parent = templatesFolder,
+            offset = Vector3.new(10 * i, 10 * i, 10 * i)
+        }
+
+        local clonedScene = Utils.cloneModel(cloneModelProps)
+        local newScene = clonedScene.PrimaryPart
+
+        -- local newSceneBase = cloneSceneBase(
+        --                          {
+        --         coordinates = sceneConfig.coordinates,
+        --         parent = newScene,
+        --         template = sceneBaseTemplate,
+        --         index = i - 1
+        --     })
+        return
+        -- local sceneProps = {
+        --     newScene = newScene,
+        --     pageNum = pageNum,
+        --     sceneConfig = sceneConfig
+        -- }
+        -- buttonParent = addItemsToScene(sceneProps)
+
+        -- function incrementPage()
+        --     local newPageNum = pageNum + 1
+
+        --     if newPageNum <= numPages then
+        --         pageNum = newPageNum
+
+        --         local children = newScene:GetChildren()
+        --         for _, item in pairs(children) do
+        --             local match1 = string.match(item.Name, "Items-")
+        --             local match2 = string.match(item.Name, "Characters-")
+        --             local match3 = string.match(item.Name, "Dialog-")
+        --             if item:IsA('Part') and (match1 or match2 or match3) then
+        --                 item:Destroy()
+        --             end
+        --         end
+
+        --         local newSceneProps = {
+        --             newScene = newScene,
+        --             pageNum = pageNum,
+        --             sceneConfig = sceneConfig
+        --         }
+        --         buttonParent = addItemsToScene(newSceneProps)
+        --     end
+        -- end
+
+        -- local renderButtonBlockProps = {
+        --     parent = newScene,
+        --     sibling = buttonParent,
+        --     incrementPage = incrementPage,
+        --     pageNum = pageNum
+        -- }
+
+        -- ButtonBlock.renderButtonBlock(renderButtonBlockProps)
+
+    end
+end
+
 function addRemoteObjects()
     local questConfigs = SceneConfig.getScenesConfig()
     local myStuff = workspace:FindFirstChild("MyStuff")
@@ -268,36 +365,37 @@ function addRemoteObjects()
 
     local templatesFolder = myStuff:FindFirstChild("Templates")
     -- 
-    local sceneModel = templatesFolder:FindFirstChild("SceneModel")
-    local sceneTemplate = sceneModel:FindFirstChild("SceneTemplate")
+    local sceneTemplateModel = templatesFolder:FindFirstChild(
+                                   "SceneTemplateModel")
+    local sceneTemplate = sceneTemplateModel:FindFirstChild("SceneTemplate")
 
     local modelName = "SceneBase"
 
     local sceneBase = Utils.getModelRoot(
                           {
             modelName = modelName .. "Model",
-            parent = sceneModel
+            parent = sceneTemplateModel
         })
 
     local sceneBaseRootPart = sceneBase.modelRootPart
 
     local cloneModelProps = {
         modelName = modelName,
-        parent = sceneModel,
+        parent = sceneTemplateModel,
         offset = Vector3.new(10, 10, 10)
     }
-
     local clonedModel = Utils.cloneModel(cloneModelProps)
 
     for i, quest in pairs(questConfigs) do
         local addScenesProps = {
             gapZ = 50 * i - 1,
-            sceneTemplate = sceneTemplate,
+            sceneTemplateModel = sceneTemplateModel,
+            templatesFolder = templatesFolder,
             sceneBaseTemplate = sceneBaseRootPart,
             sceneConfigs = quest,
             parent = sceneOrigins[1]
         }
-        addScenes(addScenesProps)
+        addScenes2(addScenesProps)
 
     end
 
