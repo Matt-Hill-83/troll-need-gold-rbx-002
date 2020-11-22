@@ -56,7 +56,7 @@ renderTexts = function(props)
         local line = dialogConfigs[i]
 
         local charName = line['char']
-        print('charName' .. ': ' .. charName); -- zzz
+        -- print('charName' .. ': ' .. charName); -- zzz
         -- if (Constants.characters)
         -- local left = dialogSetup['left']
 

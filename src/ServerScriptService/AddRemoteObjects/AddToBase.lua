@@ -121,9 +121,6 @@ function cloneScene(props)
     local gapZ = props.gapZ
     local coordinates = props.coordinates
 
-    print('coordinates.row' .. ': ' .. coordinates.row); -- zzz
-    print('coordinates.col' .. ': ' .. coordinates.col); -- zzz
-
     local gapX = 8
 
     local clone = template:Clone()
@@ -140,27 +137,17 @@ function cloneScene(props)
     return clone
 end
 
-function cloneScene2(props)
-    -- local parent = props.parent
+function getNewPosition(props)
     local template = props.template
-    local index = props.index
-    local gapZ = props.gapZ
     local coordinates = props.coordinates
-
-    print('coordinates.row' .. ': ' .. coordinates.row); -- zzz
-    print('coordinates.col' .. ': ' .. coordinates.col); -- zzz
+    local gapZ = props.gapZ
 
     local gapX = 8
-
-    -- local startPosition = getStartPosition(parent, template)
 
     local newX = -(template.Size.X + gapX) * coordinates.col
     local newZ = gapZ + coordinates.row * 50
 
-    local newPosition = Vector3.new(newX, 0 * index, newZ)
-    -- local newPosition = startPosition + Vector3.new(newX, 0 * index, newZ)
-
-    return newPosition
+    return Vector3.new(newX, 0, newZ)
 end
 
 function addItemsToScene(props)
@@ -261,27 +248,20 @@ function addScenes2(props)
 
         local modelName = "SceneTemplate"
 
-        local newPosition = cloneScene2({
-            coordinates = sceneConfig.coordinates,
-            gapZ = gapZ,
-            parent = parent,
-            template = sceneTemplate,
-            index = i - 1
-        })
-
+        local newPosition = getNewPosition(
+                                {
+                coordinates = sceneConfig.coordinates,
+                gapZ = gapZ,
+                template = sceneTemplate
+            })
         local clonedScene = Utils.cloneModel(
                                 {
                 modelName = modelName,
                 parent = templatesFolder,
-                offset = newPosition
-                -- offset = Vector3.new(10 * i, 10 * i, 10 * i)
+                position = newPosition + parent.Position
             })
         local newScene = clonedScene.PrimaryPart
 
-        -- newScene.moveTo
-        print('newPosition' .. ' - start');
-        print(newPosition);
-        print('newPosition' .. ' - end');
         local sceneProps = {
             newScene = newScene,
             pageNum = pageNum,

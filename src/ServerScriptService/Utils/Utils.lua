@@ -24,7 +24,7 @@ end
 function cloneModel(props)
     local modelName = props.modelName
     local parent = props.parent
-    local offset = props.offset
+    local position = props.position
 
     local sceneBase = getModelRoot({
         modelName = modelName .. "Model",
@@ -37,9 +37,7 @@ function cloneModel(props)
     sceneBaseModelClone.Parent = sceneBaseModel.Parent
     sceneBaseModelClone.Name = modelName .. "--clone"
 
-    local newPosition = sceneBaseModel.PrimaryPart.Position + offset
-
-    sceneBaseModelClone:MoveTo(newPosition)
+    sceneBaseModelClone:MoveTo(position)
     return sceneBaseModelClone
 end
 
