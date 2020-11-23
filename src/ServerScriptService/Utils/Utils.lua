@@ -1,5 +1,18 @@
 local module = {}
 
+function getDescendantByName(parent, name)
+    local model = parent:GetDescendants()
+
+    for i = 1, #model do
+        if model[i].Name == name then
+            print('model[i].Name' .. ' - start');
+            print(model[i].Name);
+            print('model[i].Name' .. ' - end');
+            return model[i]
+        end
+    end
+end
+
 function addcfv3(a, b)
     local x, y, z, m11, m12, m13, m21, m22, m23, m31, m32, m33 = a:components()
     return CFrame.new(x + b.x, y + b.y, z + b.z, m11, m12, m13, m21, m22, m23,
@@ -107,6 +120,7 @@ module.addPadding = addPadding
 module.setMaterialPebble = setMaterialPebble
 module.tableToString = tableToString
 module.cloneModel = cloneModel
+module.getDescendantByName = getDescendantByName
 module.addcfv3 = addcfv3
 
 return module

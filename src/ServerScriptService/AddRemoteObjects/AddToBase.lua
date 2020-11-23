@@ -223,6 +223,24 @@ function addRemoteObjects()
         end
     end
 
+    -- local model = myStuff:GetDescendants()
+
+    -- for i = 1, #model do
+    --     -- print('model[i].Name' .. ' - start');
+    --     -- print(model[i].Name);
+    --     -- print('model[i].Name' .. ' - end');
+    --     if model[i].Name == "BridgeRightModel" then
+    --         print('model[i].Name' .. ' - start');
+    --         print(model[i].Name);
+    --         print('model[i].Name' .. ' - end');
+    --     end
+    -- end
+
+    local test = Utils.getDescendantByName(myStuff, "BridgeRightModel")
+    print('test' .. ' - start');
+    print(test);
+    print('test' .. ' - end');
+
     local templatesFolder = myStuff:FindFirstChild("Templates")
     local sceneTemplateModel = templatesFolder:FindFirstChild(
                                    "SceneTemplateModel")
