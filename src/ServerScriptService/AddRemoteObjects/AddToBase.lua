@@ -225,10 +225,6 @@ function addRemoteObjects()
     local gameOrigin = sceneOrigins[1]
 
     for i, questConfig in pairs(questConfigs) do
-
-        print('questConfig' .. ' - start');
-        print(Utils.tableToString({questConfig}));
-        print('questConfig' .. ' - end');
         local questBlockProps = {
             parent = gameOrigin,
             gridSize = questConfig.gridSize

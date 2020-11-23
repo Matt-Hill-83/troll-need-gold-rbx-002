@@ -9,7 +9,7 @@ renderQuestBlock = function(props)
     local parent = props.parent
     local gridSize = props.gridSize
 
-    local desiredOffsetFromParentEdge = Vector3.new(-10, 10, 1)
+    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 1)
 
     local childSize = Vector3.new(gridSize.cols * Constants.islandLength * 2, 2,
                                   gridSize.rows * Constants.islandLength * 2)
