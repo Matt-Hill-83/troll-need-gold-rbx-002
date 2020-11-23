@@ -102,11 +102,11 @@ function getNewPosition(props)
     print('template.Size.X' .. ' - start');
     print(template.Size.X);
     print('template.Size.X' .. ' - end');
-    local gapX = Constants.bridgeLength
-    local newX = -gapX * coordinates.col - Constants.buffer
+    local gapX = Constants.islandLength * 2
+    local newX = -(gapX + Constants.buffer) * coordinates.col
     -- local newX = -(template.Size.X + gapX) * coordinates.col - Constants.buffer
-    local newZ = gapZ + coordinates.row * (Constants.bridgeLength * 1) +
-                     Constants.buffer
+    local newZ = gapZ + coordinates.row *
+                     (Constants.islandLength * 2 + Constants.buffer)
     return Vector3.new(newX, 0, -newZ)
 end
 
