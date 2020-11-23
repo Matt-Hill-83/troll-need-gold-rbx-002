@@ -14,7 +14,7 @@ module.questConfigs = {
                     characters02 = {}
                 }
             },
-            coordinates = {row = 0, col = 1},
+            coordinates = {col = 1, row = 0},
             maxRow = 0,
             maxCol = 1
         }, {
@@ -44,7 +44,7 @@ module.questConfigs = {
                     characters02 = {}
                 }
             },
-            coordinates = {row = 1, col = 1},
+            coordinates = {col = 1, row = 1},
             maxRow = 1,
             maxCol = 1
         }, {
@@ -74,7 +74,7 @@ module.questConfigs = {
                     characters02 = {}
                 }
             },
-            coordinates = {row = 1, col = 3},
+            coordinates = {col = 3, row = 1},
             maxRow = 1,
             maxCol = 3
         }, {
@@ -90,6 +90,21 @@ module.questConfigs = {
                 }
             },
             coordinates = {row = 2, col = 1},
+            maxRow = 2,
+            maxCol = 3
+        }, {
+            name = "coop",
+            frames = {
+                {
+                    dialogs = {
+                        {char = "mitzy02", text = "asdf"},
+                        {char = "liz2", text = ""}
+                    },
+                    characters01 = {{name = "mitzy02"}},
+                    characters02 = {}
+                }
+            },
+            coordinates = {row = 2, col = 3},
             maxRow = 2,
             maxCol = 3
         }
