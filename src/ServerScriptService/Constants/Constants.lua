@@ -1,4 +1,4 @@
-local module = {islandLength = 36, buffer = -2}
+local module = {islandLength = 36, buffer = 2}
 
 module.characters = {
     raven = {

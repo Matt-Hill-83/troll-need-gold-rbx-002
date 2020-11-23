@@ -142,6 +142,11 @@ function addScenes(props)
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
+        local showBottomPath = sceneConfig.showBottomPath
+
+        print('showBottomPath' .. ' - start');
+        print(showBottomPath);
+        print('showBottomPath' .. ' - end');
         local pageNum = 1
         local buttonParent = nil
 
@@ -223,7 +228,6 @@ function addRemoteObjects()
                                    "SceneTemplateModel")
 
     local gameOrigin = sceneOrigins[1]
-
     local sibling = gameOrigin
 
     for i, questConfig in pairs(questConfigs) do
