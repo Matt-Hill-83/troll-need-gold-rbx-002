@@ -14,7 +14,7 @@ renderQuestBlock = function(props)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
-        moveTowardZero = Vector3.new(-1, -1, 1),
+        moveTowardZero = Vector3.new(-1, 1, 1),
         alignToChildFarEdge = Vector3.new(-1, -1, 1)
     }
 

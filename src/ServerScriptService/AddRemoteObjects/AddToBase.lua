@@ -239,7 +239,7 @@ function addRemoteObjects()
         }
 
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
-        questBlock.Transparency = 1
+        -- questBlock.Transparency = 1
         local addScenesProps = {
             gapZ = 0,
             parent = questBlock,
