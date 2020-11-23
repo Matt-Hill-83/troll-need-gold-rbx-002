@@ -3,81 +3,95 @@ local module = {}
 module.questConfigs = {
     {
         {
-            name = "well01",
+            name = "bees",
             frames = {
                 {
                     dialogs = {
-                        {char = "britta04", text = "1"},
-                        {char = "raven05", text = "2"},
-                        {char = "liz2", text = "3"}, {char = "kat", text = "4"},
-                        {char = "empty", text = "-----------"},
-                        {char = "empty", text = "-----------"},
-                        {char = "empty", text = "-----------"}
+                        {char = "raven04", text = "sadf"},
+                        {char = "liz2", text = ""}
                     },
-                    characters01 = {{name = "raven05"}, {name = "britta04"}},
-                    characters02 = {{name = "liz2"}, {name = "kat"}}
+                    characters01 = {{name = "raven04"}},
+                    characters02 = {}
                 }
             },
             coordinates = {row = 0, col = 1},
             maxRow = 0,
             maxCol = 1
         }, {
-            name = "well01",
+            name = "slide",
             frames = {
                 {
                     dialogs = {
-                        {char = "britta04", text = "1"},
-                        {char = "raven05", text = "2"},
-                        {char = "liz2", text = "3"}, {char = "kat", text = "4"},
-                        {char = "empty", text = "-----------"},
-                        {char = "empty", text = "-----------"},
-                        {char = "empty", text = "-----------"}
+                        {char = "raven04", text = "asdf"},
+                        {char = "liz2", text = ""}
                     },
-                    characters01 = {{name = "raven05"}, {name = "britta04"}},
-                    characters02 = {{name = "liz2"}, {name = "kat"}}
+                    characters01 = {{name = "raven04"}},
+                    characters02 = {}
                 }
             },
-            coordinates = {col = 0, row = 1},
+            coordinates = {row = 1, col = 0},
             maxRow = 1,
             maxCol = 1
         }, {
-            name = "well01",
+            name = "castle",
             frames = {
                 {
                     dialogs = {
-                        {char = "britta04", text = "1"},
-                        {char = "raven05", text = "2"},
-                        {char = "liz2", text = "3"}, {char = "kat", text = "4"},
-                        {char = "empty", text = "-----------"},
-                        {char = "empty", text = "-----------"},
-                        {char = "empty", text = "-----------"}
+                        {char = "raven04", text = "sadf"},
+                        {char = "liz2", text = ""}
                     },
-                    characters01 = {{name = "raven05"}, {name = "britta04"}},
-                    characters02 = {{name = "liz2"}, {name = "kat"}}
+                    characters01 = {{name = "raven04"}},
+                    characters02 = {}
                 }
             },
-            coordinates = {col = 1, row = 1},
+            coordinates = {row = 1, col = 1},
             maxRow = 1,
             maxCol = 1
         }, {
-            name = "well01",
+            name = "girl09",
             frames = {
                 {
                     dialogs = {
-                        {char = "britta04", text = "1"},
-                        {char = "raven05", text = "2"},
-                        {char = "liz2", text = "3"}, {char = "kat", text = "4"},
-                        {char = "empty", text = "-----------"},
-                        {char = "empty", text = "-----------"},
-                        {char = "empty", text = "-----------"}
+                        {char = "raven04", text = "asdf"},
+                        {char = "liz2", text = ""}
                     },
-                    characters01 = {{name = "raven05"}, {name = "britta04"}},
-                    characters02 = {{name = "liz2"}, {name = "kat"}}
+                    characters01 = {{name = "raven04"}},
+                    characters02 = {}
                 }
             },
             coordinates = {row = 1, col = 2},
             maxRow = 1,
             maxCol = 2
+        }, {
+            name = "home",
+            frames = {
+                {
+                    dialogs = {
+                        {char = "raven04", text = "asd"},
+                        {char = "liz2", text = ""}
+                    },
+                    characters01 = {{name = "raven04"}},
+                    characters02 = {}
+                }
+            },
+            coordinates = {row = 1, col = 3},
+            maxRow = 1,
+            maxCol = 3
+        }, {
+            name = "swing",
+            frames = {
+                {
+                    dialogs = {
+                        {char = "raven04", text = "asdf"},
+                        {char = "liz2", text = ""}
+                    },
+                    characters01 = {{name = "raven04"}},
+                    characters02 = {}
+                }
+            },
+            coordinates = {row = 2, col = 1},
+            maxRow = 2,
+            maxCol = 3
         }
     }
 }

@@ -1,4 +1,4 @@
-local module = {}
+local module = {bridgeLength = 72, buffer = 0}
 
 module.characters = {
     raven = {

@@ -99,13 +99,15 @@ function getNewPosition(props)
     local template = props.template
     local coordinates = props.coordinates
     local gapZ = props.gapZ
-
-    local gapX = 8
-
-    local newX = -(template.Size.X + gapX) * coordinates.col
-    local newZ = gapZ + coordinates.row * 50
-
-    return Vector3.new(newX, 0, newZ)
+    print('template.Size.X' .. ' - start');
+    print(template.Size.X);
+    print('template.Size.X' .. ' - end');
+    local gapX = Constants.bridgeLength
+    local newX = -gapX * coordinates.col - Constants.buffer
+    -- local newX = -(template.Size.X + gapX) * coordinates.col - Constants.buffer
+    local newZ = gapZ + coordinates.row * (Constants.bridgeLength * 1) +
+                     Constants.buffer
+    return Vector3.new(newX, 0, -newZ)
 end
 
 function addItemsToScene(props)
@@ -151,12 +153,16 @@ function addScenes(props)
                 gapZ = gapZ,
                 template = sceneTemplateModel.PrimaryPart
             })
+
+        print('newPosition' .. ' - start');
+        print(newPosition);
+        print('newPosition' .. ' - end');
+
         local clonedScene = Utils.cloneModel(
                                 {
                 modelName = modelName,
                 model = sceneTemplateModel,
                 position = newPosition + startPosition
-                -- position = newPosition + parent.Position
             })
         local newScene = clonedScene.PrimaryPart
 
@@ -224,7 +230,7 @@ function addRemoteObjects()
 
     for i, quest in pairs(questConfigs) do
         local addScenesProps = {
-            gapZ = 50 * i - 1,
+            gapZ = 72 * (i - 1),
             parent = sceneOrigins[1],
             sceneConfigs = quest,
             sceneTemplateModel = sceneTemplateModel
