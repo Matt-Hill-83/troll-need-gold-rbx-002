@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>632.49292</X>
-					<Y>-1.87975836</Y>
-					<Z>-597.54303</Z>
-					<R00>-0.998145819</R00>
-					<R01>-0.0155917928</R01>
-					<R02>0.0588378757</R02>
-					<R10>-9.31322575e-10</R10>
-					<R11>0.966635942</R11>
-					<R12>0.256154478</R12>
-					<R20>-0.0608687066</R20>
-					<R21>0.255679518</R21>
-					<R22>-0.964843512</R22>
+					<X>628.812378</X>
+					<Y>20.5495529</Y>
+					<Z>-610.537781</Z>
+					<R00>-0.994766712</R00>
+					<R01>-0.0157318562</R01>
+					<R02>0.100954667</R02>
+					<R10>1.86264537e-09</R10>
+					<R11>0.988075137</R11>
+					<R12>0.153972641</R12>
+					<R20>-0.102173075</R20>
+					<R21>0.15316686</R21>
+					<R22>-0.982904136</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>632.375244</X>
-					<Y>-2.39206743</Y>
-					<Z>-595.613342</Z>
+					<X>628.610474</X>
+					<Y>20.2416153</Y>
+					<Z>-608.572021</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -5787,1161 +5787,6 @@ AAAAAAAAAAAAAAGA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="Part" referent="RBXf0ca8dd9d47241beb2ed4c76442bfa38">
-					<Properties>
-						<bool name="Anchored">true</bool>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<float name="BackParamA">-0.5</float>
-						<float name="BackParamB">0.5</float>
-						<token name="BackSurface">0</token>
-						<token name="BackSurfaceInput">0</token>
-						<float name="BottomParamA">-0.5</float>
-						<float name="BottomParamB">0.5</float>
-						<token name="BottomSurface">4</token>
-						<token name="BottomSurfaceInput">0</token>
-						<CoordinateFrame name="CFrame">
-							<X>626</X>
-							<Y>-5.984375</Y>
-							<Z>-564.5</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>1</R11>
-							<R12>0</R12>
-							<R20>0</R20>
-							<R21>0</R21>
-							<R22>1</R22>
-						</CoordinateFrame>
-						<bool name="CanCollide">true</bool>
-						<bool name="CastShadow">true</bool>
-						<int name="CollisionGroupId">0</int>
-						<Color3uint8 name="Color3uint8">4294112243</Color3uint8>
-						<PhysicalProperties name="CustomPhysicalProperties">
-							<CustomPhysics>false</CustomPhysics>
-						</PhysicalProperties>
-						<float name="FrontParamA">-0.5</float>
-						<float name="FrontParamB">0.5</float>
-						<token name="FrontSurface">0</token>
-						<token name="FrontSurfaceInput">0</token>
-						<float name="LeftParamA">-0.5</float>
-						<float name="LeftParamB">0.5</float>
-						<token name="LeftSurface">0</token>
-						<token name="LeftSurfaceInput">0</token>
-						<bool name="Locked">false</bool>
-						<bool name="Massless">false</bool>
-						<token name="Material">256</token>
-						<string name="Name">textsContainer</string>
-						<float name="Reflectance">0</float>
-						<float name="RightParamA">-0.5</float>
-						<float name="RightParamB">0.5</float>
-						<token name="RightSurface">0</token>
-						<token name="RightSurfaceInput">0</token>
-						<int name="RootPriority">0</int>
-						<Vector3 name="RotVelocity">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-						<float name="TopParamA">-0.5</float>
-						<float name="TopParamB">0.5</float>
-						<token name="TopSurface">3</token>
-						<token name="TopSurfaceInput">0</token>
-						<float name="Transparency">0</float>
-						<Vector3 name="Velocity">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<token name="formFactorRaw">1</token>
-						<token name="shape">1</token>
-						<Vector3 name="size">
-							<X>18</X>
-							<Y>10</Y>
-							<Z>1</Z>
-						</Vector3>
-					</Properties>
-					<Item class="SurfaceGui" referent="RBX8bb0a07f24ab4d4690bca5eb702df17d">
-						<Properties>
-							<bool name="Active">true</bool>
-							<Ref name="Adornee">null</Ref>
-							<bool name="AlwaysOnTop">false</bool>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<bool name="AutoLocalize">true</bool>
-							<Vector2 name="CanvasSize">
-								<X>800</X>
-								<Y>600</Y>
-							</Vector2>
-							<bool name="ClipsDescendants">false</bool>
-							<bool name="Enabled">true</bool>
-							<token name="Face">5</token>
-							<float name="LightInfluence">0</float>
-							<string name="Name">SurfaceGui</string>
-							<float name="PixelsPerStud">50</float>
-							<bool name="ResetOnSpawn">true</bool>
-							<Ref name="RootLocalizationTable">null</Ref>
-							<token name="SizingMode">1</token>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<float name="ToolPunchThroughDistance">0</float>
-							<token name="ZIndexBehavior">0</token>
-							<float name="ZOffset">0</float>
-						</Properties>
-						<Item class="ScrollingFrame" referent="RBXd32d900c825147859bc6fafa76a46db8">
-							<Properties>
-								<bool name="Active">false</bool>
-								<Vector2 name="AnchorPoint">
-									<X>0</X>
-									<Y>0</Y>
-								</Vector2>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<bool name="AutoLocalize">true</bool>
-								<token name="AutomaticCanvasSize">0</token>
-								<token name="AutomaticSize">0</token>
-								<Color3 name="BackgroundColor3">
-									<R>196</R>
-									<G>132</G>
-									<B>225</B>
-								</Color3>
-								<float name="BackgroundTransparency">0.5</float>
-								<Color3 name="BorderColor3">
-									<R>0.105882362</R>
-									<G>0.164705887</G>
-									<B>0.207843155</B>
-								</Color3>
-								<token name="BorderMode">2</token>
-								<int name="BorderSizePixel">3</int>
-								<Content name="BottomImage"><url>rbxasset://textures/ui/Scroll/scroll-bottom.png</url></Content>
-								<Vector2 name="CanvasPosition">
-									<X>0</X>
-									<Y>0</Y>
-								</Vector2>
-								<UDim2 name="CanvasSize">
-									<XS>0</XS>
-									<XO>0</XO>
-									<YS>2</YS>
-									<YO>0</YO>
-								</UDim2>
-								<bool name="ClipsDescendants">true</bool>
-								<bool name="Draggable">false</bool>
-								<token name="ElasticBehavior">0</token>
-								<token name="HorizontalScrollBarInset">0</token>
-								<int name="LayoutOrder">0</int>
-								<Content name="MidImage"><url>rbxasset://textures/ui/Scroll/scroll-middle.png</url></Content>
-								<string name="Name">ScrollingFrame</string>
-								<Ref name="NextSelectionDown">null</Ref>
-								<Ref name="NextSelectionLeft">null</Ref>
-								<Ref name="NextSelectionRight">null</Ref>
-								<Ref name="NextSelectionUp">null</Ref>
-								<UDim2 name="Position">
-									<XS>0</XS>
-									<XO>0</XO>
-									<YS>0</YS>
-									<YO>0</YO>
-								</UDim2>
-								<Ref name="RootLocalizationTable">null</Ref>
-								<float name="Rotation">0</float>
-								<Color3 name="ScrollBarImageColor3">
-									<R>113</R>
-									<G>0</G>
-									<B>255</B>
-								</Color3>
-								<float name="ScrollBarImageTransparency">0</float>
-								<int name="ScrollBarThickness">40</int>
-								<token name="ScrollingDirection">4</token>
-								<bool name="ScrollingEnabled">true</bool>
-								<bool name="Selectable">true</bool>
-								<Ref name="SelectionImageObject">null</Ref>
-								<UDim2 name="Size">
-									<XS>1</XS>
-									<XO>0</XO>
-									<YS>1</YS>
-									<YO>0</YO>
-								</UDim2>
-								<token name="SizeConstraint">0</token>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-								<Content name="TopImage"><url>rbxasset://textures/ui/Scroll/scroll-top.png</url></Content>
-								<token name="VerticalScrollBarInset">0</token>
-								<token name="VerticalScrollBarPosition">0</token>
-								<bool name="Visible">true</bool>
-								<int name="ZIndex">1</int>
-							</Properties>
-							<Item class="UIPadding" referent="RBX4f63da88849a42349ecb48a26daf3e64">
-								<Properties>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<string name="Name">UIPadding</string>
-									<UDim name="PaddingBottom">
-										<S>0.0199999996</S>
-										<O>0</O>
-									</UDim>
-									<UDim name="PaddingLeft">
-										<S>0.0199999996</S>
-										<O>0</O>
-									</UDim>
-									<UDim name="PaddingRight">
-										<S>0.0199999996</S>
-										<O>0</O>
-									</UDim>
-									<UDim name="PaddingTop">
-										<S>0.0199999996</S>
-										<O>0</O>
-									</UDim>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-								</Properties>
-							</Item>
-							<Item class="TextLabel" referent="RBX589bac1177da4cc4b905aca866837144">
-								<Properties>
-									<bool name="Active">false</bool>
-									<Vector2 name="AnchorPoint">
-										<X>0</X>
-										<Y>0</Y>
-									</Vector2>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<bool name="AutoLocalize">true</bool>
-									<token name="AutomaticSize">0</token>
-									<Color3 name="BackgroundColor3">
-										<R>0.882352948</R>
-										<G>0.992156863</G>
-										<B>0.619607866</B>
-									</Color3>
-									<float name="BackgroundTransparency">0</float>
-									<Color3 name="BorderColor3">
-										<R>0.388235301</R>
-										<G>0.180392161</G>
-										<B>0.388235301</B>
-									</Color3>
-									<token name="BorderMode">0</token>
-									<int name="BorderSizePixel">2</int>
-									<bool name="ClipsDescendants">false</bool>
-									<bool name="Draggable">false</bool>
-									<token name="Font">1</token>
-									<int name="LayoutOrder">0</int>
-									<float name="LineHeight">1</float>
-									<string name="Name">Dialog-1</string>
-									<Ref name="NextSelectionDown">null</Ref>
-									<Ref name="NextSelectionLeft">null</Ref>
-									<Ref name="NextSelectionRight">null</Ref>
-									<Ref name="NextSelectionUp">null</Ref>
-									<UDim2 name="Position">
-										<XS>0</XS>
-										<XO>0</XO>
-										<YS>0</YS>
-										<YO>0</YO>
-									</UDim2>
-									<bool name="RichText">false</bool>
-									<Ref name="RootLocalizationTable">null</Ref>
-									<float name="Rotation">0</float>
-									<bool name="Selectable">false</bool>
-									<Ref name="SelectionImageObject">null</Ref>
-									<UDim2 name="Size">
-										<XS>0</XS>
-										<XO>798</XO>
-										<YS>0</YS>
-										<YO>52</YO>
-									</UDim2>
-									<token name="SizeConstraint">0</token>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-									<string name="Text"></string>
-									<Color3 name="TextColor3">
-										<R>0</R>
-										<G>0</G>
-										<B>0</B>
-									</Color3>
-									<bool name="TextScaled">false</bool>
-									<float name="TextSize">41</float>
-									<Color3 name="TextStrokeColor3">
-										<R>0</R>
-										<G>0</G>
-										<B>0</B>
-									</Color3>
-									<float name="TextStrokeTransparency">1</float>
-									<float name="TextTransparency">0</float>
-									<token name="TextTruncate">0</token>
-									<bool name="TextWrapped">true</bool>
-									<token name="TextXAlignment">0</token>
-									<token name="TextYAlignment">0</token>
-									<bool name="Visible">true</bool>
-									<int name="ZIndex">1</int>
-								</Properties>
-								<Item class="TextLabel" referent="RBX7d17263942654fbaafc7f2a823a47614">
-									<Properties>
-										<bool name="Active">false</bool>
-										<Vector2 name="AnchorPoint">
-											<X>0</X>
-											<Y>0</Y>
-										</Vector2>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<bool name="AutoLocalize">true</bool>
-										<token name="AutomaticSize">0</token>
-										<Color3 name="BackgroundColor3">
-											<R>0.882352948</R>
-											<G>0.992156863</G>
-											<B>0.619607866</B>
-										</Color3>
-										<float name="BackgroundTransparency">1</float>
-										<Color3 name="BorderColor3">
-											<R>0.388235301</R>
-											<G>0.180392161</G>
-											<B>0.388235301</B>
-										</Color3>
-										<token name="BorderMode">0</token>
-										<int name="BorderSizePixel">2</int>
-										<bool name="ClipsDescendants">false</bool>
-										<bool name="Draggable">false</bool>
-										<token name="Font">1</token>
-										<int name="LayoutOrder">0</int>
-										<float name="LineHeight">1</float>
-										<string name="Name">Dialog-1</string>
-										<Ref name="NextSelectionDown">null</Ref>
-										<Ref name="NextSelectionLeft">null</Ref>
-										<Ref name="NextSelectionRight">null</Ref>
-										<Ref name="NextSelectionUp">null</Ref>
-										<UDim2 name="Position">
-											<XS>0</XS>
-											<XO>5</XO>
-											<YS>0</YS>
-											<YO>5</YO>
-										</UDim2>
-										<bool name="RichText">false</bool>
-										<Ref name="RootLocalizationTable">null</Ref>
-										<float name="Rotation">0</float>
-										<bool name="Selectable">false</bool>
-										<Ref name="SelectionImageObject">null</Ref>
-										<UDim2 name="Size">
-											<XS>0</XS>
-											<XO>787</XO>
-											<YS>0</YS>
-											<YO>41</YO>
-										</UDim2>
-										<token name="SizeConstraint">0</token>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-										<string name="Text">Raven: Go in the vortex, you said...</string>
-										<Color3 name="TextColor3">
-											<R>0</R>
-											<G>0</G>
-											<B>0</B>
-										</Color3>
-										<bool name="TextScaled">false</bool>
-										<float name="TextSize">41</float>
-										<Color3 name="TextStrokeColor3">
-											<R>0</R>
-											<G>0</G>
-											<B>0</B>
-										</Color3>
-										<float name="TextStrokeTransparency">1</float>
-										<float name="TextTransparency">0</float>
-										<token name="TextTruncate">0</token>
-										<bool name="TextWrapped">true</bool>
-										<token name="TextXAlignment">0</token>
-										<token name="TextYAlignment">0</token>
-										<bool name="Visible">true</bool>
-										<int name="ZIndex">2</int>
-									</Properties>
-								</Item>
-							</Item>
-							<Item class="TextLabel" referent="RBX12a08ec0fb464106937caa3e075ca14b">
-								<Properties>
-									<bool name="Active">false</bool>
-									<Vector2 name="AnchorPoint">
-										<X>0</X>
-										<Y>0</Y>
-									</Vector2>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<bool name="AutoLocalize">true</bool>
-									<token name="AutomaticSize">0</token>
-									<Color3 name="BackgroundColor3">
-										<R>0.992156863</R>
-										<G>0.619607866</G>
-										<B>0.941176474</B>
-									</Color3>
-									<float name="BackgroundTransparency">0</float>
-									<Color3 name="BorderColor3">
-										<R>0.388235301</R>
-										<G>0.180392161</G>
-										<B>0.388235301</B>
-									</Color3>
-									<token name="BorderMode">0</token>
-									<int name="BorderSizePixel">2</int>
-									<bool name="ClipsDescendants">false</bool>
-									<bool name="Draggable">false</bool>
-									<token name="Font">1</token>
-									<int name="LayoutOrder">0</int>
-									<float name="LineHeight">1</float>
-									<string name="Name">Dialog-2</string>
-									<Ref name="NextSelectionDown">null</Ref>
-									<Ref name="NextSelectionLeft">null</Ref>
-									<Ref name="NextSelectionRight">null</Ref>
-									<Ref name="NextSelectionUp">null</Ref>
-									<UDim2 name="Position">
-										<XS>0</XS>
-										<XO>0</XO>
-										<YS>0</YS>
-										<YO>77</YO>
-									</UDim2>
-									<bool name="RichText">false</bool>
-									<Ref name="RootLocalizationTable">null</Ref>
-									<float name="Rotation">0</float>
-									<bool name="Selectable">false</bool>
-									<Ref name="SelectionImageObject">null</Ref>
-									<UDim2 name="Size">
-										<XS>0</XS>
-										<XO>798</XO>
-										<YS>0</YS>
-										<YO>52</YO>
-									</UDim2>
-									<token name="SizeConstraint">0</token>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-									<string name="Text"></string>
-									<Color3 name="TextColor3">
-										<R>0</R>
-										<G>0</G>
-										<B>0</B>
-									</Color3>
-									<bool name="TextScaled">false</bool>
-									<float name="TextSize">41</float>
-									<Color3 name="TextStrokeColor3">
-										<R>0</R>
-										<G>0</G>
-										<B>0</B>
-									</Color3>
-									<float name="TextStrokeTransparency">1</float>
-									<float name="TextTransparency">0</float>
-									<token name="TextTruncate">0</token>
-									<bool name="TextWrapped">true</bool>
-									<token name="TextXAlignment">0</token>
-									<token name="TextYAlignment">0</token>
-									<bool name="Visible">true</bool>
-									<int name="ZIndex">1</int>
-								</Properties>
-								<Item class="TextLabel" referent="RBX5342c6f279084b27806d4170ff4587dc">
-									<Properties>
-										<bool name="Active">false</bool>
-										<Vector2 name="AnchorPoint">
-											<X>0</X>
-											<Y>0</Y>
-										</Vector2>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<bool name="AutoLocalize">true</bool>
-										<token name="AutomaticSize">0</token>
-										<Color3 name="BackgroundColor3">
-											<R>0.992156863</R>
-											<G>0.619607866</G>
-											<B>0.941176474</B>
-										</Color3>
-										<float name="BackgroundTransparency">1</float>
-										<Color3 name="BorderColor3">
-											<R>0.388235301</R>
-											<G>0.180392161</G>
-											<B>0.388235301</B>
-										</Color3>
-										<token name="BorderMode">0</token>
-										<int name="BorderSizePixel">2</int>
-										<bool name="ClipsDescendants">false</bool>
-										<bool name="Draggable">false</bool>
-										<token name="Font">1</token>
-										<int name="LayoutOrder">0</int>
-										<float name="LineHeight">1</float>
-										<string name="Name">Dialog-2</string>
-										<Ref name="NextSelectionDown">null</Ref>
-										<Ref name="NextSelectionLeft">null</Ref>
-										<Ref name="NextSelectionRight">null</Ref>
-										<Ref name="NextSelectionUp">null</Ref>
-										<UDim2 name="Position">
-											<XS>0</XS>
-											<XO>5</XO>
-											<YS>0</YS>
-											<YO>5</YO>
-										</UDim2>
-										<bool name="RichText">false</bool>
-										<Ref name="RootLocalizationTable">null</Ref>
-										<float name="Rotation">0</float>
-										<bool name="Selectable">false</bool>
-										<Ref name="SelectionImageObject">null</Ref>
-										<UDim2 name="Size">
-											<XS>0</XS>
-											<XO>787</XO>
-											<YS>0</YS>
-											<YO>41</YO>
-										</UDim2>
-										<token name="SizeConstraint">0</token>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-										<string name="Text">Britta: Whoa...</string>
-										<Color3 name="TextColor3">
-											<R>0</R>
-											<G>0</G>
-											<B>0</B>
-										</Color3>
-										<bool name="TextScaled">false</bool>
-										<float name="TextSize">41</float>
-										<Color3 name="TextStrokeColor3">
-											<R>0</R>
-											<G>0</G>
-											<B>0</B>
-										</Color3>
-										<float name="TextStrokeTransparency">1</float>
-										<float name="TextTransparency">0</float>
-										<token name="TextTruncate">0</token>
-										<bool name="TextWrapped">true</bool>
-										<token name="TextXAlignment">0</token>
-										<token name="TextYAlignment">0</token>
-										<bool name="Visible">true</bool>
-										<int name="ZIndex">2</int>
-									</Properties>
-								</Item>
-							</Item>
-							<Item class="TextLabel" referent="RBXa8efe60e002a4485ba492b94e9594083">
-								<Properties>
-									<bool name="Active">false</bool>
-									<Vector2 name="AnchorPoint">
-										<X>0</X>
-										<Y>0</Y>
-									</Vector2>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<bool name="AutoLocalize">true</bool>
-									<token name="AutomaticSize">0</token>
-									<Color3 name="BackgroundColor3">
-										<R>0.882352948</R>
-										<G>0.992156863</G>
-										<B>0.619607866</B>
-									</Color3>
-									<float name="BackgroundTransparency">0</float>
-									<Color3 name="BorderColor3">
-										<R>0.388235301</R>
-										<G>0.180392161</G>
-										<B>0.388235301</B>
-									</Color3>
-									<token name="BorderMode">0</token>
-									<int name="BorderSizePixel">2</int>
-									<bool name="ClipsDescendants">false</bool>
-									<bool name="Draggable">false</bool>
-									<token name="Font">1</token>
-									<int name="LayoutOrder">0</int>
-									<float name="LineHeight">1</float>
-									<string name="Name">Dialog-3</string>
-									<Ref name="NextSelectionDown">null</Ref>
-									<Ref name="NextSelectionLeft">null</Ref>
-									<Ref name="NextSelectionRight">null</Ref>
-									<Ref name="NextSelectionUp">null</Ref>
-									<UDim2 name="Position">
-										<XS>0</XS>
-										<XO>0</XO>
-										<YS>0</YS>
-										<YO>154</YO>
-									</UDim2>
-									<bool name="RichText">false</bool>
-									<Ref name="RootLocalizationTable">null</Ref>
-									<float name="Rotation">0</float>
-									<bool name="Selectable">false</bool>
-									<Ref name="SelectionImageObject">null</Ref>
-									<UDim2 name="Size">
-										<XS>0</XS>
-										<XO>798</XO>
-										<YS>0</YS>
-										<YO>93</YO>
-									</UDim2>
-									<token name="SizeConstraint">0</token>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-									<string name="Text"></string>
-									<Color3 name="TextColor3">
-										<R>0</R>
-										<G>0</G>
-										<B>0</B>
-									</Color3>
-									<bool name="TextScaled">false</bool>
-									<float name="TextSize">41</float>
-									<Color3 name="TextStrokeColor3">
-										<R>0</R>
-										<G>0</G>
-										<B>0</B>
-									</Color3>
-									<float name="TextStrokeTransparency">1</float>
-									<float name="TextTransparency">0</float>
-									<token name="TextTruncate">0</token>
-									<bool name="TextWrapped">true</bool>
-									<token name="TextXAlignment">0</token>
-									<token name="TextYAlignment">0</token>
-									<bool name="Visible">true</bool>
-									<int name="ZIndex">1</int>
-								</Properties>
-								<Item class="TextLabel" referent="RBX9d605a4a81f742928e429058c9bdd874">
-									<Properties>
-										<bool name="Active">false</bool>
-										<Vector2 name="AnchorPoint">
-											<X>0</X>
-											<Y>0</Y>
-										</Vector2>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<bool name="AutoLocalize">true</bool>
-										<token name="AutomaticSize">0</token>
-										<Color3 name="BackgroundColor3">
-											<R>0.882352948</R>
-											<G>0.992156863</G>
-											<B>0.619607866</B>
-										</Color3>
-										<float name="BackgroundTransparency">1</float>
-										<Color3 name="BorderColor3">
-											<R>0.388235301</R>
-											<G>0.180392161</G>
-											<B>0.388235301</B>
-										</Color3>
-										<token name="BorderMode">0</token>
-										<int name="BorderSizePixel">2</int>
-										<bool name="ClipsDescendants">false</bool>
-										<bool name="Draggable">false</bool>
-										<token name="Font">1</token>
-										<int name="LayoutOrder">0</int>
-										<float name="LineHeight">1</float>
-										<string name="Name">Dialog-3</string>
-										<Ref name="NextSelectionDown">null</Ref>
-										<Ref name="NextSelectionLeft">null</Ref>
-										<Ref name="NextSelectionRight">null</Ref>
-										<Ref name="NextSelectionUp">null</Ref>
-										<UDim2 name="Position">
-											<XS>0</XS>
-											<XO>5</XO>
-											<YS>0</YS>
-											<YO>5</YO>
-										</UDim2>
-										<bool name="RichText">false</bool>
-										<Ref name="RootLocalizationTable">null</Ref>
-										<float name="Rotation">0</float>
-										<bool name="Selectable">false</bool>
-										<Ref name="SelectionImageObject">null</Ref>
-										<UDim2 name="Size">
-											<XS>0</XS>
-											<XO>787</XO>
-											<YS>0</YS>
-											<YO>82</YO>
-										</UDim2>
-										<token name="SizeConstraint">0</token>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-										<string name="Text">Raven: What could possibly go wrong, you said...</string>
-										<Color3 name="TextColor3">
-											<R>0</R>
-											<G>0</G>
-											<B>0</B>
-										</Color3>
-										<bool name="TextScaled">false</bool>
-										<float name="TextSize">41</float>
-										<Color3 name="TextStrokeColor3">
-											<R>0</R>
-											<G>0</G>
-											<B>0</B>
-										</Color3>
-										<float name="TextStrokeTransparency">1</float>
-										<float name="TextTransparency">0</float>
-										<token name="TextTruncate">0</token>
-										<bool name="TextWrapped">true</bool>
-										<token name="TextXAlignment">0</token>
-										<token name="TextYAlignment">0</token>
-										<bool name="Visible">true</bool>
-										<int name="ZIndex">2</int>
-									</Properties>
-								</Item>
-							</Item>
-							<Item class="TextLabel" referent="RBXf7f6f3d8b88a45cf925610d6432784a6">
-								<Properties>
-									<bool name="Active">false</bool>
-									<Vector2 name="AnchorPoint">
-										<X>0</X>
-										<Y>0</Y>
-									</Vector2>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<bool name="AutoLocalize">true</bool>
-									<token name="AutomaticSize">0</token>
-									<Color3 name="BackgroundColor3">
-										<R>0.992156863</R>
-										<G>0.619607866</G>
-										<B>0.941176474</B>
-									</Color3>
-									<float name="BackgroundTransparency">0</float>
-									<Color3 name="BorderColor3">
-										<R>0.388235301</R>
-										<G>0.180392161</G>
-										<B>0.388235301</B>
-									</Color3>
-									<token name="BorderMode">0</token>
-									<int name="BorderSizePixel">2</int>
-									<bool name="ClipsDescendants">false</bool>
-									<bool name="Draggable">false</bool>
-									<token name="Font">1</token>
-									<int name="LayoutOrder">0</int>
-									<float name="LineHeight">1</float>
-									<string name="Name">Dialog-4</string>
-									<Ref name="NextSelectionDown">null</Ref>
-									<Ref name="NextSelectionLeft">null</Ref>
-									<Ref name="NextSelectionRight">null</Ref>
-									<Ref name="NextSelectionUp">null</Ref>
-									<UDim2 name="Position">
-										<XS>0</XS>
-										<XO>0</XO>
-										<YS>0</YS>
-										<YO>272</YO>
-									</UDim2>
-									<bool name="RichText">false</bool>
-									<Ref name="RootLocalizationTable">null</Ref>
-									<float name="Rotation">0</float>
-									<bool name="Selectable">false</bool>
-									<Ref name="SelectionImageObject">null</Ref>
-									<UDim2 name="Size">
-										<XS>0</XS>
-										<XO>798</XO>
-										<YS>0</YS>
-										<YO>52</YO>
-									</UDim2>
-									<token name="SizeConstraint">0</token>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-									<string name="Text"></string>
-									<Color3 name="TextColor3">
-										<R>0</R>
-										<G>0</G>
-										<B>0</B>
-									</Color3>
-									<bool name="TextScaled">false</bool>
-									<float name="TextSize">41</float>
-									<Color3 name="TextStrokeColor3">
-										<R>0</R>
-										<G>0</G>
-										<B>0</B>
-									</Color3>
-									<float name="TextStrokeTransparency">1</float>
-									<float name="TextTransparency">0</float>
-									<token name="TextTruncate">0</token>
-									<bool name="TextWrapped">true</bool>
-									<token name="TextXAlignment">0</token>
-									<token name="TextYAlignment">0</token>
-									<bool name="Visible">true</bool>
-									<int name="ZIndex">1</int>
-								</Properties>
-								<Item class="TextLabel" referent="RBXf7a59ed28a994805aea3414fbd487ce4">
-									<Properties>
-										<bool name="Active">false</bool>
-										<Vector2 name="AnchorPoint">
-											<X>0</X>
-											<Y>0</Y>
-										</Vector2>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<bool name="AutoLocalize">true</bool>
-										<token name="AutomaticSize">0</token>
-										<Color3 name="BackgroundColor3">
-											<R>0.992156863</R>
-											<G>0.619607866</G>
-											<B>0.941176474</B>
-										</Color3>
-										<float name="BackgroundTransparency">1</float>
-										<Color3 name="BorderColor3">
-											<R>0.388235301</R>
-											<G>0.180392161</G>
-											<B>0.388235301</B>
-										</Color3>
-										<token name="BorderMode">0</token>
-										<int name="BorderSizePixel">2</int>
-										<bool name="ClipsDescendants">false</bool>
-										<bool name="Draggable">false</bool>
-										<token name="Font">1</token>
-										<int name="LayoutOrder">0</int>
-										<float name="LineHeight">1</float>
-										<string name="Name">Dialog-4</string>
-										<Ref name="NextSelectionDown">null</Ref>
-										<Ref name="NextSelectionLeft">null</Ref>
-										<Ref name="NextSelectionRight">null</Ref>
-										<Ref name="NextSelectionUp">null</Ref>
-										<UDim2 name="Position">
-											<XS>0</XS>
-											<XO>5</XO>
-											<YS>0</YS>
-											<YO>5</YO>
-										</UDim2>
-										<bool name="RichText">false</bool>
-										<Ref name="RootLocalizationTable">null</Ref>
-										<float name="Rotation">0</float>
-										<bool name="Selectable">false</bool>
-										<Ref name="SelectionImageObject">null</Ref>
-										<UDim2 name="Size">
-											<XS>0</XS>
-											<XO>787</XO>
-											<YS>0</YS>
-											<YO>41</YO>
-										</UDim2>
-										<token name="SizeConstraint">0</token>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-										<string name="Text">Britta: Holy mother monkey milk...</string>
-										<Color3 name="TextColor3">
-											<R>0</R>
-											<G>0</G>
-											<B>0</B>
-										</Color3>
-										<bool name="TextScaled">false</bool>
-										<float name="TextSize">41</float>
-										<Color3 name="TextStrokeColor3">
-											<R>0</R>
-											<G>0</G>
-											<B>0</B>
-										</Color3>
-										<float name="TextStrokeTransparency">1</float>
-										<float name="TextTransparency">0</float>
-										<token name="TextTruncate">0</token>
-										<bool name="TextWrapped">true</bool>
-										<token name="TextXAlignment">0</token>
-										<token name="TextYAlignment">0</token>
-										<bool name="Visible">true</bool>
-										<int name="ZIndex">2</int>
-									</Properties>
-								</Item>
-							</Item>
-							<Item class="TextLabel" referent="RBX3b21368af5ed4e61acf6f70ae9f8ff21">
-								<Properties>
-									<bool name="Active">false</bool>
-									<Vector2 name="AnchorPoint">
-										<X>0</X>
-										<Y>0</Y>
-									</Vector2>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<bool name="AutoLocalize">true</bool>
-									<token name="AutomaticSize">0</token>
-									<Color3 name="BackgroundColor3">
-										<R>0.992156863</R>
-										<G>0.894117653</G>
-										<B>0.619607866</B>
-									</Color3>
-									<float name="BackgroundTransparency">0</float>
-									<Color3 name="BorderColor3">
-										<R>0.388235301</R>
-										<G>0.180392161</G>
-										<B>0.388235301</B>
-									</Color3>
-									<token name="BorderMode">0</token>
-									<int name="BorderSizePixel">2</int>
-									<bool name="ClipsDescendants">false</bool>
-									<bool name="Draggable">false</bool>
-									<token name="Font">1</token>
-									<int name="LayoutOrder">0</int>
-									<float name="LineHeight">1</float>
-									<string name="Name">Dialog-5</string>
-									<Ref name="NextSelectionDown">null</Ref>
-									<Ref name="NextSelectionLeft">null</Ref>
-									<Ref name="NextSelectionRight">null</Ref>
-									<Ref name="NextSelectionUp">null</Ref>
-									<UDim2 name="Position">
-										<XS>0</XS>
-										<XO>0</XO>
-										<YS>0</YS>
-										<YO>349</YO>
-									</UDim2>
-									<bool name="RichText">false</bool>
-									<Ref name="RootLocalizationTable">null</Ref>
-									<float name="Rotation">0</float>
-									<bool name="Selectable">false</bool>
-									<Ref name="SelectionImageObject">null</Ref>
-									<UDim2 name="Size">
-										<XS>0</XS>
-										<XO>798</XO>
-										<YS>0</YS>
-										<YO>52</YO>
-									</UDim2>
-									<token name="SizeConstraint">0</token>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-									<string name="Text"></string>
-									<Color3 name="TextColor3">
-										<R>0</R>
-										<G>0</G>
-										<B>0</B>
-									</Color3>
-									<bool name="TextScaled">false</bool>
-									<float name="TextSize">41</float>
-									<Color3 name="TextStrokeColor3">
-										<R>0</R>
-										<G>0</G>
-										<B>0</B>
-									</Color3>
-									<float name="TextStrokeTransparency">1</float>
-									<float name="TextTransparency">0</float>
-									<token name="TextTruncate">0</token>
-									<bool name="TextWrapped">true</bool>
-									<token name="TextXAlignment">0</token>
-									<token name="TextYAlignment">0</token>
-									<bool name="Visible">true</bool>
-									<int name="ZIndex">1</int>
-								</Properties>
-								<Item class="TextLabel" referent="RBX2c70b2857c3a42c3b7857f8a9bd51fb2">
-									<Properties>
-										<bool name="Active">false</bool>
-										<Vector2 name="AnchorPoint">
-											<X>0</X>
-											<Y>0</Y>
-										</Vector2>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<bool name="AutoLocalize">true</bool>
-										<token name="AutomaticSize">0</token>
-										<Color3 name="BackgroundColor3">
-											<R>0.992156863</R>
-											<G>0.894117653</G>
-											<B>0.619607866</B>
-										</Color3>
-										<float name="BackgroundTransparency">1</float>
-										<Color3 name="BorderColor3">
-											<R>0.388235301</R>
-											<G>0.180392161</G>
-											<B>0.388235301</B>
-										</Color3>
-										<token name="BorderMode">0</token>
-										<int name="BorderSizePixel">2</int>
-										<bool name="ClipsDescendants">false</bool>
-										<bool name="Draggable">false</bool>
-										<token name="Font">1</token>
-										<int name="LayoutOrder">0</int>
-										<float name="LineHeight">1</float>
-										<string name="Name">Dialog-5</string>
-										<Ref name="NextSelectionDown">null</Ref>
-										<Ref name="NextSelectionLeft">null</Ref>
-										<Ref name="NextSelectionRight">null</Ref>
-										<Ref name="NextSelectionUp">null</Ref>
-										<UDim2 name="Position">
-											<XS>0</XS>
-											<XO>5</XO>
-											<YS>0</YS>
-											<YO>5</YO>
-										</UDim2>
-										<bool name="RichText">false</bool>
-										<Ref name="RootLocalizationTable">null</Ref>
-										<float name="Rotation">0</float>
-										<bool name="Selectable">false</bool>
-										<Ref name="SelectionImageObject">null</Ref>
-										<UDim2 name="Size">
-											<XS>0</XS>
-											<XO>787</XO>
-											<YS>0</YS>
-											<YO>41</YO>
-										</UDim2>
-										<token name="SizeConstraint">0</token>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-										<string name="Text">Freckle: Lucinda hurt my feelings...</string>
-										<Color3 name="TextColor3">
-											<R>0</R>
-											<G>0</G>
-											<B>0</B>
-										</Color3>
-										<bool name="TextScaled">false</bool>
-										<float name="TextSize">41</float>
-										<Color3 name="TextStrokeColor3">
-											<R>0</R>
-											<G>0</G>
-											<B>0</B>
-										</Color3>
-										<float name="TextStrokeTransparency">1</float>
-										<float name="TextTransparency">0</float>
-										<token name="TextTruncate">0</token>
-										<bool name="TextWrapped">true</bool>
-										<token name="TextXAlignment">0</token>
-										<token name="TextYAlignment">0</token>
-										<bool name="Visible">true</bool>
-										<int name="ZIndex">2</int>
-									</Properties>
-								</Item>
-							</Item>
-						</Item>
-					</Item>
-				</Item>
-				<Item class="Part" referent="RBX898807dbe43c4f539a5ccc3439e39e44">
-					<Properties>
-						<bool name="Anchored">true</bool>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<float name="BackParamA">-0.5</float>
-						<float name="BackParamB">0.5</float>
-						<token name="BackSurface">0</token>
-						<token name="BackSurfaceInput">0</token>
-						<float name="BottomParamA">-0.5</float>
-						<float name="BottomParamB">0.5</float>
-						<token name="BottomSurface">4</token>
-						<token name="BottomSurfaceInput">0</token>
-						<CoordinateFrame name="CFrame">
-							<X>629.200012</X>
-							<Y>-15.5843754</Y>
-							<Z>-564.25</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>1</R11>
-							<R12>0</R12>
-							<R20>0</R20>
-							<R21>0</R21>
-							<R22>1</R22>
-						</CoordinateFrame>
-						<bool name="CanCollide">true</bool>
-						<bool name="CastShadow">true</bool>
-						<int name="CollisionGroupId">0</int>
-						<Color3uint8 name="Color3uint8">4290040548</Color3uint8>
-						<PhysicalProperties name="CustomPhysicalProperties">
-							<CustomPhysics>false</CustomPhysics>
-						</PhysicalProperties>
-						<float name="FrontParamA">-0.5</float>
-						<float name="FrontParamB">0.5</float>
-						<token name="FrontSurface">0</token>
-						<token name="FrontSurfaceInput">0</token>
-						<float name="LeftParamA">-0.5</float>
-						<float name="LeftParamB">0.5</float>
-						<token name="LeftSurface">0</token>
-						<token name="LeftSurfaceInput">0</token>
-						<bool name="Locked">false</bool>
-						<bool name="Massless">false</bool>
-						<token name="Material">256</token>
-						<string name="Name">CharacterTemplate</string>
-						<float name="Reflectance">0</float>
-						<float name="RightParamA">-0.5</float>
-						<float name="RightParamB">0.5</float>
-						<token name="RightSurface">0</token>
-						<token name="RightSurfaceInput">0</token>
-						<int name="RootPriority">0</int>
-						<Vector3 name="RotVelocity">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-						<float name="TopParamA">-0.5</float>
-						<float name="TopParamB">0.5</float>
-						<token name="TopSurface">3</token>
-						<token name="TopSurfaceInput">0</token>
-						<float name="Transparency">0</float>
-						<Vector3 name="Velocity">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<token name="formFactorRaw">1</token>
-						<token name="shape">1</token>
-						<Vector3 name="size">
-							<X>3.5999999</X>
-							<Y>4.80000019</Y>
-							<Z>0.5</Z>
-						</Vector3>
-					</Properties>
-					<Item class="Decal" referent="RBXf31fba0b9d1f4ce8b9ad1aa8e1c09c0a">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<Color3 name="Color3">
-								<R>1</R>
-								<G>1</G>
-								<B>1</B>
-							</Color3>
-							<token name="Face">5</token>
-							<string name="Name">Decal</string>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<Content name="Texture"><url>rbxassetid://5897424121</url></Content>
-							<float name="Transparency">0</float>
-						</Properties>
-					</Item>
-				</Item>
-				<Item class="Part" referent="RBX0768d321dcdc41f584a2c5dcea229077">
-					<Properties>
-						<bool name="Anchored">true</bool>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<float name="BackParamA">-0.5</float>
-						<float name="BackParamB">0.5</float>
-						<token name="BackSurface">0</token>
-						<token name="BackSurfaceInput">0</token>
-						<float name="BottomParamA">-0.5</float>
-						<float name="BottomParamB">0.5</float>
-						<token name="BottomSurface">4</token>
-						<token name="BottomSurfaceInput">0</token>
-						<CoordinateFrame name="CFrame">
-							<X>610</X>
-							<Y>-13.984375</Y>
-							<Z>-564.5</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>1</R11>
-							<R12>0</R12>
-							<R20>0</R20>
-							<R21>0</R21>
-							<R22>1</R22>
-						</CoordinateFrame>
-						<bool name="CanCollide">true</bool>
-						<bool name="CastShadow">true</bool>
-						<int name="CollisionGroupId">0</int>
-						<Color3uint8 name="Color3uint8">4290040548</Color3uint8>
-						<PhysicalProperties name="CustomPhysicalProperties">
-							<CustomPhysics>false</CustomPhysics>
-						</PhysicalProperties>
-						<float name="FrontParamA">-0.5</float>
-						<float name="FrontParamB">0.5</float>
-						<token name="FrontSurface">0</token>
-						<token name="FrontSurfaceInput">0</token>
-						<float name="LeftParamA">-0.5</float>
-						<float name="LeftParamB">0.5</float>
-						<token name="LeftSurface">0</token>
-						<token name="LeftSurfaceInput">0</token>
-						<bool name="Locked">false</bool>
-						<bool name="Massless">false</bool>
-						<token name="Material">256</token>
-						<string name="Name">ItemTemplate</string>
-						<float name="Reflectance">0</float>
-						<float name="RightParamA">-0.5</float>
-						<float name="RightParamB">0.5</float>
-						<token name="RightSurface">0</token>
-						<token name="RightSurfaceInput">0</token>
-						<int name="RootPriority">0</int>
-						<Vector3 name="RotVelocity">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-						<float name="TopParamA">-0.5</float>
-						<float name="TopParamB">0.5</float>
-						<token name="TopSurface">3</token>
-						<token name="TopSurfaceInput">0</token>
-						<float name="Transparency">0</float>
-						<Vector3 name="Velocity">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<token name="formFactorRaw">1</token>
-						<token name="shape">1</token>
-						<Vector3 name="size">
-							<X>4</X>
-							<Y>6</Y>
-							<Z>1</Z>
-						</Vector3>
-					</Properties>
-					<Item class="Decal" referent="RBX1a9221ffa02543c0a556583618eb6269">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<Color3 name="Color3">
-								<R>1</R>
-								<G>1</G>
-								<B>1</B>
-							</Color3>
-							<token name="Face">5</token>
-							<string name="Name">Decal</string>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<Content name="Texture"><url>rbxassetid://5897428591</url></Content>
-							<float name="Transparency">0</float>
-						</Properties>
-					</Item>
-				</Item>
 				<Item class="Model" referent="RBX0b901b5d7dda41e29f56ca29c25429d4">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -8229,11 +7074,561 @@ AAAAAAAAAAAAAAGA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
+						<Item class="Part" referent="RBX6d1f0a388a6542b28c7dfb57d51bdb50">
+							<Properties>
+								<bool name="Anchored">false</bool>
+								<BinaryString name="AttributesSerialize"></BinaryString>
+								<float name="BackParamA">-0.5</float>
+								<float name="BackParamB">0.5</float>
+								<token name="BackSurface">0</token>
+								<token name="BackSurfaceInput">0</token>
+								<float name="BottomParamA">-0.5</float>
+								<float name="BottomParamB">0.5</float>
+								<token name="BottomSurface">0</token>
+								<token name="BottomSurfaceInput">0</token>
+								<CoordinateFrame name="CFrame">
+									<X>609.362122</X>
+									<Y>-11</Y>
+									<Z>-570.014832</Z>
+									<R00>0.707106709</R00>
+									<R01>0</R01>
+									<R02>-0.707106709</R02>
+									<R10>0</R10>
+									<R11>1</R11>
+									<R12>0</R12>
+									<R20>0.707106709</R20>
+									<R21>0</R21>
+									<R22>0.707106709</R22>
+								</CoordinateFrame>
+								<bool name="CanCollide">true</bool>
+								<bool name="CastShadow">true</bool>
+								<int name="CollisionGroupId">0</int>
+								<Color3uint8 name="Color3uint8">4294967244</Color3uint8>
+								<PhysicalProperties name="CustomPhysicalProperties">
+									<CustomPhysics>false</CustomPhysics>
+								</PhysicalProperties>
+								<float name="FrontParamA">-0.5</float>
+								<float name="FrontParamB">0.5</float>
+								<token name="FrontSurface">0</token>
+								<token name="FrontSurfaceInput">0</token>
+								<float name="LeftParamA">-0.5</float>
+								<float name="LeftParamB">0.5</float>
+								<token name="LeftSurface">0</token>
+								<token name="LeftSurfaceInput">0</token>
+								<bool name="Locked">false</bool>
+								<bool name="Massless">false</bool>
+								<token name="Material">256</token>
+								<string name="Name">LocationModelRoot</string>
+								<float name="Reflectance">0</float>
+								<float name="RightParamA">-0.5</float>
+								<float name="RightParamB">0.5</float>
+								<token name="RightSurface">0</token>
+								<token name="RightSurfaceInput">0</token>
+								<int name="RootPriority">0</int>
+								<Vector3 name="RotVelocity">
+									<X>0</X>
+									<Y>0</Y>
+									<Z>0</Z>
+								</Vector3>
+								<int64 name="SourceAssetId">-1</int64>
+								<BinaryString name="Tags"></BinaryString>
+								<float name="TopParamA">-0.5</float>
+								<float name="TopParamB">0.5</float>
+								<token name="TopSurface">0</token>
+								<token name="TopSurfaceInput">0</token>
+								<float name="Transparency">0</float>
+								<Vector3 name="Velocity">
+									<X>0</X>
+									<Y>0</Y>
+									<Z>0</Z>
+								</Vector3>
+								<token name="formFactorRaw">1</token>
+								<token name="shape">1</token>
+								<Vector3 name="size">
+									<X>16</X>
+									<Y>16</Y>
+									<Z>2</Z>
+								</Vector3>
+							</Properties>
+							<Item class="SurfaceGui" referent="RBX82e119c93dc543c8a4de24f9e0ece43d">
+								<Properties>
+									<bool name="Active">true</bool>
+									<Ref name="Adornee">null</Ref>
+									<bool name="AlwaysOnTop">false</bool>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<bool name="AutoLocalize">true</bool>
+									<Vector2 name="CanvasSize">
+										<X>800</X>
+										<Y>600</Y>
+									</Vector2>
+									<bool name="ClipsDescendants">true</bool>
+									<bool name="Enabled">true</bool>
+									<token name="Face">5</token>
+									<float name="LightInfluence">1</float>
+									<string name="Name">SurfaceGui</string>
+									<float name="PixelsPerStud">50</float>
+									<bool name="ResetOnSpawn">true</bool>
+									<Ref name="RootLocalizationTable">null</Ref>
+									<token name="SizingMode">1</token>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<float name="ToolPunchThroughDistance">0</float>
+									<token name="ZIndexBehavior">1</token>
+									<float name="ZOffset">0</float>
+								</Properties>
+								<Item class="ImageLabel" referent="RBXa756ede633e64a46b0a4002b80c66ca4">
+									<Properties>
+										<bool name="Active">false</bool>
+										<Vector2 name="AnchorPoint">
+											<X>1</X>
+											<Y>1</Y>
+										</Vector2>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<bool name="AutoLocalize">true</bool>
+										<token name="AutomaticSize">0</token>
+										<Color3 name="BackgroundColor3">
+											<R>1</R>
+											<G>1</G>
+											<B>1</B>
+										</Color3>
+										<float name="BackgroundTransparency">0</float>
+										<Color3 name="BorderColor3">
+											<R>0.105882362</R>
+											<G>0.164705887</G>
+											<B>0.207843155</B>
+										</Color3>
+										<token name="BorderMode">0</token>
+										<int name="BorderSizePixel">1</int>
+										<bool name="ClipsDescendants">false</bool>
+										<bool name="Draggable">false</bool>
+										<Content name="Image"><url>rbxassetid://5991277651</url></Content>
+										<Color3 name="ImageColor3">
+											<R>1</R>
+											<G>1</G>
+											<B>1</B>
+										</Color3>
+										<Vector2 name="ImageRectOffset">
+											<X>0</X>
+											<Y>0</Y>
+										</Vector2>
+										<Vector2 name="ImageRectSize">
+											<X>0</X>
+											<Y>0</Y>
+										</Vector2>
+										<float name="ImageTransparency">0</float>
+										<int name="LayoutOrder">0</int>
+										<string name="Name">ImageLabel</string>
+										<Ref name="NextSelectionDown">null</Ref>
+										<Ref name="NextSelectionLeft">null</Ref>
+										<Ref name="NextSelectionRight">null</Ref>
+										<Ref name="NextSelectionUp">null</Ref>
+										<UDim2 name="Position">
+											<XS>1</XS>
+											<XO>0</XO>
+											<YS>1</YS>
+											<YO>0</YO>
+										</UDim2>
+										<Ref name="RootLocalizationTable">null</Ref>
+										<float name="Rotation">0</float>
+										<token name="ScaleType">0</token>
+										<bool name="Selectable">false</bool>
+										<Ref name="SelectionImageObject">null</Ref>
+										<UDim2 name="Size">
+											<XS>1</XS>
+											<XO>0</XO>
+											<YS>0.899999976</YS>
+											<YO>0</YO>
+										</UDim2>
+										<token name="SizeConstraint">0</token>
+										<Rect2D name="SliceCenter">
+											<min>
+												<X>0</X>
+												<Y>0</Y>
+											</min>
+											<max>
+												<X>0</X>
+												<Y>0</Y>
+											</max>
+										</Rect2D>
+										<float name="SliceScale">1</float>
+										<int64 name="SourceAssetId">-1</int64>
+										<BinaryString name="Tags"></BinaryString>
+										<UDim2 name="TileSize">
+											<XS>1</XS>
+											<XO>0</XO>
+											<YS>1</YS>
+											<YO>0</YO>
+										</UDim2>
+										<bool name="Visible">true</bool>
+										<int name="ZIndex">1</int>
+									</Properties>
+								</Item>
+								<Item class="TextLabel" referent="RBX3343fb2b58294c948b431500a9fe18fd">
+									<Properties>
+										<bool name="Active">false</bool>
+										<Vector2 name="AnchorPoint">
+											<X>0</X>
+											<Y>0</Y>
+										</Vector2>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<bool name="AutoLocalize">true</bool>
+										<token name="AutomaticSize">0</token>
+										<Color3 name="BackgroundColor3">
+											<R>1</R>
+											<G>1</G>
+											<B>1</B>
+										</Color3>
+										<float name="BackgroundTransparency">0</float>
+										<Color3 name="BorderColor3">
+											<R>0.105882362</R>
+											<G>0.164705887</G>
+											<B>0.207843155</B>
+										</Color3>
+										<token name="BorderMode">0</token>
+										<int name="BorderSizePixel">1</int>
+										<bool name="ClipsDescendants">false</bool>
+										<bool name="Draggable">false</bool>
+										<token name="Font">3</token>
+										<int name="LayoutOrder">0</int>
+										<float name="LineHeight">1</float>
+										<string name="Name">TextLabel</string>
+										<Ref name="NextSelectionDown">null</Ref>
+										<Ref name="NextSelectionLeft">null</Ref>
+										<Ref name="NextSelectionRight">null</Ref>
+										<Ref name="NextSelectionUp">null</Ref>
+										<UDim2 name="Position">
+											<XS>0</XS>
+											<XO>0</XO>
+											<YS>0</YS>
+											<YO>0</YO>
+										</UDim2>
+										<bool name="RichText">false</bool>
+										<Ref name="RootLocalizationTable">null</Ref>
+										<float name="Rotation">0</float>
+										<bool name="Selectable">false</bool>
+										<Ref name="SelectionImageObject">null</Ref>
+										<UDim2 name="Size">
+											<XS>1</XS>
+											<XO>0</XO>
+											<YS>0.100000001</YS>
+											<YO>0</YO>
+										</UDim2>
+										<token name="SizeConstraint">0</token>
+										<int64 name="SourceAssetId">-1</int64>
+										<BinaryString name="Tags"></BinaryString>
+										<string name="Text">Label</string>
+										<Color3 name="TextColor3">
+											<R>0</R>
+											<G>0</G>
+											<B>0</B>
+										</Color3>
+										<bool name="TextScaled">false</bool>
+										<float name="TextSize">64</float>
+										<Color3 name="TextStrokeColor3">
+											<R>0</R>
+											<G>0</G>
+											<B>0</B>
+										</Color3>
+										<float name="TextStrokeTransparency">1</float>
+										<float name="TextTransparency">0</float>
+										<token name="TextTruncate">0</token>
+										<bool name="TextWrapped">false</bool>
+										<token name="TextXAlignment">2</token>
+										<token name="TextYAlignment">1</token>
+										<bool name="Visible">true</bool>
+										<int name="ZIndex">1</int>
+									</Properties>
+								</Item>
+							</Item>
+							<Item class="SurfaceLight" referent="RBX7c3317af09b74d528cfeef9b747b8d8f">
+								<Properties>
+									<float name="Angle">90</float>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<float name="Brightness">1</float>
+									<Color3 name="Color">
+										<R>1</R>
+										<G>1</G>
+										<B>1</B>
+									</Color3>
+									<bool name="Enabled">true</bool>
+									<token name="Face">5</token>
+									<string name="Name">SurfaceLight</string>
+									<float name="Range">16</float>
+									<bool name="Shadows">false</bool>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+								</Properties>
+							</Item>
+						</Item>
+					</Item>
+					<Item class="Part" referent="RBX0768d321dcdc41f584a2c5dcea229077">
+						<Properties>
+							<bool name="Anchored">true</bool>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<float name="BackParamA">-0.5</float>
+							<float name="BackParamB">0.5</float>
+							<token name="BackSurface">0</token>
+							<token name="BackSurfaceInput">0</token>
+							<float name="BottomParamA">-0.5</float>
+							<float name="BottomParamB">0.5</float>
+							<token name="BottomSurface">4</token>
+							<token name="BottomSurfaceInput">0</token>
+							<CoordinateFrame name="CFrame">
+								<X>605.446655</X>
+								<Y>-15</Y>
+								<Z>-579.261169</Z>
+								<R00>-0.0797863007</R00>
+								<R01>0</R01>
+								<R02>-0.996811748</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>0.996811748</R20>
+								<R21>0</R21>
+								<R22>-0.0797863007</R22>
+							</CoordinateFrame>
+							<bool name="CanCollide">true</bool>
+							<bool name="CastShadow">true</bool>
+							<int name="CollisionGroupId">0</int>
+							<Color3uint8 name="Color3uint8">4290040548</Color3uint8>
+							<PhysicalProperties name="CustomPhysicalProperties">
+								<CustomPhysics>false</CustomPhysics>
+							</PhysicalProperties>
+							<float name="FrontParamA">-0.5</float>
+							<float name="FrontParamB">0.5</float>
+							<token name="FrontSurface">0</token>
+							<token name="FrontSurfaceInput">0</token>
+							<float name="LeftParamA">-0.5</float>
+							<float name="LeftParamB">0.5</float>
+							<token name="LeftSurface">0</token>
+							<token name="LeftSurfaceInput">0</token>
+							<bool name="Locked">false</bool>
+							<bool name="Massless">false</bool>
+							<token name="Material">256</token>
+							<string name="Name">ItemTemplate</string>
+							<float name="Reflectance">0</float>
+							<float name="RightParamA">-0.5</float>
+							<float name="RightParamB">0.5</float>
+							<token name="RightSurface">0</token>
+							<token name="RightSurfaceInput">0</token>
+							<int name="RootPriority">0</int>
+							<Vector3 name="RotVelocity">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+							</Vector3>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<float name="TopParamA">-0.5</float>
+							<float name="TopParamB">0.5</float>
+							<token name="TopSurface">3</token>
+							<token name="TopSurfaceInput">0</token>
+							<float name="Transparency">0</float>
+							<Vector3 name="Velocity">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+							</Vector3>
+							<token name="formFactorRaw">1</token>
+							<token name="shape">1</token>
+							<Vector3 name="size">
+								<X>6</X>
+								<Y>9</Y>
+								<Z>1.5</Z>
+							</Vector3>
+						</Properties>
+						<Item class="Decal" referent="RBX1a9221ffa02543c0a556583618eb6269">
+							<Properties>
+								<BinaryString name="AttributesSerialize"></BinaryString>
+								<Color3 name="Color3">
+									<R>1</R>
+									<G>1</G>
+									<B>1</B>
+								</Color3>
+								<token name="Face">5</token>
+								<string name="Name">Decal</string>
+								<int64 name="SourceAssetId">-1</int64>
+								<BinaryString name="Tags"></BinaryString>
+								<Content name="Texture"><url>rbxassetid://5897428591</url></Content>
+								<float name="Transparency">0</float>
+							</Properties>
+						</Item>
+						<Item class="Weld" referent="RBXffc5791787054ff4b2a2ebef5bf94907">
+							<Properties>
+								<BinaryString name="AttributesSerialize"></BinaryString>
+								<CoordinateFrame name="C0">
+									<X>0</X>
+									<Y>-4.5</Y>
+									<Z>0</Z>
+									<R00>0.999999523</R00>
+									<R01>0</R01>
+									<R02>0</R02>
+									<R10>0</R10>
+									<R11>0</R11>
+									<R12>-1</R12>
+									<R20>0</R20>
+									<R21>0.999999523</R21>
+									<R22>0</R22>
+								</CoordinateFrame>
+								<CoordinateFrame name="C1">
+									<X>-14.5533447</X>
+									<Y>0.5</Y>
+									<Z>-6.26116943</Z>
+									<R00>-0.0797863007</R00>
+									<R01>-0.996811748</R01>
+									<R02>0</R02>
+									<R10>0</R10>
+									<R11>0</R11>
+									<R12>-1</R12>
+									<R20>0.996811748</R20>
+									<R21>-0.0797863007</R21>
+									<R22>0</R22>
+								</CoordinateFrame>
+								<bool name="Enabled">true</bool>
+								<string name="Name">Weld</string>
+								<Ref name="Part0">RBX0768d321dcdc41f584a2c5dcea229077</Ref>
+								<Ref name="Part1">RBXa3bcf753fde5464899a4f15d57c876c7</Ref>
+								<int64 name="SourceAssetId">-1</int64>
+								<BinaryString name="Tags"></BinaryString>
+							</Properties>
+						</Item>
+					</Item>
+					<Item class="Part" referent="RBX898807dbe43c4f539a5ccc3439e39e44">
+						<Properties>
+							<bool name="Anchored">true</bool>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<float name="BackParamA">-0.5</float>
+							<float name="BackParamB">0.5</float>
+							<token name="BackSurface">0</token>
+							<token name="BackSurfaceInput">0</token>
+							<float name="BottomParamA">-0.5</float>
+							<float name="BottomParamB">0.5</float>
+							<token name="BottomSurface">4</token>
+							<token name="BottomSurfaceInput">0</token>
+							<CoordinateFrame name="CFrame">
+								<X>619.925049</X>
+								<Y>-15.6000004</Y>
+								<Z>-566.593689</Z>
+								<R00>0.853360593</R00>
+								<R01>0</R01>
+								<R02>-0.521311104</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>0.521311104</R20>
+								<R21>0</R21>
+								<R22>0.853360593</R22>
+							</CoordinateFrame>
+							<bool name="CanCollide">true</bool>
+							<bool name="CastShadow">true</bool>
+							<int name="CollisionGroupId">0</int>
+							<Color3uint8 name="Color3uint8">4290040548</Color3uint8>
+							<PhysicalProperties name="CustomPhysicalProperties">
+								<CustomPhysics>false</CustomPhysics>
+							</PhysicalProperties>
+							<float name="FrontParamA">-0.5</float>
+							<float name="FrontParamB">0.5</float>
+							<token name="FrontSurface">0</token>
+							<token name="FrontSurfaceInput">0</token>
+							<float name="LeftParamA">-0.5</float>
+							<float name="LeftParamB">0.5</float>
+							<token name="LeftSurface">0</token>
+							<token name="LeftSurfaceInput">0</token>
+							<bool name="Locked">false</bool>
+							<bool name="Massless">false</bool>
+							<token name="Material">256</token>
+							<string name="Name">CharacterTemplate</string>
+							<float name="Reflectance">0</float>
+							<float name="RightParamA">-0.5</float>
+							<float name="RightParamB">0.5</float>
+							<token name="RightSurface">0</token>
+							<token name="RightSurfaceInput">0</token>
+							<int name="RootPriority">0</int>
+							<Vector3 name="RotVelocity">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+							</Vector3>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<float name="TopParamA">-0.5</float>
+							<float name="TopParamB">0.5</float>
+							<token name="TopSurface">3</token>
+							<token name="TopSurfaceInput">0</token>
+							<float name="Transparency">0</float>
+							<Vector3 name="Velocity">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+							</Vector3>
+							<token name="formFactorRaw">1</token>
+							<token name="shape">1</token>
+							<Vector3 name="size">
+								<X>5.84999847</X>
+								<Y>7.80000019</Y>
+								<Z>0.812499821</Z>
+							</Vector3>
+						</Properties>
+						<Item class="Decal" referent="RBXf31fba0b9d1f4ce8b9ad1aa8e1c09c0a">
+							<Properties>
+								<BinaryString name="AttributesSerialize"></BinaryString>
+								<Color3 name="Color3">
+									<R>1</R>
+									<G>1</G>
+									<B>1</B>
+								</Color3>
+								<token name="Face">5</token>
+								<string name="Name">Decal</string>
+								<int64 name="SourceAssetId">-1</int64>
+								<BinaryString name="Tags"></BinaryString>
+								<Content name="Texture"><url>rbxassetid://5897424121</url></Content>
+								<float name="Transparency">0</float>
+							</Properties>
+						</Item>
+						<Item class="Weld" referent="RBX0b50e782407649259c5407c4aa7e0867">
+							<Properties>
+								<BinaryString name="AttributesSerialize"></BinaryString>
+								<CoordinateFrame name="C0">
+									<X>-6.10351562e-05</X>
+									<Y>-3.89999962</Y>
+									<Z>0</Z>
+									<R00>1</R00>
+									<R01>0</R01>
+									<R02>0</R02>
+									<R10>0</R10>
+									<R11>0</R11>
+									<R12>-1</R12>
+									<R20>0</R20>
+									<R21>1</R21>
+									<R22>0</R22>
+								</CoordinateFrame>
+								<CoordinateFrame name="C1">
+									<X>-0.075012207</X>
+									<Y>0.5</Y>
+									<Z>6.40631104</Z>
+									<R00>0.853360593</R00>
+									<R01>-0.521311104</R01>
+									<R02>0</R02>
+									<R10>0</R10>
+									<R11>0</R11>
+									<R12>-1</R12>
+									<R20>0.521311104</R20>
+									<R21>0.853360593</R21>
+									<R22>0</R22>
+								</CoordinateFrame>
+								<bool name="Enabled">true</bool>
+								<string name="Name">Weld</string>
+								<Ref name="Part0">RBX898807dbe43c4f539a5ccc3439e39e44</Ref>
+								<Ref name="Part1">RBXa3bcf753fde5464899a4f15d57c876c7</Ref>
+								<int64 name="SourceAssetId">-1</int64>
+								<BinaryString name="Tags"></BinaryString>
+							</Properties>
+						</Item>
 					</Item>
 				</Item>
-				<Item class="Part" referent="RBX6d1f0a388a6542b28c7dfb57d51bdb50">
+				<Item class="Part" referent="RBXf0ca8dd9d47241beb2ed4c76442bfa38">
 					<Properties>
-						<bool name="Anchored">false</bool>
+						<bool name="Anchored">true</bool>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="BackParamA">-0.5</float>
 						<float name="BackParamB">0.5</float>
@@ -8241,26 +7636,26 @@ AAAAAAAAAAAAAAGA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 						<token name="BackSurfaceInput">0</token>
 						<float name="BottomParamA">-0.5</float>
 						<float name="BottomParamB">0.5</float>
-						<token name="BottomSurface">0</token>
+						<token name="BottomSurface">4</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>609.362122</X>
-							<Y>-11</Y>
-							<Z>-570.014832</Z>
-							<R00>0.707106709</R00>
+							<X>626</X>
+							<Y>-5.984375</Y>
+							<Z>-564.5</Z>
+							<R00>1</R00>
 							<R01>0</R01>
-							<R02>-0.707106709</R02>
+							<R02>0</R02>
 							<R10>0</R10>
 							<R11>1</R11>
 							<R12>0</R12>
-							<R20>0.707106709</R20>
+							<R20>0</R20>
 							<R21>0</R21>
-							<R22>0.707106709</R22>
+							<R22>1</R22>
 						</CoordinateFrame>
 						<bool name="CanCollide">true</bool>
 						<bool name="CastShadow">true</bool>
 						<int name="CollisionGroupId">0</int>
-						<Color3uint8 name="Color3uint8">4294967244</Color3uint8>
+						<Color3uint8 name="Color3uint8">4294112243</Color3uint8>
 						<PhysicalProperties name="CustomPhysicalProperties">
 							<CustomPhysics>false</CustomPhysics>
 						</PhysicalProperties>
@@ -8275,7 +7670,7 @@ AAAAAAAAAAAAAAGA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 						<bool name="Locked">false</bool>
 						<bool name="Massless">false</bool>
 						<token name="Material">256</token>
-						<string name="Name">LocationModelRoot</string>
+						<string name="Name">DialogModel</string>
 						<float name="Reflectance">0</float>
 						<float name="RightParamA">-0.5</float>
 						<float name="RightParamB">0.5</float>
@@ -8291,7 +7686,7 @@ AAAAAAAAAAAAAAGA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
-						<token name="TopSurface">0</token>
+						<token name="TopSurface">3</token>
 						<token name="TopSurfaceInput">0</token>
 						<float name="Transparency">0</float>
 						<Vector3 name="Velocity">
@@ -8302,12 +7697,12 @@ AAAAAAAAAAAAAAGA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 						<token name="formFactorRaw">1</token>
 						<token name="shape">1</token>
 						<Vector3 name="size">
-							<X>16</X>
-							<Y>16</Y>
-							<Z>2</Z>
+							<X>18</X>
+							<Y>10</Y>
+							<Z>1</Z>
 						</Vector3>
 					</Properties>
-					<Item class="SurfaceGui" referent="RBX82e119c93dc543c8a4de24f9e0ece43d">
+					<Item class="SurfaceGui" referent="RBX8bb0a07f24ab4d4690bca5eb702df17d">
 						<Properties>
 							<bool name="Active">true</bool>
 							<Ref name="Adornee">null</Ref>
@@ -8318,10 +7713,10 @@ AAAAAAAAAAAAAAGA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 								<X>800</X>
 								<Y>600</Y>
 							</Vector2>
-							<bool name="ClipsDescendants">true</bool>
+							<bool name="ClipsDescendants">false</bool>
 							<bool name="Enabled">true</bool>
 							<token name="Face">5</token>
-							<float name="LightInfluence">1</float>
+							<float name="LightInfluence">0</float>
 							<string name="Name">SurfaceGui</string>
 							<float name="PixelsPerStud">50</float>
 							<bool name="ResetOnSpawn">true</bool>
@@ -8330,97 +7725,10 @@ AAAAAAAAAAAAAAGA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 							<float name="ToolPunchThroughDistance">0</float>
-							<token name="ZIndexBehavior">1</token>
+							<token name="ZIndexBehavior">0</token>
 							<float name="ZOffset">0</float>
 						</Properties>
-						<Item class="ImageLabel" referent="RBXa756ede633e64a46b0a4002b80c66ca4">
-							<Properties>
-								<bool name="Active">false</bool>
-								<Vector2 name="AnchorPoint">
-									<X>1</X>
-									<Y>1</Y>
-								</Vector2>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<bool name="AutoLocalize">true</bool>
-								<token name="AutomaticSize">0</token>
-								<Color3 name="BackgroundColor3">
-									<R>1</R>
-									<G>1</G>
-									<B>1</B>
-								</Color3>
-								<float name="BackgroundTransparency">0</float>
-								<Color3 name="BorderColor3">
-									<R>0.105882362</R>
-									<G>0.164705887</G>
-									<B>0.207843155</B>
-								</Color3>
-								<token name="BorderMode">0</token>
-								<int name="BorderSizePixel">1</int>
-								<bool name="ClipsDescendants">false</bool>
-								<bool name="Draggable">false</bool>
-								<Content name="Image"><url>rbxassetid://5991277651</url></Content>
-								<Color3 name="ImageColor3">
-									<R>1</R>
-									<G>1</G>
-									<B>1</B>
-								</Color3>
-								<Vector2 name="ImageRectOffset">
-									<X>0</X>
-									<Y>0</Y>
-								</Vector2>
-								<Vector2 name="ImageRectSize">
-									<X>0</X>
-									<Y>0</Y>
-								</Vector2>
-								<float name="ImageTransparency">0</float>
-								<int name="LayoutOrder">0</int>
-								<string name="Name">ImageLabel</string>
-								<Ref name="NextSelectionDown">null</Ref>
-								<Ref name="NextSelectionLeft">null</Ref>
-								<Ref name="NextSelectionRight">null</Ref>
-								<Ref name="NextSelectionUp">null</Ref>
-								<UDim2 name="Position">
-									<XS>1</XS>
-									<XO>0</XO>
-									<YS>1</YS>
-									<YO>0</YO>
-								</UDim2>
-								<Ref name="RootLocalizationTable">null</Ref>
-								<float name="Rotation">0</float>
-								<token name="ScaleType">0</token>
-								<bool name="Selectable">false</bool>
-								<Ref name="SelectionImageObject">null</Ref>
-								<UDim2 name="Size">
-									<XS>1</XS>
-									<XO>0</XO>
-									<YS>0.899999976</YS>
-									<YO>0</YO>
-								</UDim2>
-								<token name="SizeConstraint">0</token>
-								<Rect2D name="SliceCenter">
-									<min>
-										<X>0</X>
-										<Y>0</Y>
-									</min>
-									<max>
-										<X>0</X>
-										<Y>0</Y>
-									</max>
-								</Rect2D>
-								<float name="SliceScale">1</float>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-								<UDim2 name="TileSize">
-									<XS>1</XS>
-									<XO>0</XO>
-									<YS>1</YS>
-									<YO>0</YO>
-								</UDim2>
-								<bool name="Visible">true</bool>
-								<int name="ZIndex">1</int>
-							</Properties>
-						</Item>
-						<Item class="TextLabel" referent="RBX3343fb2b58294c948b431500a9fe18fd">
+						<Item class="ScrollingFrame" referent="RBXd32d900c825147859bc6fafa76a46db8">
 							<Properties>
 								<bool name="Active">false</bool>
 								<Vector2 name="AnchorPoint">
@@ -8429,26 +7737,39 @@ AAAAAAAAAAAAAAGA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 								</Vector2>
 								<BinaryString name="AttributesSerialize"></BinaryString>
 								<bool name="AutoLocalize">true</bool>
+								<token name="AutomaticCanvasSize">0</token>
 								<token name="AutomaticSize">0</token>
 								<Color3 name="BackgroundColor3">
-									<R>1</R>
-									<G>1</G>
-									<B>1</B>
+									<R>196</R>
+									<G>132</G>
+									<B>225</B>
 								</Color3>
-								<float name="BackgroundTransparency">0</float>
+								<float name="BackgroundTransparency">0.5</float>
 								<Color3 name="BorderColor3">
 									<R>0.105882362</R>
 									<G>0.164705887</G>
 									<B>0.207843155</B>
 								</Color3>
-								<token name="BorderMode">0</token>
-								<int name="BorderSizePixel">1</int>
-								<bool name="ClipsDescendants">false</bool>
+								<token name="BorderMode">2</token>
+								<int name="BorderSizePixel">3</int>
+								<Content name="BottomImage"><url>rbxasset://textures/ui/Scroll/scroll-bottom.png</url></Content>
+								<Vector2 name="CanvasPosition">
+									<X>0</X>
+									<Y>0</Y>
+								</Vector2>
+								<UDim2 name="CanvasSize">
+									<XS>0</XS>
+									<XO>0</XO>
+									<YS>2</YS>
+									<YO>0</YO>
+								</UDim2>
+								<bool name="ClipsDescendants">true</bool>
 								<bool name="Draggable">false</bool>
-								<token name="Font">3</token>
+								<token name="ElasticBehavior">0</token>
+								<token name="HorizontalScrollBarInset">0</token>
 								<int name="LayoutOrder">0</int>
-								<float name="LineHeight">1</float>
-								<string name="Name">TextLabel</string>
+								<Content name="MidImage"><url>rbxasset://textures/ui/Scroll/scroll-middle.png</url></Content>
+								<string name="Name">ScrollingFrame</string>
 								<Ref name="NextSelectionDown">null</Ref>
 								<Ref name="NextSelectionLeft">null</Ref>
 								<Ref name="NextSelectionRight">null</Ref>
@@ -8459,62 +7780,819 @@ AAAAAAAAAAAAAAGA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 									<YS>0</YS>
 									<YO>0</YO>
 								</UDim2>
-								<bool name="RichText">false</bool>
 								<Ref name="RootLocalizationTable">null</Ref>
 								<float name="Rotation">0</float>
-								<bool name="Selectable">false</bool>
+								<Color3 name="ScrollBarImageColor3">
+									<R>113</R>
+									<G>0</G>
+									<B>255</B>
+								</Color3>
+								<float name="ScrollBarImageTransparency">0</float>
+								<int name="ScrollBarThickness">40</int>
+								<token name="ScrollingDirection">4</token>
+								<bool name="ScrollingEnabled">true</bool>
+								<bool name="Selectable">true</bool>
 								<Ref name="SelectionImageObject">null</Ref>
 								<UDim2 name="Size">
 									<XS>1</XS>
 									<XO>0</XO>
-									<YS>0.100000001</YS>
+									<YS>1</YS>
 									<YO>0</YO>
 								</UDim2>
 								<token name="SizeConstraint">0</token>
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
-								<string name="Text">Label</string>
-								<Color3 name="TextColor3">
-									<R>0</R>
-									<G>0</G>
-									<B>0</B>
-								</Color3>
-								<bool name="TextScaled">false</bool>
-								<float name="TextSize">64</float>
-								<Color3 name="TextStrokeColor3">
-									<R>0</R>
-									<G>0</G>
-									<B>0</B>
-								</Color3>
-								<float name="TextStrokeTransparency">1</float>
-								<float name="TextTransparency">0</float>
-								<token name="TextTruncate">0</token>
-								<bool name="TextWrapped">false</bool>
-								<token name="TextXAlignment">2</token>
-								<token name="TextYAlignment">1</token>
+								<Content name="TopImage"><url>rbxasset://textures/ui/Scroll/scroll-top.png</url></Content>
+								<token name="VerticalScrollBarInset">0</token>
+								<token name="VerticalScrollBarPosition">0</token>
 								<bool name="Visible">true</bool>
 								<int name="ZIndex">1</int>
 							</Properties>
+							<Item class="UIPadding" referent="RBX4f63da88849a42349ecb48a26daf3e64">
+								<Properties>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<string name="Name">UIPadding</string>
+									<UDim name="PaddingBottom">
+										<S>0.0199999996</S>
+										<O>0</O>
+									</UDim>
+									<UDim name="PaddingLeft">
+										<S>0.0199999996</S>
+										<O>0</O>
+									</UDim>
+									<UDim name="PaddingRight">
+										<S>0.0199999996</S>
+										<O>0</O>
+									</UDim>
+									<UDim name="PaddingTop">
+										<S>0.0199999996</S>
+										<O>0</O>
+									</UDim>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+								</Properties>
+							</Item>
+							<Item class="TextLabel" referent="RBX589bac1177da4cc4b905aca866837144">
+								<Properties>
+									<bool name="Active">false</bool>
+									<Vector2 name="AnchorPoint">
+										<X>0</X>
+										<Y>0</Y>
+									</Vector2>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<bool name="AutoLocalize">true</bool>
+									<token name="AutomaticSize">0</token>
+									<Color3 name="BackgroundColor3">
+										<R>0.882352948</R>
+										<G>0.992156863</G>
+										<B>0.619607866</B>
+									</Color3>
+									<float name="BackgroundTransparency">0</float>
+									<Color3 name="BorderColor3">
+										<R>0.388235301</R>
+										<G>0.180392161</G>
+										<B>0.388235301</B>
+									</Color3>
+									<token name="BorderMode">0</token>
+									<int name="BorderSizePixel">2</int>
+									<bool name="ClipsDescendants">false</bool>
+									<bool name="Draggable">false</bool>
+									<token name="Font">1</token>
+									<int name="LayoutOrder">0</int>
+									<float name="LineHeight">1</float>
+									<string name="Name">Dialog-1</string>
+									<Ref name="NextSelectionDown">null</Ref>
+									<Ref name="NextSelectionLeft">null</Ref>
+									<Ref name="NextSelectionRight">null</Ref>
+									<Ref name="NextSelectionUp">null</Ref>
+									<UDim2 name="Position">
+										<XS>0</XS>
+										<XO>0</XO>
+										<YS>0</YS>
+										<YO>0</YO>
+									</UDim2>
+									<bool name="RichText">false</bool>
+									<Ref name="RootLocalizationTable">null</Ref>
+									<float name="Rotation">0</float>
+									<bool name="Selectable">false</bool>
+									<Ref name="SelectionImageObject">null</Ref>
+									<UDim2 name="Size">
+										<XS>0</XS>
+										<XO>798</XO>
+										<YS>0</YS>
+										<YO>52</YO>
+									</UDim2>
+									<token name="SizeConstraint">0</token>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<string name="Text"></string>
+									<Color3 name="TextColor3">
+										<R>0</R>
+										<G>0</G>
+										<B>0</B>
+									</Color3>
+									<bool name="TextScaled">false</bool>
+									<float name="TextSize">41</float>
+									<Color3 name="TextStrokeColor3">
+										<R>0</R>
+										<G>0</G>
+										<B>0</B>
+									</Color3>
+									<float name="TextStrokeTransparency">1</float>
+									<float name="TextTransparency">0</float>
+									<token name="TextTruncate">0</token>
+									<bool name="TextWrapped">true</bool>
+									<token name="TextXAlignment">0</token>
+									<token name="TextYAlignment">0</token>
+									<bool name="Visible">true</bool>
+									<int name="ZIndex">1</int>
+								</Properties>
+								<Item class="TextLabel" referent="RBX7d17263942654fbaafc7f2a823a47614">
+									<Properties>
+										<bool name="Active">false</bool>
+										<Vector2 name="AnchorPoint">
+											<X>0</X>
+											<Y>0</Y>
+										</Vector2>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<bool name="AutoLocalize">true</bool>
+										<token name="AutomaticSize">0</token>
+										<Color3 name="BackgroundColor3">
+											<R>0.882352948</R>
+											<G>0.992156863</G>
+											<B>0.619607866</B>
+										</Color3>
+										<float name="BackgroundTransparency">1</float>
+										<Color3 name="BorderColor3">
+											<R>0.388235301</R>
+											<G>0.180392161</G>
+											<B>0.388235301</B>
+										</Color3>
+										<token name="BorderMode">0</token>
+										<int name="BorderSizePixel">2</int>
+										<bool name="ClipsDescendants">false</bool>
+										<bool name="Draggable">false</bool>
+										<token name="Font">1</token>
+										<int name="LayoutOrder">0</int>
+										<float name="LineHeight">1</float>
+										<string name="Name">Dialog-1</string>
+										<Ref name="NextSelectionDown">null</Ref>
+										<Ref name="NextSelectionLeft">null</Ref>
+										<Ref name="NextSelectionRight">null</Ref>
+										<Ref name="NextSelectionUp">null</Ref>
+										<UDim2 name="Position">
+											<XS>0</XS>
+											<XO>5</XO>
+											<YS>0</YS>
+											<YO>5</YO>
+										</UDim2>
+										<bool name="RichText">false</bool>
+										<Ref name="RootLocalizationTable">null</Ref>
+										<float name="Rotation">0</float>
+										<bool name="Selectable">false</bool>
+										<Ref name="SelectionImageObject">null</Ref>
+										<UDim2 name="Size">
+											<XS>0</XS>
+											<XO>787</XO>
+											<YS>0</YS>
+											<YO>41</YO>
+										</UDim2>
+										<token name="SizeConstraint">0</token>
+										<int64 name="SourceAssetId">-1</int64>
+										<BinaryString name="Tags"></BinaryString>
+										<string name="Text">Raven: Go in the vortex, you said...</string>
+										<Color3 name="TextColor3">
+											<R>0</R>
+											<G>0</G>
+											<B>0</B>
+										</Color3>
+										<bool name="TextScaled">false</bool>
+										<float name="TextSize">41</float>
+										<Color3 name="TextStrokeColor3">
+											<R>0</R>
+											<G>0</G>
+											<B>0</B>
+										</Color3>
+										<float name="TextStrokeTransparency">1</float>
+										<float name="TextTransparency">0</float>
+										<token name="TextTruncate">0</token>
+										<bool name="TextWrapped">true</bool>
+										<token name="TextXAlignment">0</token>
+										<token name="TextYAlignment">0</token>
+										<bool name="Visible">true</bool>
+										<int name="ZIndex">2</int>
+									</Properties>
+								</Item>
+							</Item>
+							<Item class="TextLabel" referent="RBX12a08ec0fb464106937caa3e075ca14b">
+								<Properties>
+									<bool name="Active">false</bool>
+									<Vector2 name="AnchorPoint">
+										<X>0</X>
+										<Y>0</Y>
+									</Vector2>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<bool name="AutoLocalize">true</bool>
+									<token name="AutomaticSize">0</token>
+									<Color3 name="BackgroundColor3">
+										<R>0.992156863</R>
+										<G>0.619607866</G>
+										<B>0.941176474</B>
+									</Color3>
+									<float name="BackgroundTransparency">0</float>
+									<Color3 name="BorderColor3">
+										<R>0.388235301</R>
+										<G>0.180392161</G>
+										<B>0.388235301</B>
+									</Color3>
+									<token name="BorderMode">0</token>
+									<int name="BorderSizePixel">2</int>
+									<bool name="ClipsDescendants">false</bool>
+									<bool name="Draggable">false</bool>
+									<token name="Font">1</token>
+									<int name="LayoutOrder">0</int>
+									<float name="LineHeight">1</float>
+									<string name="Name">Dialog-2</string>
+									<Ref name="NextSelectionDown">null</Ref>
+									<Ref name="NextSelectionLeft">null</Ref>
+									<Ref name="NextSelectionRight">null</Ref>
+									<Ref name="NextSelectionUp">null</Ref>
+									<UDim2 name="Position">
+										<XS>0</XS>
+										<XO>0</XO>
+										<YS>0</YS>
+										<YO>77</YO>
+									</UDim2>
+									<bool name="RichText">false</bool>
+									<Ref name="RootLocalizationTable">null</Ref>
+									<float name="Rotation">0</float>
+									<bool name="Selectable">false</bool>
+									<Ref name="SelectionImageObject">null</Ref>
+									<UDim2 name="Size">
+										<XS>0</XS>
+										<XO>798</XO>
+										<YS>0</YS>
+										<YO>52</YO>
+									</UDim2>
+									<token name="SizeConstraint">0</token>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<string name="Text"></string>
+									<Color3 name="TextColor3">
+										<R>0</R>
+										<G>0</G>
+										<B>0</B>
+									</Color3>
+									<bool name="TextScaled">false</bool>
+									<float name="TextSize">41</float>
+									<Color3 name="TextStrokeColor3">
+										<R>0</R>
+										<G>0</G>
+										<B>0</B>
+									</Color3>
+									<float name="TextStrokeTransparency">1</float>
+									<float name="TextTransparency">0</float>
+									<token name="TextTruncate">0</token>
+									<bool name="TextWrapped">true</bool>
+									<token name="TextXAlignment">0</token>
+									<token name="TextYAlignment">0</token>
+									<bool name="Visible">true</bool>
+									<int name="ZIndex">1</int>
+								</Properties>
+								<Item class="TextLabel" referent="RBX5342c6f279084b27806d4170ff4587dc">
+									<Properties>
+										<bool name="Active">false</bool>
+										<Vector2 name="AnchorPoint">
+											<X>0</X>
+											<Y>0</Y>
+										</Vector2>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<bool name="AutoLocalize">true</bool>
+										<token name="AutomaticSize">0</token>
+										<Color3 name="BackgroundColor3">
+											<R>0.992156863</R>
+											<G>0.619607866</G>
+											<B>0.941176474</B>
+										</Color3>
+										<float name="BackgroundTransparency">1</float>
+										<Color3 name="BorderColor3">
+											<R>0.388235301</R>
+											<G>0.180392161</G>
+											<B>0.388235301</B>
+										</Color3>
+										<token name="BorderMode">0</token>
+										<int name="BorderSizePixel">2</int>
+										<bool name="ClipsDescendants">false</bool>
+										<bool name="Draggable">false</bool>
+										<token name="Font">1</token>
+										<int name="LayoutOrder">0</int>
+										<float name="LineHeight">1</float>
+										<string name="Name">Dialog-2</string>
+										<Ref name="NextSelectionDown">null</Ref>
+										<Ref name="NextSelectionLeft">null</Ref>
+										<Ref name="NextSelectionRight">null</Ref>
+										<Ref name="NextSelectionUp">null</Ref>
+										<UDim2 name="Position">
+											<XS>0</XS>
+											<XO>5</XO>
+											<YS>0</YS>
+											<YO>5</YO>
+										</UDim2>
+										<bool name="RichText">false</bool>
+										<Ref name="RootLocalizationTable">null</Ref>
+										<float name="Rotation">0</float>
+										<bool name="Selectable">false</bool>
+										<Ref name="SelectionImageObject">null</Ref>
+										<UDim2 name="Size">
+											<XS>0</XS>
+											<XO>787</XO>
+											<YS>0</YS>
+											<YO>41</YO>
+										</UDim2>
+										<token name="SizeConstraint">0</token>
+										<int64 name="SourceAssetId">-1</int64>
+										<BinaryString name="Tags"></BinaryString>
+										<string name="Text">Britta: Whoa...</string>
+										<Color3 name="TextColor3">
+											<R>0</R>
+											<G>0</G>
+											<B>0</B>
+										</Color3>
+										<bool name="TextScaled">false</bool>
+										<float name="TextSize">41</float>
+										<Color3 name="TextStrokeColor3">
+											<R>0</R>
+											<G>0</G>
+											<B>0</B>
+										</Color3>
+										<float name="TextStrokeTransparency">1</float>
+										<float name="TextTransparency">0</float>
+										<token name="TextTruncate">0</token>
+										<bool name="TextWrapped">true</bool>
+										<token name="TextXAlignment">0</token>
+										<token name="TextYAlignment">0</token>
+										<bool name="Visible">true</bool>
+										<int name="ZIndex">2</int>
+									</Properties>
+								</Item>
+							</Item>
+							<Item class="TextLabel" referent="RBXa8efe60e002a4485ba492b94e9594083">
+								<Properties>
+									<bool name="Active">false</bool>
+									<Vector2 name="AnchorPoint">
+										<X>0</X>
+										<Y>0</Y>
+									</Vector2>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<bool name="AutoLocalize">true</bool>
+									<token name="AutomaticSize">0</token>
+									<Color3 name="BackgroundColor3">
+										<R>0.882352948</R>
+										<G>0.992156863</G>
+										<B>0.619607866</B>
+									</Color3>
+									<float name="BackgroundTransparency">0</float>
+									<Color3 name="BorderColor3">
+										<R>0.388235301</R>
+										<G>0.180392161</G>
+										<B>0.388235301</B>
+									</Color3>
+									<token name="BorderMode">0</token>
+									<int name="BorderSizePixel">2</int>
+									<bool name="ClipsDescendants">false</bool>
+									<bool name="Draggable">false</bool>
+									<token name="Font">1</token>
+									<int name="LayoutOrder">0</int>
+									<float name="LineHeight">1</float>
+									<string name="Name">Dialog-3</string>
+									<Ref name="NextSelectionDown">null</Ref>
+									<Ref name="NextSelectionLeft">null</Ref>
+									<Ref name="NextSelectionRight">null</Ref>
+									<Ref name="NextSelectionUp">null</Ref>
+									<UDim2 name="Position">
+										<XS>0</XS>
+										<XO>0</XO>
+										<YS>0</YS>
+										<YO>154</YO>
+									</UDim2>
+									<bool name="RichText">false</bool>
+									<Ref name="RootLocalizationTable">null</Ref>
+									<float name="Rotation">0</float>
+									<bool name="Selectable">false</bool>
+									<Ref name="SelectionImageObject">null</Ref>
+									<UDim2 name="Size">
+										<XS>0</XS>
+										<XO>798</XO>
+										<YS>0</YS>
+										<YO>93</YO>
+									</UDim2>
+									<token name="SizeConstraint">0</token>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<string name="Text"></string>
+									<Color3 name="TextColor3">
+										<R>0</R>
+										<G>0</G>
+										<B>0</B>
+									</Color3>
+									<bool name="TextScaled">false</bool>
+									<float name="TextSize">41</float>
+									<Color3 name="TextStrokeColor3">
+										<R>0</R>
+										<G>0</G>
+										<B>0</B>
+									</Color3>
+									<float name="TextStrokeTransparency">1</float>
+									<float name="TextTransparency">0</float>
+									<token name="TextTruncate">0</token>
+									<bool name="TextWrapped">true</bool>
+									<token name="TextXAlignment">0</token>
+									<token name="TextYAlignment">0</token>
+									<bool name="Visible">true</bool>
+									<int name="ZIndex">1</int>
+								</Properties>
+								<Item class="TextLabel" referent="RBX9d605a4a81f742928e429058c9bdd874">
+									<Properties>
+										<bool name="Active">false</bool>
+										<Vector2 name="AnchorPoint">
+											<X>0</X>
+											<Y>0</Y>
+										</Vector2>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<bool name="AutoLocalize">true</bool>
+										<token name="AutomaticSize">0</token>
+										<Color3 name="BackgroundColor3">
+											<R>0.882352948</R>
+											<G>0.992156863</G>
+											<B>0.619607866</B>
+										</Color3>
+										<float name="BackgroundTransparency">1</float>
+										<Color3 name="BorderColor3">
+											<R>0.388235301</R>
+											<G>0.180392161</G>
+											<B>0.388235301</B>
+										</Color3>
+										<token name="BorderMode">0</token>
+										<int name="BorderSizePixel">2</int>
+										<bool name="ClipsDescendants">false</bool>
+										<bool name="Draggable">false</bool>
+										<token name="Font">1</token>
+										<int name="LayoutOrder">0</int>
+										<float name="LineHeight">1</float>
+										<string name="Name">Dialog-3</string>
+										<Ref name="NextSelectionDown">null</Ref>
+										<Ref name="NextSelectionLeft">null</Ref>
+										<Ref name="NextSelectionRight">null</Ref>
+										<Ref name="NextSelectionUp">null</Ref>
+										<UDim2 name="Position">
+											<XS>0</XS>
+											<XO>5</XO>
+											<YS>0</YS>
+											<YO>5</YO>
+										</UDim2>
+										<bool name="RichText">false</bool>
+										<Ref name="RootLocalizationTable">null</Ref>
+										<float name="Rotation">0</float>
+										<bool name="Selectable">false</bool>
+										<Ref name="SelectionImageObject">null</Ref>
+										<UDim2 name="Size">
+											<XS>0</XS>
+											<XO>787</XO>
+											<YS>0</YS>
+											<YO>82</YO>
+										</UDim2>
+										<token name="SizeConstraint">0</token>
+										<int64 name="SourceAssetId">-1</int64>
+										<BinaryString name="Tags"></BinaryString>
+										<string name="Text">Raven: What could possibly go wrong, you said...</string>
+										<Color3 name="TextColor3">
+											<R>0</R>
+											<G>0</G>
+											<B>0</B>
+										</Color3>
+										<bool name="TextScaled">false</bool>
+										<float name="TextSize">41</float>
+										<Color3 name="TextStrokeColor3">
+											<R>0</R>
+											<G>0</G>
+											<B>0</B>
+										</Color3>
+										<float name="TextStrokeTransparency">1</float>
+										<float name="TextTransparency">0</float>
+										<token name="TextTruncate">0</token>
+										<bool name="TextWrapped">true</bool>
+										<token name="TextXAlignment">0</token>
+										<token name="TextYAlignment">0</token>
+										<bool name="Visible">true</bool>
+										<int name="ZIndex">2</int>
+									</Properties>
+								</Item>
+							</Item>
+							<Item class="TextLabel" referent="RBXf7f6f3d8b88a45cf925610d6432784a6">
+								<Properties>
+									<bool name="Active">false</bool>
+									<Vector2 name="AnchorPoint">
+										<X>0</X>
+										<Y>0</Y>
+									</Vector2>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<bool name="AutoLocalize">true</bool>
+									<token name="AutomaticSize">0</token>
+									<Color3 name="BackgroundColor3">
+										<R>0.992156863</R>
+										<G>0.619607866</G>
+										<B>0.941176474</B>
+									</Color3>
+									<float name="BackgroundTransparency">0</float>
+									<Color3 name="BorderColor3">
+										<R>0.388235301</R>
+										<G>0.180392161</G>
+										<B>0.388235301</B>
+									</Color3>
+									<token name="BorderMode">0</token>
+									<int name="BorderSizePixel">2</int>
+									<bool name="ClipsDescendants">false</bool>
+									<bool name="Draggable">false</bool>
+									<token name="Font">1</token>
+									<int name="LayoutOrder">0</int>
+									<float name="LineHeight">1</float>
+									<string name="Name">Dialog-4</string>
+									<Ref name="NextSelectionDown">null</Ref>
+									<Ref name="NextSelectionLeft">null</Ref>
+									<Ref name="NextSelectionRight">null</Ref>
+									<Ref name="NextSelectionUp">null</Ref>
+									<UDim2 name="Position">
+										<XS>0</XS>
+										<XO>0</XO>
+										<YS>0</YS>
+										<YO>272</YO>
+									</UDim2>
+									<bool name="RichText">false</bool>
+									<Ref name="RootLocalizationTable">null</Ref>
+									<float name="Rotation">0</float>
+									<bool name="Selectable">false</bool>
+									<Ref name="SelectionImageObject">null</Ref>
+									<UDim2 name="Size">
+										<XS>0</XS>
+										<XO>798</XO>
+										<YS>0</YS>
+										<YO>52</YO>
+									</UDim2>
+									<token name="SizeConstraint">0</token>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<string name="Text"></string>
+									<Color3 name="TextColor3">
+										<R>0</R>
+										<G>0</G>
+										<B>0</B>
+									</Color3>
+									<bool name="TextScaled">false</bool>
+									<float name="TextSize">41</float>
+									<Color3 name="TextStrokeColor3">
+										<R>0</R>
+										<G>0</G>
+										<B>0</B>
+									</Color3>
+									<float name="TextStrokeTransparency">1</float>
+									<float name="TextTransparency">0</float>
+									<token name="TextTruncate">0</token>
+									<bool name="TextWrapped">true</bool>
+									<token name="TextXAlignment">0</token>
+									<token name="TextYAlignment">0</token>
+									<bool name="Visible">true</bool>
+									<int name="ZIndex">1</int>
+								</Properties>
+								<Item class="TextLabel" referent="RBXf7a59ed28a994805aea3414fbd487ce4">
+									<Properties>
+										<bool name="Active">false</bool>
+										<Vector2 name="AnchorPoint">
+											<X>0</X>
+											<Y>0</Y>
+										</Vector2>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<bool name="AutoLocalize">true</bool>
+										<token name="AutomaticSize">0</token>
+										<Color3 name="BackgroundColor3">
+											<R>0.992156863</R>
+											<G>0.619607866</G>
+											<B>0.941176474</B>
+										</Color3>
+										<float name="BackgroundTransparency">1</float>
+										<Color3 name="BorderColor3">
+											<R>0.388235301</R>
+											<G>0.180392161</G>
+											<B>0.388235301</B>
+										</Color3>
+										<token name="BorderMode">0</token>
+										<int name="BorderSizePixel">2</int>
+										<bool name="ClipsDescendants">false</bool>
+										<bool name="Draggable">false</bool>
+										<token name="Font">1</token>
+										<int name="LayoutOrder">0</int>
+										<float name="LineHeight">1</float>
+										<string name="Name">Dialog-4</string>
+										<Ref name="NextSelectionDown">null</Ref>
+										<Ref name="NextSelectionLeft">null</Ref>
+										<Ref name="NextSelectionRight">null</Ref>
+										<Ref name="NextSelectionUp">null</Ref>
+										<UDim2 name="Position">
+											<XS>0</XS>
+											<XO>5</XO>
+											<YS>0</YS>
+											<YO>5</YO>
+										</UDim2>
+										<bool name="RichText">false</bool>
+										<Ref name="RootLocalizationTable">null</Ref>
+										<float name="Rotation">0</float>
+										<bool name="Selectable">false</bool>
+										<Ref name="SelectionImageObject">null</Ref>
+										<UDim2 name="Size">
+											<XS>0</XS>
+											<XO>787</XO>
+											<YS>0</YS>
+											<YO>41</YO>
+										</UDim2>
+										<token name="SizeConstraint">0</token>
+										<int64 name="SourceAssetId">-1</int64>
+										<BinaryString name="Tags"></BinaryString>
+										<string name="Text">Britta: Holy mother monkey milk...</string>
+										<Color3 name="TextColor3">
+											<R>0</R>
+											<G>0</G>
+											<B>0</B>
+										</Color3>
+										<bool name="TextScaled">false</bool>
+										<float name="TextSize">41</float>
+										<Color3 name="TextStrokeColor3">
+											<R>0</R>
+											<G>0</G>
+											<B>0</B>
+										</Color3>
+										<float name="TextStrokeTransparency">1</float>
+										<float name="TextTransparency">0</float>
+										<token name="TextTruncate">0</token>
+										<bool name="TextWrapped">true</bool>
+										<token name="TextXAlignment">0</token>
+										<token name="TextYAlignment">0</token>
+										<bool name="Visible">true</bool>
+										<int name="ZIndex">2</int>
+									</Properties>
+								</Item>
+							</Item>
+							<Item class="TextLabel" referent="RBX3b21368af5ed4e61acf6f70ae9f8ff21">
+								<Properties>
+									<bool name="Active">false</bool>
+									<Vector2 name="AnchorPoint">
+										<X>0</X>
+										<Y>0</Y>
+									</Vector2>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<bool name="AutoLocalize">true</bool>
+									<token name="AutomaticSize">0</token>
+									<Color3 name="BackgroundColor3">
+										<R>0.992156863</R>
+										<G>0.894117653</G>
+										<B>0.619607866</B>
+									</Color3>
+									<float name="BackgroundTransparency">0</float>
+									<Color3 name="BorderColor3">
+										<R>0.388235301</R>
+										<G>0.180392161</G>
+										<B>0.388235301</B>
+									</Color3>
+									<token name="BorderMode">0</token>
+									<int name="BorderSizePixel">2</int>
+									<bool name="ClipsDescendants">false</bool>
+									<bool name="Draggable">false</bool>
+									<token name="Font">1</token>
+									<int name="LayoutOrder">0</int>
+									<float name="LineHeight">1</float>
+									<string name="Name">Dialog-5</string>
+									<Ref name="NextSelectionDown">null</Ref>
+									<Ref name="NextSelectionLeft">null</Ref>
+									<Ref name="NextSelectionRight">null</Ref>
+									<Ref name="NextSelectionUp">null</Ref>
+									<UDim2 name="Position">
+										<XS>0</XS>
+										<XO>0</XO>
+										<YS>0</YS>
+										<YO>349</YO>
+									</UDim2>
+									<bool name="RichText">false</bool>
+									<Ref name="RootLocalizationTable">null</Ref>
+									<float name="Rotation">0</float>
+									<bool name="Selectable">false</bool>
+									<Ref name="SelectionImageObject">null</Ref>
+									<UDim2 name="Size">
+										<XS>0</XS>
+										<XO>798</XO>
+										<YS>0</YS>
+										<YO>52</YO>
+									</UDim2>
+									<token name="SizeConstraint">0</token>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<string name="Text"></string>
+									<Color3 name="TextColor3">
+										<R>0</R>
+										<G>0</G>
+										<B>0</B>
+									</Color3>
+									<bool name="TextScaled">false</bool>
+									<float name="TextSize">41</float>
+									<Color3 name="TextStrokeColor3">
+										<R>0</R>
+										<G>0</G>
+										<B>0</B>
+									</Color3>
+									<float name="TextStrokeTransparency">1</float>
+									<float name="TextTransparency">0</float>
+									<token name="TextTruncate">0</token>
+									<bool name="TextWrapped">true</bool>
+									<token name="TextXAlignment">0</token>
+									<token name="TextYAlignment">0</token>
+									<bool name="Visible">true</bool>
+									<int name="ZIndex">1</int>
+								</Properties>
+								<Item class="TextLabel" referent="RBX2c70b2857c3a42c3b7857f8a9bd51fb2">
+									<Properties>
+										<bool name="Active">false</bool>
+										<Vector2 name="AnchorPoint">
+											<X>0</X>
+											<Y>0</Y>
+										</Vector2>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<bool name="AutoLocalize">true</bool>
+										<token name="AutomaticSize">0</token>
+										<Color3 name="BackgroundColor3">
+											<R>0.992156863</R>
+											<G>0.894117653</G>
+											<B>0.619607866</B>
+										</Color3>
+										<float name="BackgroundTransparency">1</float>
+										<Color3 name="BorderColor3">
+											<R>0.388235301</R>
+											<G>0.180392161</G>
+											<B>0.388235301</B>
+										</Color3>
+										<token name="BorderMode">0</token>
+										<int name="BorderSizePixel">2</int>
+										<bool name="ClipsDescendants">false</bool>
+										<bool name="Draggable">false</bool>
+										<token name="Font">1</token>
+										<int name="LayoutOrder">0</int>
+										<float name="LineHeight">1</float>
+										<string name="Name">Dialog-5</string>
+										<Ref name="NextSelectionDown">null</Ref>
+										<Ref name="NextSelectionLeft">null</Ref>
+										<Ref name="NextSelectionRight">null</Ref>
+										<Ref name="NextSelectionUp">null</Ref>
+										<UDim2 name="Position">
+											<XS>0</XS>
+											<XO>5</XO>
+											<YS>0</YS>
+											<YO>5</YO>
+										</UDim2>
+										<bool name="RichText">false</bool>
+										<Ref name="RootLocalizationTable">null</Ref>
+										<float name="Rotation">0</float>
+										<bool name="Selectable">false</bool>
+										<Ref name="SelectionImageObject">null</Ref>
+										<UDim2 name="Size">
+											<XS>0</XS>
+											<XO>787</XO>
+											<YS>0</YS>
+											<YO>41</YO>
+										</UDim2>
+										<token name="SizeConstraint">0</token>
+										<int64 name="SourceAssetId">-1</int64>
+										<BinaryString name="Tags"></BinaryString>
+										<string name="Text">Freckle: Lucinda hurt my feelings...</string>
+										<Color3 name="TextColor3">
+											<R>0</R>
+											<G>0</G>
+											<B>0</B>
+										</Color3>
+										<bool name="TextScaled">false</bool>
+										<float name="TextSize">41</float>
+										<Color3 name="TextStrokeColor3">
+											<R>0</R>
+											<G>0</G>
+											<B>0</B>
+										</Color3>
+										<float name="TextStrokeTransparency">1</float>
+										<float name="TextTransparency">0</float>
+										<token name="TextTruncate">0</token>
+										<bool name="TextWrapped">true</bool>
+										<token name="TextXAlignment">0</token>
+										<token name="TextYAlignment">0</token>
+										<bool name="Visible">true</bool>
+										<int name="ZIndex">2</int>
+									</Properties>
+								</Item>
+							</Item>
 						</Item>
-					</Item>
-					<Item class="SurfaceLight" referent="RBX7c3317af09b74d528cfeef9b747b8d8f">
-						<Properties>
-							<float name="Angle">90</float>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<float name="Brightness">1</float>
-							<Color3 name="Color">
-								<R>1</R>
-								<G>1</G>
-								<B>1</B>
-							</Color3>
-							<bool name="Enabled">true</bool>
-							<token name="Face">5</token>
-							<string name="Name">SurfaceLight</string>
-							<float name="Range">16</float>
-							<bool name="Shadows">false</bool>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
 					</Item>
 				</Item>
 			</Item>
@@ -11581,7 +11659,7 @@ return module
 						<string name="ScriptGuid">{db21442d-b712-4f21-b7af-85312afd0252}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
-module.questConfigs = {{{name="bog",frames={{dialogs={{char="liz2",text="It's not fair!"},{char="kat",text="What's not fair?"},{char="liz2",text="Nothing is fair!"},{char="kat",text="Oh dear! You poor thing...  Wait hold on..."}},characters01={{name="kat"},{name="liz2"}},characters02={}},{dialogs={{char="liz2",text="What are you doing?"},{char="kat",text="Just a sec liz.  I'm making a call."},{char="liz2",text="Kat, that's not a phone, it's a piece of bark that you just picked up off the ground."}},characters01={{name="kat"},{name="liz2"}},characters02={}},{dialogs={{char="kat",text="Beep boop beep boop beep beep boop..."},{char="kat",text="Hello, operator, please send over the wha-mulance!"},{char="kat",text="Yes it's Liz again."}},characters01={{name="kat"},{name="liz2"}},characters02={}}},coordinates={row=0,col=0},maxRow=0,maxCol=0},{name="swing",frames={{dialogs={{char="kat",text="Yes I'll hold."},{char="kat",text="No I don't want to participate in a short survey after the call."},{char="kat",text="What? Oh great!  Liz, they are sending the Wham-bulance over immediately."},{char="kat",text="Oh what's that?  You have a message for liz?"}},characters01={{name="kat"},{name="liz2"}},characters02={}},{dialogs={{char="Kat",text="Liz, the wha-mbulance people have a message for you!"},{char="liz2",text="Kat you are not funny!"},{char="kat",text="Whats that?  Tell her to turn six?"},{char="kat",text="Oh what? And also stop being a bad frog?"},{char="kat",text="Yeah I'll pass that along to her and see what she says."}},characters01={{name="kat"},{name="liz2"}},characters02={}}},coordinates={row=0,col=1},maxRow=0,maxCol=1},{name="stump",frames={{dialogs={{char="kat",text="You have a good day too."},{char="kat",text="Mmmm-bye"},{char="kat",text="Waaa-wer! Waaa-wer!"},{char="kat",text="Liz, I just got off the phone with --"}},characters01={{name="kat"},{name="liz2"}},characters02={}},{dialogs={{char="liz2",text="STOP IT!"},{char="liz2",text="Kat, you are a BAD FROG!!!"},{char="liz2",text="BAD FROGGY!!!"}},characters01={{name="kat"},{name="liz2"}},characters02={}}},coordinates={col=2,row=0},maxRow=0,maxCol=2}}, {{name="pond",frames={{dialogs={{char="liz2",text="I see a frog."},{char="liz2",text="I see a frog... on a log."},{char="liz2",text="Tee Hee Hee!"},{char="kat",text="Wow Liz, you have good eyes!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="I see a pig."},{char="liz2",text="I see a pig... in a wig!"},{char="liz2",text="Tee Hee Hee!"},{char="kat",text="Liz, could we maybe talk about something else today?"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="I see a goat."},{char="liz2",text="I see a goat... in a boat!"},{char="kat",text="Oh my gosh Kat! Turn six!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="What'evs girl... I turned six when you were still riding a trycicle."},{char="kat",text="Ha! Good one! Well, I turned six when you were still wearing Sponge Bob training pants!"},{char="liz2",text="Oh yeah, well your mom still drives you around in a backwards car seat!"},{char="kat",text="Oh snap! That’s a good one!"},{char="kat",text="I’m going to drop that one on the Troll later!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}}},coordinates={row=0,col=0},maxRow=0,maxCol=0},{name="bog",frames={{dialogs={{char="liz2",text="The Troll?"},{char="liz2",text="Do you mean the 'TROLL NEEDS GOLD' Troll?"},{char="liz2",text="What’s up with that guy?"},{char="kat",text="I know, right? He’s the coolest!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="Yeah, totally..."},{char="liz2",text="...but, I don’t get it."},{char="liz2",text="What’s his deal?"},{char="liz2",text="Why does he always yell= 'TROLL NEED GOLD'?"},{char="liz2",text="It’s a valid question."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="kat",text="Really Liz?"},{char="kat",text="Are you seriously asking me why the Troll runs around yelling= 'TROLL NEED GOLD'?"},{char="liz2",text="Yes!"},{char="kat",text="You’re not kidding?"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}}},coordinates={col=1,row=0},maxRow=0,maxCol=1},{name="bees",frames={{dialogs={{char="kat",text="Well, I think he’s saying it because he needs gold."},{char="liz2",text="Um, yeah. Thanks Albert Einstein."},{char="liz2",text="I get that part."},{char="kat",text="Oh."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="I understand that he is literally asking for gold."},{char="liz2",text="I'm six. Remember?"},{char="kat",text="Ok."},{char="liz2",text="But why does he need gold?"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="Elliot says he doesn't ~need~ gold."},{char="liz2",text="The troll probably just ~wants~ gold."},{char="kat",text="Wait, is that the kid that says="},{char="kat",text="You get what you get and you don't get upset?"},{char="kat",text="Well, I get upset!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="kat",text="Getting upset is my thing!"},{char="liz2",text="Calm down Kat."},{char="kat",text="Getting upset is my happy place!"},{char="liz2",text="Kat, no one is trying to take away your crazy."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}}},coordinates={row=0,col=2},maxRow=0,maxCol=2},{name="swamp",frames={{dialogs={{char="liz2",text="But the Troll... What’s his back story?"},{char="kat",text="Liz!!!! Noooooooooooo!!!!"},{char="liz2",text="Huh?"},{char="kat",text="No! No! No! No! No!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="What?"},{char="kat",text="Undo! Undo!"},{char="liz2",text="Kat, today is not your day to be crazy."},{char="liz2",text="We need to take turns."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="kat",text="Liz, never... ever... ever..."},{char="kat",text="...ask for a creature's backstory"},{char="kat",text="That's like Rule Number One!"},{char="liz2",text="I thought 'Never stand behind a donkey' was Rule Number One..."},{char="kat",text="Liiiiiiizzzz!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="kat",text="You asked about the troll's back story."},{char="liz2",text="So?"},{char="kat",text="Now Matt is going to do some loooooong story about the troll."},{char="kat",text="Remember how distracted he gets?"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="Wait, what's a back story?"},{char="kat",text="It's a story that tells where the creature came from."},{char="kat",text="What's it's name?"},{char="kat",text="Where does it live?"},{char="kat",text="Did it have a happy child hood?"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="Cool!"},{char="kat",text="No! Not cool!"},{char="kat",text="The opposite of cool!"},{char="liz2",text="Warm?"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="kat",text="Liz, we are trying to find the that sparkly dress!"},{char="kat",text="Remember... 'Dress Quest'?"},{char="kat",text="I don't even think that's the name of this game anymore."},{char="liz2",text="It's not."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}}},coordinates={col=3,row=0},maxRow=0,maxCol=3},{name="log",frames={{dialogs={{char="kat",text="My point exactly!!!"},{char="liz2",text="I think it's Rapping Troll Cave."},{char="kat",text="Oh no... here it comes..."},{char="liz2",text="Hey look! There's the troll."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="troll01"},{name="empty"}}},{dialogs={{char="liz2",text="I didn't see him there before."},{char="kat",text="Oh dear..."},{char="liz2",text="I swear he wasn't there 3 seconds ago."},{char="liz2",text="Hello Troll."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="troll01"},{name="empty"}}},{dialogs={{char="troll2",text="TROLL.... SOOOOOO..... SAD..."},{char="liz2",text="Oh my goodness! Why...?"},{char="troll2",text="BOO HOO!"},{char="kat",text="Oh brother..."},{char="troll2",text="TODAY.... TROLL BIRTHDAY..."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="troll01"},{name="empty"}}},{dialogs={{char="liz2",text="You poor thing!"},{char="troll2",text="TROLL WANT FROOT LOOPS!!!"},{char="liz2",text="Oh my gosh... so sad."},{char="troll2",text="TROLL MOM NOT LIKE SUGAR!!!"},{char="liz2",text="I'm so sorry..."},{char="kat",text="We gotta go. Bye! Bye!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="troll01"},{name="empty"}}}},coordinates={col=4,row=0},maxRow=0,maxCol=4}}, {{name="swing",frames={{dialogs={{char="liz2",text="Wait, your parents let you drink chocolate milk?"},{char="kat",text="Yeah, do yours?"},{char="liz2",text="Um heck no! Most certainly not!"},{char="liz2",text="Wait! How have you never told me this?"},{char="kat",text="I thought everyone’s parents let them drink chocolate milk."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="Oh please! My parents are like the sugar police."},{char="kat",text="Wow!"},{char="liz2",text="Can we go over to your house and drink some?"},{char="kat",text="I wish. My big brother drank it all. He’s a total milk-hog."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}}},coordinates={col=0,row=0},maxRow=0,maxCol=0},{name="bees",frames={{dialogs={{char="liz2",text="Oh rats! You are so lucky though! My mom says sugar rots your teeth."},{char="kat",text="Really? I thought that was cotton candy."},{char="liz2",text="Yup, she read it on the internet."},{char="kat",text="Oh brother! Good luck with that."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="I know. Right?"},{char="kat",text="Hey have you ever heard of Marshmallow Fluff? My cousin Emily eats it. She showed me on Facetime."},{char="liz2",text="Sounds cool! What is it?"},{char="kat",text="It’s like that Gloop that we made in summer camp."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="kat",text="But you can eat it and it tastes like fairy magic."},{char="kat",text="You'll never want to eat real food again."},{char="liz2",text="We have to go to Boston!"},{char="kat",text="I know! For real!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}}},coordinates={row=0,col=1},maxRow=0,maxCol=1},{name="log",frames={{dialogs={{char="kat",text="Hey, do you still have that Gloop we made?"},{char="liz2",text="Sadly no. Mine grew green fuzz on it and we threw it in the compost."},{char="kat",text="Cool! That’s like something out of Zoe and Sassafras!"},{char="liz2",text="I know, I should have done some experiments with it."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="kat",text="If you are Zoe, does that make me Sassafras?"},{char="liz2",text="Yeah, you sit on my shoulder and talk in a made up language that only kids can understand."},{char="kat",text="That’s not how Sassafrass talks. You’re thinking of Stick from TumbleLeaf."},{char="liz2",text="No I’m not."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}}},coordinates={col=2,row=0},maxRow=0,maxCol=2},{name="pool",frames={{dialogs={{char="kat",text="Well then, Pascal from Tangled."},{char="liz2",text="Uh uh. Hello? I’m six years old, I think I know my TV shows."},{char="kat",text="Oh please! I’ve watched 10 times more TV than you have."},{char="liz2",text="Sister, Don’t even go there! Name five Octonauts."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="kat",text="Oh is this what we are doing now? Fine. Bring it. Kwazii, Barnacles, Dashi, Tunip and Professor Inkling."},{char="liz2",text="Who is Kwazaii’s grandfather and where does he live?"},{char="kat",text="Trick question. He’s the pirate Calico Jack."},{char="kat",text="But no one knows if he is still alive."},{char="kat",text="Because Kwazaii’s adventure up the Amazon River was just a dream."},{char="liz2",text="Dang Kat! You’ve got skills!"},{char="liz2",text="You can really throw down TV."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}}},coordinates={row=0,col=3},maxRow=0,maxCol=3},{name="stump",frames={{dialogs={{char="kat",text="Yeah, my cousins figured the password to their mom’s ipad."},{char="liz2",text="What?"},{char="kat",text="We watched like every show on Netflix."},{char="liz2",text="But....how?"},{char="kat",text="Get this... her password was Emily’s birthday."},{char="liz2",text="Oh man! I wish I had parents like that!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="kat",text="I know! That’s like on page 1 of the Kid Book."},{char="kat",text="She must be a first time parent..."},{char="kat",text="Anyways, I’m sorry to be the one to tell you this, but Sassafrass talks like a regular normal cat."},{char="liz2",text="No way."},{char="kat",text="He’s basically the same as Cat from Peg + Cat."},{char="kat",text="Or Bartleby in True."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}}},coordinates={row=0,col=4},maxRow=0,maxCol=4},{name="waterfall",frames={{dialogs={{char="liz2",text="1,2,3..."},{char="kat",text="Hey come on let’s go!"},{char="liz2",text="...4,5,6..."},{char="kat",text="Yeah! What do ya know"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="...7,8,9..."},{char="kat",text="What comes next?"},{char="liz2",text="10! Yeah, you’re the best!"},{char="kat",text="I love you Peg."},{char="liz2",text="I love you Kat."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="So, is it just in a regular container?"},{char="kat",text="What?"},{char="liz2",text="The chocolate milk."},{char="kat",text="Yeah, we just keep it in the fridge. Like regular milk."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}}},coordinates={col=5,row=0},maxRow=0,maxCol=5}}, {{name="home",frames={{dialogs={{char="liz2",text="I see a bee..."},{char="kat",text="If we split up, we can find vulcan faster."},{char="liz2",text="I see a bee...in a tree!"},{char="liz2",text="Tee Hee Hee!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="bee"}}},{dialogs={{char="kat",text="Liz, that's not a bee!!!"},{char="liz2",text="Come here little Bee! Bee!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="bee"}}}},coordinates={col=0,row=0},maxRow=0,maxCol=0},{name="stump",frames={{dialogs={{char="kat",text="I'll go investigate that smoke down by the river..."},{char="kat",text="and you look in the village, by those burning stores..."},{char="liz2",text="I see a pug..."},{char="kat",text="Then meet back at the log later."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="kat",text="Liz, have you heard anything I just said?"},{char="liz2",text="I see a pug...and a mug!"},{char="kat",text="Liiiiizzzzz!!!"},{char="liz2",text="Ugggh!, yes Kat!"},{char="liz2",text="Smoke, river, burning stores, yadda yadda... log."},{char="liz2",text="I'm in the zone Kat"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}}},coordinates={col=1,row=0},maxRow=0,maxCol=1},{name="bog",frames={{dialogs={{char="liz2",text="Give a girl some space when she's in the zone!"},{char="kat",text="What zone?"},{char="liz2",text="he ryhming zone."},{char="liz2",text="It's like everything is just clicking into place."},{char="kat",text="Oh yeah, bust some rhymes!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="kat",text="Put A Cat A"},{char="kat",text="Put A Cat A"},{char="liz2",text="My name is Liz!"},{char="liz2",text="It starts with an L."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="Let's go and play with goblin"},{char="liz2",text="At the wishing well."},{char="kat",text="Fresh!!!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}}},coordinates={col=2,row=0},maxRow=0,maxCol=2}}, {{name="cave",frames={{dialogs={{char="katieKooper01",text="Yay, we are just in time for the rap battle"},{char="kat",text="Cool! What's a rap battle?"},{char="katieKooper01",text="I don't know."},{char="katieKooper01",text="Let's find out!."}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="empty"}}},{dialogs={{char="kat",text="The trolls don't know we stole the diamond. So just act cool."},{char="katieKooper01",text="What! We STOLE the DIAMOND?"},{char="kat",text="Shhhhhhhhhhh!"},{char="troll01",text="LOOK GIRLS!"},{char="troll02",text="GIRLS TAKE DIAMOND?"},{char="troll01",text="TROLLS EAT GIRLS!"}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"},{name="empty"}}},{dialogs={{char="kat",text="What? Who? Me? Don't be silly. We hate diamonds!"},{char="katieKooper01",text="What? Kat, we love diamonds!!!"},{char="kat",text="Katie!!!!"}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"},{name="empty"}}},{dialogs={{char="kat",text="Oh hello trolls. We are not here to take your diamond."},{char="kat",text="We are here for....ummmm.... uuuuuhhhh..."},{char="kat",text="Katie! Think of something quick!"},{char="katieKooper01",text="We're here for the rap battle!"},{char="kat",text="Good save Katie Kooper!"}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"},{name="empty"}}},{dialogs={{char="kat",text="My friend Kat here is going to show you trolls how to rap!"},{char="kat",text="Katie!!!!"}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"},{name="empty"}}},{dialogs={{char="troll01",text="RAP BATTLE!"},{char="troll02",text="RAP BATTLE!"},{char="kat",text="Katie? What in the world are you getting us into."},{char="katieKooper01",text="Chill out Kat, it's fine."},{char="katieKooper01",text="Just do the rap about the frog on the log."},{char="kat",text="The frog on the log?!?"},{char="kat",text="Yeah. The one you did this morning! That was hilarious!"}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"},{name="empty"}}},{dialogs={{char="kat",text="Ugggghhh! Katie! That was not a rap!"},{char="kat",text="This morning, I literally, saw a frog on a log."},{char="katieKooper01",text="That was so funny! You had me dying!"},{char="kat",text="Katie!!!!"},{char="kat",text="Stop Talking! For the first time in your life!"},{char="kat",text="Listen to me very closely. There is no rap."}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"},{name="empty"}}},{dialogs={{char="kat",text="This morning..."},{char="kat",text="I SAW A FROG..."},{char="troll01",text="GIRL SAW FROG???"},{char="kat",text="...ON A LOG!"},{char="troll02",text="FROG ON LOG!"},{char="troll01",text="HA! HA! HOO! HOO!"},{char="troll01",text="TROLL LIKE FROG!"}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"},{name="empty"}}}},coordinates={col=0,row=0},maxRow=0,maxCol=0},{name="bog",frames={{dialogs={{char="kat",text="And I'm NOT gonna RAP."},{char="kat",text="It's just a silly fad."},{char="kat",text="You think your day was bad?"},{char="kat",text="Well let me tell you trolls about the day I've had."},{char="troll01",text="FROG ON LOG!"}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"}}},{dialogs={{char="kat",text="First we saw a frog"},{char="kat",text="The frog was on a log."},{char="kat",text="Then there was this dog..."},{char="kat",text="...stuck in a bog wearing clogs!"},{char="troll01",text="TROLL LIKE BOG!"}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"}}},{dialogs={{char="kat",text="Me and Liz took a walk."},{char="kat",text="First we see a mop."},{char="kat",text="Then there was this top?"},{char="kat",text="Right next to a cop"},{char="kat",text="with a frog on a log, drinking pop!"},{char="troll01",text="HA! HA! HOO! HOO!"},{char="troll02",text="FROGGY LIKE POP!"}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"}}},{dialogs={{char="kat",text="So quit squishin all the fish and sit and listen!"},{char="kat",text="Cause I'm the kinda kid that makes the grown ups stop."},{char="kat",text="And yell= Honey! Hide the keys to the donut shop!"},{char="troll01",text="DONUT SHOP!"},{char="kat",text="You trolls like the Donut Shop?"},{char="troll21",text="DONUT SHOP!"}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"}}}},coordinates={row=0,col=1},maxRow=0,maxCol=1},{name="swamp",frames={{dialogs={{char="kat",text="My parents groan a lot."},{char="kat",text="You hear that rumble? That's my tummy from the soda pop."},{char="kat",text="Call the doc!"},{char="kat",text="So we can ask if I'll explode or not!"},{char="kat",text="I check my phone a lot, but it won't unlock!"},{char="kat",text="Yeah, it's bark, just wait. I'll get it Photoshopped."}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"}}},{dialogs={{char="kat",text="I'll see you at my birthday when corona stops."},{char="kat",text="And when the party starts rockin..."},{char="kat",text="That's just me and Liz squawkin..."},{char="kat",text="Like 2 sea gulls that got locked in-"},{char="kat",text="side a donut shop."},{char="troll01",text="DONUT SHOP!"}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"}}},{dialogs={{char="kat",text="They said this was a battle, but you Trolls don't bloop."},{char="kat",text="Fellas, I'm about to tell a troll the stone cold truth."},{char="kat",text="Here's some cold stone soup."},{char="kat",text="In an old sewn shoe."}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"}}},{dialogs={{char="kat",text="And wait, here's a bone for your pooch too!"},{char="kat",text="Little kid, you want a cold cone for your loose tooth?"},{char="kat",text="And here's some goop for the hole in your boot where your big hairy toes poke through."},{char="kat",text="And you two. You don't bloop? You ever heard of youTube?"},{char="troll01",text="We don't do it..."},{char="troll02",text="...it's too new."}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"}}}},coordinates={col=2,row=0},maxRow=0,maxCol=2},{name="hill",frames={{dialogs={{char="kat",text="Blip Bleep Bloop."},{char="kat",text="Flap Flop Floop, Flizz."}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"}}},{dialogs={{char="kat",text="I like you trolls a lot"},{char="kat",text="But I gotta find Liz."},{char="troll01",text="Bye Bye!"},{char="troll02",text="See you soon!"},{char="troll01",text="Hope you have a nice trip!"}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"}}},{dialogs={{char="katieKooper01",text="Kat, you won the Rap battle!"},{char="kat",text="What's a rap battle?"},{char="kat",text="Um.... Never mind. Let's go find Liz!"},{char="troll01",text="Baby troll wants to come with you."},{char="kat",text="Oh dear. Oh no no no no no... come on Matt!"},{char="katieKooper01",text="Cuuu----uuuute! OK!"},{char="kat",text="Think about pretty dresses Katie. Pretty Dresses!"}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"}}},{dialogs={{char="troll01",text="Here is baby troll's diaper pin."},{char="kat",text="Oh no, it's sundown and we don't have the magical stone of Azkabat."},{char="katieKooper01",text="It's actually part of the diaper pin"}},characters01={{name="kat"}},characters02={{name="katieKooper01"},{name="troll01"},{name="troll02"}}}},coordinates={row=0,col=3},maxRow=0,maxCol=3}}, {{name="cave",frames={{dialogs={{char="liz2",text="Kat, I’m so glad you are here. Look!  Quick!  Look in the sky!"},{char="kat",text="ok."},{char="liz2",text="And just sort of stare right at that cloud."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="But don’t stare with your eyes."},{char="kat",text="Huh?"},{char="liz2",text="Just sort of stare with your brain, but in that direction."},{char="kat",text="Ummmm... ok."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="Do you see the kid?  Do you see the kid up there?"},{char="kat",text="No."},{char="liz2",text="In that cloud.  Right there."},{char="liz2",text="Look straight ahead. There is a kid staring right at us."},{char="kat",text="...uhhh...Still no...."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}}},coordinates={row=0,col=0},maxRow=0,maxCol=0},{name="bees",frames={{dialogs={{char="liz2",text="And any time I say anything… anything at all, she says it at the same time."},{char="kat",text="Liz, I don’t see anything."},{char="liz2",text="She’s doing it.  She’s doing it right now!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="kat",text="Liz, as your best friend, I need be totally honest with you."},{char="liz2",text="I can see her!"},{char="kat",text="Look, I’ve been doing crazy since I was this tall."},{char="kat",text="So I kind of know crazy."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="kat",text="But the kind of crazy I do is more screaming-in-Target kind of crazy."},{char="kat",text="The kind of crazy you are doing now is more like be-buh-dee-dee-dee-dee kind of crazy."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="Kat!  I am not crazy!"},{char="kat",text="Ok."},{char="liz2",text="I am not regular crazy!"},{char="liz2",text="I am not be-buh-dee-dee-dee-dee crazy."},{char="kat",text="Ok"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="I am perfectly normal!"},{char="kat",text="Um….check please!"},{char="liz2",text="I’m not crazy!"},{char="kat",text="Liz, you are going just a little bit hay wire!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}}},coordinates={row=0,col=1},maxRow=0,maxCol=1},{name="bog",frames={{dialogs={{char="liz2",text="Just watch Kat!  I’ll make her talk."},{char="liz2",text="I can make her say anything I want."},{char="kat",text="ok."}},characters01={{name="kat"},{name="liz2"}},characters02={}},{dialogs={{char="liz2",text="Loo Loo. Laa Laa. Fee Fi Fo Fum!"},{char="liz2",text="You heard her right Kat?  You can see her too, right?"},{char="kat",text="Ummm... Are we playing pretend?"},{char="liz2",text="Look at meeeeeeeeeeeee! I am a giant banana!"}},characters01={{name="kat"},{name="liz2"}},characters02={}},{dialogs={{char="liz2",text="I am the banana queen!"},{char="kat",text="How about we go to the log?"},{char="liz2",text="Me eat all the bananas!"}},characters01={{name="kat"},{name="liz2"}},characters02={}}},coordinates={row=0,col=2},maxRow=0,maxCol=2}}, {{name="cave",frames={{dialogs={{char="liz2",text="bleepity, bling blang blip blop!"},{char="kat",text="Hi liz. What's up?"},{char="liz2",text="Oh hey Kat, what's blanging?"},{char="kat",text="Wow Liz! Did you make that up?"},{char="liz2",text="Yeah, I've been saying it all day. And check this out="}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="Blip Blorp Bloop."},{char="liz2",text="Piddle-dee. Widdle-dee. Diddle-dee."},{char="liz2",text="Plippity Ploppity plump."},{char="kat",text="Whoa, that's sooooo cool!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}},{dialogs={{char="liz2",text="I know, right? Its called blooping."},{char="liz2",text="I made that up too."},{char="kat",text="I gotta try this!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="empty"}}}},coordinates={col=0,row=0},maxRow=0,maxCol=0},{name="bog",frames={{dialogs={{char="kat",text="chugga... chugga... chugga.. chugga.. choo-choo!"},{char="liz2",text="rickety! rockety!"},{char="kat",text="pickety! pockety!"},{char="liz2",text="Dimple Dee Doop!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="rori"},{name="vulcan01"},{name="empty"}}},{dialogs={{char="rori",text="Run for the hills! Maldred has the Dragon Stone --"},{char="kat",text="plip plop!"},{char="liz2",text="Dimple Dee Dip!"},{char="rori",text="Wait! What are those noises?"},{char="rori",text="It must be Maldred..."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="rori"},{name="vulcan01"},{name="empty"}}}},coordinates={row=0,col=1},maxRow=0,maxCol=1},{name="log",frames={{dialogs={{char="kat",text="We are blooping!"},{char="liz2",text="Hee Hee!"},{char="rori",text="Oh. Cool!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="rori"},{name="vulcan"},{name="empty"}}},{dialogs={{char="kat",text="plip plop!"},{char="liz2",text="Dimple Dee Dip!"},{char="rori",text="Vulcan can bloop better than any one!"},{char="kat",text="cool"},{char="vulcan",text="BLEEEEEEP!!!!!!!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="rori"},{name="vulcan"},{name="empty"}}}},coordinates={col=2,row=0},maxRow=0,maxCol=2}}, {{name="home",frames={{dialogs={{char="dog01",text="Yo, what’s up Kat?"},{char="kat",text="Nothin’ dog. Just chillin with my girl Liz."},{char="dog01",text="Sweet! Keep it Fresh Kat! I gotta bounce. I’ll catch you on the flip!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="dog01"}}},{dialogs={{char="kat",text="Laters!"},{char="liz2",text="Bye Bye Pete! Hee Hee!"},{char="liz2",text="Wow Kat, where did you learn all those cool things to say?"}},characters01={{name="kat"},{name="liz2"}},characters02={}},{dialogs={{char="kat",text="Cool right? It’s called slang."},{char="liz2",text="Wow! I want to learn!"},{char="liz2",text="I used to ride the bus with this second grader who knew like a million slangs. Like literally."},{char="liz2",text="Cooooool!!!!"}},characters01={{name="kat"},{name="liz2"}},characters02={}},{dialogs={{char="kat",text="He’d say Kat, I like you, but sometimes, think you are a couple sandwiches short of a picnic?"},{char="liz2",text="Cooooool! What does that mean?"},{char="liz2",text="I dunno, but I say it all the time now."},{char="liz2",text="Wait, you know a second grader?"}},characters01={{name="kat"},{name="liz2"}},characters02={}}},coordinates={row=0,col=0},maxRow=0,maxCol=0},{name="log",frames={{dialogs={{char="kat",text="Yeah, this kid Dennis. He’s hilarious."},{char="kat",text="This one time he made me laugh so hard chocolate milk sprayed out of my nose."},{char="liz2",text="Wait.. Hold your horses. Back up!"},{char="liz2",text="What?"},{char="liz2",text="Are you talking about Dennis, as in, Dennis the Menace?"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="blank"}}},{dialogs={{char="kat",text="Yeah, that’s him."},{char="liz2",text="You know Dennis the Menace?"},{char="liz2",text="The kid who runs up slides the wrong way and has a slingshot hanging out of his back pocket?"},{char="kat",text="Yeah, totally. He’s super chill. We should go hang out with him."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="blank"}}},{dialogs={{char="liz2",text="He is like the coolest kid in the Magic Forest!"},{char="kat",text="For sure."},{char="liz2",text="Zombie said his parents grounded him until he turns 13!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="blank"}}},{dialogs={{char="kat",text="Wait, What does grounded mean?"},{char="liz2",text="Oh sorry. Grounded is when you get in super big trouble and your parents don’t let you out of your room for a week!"},{char="kat",text="Oh that. Yeah, he’s definitely grounded."},{char="kat",text="But he sneaks out his bedroom window during nap and plays at the playground."},{char="liz2",text="Wow!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="blank"}}},{dialogs={{char="kat",text="Come on, let’s go see if he is at the slide."},{char="liz2",text="Fine with me."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="blank"}}}},coordinates={col=1,row=0},maxRow=0,maxCol=1},{name="slide",frames={{dialogs={{char="kat",text="Hi Dennis!"},{char="dennisTheMenace",text="Oh hi Kat! What are you up to?"},{char="liz2",text="Just some trouble."},{char="dennisTheMenace",text="Count me in. But keep an eye out for Mr. Wilson."},{char="dennisTheMenace",text="He's not going to be too happy when he finds out what happened to his new shoes!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="dennisTheMenace"},{name="blank"},{name="dennisTheMenace"}}},{dialogs={{char="kat",text="What happened to his new shoes?"},{char="dennisTheMenace",text="You don't even want to know. Where's the fun at?"},{char="kat",text="Well, there's this new girl named Rori. She needs a place to hide her dragon."},{char="dennisTheMenace",text="Well now you are talking my language."},{char="dennisTheMenace",text="Have I ever told you about Mr. Wilson's shed?"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="dennisTheMenace"},{name="blank"},{name="dennisTheMenace"}}},{dialogs={{char="kat",text="Keep talking..."},{char="dennisTheMenace",text="It's dustier than a book of manners in a schoolyard, but it might to the trick."},{char="kat",text="We will pass that along to Rori."},{char="liz2",text="Dennis, do you have a piece of paper and a pin? Rori said to pin a note to a tree."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="dennisTheMenace"},{name="blank"},{name="dennisTheMenace"}}},{dialogs={{char="dennisTheMenace",text="I have a ball of lint and this thumb tack, but I'm saving it to make a surprise for Mr. Wilson."},{char="liz2",text="Lucky him!"},{char="dennisTheMenace",text="Yeah, he must have been born under a 4 leaf clover."},{char="liz2",text="See you later Dennis the Menace! Hee Hee Hee!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="dennisTheMenace"},{name="blank"},{name="dennisTheMenace"}}}},coordinates={col=2,row=0},maxRow=0,maxCol=2}}, {{name="home",frames={{dialogs={{char="kat",text="Uugggh.  I’m bored.  I so wish we had some gold!"},{char="liz2",text="Yeah, me too!  And a pony!"},{char="kat",text="No for real.  I need to buy this cell phone case. It's got bling ALL OVER it!"},{char="liz2",text="Oh my Gosh!  Cool!"}},characters01={{name="kat"},{name="liz2"}},characters02={}},{dialogs={{char="kat",text="This second grader named Zoe had one.  It was pink with teeny tiny jewels and sparkles ALL OVER it!"},{char="liz2",text="So cool!  Wait, tell me what bling is again?"},{char="kat",text="Teeny tiny jewels and sparkles."},{char="liz2",text="Oh yeah! I go crazy for that stuff!"}},characters01={{name="kat"},{name="liz2"}},characters02={}},{dialogs={{char="kat",text="The only problem is, it costs like 300 gold."},{char="liz2",text="Wow!  Is that a lot?"},{char="kat",text="Let me put it this way= for a couple of kids like us, that’s like a million gold."},{char="liz2",text="Oh rats!  I’ve never even had 1 gold!"}},characters01={{name="kat"},{name="liz2"}},characters02={}},{dialogs={{char="kat",text="Come on, let’s go see what’s happening at the log."},{char="liz2",text="I love the log!"},{char="kat",text="We should get cell phones too."},{char="liz2",text="We should!"}},characters01={{name="kat"},{name="liz2"}},characters02={}}},coordinates={col=0,row=0},maxRow=0,maxCol=0},{name="log",frames={{dialogs={{char="kat",text="Hey, by the way Liz, nice shoes.   You totally slayed that outfit!"},{char="liz2",text="I know. Right?  Wait. What does slayed mean again?"},{char="kat",text="Oh right. Well, sometimes, people will say “the brave knight slayed the fierce dragon”."},{char="kat",text="You know, in the old days."},{char="liz2",text="Back when there were castles?"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="balloons01"}}},{dialogs={{char="kat",text="Exactly, and dragons"},{char="liz2",text="That is so mean!  Those poor dragons!"},{char="kat",text="It's horrible.  But actually, dragons aren’t even real."},{char="liz2",text="It’s still mean."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="blank"}}},{dialogs={{char="kat",text="I guess so."},{char="liz2",text="Kat, falling asleep to those Jack and Annie books has made you like 10 times smarter."},{char="kat",text="Yeah totally."},{char="kat",text="And by the way, it’s not called Jack and Annie, it’s called Magic Treehouse."},{char="liz2",text="That’s what we called it at my pre-school."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="blank"}}},{dialogs={{char="kat",text="You’re thinking of Magic Schoolbus."},{char="liz2",text="Um, hello?.  I think I know the difference between Magic Treehouse and Magic Schoolbus!"},{char="kat",text="Ok fine, Fiona Frizzle."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="blank"}}},{dialogs={{char="kat",text="But anyways, when a person says “you slayed that outfit”, it means you made it look super cool."},{char="kat",text="Like, you rocked it."},{char="liz2",text="Oh I get it!  Say it again!"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="blank"}}},{dialogs={{char="kat",text="Girl, you slayed that outfit!"},{char="liz2",text="Yeah I did!  Hee Hee Hee!  My cousin Merlinda is always saying that too."},{char="kat",text="You have a cousin?"},{char="liz2",text="Yeah, remember, the one who is a fairy princess?"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="blank"}}}},coordinates={col=1,row=0},maxRow=0,maxCol=1},{name="slide",frames={{dialogs={{char="kat",text="Your cousin is a fairy princess?"},{char="liz2",text="Um, yeah, I just said that.  Really Kat, try to keep up."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="dennisTheMenace"}}},{dialogs={{char="kat",text="Your cousin is a fairy princess...  and you never told me?"},{char="kat",text="Isn’t that the kind of thing you might tell someone that you’ve known, for, I don’t know..."},{char="kat",text="...umpteen years?"}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="dennisTheMenace"}}},{dialogs={{char="liz2",text="Kat, I’ve told you literally 8 bazillion times. You just never listen to anything I say."},{char="kat",text="I remember you said your cousin was a fairy princess."},{char="kat",text="I just thought we were just playing pretend."},{char="liz2",text="I have a real life too you know."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="dennisTheMenace"}}},{dialogs={{char="liz2",text="Hey, now that I think of it, Merlinda has tons of gold!"},{char="kat",text="Your cousin has gold?"},{char="liz2",text="Yeah, tons of it.  Literally."},{char="liz2",text="Boatloads of gold.  Absolute total boatloads of gold."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="dennisTheMenace"}}},{dialogs={{char="kat",text="Do you think she will give us some, so I can buy that cell phone case?"},{char="liz2",text="Ha!  Keep dreaming Liz.  The only thing Merlinda will give us gold for is dresses."},{char="kat",text="Dresses?  You mean... like this purple thing I am wearing?"},{char="liz2",text="Yup.  Merlinda and her friends are nutty for dresses."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="dennisTheMenace"}}},{dialogs={{char="liz2",text="Oh sister.  Come on, we are going to Fairy Village."},{char="liz2",text="Like right now."},{char="liz2",text="You are going to lose your marbles."}},characters01={{name="kat"},{name="liz2"}},characters02={{name="blank"},{name="dennisTheMenace"}}}},coordinates={row=0,col=2},maxRow=0,maxCol=2}}, {{name="cave",frames={{dialogs={{char="kat",text="Well, if princesss have so much gold, can't they just buy any dress they want?"},{char="liz2",text="Oh they do.  They sure do.  They buy EVERY dress they want."},{char="kat",text="Sooooo.....what's the problem?"}},characters01={},characters02={}},{dialogs={{char="liz2",text="The problem...my dear, is that some dresses are not for sale."},{char="liz2",text="And those are the only dresses that a princess wants."}},characters01={},characters02={}},{dialogs={{char="kat",text="Keep talking."},{char="liz2",text="Have you heard of Watta-Lee-Achee?"},{char="kat",text="Nope."},{char="liz2",text="She's a Dragon that lives in that empty castle by the Silver Bog."}},characters01={},characters02={}}},coordinates={row=0,col=0},maxRow=0,maxCol=0},{name="bog",frames={{dialogs={{char="kat",text="Cool..."},{char="liz2",text="And this dragon, Watta-Lee-Achee..."},{char="kat",text="Doo-Da-Lee-Doo"},{char="liz2",text="What?"}},characters01={},characters02={}},{dialogs={{char="kat",text="Nothing"},{char="liz2",text="Watta-Lee-Achee guards the dress of Atacama."},{char="liz2",text="It's the most dazzling dress in 7 kingdoms."},{char="kat",text="Holy Moly!"}},characters01={},characters02={}}},coordinates={row=0,col=1},maxRow=0,maxCol=1},{name="swamp",frames={{dialogs={{char="liz2",text="It glimmers and it shimmers."},{char="liz2",text="It shines like a thousand suns."},{char="kat",text="We need to go get it.  And trade it with the princesses for gold!"}},characters01={},characters02={}},{dialogs={{char="liz2",text="Ummm...hello? Kat, are you even listening to me?"},{char="liz2",text="There is a girl-eating dragon guarding that dress!"}},characters01={},characters02={}},{dialogs={{char="kat",text="Well we have something even scarier than that Dragon."},{char="kat",text="We have the Queen of Crazy."},{char="kat",text="Come on.  Let's go find Rori."},{char="liz2",text="But where?"},{char="kat",text="Look for fire."}},characters01={},characters02={}}},coordinates={row=0,col=2},maxRow=0,maxCol=2}}, }
+module.questConfigs = {{{name="mop",frames={{dialogs={{char="lucky",text="And once I deliver this 4 leaf clover to my Grand Mama..."},{char="lucky",text="She will tell me the answer to elf's riddle."},{char="lucky",text="And you and I can unlock the treasure chest..."},{char="cow01",text="Mooo."},{char="lucky",text="But alas... I need just one more gold to afford the journey..."}},characters01={},characters02={{name="lucky"},{name="cow01"},{name="chick01"}}},{dialogs={{char="goat01",text="Baaaaa..."},{char="lucky",text="Oh my poor Grand Mama..."},{char="cow01",text="Baaaa."},{char="empty",text="My poor, sick Grand Mama..."}},characters01={},characters02={{name="lucky"},{name="cow01"},{name="goat01"}}},{dialogs={{char="cow01",text="Listen! What is this I hear?"},{char="lucky",text="Did I just hear a... ... a giggle?"},{char="cow01",text="Moooo..."},{char="chick01",text="Peep. Peep."},{char="lucky",text=""}},characters01={},characters02={{name="lucky"},{name="cow01"},{name="chick01"}}},{dialogs={{char="lucky",text="Why yes.  Yes inded!"},{char="lucky",text="Lady Luck has smiled upon us!"},{char="lucky",text="and sent us a whole platter of fresh..."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="lucky"},{name="cow01"}}},{dialogs={{char="luke01",text="Where are we?"},{char="hudson01",text="I have no idea."},{char="luke01",text="Mom said this was a game..."},{char="lucky",text="Mom lied."},{char="lucky",text="...fresh faces!"}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="lucky"},{name="cow01"}}},{dialogs={{char="lucky01",text="Well hello lads..."},{char="hudson01",text="We are from Connecticut."},{char="lucky01",text="Hello Boys from Connecticut."},{char="lucky01",text="What brightly colored tunics you wear."},{char="chick01",text=""},{char="luke01",text="Our mom bought them for us."},{char="lucky01",text="I can see your mom has excellent taste."},{char="lucky01",text="Does every child in Connecticut have a shirt like that?"},{char="hudson01",text="I think so."},{char="lucky01",text="Well, perhaps you could lend it to me one day."},{char="lucky01",text="I could use it to scare the chickens out of my pea patch."},{char="luke01",text=""}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="lucky01"},{name="cow01"}}},{dialogs={{char="hudson01",text="You have a pea patch?"},{char="cow01",text="I've just been peeing..."},{char="chick01",text="Well, kind of everywhere..."},{char="chick01",text=""},{char="lucky01",text="Forgive my manners, let me introduce myself."},{char="lucky01",text="My friends call me Lucky."},{char="hudson01",text="Our mom is making us do this."},{char="lucky01",text="But alas, my Luck seems to have run out"},{char="luke01",text="Can we play MineCraft?"},{char="chick01",text=""},{char="lucky01",text="Mine Craft?"},{char="lucky01",text="Pish-Posh."},{char="lucky01",text="Be off with you then."},{char="lucky01",text="Go play your video games."},{char="lucky01",text="You don't look like the sort of fellows who would be interested in old riddles and buried treasure."},{char="lucky01",text="You would probably just laugh at me like all the rest..."},{char="empty",text=""},{char="luke01",text="I like riddles!"},{char="luke01",text="Buried treasure?"},{char="lucky01",text="Besides, I must be off now, if I am to get to the Rap Battle..."},{char="luke01",text="Rap Battle?"},{char="cow01",text=""},{char="luke01",text="Tell us your riddle Lucky!"},{char="lucky01",text="Ah, I can see you are clever boys..."},{char="lucky01",text="Quickly then, and lean in close."},{char="lucky01",text="If one of the Trolls hears the riddle, then we may as well just dig up the treasure chest and hand it to them."},{char="cow01",text="<cut to Troll Tricker quest>"},{char="empty",text=""},{char="empty",text=""},{char="empty",text=""},{char="empty",text=""}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="lucky01"},{name="cow01"}}}},coordinates={row=0,col=0},maxRow=0,maxCol=0},{name="mat",frames={{dialogs={{char="trollKing01",text="I am Troll King!"},{char="trollKing01",text="Who goes there?"},{char="luke01",text="I'm Luke."},{char="hudson01",text="I'm Hudson."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="trollKing01"},{name="bun"}}},{dialogs={{char="trollKing01",text="What fancy shirts Luke and Hudson..."},{char="luke01",text="We are from Connecticut."},{char="trollKing01",text="Have you come to steal my Jam?"},{char="hudson01",text="No."},{char="luke01",text="Maybe..."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="trollKing01"}}},{dialogs={{char="trollKing01",text="Or are you here to do the Zam???"},{char="hudson01",text="Neither"},{char="luke01",text="Both."},{char="luke01",text="What's the Zam?"},{char="trollKing01",text="Hold on.  Let me take this thing off... Someone start the music..."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="trollKing01"}}},{dialogs={{char="luke01",text="What's the Zam?"},{char="trollKing",text="The Zam is the dance you do"},{char="trollKing",text="If you're a fancy dude"},{char="fancyDudeFromFrance01",text="from France"},{char="trollKing",text="and you"},{char="trollKing",text="just got"},{char="trollKing",text="jam on your hands"},{char="trollKing",text="But you gotta go dance"},{char="trollKing",text="So you flap em in the air"},{char="fancyDudeFromFrance01",text="Like a couple of fans"},{char="trollKing",text="That are covered with ants!"}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="trollKing"},{name="fancyDudeFromFrance01"}}},{dialogs={{char="hudson01",text="We like the Zam man..."},{char="luke01",text="But we need to scram!"},{char="trollKing",text="Can I come with you?"},{char="empty",text=""},{char="empty",text=""},{char="empty",text=""},{char="empty",text=""},{char="empty",text=""},{char="empty",text=""},{char="empty",text=""},{char="empty",text=""}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="trollKing"},{name="fancyDudeFromFrance01"}}}},coordinates={row=0,col=1},maxRow=0,maxCol=1},{name="cap",frames={{dialogs={{char="britta01",text="Wow.  Are those space shirts?"},{char="hudson01",text="Our mom bought them."},{char="britta01",text="Your mom is cool!"},{char="luke01",text="Are you Sid the Science Kid?"},{char="britta01",text="No."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="britta01"},{name="raven05"}}},{dialogs={{char="hudson01",text="How do we get out of here?"},{char="britta01",text="Ha!"},{char="britta01",text="Good question."},{char="britta01",text="There is only one way out."},{char="hudson01",text="We'll take it!"},{char="luke01",text="Are you Dora?"},{char="britta01",text=""}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="britta01"}}},{dialogs={{char="britta01",text="You need to go through Mount Dracmore."},{char="hudson01",text="ok..."},{char="britta01",text="But first, you need to bring the bun to the pan."},{char="luke01",text="What are you talking about?"},{char="empty",text=""}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="britta01"}}},{dialogs={{char="britta01",text="Did you get the bun?"},{char="luke01",text="What?"},{char="hudson01",text="Are you talking to us?"},{char="britta01",text="Did you see this sign that said= \"You got the bun\"?"},{char="hudson01",text="No."},{char="empty",text=""}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="britta01"}}},{dialogs={{char="britta01",text="Never mind.  It's not important."},{char="britta01",text="Just go to the pan."},{char="britta01",text="You will earn 5 gold."},{char="empty",text=""}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="britta01"}}},{dialogs={{char="hudson01",text="We can give one gold to the Leprechaun."},{char="britta01",text="What? No, no no!"},{char="britta01",text="Never give the Leprechaun any gold, ever!"},{char="hudson01",text="But, his Grand Ma-Ma..."},{char="britta01",text="Don't even talk to him."},{char="luke01",text="I like him..."},{char="empty",text=""}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="britta01"}}},{dialogs={{char="hudson01",text="How do we get home?"},{char="luke01",text="Our mom said this was a game."},{char="britta01",text="Look, I am on a dress quest."},{char="britta01",text="I can help you.  Meet me at the pig in the wig."},{char="britta01",text="But you have to bring Hopps!"},{char="empty",text=""},{char="empty",text=""},{char="empty",text=""},{char="empty",text=""},{char="empty",text=""},{char="empty",text=""},{char="empty",text=""}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="britta01"}}}},coordinates={col=2,row=0},maxRow=0,maxCol=2},{name="pan",frames={{dialogs={{char="elf",text="DO NOT GO IN THE CAVE!!!"},{char="luke01",text="Are you a licensed character?"},{char="elf",text="Huh? What?  Look, a giant monster!"}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="elf"}}},{dialogs={{char="elf",text="DO NOT GO IN THE CAVE!!!"},{char="luke01",text="Let's go in the cave."},{char="hudson01",text="No way!"},{char="luke01",text="I'm going to the rap battle!"},{char="liz2",text=""}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="elf"}}}},coordinates={col=3,row=0},maxRow=0,maxCol=3}}, }
 return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
