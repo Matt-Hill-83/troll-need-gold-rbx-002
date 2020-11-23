@@ -1,28 +1,24 @@
 local Sss = game:GetService("ServerScriptService")
 local Part = require(Sss.Source.AddRemoteObjects.Part)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
-local Constants = require(Sss.Source.Constants.Constants)
 
 local module = {}
 
 renderQuestBlock = function(props)
     local parent = props.parent
-    local gridSize = props.gridSize
+    local size = props.size
 
-    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 1)
-
-    local childSize = Vector3.new(gridSize.cols * Constants.islandLength * 2, 2,
-                                  gridSize.rows * Constants.islandLength * 2)
+    local desiredOffsetFromParentEdge = Vector3.new(-20, -4, 0)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, -1),
-        moveTowardZero = Vector3.new(-1, -1, -1),
-        alignToChildFarEdge = Vector3.new(-1, -1, -1)
+        alignToParentFarEdge = Vector3.new(1, 1, 1),
+        moveTowardZero = Vector3.new(-1, -1, 1),
+        alignToChildFarEdge = Vector3.new(-1, -1, 1)
     }
 
     local offsetProps = {
         parent = parent,
-        childSize = childSize,
+        childSize = size,
         itemDuplicationConfig = itemDuplicationConfig,
         offset = desiredOffsetFromParentEdge
     }
@@ -33,7 +29,7 @@ renderQuestBlock = function(props)
         name = 'DialogContainer',
         parent = parent,
         color = BrickColor.new("Buttermilk"),
-        size = childSize,
+        size = size,
         position = childPos
     }
 
