@@ -3,8 +3,11 @@ local Sss = game:GetService("ServerScriptService")
 
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
 local Dialog = require(Sss.Source.AddDialog.Dialog)
-local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local ButtonBlock = require(Sss.Source.AddDialog.ButtonBlock)
+
+local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
+local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
+
 local Utils = require(Sss.Source.Utils.Utils)
 local Constants = require(Sss.Source.Constants.Constants)
 
@@ -77,10 +80,10 @@ end
 
 getStartPosition = function(parent, child)
     local childSize = child.Size
-    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
+    local desiredOffsetFromParentEdge = Vector3.new(-20, 0, -8)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, -1, -1),
+        alignToParentFarEdge = Vector3.new(1, 1, 1),
         moveTowardZero = Vector3.new(-1, 1, -1),
         alignToChildFarEdge = Vector3.new(-1, 1, -1)
     }
@@ -96,15 +99,10 @@ getStartPosition = function(parent, child)
 end
 
 function getNewPosition(props)
-    local template = props.template
     local coordinates = props.coordinates
     local gapZ = props.gapZ
-    print('template.Size.X' .. ' - start');
-    print(template.Size.X);
-    print('template.Size.X' .. ' - end');
     local gapX = Constants.islandLength * 2
     local newX = -(gapX + Constants.buffer) * coordinates.col
-    -- local newX = -(template.Size.X + gapX) * coordinates.col - Constants.buffer
     local newZ = gapZ + coordinates.row *
                      (Constants.islandLength * 2 + Constants.buffer)
     return Vector3.new(newX, 0, -newZ)
@@ -153,10 +151,6 @@ function addScenes(props)
                 gapZ = gapZ,
                 template = sceneTemplateModel.PrimaryPart
             })
-
-        print('newPosition' .. ' - start');
-        print(newPosition);
-        print('newPosition' .. ' - end');
 
         local clonedScene = Utils.cloneModel(
                                 {
@@ -228,11 +222,24 @@ function addRemoteObjects()
     local sceneTemplateModel = templatesFolder:FindFirstChild(
                                    "SceneTemplateModel")
 
-    for i, quest in pairs(questConfigs) do
+    local gameOrigin = sceneOrigins[1]
+
+    for i, questConfig in pairs(questConfigs) do
+
+        print('questConfig' .. ' - start');
+        print(Utils.tableToString({questConfig}));
+        print('questConfig' .. ' - end');
+        local questBlockProps = {
+            parent = gameOrigin,
+            gridSize = questConfig.gridSize
+        }
+
+        local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
+
         local addScenesProps = {
             gapZ = 72 * (i - 1),
-            parent = sceneOrigins[1],
-            sceneConfigs = quest,
+            parent = questBlock,
+            sceneConfigs = questConfig.sceneConfigs,
             sceneTemplateModel = sceneTemplateModel
         }
         addScenes(addScenesProps)
