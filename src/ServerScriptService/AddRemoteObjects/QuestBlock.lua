@@ -6,9 +6,11 @@ local module = {}
 
 renderQuestBlock = function(props)
     local parent = props.parent
+    local sibling = props.sibling
     local size = props.size
 
-    local desiredOffsetFromParentEdge = Vector3.new(-20, -4, 0)
+    -- local desiredOffsetFromParentEdge = Vector3.new(-20, -4, 0)
+    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 36)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
@@ -17,7 +19,7 @@ renderQuestBlock = function(props)
     }
 
     local offsetProps = {
-        parent = parent,
+        parent = sibling,
         childSize = size,
         itemDuplicationConfig = itemDuplicationConfig,
         offset = desiredOffsetFromParentEdge
@@ -25,15 +27,15 @@ renderQuestBlock = function(props)
 
     local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 
-    local dialogBlockProps = {
-        name = 'DialogContainer',
+    local blockProps = {
+        name = 'QuestContainer',
         parent = parent,
         color = BrickColor.new("Buttermilk"),
         size = size,
         position = childPos
     }
 
-    return Part.createPartWithVectors(dialogBlockProps)
+    return Part.createPartWithVectors(blockProps)
 
 end
 

@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>5.00817633</X>
-					<Y>273.689453</Y>
-					<Z>-381.934326</Z>
-					<R00>-0.99991411</R00>
-					<R01>-0.00754368352</R01>
-					<R02>0.0107240509</R02>
-					<R10>-0</R10>
-					<R11>0.817909539</R11>
-					<R12>0.575346947</R12>
-					<R20>-0.0131115383</R20>
-					<R21>0.575297534</R21>
-					<R22>-0.817839205</R22>
+					<X>240.0383</X>
+					<Y>48.5607071</Y>
+					<Z>-356.333191</Z>
+					<R00>-0.995807588</R00>
+					<R01>0.0260225758</R01>
+					<R02>-0.0876932293</R02>
+					<R10>-1.86264515e-09</R10>
+					<R11>0.958680689</R11>
+					<R12>0.284484237</R12>
+					<R20>0.0914728269</R20>
+					<R21>0.283291548</R21>
+					<R22>-0.954661489</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>0</X>
-					<Y>5.0000267</Y>
-					<Z>0</Z>
+					<X>251</X>
+					<Y>13.0000267</Y>
+					<Z>-237</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -5076,9 +5076,9 @@ HgHB3x4Bwd8eAcHfHgHB3x4Bwd8eAcHfHoAggf+B/4H/gb+AP8EY/8EY/8EY/8EYv4D/gP+A
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>253</X>
-							<Y>13.0000267</Y>
-							<Z>-105</Z>
+							<X>226</X>
+							<Y>-1.4999733</Y>
+							<Z>-232</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -5089,7 +5089,7 @@ HgHB3x4Bwd8eAcHfHgHB3x4Bwd8eAcHfHoAggf+B/4H/gb+AP8EY/8EY/8EY/8EYv4D/gP+A
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
-						<bool name="CanCollide">true</bool>
+						<bool name="CanCollide">false</bool>
 						<bool name="CastShadow">true</bool>
 						<int name="CollisionGroupId">0</int>
 						<Color3uint8 name="Color3uint8">4294506744</Color3uint8>
@@ -5135,7 +5135,7 @@ HgHB3x4Bwd8eAcHfHgHB3x4Bwd8eAcHfHoAggf+B/4H/gb+AP8EY/8EY/8EY/8EYv4D/gP+A
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>4</X>
-							<Y>4</Y>
+							<Y>27</Y>
 							<Z>4</Z>
 						</Vector3>
 					</Properties>
@@ -5304,9 +5304,9 @@ remoteCode.addRemoteObjects(base)
 				<token name="BottomSurface">0</token>
 				<token name="BottomSurfaceInput">0</token>
 				<CoordinateFrame name="CFrame">
-					<X>253</X>
+					<X>251</X>
 					<Y>15.0000267</Y>
-					<Z>-117</Z>
+					<Z>-249</Z>
 					<R00>-1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -5426,7 +5426,7 @@ remoteCode.addRemoteObjects(base)
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="Weld" referent="RBXf890bae4c8854e1a80d5b774a6c18d2f">
+			<Item class="Weld" referent="RBX318d2201641f44328a53a7f469db2670">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<CoordinateFrame name="C0">
@@ -5444,9 +5444,9 @@ remoteCode.addRemoteObjects(base)
 						<R22>0</R22>
 					</CoordinateFrame>
 					<CoordinateFrame name="C1">
-						<X>253</X>
+						<X>251</X>
 						<Y>6</Y>
-						<Z>-117</Z>
+						<Z>-249</Z>
 						<R00>-1</R00>
 						<R01>0</R01>
 						<R02>-0</R02>
@@ -6474,6 +6474,7 @@ function addRemoteObjects()
 
     local prevPosition = Vector3.new(0, 0, 0)
     local prevSize = Vector3.new(0, 0, 0)
+    local sibling = gameOrigin
 
     for i, questConfig in pairs(questConfigs) do
         local gridSize = questConfig.gridSize
@@ -6481,11 +6482,14 @@ function addRemoteObjects()
         local z = gridSize.rows * (Constants.islandLength - 4) * 2
         local size = Vector3.new(x, 2, z)
 
-        prevSize = size
-
-        local questBlockProps = {parent = gameOrigin, size = size}
+        local questBlockProps = {
+            parent = gameOrigin,
+            size = size,
+            sibling = sibling
+        }
 
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
+        sibling = questBlock
 
         local addScenesProps = {
             gapZ = 72 * (i - 1),
@@ -6670,9 +6674,11 @@ local module = {}
 
 renderQuestBlock = function(props)
     local parent = props.parent
+    local sibling = props.sibling
     local size = props.size
 
-    local desiredOffsetFromParentEdge = Vector3.new(-20, -4, 0)
+    -- local desiredOffsetFromParentEdge = Vector3.new(-20, -4, 0)
+    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
@@ -6681,7 +6687,7 @@ renderQuestBlock = function(props)
     }
 
     local offsetProps = {
-        parent = parent,
+        parent = sibling,
         childSize = size,
         itemDuplicationConfig = itemDuplicationConfig,
         offset = desiredOffsetFromParentEdge
@@ -6689,15 +6695,15 @@ renderQuestBlock = function(props)
 
     local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 
-    local dialogBlockProps = {
-        name = 'DialogContainer',
+    local blockProps = {
+        name = 'QuestContainer',
         parent = parent,
         color = BrickColor.new("Buttermilk"),
         size = size,
         position = childPos
     }
 
-    return Part.createPartWithVectors(dialogBlockProps)
+    return Part.createPartWithVectors(blockProps)
 
 end
 

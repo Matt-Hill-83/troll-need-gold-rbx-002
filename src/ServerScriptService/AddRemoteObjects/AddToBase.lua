@@ -224,8 +224,7 @@ function addRemoteObjects()
 
     local gameOrigin = sceneOrigins[1]
 
-    local prevPosition = Vector3.new(0, 0, 0)
-    local prevSize = Vector3.new(0, 0, 0)
+    local sibling = gameOrigin
 
     for i, questConfig in pairs(questConfigs) do
         local gridSize = questConfig.gridSize
@@ -233,19 +232,24 @@ function addRemoteObjects()
         local z = gridSize.rows * (Constants.islandLength - 4) * 2
         local size = Vector3.new(x, 2, z)
 
-        prevSize = size
-
-        local questBlockProps = {parent = gameOrigin, size = size}
+        local questBlockProps = {
+            parent = gameOrigin,
+            size = size,
+            sibling = sibling
+        }
 
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
 
         local addScenesProps = {
-            gapZ = 72 * (i - 1),
+            gapZ = 0,
+            -- gapZ = sibling.Size.Z / 2 + sibling.Position.Z,
+            -- parent = sibling,
             parent = questBlock,
             sceneConfigs = questConfig.sceneConfigs,
             sceneTemplateModel = sceneTemplateModel
         }
         addScenes(addScenesProps)
+        sibling = questBlock
 
     end
 
