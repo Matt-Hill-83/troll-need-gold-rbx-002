@@ -174,7 +174,8 @@ function addScenes(props)
                                 {
                 modelName = modelName,
                 model = sceneTemplateModel,
-                position = newPosition + startPosition
+                position = newPosition + startPosition,
+                suffix = "-clone--" .. i
             })
 
         destroyBridges({sceneConfig = sceneConfig, clonedScene = clonedScene})
