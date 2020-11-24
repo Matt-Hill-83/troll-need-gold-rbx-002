@@ -183,7 +183,6 @@ function addScenes(props)
 
         local clonedScene = Utils.cloneModel(
                                 {
-                modelName = "SceneTemplate",
                 model = sceneTemplateModel,
                 position = newPosition + startPosition,
                 suffix = "-clone--" .. i

@@ -17,17 +17,13 @@ function addcfv3(a, b)
 end
 
 function cloneModel(props)
-    local modelName = props.modelName
     local model = props.model
     local position = props.position
     local suffix = props.suffix
 
     local sceneBaseModelClone = model:Clone()
-
     sceneBaseModelClone.Parent = model.Parent
-
     sceneBaseModelClone.Name = model.Name .. (suffix or "-clone")
-    -- sceneBaseModelClone.Name = modelName .. (suffix or "-clone")
 
     sceneBaseModelClone:MoveTo(position)
     return sceneBaseModelClone
