@@ -36,7 +36,7 @@ renderCharacters02 = function(parent, itemConfigs)
     return RowOfParts.createRowOfParts(props)
 end
 
-renderCharacters = function(parent, itemConfigs)
+renderCharacters01 = function(parent, itemConfigs)
     for i, itemConfig in ipairs(itemConfigs) do
         local dataFileName = itemConfig.name
         if (not itemConfig.decalId) then
@@ -50,32 +50,44 @@ renderCharacters = function(parent, itemConfigs)
 
     end
 
-    local characterScale = 0.6
-    local itemProps = {
-        size = Vector3.new(6 * characterScale, 8 * characterScale, 0.5),
-        partName = "Characters"
-    }
+    local characterTemplate = Utils.getFromMyStuff("CharacterTemplate")
 
-    local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, -1, -1),
-        moveTowardZero = Vector3.new(-1, 1, -1),
-        alignToChildFarEdge = Vector3.new(-1, -1, -1)
-    }
+    for i, itemConfig in ipairs(itemConfigs) do
+        print('itemConfig' .. ' - start');
+        print(itemConfig);
+        print('itemConfig' .. ' - end');
+        local newItem = characterTemplate:Clone()
+        newItem.Position = newItem.Position + Vector3.new(0, 10, 0)
+        newItem.Parent = parent
 
-    local rowProps = {
-        parent = parent,
-        itemDuplicationConfig = itemDuplicationConfig,
-        gapBetweenRowItems = Vector3.new(1, 0, 0),
-        offset = Vector3.new(-1, 0.5, 0)
-    }
+    end
 
-    local props = {
-        rowProps = rowProps,
-        itemConfigs = itemConfigs,
-        itemProps = itemProps
-    }
+    -- local characterScale = 0.6
+    -- local itemProps = {
+    --     size = Vector3.new(6 * characterScale, 8 * characterScale, 0.5),
+    --     partName = "Characters"
+    -- }
 
-    return RowOfParts.createRowOfParts(props)
+    -- local itemDuplicationConfig = {
+    --     alignToParentFarEdge = Vector3.new(1, -1, -1),
+    --     moveTowardZero = Vector3.new(-1, 1, -1),
+    --     alignToChildFarEdge = Vector3.new(-1, -1, -1)
+    -- }
+
+    -- local rowProps = {
+    --     parent = parent,
+    --     itemDuplicationConfig = itemDuplicationConfig,
+    --     gapBetweenRowItems = Vector3.new(1, 0, 0),
+    --     offset = Vector3.new(-1, 0.5, 0)
+    -- }
+
+    -- local props = {
+    --     rowProps = rowProps,
+    --     itemConfigs = itemConfigs,
+    --     itemProps = itemProps
+    -- }
+
+    -- return RowOfParts.createRowOfParts(props)
 end
 
 getStartPosition = function(parent, child)
@@ -117,7 +129,7 @@ function addItemsToScene(props)
     local itemConfigs = sceneConfig.frames[pageNum].characters02
     local dialogConfigs = sceneConfig.frames[pageNum].dialogs
 
-    renderCharacters(newScene, characterConfigs01)
+    renderCharacters01(newScene, characterConfigs01)
     renderCharacters02(newScene, itemConfigs)
 
     return Dialog.renderDialog({
@@ -274,7 +286,6 @@ function addRemoteObjects()
         local addScenesProps = {
             parent = questBlock,
             sceneConfigs = questConfig.sceneConfigs
-            -- sceneTemplateModel = sceneTemplateModel
         }
         addScenes(addScenesProps)
         sibling = questBlock
