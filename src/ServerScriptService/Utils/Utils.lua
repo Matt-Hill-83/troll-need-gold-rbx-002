@@ -1,5 +1,10 @@
 local module = {}
 
+function getFromMyStuff(name)
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    return getDescendantByName(myStuff, name)
+end
+
 function getDescendantByName(parent, name)
     local model = parent:GetDescendants()
     for i = 1, #model do
@@ -107,11 +112,12 @@ setMaterialPebble = function(part)
     part.BrickColor = BrickColor.new("Institutional white")
 end
 
+module.addcfv3 = addcfv3
 module.addPadding = addPadding
-module.setMaterialPebble = setMaterialPebble
-module.tableToString = tableToString
 module.cloneModel = cloneModel
 module.getDescendantByName = getDescendantByName
-module.addcfv3 = addcfv3
+module.getFromMyStuff = getFromMyStuff
+module.setMaterialPebble = setMaterialPebble
+module.tableToString = tableToString
 
 return module

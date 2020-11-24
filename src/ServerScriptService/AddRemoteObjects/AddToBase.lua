@@ -251,8 +251,10 @@ function addRemoteObjects()
     end
 
     local templatesFolder = myStuff:FindFirstChild("Templates")
-    local sceneTemplateModel = templatesFolder:FindFirstChild(
-                                   "SceneTemplateModel")
+
+    local sceneTemplateModel = Utils.getDescendantByName(templatesFolder,
+                                                         "SceneTemplateModel")
+    local dialogModel = Utils.getFromMyStuff("DialogModel")
 
     local gameOrigin = sceneOrigins[1]
     local sibling = gameOrigin
