@@ -12,16 +12,9 @@ renderQuestBlock = function(props)
     local isFirst = props.isFirst
 
     local offset = 0
-    -- local offset = Constants.islandLength
 
     if (isFirst) then offset = 0 end
-    print('isFirst' .. ' - start');
-    print(isFirst);
-    print('isFirst' .. ' - end');
 
-    print('offset' .. ' - start');
-    print(offset);
-    print('offset' .. ' - end');
     local desiredOffsetFromParentEdge = Vector3.new(0, 0, offset)
 
     local itemDuplicationConfig = {
