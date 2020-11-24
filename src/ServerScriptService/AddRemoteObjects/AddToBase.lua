@@ -142,12 +142,6 @@ function addScenes(props)
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
-        local showBottomPath = sceneConfig.showBottomPath
-        local showRightPath = sceneConfig.showRightPath
-
-        -- print('showBottomPath' .. ' - start');
-        -- print(showBottomPath);
-        -- print('showBottomPath' .. ' - end');
         local pageNum = 1
         local buttonParent = nil
 
@@ -165,6 +159,9 @@ function addScenes(props)
                 position = newPosition + startPosition
             })
         local newScene = clonedScene.PrimaryPart
+
+        local showBottomPath = sceneConfig.showBottomPath
+        local showRightPath = sceneConfig.showRightPath
 
         local bridgeRightModel = Utils.getDescendantByName(clonedScene,
                                                            "BridgeRightModel")
