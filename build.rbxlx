@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>370.090118</X>
-					<Y>42.6413803</Y>
-					<Z>-248.660889</Z>
-					<R00>-0.919929028</R00>
-					<R01>-0.0778462291</R01>
-					<R02>0.384279221</R02>
-					<R10>-0</R10>
-					<R11>0.98009187</R11>
-					<R12>0.198544338</R12>
-					<R20>-0.392084867</R20>
-					<R21>0.182646707</R21>
-					<R22>-0.901615024</R22>
+					<X>375.249268</X>
+					<Y>39.7638702</Y>
+					<Z>-229.236359</Z>
+					<R00>-0.670313835</R00>
+					<R01>-0.142138481</R01>
+					<R02>0.728337824</R02>
+					<R10>1.4901163e-08</R10>
+					<R11>0.981484532</R11>
+					<R12>0.19154124</R12>
+					<R20>-0.742077768</R20>
+					<R21>0.128392756</R21>
+					<R22>-0.657902598</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -3973,7 +3973,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 									<Content name="BottomImage"><url>rbxasset://textures/ui/Scroll/scroll-bottom.png</url></Content>
 									<Vector2 name="CanvasPosition">
 										<X>0</X>
-										<Y>500</Y>
+										<Y>650</Y>
 									</Vector2>
 									<UDim2 name="CanvasSize">
 										<XS>0</XS>
@@ -10271,12 +10271,8 @@ function addScenes(props)
     local sceneConfigs = props.sceneConfigs
     local sceneTemplateModel = props.sceneTemplateModel
 
-    local modelName = "SceneTemplate"
-    local modelRootPart = sceneTemplateModel:FindFirstChild(
-                              modelName .. "ModelRoot")
-    sceneTemplateModel.PrimaryPart = modelRootPart
-
-    local startPosition = getStartPosition(parent, modelRootPart)
+    local startPosition = getStartPosition(parent,
+                                           sceneTemplateModel.PrimaryPart)
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
@@ -10291,7 +10287,6 @@ function addScenes(props)
 
         local clonedScene = Utils.cloneModel(
                                 {
-                modelName = modelName,
                 model = sceneTemplateModel,
                 position = newPosition + startPosition,
                 suffix = "-clone--" .. i
@@ -10670,16 +10665,13 @@ function addcfv3(a, b)
 end
 
 function cloneModel(props)
-    local modelName = props.modelName
     local model = props.model
     local position = props.position
     local suffix = props.suffix
 
     local sceneBaseModelClone = model:Clone()
-
     sceneBaseModelClone.Parent = model.Parent
-
-    sceneBaseModelClone.Name = modelName .. (suffix or "-clone")
+    sceneBaseModelClone.Name = model.Name .. (suffix or "-clone")
 
     sceneBaseModelClone:MoveTo(position)
     return sceneBaseModelClone
