@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>277.240448</X>
-					<Y>61.3289871</Y>
-					<Z>-279.33374</Z>
-					<R00>-0.559325337</R00>
-					<R01>-0.239109591</R01>
-					<R02>0.793713987</R02>
+					<X>22.8115692</X>
+					<Y>208.023987</Y>
+					<Z>-469.473053</Z>
+					<R00>-0.998821676</R00>
+					<R01>-0.0192446392</R01>
+					<R02>0.0445538424</R02>
 					<R10>-0</R10>
-					<R11>0.957495213</R11>
-					<R12>0.288449347</R12>
-					<R20>-0.828948259</R20>
-					<R21>0.161337033</R21>
-					<R22>-0.53555131</R22>
+					<R11>0.918021321</R11>
+					<R12>0.396531105</R12>
+					<R20>-0.0485324822</R20>
+					<R21>0.396063864</R21>
+					<R22>-0.916939437</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>275.653015</X>
-					<Y>60.7520866</Y>
-					<Z>-278.262634</Z>
+					<X>0</X>
+					<Y>5.0000267</Y>
+					<Z>0</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -880,10 +880,10 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<Y>0</Y>
 									<Z>0</Z>
 								</Vector3>
-								<string name="Name">BridgeLeftModel</string>
+								<string name="Name">BridgeRightModel</string>
 								<Ref name="PrimaryPart">null</Ref>
 								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
+								<BinaryString name="Tags">QnJpZGdlUmlnaHRNb2RlbA==</BinaryString>
 							</Properties>
 							<Item class="Part" referent="RBX2cacbcef2fb147c1bb21bd281c48b19d">
 								<Properties>
@@ -1074,122 +1074,6 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 										<string name="Name">Weld</string>
 										<Ref name="Part0">RBX2cacbcef2fb147c1bb21bd281c48b19d</Ref>
 										<Ref name="Part1">RBXa3bcf753fde5464899a4f15d57c876c7</Ref>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-									</Properties>
-								</Item>
-							</Item>
-							<Item class="Part" referent="RBXdcb284028a3d47f498476b12cde3dbcd">
-								<Properties>
-									<bool name="Anchored">true</bool>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<float name="BackParamA">-0.5</float>
-									<float name="BackParamB">0.5</float>
-									<token name="BackSurface">0</token>
-									<token name="BackSurfaceInput">0</token>
-									<float name="BottomParamA">-0.5</float>
-									<float name="BottomParamB">0.5</float>
-									<token name="BottomSurface">0</token>
-									<token name="BottomSurfaceInput">0</token>
-									<CoordinateFrame name="CFrame">
-										<X>289.935486</X>
-										<Y>43.4783974</Y>
-										<Z>-223.5</Z>
-										<R00>1</R00>
-										<R01>0</R01>
-										<R02>0</R02>
-										<R10>0</R10>
-										<R11>1</R11>
-										<R12>0</R12>
-										<R20>0</R20>
-										<R21>0</R21>
-										<R22>1</R22>
-									</CoordinateFrame>
-									<bool name="CanCollide">true</bool>
-									<bool name="CastShadow">true</bool>
-									<int name="CollisionGroupId">0</int>
-									<Color3uint8 name="Color3uint8">4294940892</Color3uint8>
-									<PhysicalProperties name="CustomPhysicalProperties">
-										<CustomPhysics>false</CustomPhysics>
-									</PhysicalProperties>
-									<float name="FrontParamA">-0.5</float>
-									<float name="FrontParamB">0.5</float>
-									<token name="FrontSurface">0</token>
-									<token name="FrontSurfaceInput">0</token>
-									<float name="LeftParamA">-0.5</float>
-									<float name="LeftParamB">0.5</float>
-									<token name="LeftSurface">0</token>
-									<token name="LeftSurfaceInput">0</token>
-									<bool name="Locked">false</bool>
-									<bool name="Massless">false</bool>
-									<token name="Material">256</token>
-									<string name="Name">BridgeWallFront</string>
-									<float name="Reflectance">0</float>
-									<float name="RightParamA">-0.5</float>
-									<float name="RightParamB">0.5</float>
-									<token name="RightSurface">0</token>
-									<token name="RightSurfaceInput">0</token>
-									<int name="RootPriority">0</int>
-									<Vector3 name="RotVelocity">
-										<X>0</X>
-										<Y>0</Y>
-										<Z>0</Z>
-									</Vector3>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-									<float name="TopParamA">-0.5</float>
-									<float name="TopParamB">0.5</float>
-									<token name="TopSurface">0</token>
-									<token name="TopSurfaceInput">0</token>
-									<float name="Transparency">0.699999988</float>
-									<Vector3 name="Velocity">
-										<X>0</X>
-										<Y>0</Y>
-										<Z>0</Z>
-									</Vector3>
-									<token name="formFactorRaw">1</token>
-									<token name="shape">1</token>
-									<Vector3 name="size">
-										<X>36</X>
-										<Y>3</Y>
-										<Z>1</Z>
-									</Vector3>
-								</Properties>
-								<Item class="Weld" referent="RBX874c6570db8e4ab29ce19b63136c12bd">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<CoordinateFrame name="C0">
-											<X>0</X>
-											<Y>0</Y>
-											<Z>0.5</Z>
-											<R00>1</R00>
-											<R01>0</R01>
-											<R02>0</R02>
-											<R10>0</R10>
-											<R11>1</R11>
-											<R12>0</R12>
-											<R20>0</R20>
-											<R21>0</R21>
-											<R22>1</R22>
-										</CoordinateFrame>
-										<CoordinateFrame name="C1">
-											<X>-7.49902344</X>
-											<Y>0.509998322</Y>
-											<Z>17.4990234</Z>
-											<R00>0</R00>
-											<R01>0</R01>
-											<R02>1</R02>
-											<R10>0</R10>
-											<R11>1</R11>
-											<R12>0</R12>
-											<R20>-1</R20>
-											<R21>0</R21>
-											<R22>0</R22>
-										</CoordinateFrame>
-										<bool name="Enabled">true</bool>
-										<string name="Name">Weld</string>
-										<Ref name="Part0">RBXdcb284028a3d47f498476b12cde3dbcd</Ref>
-										<Ref name="Part1">RBX44dc5badf83e4baf8847e10f6f520c88</Ref>
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
@@ -1389,7 +1273,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<Y>0</Y>
 									<Z>0</Z>
 								</Vector3>
-								<string name="Name">BridgeBackModel</string>
+								<string name="Name">BridgeBottomModel</string>
 								<Ref name="PrimaryPart">null</Ref>
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
@@ -6647,6 +6531,24 @@ function addItemsToScene(props)
     })
 end
 
+function destroyBridges(props)
+    -- all bridges are created in clone.
+    -- remove bridges that do not go anywhere
+    local sceneConfig = props.sceneConfig
+    local clonedScene = props.clonedScene
+
+    local showBottomPath = sceneConfig.showBottomPath
+    local showRightPath = sceneConfig.showRightPath
+
+    local bridgeRightModel = Utils.getDescendantByName(clonedScene,
+                                                       "BridgeRightModel")
+    if (not showRightPath) then bridgeRightModel:Destroy() end
+
+    local bridgeBottomModel = Utils.getDescendantByName(clonedScene,
+                                                        "BridgeBottomModel")
+    if (not showBottomPath) then bridgeBottomModel:Destroy() end
+end
+
 function addScenes(props)
     local gapZ = props.gapZ
     local parent = props.parent
@@ -6662,11 +6564,6 @@ function addScenes(props)
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
-        local showBottomPath = sceneConfig.showBottomPath
-
-        print('showBottomPath' .. ' - start');
-        print(showBottomPath);
-        print('showBottomPath' .. ' - end');
         local pageNum = 1
         local buttonParent = nil
 
@@ -6683,6 +6580,9 @@ function addScenes(props)
                 model = sceneTemplateModel,
                 position = newPosition + startPosition
             })
+
+        destroyBridges({sceneConfig = sceneConfig, clonedScene = clonedScene})
+
         local newScene = clonedScene.PrimaryPart
 
         local sceneProps = {
@@ -6951,7 +6851,6 @@ renderQuestBlock = function(props)
     local sibling = props.sibling
     local size = props.size
 
-    -- local desiredOffsetFromParentEdge = Vector3.new(-20, -4, 0)
     local desiredOffsetFromParentEdge = Vector3.new(0, 0, 36)
 
     local itemDuplicationConfig = {
@@ -7028,6 +6927,19 @@ return {a = '234'}
 						<string name="ScriptGuid">{841adf3c-5fb6-434a-8bbb-7f5708f6107c}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
+function getDescendantByName(parent, name)
+    local model = parent:GetDescendants()
+
+    for i = 1, #model do
+        if model[i].Name == name then
+            print('model[i].Name' .. ' - start');
+            print(model[i].Name);
+            print('model[i].Name' .. ' - end');
+            return model[i]
+        end
+    end
+end
+
 function addcfv3(a, b)
     local x, y, z, m11, m12, m13, m21, m22, m23, m31, m32, m33 = a:components()
     return CFrame.new(x + b.x, y + b.y, z + b.z, m11, m12, m13, m21, m22, m23,
@@ -7102,16 +7014,11 @@ local test = {
 test.child.cyclic = test.cyclic
 test.another = test.child
 
--- 
--- 
--- 
-
 function module.mergeTables(t1, t2)
     for k, v in pairs(t2) do
         t1[k] = v
         --
     end
-    --
 end
 
 addPadding = function(props)
@@ -7135,6 +7042,7 @@ module.addPadding = addPadding
 module.setMaterialPebble = setMaterialPebble
 module.tableToString = tableToString
 module.cloneModel = cloneModel
+module.getDescendantByName = getDescendantByName
 module.addcfv3 = addcfv3
 
 return module
@@ -8797,6 +8705,78 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
+			</Item>
+		</Item>
+		<Item class="Folder" referent="RBXe7518efc749344309762f6b3daded4ce">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="Name">TagList</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+			<Item class="Folder" referent="RBX481b5ae4902b467291dfc2b985acc0dd">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<string name="Name">BridgeRightModel</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="Color3Value" referent="RBX362df01877c64dee9792b2f59423f3f8">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Color</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<Color3 name="Value">
+							<R>0.464705884</R>
+							<G>0.177491188</G>
+							<B>0.135553464</B>
+						</Color3>
+					</Properties>
+				</Item>
+				<Item class="BoolValue" referent="RBX97020596659847e8b744d4c7caed5b9e">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Visible</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<bool name="Value">true</bool>
+					</Properties>
+				</Item>
+				<Item class="StringValue" referent="RBX04e985e291924e4f9d103af06c87bd59">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Group</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<string name="Value">Bridges</string>
+					</Properties>
+				</Item>
+				<Item class="BoolValue" referent="RBXc91cf9666aad44edb31a095c2b1cb019">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">AlwaysOnTop</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<bool name="Value">true</bool>
+					</Properties>
+				</Item>
+			</Item>
+		</Item>
+		<Item class="Folder" referent="RBX90e1ee6da16741608276cba9f57897da">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="Name">TagGroupList</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+			<Item class="Folder" referent="RBX23c60a724fc94814bb4a776a98885e1c">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<string name="Name">Bridges</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
 			</Item>
 		</Item>
 	</Item>

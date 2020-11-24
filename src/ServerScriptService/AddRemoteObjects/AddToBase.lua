@@ -177,7 +177,7 @@ function addScenes(props)
                 position = newPosition + startPosition
             })
 
-        destroyBridges({sceneConfig, clonedScene})
+        destroyBridges({sceneConfig = sceneConfig, clonedScene = clonedScene})
 
         local newScene = clonedScene.PrimaryPart
 

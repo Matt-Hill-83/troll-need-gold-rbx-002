@@ -2,13 +2,10 @@ local module = {}
 
 function getDescendantByName(parent, name)
     local model = parent:GetDescendants()
-
     for i = 1, #model do
         if model[i].Name == name then
-            print('model[i].Name' .. ' - start');
-            print(model[i].Name);
-            print('model[i].Name' .. ' - end');
             return model[i]
+            -- 
         end
     end
 end
