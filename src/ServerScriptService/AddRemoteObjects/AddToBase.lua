@@ -167,12 +167,8 @@ function addScenes(props)
     local sceneConfigs = props.sceneConfigs
     local sceneTemplateModel = props.sceneTemplateModel
 
-    local modelName = "SceneTemplate"
-    local modelRootPart = sceneTemplateModel:FindFirstChild(
-                              modelName .. "ModelRoot")
-    sceneTemplateModel.PrimaryPart = modelRootPart
-
-    local startPosition = getStartPosition(parent, modelRootPart)
+    local startPosition = getStartPosition(parent,
+                                           sceneTemplateModel.PrimaryPart)
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
@@ -187,7 +183,7 @@ function addScenes(props)
 
         local clonedScene = Utils.cloneModel(
                                 {
-                modelName = modelName,
+                modelName = "SceneTemplate",
                 model = sceneTemplateModel,
                 position = newPosition + startPosition,
                 suffix = "-clone--" .. i
