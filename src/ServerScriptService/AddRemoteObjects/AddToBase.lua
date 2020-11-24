@@ -80,7 +80,7 @@ end
 
 getStartPosition = function(parent, child)
     local childSize = child.Size
-    local desiredOffsetFromParentEdge = Vector3.new(-20, 0, -8)
+    local desiredOffsetFromParentEdge = Vector3.new(-4, 0, -4)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
@@ -100,10 +100,9 @@ end
 
 function getNewPosition(props)
     local coordinates = props.coordinates
-    local gapZ = props.gapZ
     local gapX = Constants.islandLength * 2
     local newX = -(gapX + Constants.buffer) * coordinates.col
-    local newZ = gapZ + coordinates.row *
+    local newZ = coordinates.row *
                      (Constants.islandLength * 2 + Constants.buffer)
     return Vector3.new(newX, 0, -newZ)
 end
@@ -146,7 +145,6 @@ function destroyBridges(props)
 end
 
 function addScenes(props)
-    local gapZ = props.gapZ
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
     local sceneTemplateModel = props.sceneTemplateModel
@@ -166,7 +164,6 @@ function addScenes(props)
         local newPosition = getNewPosition(
                                 {
                 coordinates = sceneConfig.coordinates,
-                gapZ = gapZ,
                 template = sceneTemplateModel.PrimaryPart
             })
 
@@ -249,20 +246,21 @@ function addRemoteObjects()
 
     for i, questConfig in pairs(questConfigs) do
         local gridSize = questConfig.gridSize
-        local x = gridSize.cols * (Constants.islandLength - 2) * 2
-        local z = gridSize.rows * (Constants.islandLength - 4) * 2
-        local size = Vector3.new(x, 2, z)
+        local gridPadding = 8
+
+        local x = gridSize.cols * (Constants.islandLength - 2) * 2 + gridPadding
+        local z = gridSize.rows * (Constants.islandLength - 4) * 2 + gridPadding
 
         local questBlockProps = {
             parent = gameOrigin,
-            size = size,
-            sibling = sibling
+            size = Vector3.new(x, 2, z),
+            sibling = sibling,
+            isFirst = i == 1
         }
 
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
         -- questBlock.Transparency = 1
         local addScenesProps = {
-            gapZ = 0,
             parent = questBlock,
             sceneConfigs = questConfig.sceneConfigs,
             sceneTemplateModel = sceneTemplateModel

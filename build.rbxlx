@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>22.8115692</X>
-					<Y>208.023987</Y>
-					<Z>-469.473053</Z>
-					<R00>-0.998821676</R00>
-					<R01>-0.0192446392</R01>
-					<R02>0.0445538424</R02>
+					<X>12.9638128</X>
+					<Y>411.013977</Y>
+					<Z>-311.654968</Z>
+					<R00>-0.999135971</R00>
+					<R01>-0.0329574905</R01>
+					<R02>0.0253199376</R02>
 					<R10>-0</R10>
-					<R11>0.918021321</R11>
-					<R12>0.396531105</R12>
-					<R20>-0.0485324822</R20>
-					<R21>0.396063864</R21>
-					<R22>-0.916939437</R22>
+					<R11>0.60922724</R11>
+					<R12>0.792995691</R12>
+					<R20>-0.041560743</R20>
+					<R21>0.792310536</R21>
+					<R22>-0.608700871</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -4848,9 +4848,9 @@ remoteCode.addRemoteObjects(base)
 				<token name="BottomSurface">0</token>
 				<token name="BottomSurfaceInput">0</token>
 				<CoordinateFrame name="CFrame">
-					<X>216.959991</X>
-					<Y>35.4993439</Y>
-					<Z>-250.110001</Z>
+					<X>251</X>
+					<Y>35.6593399</Y>
+					<Z>-134</Z>
 					<R00>-1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -5009,7 +5009,7 @@ remoteCode.addRemoteObjects(base)
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="Weld" referent="RBX0bae0efb140e438a893617158f7135e9">
+			<Item class="Weld" referent="RBXd58723f545464c0099478fbbd22dcc39">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<CoordinateFrame name="C0">
@@ -5027,23 +5027,23 @@ remoteCode.addRemoteObjects(base)
 						<R22>0</R22>
 					</CoordinateFrame>
 					<CoordinateFrame name="C1">
-						<X>216.959991</X>
+						<X>-134.5</X>
 						<Y>11.9999981</Y>
-						<Z>-0.11000061</Z>
-						<R00>-1</R00>
-						<R01>0</R01>
+						<Z>-1</Z>
+						<R00>0</R00>
+						<R01>-1</R01>
 						<R02>-0</R02>
 						<R10>0</R10>
 						<R11>0</R11>
 						<R12>-1</R12>
-						<R20>0</R20>
-						<R21>-1</R21>
-						<R22>-0</R22>
+						<R20>1</R20>
+						<R21>0</R21>
+						<R22>0</R22>
 					</CoordinateFrame>
 					<bool name="Enabled">true</bool>
 					<string name="Name">Weld</string>
 					<Ref name="Part0">RBX20423fbfc3f843b6bee9d9b7f1aa1500</Ref>
-					<Ref name="Part1">RBX4cf8aba535474a0f94e9d713a093a018</Ref>
+					<Ref name="Part1">RBXd2c80d288332406197f9f227dd80bb44</Ref>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
@@ -6484,7 +6484,7 @@ end
 
 getStartPosition = function(parent, child)
     local childSize = child.Size
-    local desiredOffsetFromParentEdge = Vector3.new(-20, 0, -8)
+    local desiredOffsetFromParentEdge = Vector3.new(-4, 0, -4)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
@@ -6504,10 +6504,9 @@ end
 
 function getNewPosition(props)
     local coordinates = props.coordinates
-    local gapZ = props.gapZ
     local gapX = Constants.islandLength * 2
     local newX = -(gapX + Constants.buffer) * coordinates.col
-    local newZ = gapZ + coordinates.row *
+    local newZ = coordinates.row *
                      (Constants.islandLength * 2 + Constants.buffer)
     return Vector3.new(newX, 0, -newZ)
 end
@@ -6550,7 +6549,6 @@ function destroyBridges(props)
 end
 
 function addScenes(props)
-    local gapZ = props.gapZ
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
     local sceneTemplateModel = props.sceneTemplateModel
@@ -6570,7 +6568,6 @@ function addScenes(props)
         local newPosition = getNewPosition(
                                 {
                 coordinates = sceneConfig.coordinates,
-                gapZ = gapZ,
                 template = sceneTemplateModel.PrimaryPart
             })
 
@@ -6578,7 +6575,8 @@ function addScenes(props)
                                 {
                 modelName = modelName,
                 model = sceneTemplateModel,
-                position = newPosition + startPosition
+                position = newPosition + startPosition,
+                suffix = "-clone--" .. i
             })
 
         destroyBridges({sceneConfig = sceneConfig, clonedScene = clonedScene})
@@ -6652,20 +6650,21 @@ function addRemoteObjects()
 
     for i, questConfig in pairs(questConfigs) do
         local gridSize = questConfig.gridSize
-        local x = gridSize.cols * (Constants.islandLength - 2) * 2
-        local z = gridSize.rows * (Constants.islandLength - 4) * 2
-        local size = Vector3.new(x, 2, z)
+        local gridPadding = 8
+
+        local x = gridSize.cols * (Constants.islandLength - 2) * 2 + gridPadding
+        local z = gridSize.rows * (Constants.islandLength - 4) * 2 + gridPadding
 
         local questBlockProps = {
             parent = gameOrigin,
-            size = size,
-            sibling = sibling
+            size = Vector3.new(x, 2, z),
+            sibling = sibling,
+            isFirst = i == 1
         }
 
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
         -- questBlock.Transparency = 1
         local addScenesProps = {
-            gapZ = 0,
             parent = questBlock,
             sceneConfigs = questConfig.sceneConfigs,
             sceneTemplateModel = sceneTemplateModel
@@ -6843,6 +6842,7 @@ return module
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Part = require(Sss.Source.AddRemoteObjects.Part)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
+local Constants = require(Sss.Source.Constants.Constants)
 
 local module = {}
 
@@ -6850,8 +6850,19 @@ renderQuestBlock = function(props)
     local parent = props.parent
     local sibling = props.sibling
     local size = props.size
+    local isFirst = props.isFirst
 
-    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 36)
+    local offset = Constants.islandLength
+
+    if (isFirst) then offset = 0 end
+    print('isFirst' .. ' - start');
+    print(isFirst);
+    print('isFirst' .. ' - end');
+
+    print('offset' .. ' - start');
+    print(offset);
+    print('offset' .. ' - end');
+    local desiredOffsetFromParentEdge = Vector3.new(0, 0, offset)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, -1, 1),
@@ -6929,13 +6940,10 @@ return {a = '234'}
 
 function getDescendantByName(parent, name)
     local model = parent:GetDescendants()
-
     for i = 1, #model do
         if model[i].Name == name then
-            print('model[i].Name' .. ' - start');
-            print(model[i].Name);
-            print('model[i].Name' .. ' - end');
             return model[i]
+            -- 
         end
     end
 end
@@ -6950,11 +6958,13 @@ function cloneModel(props)
     local modelName = props.modelName
     local model = props.model
     local position = props.position
+    local suffix = props.suffix
 
     local sceneBaseModelClone = model:Clone()
 
     sceneBaseModelClone.Parent = model.Parent
-    sceneBaseModelClone.Name = modelName .. "--clone"
+
+    sceneBaseModelClone.Name = modelName .. (suffix or "-clone")
 
     sceneBaseModelClone:MoveTo(position)
     return sceneBaseModelClone
@@ -8620,7 +8630,7 @@ return {a = '234'}
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">Constants</string>
 						<string name="ScriptGuid">{398501bf-a4db-4733-aea8-9e60e4920214}</string>
-						<ProtectedString name="Source"><![CDATA[local module = {islandLength = 36, buffer = 2}
+						<ProtectedString name="Source"><![CDATA[local module = {islandLength = 36, bridgeLength = 36, buffer = 2}
 
 module.characters = {
     raven = {

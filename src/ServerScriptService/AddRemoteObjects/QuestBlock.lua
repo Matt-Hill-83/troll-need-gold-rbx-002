@@ -1,6 +1,7 @@
 local Sss = game:GetService("ServerScriptService")
 local Part = require(Sss.Source.AddRemoteObjects.Part)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
+local Constants = require(Sss.Source.Constants.Constants)
 
 local module = {}
 
@@ -8,8 +9,19 @@ renderQuestBlock = function(props)
     local parent = props.parent
     local sibling = props.sibling
     local size = props.size
+    local isFirst = props.isFirst
 
-    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 36)
+    local offset = Constants.islandLength
+
+    if (isFirst) then offset = 0 end
+    print('isFirst' .. ' - start');
+    print(isFirst);
+    print('isFirst' .. ' - end');
+
+    print('offset' .. ' - start');
+    print(offset);
+    print('offset' .. ' - end');
+    local desiredOffsetFromParentEdge = Vector3.new(0, 0, offset)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, -1, 1),
