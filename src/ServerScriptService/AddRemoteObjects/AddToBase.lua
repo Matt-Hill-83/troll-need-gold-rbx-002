@@ -143,10 +143,11 @@ function addScenes(props)
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
         local showBottomPath = sceneConfig.showBottomPath
+        local showRightPath = sceneConfig.showRightPath
 
-        print('showBottomPath' .. ' - start');
-        print(showBottomPath);
-        print('showBottomPath' .. ' - end');
+        -- print('showBottomPath' .. ' - start');
+        -- print(showBottomPath);
+        -- print('showBottomPath' .. ' - end');
         local pageNum = 1
         local buttonParent = nil
 
@@ -164,6 +165,14 @@ function addScenes(props)
                 position = newPosition + startPosition
             })
         local newScene = clonedScene.PrimaryPart
+
+        local bridgeRightModel = Utils.getDescendantByName(clonedScene,
+                                                           "BridgeRightModel")
+        if (not showRightPath) then bridgeRightModel:Destroy() end
+
+        local bridgeBottomModel = Utils.getDescendantByName(clonedScene,
+                                                            "BridgeBottomModel")
+        if (not showBottomPath) then bridgeBottomModel:Destroy() end
 
         local sceneProps = {
             newScene = newScene,
@@ -222,24 +231,6 @@ function addRemoteObjects()
             --
         end
     end
-
-    -- local model = myStuff:GetDescendants()
-
-    -- for i = 1, #model do
-    --     -- print('model[i].Name' .. ' - start');
-    --     -- print(model[i].Name);
-    --     -- print('model[i].Name' .. ' - end');
-    --     if model[i].Name == "BridgeRightModel" then
-    --         print('model[i].Name' .. ' - start');
-    --         print(model[i].Name);
-    --         print('model[i].Name' .. ' - end');
-    --     end
-    -- end
-
-    local test = Utils.getDescendantByName(myStuff, "BridgeRightModel")
-    print('test' .. ' - start');
-    print(test);
-    print('test' .. ' - end');
 
     local templatesFolder = myStuff:FindFirstChild("Templates")
     local sceneTemplateModel = templatesFolder:FindFirstChild(

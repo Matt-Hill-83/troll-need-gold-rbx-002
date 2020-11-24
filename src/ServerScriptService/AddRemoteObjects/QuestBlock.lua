@@ -9,7 +9,6 @@ renderQuestBlock = function(props)
     local sibling = props.sibling
     local size = props.size
 
-    -- local desiredOffsetFromParentEdge = Vector3.new(-20, -4, 0)
     local desiredOffsetFromParentEdge = Vector3.new(0, 0, 36)
 
     local itemDuplicationConfig = {
