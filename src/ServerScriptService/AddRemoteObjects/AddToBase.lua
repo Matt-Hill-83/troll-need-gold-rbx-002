@@ -100,10 +100,11 @@ end
 
 function getNewPosition(props)
     local coordinates = props.coordinates
-    local gapX = Constants.islandLength * 2
+    local gapX = Constants.islandLength + Constants.bridgeLength
     local newX = -(gapX + Constants.buffer) * coordinates.col
     local newZ = coordinates.row *
-                     (Constants.islandLength * 2 + Constants.buffer)
+                     (Constants.islandLength + Constants.bridgeLength +
+                         Constants.buffer)
     return Vector3.new(newX, 0, -newZ)
 end
 
@@ -246,10 +247,10 @@ function addRemoteObjects()
 
     for i, questConfig in pairs(questConfigs) do
         local gridSize = questConfig.gridSize
-        local gridPadding = 8
+        local gridPadding = 0
 
-        local x = gridSize.cols * (Constants.islandLength - 2) * 2 + gridPadding
-        local z = gridSize.rows * (Constants.islandLength - 4) * 2 + gridPadding
+        local x = gridSize.cols * Constants.totalIslandLength + gridPadding
+        local z = gridSize.rows * Constants.totalIslandLength + gridPadding
 
         local questBlockProps = {
             parent = gameOrigin,

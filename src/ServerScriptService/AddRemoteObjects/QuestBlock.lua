@@ -11,7 +11,8 @@ renderQuestBlock = function(props)
     local size = props.size
     local isFirst = props.isFirst
 
-    local offset = Constants.islandLength
+    local offset = 0
+    -- local offset = Constants.islandLength
 
     if (isFirst) then offset = 0 end
     print('isFirst' .. ' - start');

@@ -1,4 +1,10 @@
-local module = {islandLength = 36, bridgeLength = 36, buffer = 2}
+local module = {buffer = 0}
+
+local islandLength = 36
+local bridgeLength = 31.1
+module.islandLength = islandLength
+module.bridgeLength = bridgeLength
+module.totalIslandLength = islandLength + bridgeLength
 
 module.characters = {
     raven = {
