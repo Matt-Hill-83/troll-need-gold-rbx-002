@@ -249,8 +249,10 @@ function addRemoteObjects()
         local gridSize = questConfig.gridSize
         local gridPadding = 0
 
-        local x = gridSize.cols * Constants.totalIslandLength + gridPadding
-        local z = gridSize.rows * Constants.totalIslandLength + gridPadding
+        local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
+                      Constants.bridgeLength
+        local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
+                      Constants.bridgeLength
 
         local questBlockProps = {
             parent = gameOrigin,

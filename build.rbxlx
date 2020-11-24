@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>304.546875</X>
-					<Y>30.6492767</Y>
-					<Z>-195.985245</Z>
-					<R00>0.98010385</R00>
-					<R01>0.032168746</R01>
-					<R02>-0.195861444</R02>
+					<X>123.170357</X>
+					<Y>268.510406</Y>
+					<Z>-133.425461</Z>
+					<R00>-0.982784152</R00>
+					<R01>-0.170691058</R01>
+					<R02>0.0707110614</R02>
 					<R10>-0</R10>
-					<R11>0.986779213</R11>
-					<R12>0.162070915</R12>
-					<R20>0.198485613</R20>
-					<R21>-0.158846334</R21>
-					<R22>0.967145979</R22>
+					<R11>0.382722825</R11>
+					<R12>0.923863292</R12>
+					<R20>-0.184757918</R20>
+					<R21>0.90795821</R21>
+					<R22>-0.376133859</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>304.938599</X>
-					<Y>30.3251343</Y>
-					<Z>-197.91954</Z>
+					<X>123.028931</X>
+					<Y>266.662628</Y>
+					<Z>-132.673172</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -5004,9 +5004,9 @@ remoteCode.addRemoteObjects(base)
 				<token name="BottomSurface">0</token>
 				<token name="BottomSurfaceInput">0</token>
 				<CoordinateFrame name="CFrame">
-					<X>251</X>
-					<Y>13.4995117</Y>
-					<Z>-134</Z>
+					<X>55</X>
+					<Y>1.5</Y>
+					<Z>-102</Z>
 					<R00>0</R00>
 					<R01>0</R01>
 					<R02>1</R02>
@@ -5165,7 +5165,7 @@ remoteCode.addRemoteObjects(base)
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="Weld" referent="RBXe49d733d250644cd980e9a2720f50039">
+			<Item class="Weld" referent="RBXbffa984a62564f4f9c064c5124c8b494">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<CoordinateFrame name="C0">
@@ -5183,23 +5183,23 @@ remoteCode.addRemoteObjects(base)
 						<R22>0</R22>
 					</CoordinateFrame>
 					<CoordinateFrame name="C1">
-						<X>134</X>
-						<Y>5.99948502</Y>
-						<Z>1</Z>
-						<R00>1</R00>
-						<R01>0</R01>
+						<X>55</X>
+						<Y>1</Y>
+						<Z>-102</Z>
+						<R00>0</R00>
+						<R01>1</R01>
 						<R02>0</R02>
 						<R10>0</R10>
 						<R11>0</R11>
 						<R12>-1</R12>
-						<R20>0</R20>
-						<R21>1</R21>
+						<R20>-1</R20>
+						<R21>0</R21>
 						<R22>0</R22>
 					</CoordinateFrame>
 					<bool name="Enabled">true</bool>
 					<string name="Name">Weld</string>
 					<Ref name="Part0">RBX20423fbfc3f843b6bee9d9b7f1aa1500</Ref>
-					<Ref name="Part1">RBX2dfd484a3008492d82388863313b746f</Ref>
+					<Ref name="Part1">RBXb04297471c934362a9b0b4dc9bf42b64</Ref>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
@@ -9149,8 +9149,10 @@ function addRemoteObjects()
         local gridSize = questConfig.gridSize
         local gridPadding = 0
 
-        local x = gridSize.cols * Constants.totalIslandLength + gridPadding
-        local z = gridSize.rows * Constants.totalIslandLength + gridPadding
+        local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
+                      Constants.bridgeLength
+        local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
+                      Constants.bridgeLength
 
         local questBlockProps = {
             parent = gameOrigin,
@@ -9349,7 +9351,7 @@ renderQuestBlock = function(props)
     local size = props.size
     local isFirst = props.isFirst
 
-    local offset = 0
+    local offset = 60
 
     if (isFirst) then offset = 0 end
 
@@ -11093,6 +11095,130 @@ module.questConfigs = {
             }
         },
         gridSize = {rows = 3, cols = 4}
+    }, {
+        sceneConfigs = {
+            {
+                name = "bees",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "sadf"},
+                            {char = "liz2", text = ""}
+                        },
+                        characters01 = {{name = "raven04"}},
+                        characters02 = {}
+                    }
+                },
+                coordinates = {row = 0, col = 1},
+                showBottomPath = true,
+                showRightPath = false,
+                maxRow = 0,
+                maxCol = 1
+            }, {
+                name = "slide",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "asdf"},
+                            {char = "liz2", text = ""}
+                        },
+                        characters01 = {{name = "raven04"}},
+                        characters02 = {}
+                    }
+                },
+                coordinates = {col = 0, row = 1},
+                showBottomPath = false,
+                showRightPath = true,
+                maxRow = 1,
+                maxCol = 1
+            }, {
+                name = "castle",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "sadf"},
+                            {char = "liz2", text = ""}
+                        },
+                        characters01 = {{name = "raven04"}},
+                        characters02 = {}
+                    }
+                },
+                coordinates = {col = 1, row = 1},
+                showBottomPath = true,
+                showRightPath = true,
+                maxRow = 1,
+                maxCol = 1
+            }, {
+                name = "girl09",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "asdf"},
+                            {char = "liz2", text = ""}
+                        },
+                        characters01 = {{name = "raven04"}},
+                        characters02 = {}
+                    }
+                },
+                coordinates = {col = 2, row = 1},
+                showBottomPath = false,
+                showRightPath = true,
+                maxRow = 1,
+                maxCol = 2
+            }, {
+                name = "home",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "asd"},
+                            {char = "liz2", text = ""}
+                        },
+                        characters01 = {{name = "raven04"}},
+                        characters02 = {}
+                    }
+                },
+                coordinates = {row = 1, col = 3},
+                showBottomPath = true,
+                showRightPath = false,
+                maxRow = 1,
+                maxCol = 3
+            }, {
+                name = "swing",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "asdf"},
+                            {char = "liz2", text = ""}
+                        },
+                        characters01 = {{name = "raven04"}},
+                        characters02 = {}
+                    }
+                },
+                coordinates = {col = 1, row = 2},
+                showBottomPath = false,
+                showRightPath = false,
+                maxRow = 2,
+                maxCol = 3
+            }, {
+                name = "coop",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "mitzy02", text = "asdf"},
+                            {char = "liz2", text = ""}
+                        },
+                        characters01 = {{name = "mitzy02"}},
+                        characters02 = {}
+                    }
+                },
+                coordinates = {col = 3, row = 2},
+                showBottomPath = false,
+                showRightPath = false,
+                maxRow = 2,
+                maxCol = 3
+            }
+        },
+        gridSize = {rows = 3, cols = 4}
     }
 }
 return module
@@ -11124,7 +11250,8 @@ return {a = '234'}
 						<ProtectedString name="Source"><![CDATA[local module = {buffer = 0}
 
 local islandLength = 36
-local bridgeLength = 31.1
+-- local bridgeLength = 31.1
+local bridgeLength = 34
 module.islandLength = islandLength
 module.bridgeLength = bridgeLength
 module.totalIslandLength = islandLength + bridgeLength
