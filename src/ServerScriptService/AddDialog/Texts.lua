@@ -27,31 +27,18 @@ renderTexts = function(props)
     local paddingInPx = pixelsPerStud / 8
     local fontHeight = pixelsPerStud * 41 / 45
 
-    local sgui = Instance.new("SurfaceGui", parent)
-
-    local sguiTemp = Utils.getDescendantByName(parent, "SurfaceGuiTemplate")
-    sguiTemp:Destroy()
+    local sgui = Utils.getDescendantByName(parent, "SurfaceGuiTemplate")
 
     sgui.SizingMode = "PixelsPerStud"
 
-    -- local scrollingFrame = Utils.getDescendantByName(sgui, "ScrollingFrame")
-    local scrollingFrame = Instance.new("ScrollingFrame", sgui)
-
-    Utils.addPadding({parent = scrollingFrame, paddingPct = 0.02})
-
-    scrollingFrame.Size = UDim2.new(1, 0, 1, 0)
-    scrollingFrame.BorderSizePixel = 3
-    scrollingFrame.BorderMode = Enum.BorderMode.Inset
-    scrollingFrame.BackgroundColor3 = Color3.new(196, 132, 225)
-    scrollingFrame.BackgroundTransparency = 0.5
-    scrollingFrame.ScrollBarThickness = 40
-    scrollingFrame.ScrollBarImageColor3 = Color3.new(113, 0, 255)
-
-    -- TODO: add up all the texts to get the correct CanvasSize
-    -- TODO: add up all the texts to get the correct CanvasSize
-    -- TODO: add up all the texts to get the correct CanvasSize
-
-    scrollingFrame.CanvasSize = UDim2.new(0, 0, 20, 0)
+    local scrollingFrame = Utils.getDescendantByName(sgui, "ScrollingFrame")
+    local children = scrollingFrame:GetChildren()
+    for i, item in pairs(children) do
+        if item:IsA('TextLabel') then
+            item:Destroy()
+            --
+        end
+    end
 
     local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
     local parentHeight = parent.Size.Y * pixelsPerStud
