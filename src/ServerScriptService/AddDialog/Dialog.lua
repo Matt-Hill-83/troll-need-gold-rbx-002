@@ -10,13 +10,14 @@ renderDialog = function(props)
     local parent = props.parent
     local dialogConfigs = props.dialogConfigs
 
-    local dialogContainer = renderDialogContainer({parent = parent})
-    local textsContainer = renderTextsContainer({parent = dialogContainer})
+    local dialogContainer = Utils.getDescendantByName(parent, "DialogModel")
+    -- local textsContainer = renderTextsContainer({parent = dialogContainer})
 
     Utils.setMaterialPebble(parent)
 
     local renderTextsProps = {
-        parent = textsContainer,
+        parent = dialogContainer,
+        -- parent = textsContainer,
         dialogConfigs = dialogConfigs
     }
     Texts.renderTexts(renderTextsProps)

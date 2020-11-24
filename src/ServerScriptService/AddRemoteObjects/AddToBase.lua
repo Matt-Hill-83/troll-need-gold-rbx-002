@@ -165,7 +165,7 @@ end
 function addScenes(props)
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
-    local sceneTemplateModel = props.sceneTemplateModel
+    local sceneTemplateModel = Utils.getFromMyStuff("SceneTemplateModel")
 
     local startPosition = getStartPosition(parent,
                                            sceneTemplateModel.PrimaryPart)
@@ -250,9 +250,6 @@ function addRemoteObjects()
         end
     end
 
-    local sceneTemplateModel = Utils.getFromMyStuff("SceneTemplateModel")
-    local dialogModel = Utils.getFromMyStuff("DialogModel")
-
     local gameOrigin = sceneOrigins[1]
     local sibling = gameOrigin
 
@@ -276,8 +273,8 @@ function addRemoteObjects()
         -- questBlock.Transparency = 1
         local addScenesProps = {
             parent = questBlock,
-            sceneConfigs = questConfig.sceneConfigs,
-            sceneTemplateModel = sceneTemplateModel
+            sceneConfigs = questConfig.sceneConfigs
+            -- sceneTemplateModel = sceneTemplateModel
         }
         addScenes(addScenesProps)
         sibling = questBlock

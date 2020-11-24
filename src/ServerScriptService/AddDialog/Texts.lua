@@ -28,8 +28,13 @@ renderTexts = function(props)
     local fontHeight = pixelsPerStud * 41 / 45
 
     local sgui = Instance.new("SurfaceGui", parent)
+
+    local sguiTemp = Utils.getDescendantByName(parent, "SurfaceGuiTemplate")
+    sguiTemp:Destroy()
+
     sgui.SizingMode = "PixelsPerStud"
 
+    -- local scrollingFrame = Utils.getDescendantByName(sgui, "ScrollingFrame")
     local scrollingFrame = Instance.new("ScrollingFrame", sgui)
 
     Utils.addPadding({parent = scrollingFrame, paddingPct = 0.02})
