@@ -127,6 +127,24 @@ function addItemsToScene(props)
     })
 end
 
+function destroyBridges(props)
+    -- all bridges are created in clone.
+    -- remove bridges that do not go anywhere
+    local sceneConfig = props.sceneConfig
+    local clonedScene = props.clonedScene
+
+    local showBottomPath = sceneConfig.showBottomPath
+    local showRightPath = sceneConfig.showRightPath
+
+    local bridgeRightModel = Utils.getDescendantByName(clonedScene,
+                                                       "BridgeRightModel")
+    if (not showRightPath) then bridgeRightModel:Destroy() end
+
+    local bridgeBottomModel = Utils.getDescendantByName(clonedScene,
+                                                        "BridgeBottomModel")
+    if (not showBottomPath) then bridgeBottomModel:Destroy() end
+end
+
 function addScenes(props)
     local gapZ = props.gapZ
     local parent = props.parent
@@ -158,18 +176,10 @@ function addScenes(props)
                 model = sceneTemplateModel,
                 position = newPosition + startPosition
             })
+
+        destroyBridges({sceneConfig, clonedScene})
+
         local newScene = clonedScene.PrimaryPart
-
-        local showBottomPath = sceneConfig.showBottomPath
-        local showRightPath = sceneConfig.showRightPath
-
-        local bridgeRightModel = Utils.getDescendantByName(clonedScene,
-                                                           "BridgeRightModel")
-        if (not showRightPath) then bridgeRightModel:Destroy() end
-
-        local bridgeBottomModel = Utils.getDescendantByName(clonedScene,
-                                                            "BridgeBottomModel")
-        if (not showBottomPath) then bridgeBottomModel:Destroy() end
 
         local sceneProps = {
             newScene = newScene,
