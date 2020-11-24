@@ -49,18 +49,21 @@ renderCharacters01 = function(parent, itemConfigs)
         end
 
     end
+    print('parent' .. ' - start');
+    print(parent);
+    print('parent' .. ' - end');
 
-    local characterTemplate = Utils.getFromMyStuff("CharacterTemplate")
-
+    local characterTemplate = Utils.getDescendantByName(parent,
+                                                        "CharacterTemplate")
+    local xGap = 1
     for i, itemConfig in ipairs(itemConfigs) do
-        print('itemConfig' .. ' - start');
-        print(itemConfig);
-        print('itemConfig' .. ' - end');
         local newItem = characterTemplate:Clone()
-        newItem.Position = newItem.Position + Vector3.new(0, 10, 0)
+        local x = (i - 1) * -(characterTemplate.Size.X + xGap)
+        newItem.Position = newItem.Position + Vector3.new(x, 0, 0)
         newItem.Parent = parent
 
     end
+    characterTemplate.Transparency = 1
 
     -- local characterScale = 0.6
     -- local itemProps = {
