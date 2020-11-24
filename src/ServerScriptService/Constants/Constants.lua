@@ -1,8 +1,8 @@
 local module = {buffer = 0}
 
 local islandLength = 36
--- local bridgeLength = 31.1
-local bridgeLength = 34
+local bridgeLength = 31.1
+-- local bridgeLength = 34
 module.islandLength = islandLength
 module.bridgeLength = bridgeLength
 module.totalIslandLength = islandLength + bridgeLength

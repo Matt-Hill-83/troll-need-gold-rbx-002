@@ -138,11 +138,19 @@ function destroyBridges(props)
 
     local bridgeRightModel = Utils.getDescendantByName(clonedScene,
                                                        "BridgeRightModel")
-    if (not showRightPath) then bridgeRightModel:Destroy() end
+    if (not showRightPath) then
+        bridgeRightModel.Parent = nil
+        -- bridgeRightModel = nil
+        bridgeRightModel:Destroy()
+    end
 
     local bridgeBottomModel = Utils.getDescendantByName(clonedScene,
                                                         "BridgeBottomModel")
-    if (not showBottomPath) then bridgeBottomModel:Destroy() end
+    if (not showBottomPath) then
+        bridgeBottomModel.Parent = nil
+        -- bridgeBottomModel = nil
+        bridgeBottomModel:Destroy()
+    end
 end
 
 function addScenes(props)
