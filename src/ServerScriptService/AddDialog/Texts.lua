@@ -51,7 +51,9 @@ renderTexts = function(props)
         end
 
         if (dialogText ~= "blank" and dialogText ~= "empty") then
-            local text = displayName .. ": " .. dialogText
+            local text = "<b>" .. displayName .. ": " .. "</b>" .. dialogText
+
+            -- local text = displayName .. ": " .. dialogText
             local font = Enum.Font.Arial
             local innerLabelWidth = parentWidth - (2 * paddingInPx)
 
@@ -64,7 +66,7 @@ renderTexts = function(props)
 
             local outerLabel = Instance.new("TextLabel", scrollingFrame)
 
-            local outputLabelProps = {
+            local outerLabelProps = {
                 Name = "Dialog-" .. i,
                 Position = UDim2.new(0, 0, 0, dialogY),
                 Size = UDim2.new(0, parentWidth, 0, height + 2 * paddingInPx),
@@ -81,16 +83,21 @@ renderTexts = function(props)
                 TextColor3 = Color3.new(0, 0, 0),
                 ZIndex = 1
             }
-            Utils.mergeTables(outerLabel, outputLabelProps)
+            Utils.mergeTables(outerLabel, outerLabelProps)
 
             local innerLabel = outerLabel:Clone()
-            innerLabel.Parent = outerLabel
-            innerLabel.Name = "Dialog-" .. i
-            innerLabel.Text = text
-            innerLabel.ZIndex = 2
-            innerLabel.Size = UDim2.new(0, innerLabelWidth, 0, height)
-            innerLabel.Position = UDim2.new(0, paddingInPx, 0, paddingInPx)
-            innerLabel.BackgroundTransparency = 1
+
+            local innerLabelProps = {
+                Parent = outerLabel,
+                Name = "Dialog-" .. i,
+                Text = text,
+                ZIndex = 2,
+                Size = UDim2.new(0, innerLabelWidth, 0, height),
+                Position = UDim2.new(0, paddingInPx, 0, paddingInPx),
+                BackgroundTransparency = 1,
+                RichText = true
+            }
+            Utils.mergeTables(innerLabel, innerLabelProps)
 
             local absoluteHeight = outerLabel.AbsoluteSize.Y
             dialogY = dialogY + (absoluteHeight + 25)
