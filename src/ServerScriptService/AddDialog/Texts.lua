@@ -9,14 +9,6 @@ local dialogColors = {
     Color3.fromRGB(158, 215, 253)
 }
 
-local dialogSetup = {
-    kat = {left = true, backgroundColorIdx = 1},
-    liz2 = {left = true, backgroundColorIdx = 2},
-    Britta = {left = true, backgroundColorIdx = 1},
-    Raven = {left = true, backgroundColorIdx = 2},
-    Freckle = {left = true, backgroundColorIdx = 3}
-}
-
 local module = {}
 
 renderTexts = function(props)
@@ -51,15 +43,15 @@ renderTexts = function(props)
         local dialogText = dialog['text']
 
         local backgroundColor = dialogColors[4]
-        local charConfig = Constants[charName]
-        -- local charConfig = dialogSetup[charName]
+        local charConfig = Constants.characters[charName]
+        local displayName = Utils.getDisplayNameFromName({name = charName})
+
         if charConfig then
             backgroundColor = dialogColors[charConfig.backgroundColorIdx]
         end
 
         if (dialogText ~= "blank" and dialogText ~= "empty") then
-
-            local text = charName .. ": " .. dialogText
+            local text = displayName .. ": " .. dialogText
             local font = Enum.Font.Arial
             local innerLabelWidth = parentWidth - (2 * paddingInPx)
 

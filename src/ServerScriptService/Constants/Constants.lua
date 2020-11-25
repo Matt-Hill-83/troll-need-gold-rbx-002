@@ -106,8 +106,8 @@ module.characters = {
     },
     mitzyMeow01 = mitzy02,
     mitzy02 = mitzy02,
-    kat = {displayName = "Kat", decalId = '5977951764', backgroundColorIdx = 3},
-    liz2 = {displayName = "Liz", decalId = '5981806423', backgroundColorIdx = 4}
+    kat = {displayName = "Kat", decalId = '5977951764', backgroundColorIdx = 1},
+    liz2 = {displayName = "Liz", decalId = '5981806423', backgroundColorIdx = 2}
 }
 
 return module
