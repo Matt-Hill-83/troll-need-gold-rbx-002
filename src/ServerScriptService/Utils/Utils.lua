@@ -1,12 +1,27 @@
 local Sss = game:GetService("ServerScriptService")
 local Constants = require(Sss.Source.Constants.Constants)
+-- local Utils = require(Sss.Source.Utils.Utils)
 local module = {}
+
+function module.getDiecalIdFromName(props)
+    local name = props.name
+    print('Constants.characters[name]' .. ' - start');
+    print(tableToString({Constants.characters[name]}));
+    print('Constants.characters[name]' .. ' - end');
+    if (Constants.characters[name] and Constants.characters[name]["decalId"]) then
+        return Constants.characters[name]["decalId"]
+    else
+        print("----------------- decalId not found: ------------" .. name)
+        return '5999465084'
+    end
+end
 
 function module.getDisplayNameFromName(props)
     local name = props.name
     if (Constants.characters[name] and Constants.characters[name]["displayName"]) then
         return Constants.characters[name]["displayName"]
     else
+        print("---------------------- name not found: ------------" .. name)
         return name
     end
 end

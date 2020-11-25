@@ -32,6 +32,8 @@ local vulcan = {
 
 module.characters = {
 
+    -- home
+
     raven05 = raven,
     raven04 = raven,
     raven = raven,
@@ -40,6 +42,12 @@ module.characters = {
     britta04 = britta,
     -- 
     -- 
+    stump = {
+        displayName = "Stump",
+        decalId = '5991340320',
+        backgroundColorIdx = 1
+    },
+    bog = {displayName = "Bog", decalId = '5991343667', backgroundColorIdx = 1},
     bee = {displayName = "Bee", decalId = '5999465084', backgroundColorIdx = 1},
     elf = {displayName = "Elf", decalId = '5991266909', backgroundColorIdx = 1},
     bun = {displayName = "Bun", decalId = '5991343501', backgroundColorIdx = 1},

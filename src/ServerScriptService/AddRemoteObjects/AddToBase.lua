@@ -14,18 +14,17 @@ local Constants = require(Sss.Source.Constants.Constants)
 renderCharacters = function(parent, itemConfigs, templateName)
     for i, itemConfig in ipairs(itemConfigs) do
         local dataFileName = itemConfig.name
-        if (not itemConfig.decalId) then
-            if (Constants.characters[dataFileName] and
-                Constants.characters[dataFileName]['decalId']) then
-                itemConfig.decalId =
-                    Constants.characters[dataFileName]['decalId']
-            else
-                if (dataFileName ~= "empty" and dataFileName ~= "blank") then
-                    print("------------------------------" .. dataFileName);
-                end
-                itemConfig.decalId = "5897424121"
+        -- if (not itemConfig.decalId) then
+        if (Constants.characters[dataFileName] and
+            Constants.characters[dataFileName]['decalId']) then
+            itemConfig.decalId = Constants.characters[dataFileName]['decalId']
+        else
+            if (dataFileName ~= "empty" and dataFileName ~= "blank") then
+                print("------------------------------" .. dataFileName);
             end
+            itemConfig.decalId = "5897424121"
         end
+        -- end
 
     end
     print('parent' .. ' - start');
@@ -182,7 +181,6 @@ function addScenes(props)
     local wallTemplate = Utils.getFromTemplates("WallTemplate")
 
     local startPosition = getStartPosition(parent, wallTemplate)
-    --    clonedScene.PrimaryPart)
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
@@ -219,14 +217,8 @@ function addScenes(props)
         local locationModelImage = Utils.getFromTemplates("LocationModelImage")
         local imageLabelFront = Utils.getDescendantByName(locationModelImage,
                                                           'ImageLabel')
-        local defaultImageId = '5999464489'
-        local imageId = defaultImageId
-        if (Constants.characters[sceneConfig] and
-            Constants.characters[sceneConfig['name']]) then
-            imageId = Constants.characters[sceneConfig]['name']
-        else
-            print("------------------" .. sceneConfig['name'])
-        end
+        local defaultImageId = '5999465084'
+        -- local imageId = defaultImageId
 
         -- Label
         -- Label
@@ -234,19 +226,10 @@ function addScenes(props)
         local textLabel = Utils.getDescendantByName(locationModelLabel,
                                                     'TextLabel')
 
-        local text = "Not Found"
+        local text = Utils.getDisplayNameFromName({name = sceneConfig.name})
+        local imageId = Utils.getDiecalIdFromName({name = sceneConfig.name})
 
-        local sceneName = sceneConfig.name
-
-        -- TODO - this is the character label
-        if (Constants.characters[sceneConfig] and
-            Constants.characters[sceneName]) then
-            text = Constants.characters[sceneName]['displayName']
-        else
-            print("------------------" .. sceneName)
-        end
-        textLabel.Text = "test"
-
+        textLabel.Text = text
         imageLabelFront.Image = 'rbxassetid://' .. imageId
 
         buttonParent = addItemsToScene(sceneProps)
