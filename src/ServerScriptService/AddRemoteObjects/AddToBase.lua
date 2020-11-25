@@ -79,7 +79,7 @@ function addItemsToScene(props)
     renderCharacters(clonedScene, characterConfigs01, "CharacterTemplate01")
     renderCharacters(clonedScene, itemConfigs, "CharacterTemplate02")
 
-    return Dialog.renderDialog({
+    Dialog.renderDialog({
         parent = newWall,
         dialogConfigs = dialogConfigs,
         clonedScene = clonedScene,
@@ -151,6 +151,7 @@ end
 function addScenes(props)
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
+
     local sceneTemplateModel = Utils.getFromTemplates("SceneTemplate")
     local wallTemplate = Utils.getFromTemplates("WallTemplate")
 
@@ -165,7 +166,6 @@ function addScenes(props)
                                 {
                 coordinates = sceneConfig.coordinates,
                 template = wallTemplate
-                -- template = clonedScene.PrimaryPart
             })
 
         local clonedScene = Utils.cloneModel(
@@ -191,22 +191,17 @@ function addScenes(props)
         local locationModelImage = Utils.getFromTemplates("LocationModelImage")
         local imageLabelFront = Utils.getDescendantByName(locationModelImage,
                                                           'ImageLabel')
-        local defaultImageId = '5999465084'
-        -- local imageId = defaultImageId
+        local imageId = Utils.getDecalIdFromName({name = sceneConfig.name})
+        imageLabelFront.Image = 'rbxassetid://' .. imageId
 
         -- Label
         -- Label
         local locationModelLabel = Utils.getFromTemplates("LocationModelLabel")
         local textLabel = Utils.getDescendantByName(locationModelLabel,
                                                     'TextLabel')
-
-        local text = Utils.getDisplayNameFromName({name = sceneConfig.name})
-        local imageId = Utils.getDecalIdFromName({name = sceneConfig.name})
-
-        textLabel.Text = text
-        imageLabelFront.Image = 'rbxassetid://' .. imageId
-
-        buttonParent = addItemsToScene(sceneProps)
+        textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
+        local dialogTemplate = Utils.getFromTemplates("DialogTemplate")
+        addItemsToScene(sceneProps)
 
         function incrementPage()
             local newPageNum = pageNum + 1
@@ -216,6 +211,9 @@ function addScenes(props)
 
                 local children = newWall:GetChildren()
                 for _, item in pairs(children) do
+                    print('item.Name' .. ' - start');
+                    print(item.Name);
+                    print('item.Name' .. ' - end');
                     local match1 = string.match(item.Name, "Items-")
                     local match2 = string.match(item.Name, "Characters-")
                     local match3 = string.match(item.Name, "Dialog-")
@@ -229,13 +227,13 @@ function addScenes(props)
                     pageNum = pageNum,
                     sceneConfig = sceneConfig
                 }
-                buttonParent = addItemsToScene(newSceneProps)
+                addItemsToScene(newSceneProps)
             end
         end
 
         local renderButtonBlockProps = {
             parent = newWall,
-            sibling = buttonParent,
+            sibling = dialogTemplate,
             incrementPage = incrementPage,
             pageNum = pageNum
         }

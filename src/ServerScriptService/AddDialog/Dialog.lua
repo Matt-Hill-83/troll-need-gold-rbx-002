@@ -6,15 +6,15 @@ local module = {}
 
 function module.renderDialog(props)
     local dialogConfigs = props.dialogConfigs
-    local dialogContainer = Utils.getFromTemplates("DialogTemplate")
+    local dialogTemplate = Utils.getFromTemplates("DialogTemplate")
 
     local renderTextsProps = {
-        parent = dialogContainer,
+        parent = dialogTemplate,
         dialogConfigs = dialogConfigs
     }
 
     Texts.renderTexts(renderTextsProps)
-    return dialogContainer
+    return dialogTemplate
 end
 
 return module
