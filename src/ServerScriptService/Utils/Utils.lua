@@ -1,4 +1,15 @@
+local Sss = game:GetService("ServerScriptService")
+local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
+
+function module.getDisplayNameFromName(props)
+    local name = props.name
+    if (Constants.characters[name] and Constants.characters[name]["displayName"]) then
+        return Constants.characters[name]["displayName"]
+    else
+        return name
+    end
+end
 
 function module.deleteChildrenByName(props)
     local parent = props.parent
