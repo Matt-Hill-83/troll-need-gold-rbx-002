@@ -8,9 +8,7 @@ function module.getDecalIdFromName(props)
         return Constants.characters[name]["decalId"]
     else
         print("----------------- decalId not found: ------------" .. name)
-        print('Constants.characters[name]' .. ' - start');
         print(tableToString({Constants.characters[name]}));
-        print('Constants.characters[name]' .. ' - end');
         return '5999465084'
     end
 end
@@ -21,6 +19,7 @@ function module.getDisplayNameFromName(props)
         return Constants.characters[name]["displayName"]
     else
         print("---------------------- name not found: ------------" .. name)
+        print(tableToString({Constants.characters[name]}));
         return name
     end
 end
