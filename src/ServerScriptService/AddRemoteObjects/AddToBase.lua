@@ -28,7 +28,13 @@ renderCharacters = function(parent, itemConfigs, templateName)
         end
 
     end
+    print('parent' .. ' - start');
+    print(parent);
+    print('parent' .. ' - end');
 
+    print('templateName' .. ' - start');
+    print(templateName);
+    print('templateName' .. ' - end');
     local characterTemplate = Utils.getDescendantByName(parent, templateName)
 
     local xGap = 1
@@ -87,17 +93,20 @@ function addItemsToScene(props)
     local newScene = props.newScene
     local pageNum = props.pageNum
     local sceneConfig = props.sceneConfig
+    local sceneTemplateModel = props.sceneTemplateModel
 
     local characterConfigs01 = sceneConfig.frames[pageNum].characters01
     local itemConfigs = sceneConfig.frames[pageNum].characters02
     local dialogConfigs = sceneConfig.frames[pageNum].dialogs
 
-    renderCharacters(newScene, characterConfigs01, "CharacterTemplate01")
-    renderCharacters(newScene, itemConfigs, "CharacterTemplate02")
+    renderCharacters(sceneTemplateModel, characterConfigs01,
+                     "CharacterTemplate01")
+    renderCharacters(sceneTemplateModel, itemConfigs, "CharacterTemplate02")
 
     return Dialog.renderDialog({
         parent = newScene,
         dialogConfigs = dialogConfigs,
+        sceneTemplateModel = sceneTemplateModel,
         pageNum = pageNum
     })
 end
@@ -171,9 +180,10 @@ function addScenes(props)
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
     local sceneTemplateModel = Utils.getFromTemplates("SceneTemplateModel")
+    local wallTemplate = Utils.getFromTemplates("WallTemplate")
 
-    local startPosition = getStartPosition(parent,
-                                           sceneTemplateModel.PrimaryPart)
+    local startPosition = getStartPosition(parent, wallTemplate)
+    --    sceneTemplateModel.PrimaryPart)
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
@@ -183,7 +193,8 @@ function addScenes(props)
         local newPosition = getNewPosition(
                                 {
                 coordinates = sceneConfig.coordinates,
-                template = sceneTemplateModel.PrimaryPart
+                template = wallTemplate
+                -- template = sceneTemplateModel.PrimaryPart
             })
 
         local clonedScene = Utils.cloneModel(
@@ -199,6 +210,7 @@ function addScenes(props)
 
         local sceneProps = {
             newScene = newScene,
+            sceneTemplateModel = sceneTemplateModel,
             pageNum = pageNum,
             sceneConfig = sceneConfig
         }
@@ -226,6 +238,8 @@ function addScenes(props)
         local text = "Not Found"
 
         local sceneName = sceneConfig.name
+
+        -- TODO - this is the character label
         if (Constants.characters[sceneConfig] and
             Constants.characters[sceneName]) then
             text = Constants.characters[sceneName]['displayName']
