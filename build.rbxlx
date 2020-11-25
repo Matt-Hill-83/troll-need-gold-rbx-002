@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>239.193253</X>
-					<Y>91.8389816</Y>
-					<Z>-271.797607</Z>
-					<R00>-0.991938174</R00>
-					<R01>0.119456291</R01>
-					<R02>-0.0422970839</R02>
-					<R10>-3.72529074e-09</R10>
-					<R11>0.333774596</R11>
-					<R12>0.942652941</R12>
-					<R20>0.126723513</R20>
-					<R21>0.935053408</R21>
-					<R22>-0.331083685</R22>
+					<X>368.65448</X>
+					<Y>50.5795135</Y>
+					<Z>-254.470871</Z>
+					<R00>-0.277207971</R00>
+					<R01>-0.301773876</R01>
+					<R02>0.912188709</R02>
+					<R10>-0</R10>
+					<R11>0.949395657</R11>
+					<R12>0.314082772</R12>
+					<R20>-0.960810006</R20>
+					<R21>0.0870662481</R21>
+					<R22>-0.263180017</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>243</X>
-					<Y>7</Y>
-					<Z>-242</Z>
+					<X>314.835358</X>
+					<Y>32.0486336</Y>
+					<Z>-238.943253</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -4154,7 +4154,7 @@ gP+AIA==]]></BinaryString>
 								<bool name="Locked">false</bool>
 								<bool name="Massless">false</bool>
 								<token name="Material">256</token>
-								<string name="Name">LocationModelRoot</string>
+								<string name="Name">LocationModelImage</string>
 								<float name="Reflectance">0</float>
 								<float name="RightParamA">-0.5</float>
 								<float name="RightParamB">0.5</float>
@@ -4237,7 +4237,7 @@ gP+AIA==]]></BinaryString>
 										<int name="BorderSizePixel">1</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
-										<Content name="Image"><url>rbxassetid://5991268430</url></Content>
+										<Content name="Image"><url>rbxassetid://5999464873</url></Content>
 										<Color3 name="ImageColor3">
 											<R>1</R>
 											<G>1</G>
@@ -4272,7 +4272,7 @@ gP+AIA==]]></BinaryString>
 										<UDim2 name="Size">
 											<XS>1</XS>
 											<XO>0</XO>
-											<YS>0.899999976</YS>
+											<YS>1</YS>
 											<YO>0</YO>
 										</UDim2>
 										<token name="SizeConstraint">0</token>
@@ -4295,82 +4295,6 @@ gP+AIA==]]></BinaryString>
 											<YS>1</YS>
 											<YO>0</YO>
 										</UDim2>
-										<bool name="Visible">true</bool>
-										<int name="ZIndex">1</int>
-									</Properties>
-								</Item>
-								<Item class="TextLabel" referent="RBX3343fb2b58294c948b431500a9fe18fd">
-									<Properties>
-										<bool name="Active">false</bool>
-										<Vector2 name="AnchorPoint">
-											<X>0</X>
-											<Y>0</Y>
-										</Vector2>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<bool name="AutoLocalize">true</bool>
-										<token name="AutomaticSize">0</token>
-										<Color3 name="BackgroundColor3">
-											<R>1</R>
-											<G>1</G>
-											<B>1</B>
-										</Color3>
-										<float name="BackgroundTransparency">0</float>
-										<Color3 name="BorderColor3">
-											<R>0.105882362</R>
-											<G>0.164705887</G>
-											<B>0.207843155</B>
-										</Color3>
-										<token name="BorderMode">0</token>
-										<int name="BorderSizePixel">1</int>
-										<bool name="ClipsDescendants">false</bool>
-										<bool name="Draggable">false</bool>
-										<token name="Font">3</token>
-										<int name="LayoutOrder">0</int>
-										<float name="LineHeight">1</float>
-										<string name="Name">TextLabel</string>
-										<Ref name="NextSelectionDown">null</Ref>
-										<Ref name="NextSelectionLeft">null</Ref>
-										<Ref name="NextSelectionRight">null</Ref>
-										<Ref name="NextSelectionUp">null</Ref>
-										<UDim2 name="Position">
-											<XS>0</XS>
-											<XO>0</XO>
-											<YS>0</YS>
-											<YO>0</YO>
-										</UDim2>
-										<bool name="RichText">false</bool>
-										<Ref name="RootLocalizationTable">null</Ref>
-										<float name="Rotation">0</float>
-										<bool name="Selectable">false</bool>
-										<Ref name="SelectionImageObject">null</Ref>
-										<UDim2 name="Size">
-											<XS>1</XS>
-											<XO>0</XO>
-											<YS>0.100000001</YS>
-											<YO>0</YO>
-										</UDim2>
-										<token name="SizeConstraint">0</token>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-										<string name="Text">Label</string>
-										<Color3 name="TextColor3">
-											<R>0</R>
-											<G>0</G>
-											<B>0</B>
-										</Color3>
-										<bool name="TextScaled">false</bool>
-										<float name="TextSize">64</float>
-										<Color3 name="TextStrokeColor3">
-											<R>0</R>
-											<G>0</G>
-											<B>0</B>
-										</Color3>
-										<float name="TextStrokeTransparency">1</float>
-										<float name="TextTransparency">0</float>
-										<token name="TextTruncate">0</token>
-										<bool name="TextWrapped">false</bool>
-										<token name="TextXAlignment">2</token>
-										<token name="TextYAlignment">1</token>
 										<bool name="Visible">true</bool>
 										<int name="ZIndex">1</int>
 									</Properties>
@@ -4430,6 +4354,244 @@ gP+AIA==]]></BinaryString>
 									<string name="Name">Weld</string>
 									<Ref name="Part0">RBX6d1f0a388a6542b28c7dfb57d51bdb50</Ref>
 									<Ref name="Part1">RBXa3bcf753fde5464899a4f15d57c876c7</Ref>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+								</Properties>
+							</Item>
+						</Item>
+						<Item class="Part" referent="RBX7017c69662ae4e4899e06ab50b96626a">
+							<Properties>
+								<bool name="Anchored">false</bool>
+								<BinaryString name="AttributesSerialize"></BinaryString>
+								<float name="BackParamA">-0.5</float>
+								<float name="BackParamB">0.5</float>
+								<token name="BackSurface">0</token>
+								<token name="BackSurfaceInput">0</token>
+								<float name="BottomParamA">-0.5</float>
+								<float name="BottomParamB">0.5</float>
+								<token name="BottomSurface">0</token>
+								<token name="BottomSurfaceInput">0</token>
+								<CoordinateFrame name="CFrame">
+									<X>314.835358</X>
+									<Y>40.0486336</Y>
+									<Z>-238.943253</Z>
+									<R00>-0.335519135</R00>
+									<R01>0</R01>
+									<R02>-0.94203341</R02>
+									<R10>0</R10>
+									<R11>1</R11>
+									<R12>0</R12>
+									<R20>0.94203341</R20>
+									<R21>0</R21>
+									<R22>-0.335519135</R22>
+								</CoordinateFrame>
+								<bool name="CanCollide">true</bool>
+								<bool name="CastShadow">true</bool>
+								<int name="CollisionGroupId">0</int>
+								<Color3uint8 name="Color3uint8">4283595950</Color3uint8>
+								<PhysicalProperties name="CustomPhysicalProperties">
+									<CustomPhysics>false</CustomPhysics>
+								</PhysicalProperties>
+								<float name="FrontParamA">-0.5</float>
+								<float name="FrontParamB">0.5</float>
+								<token name="FrontSurface">5</token>
+								<token name="FrontSurfaceInput">0</token>
+								<float name="LeftParamA">-0.5</float>
+								<float name="LeftParamB">0.5</float>
+								<token name="LeftSurface">0</token>
+								<token name="LeftSurfaceInput">0</token>
+								<bool name="Locked">false</bool>
+								<bool name="Massless">false</bool>
+								<token name="Material">256</token>
+								<string name="Name">LocationModelLabel</string>
+								<float name="Reflectance">0</float>
+								<float name="RightParamA">-0.5</float>
+								<float name="RightParamB">0.5</float>
+								<token name="RightSurface">0</token>
+								<token name="RightSurfaceInput">0</token>
+								<int name="RootPriority">0</int>
+								<Vector3 name="RotVelocity">
+									<X>0</X>
+									<Y>0</Y>
+									<Z>0</Z>
+								</Vector3>
+								<int64 name="SourceAssetId">-1</int64>
+								<BinaryString name="Tags"></BinaryString>
+								<float name="TopParamA">-0.5</float>
+								<float name="TopParamB">0.5</float>
+								<token name="TopSurface">0</token>
+								<token name="TopSurfaceInput">0</token>
+								<float name="Transparency">0</float>
+								<Vector3 name="Velocity">
+									<X>0</X>
+									<Y>0</Y>
+									<Z>0</Z>
+								</Vector3>
+								<token name="formFactorRaw">1</token>
+								<token name="shape">1</token>
+								<Vector3 name="size">
+									<X>14</X>
+									<Y>2</Y>
+									<Z>1</Z>
+								</Vector3>
+							</Properties>
+							<Item class="SurfaceGui" referent="RBX9ded90f45834413199ab916903e68938">
+								<Properties>
+									<bool name="Active">true</bool>
+									<Ref name="Adornee">null</Ref>
+									<bool name="AlwaysOnTop">false</bool>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<bool name="AutoLocalize">true</bool>
+									<Vector2 name="CanvasSize">
+										<X>800</X>
+										<Y>600</Y>
+									</Vector2>
+									<bool name="ClipsDescendants">true</bool>
+									<bool name="Enabled">true</bool>
+									<token name="Face">5</token>
+									<float name="LightInfluence">1</float>
+									<string name="Name">SurfaceGui</string>
+									<float name="PixelsPerStud">50</float>
+									<bool name="ResetOnSpawn">true</bool>
+									<Ref name="RootLocalizationTable">null</Ref>
+									<token name="SizingMode">1</token>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<float name="ToolPunchThroughDistance">0</float>
+									<token name="ZIndexBehavior">1</token>
+									<float name="ZOffset">0</float>
+								</Properties>
+								<Item class="TextLabel" referent="RBX663e08eecd7841f7b5e686b8b982f964">
+									<Properties>
+										<bool name="Active">false</bool>
+										<Vector2 name="AnchorPoint">
+											<X>0</X>
+											<Y>0</Y>
+										</Vector2>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<bool name="AutoLocalize">true</bool>
+										<token name="AutomaticSize">0</token>
+										<Color3 name="BackgroundColor3">
+											<R>1</R>
+											<G>1</G>
+											<B>1</B>
+										</Color3>
+										<float name="BackgroundTransparency">0</float>
+										<Color3 name="BorderColor3">
+											<R>0.105882362</R>
+											<G>0.164705887</G>
+											<B>0.207843155</B>
+										</Color3>
+										<token name="BorderMode">0</token>
+										<int name="BorderSizePixel">1</int>
+										<bool name="ClipsDescendants">false</bool>
+										<bool name="Draggable">false</bool>
+										<token name="Font">3</token>
+										<int name="LayoutOrder">0</int>
+										<float name="LineHeight">1</float>
+										<string name="Name">TextLabel</string>
+										<Ref name="NextSelectionDown">null</Ref>
+										<Ref name="NextSelectionLeft">null</Ref>
+										<Ref name="NextSelectionRight">null</Ref>
+										<Ref name="NextSelectionUp">null</Ref>
+										<UDim2 name="Position">
+											<XS>0</XS>
+											<XO>0</XO>
+											<YS>0</YS>
+											<YO>0</YO>
+										</UDim2>
+										<bool name="RichText">false</bool>
+										<Ref name="RootLocalizationTable">null</Ref>
+										<float name="Rotation">0</float>
+										<bool name="Selectable">false</bool>
+										<Ref name="SelectionImageObject">null</Ref>
+										<UDim2 name="Size">
+											<XS>1</XS>
+											<XO>0</XO>
+											<YS>1</YS>
+											<YO>0</YO>
+										</UDim2>
+										<token name="SizeConstraint">0</token>
+										<int64 name="SourceAssetId">-1</int64>
+										<BinaryString name="Tags"></BinaryString>
+										<string name="Text">Location</string>
+										<Color3 name="TextColor3">
+											<R>0</R>
+											<G>0</G>
+											<B>0</B>
+										</Color3>
+										<bool name="TextScaled">false</bool>
+										<float name="TextSize">64</float>
+										<Color3 name="TextStrokeColor3">
+											<R>0</R>
+											<G>0</G>
+											<B>0</B>
+										</Color3>
+										<float name="TextStrokeTransparency">1</float>
+										<float name="TextTransparency">0</float>
+										<token name="TextTruncate">0</token>
+										<bool name="TextWrapped">false</bool>
+										<token name="TextXAlignment">2</token>
+										<token name="TextYAlignment">1</token>
+										<bool name="Visible">true</bool>
+										<int name="ZIndex">1</int>
+									</Properties>
+								</Item>
+							</Item>
+							<Item class="SurfaceLight" referent="RBXf47fdcfbd76f4f888faab13b2873297a">
+								<Properties>
+									<float name="Angle">90</float>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<float name="Brightness">1</float>
+									<Color3 name="Color">
+										<R>1</R>
+										<G>1</G>
+										<B>1</B>
+									</Color3>
+									<bool name="Enabled">true</bool>
+									<token name="Face">5</token>
+									<string name="Name">SurfaceLight</string>
+									<float name="Range">16</float>
+									<bool name="Shadows">false</bool>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+								</Properties>
+							</Item>
+							<Item class="Weld" referent="RBXc4fc04e668c042a4acd4301e8b8d8acb">
+								<Properties>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<CoordinateFrame name="C0">
+										<X>0</X>
+										<Y>-1</Y>
+										<Z>0</Z>
+										<R00>1</R00>
+										<R01>0</R01>
+										<R02>0</R02>
+										<R10>0</R10>
+										<R11>0</R11>
+										<R12>-1</R12>
+										<R20>0</R20>
+										<R21>1</R21>
+										<R22>0</R22>
+									</CoordinateFrame>
+									<CoordinateFrame name="C1">
+										<X>0</X>
+										<Y>7</Y>
+										<Z>0</Z>
+										<R00>1</R00>
+										<R01>0</R01>
+										<R02>0</R02>
+										<R10>0</R10>
+										<R11>0</R11>
+										<R12>-1</R12>
+										<R20>0</R20>
+										<R21>1</R21>
+										<R22>0</R22>
+									</CoordinateFrame>
+									<bool name="Enabled">true</bool>
+									<string name="Name">Weld</string>
+									<Ref name="Part0">RBX7017c69662ae4e4899e06ab50b96626a</Ref>
+									<Ref name="Part1">RBX6d1f0a388a6542b28c7dfb57d51bdb50</Ref>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
@@ -5699,15 +5861,15 @@ gP+AIA==]]></BinaryString>
 									<X>331.048035</X>
 									<Y>29.4990234</Y>
 									<Z>-234.848419</Z>
-									<R00>0.507600188</R00>
+									<R00>0.218123078</R00>
 									<R01>0</R01>
-									<R02>-0.86159277</R02>
+									<R02>-0.975921333</R02>
 									<R10>0</R10>
 									<R11>1</R11>
 									<R12>0</R12>
-									<R20>0.86159277</R20>
+									<R20>0.975921333</R20>
 									<R21>0</R21>
-									<R22>0.507600188</R22>
+									<R22>0.218123078</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
 								<bool name="CastShadow">true</bool>
@@ -5775,45 +5937,6 @@ gP+AIA==]]></BinaryString>
 									<float name="Transparency">0</float>
 								</Properties>
 							</Item>
-							<Item class="Weld" referent="RBXb70927a0bf26495d988acc635338c5f1">
-								<Properties>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<CoordinateFrame name="C0">
-										<X>1.52587891e-05</X>
-										<Y>-4.5</Y>
-										<Z>3.05175781e-05</Z>
-										<R00>1</R00>
-										<R01>0</R01>
-										<R02>0</R02>
-										<R10>0</R10>
-										<R11>0</R11>
-										<R12>-1</R12>
-										<R20>0</R20>
-										<R21>1</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<CoordinateFrame name="C1">
-										<X>0.048034668</X>
-										<Y>5.99902344</Y>
-										<Z>-6.84840393</Z>
-										<R00>0.507600188</R00>
-										<R01>-0.86159277</R01>
-										<R02>0</R02>
-										<R10>0</R10>
-										<R11>0</R11>
-										<R12>-1</R12>
-										<R20>0.86159277</R20>
-										<R21>0.507600188</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<bool name="Enabled">true</bool>
-									<string name="Name">Weld</string>
-									<Ref name="Part0">RBX0768d321dcdc41f584a2c5dcea229077</Ref>
-									<Ref name="Part1">RBXa3bcf753fde5464899a4f15d57c876c7</Ref>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-								</Properties>
-							</Item>
 							<Item class="Decal" referent="RBXd755f6bdacf340a2a462210504591c4c">
 								<Properties>
 									<BinaryString name="AttributesSerialize"></BinaryString>
@@ -5828,6 +5951,45 @@ gP+AIA==]]></BinaryString>
 									<BinaryString name="Tags"></BinaryString>
 									<Content name="Texture"><url>rbxassetid://5897428591</url></Content>
 									<float name="Transparency">0</float>
+								</Properties>
+							</Item>
+							<Item class="Weld" referent="RBX72d20135be594a73a92337bbd289a14e">
+								<Properties>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<CoordinateFrame name="C0">
+										<X>0</X>
+										<Y>-4.5</Y>
+										<Z>0</Z>
+										<R00>1.00000012</R00>
+										<R01>0</R01>
+										<R02>0</R02>
+										<R10>0</R10>
+										<R11>0</R11>
+										<R12>-1</R12>
+										<R20>0</R20>
+										<R21>1.00000012</R21>
+										<R22>0</R22>
+									</CoordinateFrame>
+									<CoordinateFrame name="C1">
+										<X>0.048034668</X>
+										<Y>5.99902344</Y>
+										<Z>-6.84841919</Z>
+										<R00>0.218123078</R00>
+										<R01>-0.975921333</R01>
+										<R02>0</R02>
+										<R10>0</R10>
+										<R11>0</R11>
+										<R12>-1</R12>
+										<R20>0.975921333</R20>
+										<R21>0.218123078</R21>
+										<R22>0</R22>
+									</CoordinateFrame>
+									<bool name="Enabled">true</bool>
+									<string name="Name">Weld</string>
+									<Ref name="Part0">RBX0768d321dcdc41f584a2c5dcea229077</Ref>
+									<Ref name="Part1">RBXa3bcf753fde5464899a4f15d57c876c7</Ref>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
 								</Properties>
 							</Item>
 						</Item>
@@ -11153,112 +11315,6 @@ remoteCode.addRemoteObjects(base)
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="UnionOperation" referent="RBXe91e8cb56474479ba18cd03a3ce3200b">
-			<Properties>
-				<bool name="Anchored">false</bool>
-				<Content name="AssetId"><url>https://www.roblox.com//asset/?id=5999417896</url></Content>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<float name="BackParamA">-0.5</float>
-				<float name="BackParamB">0.5</float>
-				<token name="BackSurface">0</token>
-				<token name="BackSurfaceInput">0</token>
-				<float name="BottomParamA">-0.5</float>
-				<float name="BottomParamB">0.5</float>
-				<token name="BottomSurface">0</token>
-				<token name="BottomSurfaceInput">0</token>
-				<CoordinateFrame name="CFrame">
-					<X>285.499023</X>
-					<Y>21.4993286</Y>
-					<Z>-238</Z>
-					<R00>1</R00>
-					<R01>0</R01>
-					<R02>0</R02>
-					<R10>0</R10>
-					<R11>1</R11>
-					<R12>0</R12>
-					<R20>0</R20>
-					<R21>0</R21>
-					<R22>1</R22>
-				</CoordinateFrame>
-				<bool name="CanCollide">true</bool>
-				<bool name="CastShadow">true</bool>
-				<BinaryString name="ChildData"></BinaryString>
-				<int name="CollisionGroupId">0</int>
-				<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
-				<PhysicalProperties name="CustomPhysicalProperties">
-					<CustomPhysics>false</CustomPhysics>
-				</PhysicalProperties>
-				<token name="FormFactor">3</token>
-				<float name="FrontParamA">-0.5</float>
-				<float name="FrontParamB">0.5</float>
-				<token name="FrontSurface">0</token>
-				<token name="FrontSurfaceInput">0</token>
-				<Vector3 name="InitialSize">
-					<X>10</X>
-					<Y>10.0000019</Y>
-					<Z>9.99998474</Z>
-				</Vector3>
-				<BinaryString name="LODData"></BinaryString>
-				<float name="LeftParamA">-0.5</float>
-				<float name="LeftParamB">0.5</float>
-				<token name="LeftSurface">0</token>
-				<token name="LeftSurfaceInput">0</token>
-				<bool name="Locked">false</bool>
-				<bool name="Massless">false</bool>
-				<token name="Material">256</token>
-				<BinaryString name="MeshData"></BinaryString>
-				<string name="Name">Union</string>
-				<SharedString name="PhysicalConfigData">KesRgFNgI7kpUH5IxZqRaA==</SharedString>
-				<BinaryString name="PhysicsData"></BinaryString>
-				<float name="Reflectance">0</float>
-				<token name="RenderFidelity">1</token>
-				<float name="RightParamA">-0.5</float>
-				<float name="RightParamB">0.5</float>
-				<token name="RightSurface">0</token>
-				<token name="RightSurfaceInput">0</token>
-				<int name="RootPriority">0</int>
-				<Vector3 name="RotVelocity">
-					<X>0</X>
-					<Y>0</Y>
-					<Z>0</Z>
-				</Vector3>
-				<float name="SmoothingAngle">0</float>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-				<float name="TopParamA">-0.5</float>
-				<float name="TopParamB">0.5</float>
-				<token name="TopSurface">0</token>
-				<token name="TopSurfaceInput">0</token>
-				<float name="Transparency">0</float>
-				<bool name="UsePartColor">false</bool>
-				<Vector3 name="Velocity">
-					<X>0</X>
-					<Y>0</Y>
-					<Z>0</Z>
-				</Vector3>
-				<Vector3 name="size">
-					<X>10</X>
-					<Y>10.0000019</Y>
-					<Z>9.99998474</Z>
-				</Vector3>
-			</Properties>
-			<Item class="Decal" referent="RBX7c195afdecf640b18c7ee719b9815e21">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Color3 name="Color3">
-						<R>1</R>
-						<G>1</G>
-						<B>1</B>
-					</Color3>
-					<token name="Face">5</token>
-					<string name="Name">Decal</string>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-					<Content name="Texture"><url>rbxassetid://5991277363</url></Content>
-					<float name="Transparency">0</float>
-				</Properties>
-			</Item>
-		</Item>
 	</Item>
 	<Item class="SoundService" referent="RBX7845308c7ca3451eaa9eca1a685d0279">
 		<Properties>
@@ -11280,207 +11336,6 @@ remoteCode.addRemoteObjects(base)
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
-		<Item class="BinaryStringValue" referent="RBXb3ae5d637b2445e59a7b89c96b955c49">
-			<Properties>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<string name="Name">ChildData</string>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-				<BinaryString name="Value"><![CDATA[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
-TkQAAAAAAAkAAAAAAAAAPC9yb2Jsb3g+]]></BinaryString>
-			</Properties>
-		</Item>
-		<Item class="BinaryStringValue" referent="RBX4b01fa5f93b746fcb328b8c42d36cbba">
-			<Properties>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<string name="Name">ChildData</string>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-				<BinaryString name="Value"><![CDATA[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]]></BinaryString>
-			</Properties>
-		</Item>
 	</Item>
 	<Item class="CSGDictionaryService" referent="RBX266db11a4dcd47c39103bc86cfeba4b3">
 		<Properties>
@@ -12007,7 +11862,7 @@ renderCharacters = function(parent, itemConfigs, templateName)
                     Constants.characters[dataFileName]['decalId']
             else
                 if (dataFileName ~= "empty" and dataFileName ~= "blank") then
-                    print("-----------------------" .. dataFileName);
+                    print("------------------------------" .. dataFileName);
                 end
                 itemConfig.decalId = "5897424121"
             end
@@ -12099,6 +11954,10 @@ function destroyBridges(props)
     local showTopPath = sceneConfig.showTopPath
     local showLeftPath = sceneConfig.showLeftPath
 
+    print('showRightPath' .. ' - start');
+    print(showRightPath);
+    print('showRightPath' .. ' - end');
+
     local bridgeRightModel = Utils.getDescendantByName(clonedScene,
                                                        "BridgeRightModel")
     if (showRightPath) then
@@ -12185,6 +12044,39 @@ function addScenes(props)
             sceneConfig = sceneConfig
         }
 
+        -- Image
+        -- Image
+        local locationModelImage = Utils.getFromTemplates("LocationModelImage")
+        local imageLabelFront = Utils.getDescendantByName(locationModelImage,
+                                                          'ImageLabel')
+        local defaultImageId = '5999464489'
+        local imageId = defaultImageId
+        if (Constants.characters[sceneConfig] and
+            Constants.characters[sceneConfig['name']]) then
+            imageId = Constants.characters[sceneConfig]['name']
+        else
+            print("------------------" .. sceneConfig['name'])
+        end
+
+        -- Label
+        -- Label
+        local locationModelLabel = Utils.getFromTemplates("LocationModelLabel")
+        local textLabel = Utils.getDescendantByName(locationModelLabel,
+                                                    'TextLabel')
+
+        local text = "Not Found"
+
+        local sceneName = sceneConfig.name
+        if (Constants.characters[sceneConfig] and
+            Constants.characters[sceneName]) then
+            text = Constants.characters[sceneName]['displayName']
+        else
+            print("------------------" .. sceneName)
+        end
+        textLabel.Text = "test"
+
+        imageLabelFront.Image = 'rbxassetid://' .. imageId
+
         buttonParent = addItemsToScene(sceneProps)
 
         function incrementPage()
@@ -12260,7 +12152,7 @@ function addRemoteObjects()
         }
 
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
-        -- questBlock.Transparency = 1
+        questBlock.Transparency = 1
         local addScenesProps = {
             parent = questBlock,
             sceneConfigs = questConfig.sceneConfigs
@@ -14002,98 +13894,6 @@ module.questConfigs = {
     {
         sceneConfigs = {
             {
-                name = "swing",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Rori, I'm gonna get real with you."
-                            },
-                            {
-                                char = "rori",
-                                text = "We must free the dragons from Maldred's evil spell!"
-                            }, {
-                                char = "kat",
-                                text = "Rori, do you like sparkles and glitter beyond your wildest dreams?"
-                            },
-                            {
-                                char = "rori",
-                                text = "Does it shimmer with the power of the dragon stone?"
-                            },
-                            {char = "kat", text = "Oh yes... Oh yes it does..."},
-                            {
-                                char = "kat",
-                                text = "Now, will you help us steal the dress from the dragon Watta-Lee-Achee?"
-                            }, {char = "rori", text = "What class?"},
-                            {
-                                char = "liz2",
-                                text = "K2. No, wait... K1.  Um...  both?"
-                            },
-                            {
-                                char = "rori",
-                                text = "I wasn't asking your kindergarten class!"
-                            },
-                            {char = "rori", text = "What class dragon is it?"},
-                            {char = "liz2", text = "Oh... yeah right."},
-                            {char = "rori", text = "Never mind."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "rori"}, {name = "vulcan01"}}
-                    }
-                },
-                coordinates = {col = 0, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                maxRow = 0,
-                maxCol = 0
-            }, {
-                name = "lake",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "rori",
-                                text = "I think Watta-Lee-Achee is a class 2 lava dragon with a minor healing enchantment."
-                            }, {char = "liz2", text = "Doo-Da-Lee-Doo"},
-                            {char = "rori", text = "What?"},
-                            {char = "kat", text = "Ignore her..."},
-                            {
-                                char = "rori",
-                                text = "Vulcan and I will battle Watta-Lee-Achee..."
-                            },
-                            {
-                                char = "rori",
-                                text = "...and free the Dress of Atacama once and for all!!!"
-                            }, {char = "kat", text = "Thanks Rori!"},
-                            {
-                                char = "rori",
-                                text = "I will join you on your Quest for the Dress!"
-                            }, {char = "liz2", text = "thanks Rori!"},
-                            {char = "rori", text = "I will join you..."},
-                            {char = "rori", text = "...on your..."},
-                            {char = "rori", text = "...Dress Quest!"},
-                            {char = "liz2", text = "Doo-Da-Lee-Doo"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "rori"}, {name = "vulcan01"}}
-                    }
-                },
-                coordinates = {row = 0, col = 1},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 1
-            }
-        },
-        gridSize = {rows = 1, cols = 2}
-    }, {
-        sceneConfigs = {
-            {
                 name = "home",
                 frames = {
                     {
@@ -14217,2019 +14017,6 @@ module.questConfigs = {
             }
         },
         gridSize = {rows = 1, cols = 3}
-    }, {
-        sceneConfigs = {
-            {
-                name = "home",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "dog01", text = "Yo, what’s up Kat?"},
-                            {
-                                char = "kat",
-                                text = "Nothin’ dog. Just chillin with my girl Liz."
-                            }, {
-                                char = "dog01",
-                                text = "Sweet! Keep it Fresh Kat! I gotta bounce. I’ll catch you on the flip!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "dog01"}}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "Laters!"},
-                            {char = "liz2", text = "Bye Bye Pete! Hee Hee!"}, {
-                                char = "liz2",
-                                text = "Wow Kat, where did you learn all those cool things to say?"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Cool right? It’s called slang."
-                            }, {char = "liz2", text = "Wow! I want to learn!"},
-                            {
-                                char = "liz2",
-                                text = "I used to ride the bus with this second grader who knew like a million slangs. Like literally."
-                            }, {char = "liz2", text = "Cooooool!!!!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "He’d say Kat, I like you, but sometimes, think you are a couple sandwiches short of a picnic?"
-                            },
-                            {
-                                char = "liz2",
-                                text = "Cooooool! What does that mean?"
-                            },
-                            {
-                                char = "liz2",
-                                text = "I dunno, but I say it all the time now."
-                            },
-                            {
-                                char = "liz2",
-                                text = "Wait, you know a second grader?"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }
-                },
-                coordinates = {row = 0, col = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                maxRow = 0,
-                maxCol = 0
-            }, {
-                name = "log",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Yeah, this kid Dennis. He’s hilarious."
-                            }, {
-                                char = "kat",
-                                text = "This one time he made me laugh so hard chocolate milk sprayed out of my nose."
-                            },
-                            {
-                                char = "liz2",
-                                text = "Wait.. Hold your horses. Back up!"
-                            }, {char = "liz2", text = "What?"}, {
-                                char = "liz2",
-                                text = "Are you talking about Dennis, as in, Dennis the Menace?"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "blank"}, {name = "blank"}}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "Yeah, that’s him."},
-                            {
-                                char = "liz2",
-                                text = "You know Dennis the Menace?"
-                            }, {
-                                char = "liz2",
-                                text = "The kid who runs up slides the wrong way and has a slingshot hanging out of his back pocket?"
-                            }, {
-                                char = "kat",
-                                text = "Yeah, totally. He’s super chill. We should go hang out with him."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "blank"}, {name = "blank"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "He is like the coolest kid in the Magic Forest!"
-                            }, {char = "kat", text = "For sure."}, {
-                                char = "liz2",
-                                text = "Zombie said his parents grounded him until he turns 13!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "blank"}, {name = "blank"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Wait, What does grounded mean?"
-                            }, {
-                                char = "liz2",
-                                text = "Oh sorry. Grounded is when you get in super big trouble and your parents don’t let you out of your room for a week!"
-                            },
-                            {
-                                char = "kat",
-                                text = "Oh that. Yeah, he’s definitely grounded."
-                            }, {
-                                char = "kat",
-                                text = "But he sneaks out his bedroom window during nap and plays at the playground."
-                            }, {char = "liz2", text = "Wow!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "blank"}, {name = "blank"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Come on, let’s go see if he is at the slide."
-                            }, {char = "liz2", text = "Fine with me."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "blank"}, {name = "blank"}}
-                    }
-                },
-                coordinates = {row = 0, col = 1},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 1
-            }, {
-                name = "slide",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "kat", text = "Hi Dennis!"},
-                            {
-                                char = "dennisTheMenace",
-                                text = "Oh hi Kat! What are you up to?"
-                            }, {char = "liz2", text = "Just some trouble."}, {
-                                char = "dennisTheMenace",
-                                text = "Count me in. But keep an eye out for Mr. Wilson."
-                            }, {
-                                char = "dennisTheMenace",
-                                text = "He's not going to be too happy when he finds out what happened to his new shoes!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "dennisTheMenace"}, {name = "blank"},
-                            {name = "dennisTheMenace"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "What happened to his new shoes?"
-                            }, {
-                                char = "dennisTheMenace",
-                                text = "You don't even want to know. Where's the fun at?"
-                            }, {
-                                char = "kat",
-                                text = "Well, there's this new girl named Rori. She needs a place to hide her dragon."
-                            },
-                            {
-                                char = "dennisTheMenace",
-                                text = "Well now you are talking my language."
-                            }, {
-                                char = "dennisTheMenace",
-                                text = "Have I ever told you about Mr. Wilson's shed?"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "dennisTheMenace"}, {name = "blank"},
-                            {name = "dennisTheMenace"}
-                        }
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "Keep talking..."}, {
-                                char = "dennisTheMenace",
-                                text = "It's dustier than a book of manners in a schoolyard, but it might to the trick."
-                            },
-                            {
-                                char = "kat",
-                                text = "We will pass that along to Rori."
-                            }, {
-                                char = "liz2",
-                                text = "Dennis, do you have a piece of paper and a pin? Rori said to pin a note to a tree."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "dennisTheMenace"}, {name = "blank"},
-                            {name = "dennisTheMenace"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "dennisTheMenace",
-                                text = "I have a ball of lint and this thumb tack, but I'm saving it to make a surprise for Mr. Wilson."
-                            }, {char = "liz2", text = "Lucky him!"}, {
-                                char = "dennisTheMenace",
-                                text = "Yeah, he must have been born under a 4 leaf clover."
-                            },
-                            {
-                                char = "liz2",
-                                text = "See you later Dennis the Menace! Hee Hee Hee!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "dennisTheMenace"}, {name = "blank"},
-                            {name = "dennisTheMenace"}
-                        }
-                    }
-                },
-                coordinates = {row = 0, col = 2},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 2
-            }
-        },
-        gridSize = {rows = 1, cols = 3}
-    }, {
-        sceneConfigs = {
-            {
-                name = "cave",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "katieKooper01",
-                                text = "Yay, we are just in time for the rap battle"
-                            },
-                            {char = "kat", text = "Cool! What's a rap battle?"},
-                            {char = "katieKooper01", text = "I don't know."},
-                            {char = "katieKooper01", text = "Let's find out!."}
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "empty"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "The trolls don't know we stole the diamond. So just act cool."
-                            },
-                            {
-                                char = "katieKooper01",
-                                text = "What! We STOLE the DIAMOND?"
-                            }, {char = "kat", text = "Shhhhhhhhhhh!"},
-                            {char = "troll01", text = "LOOK GIRLS!"},
-                            {char = "troll02", text = "GIRLS TAKE DIAMOND?"},
-                            {char = "troll01", text = "TROLLS EAT GIRLS!"}
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}, {name = "empty"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "What? Who? Me? Don't be silly. We hate diamonds!"
-                            },
-                            {
-                                char = "katieKooper01",
-                                text = "What? Kat, we love diamonds!!!"
-                            }, {char = "kat", text = "Katie!!!!"}
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}, {name = "empty"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Oh hello trolls. We are not here to take your diamond."
-                            },
-                            {
-                                char = "kat",
-                                text = "We are here for....ummmm.... uuuuuhhhh..."
-                            },
-                            {
-                                char = "kat",
-                                text = "Katie! Think of something quick!"
-                            },
-                            {
-                                char = "katieKooper01",
-                                text = "We're here for the rap battle!"
-                            }, {char = "kat", text = "Good save Katie Kooper!"}
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}, {name = "empty"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "My friend Kat here is going to show you trolls how to rap!"
-                            }, {char = "kat", text = "Katie!!!!"}
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}, {name = "empty"}
-                        }
-                    }, {
-                        dialogs = {
-                            {char = "troll01", text = "RAP BATTLE!"},
-                            {char = "troll02", text = "RAP BATTLE!"},
-                            {
-                                char = "kat",
-                                text = "Katie? What in the world are you getting us into."
-                            },
-                            {
-                                char = "katieKooper01",
-                                text = "Chill out Kat, it's fine."
-                            },
-                            {
-                                char = "katieKooper01",
-                                text = "Just do the rap about the frog on the log."
-                            }, {char = "kat", text = "The frog on the log?!?"},
-                            {
-                                char = "kat",
-                                text = "Yeah. The one you did this morning! That was hilarious!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}, {name = "empty"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Ugggghhh! Katie! That was not a rap!"
-                            },
-                            {
-                                char = "kat",
-                                text = "This morning, I literally, saw a frog on a log."
-                            },
-                            {
-                                char = "katieKooper01",
-                                text = "That was so funny! You had me dying!"
-                            }, {char = "kat", text = "Katie!!!!"},
-                            {
-                                char = "kat",
-                                text = "Stop Talking! For the first time in your life!"
-                            },
-                            {
-                                char = "kat",
-                                text = "Listen to me very closely. There is no rap."
-                            }
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}, {name = "empty"}
-                        }
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "This morning..."},
-                            {char = "kat", text = "I SAW A FROG..."},
-                            {char = "troll01", text = "GIRL SAW FROG???"},
-                            {char = "kat", text = "...ON A LOG!"},
-                            {char = "troll02", text = "FROG ON LOG!"},
-                            {char = "troll01", text = "HA! HA! HOO! HOO!"},
-                            {char = "troll01", text = "TROLL LIKE FROG!"}
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}, {name = "empty"}
-                        }
-                    }
-                },
-                coordinates = {col = 0, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                maxRow = 0,
-                maxCol = 0
-            }, {
-                name = "bog",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "kat", text = "And I'm NOT gonna RAP."},
-                            {char = "kat", text = "It's just a silly fad."},
-                            {char = "kat", text = "You think your day was bad?"},
-                            {
-                                char = "kat",
-                                text = "Well let me tell you trolls about the day I've had."
-                            }, {char = "troll01", text = "FROG ON LOG!"}
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}
-                        }
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "First we saw a frog"},
-                            {char = "kat", text = "The frog was on a log."},
-                            {char = "kat", text = "Then there was this dog..."},
-                            {
-                                char = "kat",
-                                text = "...stuck in a bog wearing clogs!"
-                            }, {char = "troll01", text = "TROLL LIKE BOG!"}
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}
-                        }
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "Me and Liz took a walk."},
-                            {char = "kat", text = "First we see a mop."},
-                            {char = "kat", text = "Then there was this top?"},
-                            {char = "kat", text = "Right next to a cop"},
-                            {
-                                char = "kat",
-                                text = "with a frog on a log, drinking pop!"
-                            }, {char = "troll01", text = "HA! HA! HOO! HOO!"},
-                            {char = "troll02", text = "FROGGY LIKE POP!"}
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "So quit squishin all the fish and sit and listen!"
-                            },
-                            {
-                                char = "kat",
-                                text = "Cause I'm the kinda kid that makes the grown ups stop."
-                            },
-                            {
-                                char = "kat",
-                                text = "And yell= Honey! Hide the keys to the donut shop!"
-                            }, {char = "troll01", text = "DONUT SHOP!"},
-                            {
-                                char = "kat",
-                                text = "You trolls like the Donut Shop?"
-                            }, {char = "troll21", text = "DONUT SHOP!"}
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}
-                        }
-                    }
-                },
-                coordinates = {row = 0, col = 1},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 1
-            }, {
-                name = "swamp",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "kat", text = "My parents groan a lot."}, {
-                                char = "kat",
-                                text = "You hear that rumble? That's my tummy from the soda pop."
-                            }, {char = "kat", text = "Call the doc!"},
-                            {
-                                char = "kat",
-                                text = "So we can ask if I'll explode or not!"
-                            },
-                            {
-                                char = "kat",
-                                text = "I check my phone a lot, but it won't unlock!"
-                            },
-                            {
-                                char = "kat",
-                                text = "Yeah, it's bark, just wait. I'll get it Photoshopped."
-                            }
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "I'll see you at my birthday when corona stops."
-                            },
-                            {
-                                char = "kat",
-                                text = "And when the party starts rockin..."
-                            },
-                            {
-                                char = "kat",
-                                text = "That's just me and Liz squawkin..."
-                            },
-                            {
-                                char = "kat",
-                                text = "Like 2 sea gulls that got locked in-"
-                            }, {char = "kat", text = "side a donut shop."},
-                            {char = "troll01", text = "DONUT SHOP!"}
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "They said this was a battle, but you Trolls don't bloop."
-                            }, {
-                                char = "kat",
-                                text = "Fellas, I'm about to tell a troll the stone cold truth."
-                            },
-                            {
-                                char = "kat",
-                                text = "Here's some cold stone soup."
-                            }, {char = "kat", text = "In an old sewn shoe."}
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "And wait, here's a bone for your pooch too!"
-                            },
-                            {
-                                char = "kat",
-                                text = "Little kid, you want a cold cone for your loose tooth?"
-                            }, {
-                                char = "kat",
-                                text = "And here's some goop for the hole in your boot where your big hairy toes poke through."
-                            }, {
-                                char = "kat",
-                                text = "And you two. You don't bloop? You ever heard of youTube?"
-                            }, {char = "troll01", text = "We don't do it..."},
-                            {char = "troll02", text = "...it's too new."}
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}
-                        }
-                    }
-                },
-                coordinates = {row = 0, col = 2},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 2
-            }, {
-                name = "hill",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "kat", text = "Blip Bleep Bloop."},
-                            {char = "kat", text = "Flap Flop Floop, Flizz."}
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}
-                        }
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "I like you trolls a lot"},
-                            {char = "kat", text = "But I gotta find Liz."},
-                            {char = "troll01", text = "Bye Bye!"},
-                            {char = "troll02", text = "See you soon!"},
-                            {
-                                char = "troll01",
-                                text = "Hope you have a nice trip!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "katieKooper01",
-                                text = "Kat, you won the Rap battle!"
-                            }, {char = "kat", text = "What's a rap battle?"},
-                            {
-                                char = "kat",
-                                text = "Um.... Never mind. Let's go find Liz!"
-                            },
-                            {
-                                char = "troll01",
-                                text = "Baby troll wants to come with you."
-                            },
-                            {
-                                char = "kat",
-                                text = "Oh dear. Oh no no no no no... come on Matt!"
-                            },
-                            {
-                                char = "katieKooper01",
-                                text = "Cuuu----uuuute! OK!"
-                            },
-                            {
-                                char = "kat",
-                                text = "Think about pretty dresses Katie. Pretty Dresses!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "troll01",
-                                text = "Here is baby troll's diaper pin."
-                            }, {
-                                char = "kat",
-                                text = "Oh no, it's sundown and we don't have the magical stone of Azkabat."
-                            },
-                            {
-                                char = "katieKooper01",
-                                text = "It's actually part of the diaper pin"
-                            }
-                        },
-                        characters01 = {{name = "kat"}},
-                        characters02 = {
-                            {name = "katieKooper01"}, {name = "troll01"},
-                            {name = "troll02"}
-                        }
-                    }
-                },
-                coordinates = {col = 3, row = 0},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 3
-            }
-        },
-        gridSize = {rows = 1, cols = 4}
-    }, {
-        sceneConfigs = {
-            {
-                name = "pond",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "liz2", text = "I see a frog."},
-                            {char = "liz2", text = "I see a frog... on a log."},
-                            {char = "liz2", text = "Tee Hee Hee!"},
-                            {
-                                char = "kat",
-                                text = "Wow Liz, you have good eyes!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "I see a pig."},
-                            {char = "liz2", text = "I see a pig... in a wig!"},
-                            {char = "liz2", text = "Tee Hee Hee!"},
-                            {
-                                char = "kat",
-                                text = "Liz, could we maybe talk about something else today?"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "I see a goat."},
-                            {char = "liz2", text = "I see a goat... in a boat!"},
-                            {char = "kat", text = "Oh my gosh Kat! Turn six!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "What'evs girl... I turned six when you were still riding a trycicle."
-                            }, {
-                                char = "kat",
-                                text = "Ha! Good one! Well, I turned six when you were still wearing Sponge Bob training pants!"
-                            }, {
-                                char = "liz2",
-                                text = "Oh yeah, well your mom still drives you around in a backwards car seat!"
-                            },
-                            {
-                                char = "kat",
-                                text = "Oh snap! That’s a good one!"
-                            },
-                            {
-                                char = "kat",
-                                text = "I’m going to drop that one on the Troll later!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }
-                },
-                coordinates = {col = 0, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                maxRow = 0,
-                maxCol = 0
-            }, {
-                name = "bog",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "liz2", text = "The Troll?"},
-                            {
-                                char = "liz2",
-                                text = "Do you mean the 'TROLL NEEDS GOLD' Troll?"
-                            },
-                            {char = "liz2", text = "What’s up with that guy?"},
-                            {
-                                char = "kat",
-                                text = "I know, right? He’s the coolest!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "Yeah, totally..."},
-                            {char = "liz2", text = "...but, I don’t get it."},
-                            {char = "liz2", text = "What’s his deal?"},
-                            {
-                                char = "liz2",
-                                text = "Why does he always yell= 'TROLL NEED GOLD'?"
-                            },
-                            {char = "liz2", text = "It’s a valid question."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "Really Liz?"}, {
-                                char = "kat",
-                                text = "Are you seriously asking me why the Troll runs around yelling= 'TROLL NEED GOLD'?"
-                            }, {char = "liz2", text = "Yes!"},
-                            {char = "kat", text = "You’re not kidding?"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }
-                },
-                coordinates = {col = 1, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 1
-            }, {
-                name = "bees",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Well, I think he’s saying it because he needs gold."
-                            },
-                            {
-                                char = "liz2",
-                                text = "Um, yeah. Thanks Albert Einstein."
-                            }, {char = "liz2", text = "I get that part."},
-                            {char = "kat", text = "Oh."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "I understand that he is literally asking for gold."
-                            }, {char = "liz2", text = "I'm six. Remember?"},
-                            {char = "kat", text = "Ok."},
-                            {char = "liz2", text = "But why does he need gold?"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "Elliot says he doesn't ~need~ gold."
-                            },
-                            {
-                                char = "liz2",
-                                text = "The troll probably just ~wants~ gold."
-                            },
-                            {
-                                char = "kat",
-                                text = "Wait, is that the kid that says="
-                            },
-                            {
-                                char = "kat",
-                                text = "You get what you get and you don't get upset?"
-                            }, {char = "kat", text = "Well, I get upset!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "Getting upset is my thing!"},
-                            {char = "liz2", text = "Calm down Kat."},
-                            {
-                                char = "kat",
-                                text = "Getting upset is my happy place!"
-                            },
-                            {
-                                char = "liz2",
-                                text = "Kat, no one is trying to take away your crazy."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }
-                },
-                coordinates = {row = 0, col = 2},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 2
-            }, {
-                name = "swamp",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "But the Troll... What’s his back story?"
-                            },
-                            {char = "kat", text = "Liz!!!! Noooooooooooo!!!!"},
-                            {char = "liz2", text = "Huh?"},
-                            {char = "kat", text = "No! No! No! No! No!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "What?"},
-                            {char = "kat", text = "Undo! Undo!"},
-                            {
-                                char = "liz2",
-                                text = "Kat, today is not your day to be crazy."
-                            }, {char = "liz2", text = "We need to take turns."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Liz, never... ever... ever..."
-                            },
-                            {
-                                char = "kat",
-                                text = "...ask for a creature's backstory"
-                            },
-                            {
-                                char = "kat",
-                                text = "That's like Rule Number One!"
-                            }, {
-                                char = "liz2",
-                                text = "I thought 'Never stand behind a donkey' was Rule Number One..."
-                            }, {char = "kat", text = "Liiiiiiizzzz!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "You asked about the troll's back story."
-                            }, {char = "liz2", text = "So?"}, {
-                                char = "kat",
-                                text = "Now Matt is going to do some loooooong story about the troll."
-                            },
-                            {
-                                char = "kat",
-                                text = "Remember how distracted he gets?"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "Wait, what's a back story?"},
-                            {
-                                char = "kat",
-                                text = "It's a story that tells where the creature came from."
-                            }, {char = "kat", text = "What's it's name?"},
-                            {char = "kat", text = "Where does it live?"},
-                            {
-                                char = "kat",
-                                text = "Did it have a happy child hood?"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "Cool!"},
-                            {char = "kat", text = "No! Not cool!"},
-                            {char = "kat", text = "The opposite of cool!"},
-                            {char = "liz2", text = "Warm?"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Liz, we are trying to find the that sparkly dress!"
-                            },
-                            {char = "kat", text = "Remember... 'Dress Quest'?"},
-                            {
-                                char = "kat",
-                                text = "I don't even think that's the name of this game anymore."
-                            }, {char = "liz2", text = "It's not."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }
-                },
-                coordinates = {col = 3, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 3
-            }, {
-                name = "log",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "kat", text = "My point exactly!!!"},
-                            {
-                                char = "liz2",
-                                text = "I think it's Rapping Troll Cave."
-                            },
-                            {char = "kat", text = "Oh no... here it comes..."},
-                            {
-                                char = "liz2",
-                                text = "Hey look! There's the troll."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "troll01"}, {name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "I didn't see him there before."
-                            }, {char = "kat", text = "Oh dear..."},
-                            {
-                                char = "liz2",
-                                text = "I swear he wasn't there 3 seconds ago."
-                            }, {char = "liz2", text = "Hello Troll."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "troll01"}, {name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "troll2",
-                                text = "TROLL.... SOOOOOO..... SAD..."
-                            },
-                            {char = "liz2", text = "Oh my goodness! Why...?"},
-                            {char = "troll2", text = "BOO HOO!"},
-                            {char = "kat", text = "Oh brother..."},
-                            {
-                                char = "troll2",
-                                text = "TODAY.... TROLL BIRTHDAY..."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "troll01"}, {name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "You poor thing!"},
-                            {
-                                char = "troll2",
-                                text = "TROLL WANT FROOT LOOPS!!!"
-                            }, {char = "liz2", text = "Oh my gosh... so sad."},
-                            {
-                                char = "troll2",
-                                text = "TROLL MOM NOT LIKE SUGAR!!!"
-                            }, {char = "liz2", text = "I'm so sorry..."},
-                            {char = "kat", text = "We gotta go. Bye! Bye!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "troll01"}, {name = "empty"}}
-                    }
-                },
-                coordinates = {row = 0, col = 4},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 4
-            }
-        },
-        gridSize = {rows = 1, cols = 5}
-    }, {
-        sceneConfigs = {
-            {
-                name = "bog",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "liz2", text = "It's not fair!"},
-                            {char = "kat", text = "What's not fair?"},
-                            {char = "liz2", text = "Nothing is fair!"},
-                            {
-                                char = "kat",
-                                text = "Oh dear! You poor thing...  Wait hold on..."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "What are you doing?"},
-                            {
-                                char = "kat",
-                                text = "Just a sec liz.  I'm making a call."
-                            }, {
-                                char = "liz2",
-                                text = "Kat, that's not a phone, it's a piece of bark that you just picked up off the ground."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Beep boop beep boop beep beep boop..."
-                            },
-                            {
-                                char = "kat",
-                                text = "Hello, operator, please send over the wha-mulance!"
-                            }, {char = "kat", text = "Yes it's Liz again."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }
-                },
-                coordinates = {col = 0, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                maxRow = 0,
-                maxCol = 0
-            }, {
-                name = "swing",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "kat", text = "Yes I'll hold."}, {
-                                char = "kat",
-                                text = "No I don't want to participate in a short survey after the call."
-                            }, {
-                                char = "kat",
-                                text = "What? Oh great!  Liz, they are sending the Wham-bulance over immediately."
-                            },
-                            {
-                                char = "kat",
-                                text = "Oh what's that?  You have a message for liz?"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "Kat",
-                                text = "Liz, the wha-mbulance people have a message for you!"
-                            }, {char = "liz2", text = "Kat you are not funny!"},
-                            {
-                                char = "kat",
-                                text = "Whats that?  Tell her to turn six?"
-                            },
-                            {
-                                char = "kat",
-                                text = "Oh what? And also stop being a bad frog?"
-                            }, {
-                                char = "kat",
-                                text = "Yeah I'll pass that along to her and see what she says."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }
-                },
-                coordinates = {row = 0, col = 1},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 1
-            }, {
-                name = "stump",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "kat", text = "You have a good day too."},
-                            {char = "kat", text = "Mmmm-bye"},
-                            {char = "kat", text = "Waaa-wer! Waaa-wer!"},
-                            {
-                                char = "kat",
-                                text = "Liz, I just got off the phone with --"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "STOP IT!"},
-                            {char = "liz2", text = "Kat, you are a BAD FROG!!!"},
-                            {char = "liz2", text = "BAD FROGGY!!!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }
-                },
-                coordinates = {col = 2, row = 0},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 2
-            }
-        },
-        gridSize = {rows = 1, cols = 3}
-    }, {
-        sceneConfigs = {
-            {
-                name = "cave",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "Kat, I’m so glad you are here. Look!  Quick!  Look in the sky!"
-                            }, {char = "kat", text = "ok."},
-                            {
-                                char = "liz2",
-                                text = "And just sort of stare right at that cloud."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "But don’t stare with your eyes."
-                            }, {char = "kat", text = "Huh?"}, {
-                                char = "liz2",
-                                text = "Just sort of stare with your brain, but in that direction."
-                            }, {char = "kat", text = "Ummmm... ok."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "Do you see the kid?  Do you see the kid up there?"
-                            }, {char = "kat", text = "No."},
-                            {
-                                char = "liz2",
-                                text = "In that cloud.  Right there."
-                            }, {
-                                char = "liz2",
-                                text = "Look straight ahead. There is a kid staring right at us."
-                            }, {char = "kat", text = "...uhhh...Still no...."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }
-                },
-                coordinates = {row = 0, col = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                maxRow = 0,
-                maxCol = 0
-            }, {
-                name = "bees",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "And any time I say anything… anything at all, she says it at the same time."
-                            },
-                            {
-                                char = "kat",
-                                text = "Liz, I don’t see anything."
-                            },
-                            {
-                                char = "liz2",
-                                text = "She’s doing it.  She’s doing it right now!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Liz, as your best friend, I need be totally honest with you."
-                            }, {char = "liz2", text = "I can see her!"},
-                            {
-                                char = "kat",
-                                text = "Look, I’ve been doing crazy since I was this tall."
-                            }, {char = "kat", text = "So I kind of know crazy."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "But the kind of crazy I do is more screaming-in-Target kind of crazy."
-                            }, {
-                                char = "kat",
-                                text = "The kind of crazy you are doing now is more like be-buh-dee-dee-dee-dee kind of crazy."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "Kat!  I am not crazy!"},
-                            {char = "kat", text = "Ok."},
-                            {char = "liz2", text = "I am not regular crazy!"},
-                            {
-                                char = "liz2",
-                                text = "I am not be-buh-dee-dee-dee-dee crazy."
-                            }, {char = "kat", text = "Ok"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "I am perfectly normal!"},
-                            {char = "kat", text = "Um….check please!"},
-                            {char = "liz2", text = "I’m not crazy!"},
-                            {
-                                char = "kat",
-                                text = "Liz, you are going just a little bit hay wire!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }
-                },
-                coordinates = {col = 1, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 1
-            }, {
-                name = "bog",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "Just watch Kat!  I’ll make her talk."
-                            },
-                            {
-                                char = "liz2",
-                                text = "I can make her say anything I want."
-                            }, {char = "kat", text = "ok."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "Loo Loo. Laa Laa. Fee Fi Fo Fum!"
-                            },
-                            {
-                                char = "liz2",
-                                text = "You heard her right Kat?  You can see her too, right?"
-                            },
-                            {
-                                char = "kat",
-                                text = "Ummm... Are we playing pretend?"
-                            },
-                            {
-                                char = "liz2",
-                                text = "Look at meeeeeeeeeeeee! I am a giant banana!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "I am the banana queen!"},
-                            {char = "kat", text = "How about we go to the log?"},
-                            {char = "liz2", text = "Me eat all the bananas!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }
-                },
-                coordinates = {row = 0, col = 2},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 2
-            }
-        },
-        gridSize = {rows = 1, cols = 3}
-    }, {
-        sceneConfigs = {
-            {
-                name = "cave",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "bleepity, bling blang blip blop!"
-                            }, {char = "kat", text = "Hi liz. What's up?"},
-                            {
-                                char = "liz2",
-                                text = "Oh hey Kat, what's blanging?"
-                            },
-                            {
-                                char = "kat",
-                                text = "Wow Liz! Did you make that up?"
-                            }, {
-                                char = "liz2",
-                                text = "Yeah, I've been saying it all day. And check this out="
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "Blip Blorp Bloop."},
-                            {
-                                char = "liz2",
-                                text = "Piddle-dee. Widdle-dee. Diddle-dee."
-                            },
-                            {char = "liz2", text = "Plippity Ploppity plump."},
-                            {char = "kat", text = "Whoa, that's sooooo cool!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "I know, right? Its called blooping."
-                            }, {char = "liz2", text = "I made that up too."},
-                            {char = "kat", text = "I gotta try this!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }
-                },
-                coordinates = {col = 0, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                maxRow = 0,
-                maxCol = 0
-            }, {
-                name = "bog",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "chugga... chugga... chugga.. chugga.. choo-choo!"
-                            }, {char = "liz2", text = "rickety! rockety!"},
-                            {char = "kat", text = "pickety! pockety!"},
-                            {char = "liz2", text = "Dimple Dee Doop!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "rori"}, {name = "vulcan01"},
-                            {name = "empty"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "rori",
-                                text = "Run for the hills! Maldred has the Dragon Stone --"
-                            }, {char = "kat", text = "plip plop!"},
-                            {char = "liz2", text = "Dimple Dee Dip!"},
-                            {
-                                char = "rori",
-                                text = "Wait! What are those noises?"
-                            }, {char = "rori", text = "It must be Maldred..."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "rori"}, {name = "vulcan01"},
-                            {name = "empty"}
-                        }
-                    }
-                },
-                coordinates = {row = 0, col = 1},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 1
-            }, {
-                name = "log",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "kat", text = "We are blooping!"},
-                            {char = "liz2", text = "Hee Hee!"},
-                            {char = "rori", text = "Oh. Cool!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "rori"}, {name = "vulcan"}, {name = "empty"}
-                        }
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "plip plop!"},
-                            {char = "liz2", text = "Dimple Dee Dip!"},
-                            {
-                                char = "rori",
-                                text = "Vulcan can bloop better than any one!"
-                            }, {char = "kat", text = "cool"},
-                            {char = "vulcan", text = "BLEEEEEEP!!!!!!!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "rori"}, {name = "vulcan"}, {name = "empty"}
-                        }
-                    }
-                },
-                coordinates = {col = 2, row = 0},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 2
-            }
-        },
-        gridSize = {rows = 1, cols = 3}
-    }, {
-        sceneConfigs = {
-            {
-                name = "cave",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Well, if princesss have so much gold, can't they just buy any dress they want?"
-                            }, {
-                                char = "liz2",
-                                text = "Oh they do.  They sure do.  They buy EVERY dress they want."
-                            },
-                            {
-                                char = "kat",
-                                text = "Sooooo.....what's the problem?"
-                            }
-                        },
-                        characters01 = {},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "The problem...my dear, is that some dresses are not for sale."
-                            },
-                            {
-                                char = "liz2",
-                                text = "And those are the only dresses that a princess wants."
-                            }
-                        },
-                        characters01 = {},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "Keep talking."},
-                            {
-                                char = "liz2",
-                                text = "Have you heard of Watta-Lee-Achee?"
-                            }, {char = "kat", text = "Nope."}, {
-                                char = "liz2",
-                                text = "She's a Dragon that lives in that empty castle by the Silver Bog."
-                            }
-                        },
-                        characters01 = {},
-                        characters02 = {}
-                    }
-                },
-                coordinates = {row = 0, col = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                maxRow = 0,
-                maxCol = 0
-            }, {
-                name = "bog",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "kat", text = "Cool..."},
-                            {
-                                char = "liz2",
-                                text = "And this dragon, Watta-Lee-Achee..."
-                            }, {char = "kat", text = "Doo-Da-Lee-Doo"},
-                            {char = "liz2", text = "What?"}
-                        },
-                        characters01 = {},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "Nothing"},
-                            {
-                                char = "liz2",
-                                text = "Watta-Lee-Achee guards the dress of Atacama."
-                            },
-                            {
-                                char = "liz2",
-                                text = "It's the most dazzling dress in 7 kingdoms."
-                            }, {char = "kat", text = "Holy Moly!"}
-                        },
-                        characters01 = {},
-                        characters02 = {}
-                    }
-                },
-                coordinates = {row = 0, col = 1},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 1
-            }, {
-                name = "swamp",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "It glimmers and it shimmers."
-                            },
-                            {
-                                char = "liz2",
-                                text = "It shines like a thousand suns."
-                            }, {
-                                char = "kat",
-                                text = "We need to go get it.  And trade it with the princesses for gold!"
-                            }
-                        },
-                        characters01 = {},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "Ummm...hello? Kat, are you even listening to me?"
-                            },
-                            {
-                                char = "liz2",
-                                text = "There is a girl-eating dragon guarding that dress!"
-                            }
-                        },
-                        characters01 = {},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Well we have something even scarier than that Dragon."
-                            },
-                            {char = "kat", text = "We have the Queen of Crazy."},
-                            {
-                                char = "kat",
-                                text = "Come on.  Let's go find Rori."
-                            }, {char = "liz2", text = "But where?"},
-                            {char = "kat", text = "Look for fire."}
-                        },
-                        characters01 = {},
-                        characters02 = {}
-                    }
-                },
-                coordinates = {col = 2, row = 0},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 2
-            }
-        },
-        gridSize = {rows = 1, cols = 3}
-    }, {
-        sceneConfigs = {
-            {
-                name = "swing",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "Wait, your parents let you drink chocolate milk?"
-                            }, {char = "kat", text = "Yeah, do yours?"},
-                            {
-                                char = "liz2",
-                                text = "Um heck no! Most certainly not!"
-                            },
-                            {
-                                char = "liz2",
-                                text = "Wait! How have you never told me this?"
-                            }, {
-                                char = "kat",
-                                text = "I thought everyone’s parents let them drink chocolate milk."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "Oh please! My parents are like the sugar police."
-                            }, {char = "kat", text = "Wow!"},
-                            {
-                                char = "liz2",
-                                text = "Can we go over to your house and drink some?"
-                            }, {
-                                char = "kat",
-                                text = "I wish. My big brother drank it all. He’s a total milk-hog."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }
-                },
-                coordinates = {row = 0, col = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                maxRow = 0,
-                maxCol = 0
-            }, {
-                name = "bees",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "Oh rats! You are so lucky though! My mom says sugar rots your teeth."
-                            },
-                            {
-                                char = "kat",
-                                text = "Really? I thought that was cotton candy."
-                            },
-                            {
-                                char = "liz2",
-                                text = "Yup, she read it on the internet."
-                            },
-                            {
-                                char = "kat",
-                                text = "Oh brother! Good luck with that."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "I know. Right?"}, {
-                                char = "kat",
-                                text = "Hey have you ever heard of Marshmallow Fluff? My cousin Emily eats it. She showed me on Facetime."
-                            },
-                            {char = "liz2", text = "Sounds cool! What is it?"},
-                            {
-                                char = "kat",
-                                text = "It’s like that Gloop that we made in summer camp."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "But you can eat it and it tastes like fairy magic."
-                            },
-                            {
-                                char = "kat",
-                                text = "You'll never want to eat real food again."
-                            },
-                            {char = "liz2", text = "We have to go to Boston!"},
-                            {char = "kat", text = "I know! For real!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }
-                },
-                coordinates = {row = 0, col = 1},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 1
-            }, {
-                name = "log",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Hey, do you still have that Gloop we made?"
-                            }, {
-                                char = "liz2",
-                                text = "Sadly no. Mine grew green fuzz on it and we threw it in the compost."
-                            }, {
-                                char = "kat",
-                                text = "Cool! That’s like something out of Zoe and Sassafras!"
-                            },
-                            {
-                                char = "liz2",
-                                text = "I know, I should have done some experiments with it."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "If you are Zoe, does that make me Sassafras?"
-                            }, {
-                                char = "liz2",
-                                text = "Yeah, you sit on my shoulder and talk in a made up language that only kids can understand."
-                            }, {
-                                char = "kat",
-                                text = "That’s not how Sassafrass talks. You’re thinking of Stick from TumbleLeaf."
-                            }, {char = "liz2", text = "No I’m not."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }
-                },
-                coordinates = {col = 2, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 2
-            }, {
-                name = "pool",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Well then, Pascal from Tangled."
-                            }, {
-                                char = "liz2",
-                                text = "Uh uh. Hello? I’m six years old, I think I know my TV shows."
-                            }, {
-                                char = "kat",
-                                text = "Oh please! I’ve watched 10 times more TV than you have."
-                            },
-                            {
-                                char = "liz2",
-                                text = "Sister, Don’t even go there! Name five Octonauts."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Oh is this what we are doing now? Fine. Bring it. Kwazii, Barnacles, Dashi, Tunip and Professor Inkling."
-                            }, {
-                                char = "liz2",
-                                text = "Who is Kwazaii’s grandfather and where does he live?"
-                            },
-                            {
-                                char = "kat",
-                                text = "Trick question. He’s the pirate Calico Jack."
-                            },
-                            {
-                                char = "kat",
-                                text = "But no one knows if he is still alive."
-                            }, {
-                                char = "kat",
-                                text = "Because Kwazaii’s adventure up the Amazon River was just a dream."
-                            },
-                            {
-                                char = "liz2",
-                                text = "Dang Kat! You’ve got skills!"
-                            },
-                            {
-                                char = "liz2",
-                                text = "You can really throw down TV."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }
-                },
-                coordinates = {col = 3, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 3
-            }, {
-                name = "stump",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Yeah, my cousins figured the password to their mom’s ipad."
-                            }, {char = "liz2", text = "What?"},
-                            {
-                                char = "kat",
-                                text = "We watched like every show on Netflix."
-                            }, {char = "liz2", text = "But....how?"},
-                            {
-                                char = "kat",
-                                text = "Get this... her password was Emily’s birthday."
-                            },
-                            {
-                                char = "liz2",
-                                text = "Oh man! I wish I had parents like that!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "I know! That’s like on page 1 of the Kid Book."
-                            },
-                            {
-                                char = "kat",
-                                text = "She must be a first time parent..."
-                            }, {
-                                char = "kat",
-                                text = "Anyways, I’m sorry to be the one to tell you this, but Sassafrass talks like a regular normal cat."
-                            }, {char = "liz2", text = "No way."},
-                            {
-                                char = "kat",
-                                text = "He’s basically the same as Cat from Peg + Cat."
-                            }, {char = "kat", text = "Or Bartleby in True."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }
-                },
-                coordinates = {col = 4, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 4
-            }, {
-                name = "waterfall",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "liz2", text = "1,2,3..."},
-                            {char = "kat", text = "Hey come on let’s go!"},
-                            {char = "liz2", text = "...4,5,6..."},
-                            {char = "kat", text = "Yeah! What do ya know"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "...7,8,9..."},
-                            {char = "kat", text = "What comes next?"},
-                            {
-                                char = "liz2",
-                                text = "10! Yeah, you’re the best!"
-                            }, {char = "kat", text = "I love you Peg."},
-                            {char = "liz2", text = "I love you Kat."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "So, is it just in a regular container?"
-                            }, {char = "kat", text = "What?"},
-                            {char = "liz2", text = "The chocolate milk."}, {
-                                char = "kat",
-                                text = "Yeah, we just keep it in the fridge. Like regular milk."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }
-                },
-                coordinates = {row = 0, col = 5},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 5
-            }
-        },
-        gridSize = {rows = 1, cols = 6}
     }
 }
 return module
@@ -16933,124 +14720,6 @@ return my_functions
 		</Properties>
 	</Item>
 	<SharedStrings>
-		<SharedString md5="KesRgFNgI7kpUH5IxZqRaA==">Q1NHUEhTBwAAAALcJEZEjG1zvAGUMr8WIA8809NRRhJyrUI8xAlCwnlnRq6vAsHszk5GEAAA
-AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAACAPxgAAAAEAAAAzQCAQAAEIEAA
-AAA3E/+fQAAEIEAAAAA3zQCAQAAEIEAQACBAzQCAQP/9n0AAAAA3E/+fQP/9n0AAAAA3E/+f
-QAAEIEAQACBAzQCAQP/9n0AQACBAE/+fQP/9n0AQACBAJAAAAAAAAAABAAAABQAAAAAAAAAF
-AAAAAgAAAAAAAAACAAAABgAAAAAAAAAGAAAAAwAAAAAAAAADAAAABAAAAAAAAAAEAAAAAQAA
-AAEAAAAEAAAABwAAAAEAAAAHAAAABQAAAAIAAAAFAAAABwAAAAIAAAAHAAAABgAAAAMAAAAG
-AAAABwAAAAMAAAAHAAAABAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA
-AAAAgD8YAAAABAAAAAAAIED//Z9AzQCAwAAAIED//Z9AE/+fwAAAAAD//Z9AzQCAwAAAIEAA
-BCBAzQCAwAAAIEAABCBAE/+fwAAAAAD//Z9AE/+fwAAAAAAABCBAzQCAwAAAAAAABCBAE/+f
-wCQAAAAAAAAAAQAAAAUAAAAAAAAABQAAAAIAAAAAAAAAAgAAAAYAAAAAAAAABgAAAAMAAAAA
-AAAAAwAAAAQAAAAAAAAABAAAAAEAAAABAAAABAAAAAcAAAABAAAABwAAAAUAAAACAAAABQAA
-AAcAAAACAAAABwAAAAYAAAADAAAABgAAAAcAAAADAAAABwAAAAQAAAAQAAAAAAAAAAAAAAAA
-AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAIA/GAAAAAQAAAAAQIA5AAQgQAAAgEAAQIA5AAQg
-QAAAoEAAQIA5//2fQAAAgEDO+x9AAAQgQAAAgEDO+x9AAAQgQAAAoEAAQIA5//2fQAAAoEDO
-+x9A//2fQAAAgEDO+x9A//2fQAAAoEAkAAAAAAAAAAEAAAAFAAAAAAAAAAUAAAACAAAAAAAA
-AAIAAAAGAAAAAAAAAAYAAAADAAAAAAAAAAMAAAAEAAAAAAAAAAQAAAABAAAAAQAAAAQAAAAH
-AAAAAQAAAAcAAAAFAAAAAgAAAAUAAAAHAAAAAgAAAAcAAAAGAAAAAwAAAAYAAAAHAAAAAwAA
-AAcAAAAEAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAACAPxgAAAAE
-AAAAAACAQAAEIEDQ/x/A8P+fQAAEIEDQ/x/AAACAQAAEIEAAAAA3AACAQP/9n0DQ/x/A8P+f
-QP/9n0DQ/x/AI/+fQAAEIEAAAAA3AACAQP/9n0AAAAA3I/+fQP/9n0AAAAA3JAAAAAAAAAAB
-AAAABQAAAAAAAAAFAAAAAgAAAAAAAAACAAAABgAAAAAAAAAGAAAAAwAAAAAAAAADAAAABAAA
-AAAAAAAEAAAAAQAAAAEAAAAEAAAABwAAAAEAAAAHAAAABQAAAAIAAAAFAAAABwAAAAIAAAAH
-AAAABgAAAAMAAAAGAAAABwAAAAMAAAAHAAAABAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA
-AAAAAAAAAAAAAAAAAAAAgD8bAAAABAAAAAAAoMAABCBAAAAANwAAgMAABCBAAAAANwAAoMAA
-BCBADvwfQAAAoMD//Z9AAAAANwAAgMD//Z9AAAAANwAAgMAABCBAEAAgQAAAoMD//29AEAAg
-QAAAoMD//Z9AEAAgQAAAgMD//Z9AEAAgQCoAAAAAAAAAAQAAAAUAAAAAAAAABQAAAAIAAAAA
-AAAAAgAAAAYAAAAAAAAABgAAAAcAAAAAAAAABwAAAAMAAAAAAAAAAwAAAAQAAAAAAAAABAAA
-AAEAAAABAAAABAAAAAgAAAABAAAACAAAAAUAAAACAAAABQAAAAYAAAADAAAABwAAAAgAAAAD
-AAAACAAAAAQAAAAFAAAACAAAAAcAAAAFAAAABwAAAAYAAAAQAAAAAAAAAAAAAAAAAAAAAAAA
-ABAAAAAAAAAAAAAAAAAAAAAAAIA/GAAAAAQAAAAAAKDAAAQgQND/H8AAAIDAAAQgQND/H8AA
-AKDAAAQgQAAAADcAAKDA//2fQND/H8AAAIDA//2fQND/H8AAAIDAAAQgQAAAADcAAKDA//2f
-QAAAADcAAIDA//2fQAAAADckAAAAAAAAAAEAAAAFAAAAAAAAAAUAAAACAAAAAAAAAAIAAAAG
-AAAAAAAAAAYAAAADAAAAAAAAAAMAAAAEAAAAAAAAAAQAAAABAAAAAQAAAAQAAAAHAAAAAQAA
-AAcAAAAFAAAAAgAAAAUAAAAHAAAAAgAAAAcAAAAGAAAAAwAAAAYAAAAHAAAAAwAAAAcAAAAE
-AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAACAPxgAAAAEAAAA8gMg
-wML0/z8AAAA3xfx/wPz7H0AAAAA3//2fwACAfzkAAAA38gMgwML0/z/Q/x/Axfx/wPz7H0DQ
-/x/A//2fwPz7H0AAAAA3//2fwACAfznQ/x/A//2fwPz7H0DQ/x/AJAAAAAAAAAABAAAABQAA
-AAAAAAAFAAAAAgAAAAAAAAACAAAABgAAAAAAAAAGAAAAAwAAAAAAAAADAAAABAAAAAAAAAAE
-AAAAAQAAAAEAAAAEAAAABwAAAAEAAAAHAAAABQAAAAIAAAAFAAAABwAAAAIAAAAHAAAABgAA
-AAMAAAAGAAAABwAAAAMAAAAHAAAABAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA
-AAAAAAAAAAAAgD8eAAAABAAAAH78f0AABCBAEAAgQM/9n0AABCBAEAAgQNIDIEAABCBAn/1/
-QH78f0D//Z9AEAAgQM/9n0D//Z9AEAAgQM/9n0AABCBAAACgQNIDIEAABCBAAACgQNIDIED/
-/Z9An/1/QM/9n0D//Z9AAACgQNIDIED//Z9AAACgQDAAAAAAAAAAAQAAAAUAAAAAAAAABQAA
-AAYAAAAAAAAABgAAAAIAAAAAAAAAAgAAAAcAAAAAAAAABwAAAAMAAAAAAAAAAwAAAAQAAAAA
-AAAABAAAAAEAAAABAAAABAAAAAgAAAABAAAACAAAAAUAAAACAAAABgAAAAkAAAACAAAACQAA
-AAcAAAADAAAABwAAAAkAAAADAAAACQAAAAgAAAADAAAACAAAAAQAAAAFAAAACAAAAAkAAAAF
-AAAACQAAAAYAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAIA/HgAA
-AAQAAADyAyDA//2fQF/9f8DF/H/A//2fQND/H8DyAyDAAAQgQF/9f8DyAyDA//2fQOD/n8DF
-/H/AAAQgQND/H8D//Z/A//2fQND/H8DyAyDAAAQgQOD/n8D//Z/A//2fQOD/n8D//Z/AAAQg
-QND/H8D//Z/AAAQgQOD/n8AwAAAAAAAAAAEAAAAEAAAAAAAAAAQAAAACAAAAAAAAAAIAAAAG
-AAAAAAAAAAYAAAADAAAAAAAAAAMAAAAHAAAAAAAAAAcAAAAFAAAAAAAAAAUAAAABAAAAAQAA
-AAUAAAAIAAAAAQAAAAgAAAAEAAAAAgAAAAQAAAAIAAAAAgAAAAgAAAAJAAAAAgAAAAkAAAAG
-AAAAAwAAAAYAAAAJAAAAAwAAAAkAAAAHAAAABQAAAAcAAAAJAAAABQAAAAkAAAAIAAAAEAAA
-AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAACAPx4AAAAEAAAA8gMgwP/9n0AA
-AKBA8gMgwAAEIEAAAKBA8gMgwP/9n0Cf/X9A//2fwP/9n0AAAKBA//2fwAAEIEAAAKBA8gMg
-wAAEIECf/X9Axfx/wP/9n0AQACBA//2fwP/9n0AQACBA//2fwAAEIEAQACBAxfx/wAAEIEAQ
-ACBAMAAAAAAAAAABAAAABQAAAAAAAAAFAAAAAgAAAAAAAAACAAAABgAAAAAAAAAGAAAABwAA
-AAAAAAAHAAAAAwAAAAAAAAADAAAABAAAAAAAAAAEAAAAAQAAAAEAAAAEAAAACAAAAAEAAAAI
-AAAACQAAAAEAAAAJAAAABQAAAAIAAAAFAAAACQAAAAIAAAAJAAAABgAAAAMAAAAHAAAACAAA
-AAMAAAAIAAAABAAAAAYAAAAJAAAACAAAAAYAAAAIAAAABwAAABAAAAAAAAAAAAAAAAAAAAAA
-AAAAEAAAAAAAAAAAAAAAAAAAAAAAgD8eAAAABAAAAAAAIEAABCBA4P+fwAAAIEAABCBAX/1/
-wAAAIED//Z9A4P+fwAAAoEAABCBA4P+fwAAAIED//Z9AX/1/wJb5f0AABCBA0P8fwAAAoED/
-/Z9A4P+fwP/9n0AABCBA0P8fwJb5f0D//Z9A0P8fwP/9n0D//Z9A0P8fwDAAAAAAAAAAAQAA
-AAQAAAAAAAAABAAAAAIAAAAAAAAAAgAAAAYAAAAAAAAABgAAAAMAAAAAAAAAAwAAAAcAAAAA
-AAAABwAAAAUAAAAAAAAABQAAAAEAAAABAAAABQAAAAgAAAABAAAACAAAAAQAAAACAAAABAAA
-AAgAAAACAAAACAAAAAkAAAACAAAACQAAAAYAAAADAAAABgAAAAkAAAADAAAACQAAAAcAAAAF
-AAAABwAAAAkAAAAFAAAACQAAAAgAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA
-AAAAAAAAAIA/GwAAAAQAAADyAyDAwvT/P9D/H8DF/H/A/PsfQND/H8D//Z/AAIB/OdD/H8Dy
-AyDAAIB/OeD/n8DyAyDA/PsfQF/9f8D//Z/A/PsfQND/H8D//Z/AAIB/OeD/n8DyAyDA/Psf
-QOD/n8D//Z/A/PsfQOD/n8AqAAAAAAAAAAEAAAAFAAAAAAAAAAUAAAACAAAAAAAAAAIAAAAD
-AAAAAAAAAAMAAAAHAAAAAAAAAAcAAAAEAAAAAAAAAAQAAAABAAAAAQAAAAQAAAAHAAAAAQAA
-AAcAAAAIAAAAAQAAAAgAAAAFAAAAAgAAAAUAAAAIAAAAAgAAAAgAAAAGAAAAAgAAAAYAAAAD
-AAAAAwAAAAYAAAAIAAAAAwAAAAgAAAAHAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA
-AAAAAAAAAAAAAACAPxgAAAAEAAAAAAAAAML0/z8AAAA3AAAAAML0/z8QACBAXvF/QPz7H0AA
-AAA34P+fQACAfzkAAAA33vufQACAfzkQACBAXvF/QPz7H0AQACBA4P+fQPz7H0AAAAA33vuf
-QPz7H0AQACBAJAAAAAAAAAABAAAABQAAAAAAAAAFAAAAAgAAAAAAAAACAAAABgAAAAAAAAAG
-AAAAAwAAAAAAAAADAAAABAAAAAAAAAAEAAAAAQAAAAEAAAAEAAAABwAAAAEAAAAHAAAABQAA
-AAIAAAAFAAAABwAAAAIAAAAHAAAABgAAAAMAAAAGAAAABwAAAAMAAAAHAAAABAAAABAAAAAA
-AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAgD8YAAAABAAAAAAAIEDC9P8/AAAA
-NwAAAADC9P8/AAAANwAAIEAAgH854P+fwAAAIED8+x9AXPl/wAAAAAD8+x9AXPl/wAAAAAAA
-gH854P+fwAAAIED8+x9A4P+fwAAAAAD8+x9A4P+fwCQAAAAAAAAAAQAAAAUAAAAAAAAABQAA
-AAIAAAAAAAAAAgAAAAYAAAAAAAAABgAAAAMAAAAAAAAAAwAAAAQAAAAAAAAABAAAAAEAAAAB
-AAAABAAAAAcAAAABAAAABwAAAAUAAAACAAAABQAAAAcAAAACAAAABwAAAAYAAAADAAAABgAA
-AAcAAAADAAAABwAAAAQAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA
-AIA/GwAAAAQAAAAAQAA6wvT/PxAAIEAAQAA6/PsfQJ/9f0B69H9A/PsfQBAAIEDO+59AAIB/
-ORAAIEAAQAA6AIB/OQAAoEAAQAA6/PsfQAAAoEDO+59A/PsfQBAAIEDO+59AAIB/OQAAoEDO
-+59A/PsfQAAAoEAqAAAAAAAAAAEAAAACAAAAAAAAAAIAAAAGAAAAAAAAAAYAAAADAAAAAAAA
-AAMAAAAEAAAAAAAAAAQAAAAFAAAAAAAAAAUAAAABAAAAAQAAAAUAAAAIAAAAAQAAAAgAAAAG
-AAAAAQAAAAYAAAACAAAAAwAAAAYAAAAIAAAAAwAAAAgAAAAHAAAAAwAAAAcAAAAEAAAABAAA
-AAcAAAAIAAAABAAAAAgAAAAFAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA
-AAAAAACAPxsAAAAEAAAA8gMgwPz7H0AAAKBA8gMgwACAfzkAAKBA8gMgwPz7H0Cc+X9A//2f
-wPz7H0AAAKBA//2fwACAfzkAAKBA//2fwACAfzkAAAA38gMgwML0/z8AAAA3xfx/wPz7H0AA
-AAA3//2fwPz7H0AAAAA3KgAAAAAAAAABAAAABgAAAAAAAAAGAAAAAgAAAAAAAAACAAAABwAA
-AAAAAAAHAAAACAAAAAAAAAAIAAAAAwAAAAAAAAADAAAABAAAAAAAAAAEAAAAAQAAAAEAAAAE
-AAAABQAAAAEAAAAFAAAABgAAAAIAAAAGAAAABwAAAAMAAAAIAAAABQAAAAMAAAAFAAAABAAA
-AAUAAAAIAAAABwAAAAUAAAAHAAAABgAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA
-AAAAAAAAAAAAgD8bAAAABAAAAAAAoED8+x9A4P+fwAAAoEAAgH854P+fwAAAIED8+x9A4P+f
-wP/9n0D8+x9AAAAANwAAIEAAgH854P+fwP/9n0AAgH85AAAANwAAIED8+x9AXPl/wJb5f0D8
-+x9AAAAANwAAIEDC9P8/AAAANyoAAAAAAAAAAQAAAAQAAAAAAAAABAAAAAIAAAAAAAAAAgAA
-AAYAAAAAAAAABgAAAAcAAAAAAAAABwAAAAMAAAAAAAAAAwAAAAUAAAAAAAAABQAAAAEAAAAB
-AAAABQAAAAQAAAACAAAABAAAAAgAAAACAAAACAAAAAYAAAADAAAABwAAAAgAAAADAAAACAAA
-AAUAAAAEAAAABQAAAAgAAAAGAAAACAAAAAcAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA
-AAAAAAAAAAAAAAAAAIA/GAAAAAQAAADu+x/AAAAAOuD/n8AAgHi5AAAAOuD/n8Du+x/AaAYA
-QAAAADfu+x/A/vufQOD/n8AAgHi5/vufQOD/n8AAgHi5aAYAQAAAADfu+x/A/vufQFz5f8AA
-gHi5/vufQFz5f8AkAAAAAAAAAAEAAAAFAAAAAAAAAAUAAAACAAAAAAAAAAIAAAAGAAAAAAAA
-AAYAAAADAAAAAAAAAAMAAAAEAAAAAAAAAAQAAAABAAAAAQAAAAQAAAAHAAAAAQAAAAcAAAAF
-AAAAAgAAAAUAAAAHAAAAAgAAAAcAAAAGAAAAAwAAAAYAAAAHAAAAAwAAAAcAAAAEAAAAEAAA
-AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAACAPxgAAAAEAAAA7vsfwAAAADoA
-AKBAAIB4uQAAADoAAKBA7vsfwP77n0AAAKBA7vsfwGgGAEAAAAA3AIB4uWgGAEAAAAA3AIB4
-uf77n0AAAKBA7vsfwP77n0Cc+X9AAIB4uf77n0Cc+X9AJAAAAAAAAAABAAAABQAAAAAAAAAF
-AAAAAgAAAAAAAAACAAAABgAAAAAAAAAGAAAAAwAAAAAAAAADAAAABAAAAAAAAAAEAAAAAQAA
-AAEAAAAEAAAABwAAAAEAAAAHAAAABQAAAAIAAAAFAAAABwAAAAIAAAAHAAAABgAAAAMAAAAG
-AAAABwAAAAMAAAAHAAAABAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA
-AAAAgD8YAAAABAAAAAAAoMAC/J/A4P+fwAAAoMAAgAC64P+fwAAAoEAC/J/A4P+fwAAAoMAC
-/J/AAACgQAAAoMAAgAC6AACgQAAAoEAAgAC64P+fwPv3n0AC/J/AAACgQPv3n0AAgAC6AACg
-QCQAAAAAAAAAAQAAAAUAAAAAAAAABQAAAAIAAAAAAAAAAgAAAAYAAAAAAAAABgAAAAMAAAAA
-AAAAAwAAAAQAAAAAAAAABAAAAAEAAAABAAAABAAAAAcAAAABAAAABwAAAAUAAAACAAAABQAA
-AAcAAAACAAAABwAAAAYAAAADAAAABgAAAAcAAAADAAAABwAAAAQAAAA=</SharedString>
 		<SharedString md5="yuZpQdnvvUBOTYh1jqZ2cA=="></SharedString>
 	</SharedStrings>
 </roblox>

@@ -113,6 +113,10 @@ function destroyBridges(props)
     local showTopPath = sceneConfig.showTopPath
     local showLeftPath = sceneConfig.showLeftPath
 
+    print('showRightPath' .. ' - start');
+    print(showRightPath);
+    print('showRightPath' .. ' - end');
+
     local bridgeRightModel = Utils.getDescendantByName(clonedScene,
                                                        "BridgeRightModel")
     if (showRightPath) then
@@ -199,16 +203,36 @@ function addScenes(props)
             sceneConfig = sceneConfig
         }
 
-        local locationModel = Utils.getFromTemplates("LocationModelRoot")
-        local imageLabelFront = Utils.getDescendantByName(locationModel,
+        -- Image
+        -- Image
+        local locationModelImage = Utils.getFromTemplates("LocationModelImage")
+        local imageLabelFront = Utils.getDescendantByName(locationModelImage,
                                                           'ImageLabel')
-        local defaultImageId = '5999464873'
+        local defaultImageId = '5999464489'
         local imageId = defaultImageId
         if (Constants.characters[sceneConfig] and
-            Constants.characters[sceneConfig]['name']) then
+            Constants.characters[sceneConfig['name']]) then
             imageId = Constants.characters[sceneConfig]['name']
-
+        else
+            print("------------------" .. sceneConfig['name'])
         end
+
+        -- Label
+        -- Label
+        local locationModelLabel = Utils.getFromTemplates("LocationModelLabel")
+        local textLabel = Utils.getDescendantByName(locationModelLabel,
+                                                    'TextLabel')
+
+        local text = "Not Found"
+
+        local sceneName = sceneConfig.name
+        if (Constants.characters[sceneConfig] and
+            Constants.characters[sceneName]) then
+            text = Constants.characters[sceneName]['displayName']
+        else
+            print("------------------" .. sceneName)
+        end
+        textLabel.Text = "test"
 
         imageLabelFront.Image = 'rbxassetid://' .. imageId
 
@@ -287,7 +311,7 @@ function addRemoteObjects()
         }
 
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
-        -- questBlock.Transparency = 1
+        questBlock.Transparency = 1
         local addScenesProps = {
             parent = questBlock,
             sceneConfigs = questConfig.sceneConfigs
