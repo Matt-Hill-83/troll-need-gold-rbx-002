@@ -250,7 +250,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
-						<string name="Name">SceneTemplateModel</string>
+						<string name="Name">SceneTemplate</string>
 						<Ref name="PrimaryPart">RBX1df64d7ef9b74b9abd91982517212af3</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
@@ -3066,7 +3066,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 								<Y>0</Y>
 								<Z>0</Z>
 							</Vector3>
-							<string name="Name">LocationModel</string>
+							<string name="Name">LocationTemplate</string>
 							<Ref name="PrimaryPart">null</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
@@ -3603,7 +3603,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<bool name="Locked">false</bool>
 							<bool name="Massless">false</bool>
 							<token name="Material">864</token>
-							<string name="Name">SceneTemplateModelRoot</string>
+							<string name="Name">WallTemplate</string>
 							<float name="Reflectance">0</float>
 							<float name="RightParamA">-0.5</float>
 							<float name="RightParamB">0.5</float>
@@ -11272,23 +11272,22 @@ function getNewPosition(props)
 end
 
 function addItemsToScene(props)
-    local newScene = props.newScene
+    local newWall = props.newWall
     local pageNum = props.pageNum
     local sceneConfig = props.sceneConfig
-    local sceneTemplateModel = props.sceneTemplateModel
+    local clonedScene = props.clonedScene
 
     local characterConfigs01 = sceneConfig.frames[pageNum].characters01
     local itemConfigs = sceneConfig.frames[pageNum].characters02
     local dialogConfigs = sceneConfig.frames[pageNum].dialogs
 
-    renderCharacters(sceneTemplateModel, characterConfigs01,
-                     "CharacterTemplate01")
-    renderCharacters(sceneTemplateModel, itemConfigs, "CharacterTemplate02")
+    renderCharacters(clonedScene, characterConfigs01, "CharacterTemplate01")
+    renderCharacters(clonedScene, itemConfigs, "CharacterTemplate02")
 
     return Dialog.renderDialog({
-        parent = newScene,
+        parent = newWall,
         dialogConfigs = dialogConfigs,
-        sceneTemplateModel = sceneTemplateModel,
+        clonedScene = clonedScene,
         pageNum = pageNum
     })
 end
@@ -11361,10 +11360,11 @@ end
 function addScenes(props)
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
-    local sceneTemplateModel = Utils.getFromTemplates("SceneTemplateModel")
+    local sceneTemplateModel = Utils.getFromTemplates("SceneTemplate")
+    local wallTemplate = Utils.getFromTemplates("WallTemplate")
 
-    local startPosition = getStartPosition(parent,
-                                           sceneTemplateModel.PrimaryPart)
+    local startPosition = getStartPosition(parent, wallTemplate)
+    --    clonedScene.PrimaryPart)
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
@@ -11374,7 +11374,8 @@ function addScenes(props)
         local newPosition = getNewPosition(
                                 {
                 coordinates = sceneConfig.coordinates,
-                template = sceneTemplateModel.PrimaryPart
+                template = wallTemplate
+                -- template = clonedScene.PrimaryPart
             })
 
         local clonedScene = Utils.cloneModel(
@@ -11386,11 +11387,11 @@ function addScenes(props)
 
         destroyBridges({sceneConfig = sceneConfig, clonedScene = clonedScene})
 
-        local newScene = clonedScene.PrimaryPart
+        local newWall = clonedScene.PrimaryPart
 
         local sceneProps = {
-            newScene = newScene,
-            sceneTemplateModel = sceneTemplateModel,
+            newWall = newWall,
+            clonedScene = clonedScene,
             pageNum = pageNum,
             sceneConfig = sceneConfig
         }
@@ -11438,7 +11439,7 @@ function addScenes(props)
             if newPageNum <= numPages then
                 pageNum = newPageNum
 
-                local children = newScene:GetChildren()
+                local children = newWall:GetChildren()
                 for _, item in pairs(children) do
                     local match1 = string.match(item.Name, "Items-")
                     local match2 = string.match(item.Name, "Characters-")
@@ -11449,7 +11450,7 @@ function addScenes(props)
                 end
 
                 local newSceneProps = {
-                    newScene = newScene,
+                    newWall = newWall,
                     pageNum = pageNum,
                     sceneConfig = sceneConfig
                 }
@@ -11458,7 +11459,7 @@ function addScenes(props)
         end
 
         local renderButtonBlockProps = {
-            parent = newScene,
+            parent = newWall,
             sibling = buttonParent,
             incrementPage = incrementPage,
             pageNum = pageNum
@@ -11505,7 +11506,7 @@ function addRemoteObjects()
         }
 
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
-        questBlock.Transparency = 1
+        -- questBlock.Transparency = 1
         local addScenesProps = {
             parent = questBlock,
             sceneConfigs = questConfig.sceneConfigs
@@ -12767,16 +12768,16 @@ local Utils = require(Sss.Source.Utils.Utils)
 local module = {}
 
 renderDialog = function(props)
-    local parent = props.parent
+    -- local parent = props.parent
     local dialogConfigs = props.dialogConfigs
-    local sceneTemplateModel = props.sceneTemplateModel
-    local dialogContainer = Utils.getDescendantByName(sceneTemplateModel,
+    local clonedScene = props.clonedScene
+    local dialogContainer = Utils.getDescendantByName(clonedScene,
                                                       "DialogTemplate")
 
     local renderTextsProps = {
         parent = dialogContainer,
-        dialogConfigs = dialogConfigs,
-        sceneTemplateModel = sceneTemplateModel
+        dialogConfigs = dialogConfigs
+        -- clonedScene = clonedScene
     }
     Texts.renderTexts(renderTextsProps)
 
@@ -12812,7 +12813,7 @@ local module = {}
 renderTexts = function(props)
     local parent = props.parent
     local dialogConfigs = props.dialogConfigs
-    local sceneTemplateModel = props.sceneTemplateModel
+    -- local sceneTemplateModel = props.sceneTemplateModel
 
     local pixelsPerStud = 45
     local paddingInPx = pixelsPerStud / 8

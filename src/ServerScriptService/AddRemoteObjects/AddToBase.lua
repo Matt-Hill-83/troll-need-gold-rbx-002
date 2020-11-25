@@ -90,23 +90,22 @@ function getNewPosition(props)
 end
 
 function addItemsToScene(props)
-    local newScene = props.newScene
+    local newWall = props.newWall
     local pageNum = props.pageNum
     local sceneConfig = props.sceneConfig
-    local sceneTemplateModel = props.sceneTemplateModel
+    local clonedScene = props.clonedScene
 
     local characterConfigs01 = sceneConfig.frames[pageNum].characters01
     local itemConfigs = sceneConfig.frames[pageNum].characters02
     local dialogConfigs = sceneConfig.frames[pageNum].dialogs
 
-    renderCharacters(sceneTemplateModel, characterConfigs01,
-                     "CharacterTemplate01")
-    renderCharacters(sceneTemplateModel, itemConfigs, "CharacterTemplate02")
+    renderCharacters(clonedScene, characterConfigs01, "CharacterTemplate01")
+    renderCharacters(clonedScene, itemConfigs, "CharacterTemplate02")
 
     return Dialog.renderDialog({
-        parent = newScene,
+        parent = newWall,
         dialogConfigs = dialogConfigs,
-        sceneTemplateModel = sceneTemplateModel,
+        clonedScene = clonedScene,
         pageNum = pageNum
     })
 end
@@ -179,11 +178,11 @@ end
 function addScenes(props)
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
-    local sceneTemplateModel = Utils.getFromTemplates("SceneTemplateModel")
+    local sceneTemplateModel = Utils.getFromTemplates("SceneTemplate")
     local wallTemplate = Utils.getFromTemplates("WallTemplate")
 
     local startPosition = getStartPosition(parent, wallTemplate)
-    --    sceneTemplateModel.PrimaryPart)
+    --    clonedScene.PrimaryPart)
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
@@ -194,7 +193,7 @@ function addScenes(props)
                                 {
                 coordinates = sceneConfig.coordinates,
                 template = wallTemplate
-                -- template = sceneTemplateModel.PrimaryPart
+                -- template = clonedScene.PrimaryPart
             })
 
         local clonedScene = Utils.cloneModel(
@@ -206,11 +205,11 @@ function addScenes(props)
 
         destroyBridges({sceneConfig = sceneConfig, clonedScene = clonedScene})
 
-        local newScene = clonedScene.PrimaryPart
+        local newWall = clonedScene.PrimaryPart
 
         local sceneProps = {
-            newScene = newScene,
-            sceneTemplateModel = sceneTemplateModel,
+            newWall = newWall,
+            clonedScene = clonedScene,
             pageNum = pageNum,
             sceneConfig = sceneConfig
         }
@@ -258,7 +257,7 @@ function addScenes(props)
             if newPageNum <= numPages then
                 pageNum = newPageNum
 
-                local children = newScene:GetChildren()
+                local children = newWall:GetChildren()
                 for _, item in pairs(children) do
                     local match1 = string.match(item.Name, "Items-")
                     local match2 = string.match(item.Name, "Characters-")
@@ -269,7 +268,7 @@ function addScenes(props)
                 end
 
                 local newSceneProps = {
-                    newScene = newScene,
+                    newWall = newWall,
                     pageNum = pageNum,
                     sceneConfig = sceneConfig
                 }
@@ -278,7 +277,7 @@ function addScenes(props)
         end
 
         local renderButtonBlockProps = {
-            parent = newScene,
+            parent = newWall,
             sibling = buttonParent,
             incrementPage = incrementPage,
             pageNum = pageNum
@@ -325,7 +324,7 @@ function addRemoteObjects()
         }
 
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
-        questBlock.Transparency = 1
+        -- questBlock.Transparency = 1
         local addScenesProps = {
             parent = questBlock,
             sceneConfigs = questConfig.sceneConfigs

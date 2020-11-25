@@ -14,7 +14,7 @@ local module = {}
 renderTexts = function(props)
     local parent = props.parent
     local dialogConfigs = props.dialogConfigs
-    local sceneTemplateModel = props.sceneTemplateModel
+    -- local sceneTemplateModel = props.sceneTemplateModel
 
     local pixelsPerStud = 45
     local paddingInPx = pixelsPerStud / 8
