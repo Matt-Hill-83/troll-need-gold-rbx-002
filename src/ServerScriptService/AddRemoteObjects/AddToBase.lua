@@ -60,9 +60,6 @@ renderCharacters01 = function(parent, itemConfigs)
     for i, itemConfig in ipairs(itemConfigs) do
         local newItem = characterTemplate:Clone()
         local x = (i - 1) * -(characterTemplate.Size.X + xGap)
-        -- newItem.CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0))
-        -- newItem.Parent = parent
-        -- newItem.Transparency = 1
 
         Utils.mergeTables(newItem, {
             Transparency = 1,

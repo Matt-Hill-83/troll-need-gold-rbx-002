@@ -48,17 +48,6 @@ renderTexts = function(props)
         local line = dialogConfigs[i]
 
         local charName = line['char']
-        -- print('charName' .. ': ' .. charName); -- zzz
-        -- if (Constants.characters)
-        -- local left = dialogSetup['left']
-
-        -- charName = Constants.characters[charName]['displayName'] or charName
-        if (Constants.characters[charName]) then
-            -- print('Constants.characters[charName]' .. ' - start');
-            -- print(Constants.characters[charName]['displayName']);
-            -- print('Constants.characters[charName]' .. ' - end');
-
-        end
 
         local backgroundColor = dialogColors[4]
         local charConfig = dialogSetup[charName]
@@ -78,21 +67,24 @@ renderTexts = function(props)
 
         local outerLabel = Instance.new("TextLabel", scrollingFrame)
 
-        outerLabel.Name = "Dialog-" .. i
-        outerLabel.Position = UDim2.new(0, 0, 0, dialogY)
-        outerLabel.Size = UDim2.new(0, parentWidth, 0, height + 2 * paddingInPx)
+        local outputLabelProps = {
+            Name = "Dialog-" .. i,
+            Position = UDim2.new(0, 0, 0, dialogY),
+            Size = UDim2.new(0, parentWidth, 0, height + 2 * paddingInPx),
 
-        outerLabel.Text = ""
-        outerLabel.Font = font
-        outerLabel.TextSize = fontHeight
-        outerLabel.TextWrapped = true
-        outerLabel.TextXAlignment = Enum.TextXAlignment.Left
-        outerLabel.TextYAlignment = Enum.TextYAlignment.Top
-        outerLabel.BorderColor3 = Color3.fromRGB(99, 46, 99)
-        outerLabel.BorderSizePixel = 2
-        outerLabel.BackgroundColor3 = backgroundColor
-        outerLabel.TextColor3 = Color3.new(0, 0, 0)
-        outerLabel.ZIndex = 1
+            Text = "",
+            Font = font,
+            TextSize = fontHeight,
+            TextWrapped = true,
+            TextXAlignment = Enum.TextXAlignment.Left,
+            TextYAlignment = Enum.TextYAlignment.Top,
+            BorderColor3 = Color3.fromRGB(99, 46, 99),
+            BorderSizePixel = 2,
+            BackgroundColor3 = backgroundColor,
+            TextColor3 = Color3.new(0, 0, 0),
+            ZIndex = 1
+        }
+        Utils.mergeTables(outerLabel, outputLabelProps)
 
         local innerLabel = outerLabel:Clone()
         innerLabel.Parent = outerLabel
