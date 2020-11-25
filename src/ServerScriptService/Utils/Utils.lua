@@ -3,7 +3,7 @@ local Constants = require(Sss.Source.Constants.Constants)
 -- local Utils = require(Sss.Source.Utils.Utils)
 local module = {}
 
-function module.getDiecalIdFromName(props)
+function module.getDecalIdFromName(props)
     local name = props.name
     print('Constants.characters[name]' .. ' - start');
     print(tableToString({Constants.characters[name]}));

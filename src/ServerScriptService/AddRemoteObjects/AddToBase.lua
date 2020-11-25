@@ -14,7 +14,7 @@ local Constants = require(Sss.Source.Constants.Constants)
 renderCharacters = function(parent, itemConfigs, templateName)
     for i, itemConfig in ipairs(itemConfigs) do
         local dataFileName = itemConfig.name
-        -- if (not itemConfig.decalId) then
+
         if (Constants.characters[dataFileName] and
             Constants.characters[dataFileName]['decalId']) then
             itemConfig.decalId = Constants.characters[dataFileName]['decalId']
@@ -24,7 +24,6 @@ renderCharacters = function(parent, itemConfigs, templateName)
             end
             itemConfig.decalId = "5897424121"
         end
-        -- end
 
     end
     print('parent' .. ' - start');
@@ -227,7 +226,7 @@ function addScenes(props)
                                                     'TextLabel')
 
         local text = Utils.getDisplayNameFromName({name = sceneConfig.name})
-        local imageId = Utils.getDiecalIdFromName({name = sceneConfig.name})
+        local imageId = Utils.getDecalIdFromName({name = sceneConfig.name})
 
         textLabel.Text = text
         imageLabelFront.Image = 'rbxassetid://' .. imageId
