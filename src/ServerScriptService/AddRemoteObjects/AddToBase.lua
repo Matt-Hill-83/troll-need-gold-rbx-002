@@ -98,10 +98,6 @@ function destroyBridges(props)
     local showTopPath = sceneConfig.showTopPath
     local showLeftPath = sceneConfig.showLeftPath
 
-    print('showRightPath' .. ' - start');
-    print(showRightPath);
-    print('showRightPath' .. ' - end');
-
     local bridgeRightModel = Utils.getDescendantByName(clonedScene,
                                                        "BridgeRightModel")
     if (showRightPath) then

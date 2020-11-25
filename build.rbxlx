@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>360.379761</X>
-					<Y>73.5976257</Y>
-					<Z>-269.697571</Z>
-					<R00>-0.489078939</R00>
-					<R01>-0.576656282</R01>
-					<R02>0.654422939</R02>
-					<R10>-1.49011612e-08</R10>
-					<R11>0.75027895</R11>
-					<R12>0.661121428</R12>
-					<R20>-0.87223959</R20>
-					<R21>0.323340565</R21>
-					<R22>-0.366945624</R22>
+					<X>337.826782</X>
+					<Y>61.3607979</Y>
+					<Z>-300.565796</Z>
+					<R00>-0.925096333</R00>
+					<R01>-0.1845873</R01>
+					<R02>0.331849992</R02>
+					<R10>-0</R10>
+					<R11>0.873904407</R11>
+					<R12>0.486098081</R12>
+					<R20>-0.379732639</R20>
+					<R21>0.449687541</R21>
+					<R22>-0.808445632</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -11186,37 +11186,12 @@ local Sss = game:GetService("ServerScriptService")
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
 local Dialog = require(Sss.Source.AddDialog.Dialog)
 local ButtonBlock = require(Sss.Source.AddDialog.ButtonBlock)
-
 local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
-
 local Utils = require(Sss.Source.Utils.Utils)
 local Constants = require(Sss.Source.Constants.Constants)
 
 renderCharacters = function(parent, itemConfigs, templateName)
-    for i, itemConfig in ipairs(itemConfigs) do
-        local dataFileName = itemConfig.name
-        if (not itemConfig.decalId) then
-            if (Constants.characters[dataFileName] and
-                Constants.characters[dataFileName]['decalId']) then
-                itemConfig.decalId =
-                    Constants.characters[dataFileName]['decalId']
-            else
-                if (dataFileName ~= "empty" and dataFileName ~= "blank") then
-                    print("------------------------------" .. dataFileName);
-                end
-                itemConfig.decalId = "5897424121"
-            end
-        end
-
-    end
-    print('parent' .. ' - start');
-    print(parent);
-    print('parent' .. ' - end');
-
-    print('templateName' .. ' - start');
-    print(templateName);
-    print('templateName' .. ' - end');
     local characterTemplate = Utils.getDescendantByName(parent, templateName)
 
     local xGap = 1
@@ -11232,8 +11207,10 @@ renderCharacters = function(parent, itemConfigs, templateName)
 
         local decalFront = Utils.getDescendantByName(newItem, "DecalFront")
         local decalBack = Utils.getDescendantByName(newItem, "DecalBack")
-        decalFront.Texture = 'rbxassetid://' .. itemConfig.decalId
-        decalBack.Texture = 'rbxassetid://' .. itemConfig.decalId
+        local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
+
+        decalFront.Texture = 'rbxassetid://' .. decalId
+        decalBack.Texture = 'rbxassetid://' .. decalId
     end
     characterTemplate.Transparency = 1
 
@@ -11303,10 +11280,6 @@ function destroyBridges(props)
     local showTopPath = sceneConfig.showTopPath
     local showLeftPath = sceneConfig.showLeftPath
 
-    print('showRightPath' .. ' - start');
-    print(showRightPath);
-    print('showRightPath' .. ' - end');
-
     local bridgeRightModel = Utils.getDescendantByName(clonedScene,
                                                        "BridgeRightModel")
     if (showRightPath) then
@@ -11364,7 +11337,6 @@ function addScenes(props)
     local wallTemplate = Utils.getFromTemplates("WallTemplate")
 
     local startPosition = getStartPosition(parent, wallTemplate)
-    --    clonedScene.PrimaryPart)
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
@@ -11401,14 +11373,8 @@ function addScenes(props)
         local locationModelImage = Utils.getFromTemplates("LocationModelImage")
         local imageLabelFront = Utils.getDescendantByName(locationModelImage,
                                                           'ImageLabel')
-        local defaultImageId = '5999464489'
-        local imageId = defaultImageId
-        if (Constants.characters[sceneConfig] and
-            Constants.characters[sceneConfig['name']]) then
-            imageId = Constants.characters[sceneConfig]['name']
-        else
-            print("------------------" .. sceneConfig['name'])
-        end
+        local defaultImageId = '5999465084'
+        -- local imageId = defaultImageId
 
         -- Label
         -- Label
@@ -11416,19 +11382,10 @@ function addScenes(props)
         local textLabel = Utils.getDescendantByName(locationModelLabel,
                                                     'TextLabel')
 
-        local text = "Not Found"
+        local text = Utils.getDisplayNameFromName({name = sceneConfig.name})
+        local imageId = Utils.getDecalIdFromName({name = sceneConfig.name})
 
-        local sceneName = sceneConfig.name
-
-        -- TODO - this is the character label
-        if (Constants.characters[sceneConfig] and
-            Constants.characters[sceneName]) then
-            text = Constants.characters[sceneName]['displayName']
-        else
-            print("------------------" .. sceneName)
-        end
-        textLabel.Text = "test"
-
+        textLabel.Text = text
         imageLabelFront.Image = 'rbxassetid://' .. imageId
 
         buttonParent = addItemsToScene(sceneProps)
@@ -11775,11 +11732,24 @@ return module
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 
+function module.getDecalIdFromName(props)
+    local name = props.name
+    if (Constants.characters[name] and Constants.characters[name]["decalId"]) then
+        return Constants.characters[name]["decalId"]
+    else
+        print("----------------- decalId not found: ------------" .. name)
+        print(tableToString({Constants.characters[name]}));
+        return '5999465084'
+    end
+end
+
 function module.getDisplayNameFromName(props)
     local name = props.name
     if (Constants.characters[name] and Constants.characters[name]["displayName"]) then
         return Constants.characters[name]["displayName"]
     else
+        print("---------------------- name not found: ------------" .. name)
+        print(tableToString({Constants.characters[name]}));
         return name
     end
 end
@@ -13451,6 +13421,8 @@ local vulcan = {
 
 module.characters = {
 
+    -- home
+
     raven05 = raven,
     raven04 = raven,
     raven = raven,
@@ -13459,6 +13431,17 @@ module.characters = {
     britta04 = britta,
     -- 
     -- 
+    stump = {
+        displayName = "Stump",
+        decalId = '5991340320',
+        backgroundColorIdx = 1
+    },
+    bog = {displayName = "Bog", decalId = '5991343667', backgroundColorIdx = 1},
+    home = {
+        displayName = "Home",
+        decalId = '5991341898',
+        backgroundColorIdx = 1
+    },
     bee = {displayName = "Bee", decalId = '5999465084', backgroundColorIdx = 1},
     elf = {displayName = "Elf", decalId = '5991266909', backgroundColorIdx = 1},
     bun = {displayName = "Bun", decalId = '5991343501', backgroundColorIdx = 1},
