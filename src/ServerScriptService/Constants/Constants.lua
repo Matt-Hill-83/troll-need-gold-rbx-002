@@ -64,11 +64,11 @@ module.characters = {
         decalId = '5999464873',
         backgroundColorIdx = 1
     },
-    -- katieKooper01 = {
-    --     displayName = "Katie Kooper",
-    --     decalId = '5998961085',
-    --     backgroundColorIdx = 1
-    -- },
+    katieKooper01 = {
+        displayName = "Katie Kooper",
+        decalId = '5991267836',
+        backgroundColorIdx = 1
+    },
     troll01 = {
         displayName = "Troll01",
         decalId = '5999464489',
