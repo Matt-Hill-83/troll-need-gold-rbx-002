@@ -54,7 +54,6 @@ renderTexts = function(props)
         if (dialogText ~= "blank" and dialogText ~= "empty") then
             local text = "<b>" .. displayName .. ": " .. "</b>" .. dialogText
 
-            -- local text = displayName .. ": " .. dialogText
             local font = Enum.Font.Arial
             local innerLabelWidth = parentWidth - (2 * paddingInPx)
 

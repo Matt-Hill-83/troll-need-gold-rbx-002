@@ -3,14 +3,14 @@ local Sss = game:GetService("ServerScriptService")
 
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
 local Dialog = require(Sss.Source.AddDialog.Dialog)
-local ButtonBlock = require(Sss.Source.AddDialog.ButtonBlock)
 local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Utils = require(Sss.Source.Utils.Utils)
 local Constants = require(Sss.Source.Constants.Constants)
 
-renderCharacters = function(parent, itemConfigs, templateName)
-    local characterTemplate = Utils.getDescendantByName(parent, templateName)
+renderCharacters = function(props)
+    local characterTemplate = props.template
+    local itemConfigs = props.itemConfigs
 
     local xGap = 1
     for i, itemConfig in ipairs(itemConfigs) do
@@ -19,8 +19,8 @@ renderCharacters = function(parent, itemConfigs, templateName)
 
         Utils.mergeTables(newItem, {
             Transparency = 1,
-            CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
-            Parent = parent
+            CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0))
+            -- Parent = parent
         })
 
         local decalFront = Utils.getDescendantByName(newItem, "DecalFront")
@@ -67,23 +67,21 @@ function getNewPosition(props)
 end
 
 function addItemsToScene(props)
-    local newWall = props.newWall
-    local pageNum = props.pageNum
-    local sceneConfig = props.sceneConfig
+    local frameConfig = props.frameConfig
     local clonedScene = props.clonedScene
 
-    local characterConfigs01 = sceneConfig.frames[pageNum].characters01
-    local itemConfigs = sceneConfig.frames[pageNum].characters02
-    local dialogConfigs = sceneConfig.frames[pageNum].dialogs
-
-    renderCharacters(clonedScene, characterConfigs01, "CharacterTemplate01")
-    renderCharacters(clonedScene, itemConfigs, "CharacterTemplate02")
-
-    Dialog.renderDialog({
-        parent = newWall,
-        dialogConfigs = dialogConfigs,
-        clonedScene = clonedScene
+    local characterConfigs01 = frameConfig.characters01
+    local itemConfigs = frameConfig.characters02
+    local characterTemplate = Utils.getDescendantByName(clonedScene,
+                                                        "CharacterTemplate01")
+    renderCharacters({
+        template = characterTemplate,
+        itemConfigs = characterConfigs01
     })
+    -- renderCharacters(clonedScene, itemConfigs, "CharacterTemplate02")
+
+    local dialogConfigs = frameConfig.dialogs
+    Dialog.renderDialog({dialogConfigs = dialogConfigs})
 end
 
 function destroyBridges(props)
@@ -177,11 +175,10 @@ function addScenes(props)
 
         local newWall = clonedScene.PrimaryPart
 
+        local frameConfig = sceneConfig.frames[pageNum]
         local sceneProps = {
-            newWall = newWall,
-            clonedScene = clonedScene,
-            pageNum = pageNum,
-            sceneConfig = sceneConfig
+            frameConfig = frameConfig,
+            clonedScene = clonedScene
         }
 
         -- Image
@@ -198,7 +195,6 @@ function addScenes(props)
         local textLabel = Utils.getDescendantByName(locationModelLabel,
                                                     'TextLabel')
         textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
-        local dialogTemplate = Utils.getFromTemplates("DialogTemplate")
 
         addItemsToScene(sceneProps)
 
@@ -223,23 +219,14 @@ function addScenes(props)
                     end
                 end
 
+                local newFrameConfig = sceneConfig.frames[pageNum]
                 local newSceneProps = {
-                    newWall = newWall,
-                    pageNum = pageNum,
-                    sceneConfig = sceneConfig
+                    frameConfig = newFrameConfig,
+                    clonedScene = clonedScene
                 }
                 addItemsToScene(newSceneProps)
             end
         end
-
-        local renderButtonBlockProps = {
-            parent = newWall,
-            sibling = dialogTemplate,
-            incrementPage = incrementPage,
-            pageNum = pageNum
-        }
-
-        local function onActivated() incrementPage() end
 
         local nextPageButtonTemplate = Utils.getDescendantByName(clonedScene,
                                                                  "NextPageButtonTemplate")
@@ -247,13 +234,7 @@ function addScenes(props)
         local nextButton = Utils.getDescendantByName(nextPageButtonTemplate,
                                                      "TextButton")
 
-        print('nextButton' .. ' - start');
-        print(nextButton);
-        print('nextButton' .. ' - end');
-
-        nextButton.MouseButton1Click:Connect(onActivated)
-
-        ButtonBlock.renderButtonBlock(renderButtonBlockProps)
+        nextButton.MouseButton1Click:Connect(incrementPage)
     end
 end
 
