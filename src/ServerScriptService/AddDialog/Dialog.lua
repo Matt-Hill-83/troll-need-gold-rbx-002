@@ -5,16 +5,16 @@ local Utils = require(Sss.Source.Utils.Utils)
 local module = {}
 
 renderDialog = function(props)
-    -- local parent = props.parent
     local dialogConfigs = props.dialogConfigs
     local clonedScene = props.clonedScene
-    local dialogContainer = Utils.getDescendantByName(clonedScene,
-                                                      "DialogTemplate")
+
+    local dialogContainer = Utils.getFromTemplates("DialogTemplate")
+    -- local dialogContainer = Utils.getDescendantByName(clonedScene,
+    --                                                   "DialogTemplate")
 
     local renderTextsProps = {
         parent = dialogContainer,
         dialogConfigs = dialogConfigs
-        -- clonedScene = clonedScene
     }
     Texts.renderTexts(renderTextsProps)
 
