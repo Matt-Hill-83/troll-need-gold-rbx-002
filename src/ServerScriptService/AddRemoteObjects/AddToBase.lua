@@ -69,8 +69,13 @@ end
 function addItemsToScene(props)
     local frameConfig = props.frameConfig
     local clonedScene = props.clonedScene
-
+    print('clonedScene' .. ' - start');
+    print(Utils.tableToString({clonedScene}));
+    print('clonedScene' .. ' - end');
     local characterConfigs01 = frameConfig.characters01
+    print('characterConfigs01' .. ' - start');
+    print(Utils.tableToString(characterConfigs01[1]));
+    print('characterConfigs01' .. ' - end');
     local itemConfigs = frameConfig.characters02
     local characterTemplate = Utils.getDescendantByName(clonedScene,
                                                         "CharacterTemplate01")
@@ -229,7 +234,7 @@ function addScenes(props)
         end
 
         local nextPageButtonTemplate = Utils.getDescendantByName(clonedScene,
-                                                                 "NextPageButtonTemplate")
+                                                                 "NextPageButton")
 
         local nextButton = Utils.getDescendantByName(nextPageButtonTemplate,
                                                      "TextButton")
