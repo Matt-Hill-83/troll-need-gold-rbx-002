@@ -24,7 +24,25 @@ local mitzy02 = {
     backgroundColorIdx = 2
 }
 
+local vulcan = {
+    displayName = "Vulcan",
+    decalId = '5999464799',
+    backgroundColorIdx = 1
+}
+
 module.characters = {
+
+    -- elf
+    -- bun
+    -- bee
+    -- dog01
+    -- dennisTheMenace
+    -- katieKooper01
+    -- troll01
+    -- troll02
+    -- rori
+    -- vulcan
+
     raven05 = raven,
     raven04 = raven,
     raven = raven,
@@ -33,21 +51,42 @@ module.characters = {
     britta04 = britta,
     -- 
     -- 
-    lucky = {
-        displayName = "Luke",
-        decalId = '5998961085',
+    bee = {displayName = "Bee", decalId = '5999465084', backgroundColorIdx = 1},
+    elf = {displayName = "Elf", decalId = '5991266909', backgroundColorIdx = 1},
+    bun = {displayName = "Bun", decalId = '5991343501', backgroundColorIdx = 1},
+    dog01 = {
+        displayName = "Dog",
+        decalId = '5999464941',
         backgroundColorIdx = 1
     },
-    cow01 = {
-        displayName = "Luke",
-        decalId = '5998961085',
+    dennisTheMenace = {
+        displayName = "Dennis the Menace",
+        decalId = '5999464873',
         backgroundColorIdx = 1
     },
-    chick01 = {
-        displayName = "Luke",
-        decalId = '5998961085',
+    -- katieKooper01 = {
+    --     displayName = "Katie Kooper",
+    --     decalId = '5998961085',
+    --     backgroundColorIdx = 1
+    -- },
+    troll01 = {
+        displayName = "Troll01",
+        decalId = '5999464489',
         backgroundColorIdx = 1
     },
+    troll02 = {
+        displayName = "Troll02",
+        decalId = '5999464489',
+        backgroundColorIdx = 1
+    },
+    rori = {
+        displayName = "Rori",
+        decalId = '5991267444',
+        backgroundColorIdx = 1
+    },
+    vulcan = vulcan,
+    vulcan01 = vulcan,
+
     -- 
     -- 
     -- 

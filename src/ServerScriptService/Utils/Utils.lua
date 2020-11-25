@@ -17,6 +17,12 @@ function getFromMyStuff(name)
     return getDescendantByName(myStuff, name)
 end
 
+function module.getFromTemplates(name)
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local myTemplates = myStuff:FindFirstChild("MyTemplates")
+    return getDescendantByName(myTemplates, name)
+end
+
 function getDescendantByName(parent, name)
     local model = parent:GetDescendants()
     for i = 1, #model do

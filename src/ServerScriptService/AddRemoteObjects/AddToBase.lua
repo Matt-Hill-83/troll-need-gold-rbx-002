@@ -20,9 +20,9 @@ renderCharacters = function(parent, itemConfigs, templateName)
                 itemConfig.decalId =
                     Constants.characters[dataFileName]['decalId']
             else
-                print('dataFileName' .. ' - start');
-                print(dataFileName);
-                print('dataFileName' .. ' - end');
+                if (dataFileName ~= "empty" and dataFileName ~= "blank") then
+                    print("-----------------------" .. dataFileName);
+                end
                 itemConfig.decalId = "5897424121"
             end
         end
@@ -30,6 +30,7 @@ renderCharacters = function(parent, itemConfigs, templateName)
     end
 
     local characterTemplate = Utils.getDescendantByName(parent, templateName)
+
     local xGap = 1
     for i, itemConfig in ipairs(itemConfigs) do
         local newItem = characterTemplate:Clone()
@@ -47,7 +48,9 @@ renderCharacters = function(parent, itemConfigs, templateName)
         decalBack.Texture = 'rbxassetid://' .. itemConfig.decalId
     end
     characterTemplate.Transparency = 1
-    characterTemplate:Destroy()
+
+    characterTemplate.Position = characterTemplate.Position +
+                                     Vector3.new(0, -100, 0)
 end
 
 getStartPosition = function(parent, child)
@@ -163,7 +166,7 @@ end
 function addScenes(props)
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
-    local sceneTemplateModel = Utils.getFromMyStuff("SceneTemplateModel")
+    local sceneTemplateModel = Utils.getFromTemplates("SceneTemplateModel")
 
     local startPosition = getStartPosition(parent,
                                            sceneTemplateModel.PrimaryPart)
