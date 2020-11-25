@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>243.100204</X>
-					<Y>138.802399</Y>
-					<Z>-298.400543</Z>
-					<R00>-0.952822208</R00>
-					<R01>0.116332561</R01>
-					<R02>-0.280350745</R02>
+					<X>373.349487</X>
+					<Y>56.9426346</Y>
+					<Z>-281.948761</Z>
+					<R00>-0.743991673</R00>
+					<R01>-0.265760928</R01>
+					<R02>0.61306411</R02>
 					<R10>-0</R10>
-					<R11>0.923637748</R11>
-					<R12>0.383266836</R12>
-					<R20>0.303528905</R20>
-					<R21>0.365185142</R21>
-					<R22>-0.88006258</R22>
+					<R11>0.917501152</R11>
+					<R12>0.397733212</R12>
+					<R20>-0.66818893</R20>
+					<R21>0.295910209</R21>
+					<R22>-0.682613194</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>243.660889</X>
-					<Y>138.035889</Y>
-					<Z>-296.640472</Z>
+					<X>331.048035</X>
+					<Y>29.4990234</Y>
+					<Z>-234.848419</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -4871,7 +4871,7 @@ gP+AIA==]]></BinaryString>
 										<Content name="BottomImage"><url>rbxasset://textures/ui/Scroll/scroll-bottom.png</url></Content>
 										<Vector2 name="CanvasPosition">
 											<X>0</X>
-											<Y>300</Y>
+											<Y>0</Y>
 										</Vector2>
 										<UDim2 name="CanvasSize">
 											<XS>0</XS>
@@ -5755,7 +5755,7 @@ gP+AIA==]]></BinaryString>
 								<bool name="Locked">false</bool>
 								<bool name="Massless">false</bool>
 								<token name="Material">256</token>
-								<string name="Name">CharacterTemplate</string>
+								<string name="Name">CharacterTemplate01</string>
 								<float name="Reflectance">0</float>
 								<float name="RightParamA">-0.5</float>
 								<float name="RightParamB">0.5</float>
@@ -5796,7 +5796,7 @@ gP+AIA==]]></BinaryString>
 										<B>1</B>
 									</Color3>
 									<token name="Face">5</token>
-									<string name="Name">Decal</string>
+									<string name="Name">DecalFront</string>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 									<Content name="Texture"><url>rbxassetid://5897424121</url></Content>
@@ -5861,6 +5861,22 @@ gP+AIA==]]></BinaryString>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
 							</Item>
+							<Item class="Decal" referent="RBX23ad4651474e486296587c208054fd8e">
+								<Properties>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<Color3 name="Color3">
+										<R>1</R>
+										<G>1</G>
+										<B>1</B>
+									</Color3>
+									<token name="Face">2</token>
+									<string name="Name">DecalBack</string>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<Content name="Texture"><url>rbxassetid://5897424121</url></Content>
+									<float name="Transparency">0</float>
+								</Properties>
+							</Item>
 						</Item>
 						<Item class="Part" referent="RBX0768d321dcdc41f584a2c5dcea229077">
 							<Properties>
@@ -5906,7 +5922,7 @@ gP+AIA==]]></BinaryString>
 								<bool name="Locked">false</bool>
 								<bool name="Massless">false</bool>
 								<token name="Material">256</token>
-								<string name="Name">ItemTemplate</string>
+								<string name="Name">CharacterTemplate02</string>
 								<float name="Reflectance">0</float>
 								<float name="RightParamA">-0.5</float>
 								<float name="RightParamB">0.5</float>
@@ -5947,7 +5963,7 @@ gP+AIA==]]></BinaryString>
 										<B>1</B>
 									</Color3>
 									<token name="Face">5</token>
-									<string name="Name">Decal</string>
+									<string name="Name">DecalFront</string>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 									<Content name="Texture"><url>rbxassetid://5897428591</url></Content>
@@ -5991,6 +6007,22 @@ gP+AIA==]]></BinaryString>
 									<Ref name="Part1">RBXa3bcf753fde5464899a4f15d57c876c7</Ref>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
+								</Properties>
+							</Item>
+							<Item class="Decal" referent="RBXd755f6bdacf340a2a462210504591c4c">
+								<Properties>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<Color3 name="Color3">
+										<R>1</R>
+										<G>1</G>
+										<B>1</B>
+									</Color3>
+									<token name="Face">2</token>
+									<string name="Name">DecalBack</string>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<Content name="Texture"><url>rbxassetid://5897428591</url></Content>
+									<float name="Transparency">0</float>
 								</Properties>
 							</Item>
 						</Item>
@@ -11541,87 +11573,43 @@ local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Utils = require(Sss.Source.Utils.Utils)
 local Constants = require(Sss.Source.Constants.Constants)
 
-renderCharacters02 = function(parent, itemConfigs)
-    local itemProps = {size = Vector3.new(4, 6, 1), partName = "Items"}
-
-    local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(-1, -1, -1),
-        moveTowardZero = Vector3.new(1, 1, -1),
-        alignToChildFarEdge = Vector3.new(1, -1, -1)
-    }
-
-    local rowProps = {
-        parent = parent,
-        gapBetweenRowItems = Vector3.new(1, 0, 0),
-        itemDuplicationConfig = itemDuplicationConfig,
-        offset = Vector3.new(3, 2, 0)
-    }
-
-    local props = {
-        rowProps = rowProps,
-        itemConfigs = itemConfigs,
-        itemProps = itemProps
-    }
-
-    return RowOfParts.createRowOfParts(props)
-end
-
-renderCharacters01 = function(parent, itemConfigs)
+renderCharacters = function(parent, itemConfigs, templateName)
     for i, itemConfig in ipairs(itemConfigs) do
         local dataFileName = itemConfig.name
         if (not itemConfig.decalId) then
-            if (Constants.characters[dataFileName]) then
+            if (Constants.characters[dataFileName] and
+                Constants.characters[dataFileName]['decalId']) then
                 itemConfig.decalId =
                     Constants.characters[dataFileName]['decalId']
             else
-                itemConfig.decalId = "5897424121"
                 print('dataFileName' .. ' - start');
                 print(dataFileName);
                 print('dataFileName' .. ' - end');
+                itemConfig.decalId = "5897424121"
             end
         end
 
     end
 
-    local characterTemplate = Utils.getDescendantByName(parent,
-                                                        "CharacterTemplate")
+    local characterTemplate = Utils.getDescendantByName(parent, templateName)
     local xGap = 1
     for i, itemConfig in ipairs(itemConfigs) do
         local newItem = characterTemplate:Clone()
         local x = (i - 1) * -(characterTemplate.Size.X + xGap)
-        newItem.CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0))
-        newItem.Parent = parent
-        newItem.Transparency = 1
 
+        Utils.mergeTables(newItem, {
+            Transparency = 1,
+            CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
+            Parent = parent
+        })
+
+        local decalFront = Utils.getDescendantByName(newItem, "DecalFront")
+        local decalBack = Utils.getDescendantByName(newItem, "DecalBack")
+        decalFront.Texture = 'rbxassetid://' .. itemConfig.decalId
+        decalBack.Texture = 'rbxassetid://' .. itemConfig.decalId
     end
     characterTemplate.Transparency = 1
-
-    -- local characterScale = 0.6
-    -- local itemProps = {
-    --     size = Vector3.new(6 * characterScale, 8 * characterScale, 0.5),
-    --     partName = "Characters"
-    -- }
-
-    -- local itemDuplicationConfig = {
-    --     alignToParentFarEdge = Vector3.new(1, -1, -1),
-    --     moveTowardZero = Vector3.new(-1, 1, -1),
-    --     alignToChildFarEdge = Vector3.new(-1, -1, -1)
-    -- }
-
-    -- local rowProps = {
-    --     parent = parent,
-    --     itemDuplicationConfig = itemDuplicationConfig,
-    --     gapBetweenRowItems = Vector3.new(1, 0, 0),
-    --     offset = Vector3.new(-1, 0.5, 0)
-    -- }
-
-    -- local props = {
-    --     rowProps = rowProps,
-    --     itemConfigs = itemConfigs,
-    --     itemProps = itemProps
-    -- }
-
-    -- return RowOfParts.createRowOfParts(props)
+    characterTemplate:Destroy()
 end
 
 getStartPosition = function(parent, child)
@@ -11663,8 +11651,8 @@ function addItemsToScene(props)
     local itemConfigs = sceneConfig.frames[pageNum].characters02
     local dialogConfigs = sceneConfig.frames[pageNum].dialogs
 
-    renderCharacters01(newScene, characterConfigs01)
-    renderCharacters02(newScene, itemConfigs)
+    renderCharacters(newScene, characterConfigs01, "CharacterTemplate01")
+    renderCharacters(newScene, itemConfigs, "CharacterTemplate02")
 
     return Dialog.renderDialog({
         parent = newScene,
@@ -13166,17 +13154,6 @@ renderTexts = function(props)
         local line = dialogConfigs[i]
 
         local charName = line['char']
-        -- print('charName' .. ': ' .. charName); -- zzz
-        -- if (Constants.characters)
-        -- local left = dialogSetup['left']
-
-        -- charName = Constants.characters[charName]['displayName'] or charName
-        if (Constants.characters[charName]) then
-            -- print('Constants.characters[charName]' .. ' - start');
-            -- print(Constants.characters[charName]['displayName']);
-            -- print('Constants.characters[charName]' .. ' - end');
-
-        end
 
         local backgroundColor = dialogColors[4]
         local charConfig = dialogSetup[charName]
@@ -13196,21 +13173,24 @@ renderTexts = function(props)
 
         local outerLabel = Instance.new("TextLabel", scrollingFrame)
 
-        outerLabel.Name = "Dialog-" .. i
-        outerLabel.Position = UDim2.new(0, 0, 0, dialogY)
-        outerLabel.Size = UDim2.new(0, parentWidth, 0, height + 2 * paddingInPx)
+        local outputLabelProps = {
+            Name = "Dialog-" .. i,
+            Position = UDim2.new(0, 0, 0, dialogY),
+            Size = UDim2.new(0, parentWidth, 0, height + 2 * paddingInPx),
 
-        outerLabel.Text = ""
-        outerLabel.Font = font
-        outerLabel.TextSize = fontHeight
-        outerLabel.TextWrapped = true
-        outerLabel.TextXAlignment = Enum.TextXAlignment.Left
-        outerLabel.TextYAlignment = Enum.TextYAlignment.Top
-        outerLabel.BorderColor3 = Color3.fromRGB(99, 46, 99)
-        outerLabel.BorderSizePixel = 2
-        outerLabel.BackgroundColor3 = backgroundColor
-        outerLabel.TextColor3 = Color3.new(0, 0, 0)
-        outerLabel.ZIndex = 1
+            Text = "",
+            Font = font,
+            TextSize = fontHeight,
+            TextWrapped = true,
+            TextXAlignment = Enum.TextXAlignment.Left,
+            TextYAlignment = Enum.TextYAlignment.Top,
+            BorderColor3 = Color3.fromRGB(99, 46, 99),
+            BorderSizePixel = 2,
+            BackgroundColor3 = backgroundColor,
+            TextColor3 = Color3.new(0, 0, 0),
+            ZIndex = 1
+        }
+        Utils.mergeTables(outerLabel, outputLabelProps)
 
         local innerLabel = outerLabel:Clone()
         innerLabel.Parent = outerLabel
@@ -14263,21 +14243,43 @@ local mitzy02 = {
 }
 
 module.characters = {
+    raven05 = raven,
     raven04 = raven,
     raven = raven,
     britta = britta,
+    britta01 = britta,
     britta04 = britta,
+    -- 
+    -- 
+    lucky = {
+        displayName = "Luke",
+        decalId = '5998961085',
+        backgroundColorIdx = 1
+    },
+    cow01 = {
+        displayName = "Luke",
+        decalId = '5998961085',
+        backgroundColorIdx = 1
+    },
+    chick01 = {
+        displayName = "Luke",
+        decalId = '5998961085',
+        backgroundColorIdx = 1
+    },
+    -- 
+    -- 
+    -- 
     luke01 = {
         displayName = "Luke",
-        decalId = '5998898169',
-        backgroundColorIdx = 3
+        decalId = '5998961085',
+        backgroundColorIdx = 1
     },
     hudson01 = {
         displayName = "Hudson",
-        decalId = '5998899394',
+        decalId = '5998961874',
         backgroundColorIdx = 3
     },
-    troll = {
+    trollKing01 = {
         displayName = "Troll King",
         decalId = '5897428591',
         backgroundColorIdx = 3

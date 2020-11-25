@@ -25,10 +25,32 @@ local mitzy02 = {
 }
 
 module.characters = {
+    raven05 = raven,
     raven04 = raven,
     raven = raven,
     britta = britta,
+    britta01 = britta,
     britta04 = britta,
+    -- 
+    -- 
+    lucky = {
+        displayName = "Luke",
+        decalId = '5998961085',
+        backgroundColorIdx = 1
+    },
+    cow01 = {
+        displayName = "Luke",
+        decalId = '5998961085',
+        backgroundColorIdx = 1
+    },
+    chick01 = {
+        displayName = "Luke",
+        decalId = '5998961085',
+        backgroundColorIdx = 1
+    },
+    -- 
+    -- 
+    -- 
     luke01 = {
         displayName = "Luke",
         decalId = '5998961085',
@@ -39,7 +61,7 @@ module.characters = {
         decalId = '5998961874',
         backgroundColorIdx = 3
     },
-    troll = {
+    trollKing01 = {
         displayName = "Troll King",
         decalId = '5897428591',
         backgroundColorIdx = 3

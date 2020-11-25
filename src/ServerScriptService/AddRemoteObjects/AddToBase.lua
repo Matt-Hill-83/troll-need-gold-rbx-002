@@ -11,32 +11,7 @@ local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Utils = require(Sss.Source.Utils.Utils)
 local Constants = require(Sss.Source.Constants.Constants)
 
-renderCharacters02 = function(parent, itemConfigs)
-    local itemProps = {size = Vector3.new(4, 6, 1), partName = "Items"}
-
-    local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(-1, -1, -1),
-        moveTowardZero = Vector3.new(1, 1, -1),
-        alignToChildFarEdge = Vector3.new(1, -1, -1)
-    }
-
-    local rowProps = {
-        parent = parent,
-        gapBetweenRowItems = Vector3.new(1, 0, 0),
-        itemDuplicationConfig = itemDuplicationConfig,
-        offset = Vector3.new(3, 2, 0)
-    }
-
-    local props = {
-        rowProps = rowProps,
-        itemConfigs = itemConfigs,
-        itemProps = itemProps
-    }
-
-    return RowOfParts.createRowOfParts(props)
-end
-
-renderCharacters01 = function(parent, itemConfigs)
+renderCharacters = function(parent, itemConfigs, templateName)
     for i, itemConfig in ipairs(itemConfigs) do
         local dataFileName = itemConfig.name
         if (not itemConfig.decalId) then
@@ -54,8 +29,7 @@ renderCharacters01 = function(parent, itemConfigs)
 
     end
 
-    local characterTemplate = Utils.getDescendantByName(parent,
-                                                        "CharacterTemplate")
+    local characterTemplate = Utils.getDescendantByName(parent, templateName)
     local xGap = 1
     for i, itemConfig in ipairs(itemConfigs) do
         local newItem = characterTemplate:Clone()
@@ -67,8 +41,10 @@ renderCharacters01 = function(parent, itemConfigs)
             Parent = parent
         })
 
-        local decal = Utils.getDescendantByName(newItem, "Decal")
-        decal.Texture = 'rbxassetid://' .. itemConfig.decalId
+        local decalFront = Utils.getDescendantByName(newItem, "DecalFront")
+        local decalBack = Utils.getDescendantByName(newItem, "DecalBack")
+        decalFront.Texture = 'rbxassetid://' .. itemConfig.decalId
+        decalBack.Texture = 'rbxassetid://' .. itemConfig.decalId
     end
     characterTemplate.Transparency = 1
     characterTemplate:Destroy()
@@ -113,8 +89,8 @@ function addItemsToScene(props)
     local itemConfigs = sceneConfig.frames[pageNum].characters02
     local dialogConfigs = sceneConfig.frames[pageNum].dialogs
 
-    renderCharacters01(newScene, characterConfigs01)
-    renderCharacters02(newScene, itemConfigs)
+    renderCharacters(newScene, characterConfigs01, "CharacterTemplate01")
+    renderCharacters(newScene, itemConfigs, "CharacterTemplate02")
 
     return Dialog.renderDialog({
         parent = newScene,
