@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>240.150421</X>
-					<Y>95.8919754</Y>
-					<Z>-255.787842</Z>
-					<R00>-0.979303837</R00>
-					<R01>0.199904099</R01>
-					<R02>-0.0316619724</R02>
-					<R10>-0</R10>
-					<R11>0.156435817</R11>
-					<R12>0.987688124</R12>
-					<R20>0.202395976</R20>
-					<R21>0.967246771</R21>
-					<R22>-0.153198168</R22>
+					<X>239.193253</X>
+					<Y>91.8389816</Y>
+					<Z>-271.797607</Z>
+					<R00>-0.991938174</R00>
+					<R01>0.119456291</R01>
+					<R02>-0.0422970839</R02>
+					<R10>-3.72529074e-09</R10>
+					<R11>0.333774596</R11>
+					<R12>0.942652941</R12>
+					<R20>0.126723513</R20>
+					<R21>0.935053408</R21>
+					<R22>-0.331083685</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -6266,9 +6266,9 @@ gP+AIA==]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>242</X>
+							<X>243</X>
 							<Y>7</Y>
-							<Z>-205</Z>
+							<Z>-211</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -6364,7 +6364,7 @@ gP+AIA==]]></BinaryString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Weld" referent="RBX2689a2d93ac54e4c8bc4da5c229e4988">
+					<Item class="Weld" referent="RBX1937a63655f84cdeac61352418f4282e">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -6382,9 +6382,9 @@ gP+AIA==]]></BinaryString>
 								<R22>0</R22>
 							</CoordinateFrame>
 							<CoordinateFrame name="C1">
-								<X>242</X>
+								<X>243</X>
 								<Y>27</Y>
-								<Z>-205</Z>
+								<Z>-211</Z>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
@@ -6403,41 +6403,41 @@ gP+AIA==]]></BinaryString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Weld" referent="RBXcfd5eccae794429695071a550c2f848b">
+					<Item class="Weld" referent="RBX8e314b8ec951433baf218717d58dbd56">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
-								<X>2</X>
-								<Y>0</Y>
+								<X>0</X>
+								<Y>6</Y>
 								<Z>0</Z>
-								<R00>0</R00>
-								<R01>0</R01>
-								<R02>1</R02>
-								<R10>0</R10>
-								<R11>-1</R11>
-								<R12>0</R12>
-								<R20>1</R20>
-								<R21>0</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>205</X>
-								<Y>-2.67028809e-05</Y>
-								<Z>-6</Z>
-								<R00>-1</R00>
+								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
 								<R10>0</R10>
-								<R11>-1</R11>
-								<R12>0</R12>
+								<R11>0</R11>
+								<R12>1</R12>
 								<R20>0</R20>
-								<R21>0</R21>
-								<R22>1</R22>
+								<R21>-1</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>-1.5</X>
+								<Y>-1.5</Y>
+								<Z>-211</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>0</R11>
+								<R12>1</R12>
+								<R20>0</R20>
+								<R21>-1</R21>
+								<R22>0</R22>
 							</CoordinateFrame>
 							<bool name="Enabled">true</bool>
 							<string name="Name">Weld</string>
 							<Ref name="Part0">RBXd207cf71550a40cdbaca9bdad35d44a2</Ref>
-							<Ref name="Part1">RBX2dfd484a3008492d82388863313b746f</Ref>
+							<Ref name="Part1">RBX3ba7fda0c0994a218b48d1cf703265f3</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
@@ -11998,7 +11998,6 @@ local Utils = require(Sss.Source.Utils.Utils)
 local Constants = require(Sss.Source.Constants.Constants)
 
 renderCharacters = function(parent, itemConfigs, templateName)
-    print('dataFileName' .. ' - start');
     for i, itemConfig in ipairs(itemConfigs) do
         local dataFileName = itemConfig.name
         if (not itemConfig.decalId) then
@@ -12007,15 +12006,14 @@ renderCharacters = function(parent, itemConfigs, templateName)
                 itemConfig.decalId =
                     Constants.characters[dataFileName]['decalId']
             else
-                if (dataFileName ~= "empty") then
-                    print(dataFileName);
+                if (dataFileName ~= "empty" and dataFileName ~= "blank") then
+                    print("-----------------------" .. dataFileName);
                 end
                 itemConfig.decalId = "5897424121"
             end
         end
 
     end
-    print('dataFileName' .. ' - end');
 
     local characterTemplate = Utils.getDescendantByName(parent, templateName)
 
@@ -16324,11 +16322,11 @@ module.characters = {
         decalId = '5999464873',
         backgroundColorIdx = 1
     },
-    -- katieKooper01 = {
-    --     displayName = "Katie Kooper",
-    --     decalId = '5998961085',
-    --     backgroundColorIdx = 1
-    -- },
+    katieKooper01 = {
+        displayName = "Katie Kooper",
+        decalId = '5991267836',
+        backgroundColorIdx = 1
+    },
     troll01 = {
         displayName = "Troll01",
         decalId = '5999464489',
