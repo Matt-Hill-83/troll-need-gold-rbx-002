@@ -70,21 +70,25 @@ function addItemsToScene(props)
     local frameConfig = props.frameConfig
     local clonedScene = props.clonedScene
     local characterConfigs01 = frameConfig.characters01
-    local itemConfigs = frameConfig.characters02
-    -- local characterTemplate = Utils.getDescendantByName(clonedScene,
-    --                                                     "CharacterTemplate01")
+    local characterConfigs02 = frameConfig.characters02
     renderCharacters({
         template = Utils.getDescendantByName(clonedScene, "CharacterTemplate01"),
         itemConfigs = characterConfigs01
     })
     renderCharacters({
         template = Utils.getDescendantByName(clonedScene, "CharacterTemplate02"),
-        itemConfigs = itemConfigs
+        itemConfigs = characterConfigs02
     })
-    -- renderCharacters(clonedScene, itemConfigs, "CharacterTemplate02")
 
+    local dialogTemplate = Utils.getDescendantByName(clonedScene,
+                                                     "DialogTemplate")
     local dialogConfigs = frameConfig.dialogs
-    Dialog.renderDialog({dialogConfigs = dialogConfigs})
+    Dialog.renderDialog({
+
+        dialogConfigs = dialogConfigs,
+        dialogTemplate = dialogTemplate
+
+    })
 end
 
 function destroyBridges(props)
