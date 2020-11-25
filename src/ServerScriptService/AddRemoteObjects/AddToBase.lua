@@ -21,7 +21,7 @@ renderCharacters = function(parent, itemConfigs, templateName)
                     Constants.characters[dataFileName]['decalId']
             else
                 if (dataFileName ~= "empty" and dataFileName ~= "blank") then
-                    print("-----------------------" .. dataFileName);
+                    print("------------------------------" .. dataFileName);
                 end
                 itemConfig.decalId = "5897424121"
             end
@@ -198,6 +198,19 @@ function addScenes(props)
             pageNum = pageNum,
             sceneConfig = sceneConfig
         }
+
+        local locationModel = Utils.getFromTemplates("LocationModelRoot")
+        local imageLabelFront = Utils.getDescendantByName(locationModel,
+                                                          'ImageLabel')
+        local defaultImageId = '5999464873'
+        local imageId = defaultImageId
+        if (Constants.characters[sceneConfig] and
+            Constants.characters[sceneConfig]['name']) then
+            imageId = Constants.characters[sceneConfig]['name']
+
+        end
+
+        imageLabelFront.Image = 'rbxassetid://' .. imageId
 
         buttonParent = addItemsToScene(sceneProps)
 
