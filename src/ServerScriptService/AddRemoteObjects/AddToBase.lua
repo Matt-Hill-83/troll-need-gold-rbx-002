@@ -40,18 +40,19 @@ renderCharacters01 = function(parent, itemConfigs)
     for i, itemConfig in ipairs(itemConfigs) do
         local dataFileName = itemConfig.name
         if (not itemConfig.decalId) then
-            if (Constants.characters[dataFileName]) then
+            if (Constants.characters[dataFileName] and
+                Constants.characters[dataFileName]['decalId']) then
                 itemConfig.decalId =
                     Constants.characters[dataFileName]['decalId']
             else
+                print('dataFileName' .. ' - start');
+                print(dataFileName);
+                print('dataFileName' .. ' - end');
                 itemConfig.decalId = "5897424121"
             end
         end
 
     end
-    print('parent' .. ' - start');
-    print(parent);
-    print('parent' .. ' - end');
 
     local characterTemplate = Utils.getDescendantByName(parent,
                                                         "CharacterTemplate")
@@ -59,39 +60,21 @@ renderCharacters01 = function(parent, itemConfigs)
     for i, itemConfig in ipairs(itemConfigs) do
         local newItem = characterTemplate:Clone()
         local x = (i - 1) * -(characterTemplate.Size.X + xGap)
-        newItem.CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0))
-        newItem.Parent = parent
-        newItem.Transparency = 1
+        -- newItem.CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0))
+        -- newItem.Parent = parent
+        -- newItem.Transparency = 1
 
+        Utils.mergeTables(newItem, {
+            Transparency = 1,
+            CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
+            Parent = parent
+        })
+
+        local decal = Utils.getDescendantByName(newItem, "Decal")
+        decal.Texture = 'rbxassetid://' .. itemConfig.decalId
     end
     characterTemplate.Transparency = 1
-
-    -- local characterScale = 0.6
-    -- local itemProps = {
-    --     size = Vector3.new(6 * characterScale, 8 * characterScale, 0.5),
-    --     partName = "Characters"
-    -- }
-
-    -- local itemDuplicationConfig = {
-    --     alignToParentFarEdge = Vector3.new(1, -1, -1),
-    --     moveTowardZero = Vector3.new(-1, 1, -1),
-    --     alignToChildFarEdge = Vector3.new(-1, -1, -1)
-    -- }
-
-    -- local rowProps = {
-    --     parent = parent,
-    --     itemDuplicationConfig = itemDuplicationConfig,
-    --     gapBetweenRowItems = Vector3.new(1, 0, 0),
-    --     offset = Vector3.new(-1, 0.5, 0)
-    -- }
-
-    -- local props = {
-    --     rowProps = rowProps,
-    --     itemConfigs = itemConfigs,
-    --     itemProps = itemProps
-    -- }
-
-    -- return RowOfParts.createRowOfParts(props)
+    characterTemplate:Destroy()
 end
 
 getStartPosition = function(parent, child)
@@ -169,9 +152,6 @@ function destroyBridges(props)
     if (showLeftPath) then
         local bridgeWallLeft = Utils.getDescendantByName(clonedScene,
                                                          "BridgeWallLeft")
-        print('bridgeWallLeft' .. ' - start');
-        print(bridgeWallLeft);
-        print('bridgeWallLeft' .. ' - end');
 
         bridgeWallLeft.Parent = nil
         bridgeWallLeft:Destroy()

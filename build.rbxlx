@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>329.477966</X>
-					<Y>35.3804398</Y>
-					<Z>-189.305725</Z>
-					<R00>0.942406952</R00>
-					<R01>0.116790354</R01>
-					<R02>-0.313415349</R02>
+					<X>243.100204</X>
+					<Y>138.802399</Y>
+					<Z>-298.400543</Z>
+					<R00>-0.952822208</R00>
+					<R01>0.116332561</R01>
+					<R02>-0.280350745</R02>
 					<R10>-0</R10>
-					<R11>0.937054992</R11>
-					<R12>0.34918195</R12>
-					<R20>0.334468484</R20>
-					<R21>-0.329071492</R21>
-					<R22>0.883087099</R22>
+					<R11>0.923637748</R11>
+					<R12>0.383266836</R12>
+					<R20>0.303528905</R20>
+					<R21>0.365185142</R21>
+					<R22>-0.88006258</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>337</X>
-					<Y>27</Y>
-					<Z>-210.5</Z>
+					<X>243.660889</X>
+					<Y>138.035889</Y>
+					<Z>-296.640472</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -3514,7 +3514,7 @@ gP+AIA==]]></BinaryString>
 									</Vector3>
 									<token name="style">0</token>
 								</Properties>
-								<Item class="Weld" referent="RBXdb8a0ef9482e45a8a566f256ba00ac82">
+								<Item class="Weld" referent="RBX7827e0d848404e6f88a86eaa1cfa2e62">
 									<Properties>
 										<BinaryString name="AttributesSerialize"></BinaryString>
 										<CoordinateFrame name="C0">
@@ -6429,7 +6429,7 @@ gP+AIA==]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>242</X>
+							<X>240</X>
 							<Y>7</Y>
 							<Z>-242</Z>
 							<R00>1</R00>
@@ -6527,7 +6527,7 @@ gP+AIA==]]></BinaryString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Weld" referent="RBX4a533bf939994c1587fe6b9c8dfd0263">
+					<Item class="Weld" referent="RBX7611f2967e604c4c8d8021f63f7670d4">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -6545,7 +6545,7 @@ gP+AIA==]]></BinaryString>
 								<R22>-1</R22>
 							</CoordinateFrame>
 							<CoordinateFrame name="C1">
-								<X>242</X>
+								<X>240</X>
 								<Y>-6.00814819e-05</Y>
 								<Z>6</Z>
 								<R00>1</R00>
@@ -6566,41 +6566,41 @@ gP+AIA==]]></BinaryString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Weld" referent="RBX2c2b3d3d45094f2989d1e4d91191ec47">
+					<Item class="Weld" referent="RBXd6d25273d96c428290bd7312cf9f5d98">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
-								<X>2</X>
-								<Y>0</Y>
+								<X>0</X>
+								<Y>-6</Y>
 								<Z>0</Z>
-								<R00>0</R00>
-								<R01>0</R01>
-								<R02>1</R02>
-								<R10>0</R10>
-								<R11>-1</R11>
-								<R12>0</R12>
-								<R20>1</R20>
-								<R21>0</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>242</X>
-								<Y>-2.67028809e-05</Y>
-								<Z>-6</Z>
-								<R00>-1</R00>
+								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
 								<R10>0</R10>
-								<R11>-1</R11>
-								<R12>0</R12>
+								<R11>0</R11>
+								<R12>-1</R12>
 								<R20>0</R20>
-								<R21>0</R21>
-								<R22>1</R22>
+								<R21>1</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>240</X>
+								<Y>27</Y>
+								<Z>-242</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>0</R11>
+								<R12>-1</R12>
+								<R20>0</R20>
+								<R21>1</R21>
+								<R22>0</R22>
 							</CoordinateFrame>
 							<bool name="Enabled">true</bool>
 							<string name="Name">Weld</string>
 							<Ref name="Part0">RBXd207cf71550a40cdbaca9bdad35d44a2</Ref>
-							<Ref name="Part1">RBX2dfd484a3008492d82388863313b746f</Ref>
+							<Ref name="Part1">RBXf70eef44c6474e63b75672292a29dcc7</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
@@ -11478,8 +11478,7 @@ remoteCode.addRemoteObjects(base)
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">Source</string>
 				<string name="ScriptGuid">{fff6187c-e823-4743-a48f-970df0bad40b}</string>
-				<ProtectedString name="Source"><![CDATA[-- print('in the init----------')
--- return {a = '234'}
+				<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
@@ -11518,9 +11517,7 @@ buttonEvent.OnServerEvent:Connect(triggerButton)
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">AddRemoteObjects</string>
 					<string name="ScriptGuid">{f1cc327e-acb6-41a5-98aa-1bd0cc4b2383}</string>
-					<ProtectedString name="Source"><![CDATA[print('in the init----------')
-
-return {a = '234'}
+					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -11578,13 +11575,13 @@ renderCharacters01 = function(parent, itemConfigs)
                     Constants.characters[dataFileName]['decalId']
             else
                 itemConfig.decalId = "5897424121"
+                print('dataFileName' .. ' - start');
+                print(dataFileName);
+                print('dataFileName' .. ' - end');
             end
         end
 
     end
-    print('parent' .. ' - start');
-    print(parent);
-    print('parent' .. ' - end');
 
     local characterTemplate = Utils.getDescendantByName(parent,
                                                         "CharacterTemplate")
@@ -11702,9 +11699,6 @@ function destroyBridges(props)
     if (showLeftPath) then
         local bridgeWallLeft = Utils.getDescendantByName(clonedScene,
                                                          "BridgeWallLeft")
-        print('bridgeWallLeft' .. ' - start');
-        print(bridgeWallLeft);
-        print('bridgeWallLeft' .. ' - end');
 
         bridgeWallLeft.Parent = nil
         bridgeWallLeft:Destroy()
@@ -12105,9 +12099,7 @@ return module
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Utils</string>
 					<string name="ScriptGuid">{4dc90c15-033c-41ff-b30a-4ab544d42a5d}</string>
-					<ProtectedString name="Source"><![CDATA[print('in the init----------')
-
-return {a = '234'}
+					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -13310,9 +13302,7 @@ return module
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">QuestConfigs</string>
 					<string name="ScriptGuid">{3324090a-4840-4e52-ab82-db793b3f630a}</string>
-					<ProtectedString name="Source"><![CDATA[print('in the init----------')
-
-return {a = '234'}
+					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -14235,9 +14225,7 @@ return module
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Constants</string>
 					<string name="ScriptGuid">{2073ba3e-aa67-4f33-8ef8-2e1ffe575d1b}</string>
-					<ProtectedString name="Source"><![CDATA[print('in the init----------')
-
-return {a = '234'}
+					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -14257,16 +14245,37 @@ module.islandLength = islandLength
 module.bridgeLength = bridgeLength
 module.totalIslandLength = islandLength + bridgeLength
 
+local raven = {
+    displayName = "Raven",
+    decalId = '5897424121',
+    backgroundColorIdx = 1
+}
+local britta = {
+    displayName = "Britta",
+    decalId = '5897433108',
+    backgroundColorIdx = 2
+}
+
+local mitzy02 = {
+    displayName = "Mitzy Meow",
+    decalId = '5976876671',
+    backgroundColorIdx = 2
+}
+
 module.characters = {
-    raven = {
-        displayName = "Raven",
-        decalId = '5897424121',
-        backgroundColorIdx = 1
+    raven04 = raven,
+    raven = raven,
+    britta = britta,
+    britta04 = britta,
+    luke01 = {
+        displayName = "Luke",
+        decalId = '5998898169',
+        backgroundColorIdx = 3
     },
-    britta = {
-        displayName = "Britta",
-        decalId = '5897433108',
-        backgroundColorIdx = 2
+    hudson01 = {
+        displayName = "Hudson",
+        decalId = '5998899394',
+        backgroundColorIdx = 3
     },
     troll = {
         displayName = "Troll King",
@@ -14283,11 +14292,8 @@ module.characters = {
         decalId = '5898504226',
         backgroundColorIdx = 1
     },
-    mitzyMeow01 = {
-        displayName = "Mitzy Meow",
-        decalId = '5976876671',
-        backgroundColorIdx = 2
-    },
+    mitzyMeow01 = mitzy02,
+    mitzy02 = mitzy02,
     kat = {displayName = "Kat", decalId = '5977951764', backgroundColorIdx = 3},
     liz2 = {displayName = "Liz", decalId = '5981806423', backgroundColorIdx = 4}
 }
