@@ -82,8 +82,7 @@ function addItemsToScene(props)
     Dialog.renderDialog({
         parent = newWall,
         dialogConfigs = dialogConfigs,
-        clonedScene = clonedScene,
-        pageNum = pageNum
+        clonedScene = clonedScene
     })
 end
 
@@ -160,7 +159,6 @@ function addScenes(props)
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
         local pageNum = 1
-        local buttonParent = nil
 
         local newPosition = getNewPosition(
                                 {
@@ -201,11 +199,14 @@ function addScenes(props)
                                                     'TextLabel')
         textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
         local dialogTemplate = Utils.getFromTemplates("DialogTemplate")
+
         addItemsToScene(sceneProps)
 
         function incrementPage()
             local newPageNum = pageNum + 1
-
+            print('newPageNum' .. ' - start');
+            print(newPageNum);
+            print('newPageNum' .. ' - end');
             if newPageNum <= numPages then
                 pageNum = newPageNum
 
@@ -237,6 +238,20 @@ function addScenes(props)
             incrementPage = incrementPage,
             pageNum = pageNum
         }
+
+        local function onActivated() incrementPage() end
+
+        local nextPageButtonTemplate = Utils.getDescendantByName(clonedScene,
+                                                                 "NextPageButtonTemplate")
+
+        local nextButton = Utils.getDescendantByName(nextPageButtonTemplate,
+                                                     "TextButton")
+
+        print('nextButton' .. ' - start');
+        print(nextButton);
+        print('nextButton' .. ' - end');
+
+        nextButton.MouseButton1Click:Connect(onActivated)
 
         ButtonBlock.renderButtonBlock(renderButtonBlockProps)
     end
