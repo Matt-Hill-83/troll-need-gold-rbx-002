@@ -1,5 +1,17 @@
 local module = {}
 
+function module.deleteChildrenByName(props)
+    local parent = props.parent
+    local childName = props.childName
+    local children = parent:GetDescendants()
+    for i, item in pairs(children) do
+        if item.Name == childName then
+            item:Destroy()
+            --
+        end
+    end
+end
+
 function getFromMyStuff(name)
     local myStuff = workspace:FindFirstChild("MyStuff")
     return getDescendantByName(myStuff, name)

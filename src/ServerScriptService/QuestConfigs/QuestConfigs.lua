@@ -18,6 +18,8 @@ module.questConfigs = {
                 coordinates = {row = 0, col = 1},
                 showBottomPath = true,
                 showRightPath = false,
+                showTopPath = false,
+                showLeftPath = false,
                 maxRow = 0,
                 maxCol = 1
             }, {
@@ -32,9 +34,11 @@ module.questConfigs = {
                         characters02 = {}
                     }
                 },
-                coordinates = {row = 1, col = 0},
+                coordinates = {col = 0, row = 1},
                 showBottomPath = false,
                 showRightPath = true,
+                showTopPath = false,
+                showLeftPath = false,
                 maxRow = 1,
                 maxCol = 1
             }, {
@@ -49,9 +53,11 @@ module.questConfigs = {
                         characters02 = {}
                     }
                 },
-                coordinates = {col = 1, row = 1},
+                coordinates = {row = 1, col = 1},
                 showBottomPath = true,
                 showRightPath = true,
+                showTopPath = true,
+                showLeftPath = true,
                 maxRow = 1,
                 maxCol = 1
             }, {
@@ -66,9 +72,11 @@ module.questConfigs = {
                         characters02 = {}
                     }
                 },
-                coordinates = {row = 1, col = 2},
+                coordinates = {col = 2, row = 1},
                 showBottomPath = false,
                 showRightPath = true,
+                showTopPath = false,
+                showLeftPath = true,
                 maxRow = 1,
                 maxCol = 2
             }, {
@@ -86,6 +94,8 @@ module.questConfigs = {
                 coordinates = {col = 3, row = 1},
                 showBottomPath = true,
                 showRightPath = false,
+                showTopPath = false,
+                showLeftPath = true,
                 maxRow = 1,
                 maxCol = 3
             }, {
@@ -103,6 +113,8 @@ module.questConfigs = {
                 coordinates = {col = 1, row = 2},
                 showBottomPath = false,
                 showRightPath = false,
+                showTopPath = true,
+                showLeftPath = false,
                 maxRow = 2,
                 maxCol = 3
             }, {
@@ -117,9 +129,11 @@ module.questConfigs = {
                         characters02 = {}
                     }
                 },
-                coordinates = {col = 3, row = 2},
+                coordinates = {row = 2, col = 3},
                 showBottomPath = false,
                 showRightPath = false,
+                showTopPath = true,
+                showLeftPath = false,
                 maxRow = 2,
                 maxCol = 3
             }
@@ -320,9 +334,11 @@ module.questConfigs = {
                         characters02 = {{name = "lucky01"}, {name = "cow01"}}
                     }
                 },
-                coordinates = {row = 0, col = 0},
+                coordinates = {col = 0, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
+                showTopPath = false,
+                showLeftPath = false,
                 maxRow = 0,
                 maxCol = 0
             }, {
@@ -429,6 +445,8 @@ module.questConfigs = {
                 coordinates = {col = 1, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
+                showTopPath = false,
+                showLeftPath = true,
                 maxRow = 0,
                 maxCol = 1
             }, {
@@ -562,6 +580,8 @@ module.questConfigs = {
                 coordinates = {col = 2, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
+                showTopPath = false,
+                showLeftPath = true,
                 maxRow = 0,
                 maxCol = 2
             }, {
@@ -596,8 +616,10 @@ module.questConfigs = {
                     }
                 },
                 coordinates = {row = 0, col = 3},
-                showBottomPath = true,
+                showBottomPath = false,
                 showRightPath = false,
+                showTopPath = false,
+                showLeftPath = true,
                 maxRow = 0,
                 maxCol = 3
             }

@@ -59,8 +59,9 @@ renderCharacters01 = function(parent, itemConfigs)
     for i, itemConfig in ipairs(itemConfigs) do
         local newItem = characterTemplate:Clone()
         local x = (i - 1) * -(characterTemplate.Size.X + xGap)
-        newItem.Position = newItem.Position + Vector3.new(x, 0, 0)
+        newItem.CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0))
         newItem.Parent = parent
+        newItem.Transparency = 1
 
     end
     characterTemplate.Transparency = 1
@@ -150,30 +151,59 @@ function destroyBridges(props)
 
     local showBottomPath = sceneConfig.showBottomPath
     local showRightPath = sceneConfig.showRightPath
+    local showTopPath = sceneConfig.showTopPath
+    local showLeftPath = sceneConfig.showLeftPath
 
     local bridgeRightModel = Utils.getDescendantByName(clonedScene,
                                                        "BridgeRightModel")
-    if (not showRightPath) then
-        bridgeRightModel.Parent = nil
-        bridgeRightModel:Destroy()
-    else
+    if (showRightPath) then
         local bridgeWallRight = Utils.getDescendantByName(clonedScene,
                                                           "BridgeWallRight")
         bridgeWallRight.Parent = nil
         bridgeWallRight:Destroy()
+    else
+        bridgeRightModel.Parent = nil
+        bridgeRightModel:Destroy()
+    end
 
+    if (showLeftPath) then
+        local bridgeWallLeft = Utils.getDescendantByName(clonedScene,
+                                                         "BridgeWallLeft")
+        print('bridgeWallLeft' .. ' - start');
+        print(bridgeWallLeft);
+        print('bridgeWallLeft' .. ' - end');
+
+        bridgeWallLeft.Parent = nil
+        bridgeWallLeft:Destroy()
+    else
+        Utils.deleteChildrenByName({
+            parent = clonedScene,
+            childName = "WallLeftOld"
+        })
     end
 
     local bridgeBottomModel = Utils.getDescendantByName(clonedScene,
                                                         "BridgeBottomModel")
-    if (not showBottomPath) then
-        bridgeBottomModel.Parent = nil
-        bridgeBottomModel:Destroy()
-    else
+    if (showBottomPath) then
         local bridgeWallFront = Utils.getDescendantByName(clonedScene,
                                                           "BridgeWallFront")
         bridgeWallFront.Parent = nil
         bridgeWallFront:Destroy()
+    else
+        bridgeBottomModel.Parent = nil
+        bridgeBottomModel:Destroy()
+    end
+
+    if (showTopPath) then
+        local bridgeWallBack = Utils.getDescendantByName(clonedScene,
+                                                         "BridgeWallBack")
+        bridgeWallBack.Parent = nil
+        bridgeWallBack:Destroy()
+    else
+        Utils.deleteChildrenByName({
+            parent = clonedScene,
+            childName = "WallBackOld"
+        })
     end
 end
 
@@ -252,6 +282,9 @@ function addScenes(props)
 end
 
 function addRemoteObjects()
+    local Players = game:GetService("Players")
+    Players.RespawnTime = 0
+
     local questConfigs = SceneConfig.getScenesConfig()
     local myStuff = workspace:FindFirstChild("MyStuff")
     local sceneLocations = myStuff:FindFirstChild("SceneLocations")
