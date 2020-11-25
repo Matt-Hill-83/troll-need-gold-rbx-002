@@ -71,6 +71,7 @@ function addItemsToScene(props)
     local clonedScene = props.clonedScene
     local characterConfigs01 = frameConfig.characters01
     local characterConfigs02 = frameConfig.characters02
+
     renderCharacters({
         template = Utils.getDescendantByName(clonedScene, "CharacterTemplate01"),
         itemConfigs = characterConfigs01
@@ -82,12 +83,9 @@ function addItemsToScene(props)
 
     local dialogTemplate = Utils.getDescendantByName(clonedScene,
                                                      "DialogTemplate")
-    local dialogConfigs = frameConfig.dialogs
     Dialog.renderDialog({
-
-        dialogConfigs = dialogConfigs,
+        dialogConfigs = frameConfig.dialogs,
         dialogTemplate = dialogTemplate
-
     })
 end
 
@@ -207,20 +205,11 @@ function addScenes(props)
 
         function incrementPage()
             local newPageNum = pageNum + 1
-            print('newPageNum' .. ' - start');
-            print(newPageNum);
-            print('newPageNum' .. ' - end');
-            print('numPages' .. ' - start');
-            print(numPages);
-            print('numPages' .. ' - end');
             if newPageNum <= numPages then
                 pageNum = newPageNum
 
                 local children = newWall:GetChildren()
                 for _, item in pairs(children) do
-                    print('item.Name' .. ' - start');
-                    print(item.Name);
-                    print('item.Name' .. ' - end');
                     local match1 = string.match(item.Name, "Items-")
                     local match2 = string.match(item.Name, "Characters-")
                     local match3 = string.match(item.Name, "Dialog-")

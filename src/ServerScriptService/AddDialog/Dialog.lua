@@ -7,7 +7,6 @@ local module = {}
 function module.renderDialog(props)
     local dialogConfigs = props.dialogConfigs
     local dialogTemplate = props.dialogTemplate
-    -- local dialogTemplate = Utils.getFromTemplates("DialogTemplate")
 
     local renderTextsProps = {
         parent = dialogTemplate,
@@ -15,7 +14,7 @@ function module.renderDialog(props)
     }
 
     Texts.renderTexts(renderTextsProps)
-    return dialogTemplate
+
 end
 
 return module
