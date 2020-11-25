@@ -19,8 +19,8 @@ renderCharacters = function(props)
 
         Utils.mergeTables(newItem, {
             Transparency = 1,
-            CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0))
-            -- Parent = parent
+            CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
+            Parent = characterTemplate
         })
 
         local decalFront = Utils.getDescendantByName(newItem, "DecalFront")
@@ -69,13 +69,7 @@ end
 function addItemsToScene(props)
     local frameConfig = props.frameConfig
     local clonedScene = props.clonedScene
-    print('clonedScene' .. ' - start');
-    print(Utils.tableToString({clonedScene}));
-    print('clonedScene' .. ' - end');
     local characterConfigs01 = frameConfig.characters01
-    print('characterConfigs01' .. ' - start');
-    print(Utils.tableToString(characterConfigs01[1]));
-    print('characterConfigs01' .. ' - end');
     local itemConfigs = frameConfig.characters02
     local characterTemplate = Utils.getDescendantByName(clonedScene,
                                                         "CharacterTemplate01")
@@ -205,9 +199,6 @@ function addScenes(props)
 
         function incrementPage()
             local newPageNum = pageNum + 1
-            print('newPageNum' .. ' - start');
-            print(newPageNum);
-            print('newPageNum' .. ' - end');
             if newPageNum <= numPages then
                 pageNum = newPageNum
 

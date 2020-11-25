@@ -48,9 +48,6 @@ function module.getFromTemplates(name)
 end
 
 function getDescendantByName(parent, name)
-    print('parent' .. ' - start');
-    print(parent);
-    print('parent' .. ' - end');
     local model = parent:GetDescendants()
     for i = 1, #model do
         if model[i].Name == name then
