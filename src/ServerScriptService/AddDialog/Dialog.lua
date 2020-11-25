@@ -7,7 +7,7 @@ local module = {}
 renderDialog = function(props)
     local parent = props.parent
     local dialogConfigs = props.dialogConfigs
-    local dialogContainer = Utils.getDescendantByName(parent, "DialogModel")
+    local dialogContainer = Utils.getDescendantByName(parent, "DialogTemplate")
 
     local renderTextsProps = {
         parent = dialogContainer,
