@@ -71,11 +71,15 @@ function addItemsToScene(props)
     local clonedScene = props.clonedScene
     local characterConfigs01 = frameConfig.characters01
     local itemConfigs = frameConfig.characters02
-    local characterTemplate = Utils.getDescendantByName(clonedScene,
-                                                        "CharacterTemplate01")
+    -- local characterTemplate = Utils.getDescendantByName(clonedScene,
+    --                                                     "CharacterTemplate01")
     renderCharacters({
-        template = characterTemplate,
+        template = Utils.getDescendantByName(clonedScene, "CharacterTemplate01"),
         itemConfigs = characterConfigs01
+    })
+    renderCharacters({
+        template = Utils.getDescendantByName(clonedScene, "CharacterTemplate02"),
+        itemConfigs = itemConfigs
     })
     -- renderCharacters(clonedScene, itemConfigs, "CharacterTemplate02")
 
@@ -199,6 +203,12 @@ function addScenes(props)
 
         function incrementPage()
             local newPageNum = pageNum + 1
+            print('newPageNum' .. ' - start');
+            print(newPageNum);
+            print('newPageNum' .. ' - end');
+            print('numPages' .. ' - start');
+            print(numPages);
+            print('numPages' .. ' - end');
             if newPageNum <= numPages then
                 pageNum = newPageNum
 

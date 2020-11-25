@@ -25,6 +25,22 @@ module.questConfigs = {
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
                         characters02 = {{name = "bee"}}
+                    }, {
+                        dialogs = {
+                            {char = "liz2", text = "I see a bee..."},
+                            {char = "kat", text = "22222222."},
+                            {char = "liz2", text = "I see a bee...in a tree!"},
+                            {char = "liz2", text = "Tee Hee Hee!"}
+                        },
+                        characters01 = {{name = "kat"}, {name = "liz2"}},
+                        characters02 = {{name = "bee"}}
+                    }, {
+                        dialogs = {
+                            {char = "kat", text = "Liz, that's not a bee!!!"},
+                            {char = "liz2", text = "Come here little Bee! Bee!"}
+                        },
+                        characters01 = {{name = "kat"}, {name = "liz2"}},
+                        characters02 = {{name = "bee"}}
                     }
                 },
                 coordinates = {row = 0, col = 0},
