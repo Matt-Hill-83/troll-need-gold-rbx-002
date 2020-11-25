@@ -4,35 +4,12 @@ local Sss = game:GetService("ServerScriptService")
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
 local Dialog = require(Sss.Source.AddDialog.Dialog)
 local ButtonBlock = require(Sss.Source.AddDialog.ButtonBlock)
-
 local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
-
 local Utils = require(Sss.Source.Utils.Utils)
 local Constants = require(Sss.Source.Constants.Constants)
 
 renderCharacters = function(parent, itemConfigs, templateName)
-    for i, itemConfig in ipairs(itemConfigs) do
-        local dataFileName = itemConfig.name
-
-        if (Constants.characters[dataFileName] and
-            Constants.characters[dataFileName]['decalId']) then
-            itemConfig.decalId = Constants.characters[dataFileName]['decalId']
-        else
-            if (dataFileName ~= "empty" and dataFileName ~= "blank") then
-                print("------------------------------" .. dataFileName);
-            end
-            itemConfig.decalId = "5897424121"
-        end
-
-    end
-    print('parent' .. ' - start');
-    print(parent);
-    print('parent' .. ' - end');
-
-    print('templateName' .. ' - start');
-    print(templateName);
-    print('templateName' .. ' - end');
     local characterTemplate = Utils.getDescendantByName(parent, templateName)
 
     local xGap = 1
@@ -48,8 +25,10 @@ renderCharacters = function(parent, itemConfigs, templateName)
 
         local decalFront = Utils.getDescendantByName(newItem, "DecalFront")
         local decalBack = Utils.getDescendantByName(newItem, "DecalBack")
-        decalFront.Texture = 'rbxassetid://' .. itemConfig.decalId
-        decalBack.Texture = 'rbxassetid://' .. itemConfig.decalId
+        local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
+
+        decalFront.Texture = 'rbxassetid://' .. decalId
+        decalBack.Texture = 'rbxassetid://' .. decalId
     end
     characterTemplate.Transparency = 1
 
