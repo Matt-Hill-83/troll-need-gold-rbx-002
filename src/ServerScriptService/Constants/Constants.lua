@@ -40,6 +40,49 @@ module.characters = {
     britta04 = britta,
     -- 
     -- 
+
+    bees = {
+        displayName = "Bees",
+        decalId = '5991343806',
+        backgroundColorIdx = 1
+    },
+    cap = {displayName = "Cap", decalId = '5991343197', backgroundColorIdx = 1},
+    castle = {
+        displayName = "Castle",
+        decalId = '5991343060',
+        backgroundColorIdx = 1
+    },
+    chick01 = {
+        displayName = "Chick",
+        decalId = 'xxxxxx',
+        backgroundColorIdx = 1
+    },
+    coop = {
+        displayName = "Coop",
+        decalId = '5991342867',
+        backgroundColorIdx = 1
+    },
+    cow01 = {displayName = "Cow", decalId = 'xxxxxx', backgroundColorIdx = 1},
+    girl09 = {
+        displayName = "Girl",
+        decalId = '5991275978',
+        backgroundColorIdx = 1
+    },
+    lucky = {displayName = "Lucky", decalId = 'xxxxxx', backgroundColorIdx = 1},
+    mat = {displayName = "Mat", decalId = '5991341059', backgroundColorIdx = 1},
+    mop = {displayName = "Mop", decalId = '5991340991', backgroundColorIdx = 1},
+    pan = {displayName = "Pan", decalId = '5991340855', backgroundColorIdx = 1},
+    slide = {
+        displayName = "Slide",
+        decalId = '5991340411',
+        backgroundColorIdx = 1
+    },
+    swing = {
+        displayName = "Swing",
+        decalId = '5991340158',
+        backgroundColorIdx = 1
+    },
+
     stump = {
         displayName = "Stump",
         decalId = '5991340320',

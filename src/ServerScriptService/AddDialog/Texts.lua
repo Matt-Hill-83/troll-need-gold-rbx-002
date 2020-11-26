@@ -24,15 +24,9 @@ renderTexts = function(props)
     sgui.SizingMode = "PixelsPerStud"
 
     local scrollingFrame = Utils.getDescendantByName(sgui, "ScrollingFrame")
-    print('scrollingFrame' .. ' - start');
-    print(scrollingFrame);
-    print('scrollingFrame' .. ' - end');
     local children = scrollingFrame:GetChildren()
     for i, item in pairs(children) do
         if item:IsA('TextLabel') then
-            print('item' .. ' - start');
-            print(item);
-            print('item' .. ' - end');
             item:Destroy()
             --
         end
@@ -47,9 +41,6 @@ renderTexts = function(props)
 
         local charName = line['char']
         local dialogText = dialog['text']
-        print('dialogText' .. ' - start');
-        print(dialogText);
-        print('dialogText' .. ' - end');
 
         local backgroundColor = dialogColors[4]
         local charConfig = Constants.characters[charName]
