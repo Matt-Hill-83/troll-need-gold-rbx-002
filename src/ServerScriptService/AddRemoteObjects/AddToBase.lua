@@ -4,20 +4,44 @@ local Sss = game:GetService("ServerScriptService")
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
 
 local Utils = require(Sss.Source.Utils.Utils)
+local DetectUser = require(Sss.Source.Utils.DetectUser)
 local Scenes = require(Sss.Source.Scenes.Scenes)
 local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
 
 local Constants = require(Sss.Source.Constants.Constants)
 
-function addRemoteObjects()
+function configGame()
     local Players = game:GetService("Players")
     Players.RespawnTime = 0
+    test()
+end
+
+function test()
+    local regionsSetup = DetectUser
+    -- local regionsSetup = require(script.MainModule)
+
+    local function regionEnter(plr, region)
+        -- Player entered a region
+        print(plr.Name .. " entered " .. region.Name)
+    end
+
+    local function regionExit(plr, region)
+        -- Player exited a region
+        print(plr.Name .. " left " .. region.Name)
+    end
+
+    regionsSetup(game.Workspace.Zones:GetChildren(), regionEnter, regionExit)
+end
+
+function addRemoteObjects()
+    configGame()
 
     local questConfigs = SceneConfig.getScenesConfig()
     local myStuff = workspace:FindFirstChild("MyStuff")
     local sceneLocations = myStuff:FindFirstChild("SceneLocations")
 
     local sceneOrigins = {}
+
     local children = sceneLocations:GetChildren()
     for i, item in pairs(children) do
         if item:IsA('Part') then
