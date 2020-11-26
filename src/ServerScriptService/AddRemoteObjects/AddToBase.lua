@@ -2,40 +2,13 @@ local module = {}
 local Sss = game:GetService("ServerScriptService")
 
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
-local Dialog = require(Sss.Source.AddDialog.Dialog)
+
 local Bridges = require(Sss.Source.Bridges.Bridges)
+local Characters = require(Sss.Source.Characters.Characters)
 local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Utils = require(Sss.Source.Utils.Utils)
 local Constants = require(Sss.Source.Constants.Constants)
-
-renderCharacters = function(props)
-    local characterTemplate = props.template
-    local itemConfigs = props.itemConfigs
-
-    local xGap = 1
-    for i, itemConfig in ipairs(itemConfigs) do
-        local newItem = characterTemplate:Clone()
-        local x = (i - 1) * -(characterTemplate.Size.X + xGap)
-
-        Utils.mergeTables(newItem, {
-            Transparency = 1,
-            CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
-            Parent = characterTemplate
-        })
-
-        local decalFront = Utils.getDescendantByName(newItem, "DecalFront")
-        local decalBack = Utils.getDescendantByName(newItem, "DecalBack")
-        local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
-
-        decalFront.Texture = 'rbxassetid://' .. decalId
-        decalBack.Texture = 'rbxassetid://' .. decalId
-    end
-    characterTemplate.Transparency = 1
-
-    characterTemplate.Position = characterTemplate.Position +
-                                     Vector3.new(0, -100, 0)
-end
 
 getStartPosition = function(parent, child)
     local childSize = child.Size
@@ -65,29 +38,6 @@ function getNewPosition(props)
                      (Constants.islandLength + Constants.bridgeLength +
                          Constants.buffer)
     return Vector3.new(newX, 0, -newZ)
-end
-
-function addItemsToScene(props)
-    local frameConfig = props.frameConfig
-    local clonedScene = props.clonedScene
-    local characterConfigs01 = frameConfig.characters01
-    local characterConfigs02 = frameConfig.characters02
-
-    renderCharacters({
-        template = Utils.getDescendantByName(clonedScene, "CharacterTemplate01"),
-        itemConfigs = characterConfigs01
-    })
-    renderCharacters({
-        template = Utils.getDescendantByName(clonedScene, "CharacterTemplate02"),
-        itemConfigs = characterConfigs02
-    })
-
-    local dialogTemplate = Utils.getDescendantByName(clonedScene,
-                                                     "DialogTemplate")
-    Dialog.renderDialog({
-        dialogConfigs = frameConfig.dialogs,
-        dialogTemplate = dialogTemplate
-    })
 end
 
 function addScenes(props)
@@ -144,7 +94,7 @@ function addScenes(props)
                                                     'TextLabel')
         textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
 
-        addItemsToScene(sceneProps)
+        Characters.addCharactersToScene(sceneProps)
 
         function incrementPage()
             local newPageNum = pageNum + 1
@@ -170,7 +120,7 @@ function addScenes(props)
                     frameConfig = newFrameConfig,
                     clonedScene = clonedScene
                 }
-                addItemsToScene(newSceneProps)
+                Characters.addCharactersToScene(newSceneProps)
             end
         end
 
