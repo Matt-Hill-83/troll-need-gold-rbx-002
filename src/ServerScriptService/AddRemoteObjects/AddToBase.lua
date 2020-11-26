@@ -52,6 +52,10 @@ end
 function addRemoteObjects()
     configGame()
 
+    -- TODO: don't rerender the entire world when you click the page button.
+    -- TODO: don't rerender the entire world when you click the page button.
+    -- TODO: don't rerender the entire world when you click the page button.
+
     local questConfigs = SceneConfig.getScenesConfig()
     local myStuff = workspace:FindFirstChild("MyStuff")
 

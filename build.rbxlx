@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>357.48938</X>
-					<Y>39.6456146</Y>
-					<Z>-248.210815</Z>
-					<R00>-0.8384642</R00>
-					<R01>-0.15862067</R01>
-					<R02>0.521360993</R02>
+					<X>358.095825</X>
+					<Y>39.5141144</Y>
+					<Z>-247.644257</Z>
+					<R00>-0.532592475</R00>
+					<R01>-0.190710053</R01>
+					<R02>0.824606001</R02>
 					<R10>-0</R10>
-					<R11>0.956701756</R11>
-					<R12>0.291070223</R12>
-					<R20>-0.544956684</R20>
-					<R21>0.244051963</R21>
-					<R22>-0.802160144</R22>
+					<R11>0.974283338</R11>
+					<R12>0.225326568</R12>
+					<R20>-0.84637177</R20>
+					<R21>0.120007232</R21>
+					<R22>-0.518895984</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -12059,6 +12059,10 @@ end
 function addRemoteObjects()
     configGame()
 
+    -- TODO: don't rerender the entire world when you click the page button.
+    -- TODO: don't rerender the entire world when you click the page button.
+    -- TODO: don't rerender the entire world when you click the page button.
+
     local questConfigs = SceneConfig.getScenesConfig()
     local myStuff = workspace:FindFirstChild("MyStuff")
 
@@ -14001,133 +14005,6 @@ module.questConfigs = {
             }
         },
         gridSize = {rows = 1, cols = 2}
-    }, {
-        questTitle = "015 - Kat and Liz Split Up.",
-        sceneConfigs = {
-            {
-                name = "home",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "liz2", text = "I see a bee..."},
-                            {
-                                char = "kat",
-                                text = "If we split up, we can find vulcan faster."
-                            },
-                            {char = "liz2", text = "I see a bee...in a tree!"},
-                            {char = "liz2", text = "Tee Hee Hee!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "bee"}}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "Liz, that's not a bee!!!"},
-                            {char = "liz2", text = "Come here little Bee! Bee!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "bee"}}
-                    }
-                },
-                coordinates = {col = 0, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                maxRow = 0,
-                maxCol = 0
-            }, {
-                name = "stump",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "I'll go investigate that smoke down by the river..."
-                            }, {
-                                char = "kat",
-                                text = "and you look in the village, by those burning stores..."
-                            }, {char = "liz2", text = "I see a pug..."},
-                            {
-                                char = "kat",
-                                text = "Then meet back at the log later."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Liz, have you heard anything I just said?"
-                            },
-                            {char = "liz2", text = "I see a pug...and a mug!"},
-                            {char = "kat", text = "Liiiiizzzzz!!!"},
-                            {char = "liz2", text = "Ugggh!, yes Kat!"},
-                            {
-                                char = "liz2",
-                                text = "Smoke, river, burning stores, yadda yadda... log."
-                            }, {char = "liz2", text = "I'm in the zone Kat"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }
-                },
-                coordinates = {row = 0, col = 1},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 1
-            }, {
-                name = "bog",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "Give a girl some space when she's in the zone!"
-                            }, {char = "kat", text = "What zone?"},
-                            {char = "liz2", text = "he ryhming zone."},
-                            {
-                                char = "liz2",
-                                text = "It's like everything is just clicking into place."
-                            },
-                            {char = "kat", text = "Oh yeah, bust some rhymes!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "Put A Cat A"},
-                            {char = "kat", text = "Put A Cat A"},
-                            {char = "liz2", text = "My name is Liz!"},
-                            {char = "liz2", text = "It starts with an L."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "liz2",
-                                text = "Let's go and play with goblin"
-                            }, {char = "liz2", text = "At the wishing well."},
-                            {char = "kat", text = "Fresh!!!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "empty"}}
-                    }
-                },
-                coordinates = {row = 0, col = 2},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 2
-            }
-        },
-        gridSize = {rows = 1, cols = 3}
     }, {
         questTitle = "200 - Dennis the Menace",
         sceneConfigs = {
@@ -16501,21 +16378,27 @@ renderCharacters = function(props)
 
     local xGap = 1
     for i, itemConfig in ipairs(itemConfigs) do
-        local newItem = characterTemplate:Clone()
-        local x = (i - 1) * -(characterTemplate.Size.X + xGap)
 
-        Utils.mergeTables(newItem, {
-            Transparency = 1,
-            CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
-            Parent = characterTemplate
-        })
+        local name = itemConfig.name
+        if (name ~= "blank" and name ~= "empty" and name ~= "") then
+            local newItem = characterTemplate:Clone()
+            local x = (i - 1) * -(characterTemplate.Size.X + xGap)
 
-        local decalFront = Utils.getFirstDescendantByName(newItem, "DecalFront")
-        local decalBack = Utils.getFirstDescendantByName(newItem, "DecalBack")
-        local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
+            Utils.mergeTables(newItem, {
+                Transparency = 1,
+                CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
+                Parent = characterTemplate
+            })
 
-        decalFront.Texture = 'rbxassetid://' .. decalId
-        decalBack.Texture = 'rbxassetid://' .. decalId
+            local decalFront = Utils.getFirstDescendantByName(newItem,
+                                                              "DecalFront")
+            local decalBack = Utils.getFirstDescendantByName(newItem,
+                                                             "DecalBack")
+            local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
+
+            decalFront.Texture = 'rbxassetid://' .. decalId
+            decalBack.Texture = 'rbxassetid://' .. decalId
+        end
     end
     characterTemplate.Transparency = 1
 

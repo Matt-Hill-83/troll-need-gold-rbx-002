@@ -10,21 +10,27 @@ renderCharacters = function(props)
 
     local xGap = 1
     for i, itemConfig in ipairs(itemConfigs) do
-        local newItem = characterTemplate:Clone()
-        local x = (i - 1) * -(characterTemplate.Size.X + xGap)
 
-        Utils.mergeTables(newItem, {
-            Transparency = 1,
-            CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
-            Parent = characterTemplate
-        })
+        local name = itemConfig.name
+        if (name ~= "blank" and name ~= "empty" and name ~= "") then
+            local newItem = characterTemplate:Clone()
+            local x = (i - 1) * -(characterTemplate.Size.X + xGap)
 
-        local decalFront = Utils.getFirstDescendantByName(newItem, "DecalFront")
-        local decalBack = Utils.getFirstDescendantByName(newItem, "DecalBack")
-        local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
+            Utils.mergeTables(newItem, {
+                Transparency = 1,
+                CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
+                Parent = characterTemplate
+            })
 
-        decalFront.Texture = 'rbxassetid://' .. decalId
-        decalBack.Texture = 'rbxassetid://' .. decalId
+            local decalFront = Utils.getFirstDescendantByName(newItem,
+                                                              "DecalFront")
+            local decalBack = Utils.getFirstDescendantByName(newItem,
+                                                             "DecalBack")
+            local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
+
+            decalFront.Texture = 'rbxassetid://' .. decalId
+            decalBack.Texture = 'rbxassetid://' .. decalId
+        end
     end
     characterTemplate.Transparency = 1
 
