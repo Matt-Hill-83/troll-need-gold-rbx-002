@@ -19,6 +19,10 @@ function setupUserDetectionRegions()
     local regionsSetup = DetectUser
     local function regionEnter(plr, region)
         print(plr.Name .. " entered " .. region.Name)
+
+        local dialog = Utils.getFirstDescendantByName(region, "WallTemplate")
+        dialog.Position = dialog.Position +
+                              Vector3.new(0, -(dialog.Size.Y + 1), 0)
     end
 
     local function regionExit(plr, region)
@@ -42,7 +46,6 @@ function setupUserDetectionRegions()
                                                    "UserDectionRegion")
 
     regionsSetup(places, regionEnter, regionExit)
-
 end
 
 function addRemoteObjects()
@@ -67,7 +70,7 @@ function addRemoteObjects()
 
     for i, questConfig in pairs(questConfigs) do
         local gridSize = questConfig.gridSize
-        local gridPadding = 0
+        local gridPadding = 12
 
         local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
                       Constants.bridgeLength
