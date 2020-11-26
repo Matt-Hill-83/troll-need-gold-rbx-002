@@ -12,20 +12,7 @@ local Constants = require(Sss.Source.Constants.Constants)
 function configGame()
     local Players = game:GetService("Players")
     Players.RespawnTime = 0
-    -- reportPlayerLocation()
-end
-
-function reportPlayerLocation()
-    local Players = game:GetService("Players")
-    Players.PlayerAdded:Connect(function(player)
-        player.CharacterAdded:Connect(function(character)
-            local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-            while humanoidRootPart do
-                print(player.Name, "is at", tostring(humanoidRootPart.Position))
-                wait(4)
-            end
-        end)
-    end)
+    -- Utils.reportPlayerLocation()
 end
 
 function setupUserDetectionRegions()
