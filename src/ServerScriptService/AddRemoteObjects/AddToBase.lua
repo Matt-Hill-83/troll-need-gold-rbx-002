@@ -28,35 +28,34 @@ function reportPlayerLocation()
     end)
 end
 
-function test()
+function setupUserDetectionRegions()
     local regionsSetup = DetectUser
-    -- local regionsSetup = require(script.MainModule)
-
     local function regionEnter(plr, region)
-        -- Player entered a region
         print(plr.Name .. " entered " .. region.Name)
     end
 
     local function regionExit(plr, region)
-        -- Player exited a region
         print(plr.Name .. " left " .. region.Name)
     end
 
     local myStuff = workspace:FindFirstChild("MyStuff")
     local myTemplates = myStuff:FindFirstChild("MyTemplates")
-    local places = Utils.getDescendantsByName(myTemplates, "UserDectionRegion")
-    local places2 = Utils.getDescendantsByNameMatch(myTemplates, "Zone")
 
-    print('places2' .. ' - start');
-    print(Utils.tableToString({places2}));
-    print('places2' .. ' - end');
-    print('places' .. ' - start');
-    print(Utils.tableToString({places}));
-    print('places' .. ' - end');
-    -- regionsSetup(places, regionEnter, regionExit)
-    regionsSetup(places2, regionEnter, regionExit)
+    local clones =
+        Utils.getDescendantsByNameMatch(myTemplates, "SceneTemplate-")
 
-    -- regionsSetup(game.Workspace.Zones:GetChildren(), regionEnter, regionExit)
+    for i = 1, #clones do
+        local scene = clones[i]
+        local region =
+            Utils.getFirstDescendantByName(scene, "UserDectionRegion")
+        region.Name = region.Name .. "-" .. i
+    end
+
+    local places = Utils.getDescendantsByNameMatch(myTemplates,
+                                                   "UserDectionRegion")
+
+    regionsSetup(places, regionEnter, regionExit)
+
 end
 
 function addRemoteObjects()
@@ -105,7 +104,7 @@ function addRemoteObjects()
         sibling = questBlock
 
     end
-    test()
+    setupUserDetectionRegions()
 end
 
 module.addRemoteObjects = addRemoteObjects

@@ -76,7 +76,9 @@ function module.getDescendantsByNameMatch(parent, name)
         local child = decendants[i]
         local match = string.match(child.Name, name)
         if match then
-            -- if decendants[i].Name == name then
+            print('child' .. ' - start');
+            print(tableToString({child}));
+            print('child' .. ' - end');
             table.insert(output, child)
             -- 
         end
