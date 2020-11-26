@@ -38,9 +38,43 @@ module.characters = {
     britta = britta,
     britta01 = britta,
     britta04 = britta,
-    -- 
-    -- 
 
+    waterfall = {
+        displayName = "Waterfall",
+        decalId = '5991339525',
+        backgroundColorIdx = 1
+    },
+    cave = {
+        displayName = "Cave",
+        decalId = '5991342911',
+        backgroundColorIdx = 1
+    },
+    hill = {
+        displayName = "Hill",
+        decalId = '5991342052',
+        backgroundColorIdx = 1
+    },
+    lake = {
+        displayName = "Lake",
+        decalId = '5991341377',
+        backgroundColorIdx = 1
+    },
+    log = {displayName = "Log", decalId = '5991341326', backgroundColorIdx = 1},
+    pond = {
+        displayName = "Pond",
+        decalId = '5991340703',
+        backgroundColorIdx = 1
+    },
+    pool = {
+        displayName = "Pool",
+        decalId = '5991340615',
+        backgroundColorIdx = 1
+    },
+    swamp = {
+        displayName = "Swamp",
+        decalId = '5991343667',
+        backgroundColorIdx = 1
+    },
     bees = {
         displayName = "Bees",
         decalId = '5991343806',

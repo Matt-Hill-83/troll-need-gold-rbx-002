@@ -20,13 +20,12 @@ function setupUserDetectionRegions()
     local function regionEnter(plr, region)
         print(plr.Name .. " entered " .. region.Name)
 
-        local dialog = Utils.getFirstDescendantByName(region, "WallTemplate")
-        dialog.Position = dialog.Position +
-                              Vector3.new(0, -(dialog.Size.Y + 1), 0)
     end
 
     local function regionExit(plr, region)
         print(plr.Name .. " left " .. region.Name)
+        local dialog = Utils.getFirstDescendantByName(region, "WallTemplate")
+        dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
     end
 
     local myStuff = workspace:FindFirstChild("MyStuff")
@@ -39,7 +38,9 @@ function setupUserDetectionRegions()
         local scene = clones[i]
         local region =
             Utils.getFirstDescendantByName(scene, "UserDectionRegion")
+        -- local part = Utils.getFirstDescendantByName(region, "UserDectionRegion")
         region.Name = region.Name .. "-" .. i
+        -- part.Name = part.Name .. "-" .. i
     end
 
     local places = Utils.getDescendantsByNameMatch(myTemplates,
@@ -55,14 +56,12 @@ function addRemoteObjects()
     local myStuff = workspace:FindFirstChild("MyStuff")
 
     local questsOrigin = Utils.getFirstDescendantByName(myStuff, "QuestsOrigin")
-
-    local gameOrigin = questsOrigin
-    -- local gameOrigin = sceneOrigins[1]
-    local sibling = gameOrigin
+    local sibling = questsOrigin
 
     for i, questConfig in pairs(questConfigs) do
         local gridSize = questConfig.gridSize
-        local gridPadding = 12
+        local gridPadding = 0
+        -- local gridPadding = 12
 
         local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
                       Constants.bridgeLength
@@ -70,7 +69,7 @@ function addRemoteObjects()
                       Constants.bridgeLength
 
         local questBlockProps = {
-            parent = gameOrigin,
+            parent = questsOrigin,
             size = Vector3.new(x, 2, z),
             sibling = sibling,
             isFirst = i == 1
@@ -86,7 +85,7 @@ function addRemoteObjects()
         sibling = questBlock
 
     end
-    setupUserDetectionRegions()
+    -- setupUserDetectionRegions()
 end
 
 module.addRemoteObjects = addRemoteObjects
