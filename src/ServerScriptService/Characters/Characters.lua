@@ -19,8 +19,8 @@ renderCharacters = function(props)
             Parent = characterTemplate
         })
 
-        local decalFront = Utils.getDescendantByName(newItem, "DecalFront")
-        local decalBack = Utils.getDescendantByName(newItem, "DecalBack")
+        local decalFront = Utils.getFirstDescendantByName(newItem, "DecalFront")
+        local decalBack = Utils.getFirstDescendantByName(newItem, "DecalBack")
         local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
 
         decalFront.Texture = 'rbxassetid://' .. decalId
@@ -40,16 +40,18 @@ function module.addCharactersToScene(props)
     local characterConfigs02 = frameConfig.characters02
 
     renderCharacters({
-        template = Utils.getDescendantByName(clonedScene, "CharacterTemplate01"),
+        template = Utils.getFirstDescendantByName(clonedScene,
+                                                  "CharacterTemplate01"),
         itemConfigs = characterConfigs01
     })
     renderCharacters({
-        template = Utils.getDescendantByName(clonedScene, "CharacterTemplate02"),
+        template = Utils.getFirstDescendantByName(clonedScene,
+                                                  "CharacterTemplate02"),
         itemConfigs = characterConfigs02
     })
 
-    local dialogTemplate = Utils.getDescendantByName(clonedScene,
-                                                     "DialogTemplate")
+    local dialogTemplate = Utils.getFirstDescendantByName(clonedScene,
+                                                          "DialogTemplate")
     Dialog.renderDialog({
         dialogConfigs = frameConfig.dialogs,
         dialogTemplate = dialogTemplate

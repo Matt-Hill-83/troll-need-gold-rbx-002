@@ -38,16 +38,16 @@ end
 
 function getFromMyStuff(name)
     local myStuff = workspace:FindFirstChild("MyStuff")
-    return getDescendantByName(myStuff, name)
+    return getFirstDescendantByName(myStuff, name)
 end
 
 function module.getFromTemplates(name)
     local myStuff = workspace:FindFirstChild("MyStuff")
     local myTemplates = myStuff:FindFirstChild("MyTemplates")
-    return getDescendantByName(myTemplates, name)
+    return getFirstDescendantByName(myTemplates, name)
 end
 
-function getDescendantByName(parent, name)
+function getFirstDescendantByName(parent, name)
     local model = parent:GetDescendants()
     for i = 1, #model do
         if model[i].Name == name then
@@ -55,6 +55,33 @@ function getDescendantByName(parent, name)
             -- 
         end
     end
+end
+
+function module.getDescendantsByName(parent, name)
+    local decendants = parent:GetDescendants()
+    local output = {}
+    for i = 1, #decendants do
+        if decendants[i].Name == name then
+            table.insert(output, decendants[i])
+            -- 
+        end
+    end
+    return output
+end
+
+function module.getDescendantsByNameMatch(parent, name)
+    local decendants = parent:GetDescendants()
+    local output = {}
+    for i = 1, #decendants do
+        local child = decendants[i]
+        local match = string.match(child.Name, name)
+        if match then
+            -- if decendants[i].Name == name then
+            table.insert(output, child)
+            -- 
+        end
+    end
+    return output
 end
 
 function addcfv3(a, b)
@@ -157,7 +184,7 @@ end
 module.addcfv3 = addcfv3
 module.addPadding = addPadding
 module.cloneModel = cloneModel
-module.getDescendantByName = getDescendantByName
+module.getFirstDescendantByName = getFirstDescendantByName
 module.getFromMyStuff = getFromMyStuff
 module.setMaterialPebble = setMaterialPebble
 module.tableToString = tableToString

@@ -13,11 +13,11 @@ function module.destroyBridges(props)
     local showTopPath = sceneConfig.showTopPath
     local showLeftPath = sceneConfig.showLeftPath
 
-    local bridgeRightModel = Utils.getDescendantByName(clonedScene,
-                                                       "BridgeRightModel")
+    local bridgeRightModel = Utils.getFirstDescendantByName(clonedScene,
+                                                            "BridgeRightModel")
     if (showRightPath) then
-        local bridgeWallRight = Utils.getDescendantByName(clonedScene,
-                                                          "BridgeWallRight")
+        local bridgeWallRight = Utils.getFirstDescendantByName(clonedScene,
+                                                               "BridgeWallRight")
         bridgeWallRight.Parent = nil
         bridgeWallRight:Destroy()
     else
@@ -26,8 +26,8 @@ function module.destroyBridges(props)
     end
 
     if (showLeftPath) then
-        local bridgeWallLeft = Utils.getDescendantByName(clonedScene,
-                                                         "BridgeWallLeft")
+        local bridgeWallLeft = Utils.getFirstDescendantByName(clonedScene,
+                                                              "BridgeWallLeft")
 
         bridgeWallLeft.Parent = nil
         bridgeWallLeft:Destroy()
@@ -38,11 +38,11 @@ function module.destroyBridges(props)
         })
     end
 
-    local bridgeBottomModel = Utils.getDescendantByName(clonedScene,
-                                                        "BridgeBottomModel")
+    local bridgeBottomModel = Utils.getFirstDescendantByName(clonedScene,
+                                                             "BridgeBottomModel")
     if (showBottomPath) then
-        local bridgeWallFront = Utils.getDescendantByName(clonedScene,
-                                                          "BridgeWallFront")
+        local bridgeWallFront = Utils.getFirstDescendantByName(clonedScene,
+                                                               "BridgeWallFront")
         bridgeWallFront.Parent = nil
         bridgeWallFront:Destroy()
     else
@@ -51,8 +51,8 @@ function module.destroyBridges(props)
     end
 
     if (showTopPath) then
-        local bridgeWallBack = Utils.getDescendantByName(clonedScene,
-                                                         "BridgeWallBack")
+        local bridgeWallBack = Utils.getFirstDescendantByName(clonedScene,
+                                                              "BridgeWallBack")
         bridgeWallBack.Parent = nil
         bridgeWallBack:Destroy()
     else

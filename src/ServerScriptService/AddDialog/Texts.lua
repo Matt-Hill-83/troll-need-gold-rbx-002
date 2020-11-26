@@ -19,11 +19,12 @@ renderTexts = function(props)
     local paddingInPx = pixelsPerStud / 8
     local fontHeight = pixelsPerStud * 41 / 45
 
-    local sgui = Utils.getDescendantByName(parent, "SurfaceGuiTemplate")
+    local sgui = Utils.getFirstDescendantByName(parent, "SurfaceGuiTemplate")
 
     sgui.SizingMode = "PixelsPerStud"
 
-    local scrollingFrame = Utils.getDescendantByName(sgui, "ScrollingFrame")
+    local scrollingFrame =
+        Utils.getFirstDescendantByName(sgui, "ScrollingFrame")
     local children = scrollingFrame:GetChildren()
     for i, item in pairs(children) do
         if item:IsA('TextLabel') then

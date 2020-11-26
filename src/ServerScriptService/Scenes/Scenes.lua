@@ -78,16 +78,16 @@ function module.addScenes(props)
         -- Image
         -- Image
         local locationModelImage = Utils.getFromTemplates("LocationModelImage")
-        local imageLabelFront = Utils.getDescendantByName(locationModelImage,
-                                                          'ImageLabel')
+        local imageLabelFront = Utils.getFirstDescendantByName(
+                                    locationModelImage, 'ImageLabel')
         local imageId = Utils.getDecalIdFromName({name = sceneConfig.name})
         imageLabelFront.Image = 'rbxassetid://' .. imageId
 
         -- Label
         -- Label
         local locationModelLabel = Utils.getFromTemplates("LocationModelLabel")
-        local textLabel = Utils.getDescendantByName(locationModelLabel,
-                                                    'TextLabel')
+        local textLabel = Utils.getFirstDescendantByName(locationModelLabel,
+                                                         'TextLabel')
         textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
 
         Characters.addCharactersToScene(sceneProps)
@@ -120,11 +120,11 @@ function module.addScenes(props)
             end
         end
 
-        local nextPageButtonTemplate = Utils.getDescendantByName(clonedScene,
-                                                                 "NextPageButton")
+        local nextPageButtonTemplate = Utils.getFirstDescendantByName(
+                                           clonedScene, "NextPageButton")
 
-        local nextButton = Utils.getDescendantByName(nextPageButtonTemplate,
-                                                     "TextButton")
+        local nextButton = Utils.getFirstDescendantByName(
+                               nextPageButtonTemplate, "TextButton")
 
         nextButton.MouseButton1Click:Connect(incrementPage)
     end

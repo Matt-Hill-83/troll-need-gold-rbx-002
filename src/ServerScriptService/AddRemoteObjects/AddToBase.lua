@@ -1,6 +1,5 @@
 local module = {}
 local Sss = game:GetService("ServerScriptService")
-
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
 
 local Utils = require(Sss.Source.Utils.Utils)
@@ -13,7 +12,20 @@ local Constants = require(Sss.Source.Constants.Constants)
 function configGame()
     local Players = game:GetService("Players")
     Players.RespawnTime = 0
-    test()
+    -- reportPlayerLocation()
+end
+
+function reportPlayerLocation()
+    local Players = game:GetService("Players")
+    Players.PlayerAdded:Connect(function(player)
+        player.CharacterAdded:Connect(function(character)
+            local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+            while humanoidRootPart do
+                print(player.Name, "is at", tostring(humanoidRootPart.Position))
+                wait(4)
+            end
+        end)
+    end)
 end
 
 function test()
@@ -30,7 +42,21 @@ function test()
         print(plr.Name .. " left " .. region.Name)
     end
 
-    regionsSetup(game.Workspace.Zones:GetChildren(), regionEnter, regionExit)
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local myTemplates = myStuff:FindFirstChild("MyTemplates")
+    local places = Utils.getDescendantsByName(myTemplates, "UserDectionRegion")
+    local places2 = Utils.getDescendantsByNameMatch(myTemplates, "Zone")
+
+    print('places2' .. ' - start');
+    print(Utils.tableToString({places2}));
+    print('places2' .. ' - end');
+    print('places' .. ' - start');
+    print(Utils.tableToString({places}));
+    print('places' .. ' - end');
+    -- regionsSetup(places, regionEnter, regionExit)
+    regionsSetup(places2, regionEnter, regionExit)
+
+    -- regionsSetup(game.Workspace.Zones:GetChildren(), regionEnter, regionExit)
 end
 
 function addRemoteObjects()
@@ -79,7 +105,7 @@ function addRemoteObjects()
         sibling = questBlock
 
     end
-
+    test()
 end
 
 module.addRemoteObjects = addRemoteObjects
