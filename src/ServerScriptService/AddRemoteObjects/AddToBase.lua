@@ -53,19 +53,11 @@ function addRemoteObjects()
 
     local questConfigs = SceneConfig.getScenesConfig()
     local myStuff = workspace:FindFirstChild("MyStuff")
-    local sceneLocations = myStuff:FindFirstChild("SceneLocations")
 
-    local sceneOrigins = {}
+    local questsOrigin = Utils.getFirstDescendantByName(myStuff, "QuestsOrigin")
 
-    local children = sceneLocations:GetChildren()
-    for i, item in pairs(children) do
-        if item:IsA('Part') then
-            sceneOrigins[i] = item
-            --
-        end
-    end
-
-    local gameOrigin = sceneOrigins[1]
+    local gameOrigin = questsOrigin
+    -- local gameOrigin = sceneOrigins[1]
     local sibling = gameOrigin
 
     for i, questConfig in pairs(questConfigs) do
