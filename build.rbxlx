@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>349.917023</X>
-					<Y>83.5925903</Y>
-					<Z>-266.263306</Z>
-					<R00>-0.911808848</R00>
-					<R01>-0.17486842</R01>
-					<R02>0.371518105</R02>
-					<R10>-1.49011612e-08</R10>
-					<R11>0.90478456</R11>
-					<R12>0.425869495</R12>
-					<R20>-0.410614997</R20>
-					<R21>0.388311565</R21>
-					<R22>-0.824990571</R22>
+					<X>250.161469</X>
+					<Y>83.7681274</Y>
+					<Z>-263.980316</Z>
+					<R00>-0.999718606</R00>
+					<R01>0.0121857896</R01>
+					<R02>-0.0203552879</R02>
+					<R10>-0</R10>
+					<R11>0.858001828</R11>
+					<R12>0.513646781</R12>
+					<R20>0.0237240642</R20>
+					<R21>0.51350224</R21>
+					<R22>-0.857760251</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>349.173981</X>
-					<Y>82.7408447</Y>
-					<Z>-264.613312</Z>
+					<X>250.202179</X>
+					<Y>82.7408371</Y>
+					<Z>-262.264801</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -5626,7 +5626,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>243</X>
+							<X>236</X>
 							<Y>7</Y>
 							<Z>-211</Z>
 							<R00>1</R00>
@@ -5724,7 +5724,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Weld" referent="RBX1937a63655f84cdeac61352418f4282e">
+					<Item class="Weld" referent="RBX7ae449060bab4e42b20964601cc1606f">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -5742,7 +5742,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 								<R22>0</R22>
 							</CoordinateFrame>
 							<CoordinateFrame name="C1">
-								<X>243</X>
+								<X>236</X>
 								<Y>27</Y>
 								<Z>-211</Z>
 								<R00>1</R00>
@@ -5759,45 +5759,6 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<string name="Name">Weld</string>
 							<Ref name="Part0">RBXd207cf71550a40cdbaca9bdad35d44a2</Ref>
 							<Ref name="Part1">RBXf70eef44c6474e63b75672292a29dcc7</Ref>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-					<Item class="Weld" referent="RBX8e314b8ec951433baf218717d58dbd56">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<CoordinateFrame name="C0">
-								<X>0</X>
-								<Y>6</Y>
-								<Z>0</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>1</R12>
-								<R20>0</R20>
-								<R21>-1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>-1.5</X>
-								<Y>-1.5</Y>
-								<Z>-211</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>1</R12>
-								<R20>0</R20>
-								<R21>-1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Weld</string>
-							<Ref name="Part0">RBXd207cf71550a40cdbaca9bdad35d44a2</Ref>
-							<Ref name="Part1">RBX3ba7fda0c0994a218b48d1cf703265f3</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
@@ -11178,20 +11139,7 @@ local Constants = require(Sss.Source.Constants.Constants)
 function configGame()
     local Players = game:GetService("Players")
     Players.RespawnTime = 0
-    -- reportPlayerLocation()
-end
-
-function reportPlayerLocation()
-    local Players = game:GetService("Players")
-    Players.PlayerAdded:Connect(function(player)
-        player.CharacterAdded:Connect(function(character)
-            local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-            while humanoidRootPart do
-                print(player.Name, "is at", tostring(humanoidRootPart.Position))
-                wait(4)
-            end
-        end)
-    end)
+    -- Utils.reportPlayerLocation()
 end
 
 function setupUserDetectionRegions()
@@ -11530,6 +11478,19 @@ return module
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 
+function module.reportPlayerLocation()
+    local Players = game:GetService("Players")
+    Players.PlayerAdded:Connect(function(player)
+        player.CharacterAdded:Connect(function(character)
+            local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+            while humanoidRootPart do
+                print(player.Name, "is at", tostring(humanoidRootPart.Position))
+                wait(4)
+            end
+        end)
+    end)
+end
+
 function module.getDecalIdFromName(props)
     local name = props.name
     if (Constants.characters[name] and Constants.characters[name]["decalId"]) then
@@ -11604,9 +11565,6 @@ function module.getDescendantsByNameMatch(parent, name)
         local child = decendants[i]
         local match = string.match(child.Name, name)
         if match then
-            print('child' .. ' - start');
-            print(tableToString({child}));
-            print('child' .. ' - end');
             table.insert(output, child)
             -- 
         end

@@ -89,9 +89,6 @@ function module.getDescendantsByNameMatch(parent, name)
         local child = decendants[i]
         local match = string.match(child.Name, name)
         if match then
-            print('child' .. ' - start');
-            print(tableToString({child}));
-            print('child' .. ' - end');
             table.insert(output, child)
             -- 
         end
