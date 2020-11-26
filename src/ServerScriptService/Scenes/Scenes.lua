@@ -96,6 +96,9 @@ function module.addScenes(props)
 
         function incrementPage()
             local newPageNum = pageNum + 1
+            print('newPageNum' .. ' - start');
+            print(newPageNum);
+            print('newPageNum' .. ' - end');
             if newPageNum <= numPages then
                 pageNum = newPageNum
 
@@ -122,13 +125,52 @@ function module.addScenes(props)
             end
         end
 
+        function decrementPage()
+            local newPageNum = pageNum - 1
+            print('newPageNum' .. ' - start');
+            print(newPageNum);
+            print('newPageNum' .. ' - end');
+            if newPageNum > 0 then
+                pageNum = newPageNum
+
+                local children = newWall:GetChildren()
+
+                for _, item in pairs(children) do
+                    local match1 = string.match(item.Name, "Items-")
+                    local match2 = string.match(item.Name, "Characters-")
+                    local match3 = string.match(item.Name, "Dialog-")
+                    if item:IsA('Part') and (match1 or match2 or match3) then
+                        item:Destroy()
+                    end
+                end
+
+                local newFrameConfig = sceneConfig.frames[pageNum]
+                local newSceneProps = {
+                    frameConfig = newFrameConfig,
+                    clonedScene = clonedScene
+                }
+                Characters.addCharactersToScene(newSceneProps)
+            end
+        end
+
+        -- 
+        -- 
         local nextPageButtonTemplate = Utils.getFirstDescendantByName(
                                            clonedScene, "NextPageButton")
-
         local nextButton = Utils.getFirstDescendantByName(
                                nextPageButtonTemplate, "TextButton")
-
         nextButton.MouseButton1Click:Connect(incrementPage)
+        -- 
+        -- 
+        -- 
+        -- 
+        local prevPageButtonTemplate = Utils.getFirstDescendantByName(
+                                           clonedScene, "PrevPageButton")
+        local prevButton = Utils.getFirstDescendantByName(
+                               prevPageButtonTemplate, "TextButton")
+        prevButton.MouseButton1Click:Connect(decrementPage)
+        -- 
+        -- 
     end
 end
 
