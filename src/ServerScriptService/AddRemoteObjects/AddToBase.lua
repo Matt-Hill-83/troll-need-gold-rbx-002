@@ -3,6 +3,7 @@ local Sss = game:GetService("ServerScriptService")
 
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
 local Dialog = require(Sss.Source.AddDialog.Dialog)
+local Bridges = require(Sss.Source.Bridges.Bridges)
 local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Utils = require(Sss.Source.Utils.Utils)
@@ -89,67 +90,6 @@ function addItemsToScene(props)
     })
 end
 
-function destroyBridges(props)
-    -- all bridges are created in clone.
-    -- remove bridges that do not go anywhere
-    local sceneConfig = props.sceneConfig
-    local clonedScene = props.clonedScene
-
-    local showBottomPath = sceneConfig.showBottomPath
-    local showRightPath = sceneConfig.showRightPath
-    local showTopPath = sceneConfig.showTopPath
-    local showLeftPath = sceneConfig.showLeftPath
-
-    local bridgeRightModel = Utils.getDescendantByName(clonedScene,
-                                                       "BridgeRightModel")
-    if (showRightPath) then
-        local bridgeWallRight = Utils.getDescendantByName(clonedScene,
-                                                          "BridgeWallRight")
-        bridgeWallRight.Parent = nil
-        bridgeWallRight:Destroy()
-    else
-        bridgeRightModel.Parent = nil
-        bridgeRightModel:Destroy()
-    end
-
-    if (showLeftPath) then
-        local bridgeWallLeft = Utils.getDescendantByName(clonedScene,
-                                                         "BridgeWallLeft")
-
-        bridgeWallLeft.Parent = nil
-        bridgeWallLeft:Destroy()
-    else
-        Utils.deleteChildrenByName({
-            parent = clonedScene,
-            childName = "WallLeftOld"
-        })
-    end
-
-    local bridgeBottomModel = Utils.getDescendantByName(clonedScene,
-                                                        "BridgeBottomModel")
-    if (showBottomPath) then
-        local bridgeWallFront = Utils.getDescendantByName(clonedScene,
-                                                          "BridgeWallFront")
-        bridgeWallFront.Parent = nil
-        bridgeWallFront:Destroy()
-    else
-        bridgeBottomModel.Parent = nil
-        bridgeBottomModel:Destroy()
-    end
-
-    if (showTopPath) then
-        local bridgeWallBack = Utils.getDescendantByName(clonedScene,
-                                                         "BridgeWallBack")
-        bridgeWallBack.Parent = nil
-        bridgeWallBack:Destroy()
-    else
-        Utils.deleteChildrenByName({
-            parent = clonedScene,
-            childName = "WallBackOld"
-        })
-    end
-end
-
 function addScenes(props)
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
@@ -176,7 +116,10 @@ function addScenes(props)
                 suffix = "-clone--" .. i
             })
 
-        destroyBridges({sceneConfig = sceneConfig, clonedScene = clonedScene})
+        Bridges.destroyBridges({
+            sceneConfig = sceneConfig,
+            clonedScene = clonedScene
+        })
 
         local newWall = clonedScene.PrimaryPart
 
