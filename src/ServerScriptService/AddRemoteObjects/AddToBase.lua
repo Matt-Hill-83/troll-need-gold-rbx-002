@@ -60,8 +60,8 @@ function addRemoteObjects()
 
     for i, questConfig in pairs(questConfigs) do
         local gridSize = questConfig.gridSize
-        local gridPadding = 0
-        -- local gridPadding = 12
+        -- local gridPadding = 0
+        local gridPadding = 12
 
         local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
                       Constants.bridgeLength

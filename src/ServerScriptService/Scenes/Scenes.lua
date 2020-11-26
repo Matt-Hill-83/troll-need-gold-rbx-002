@@ -8,9 +8,9 @@ local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 getStartPosition = function(parent, child)
     local childSize = child.Size
-    local desiredOffsetFromParentEdge = -childSize / 2
+    -- local desiredOffsetFromParentEdge = -childSize / 2
     -- local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
-    -- local desiredOffsetFromParentEdge = Vector3.new(-4, 0, -4)
+    local desiredOffsetFromParentEdge = Vector3.new(-4, 0, -4)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),

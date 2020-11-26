@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>221.650574</X>
-					<Y>45.3519135</Y>
-					<Z>-226.171982</Z>
-					<R00>0.595558643</R00>
-					<R01>0.680434763</R01>
-					<R02>-0.426987767</R02>
+					<X>241.178009</X>
+					<Y>23.0011368</Y>
+					<Z>-253.858215</Z>
+					<R00>-0.988619328</R00>
+					<R01>-0.0940492973</R01>
+					<R02>0.117416963</R02>
 					<R10>-0</R10>
-					<R11>0.531534314</R11>
-					<R12>0.847036779</R12>
-					<R20>0.803311944</R20>
-					<R21>-0.504460096</R21>
-					<R22>0.316559792</R22>
+					<R11>0.780493498</R11>
+					<R12>0.625163972</R12>
+					<R20>-0.150439411</R20>
+					<R21>0.618049204</R21>
+					<R22>-0.771610796</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>243</X>
-					<Y>3</Y>
-					<Z>-242</Z>
+					<X>235.307129</X>
+					<Y>-8.25723171</Y>
+					<Z>-215.277466</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -10596,9 +10596,9 @@ remoteCode.addRemoteObjects(base)
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>242</X>
+						<X>239</X>
 						<Y>3</Y>
-						<Z>-219</Z>
+						<Z>-218</Z>
 						<R00>1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
@@ -10607,7 +10607,7 @@ remoteCode.addRemoteObjects(base)
 						<R12>0</R12>
 						<R20>0</R20>
 						<R21>0</R21>
-						<R22>0.999999762</R22>
+						<R22>0.999999523</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
 					<bool name="CastShadow">true</bool>
@@ -10694,7 +10694,7 @@ remoteCode.addRemoteObjects(base)
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBXb17937266b2046eda97cb8f56abff74b">
+				<Item class="Weld" referent="RBXf3880c3afd834c999159076211a84e26">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -10708,13 +10708,13 @@ remoteCode.addRemoteObjects(base)
 							<R11>0</R11>
 							<R12>-1</R12>
 							<R20>0</R20>
-							<R21>0.999999762</R21>
+							<R21>0.999999523</R21>
 							<R22>0</R22>
 						</CoordinateFrame>
 						<CoordinateFrame name="C1">
-							<X>242</X>
+							<X>239</X>
 							<Y>27</Y>
-							<Z>-219</Z>
+							<Z>-218</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -10729,45 +10729,6 @@ remoteCode.addRemoteObjects(base)
 						<string name="Name">Weld</string>
 						<Ref name="Part0">RBXd207cf71550a40cdbaca9bdad35d44a2</Ref>
 						<Ref name="Part1">RBXf70eef44c6474e63b75672292a29dcc7</Ref>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="Weld" referent="RBX2bb9126fd86f42549782fab1838de337">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<CoordinateFrame name="C0">
-							<X>2</X>
-							<Y>0</Y>
-							<Z>0</Z>
-							<R00>0</R00>
-							<R01>0</R01>
-							<R02>1</R02>
-							<R10>0</R10>
-							<R11>-0.999999762</R11>
-							<R12>0</R12>
-							<R20>0.999999523</R20>
-							<R21>0</R21>
-							<R22>0</R22>
-						</CoordinateFrame>
-						<CoordinateFrame name="C1">
-							<X>219</X>
-							<Y>-4.0000267</Y>
-							<Z>-6</Z>
-							<R00>-0.999999762</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>-0.999999762</R11>
-							<R12>0</R12>
-							<R20>0</R20>
-							<R21>0</R21>
-							<R22>1</R22>
-						</CoordinateFrame>
-						<bool name="Enabled">true</bool>
-						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXd207cf71550a40cdbaca9bdad35d44a2</Ref>
-						<Ref name="Part1">RBX2dfd484a3008492d82388863313b746f</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -11712,8 +11673,8 @@ function addRemoteObjects()
 
     for i, questConfig in pairs(questConfigs) do
         local gridSize = questConfig.gridSize
-        local gridPadding = 0
-        -- local gridPadding = 12
+        -- local gridPadding = 0
+        local gridPadding = 12
 
         local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
                       Constants.bridgeLength
@@ -16229,9 +16190,9 @@ local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 getStartPosition = function(parent, child)
     local childSize = child.Size
-    local desiredOffsetFromParentEdge = -childSize / 2
+    -- local desiredOffsetFromParentEdge = -childSize / 2
     -- local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
-    -- local desiredOffsetFromParentEdge = Vector3.new(-4, 0, -4)
+    local desiredOffsetFromParentEdge = Vector3.new(-4, 0, -4)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
