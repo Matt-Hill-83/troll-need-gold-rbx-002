@@ -32,8 +32,6 @@ local vulcan = {
 
 module.characters = {
 
-    -- home
-
     raven05 = raven,
     raven04 = raven,
     raven = raven,

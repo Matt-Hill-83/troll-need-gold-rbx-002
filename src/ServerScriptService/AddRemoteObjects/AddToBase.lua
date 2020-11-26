@@ -209,6 +209,10 @@ function addScenes(props)
                 pageNum = newPageNum
 
                 local children = newWall:GetChildren()
+                -- TODO - fix this
+                -- TODO - fix this
+                -- TODO - fix this
+
                 for _, item in pairs(children) do
                     local match1 = string.match(item.Name, "Items-")
                     local match2 = string.match(item.Name, "Characters-")
