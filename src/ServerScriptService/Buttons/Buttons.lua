@@ -1,5 +1,7 @@
 local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local InstanceUtils = require(Sss.Source.Utils.U002InstanceUtils)
+local Dialog = require(Sss.Source.AddDialog.Dialog)
 local Characters = require(Sss.Source.Characters.Characters)
 
 local module = {}
@@ -11,12 +13,14 @@ function module.doFrameStuff(props)
     local numPages = props.numPages
     local sceneConfig = props.sceneConfig
 
-    local pn = {value = 1}
+    -- local pageNum = 1
 
     function updateFrameItems(props)
+
         local clonedScene2 = props.clonedScene
         local numPages2 = props.numPages
         local sceneConfig2 = props.sceneConfig
+        local pn = props.pn
         local buttonPressed = false
         if not buttonPressed then
             buttonPressed = true
@@ -41,10 +45,12 @@ function module.doFrameStuff(props)
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
 
+        local pn = props.pn
         if pn.value < numPages1 then
             pn.value = pn.value + 1
             updateFrameItems({
                 clonedScene = clonedScene1,
+                pn = pn,
                 numPages = numPages1,
                 sceneConfig = sceneConfig1
             })
@@ -57,18 +63,23 @@ function module.doFrameStuff(props)
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
 
+        local pn = props.pn
         if pn.value > 1 then
             pn.value = pn.value - 1
             updateFrameItems({
                 clonedScene = clonedScene1,
+                pn = pn,
                 numPages = numPages1,
                 sceneConfig = sceneConfig1
             })
         end
     end
 
+    local pn = {value = 1}
+
     local function onIncrementPage()
         incrementPage({
+            pn = pn,
             clonedScene = clonedScene,
             numPages = numPages,
             sceneConfig = sceneConfig
@@ -77,6 +88,7 @@ function module.doFrameStuff(props)
 
     local function onDecrementPage()
         decrementPage({
+            pn = pn,
             clonedScene = clonedScene,
             numPages = numPages,
             sceneConfig = sceneConfig

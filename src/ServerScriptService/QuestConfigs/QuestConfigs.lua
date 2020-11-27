@@ -2,68 +2,163 @@ local module = {}
 
 module.questConfigs = {
     {
-        questTitle = "200 - Dennis the Menace",
+        questTitle = "020 - Rap Battle at Troll Cave",
         sceneConfigs = {
             {
-                name = "home",
+                name = "cave",
                 frames = {
                     {
                         dialogs = {
-                            {char = "dog01", text = "Yo, what’s up Kat?"},
                             {
-                                char = "kat",
-                                text = "Nothin’ dog. Just chillin with my girl Liz."
-                            }, {
-                                char = "dog01",
-                                text = "Sweet! Keep it Fresh Kat! I gotta bounce. I’ll catch you on the flip!"
-                            }
+                                char = "katieKooper01",
+                                text = "Yay, we are just in time for the rap battle"
+                            },
+                            {char = "kat", text = "Cool! What's a rap battle?"},
+                            {char = "katieKooper01", text = "I don't know."},
+                            {char = "katieKooper01", text = "Let's find out!."}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "dog01"}}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "Laters!"},
-                            {char = "liz2", text = "Bye Bye Pete! Hee Hee!"}, {
-                                char = "liz2",
-                                text = "Wow Kat, where did you learn all those cool things to say?"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
+                        characters01 = {{name = "kat"}},
+                        characters02 = {{name = "katieKooper01"}}
                     }, {
                         dialogs = {
                             {
                                 char = "kat",
-                                text = "Cool right? It’s called slang."
-                            }, {char = "liz2", text = "Wow! I want to learn!"},
+                                text = "The trolls don't know we stole the diamond. So just act cool."
+                            },
                             {
-                                char = "kat",
-                                text = "I used to ride the bus with this second grader who knew like a million slangs. Like literally."
-                            }, {char = "liz2", text = "Cooooool!!!!"}
+                                char = "katieKooper01",
+                                text = "What! We STOLE the DIAMOND?"
+                            }, {char = "kat", text = "Shhhhhhhhhhh!"},
+                            {char = "troll01", text = "LOOK GIRLS!"},
+                            {char = "troll02", text = "GIRLS TAKE DIAMOND?"},
+                            {char = "troll01", text = "TROLLS EAT GIRLS!"}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
                     }, {
                         dialogs = {
                             {
                                 char = "kat",
-                                text = "He’d say Kat, I like you, but sometimes, think you are a couple sandwiches short of a picnic."
+                                text = "What? Who? Me? Don't be silly. We hate diamonds!"
                             },
                             {
-                                char = "liz2",
-                                text = "Cooooool! What does that mean?"
+                                char = "katieKooper01",
+                                text = "What? Kat, we love diamonds!!!"
+                            }, {char = "kat", text = "Katie!!!!"}
+                        },
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
+                    }, {
+                        dialogs = {
+                            {
+                                char = "kat",
+                                text = "Oh hello trolls. We are not here to take your diamond."
                             },
                             {
                                 char = "kat",
-                                text = "I dunno, but I say it all the time now."
+                                text = "We are here for....ummmm.... uuuuuhhhh..."
                             },
                             {
-                                char = "liz2",
-                                text = "Wait, you know a second grader?"
+                                char = "kat",
+                                text = "Katie! Think of something quick!"
+                            },
+                            {
+                                char = "katieKooper01",
+                                text = "We're here for the rap battle!"
+                            }, {char = "kat", text = "Good save Katie Kooper!"}
+                        },
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
+                    }, {
+                        dialogs = {
+                            {
+                                char = "kat",
+                                text = "My friend Kat here is going to show you trolls how to rap!"
+                            }, {char = "kat", text = "Katie!!!!"}
+                        },
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
+                    }, {
+                        dialogs = {
+                            {char = "troll01", text = "RAP BATTLE!"},
+                            {char = "troll02", text = "RAP BATTLE!"},
+                            {
+                                char = "kat",
+                                text = "Katie? What in the world are you getting us into."
+                            },
+                            {
+                                char = "katieKooper01",
+                                text = "Chill out Kat, it's fine."
+                            },
+                            {
+                                char = "katieKooper01",
+                                text = "Just do the rap about the frog on the log."
+                            }, {char = "kat", text = "The frog on the log?!?"},
+                            {
+                                char = "kat",
+                                text = "Yeah. The one you did this morning! That was hilarious!"
                             }
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
+                    }, {
+                        dialogs = {
+                            {
+                                char = "kat",
+                                text = "Ugggghhh! Katie! That was not a rap!"
+                            },
+                            {
+                                char = "kat",
+                                text = "This morning, I literally, saw a frog on a log."
+                            },
+                            {
+                                char = "katieKooper01",
+                                text = "That was so funny! You had me dying!"
+                            }, {char = "kat", text = "Katie!!!!"},
+                            {
+                                char = "kat",
+                                text = "Stop Talking! For the first time in your life!"
+                            },
+                            {
+                                char = "kat",
+                                text = "Listen to me very closely. There is no rap."
+                            }
+                        },
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
+                    }, {
+                        dialogs = {
+                            {char = "kat", text = "This morning..."},
+                            {char = "kat", text = "I SAW A FROG..."},
+                            {char = "troll01", text = "GIRL SAW FROG???"},
+                            {char = "kat", text = "...ON A LOG!"},
+                            {char = "troll02", text = "FROG ON LOG!"},
+                            {char = "troll01", text = "HA! HA! HOO! HOO!"},
+                            {char = "troll01", text = "TROLL LIKE FROG!"}
+                        },
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
                     }
                 },
                 coordinates = {col = 0, row = 0},
@@ -74,86 +169,82 @@ module.questConfigs = {
                 maxRow = 0,
                 maxCol = 0
             }, {
-                name = "log",
+                name = "bog",
                 frames = {
                     {
                         dialogs = {
+                            {char = "kat", text = "And I'm NOT gonna RAP."},
+                            {char = "kat", text = "It's just a silly fad."},
+                            {char = "kat", text = "You think your day was bad?"},
                             {
                                 char = "kat",
-                                text = "Yeah, this kid Dennis. He’s hilarious."
-                            }, {
-                                char = "kat",
-                                text = "This one time he made me laugh so hard chocolate milk sprayed out of my nose."
-                            },
-                            {
-                                char = "liz2",
-                                text = "Wait.. Hold your horses. Back up!"
-                            }, {char = "liz2", text = "What?"}, {
-                                char = "liz2",
-                                text = "Are you talking about Dennis, as in, Dennis the Menace?"
-                            }
+                                text = "Well let me tell you trolls about the day I've had."
+                            }, {char = "troll01", text = "FROG ON LOG!"}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
                     }, {
                         dialogs = {
-                            {char = "kat", text = "Yeah, that’s him."},
+                            {char = "kat", text = "First we saw a frog"},
+                            {char = "kat", text = "The frog was on a log."},
+                            {char = "kat", text = "Then there was this dog..."},
                             {
-                                char = "liz2",
-                                text = "You know Dennis the Menace?"
-                            }, {
-                                char = "liz2",
-                                text = "The kid who runs up slides the wrong way and has a slingshot hanging out of his back pocket?"
-                            }, {
                                 char = "kat",
-                                text = "Yeah, totally. He’s super chill. We should go hang out with him."
-                            }
+                                text = "...stuck in a bog wearing clogs!"
+                            }, {char = "troll01", text = "TROLL LIKE BOG!"}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
+                    }, {
+                        dialogs = {
+                            {char = "kat", text = "Me and Liz took a walk."},
+                            {char = "kat", text = "First we see a mop."},
+                            {char = "kat", text = "Then there was this top?"},
+                            {char = "kat", text = "Right next to a cop"},
+                            {
+                                char = "kat",
+                                text = "with a frog on a log, drinking pop!"
+                            }, {char = "troll01", text = "HA! HA! HOO! HOO!"},
+                            {char = "troll02", text = "FROGGY LIKE POP!"}
+                        },
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
                     }, {
                         dialogs = {
                             {
-                                char = "liz2",
-                                text = "He is like the coolest kid in the Magic Forest!"
-                            }, {char = "kat", text = "For sure."}, {
-                                char = "liz2",
-                                text = "Zombie said his parents grounded him until he turns 13!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
                                 char = "kat",
-                                text = "Wait, What does grounded mean?"
-                            }, {
-                                char = "liz2",
-                                text = "Oh sorry. Grounded is when you get in super big trouble and your parents don’t let you out of your room for a week!"
+                                text = "So quit squishin all the fish and sit and listen!"
                             },
                             {
                                 char = "kat",
-                                text = "Oh that. Yeah, he’s definitely grounded."
-                            }, {
-                                char = "kat",
-                                text = "But he sneaks out his bedroom window during nap and plays at the playground."
-                            }, {char = "liz2", text = "Wow!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
+                                text = "Cause I'm the kinda kid that makes the grown ups stop."
+                            },
                             {
                                 char = "kat",
-                                text = "Come on, let’s go see if he is at the slide."
-                            }, {char = "liz2", text = "Fine with me."}
+                                text = "And yell= Honey! Hide the keys to the donut shop!"
+                            }, {char = "troll01", text = "DONUT SHOP!"},
+                            {
+                                char = "kat",
+                                text = "You trolls like the Donut Shop?"
+                            }, {char = "troll21", text = "DONUT SHOP!"}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
                     }
                 },
-                coordinates = {col = 1, row = 0},
+                coordinates = {row = 0, col = 1},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -161,90 +252,200 @@ module.questConfigs = {
                 maxRow = 0,
                 maxCol = 1
             }, {
-                name = "slide",
+                name = "swamp",
                 frames = {
                     {
                         dialogs = {
-                            {char = "kat", text = "Hi Dennis!"},
+                            {char = "kat", text = "My parents groan a lot."}, {
+                                char = "kat",
+                                text = "You hear that rumble? That's my tummy from the soda pop."
+                            }, {char = "kat", text = "Call the doc!"},
                             {
-                                char = "dennisTheMenace",
-                                text = "Oh hi Kat! What are you up to?"
-                            }, {char = "liz2", text = "Just some trouble."}, {
-                                char = "dennisTheMenace",
-                                text = "Count me in. But keep an eye out for Mr. Wilson."
-                            }, {
-                                char = "dennisTheMenace",
-                                text = "He's not going to be too happy when he finds out what happened to his new shoes!"
+                                char = "kat",
+                                text = "So we can ask if I'll explode or not!"
+                            },
+                            {
+                                char = "kat",
+                                text = "I check my phone a lot, but it won't unlock!"
+                            },
+                            {
+                                char = "kat",
+                                text = "Yeah, it's bark, just wait. I'll get it Photoshopped."
                             }
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "dennisTheMenace"}}
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
                     }, {
                         dialogs = {
                             {
                                 char = "kat",
-                                text = "What happened to his new shoes?"
-                            }, {
-                                char = "dennisTheMenace",
-                                text = "You don't even want to know. Where's the fun at?"
-                            }, {
-                                char = "kat",
-                                text = "Well, there's this new girl named Rori. She needs a place to hide her dragon."
-                            },
-                            {
-                                char = "dennisTheMenace",
-                                text = "Well now you are talking my language."
-                            }, {
-                                char = "dennisTheMenace",
-                                text = "Have I ever told you about Mr. Wilson's shed?"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "dennisTheMenace"}}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "Keep talking..."}, {
-                                char = "dennisTheMenace",
-                                text = "It's dustier than a book of manners in a schoolyard, but it might to the trick."
+                                text = "I'll see you at my birthday when corona stops."
                             },
                             {
                                 char = "kat",
-                                text = "We will pass that along to Rori."
-                            }, {
-                                char = "liz2",
-                                text = "Dennis, do you have a piece of paper and a pin? Rori said to pin a note to a tree."
-                            }
+                                text = "And when the party starts rockin..."
+                            },
+                            {
+                                char = "kat",
+                                text = "That's just me and Liz squawkin..."
+                            },
+                            {
+                                char = "kat",
+                                text = "Like 2 sea gulls that got locked in-"
+                            }, {char = "kat", text = "side a donut shop."},
+                            {char = "troll01", text = "DONUT SHOP!"}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "dennisTheMenace"}}
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
                     }, {
                         dialogs = {
                             {
-                                char = "dennisTheMenace",
-                                text = "I have a ball of lint and this thumb tack, but I'm saving it to make a surprise for Mr. Wilson."
-                            }, {char = "liz2", text = "Lucky him!"}, {
-                                char = "dennisTheMenace",
-                                text = "Yeah, he must have been born under a 4 leaf clover."
+                                char = "kat",
+                                text = "They said this was a battle, but you Trolls don't bloop."
+                            }, {
+                                char = "kat",
+                                text = "Fellas, I'm about to tell a troll the stone cold truth."
                             },
                             {
-                                char = "liz2",
-                                text = "See you later Dennis the Menace! Hee Hee Hee!"
-                            }
+                                char = "kat",
+                                text = "Here's some cold stone soup."
+                            }, {char = "kat", text = "In an old sewn shoe."}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "dennisTheMenace"}}
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
+                    }, {
+                        dialogs = {
+                            {
+                                char = "kat",
+                                text = "And wait, here's a bone for your pooch too!"
+                            },
+                            {
+                                char = "kat",
+                                text = "Little kid, you want a cold cone for your loose tooth?"
+                            }, {
+                                char = "kat",
+                                text = "And here's some goop for the hole in your boot where your big hairy toes poke through."
+                            }, {
+                                char = "kat",
+                                text = "And you two. You don't bloop? You ever heard of youTube?"
+                            }, {char = "troll01", text = "We don't do it..."},
+                            {char = "troll02", text = "...it's too new."}
+                        },
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
                     }
                 },
                 coordinates = {col = 2, row = 0},
+                showBottomPath = false,
+                showRightPath = true,
+                showTopPath = false,
+                showLeftPath = true,
+                maxRow = 0,
+                maxCol = 2
+            }, {
+                name = "hill",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "kat", text = "Blip Bleep Bloop."},
+                            {char = "kat", text = "Flap Flop Floop, Flizz."}
+                        },
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
+                    }, {
+                        dialogs = {
+                            {char = "kat", text = "I like you trolls a lot"},
+                            {char = "kat", text = "But I gotta find Liz."},
+                            {char = "troll01", text = "Bye Bye!"},
+                            {char = "troll02", text = "See you soon!"},
+                            {
+                                char = "troll01",
+                                text = "Hope you have a nice trip!"
+                            }
+                        },
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
+                    }, {
+                        dialogs = {
+                            {
+                                char = "katieKooper01",
+                                text = "Kat, you won the Rap battle!"
+                            }, {char = "kat", text = "What's a rap battle?"},
+                            {
+                                char = "kat",
+                                text = "Um.... Never mind. Let's go find Liz!"
+                            },
+                            {
+                                char = "troll01",
+                                text = "Baby troll wants to come with you."
+                            },
+                            {
+                                char = "kat",
+                                text = "Oh dear. Oh no no no no no... come on Matt!"
+                            },
+                            {
+                                char = "katieKooper01",
+                                text = "Cuuu----uuuute! OK!"
+                            },
+                            {
+                                char = "kat",
+                                text = "Think about pretty dresses Katie. Pretty Dresses!"
+                            }
+                        },
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
+                    }, {
+                        dialogs = {
+                            {
+                                char = "troll01",
+                                text = "Here is baby troll's diaper pin."
+                            }, {
+                                char = "kat",
+                                text = "Oh no, it's sundown and we don't have the magical stone of Azkabat."
+                            },
+                            {
+                                char = "katieKooper01",
+                                text = "It's actually part of the diaper pin"
+                            }
+                        },
+                        characters01 = {{name = "kat"}},
+                        characters02 = {
+                            {name = "katieKooper01"}, {name = "troll01"},
+                            {name = "troll02"}
+                        }
+                    }
+                },
+                coordinates = {col = 3, row = 0},
                 showBottomPath = false,
                 showRightPath = false,
                 showTopPath = false,
                 showLeftPath = true,
                 maxRow = 0,
-                maxCol = 2
+                maxCol = 3
             }
         },
-        gridSize = {rows = 1, cols = 3}
+        gridSize = {rows = 1, cols = 4}
     }
 }
 return module
