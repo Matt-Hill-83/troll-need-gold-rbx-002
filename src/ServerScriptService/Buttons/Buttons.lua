@@ -13,14 +13,13 @@ function module.doFrameStuff(props)
     local numPages = props.numPages
     local sceneConfig = props.sceneConfig
 
-    -- local pageNum = 1
+    local pn = {value = 1}
 
     function updateFrameItems(props)
-
         local clonedScene2 = props.clonedScene
         local numPages2 = props.numPages
         local sceneConfig2 = props.sceneConfig
-        local pn = props.pn
+        -- local pn = props.pn
         local buttonPressed = false
         if not buttonPressed then
             buttonPressed = true
@@ -45,12 +44,12 @@ function module.doFrameStuff(props)
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
 
-        local pn = props.pn
+        -- local pn = props.pn
         if pn.value < numPages1 then
             pn.value = pn.value + 1
             updateFrameItems({
                 clonedScene = clonedScene1,
-                pn = pn,
+                -- pn = pn,
                 numPages = numPages1,
                 sceneConfig = sceneConfig1
             })
@@ -63,23 +62,21 @@ function module.doFrameStuff(props)
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
 
-        local pn = props.pn
+        -- local pn = props.pn
         if pn.value > 1 then
             pn.value = pn.value - 1
             updateFrameItems({
                 clonedScene = clonedScene1,
-                pn = pn,
+                -- pn = pn,
                 numPages = numPages1,
                 sceneConfig = sceneConfig1
             })
         end
     end
 
-    local pn = {value = 1}
-
     local function onIncrementPage()
         incrementPage({
-            pn = pn,
+            -- pn = pn,
             clonedScene = clonedScene,
             numPages = numPages,
             sceneConfig = sceneConfig
@@ -88,7 +85,7 @@ function module.doFrameStuff(props)
 
     local function onDecrementPage()
         decrementPage({
-            pn = pn,
+            -- pn = pn,
             clonedScene = clonedScene,
             numPages = numPages,
             sceneConfig = sceneConfig
