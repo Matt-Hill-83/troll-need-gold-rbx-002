@@ -111,10 +111,20 @@ function module.addScenes(props)
         })
 
         function updateFrameItems(props)
+
+            print('updateFrameItems' .. ' - start');
+            print(updateFrameItems);
+            print('updateFrameItems' .. ' - end');
             local pageNum2 = props.pageNum
             local clonedScene2 = props.clonedScene
             local numPages2 = props.numPages
-
+            local sceneConfig2 = props.sceneConfig
+            print('numPages2' .. ' - start');
+            print(numPages2);
+            print('numPages2' .. ' - end');
+            print('pageNum2' .. ' - start');
+            print(pageNum2);
+            print('pageNum2' .. ' - end');
             local buttonPressed = false
             if not buttonPressed then
                 buttonPressed = true
@@ -125,7 +135,7 @@ function module.addScenes(props)
                         numPages = numPages2
                     })
 
-                local newFrameConfig = sceneConfig.frames[pageNum2]
+                local newFrameConfig = sceneConfig2.frames[pageNum2]
                 local newSceneProps = {
                     frameConfig = newFrameConfig,
                     clonedScene = clonedScene2
@@ -135,13 +145,31 @@ function module.addScenes(props)
             end
         end
 
-        function incrementPage()
-            if pageNum < numPages then
+        function incrementPage(props)
+
+            local pageNum1 = props.pageNum
+            local clonedScene1 = props.clonedScene
+            local numPages1 = props.numPages
+            local sceneConfig1 = props.sceneConfig
+            local index = props.i
+            print('index' .. ' - start');
+            print(index);
+            print('index' .. ' - end');
+
+            print('clonedScene1' .. ' - start');
+            print(clonedScene1);
+            print('clonedScene1' .. ' - end');
+            print('numPages1' .. ' - start');
+            print(numPages1);
+            print('numPages1' .. ' - end');
+
+            if pageNum < numPages1 then
                 pageNum = pageNum + 1
                 updateFrameItems({
                     pageNum = pageNum,
-                    clonedScene = clonedScene,
-                    numPages = numPages
+                    clonedScene = clonedScene1,
+                    numPages = numPages1,
+                    sceneConfig = sceneConfig1
                 })
             end
         end
@@ -157,9 +185,21 @@ function module.addScenes(props)
             end
         end
 
+        local function onIncrementPage()
+            incrementPage({
+                i = i,
+                pageNum = pageNum,
+                clonedScene = clonedScene,
+                numPages = numPages,
+                sceneConfig = sceneConfig
+            })
+        end
+
+        -- textButton.MouseButton1Click:Connect(onActivated)
+
         local nextButton = Utils.getFirstDescendantByName(clonedScene,
                                                           "NextPageButton")
-        nextButton.MouseButton1Click:Connect(incrementPage)
+        nextButton.MouseButton1Click:Connect(onIncrementPage)
 
         local prevButton = Utils.getFirstDescendantByName(clonedScene,
                                                           "PrevPageButton")

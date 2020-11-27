@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>234.742828</X>
-					<Y>13.7223434</Y>
-					<Z>-230.85025</Z>
-					<R00>-0.949263334</R00>
-					<R01>0.231495887</R01>
-					<R02>-0.212858617</R02>
-					<R10>-0</R10>
-					<R11>0.676853895</R11>
-					<R12>0.736117303</R12>
-					<R20>0.314482331</R20>
-					<R21>0.698769152</R21>
-					<R22>-0.642512619</R22>
+					<X>221.971283</X>
+					<Y>57.8893738</Y>
+					<Z>-269.401031</Z>
+					<R00>-0.949263215</R00>
+					<R01>0.231496051</R01>
+					<R02>-0.212858945</R02>
+					<R10>-1.49011594e-08</R10>
+					<R11>0.676854253</R11>
+					<R12>0.736117125</R12>
+					<R20>0.314482659</R20>
+					<R21>0.698768914</R21>
+					<R22>-0.642512858</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -11200,12 +11200,12 @@ remoteCode.addRemoteObjects(base)
 				<token name="BottomSurface">0</token>
 				<token name="BottomSurfaceInput">0</token>
 				<CoordinateFrame name="CFrame">
-					<X>250.999893</X>
-					<Y>13.4118748</Y>
-					<Z>-188</Z>
+					<X>228</X>
+					<Y>-2.51000023</Y>
+					<Z>-196</Z>
 					<R00>0</R00>
 					<R01>0</R01>
-					<R02>0.999999166</R02>
+					<R02>0.999998331</R02>
 					<R10>0</R10>
 					<R11>1</R11>
 					<R12>0</R12>
@@ -11281,6 +11281,45 @@ remoteCode.addRemoteObjects(base)
 					<BinaryString name="Tags"></BinaryString>
 					<Content name="Texture"><url>rbxasset://textures/SpawnLocation.png</url></Content>
 					<float name="Transparency">0</float>
+				</Properties>
+			</Item>
+			<Item class="Weld" referent="RBXddd17d628cd54dc9ad67ddd4afe1eb06">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<CoordinateFrame name="C0">
+						<X>0</X>
+						<Y>-0.489999771</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>0</R11>
+						<R12>-1</R12>
+						<R20>0</R20>
+						<R21>0.999998331</R21>
+						<R22>0</R22>
+					</CoordinateFrame>
+					<CoordinateFrame name="C1">
+						<X>228</X>
+						<Y>27</Y>
+						<Z>-196</Z>
+						<R00>0</R00>
+						<R01>1</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>0</R11>
+						<R12>-1</R12>
+						<R20>-1</R20>
+						<R21>0</R21>
+						<R22>0</R22>
+					</CoordinateFrame>
+					<bool name="Enabled">true</bool>
+					<string name="Name">Weld</string>
+					<Ref name="Part0">RBX20423fbfc3f843b6bee9d9b7f1aa1500</Ref>
+					<Ref name="Part1">RBXf70eef44c6474e63b75672292a29dcc7</Ref>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
 		</Item>
@@ -14538,6 +14577,10 @@ function module.addScenes(props)
         })
 
         function updateFrameItems(props)
+
+            print('updateFrameItems' .. ' - start');
+            print(updateFrameItems);
+            print('updateFrameItems' .. ' - end');
             local pageNum2 = props.pageNum
             local clonedScene2 = props.clonedScene
             local numPages2 = props.numPages
@@ -14562,13 +14605,25 @@ function module.addScenes(props)
             end
         end
 
-        function incrementPage()
-            if pageNum < numPages then
-                pageNum = pageNum + 1
+        function incrementPage(props)
+
+            local pageNum1 = props.pageNum
+            local clonedScene1 = props.clonedScene
+            local numPages1 = props.numPages
+            local index = props.i
+            print('index' .. ' - start');
+            print(index);
+            print('index' .. ' - end');
+
+            print('clonedScene1' .. ' - start');
+            print(clonedScene1);
+            print('clonedScene1' .. ' - end');
+            if pageNum1 < numPages1 then
+                pageNum1 = pageNum1 + 1
                 updateFrameItems({
-                    pageNum = pageNum,
-                    clonedScene = clonedScene,
-                    numPages = numPages
+                    pageNum = pageNum1,
+                    clonedScene = clonedScene1,
+                    numPages = numPages1
                 })
             end
         end
@@ -14584,9 +14639,20 @@ function module.addScenes(props)
             end
         end
 
+        local function onIncrementPage()
+            incrementPage({
+                i = i,
+                pageNum = pageNum,
+                clonedScene = clonedScene,
+                numPages = numPages
+            })
+        end
+
+        -- textButton.MouseButton1Click:Connect(onActivated)
+
         local nextButton = Utils.getFirstDescendantByName(clonedScene,
                                                           "NextPageButton")
-        nextButton.MouseButton1Click:Connect(incrementPage)
+        nextButton.MouseButton1Click:Connect(onIncrementPage)
 
         local prevButton = Utils.getFirstDescendantByName(clonedScene,
                                                           "PrevPageButton")
