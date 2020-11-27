@@ -21,7 +21,7 @@ function module.getDecalIdFromName(props)
         return Constants.characters[name]["decalId"]
     else
 
-        if (name ~= "blank" and name ~= "empty") then
+        if (name ~= "blank" and name ~= "empty" and name ~= "") then
             print("----------------- decalId not found: ------------" .. name)
             print(tableToString({Constants.characters[name]}));
         end
