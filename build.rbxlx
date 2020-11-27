@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>307.743774</X>
-					<Y>38.1289749</Y>
-					<Z>-240.950867</Z>
-					<R00>-0.982097745</R00>
-					<R01>-0.100096963</R01>
-					<R02>0.159576416</R02>
-					<R10>7.45058149e-09</R10>
-					<R11>0.847134173</R11>
-					<R12>0.531379044</R12>
-					<R20>-0.188372076</R20>
-					<R21>0.521866143</R21>
-					<R22>-0.831968546</R22>
+					<X>234.742828</X>
+					<Y>13.7223434</Y>
+					<Z>-230.85025</Z>
+					<R00>-0.949263334</R00>
+					<R01>0.231495887</R01>
+					<R02>-0.212858617</R02>
+					<R10>-0</R10>
+					<R11>0.676853895</R11>
+					<R12>0.736117303</R12>
+					<R20>0.314482331</R20>
+					<R21>0.698769152</R21>
+					<R22>-0.642512619</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>301.999023</X>
-					<Y>18.9993286</Y>
-					<Z>-211</Z>
+					<X>239</X>
+					<Y>-1</Y>
+					<Z>-218</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -3975,7 +3975,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<R21>0</R21>
 									<R22>0.707106769</R22>
 								</CoordinateFrame>
-								<bool name="CanCollide">false</bool>
+								<bool name="CanCollide">true</bool>
 								<bool name="CastShadow">true</bool>
 								<int name="CollisionGroupId">0</int>
 								<Color3uint8 name="Color3uint8">4294506744</Color3uint8>
@@ -10854,7 +10854,7 @@ remoteCode.addRemoteObjects(base)
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>239</X>
+						<X>245</X>
 						<Y>-1</Y>
 						<Z>-218</Z>
 						<R00>1</R00>
@@ -10952,7 +10952,7 @@ remoteCode.addRemoteObjects(base)
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBX3a0469961e5b4b3aa56db364212b8d66">
+				<Item class="Weld" referent="RBXbcd6c1654dcc410ca2ba898170b4e892">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -10970,7 +10970,7 @@ remoteCode.addRemoteObjects(base)
 							<R22>0</R22>
 						</CoordinateFrame>
 						<CoordinateFrame name="C1">
-							<X>239</X>
+							<X>245</X>
 							<Y>27</Y>
 							<Z>-218</Z>
 							<R00>1</R00>
@@ -13329,11 +13329,7 @@ local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Constants = require(Sss.Source.Constants.Constants)
 
-local dialogColors = {
-    Color3.fromRGB(253, 158, 240), Color3.fromRGB(225, 253, 158),
-    Color3.fromRGB(253, 228, 158), Color3.fromRGB(158, 253, 179),
-    Color3.fromRGB(158, 215, 253)
-}
+local dialogColors = Constants.dialogColors
 
 local module = {}
 
@@ -14003,6 +13999,12 @@ return module
 						<string name="ScriptGuid">{398501bf-a4db-4733-aea8-9e60e4920214}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {buffer = 0}
 
+module.dialogColors = {
+    Color3.fromRGB(253, 158, 240), Color3.fromRGB(225, 253, 158),
+    Color3.fromRGB(253, 228, 158), Color3.fromRGB(158, 253, 179),
+    Color3.fromRGB(158, 215, 253)
+}
+
 local islandLength = 36
 -- local bridgeLength = 31.1
 local bridgeLength = 34
@@ -14427,6 +14429,7 @@ return module
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Bridges = require(Sss.Source.Bridges.Bridges)
 local Characters = require(Sss.Source.Characters.Characters)
+local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
 
@@ -14459,29 +14462,6 @@ function getNewPosition(props)
                      (Constants.islandLength + Constants.bridgeLength +
                          Constants.buffer)
     return Vector3.new(newX, 0, -newZ)
-end
-
-function addLocation(props)
-    local scene = props.scene
-    local sceneConfig = props.sceneConfig
-
-    -- Image
-    -- Image
-    local locationModelImage = Utils.getFirstDescendantByName(scene,
-                                                              "LocationModelImage")
-    local imageLabelFront = Utils.getFirstDescendantByName(locationModelImage,
-                                                           'ImageLabel')
-    local imageId = Utils.getDecalIdFromName({name = sceneConfig.name})
-    imageLabelFront.Image = 'rbxassetid://' .. imageId
-
-    -- Label
-    -- Label
-    local locationModelLabel = Utils.getFirstDescendantByName(scene,
-                                                              "LocationModelLabel")
-    local textLabel = Utils.getFirstDescendantByName(locationModelLabel,
-                                                     'TextLabel')
-    textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
-
 end
 
 function module.addScenes(props)
@@ -14523,7 +14503,7 @@ function module.addScenes(props)
 
         Characters.addCharactersToScene(sceneProps)
 
-        addLocation({scene = clonedScene, sceneConfig = sceneConfig})
+        Location.addLocation({scene = clonedScene, sceneConfig = sceneConfig})
 
         function updateButtonActiveStatus(props)
             print('updateButtonActiveStatus===============================')
@@ -14613,6 +14593,58 @@ function module.addScenes(props)
         prevButton.MouseButton1Click:Connect(decrementPage)
 
     end
+end
+
+return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="ModuleScript" referent="RBX882578c365884b4da24c73c79c0c9db7">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">Location</string>
+					<string name="ScriptGuid">{f18e6b04-1c49-48a4-a27f-e4feca1b11f5}</string>
+					<ProtectedString name="Source"><![CDATA[
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="ModuleScript" referent="RBXafd30ef8861f47d5b8f52723f9f0d997">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Location</string>
+						<string name="ScriptGuid">{927445eb-68f7-4200-97d2-128b8fe5687a}</string>
+						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+
+local module = {}
+
+function module.addLocation(props)
+    local scene = props.scene
+    local sceneConfig = props.sceneConfig
+
+    -- Image
+    -- Image
+    local locationModelImage = Utils.getFirstDescendantByName(scene,
+                                                              "LocationModelImage")
+    local imageLabelFront = Utils.getFirstDescendantByName(locationModelImage,
+                                                           'ImageLabel')
+    local imageId = Utils.getDecalIdFromName({name = sceneConfig.name})
+    imageLabelFront.Image = 'rbxassetid://' .. imageId
+
+    -- Label
+    -- Label
+    local locationModelLabel = Utils.getFirstDescendantByName(scene,
+                                                              "LocationModelLabel")
+    local textLabel = Utils.getFirstDescendantByName(locationModelLabel,
+                                                     'TextLabel')
+    textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
+
 end
 
 return module

@@ -3,11 +3,7 @@ local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Constants = require(Sss.Source.Constants.Constants)
 
-local dialogColors = {
-    Color3.fromRGB(253, 158, 240), Color3.fromRGB(225, 253, 158),
-    Color3.fromRGB(253, 228, 158), Color3.fromRGB(158, 253, 179),
-    Color3.fromRGB(158, 215, 253)
-}
+local dialogColors = Constants.dialogColors
 
 local module = {}
 

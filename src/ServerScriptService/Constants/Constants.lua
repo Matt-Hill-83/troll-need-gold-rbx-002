@@ -1,5 +1,11 @@
 local module = {buffer = 0}
 
+module.dialogColors = {
+    Color3.fromRGB(253, 158, 240), Color3.fromRGB(225, 253, 158),
+    Color3.fromRGB(253, 228, 158), Color3.fromRGB(158, 253, 179),
+    Color3.fromRGB(158, 215, 253)
+}
+
 local islandLength = 36
 -- local bridgeLength = 31.1
 local bridgeLength = 34
