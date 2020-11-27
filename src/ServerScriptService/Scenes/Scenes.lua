@@ -144,21 +144,6 @@ function module.addScenes(props)
                         clonedScene = clonedScene,
                         numPages = numPages
                     })
-                print('incrementPage------------------yes')
-
-                local children = newWall:GetChildren()
-                -- TODO - fix this
-                -- TODO - fix this
-                -- TODO - fix this
-
-                for _, item in pairs(children) do
-                    local match1 = string.match(item.Name, "Items-")
-                    local match2 = string.match(item.Name, "Characters-")
-                    local match3 = string.match(item.Name, "Dialog-")
-                    if item:IsA('Part') and (match1 or match2 or match3) then
-                        item:Destroy()
-                    end
-                end
 
                 local newFrameConfig = sceneConfig.frames[pageNum]
                 local newSceneProps = {
@@ -184,17 +169,6 @@ function module.addScenes(props)
                     })
 
                 print('decrementPage=----------yes')
-
-                -- local children = newWall:GetChildren()
-
-                -- for _, item in pairs(children) do
-                --     local match1 = string.match(item.Name, "Items-")
-                --     local match2 = string.match(item.Name, "Characters-")
-                --     local match3 = string.match(item.Name, "Dialog-")
-                --     if item:IsA('Part') and (match1 or match2 or match3) then
-                --         item:Destroy()
-                --     end
-                -- end
 
                 local newFrameConfig = sceneConfig.frames[pageNum]
                 local newSceneProps = {

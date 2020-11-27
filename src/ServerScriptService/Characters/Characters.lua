@@ -12,13 +12,7 @@ renderCharacters = function(props)
 
     local children = characterTemplate:GetChildren()
     for _, item in pairs(children) do
-        print('item.Name' .. ' - start');
-        print(item.Name);
-        print('item.Name' .. ' - end');
         local match = string.match(item.Name, nameStub)
-        print('match' .. ' - start');
-        print(match);
-        print('match' .. ' - end');
         if item:IsA('Part') and match then
             item:Destroy()
             --
