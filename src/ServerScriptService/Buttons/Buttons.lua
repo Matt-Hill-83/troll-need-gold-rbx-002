@@ -41,59 +41,53 @@ function module.doFrameStuff(props)
     end
 
     function incrementPage(props)
-        print('incrementPage')
         local clonedScene1 = props.clonedScene
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
-        -- local pageNum1 = props.pageNum
+
         local pn = props.pn
-        print('pn.value' .. ' - start');
-        print(pn.value);
-        print('pn.value' .. ' - end');
-        print('numPages1' .. ' - start');
-        print(numPages1);
-        print('numPages1' .. ' - end');
         if pn.value < numPages1 then
             pn.value = pn.value + 1
             updateFrameItems({
-                pageNum = pn.value,
                 clonedScene = clonedScene1,
                 pn = pn,
                 numPages = numPages1,
                 sceneConfig = sceneConfig1
             })
         end
-        -- if pageNum1 < numPages1 then
-        --     pageNum1 = pageNum1 + 1
-        --     updateFrameItems({
-        --         pageNum = pageNum1,
-        --         clonedScene = clonedScene1,
-        --         numPages = numPages1,
-        --         sceneConfig = sceneConfig1
-        --     })
-        -- end
+
     end
 
-    function decrementPage()
-        -- if pageNum > 1 then
-        --     pageNum = pageNum - 1
-        --     updateFrameItems({
-        --         pageNum = pageNum,
-        --         clonedScene = clonedScene,
-        --         numPages = numPages
-        --     })
-        -- end
+    function decrementPage(props)
+        local clonedScene1 = props.clonedScene
+        local numPages1 = props.numPages
+        local sceneConfig1 = props.sceneConfig
+
+        local pn = props.pn
+        if pn.value > 1 then
+            pn.value = pn.value - 1
+            updateFrameItems({
+                clonedScene = clonedScene1,
+                pn = pn,
+                numPages = numPages1,
+                sceneConfig = sceneConfig1
+            })
+        end
     end
 
     local pn = {value = 1}
+
     local function onIncrementPage()
-        print('clonedScene' .. ' - start');
-        print(clonedScene);
-        print('clonedScene' .. ' - end');
-        print('sceneConfig.name' ..
-                  ' - start------------------------------------>>');
-        print(sceneConfig.name);
         incrementPage({
+            pn = pn,
+            clonedScene = clonedScene,
+            numPages = numPages,
+            sceneConfig = sceneConfig
+        })
+    end
+
+    local function onDecrementPage()
+        decrementPage({
             pn = pn,
             clonedScene = clonedScene,
             numPages = numPages,
@@ -107,6 +101,6 @@ function module.doFrameStuff(props)
 
     local prevButton = Utils.getFirstDescendantByName(clonedScene,
                                                       "PrevPageButton")
-    prevButton.MouseButton1Click:Connect(decrementPage)
+    prevButton.MouseButton1Click:Connect(onDecrementPage)
 end
 return module
