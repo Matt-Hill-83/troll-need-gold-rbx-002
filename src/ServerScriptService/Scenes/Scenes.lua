@@ -85,9 +85,6 @@ function module.addScenes(props)
             local pageNum2 = props.pageNum
             local numPages2 = props.numPages
 
-            print('pageNum2' .. ' - start');
-            print(pageNum2);
-            print('pageNum2' .. ' - end');
             local nextButton = Utils.getFirstDescendantByName(clonedScene2,
                                                               "NextPageButton")
             nextButton.Active = pageNum2 < numPages2
