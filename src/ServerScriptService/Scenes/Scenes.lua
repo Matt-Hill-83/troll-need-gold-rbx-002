@@ -125,22 +125,29 @@ function module.addScenes(props)
         })
 
         function incrementPage()
-            local newPageNum = pageNum + 1
-            if newPageNum <= numPages then
-                pageNum = newPageNum
-                updateButtonActiveStatus(
-                    {
-                        pageNum = pageNum,
-                        clonedScene = clonedScene,
-                        numPages = numPages
-                    })
+            local buttonPressed = false
 
-                local newFrameConfig = sceneConfig.frames[pageNum]
-                local newSceneProps = {
-                    frameConfig = newFrameConfig,
-                    clonedScene = clonedScene
-                }
-                Characters.addCharactersToScene(newSceneProps)
+            local newPageNum = pageNum + 1
+            if not buttonPressed then
+                buttonPressed = true
+                if newPageNum <= numPages then
+                    pageNum = newPageNum
+                    updateButtonActiveStatus(
+                        {
+                            pageNum = pageNum,
+                            clonedScene = clonedScene,
+                            numPages = numPages
+                        })
+
+                    local newFrameConfig = sceneConfig.frames[pageNum]
+                    local newSceneProps =
+                        {
+                            frameConfig = newFrameConfig,
+                            clonedScene = clonedScene
+                        }
+                    Characters.addCharactersToScene(newSceneProps)
+                end
+                buttonPressed = false
             end
         end
 
@@ -166,6 +173,7 @@ function module.addScenes(props)
         local nextButton = Utils.getFirstDescendantByName(clonedScene,
                                                           "NextPageButton")
         nextButton.MouseButton1Click:Connect(incrementPage)
+
         local prevButton = Utils.getFirstDescendantByName(clonedScene,
                                                           "PrevPageButton")
         prevButton.MouseButton1Click:Connect(decrementPage)
