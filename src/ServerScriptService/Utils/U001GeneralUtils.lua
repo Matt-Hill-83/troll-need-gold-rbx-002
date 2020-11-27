@@ -74,11 +74,11 @@ function getFirstDescendantByName(parent, name)
 end
 
 function module.getDescendantsByName(parent, name)
-    local decendants = parent:GetDescendants()
+    local descendants = parent:GetDescendants()
     local output = {}
-    for i = 1, #decendants do
-        if decendants[i].Name == name then
-            table.insert(output, decendants[i])
+    for i = 1, #descendants do
+        if descendants[i].Name == name then
+            table.insert(output, descendants[i])
             -- 
         end
     end
@@ -86,10 +86,10 @@ function module.getDescendantsByName(parent, name)
 end
 
 function module.getDescendantsByNameMatch(parent, name)
-    local decendants = parent:GetDescendants()
+    local descendants = parent:GetDescendants()
     local output = {}
-    for i = 1, #decendants do
-        local child = decendants[i]
+    for i = 1, #descendants do
+        local child = descendants[i]
         local match = string.match(child.Name, name)
         if match then
             table.insert(output, child)

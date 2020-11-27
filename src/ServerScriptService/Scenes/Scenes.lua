@@ -59,7 +59,7 @@ function module.addScenes(props)
                                 {
                 model = sceneTemplateModel,
                 position = newPosition + startPosition,
-                suffix = "-clone--" .. i
+                suffix = "Clone--" .. i
             })
 
         Bridges.destroyBridges({
@@ -75,7 +75,8 @@ function module.addScenes(props)
 
         -- Image
         -- Image
-        local locationModelImage = Utils.getFromTemplates("LocationModelImage")
+        local locationModelImage = Utils.getFirstDescendantByName(clonedScene,
+                                                                  "LocationModelImage")
         local imageLabelFront = Utils.getFirstDescendantByName(
                                     locationModelImage, 'ImageLabel')
         local imageId = Utils.getDecalIdFromName({name = sceneConfig.name})
@@ -83,7 +84,8 @@ function module.addScenes(props)
 
         -- Label
         -- Label
-        local locationModelLabel = Utils.getFromTemplates("LocationModelLabel")
+        local locationModelLabel = Utils.getFirstDescendantByName(clonedScene,
+                                                                  "LocationModelLabel")
         local textLabel = Utils.getFirstDescendantByName(locationModelLabel,
                                                          'TextLabel')
         textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
