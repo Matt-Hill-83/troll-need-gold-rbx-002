@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>342.464172</X>
-					<Y>69.2275696</Y>
-					<Z>-220.610016</Z>
-					<R00>-0.652700841</R00>
-					<R01>-0.578663468</R01>
-					<R02>0.48900947</R02>
-					<R10>-1.4901163e-08</R10>
-					<R11>0.64545846</R11>
-					<R12>0.763795376</R12>
-					<R20>-0.757615805</R20>
-					<R21>0.498529881</R21>
-					<R22>-0.421291232</R22>
+					<X>307.571045</X>
+					<Y>86.6218872</Y>
+					<Z>-288.090332</Z>
+					<R00>-0.994423151</R00>
+					<R01>-0.0659429729</R01>
+					<R02>0.0823058859</R02>
+					<R10>-0</R10>
+					<R11>0.780414224</R11>
+					<R12>0.625263035</R12>
+					<R20>-0.105464369</R20>
+					<R21>0.621776044</R21>
+					<R22>-0.776061833</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>316.644196</X>
-					<Y>28.8987427</Y>
-					<Z>-198.365601</Z>
+					<X>307.406433</X>
+					<Y>85.3713608</Y>
+					<Z>-286.538208</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -3900,7 +3900,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gCA=]]></BinaryString>
 										<int name="BorderSizePixel">1</int>
 										<bool name="ClipsDescendants">false</bool>
 										<bool name="Draggable">false</bool>
-										<Content name="Image"><url>rbxassetid://5999464873</url></Content>
+										<Content name="Image"><url>rbxassetid://5977952017</url></Content>
 										<Color3 name="ImageColor3">
 											<R>1</R>
 											<G>1</G>
@@ -5292,7 +5292,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gCA=]]></BinaryString>
 											<Content name="BottomImage"><url>rbxasset://textures/ui/Scroll/scroll-bottom.png</url></Content>
 											<Vector2 name="CanvasPosition">
 												<X>0</X>
-												<Y>150</Y>
+												<Y>0</Y>
 											</Vector2>
 											<UDim2 name="CanvasSize">
 												<XS>0</XS>
@@ -11555,12 +11555,12 @@ remoteCode.addRemoteObjects(base)
 				<token name="BottomSurface">0</token>
 				<token name="BottomSurfaceInput">0</token>
 				<CoordinateFrame name="CFrame">
-					<X>226.690018</X>
-					<Y>13.4900265</Y>
-					<Z>-81.890007</Z>
+					<X>147.999985</X>
+					<Y>8.41187477</Y>
+					<Z>-188</Z>
 					<R00>0</R00>
 					<R01>0</R01>
-					<R02>0.999999583</R02>
+					<R02>0.999999166</R02>
 					<R10>0</R10>
 					<R11>1</R11>
 					<R12>0</R12>
@@ -14090,168 +14090,6 @@ module.questConfigs = {
         questTitle = "330 Merlinda The Fairy Princess Part3",
         sceneConfigs = {
             {
-                name = "swing",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Rori, I'm gonna get real with you."
-                            },
-                            {
-                                char = "rori",
-                                text = "We must free the dragons from Maldred's evil spell!"
-                            }, {
-                                char = "kat",
-                                text = "Rori, do you like sparkles and glitter beyond your wildest dreams?"
-                            },
-                            {
-                                char = "rori",
-                                text = "Does it shimmer with the power of the dragon stone?"
-                            },
-                            {char = "kat", text = "Oh yes... Oh yes it does..."},
-                            {
-                                char = "kat",
-                                text = "Now, will you help us steal the dress from the dragon Watta-Lee-Achee?"
-                            }, {char = "rori", text = "What class?"},
-                            {
-                                char = "liz2",
-                                text = "K2. No, wait... K1.  Um...  both?"
-                            },
-                            {
-                                char = "rori",
-                                text = "I wasn't asking your kindergarten class!"
-                            },
-                            {char = "rori", text = "What class dragon is it?"},
-                            {char = "liz2", text = "Oh... yeah right."},
-                            {char = "rori", text = "Never mind."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "rori"}, {name = "vulcan01"}}
-                    }
-                },
-                coordinates = {col = 0, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                maxRow = 0,
-                maxCol = 0
-            }, {
-                name = "lake",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "rori",
-                                text = "I think Watta-Lee-Achee is a class 2 lava dragon with a minor healing enchantment."
-                            }, {char = "liz2", text = "Doo-Da-Lee-Doo"},
-                            {char = "rori", text = "What?"},
-                            {char = "kat", text = "Ignore her..."},
-                            {
-                                char = "rori",
-                                text = "Vulcan and I will battle Watta-Lee-Achee..."
-                            },
-                            {
-                                char = "rori",
-                                text = "...and free the Dress of Atacama once and for all!!!"
-                            }, {char = "kat", text = "Thanks Rori!"},
-                            {
-                                char = "rori",
-                                text = "I will join you on your Quest for the Dress!"
-                            }, {char = "liz2", text = "thanks Rori!"},
-                            {char = "rori", text = "I will join you..."},
-                            {char = "rori", text = "...on your..."},
-                            {char = "rori", text = "...Dress Quest!"},
-                            {char = "liz2", text = "Doo-Da-Lee-Doo"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "rori"}, {name = "vulcan01"}}
-                    }
-                },
-                coordinates = {col = 1, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 1
-            }
-        },
-        gridSize = {rows = 1, cols = 2}
-    }, {
-        questTitle = "200 - Dennis the Menace",
-        sceneConfigs = {
-            {
-                name = "home",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "dog01", text = "Yo, what’s up Kat?"},
-                            {
-                                char = "kat",
-                                text = "Nothin’ dog. Just chillin with my girl Liz."
-                            }, {
-                                char = "dog01",
-                                text = "Sweet! Keep it Fresh Kat! I gotta bounce. I’ll catch you on the flip!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "dog01"}}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "Laters!"},
-                            {char = "liz2", text = "Bye Bye Pete! Hee Hee!"}, {
-                                char = "liz2",
-                                text = "Wow Kat, where did you learn all those cool things to say?"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Cool right? It’s called slang."
-                            }, {char = "liz2", text = "Wow! I want to learn!"},
-                            {
-                                char = "liz2",
-                                text = "I used to ride the bus with this second grader who knew like a million slangs. Like literally."
-                            }, {char = "liz2", text = "Cooooool!!!!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "He’d say Kat, I like you, but sometimes, think you are a couple sandwiches short of a picnic?"
-                            },
-                            {
-                                char = "liz2",
-                                text = "Cooooool! What does that mean?"
-                            },
-                            {
-                                char = "liz2",
-                                text = "I dunno, but I say it all the time now."
-                            },
-                            {
-                                char = "liz2",
-                                text = "Wait, you know a second grader?"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }
-                },
-                coordinates = {col = 0, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                maxRow = 0,
-                maxCol = 0
-            }, {
                 name = "log",
                 frames = {
                     {
@@ -15021,7 +14859,7 @@ function module.addScenes(props)
                         numPages = numPages2
                     })
 
-                local newFrameConfig = sceneConfig.frames[pageNum]
+                local newFrameConfig = sceneConfig.frames[pageNum2]
                 local newSceneProps = {
                     frameConfig = newFrameConfig,
                     clonedScene = clonedScene2
@@ -15029,58 +14867,27 @@ function module.addScenes(props)
                 Characters.addCharactersToScene(newSceneProps)
                 buttonPressed = false
             end
-
         end
 
         function incrementPage()
-
-            local newPageNum = pageNum + 1
-
-            if newPageNum <= numPages then
-                pageNum = newPageNum
+            if pageNum < numPages then
+                pageNum = pageNum + 1
                 updateFrameItems({
                     pageNum = pageNum,
                     clonedScene = clonedScene,
                     numPages = numPages
                 })
-                -- local buttonPressed = false
-                -- if not buttonPressed then
-                --     buttonPressed = true
-                --     updateButtonActiveStatus(
-                --         {
-                --             pageNum = pageNum,
-                --             clonedScene = clonedScene,
-                --             numPages = numPages
-                --         })
-
-                --     local newFrameConfig = sceneConfig.frames[pageNum]
-                --     local newSceneProps =
-                --         {
-                --             frameConfig = newFrameConfig,
-                --             clonedScene = clonedScene
-                --         }
-                --     Characters.addCharactersToScene(newSceneProps)
-                --     buttonPressed = false
-                -- end
             end
         end
 
         function decrementPage()
-            local newPageNum = pageNum - 1
-            if newPageNum > 0 then
-                pageNum = newPageNum
-                updateButtonActiveStatus(
-                    {
-                        pageNum = pageNum,
-                        clonedScene = clonedScene,
-                        numPages = numPages
-                    })
-                local newFrameConfig = sceneConfig.frames[pageNum]
-                local newSceneProps = {
-                    frameConfig = newFrameConfig,
-                    clonedScene = clonedScene
-                }
-                Characters.addCharactersToScene(newSceneProps)
+            if pageNum > 1 then
+                pageNum = pageNum - 1
+                updateFrameItems({
+                    pageNum = pageNum,
+                    clonedScene = clonedScene,
+                    numPages = numPages
+                })
             end
         end
 

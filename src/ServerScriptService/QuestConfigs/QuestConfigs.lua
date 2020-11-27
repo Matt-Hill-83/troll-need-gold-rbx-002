@@ -2,99 +2,6 @@ local module = {}
 
 module.questConfigs = {
     {
-        questTitle = "330 Merlinda The Fairy Princess Part3",
-        sceneConfigs = {
-            {
-                name = "swing",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "kat",
-                                text = "Rori, I'm gonna get real with you."
-                            },
-                            {
-                                char = "rori",
-                                text = "We must free the dragons from Maldred's evil spell!"
-                            }, {
-                                char = "kat",
-                                text = "Rori, do you like sparkles and glitter beyond your wildest dreams?"
-                            },
-                            {
-                                char = "rori",
-                                text = "Does it shimmer with the power of the dragon stone?"
-                            },
-                            {char = "kat", text = "Oh yes... Oh yes it does..."},
-                            {
-                                char = "kat",
-                                text = "Now, will you help us steal the dress from the dragon Watta-Lee-Achee?"
-                            }, {char = "rori", text = "What class?"},
-                            {
-                                char = "liz2",
-                                text = "K2. No, wait... K1.  Um...  both?"
-                            },
-                            {
-                                char = "rori",
-                                text = "I wasn't asking your kindergarten class!"
-                            },
-                            {char = "rori", text = "What class dragon is it?"},
-                            {char = "liz2", text = "Oh... yeah right."},
-                            {char = "rori", text = "Never mind."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "rori"}, {name = "vulcan01"}}
-                    }
-                },
-                coordinates = {col = 0, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                maxRow = 0,
-                maxCol = 0
-            }, {
-                name = "lake",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "rori",
-                                text = "I think Watta-Lee-Achee is a class 2 lava dragon with a minor healing enchantment."
-                            }, {char = "liz2", text = "Doo-Da-Lee-Doo"},
-                            {char = "rori", text = "What?"},
-                            {char = "kat", text = "Ignore her..."},
-                            {
-                                char = "rori",
-                                text = "Vulcan and I will battle Watta-Lee-Achee..."
-                            },
-                            {
-                                char = "rori",
-                                text = "...and free the Dress of Atacama once and for all!!!"
-                            }, {char = "kat", text = "Thanks Rori!"},
-                            {
-                                char = "rori",
-                                text = "I will join you on your Quest for the Dress!"
-                            }, {char = "liz2", text = "thanks Rori!"},
-                            {char = "rori", text = "I will join you..."},
-                            {char = "rori", text = "...on your..."},
-                            {char = "rori", text = "...Dress Quest!"},
-                            {char = "liz2", text = "Doo-Da-Lee-Doo"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "rori"}, {name = "vulcan01"}}
-                    }
-                },
-                coordinates = {col = 1, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 1
-            }
-        },
-        gridSize = {rows = 1, cols = 2}
-    }, {
         questTitle = "200 - Dennis the Menace",
         sceneConfigs = {
             {
@@ -159,7 +66,7 @@ module.questConfigs = {
                         characters02 = {}
                     }
                 },
-                coordinates = {col = 0, row = 0},
+                coordinates = {row = 0, col = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -187,7 +94,7 @@ module.questConfigs = {
                             }
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "blank"}, {name = "blank"}}
+                        characters02 = {}
                     }, {
                         dialogs = {
                             {char = "kat", text = "Yeah, that’s him."},
@@ -203,7 +110,7 @@ module.questConfigs = {
                             }
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "blank"}, {name = "blank"}}
+                        characters02 = {}
                     }, {
                         dialogs = {
                             {
@@ -215,7 +122,7 @@ module.questConfigs = {
                             }
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "blank"}, {name = "blank"}}
+                        characters02 = {}
                     }, {
                         dialogs = {
                             {
@@ -234,7 +141,7 @@ module.questConfigs = {
                             }, {char = "liz2", text = "Wow!"}
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "blank"}, {name = "blank"}}
+                        characters02 = {}
                     }, {
                         dialogs = {
                             {
@@ -243,7 +150,7 @@ module.questConfigs = {
                             }, {char = "liz2", text = "Fine with me."}
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "blank"}, {name = "blank"}}
+                        characters02 = {}
                     }
                 },
                 coordinates = {row = 0, col = 1},
@@ -272,7 +179,7 @@ module.questConfigs = {
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
                         characters02 = {
-                            {name = "dennisTheMenace"}, {name = "blank"},
+                            {name = "dennisTheMenace"},
                             {name = "dennisTheMenace"}
                         }
                     }, {
@@ -297,7 +204,7 @@ module.questConfigs = {
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
                         characters02 = {
-                            {name = "dennisTheMenace"}, {name = "blank"},
+                            {name = "dennisTheMenace"},
                             {name = "dennisTheMenace"}
                         }
                     }, {
@@ -316,7 +223,7 @@ module.questConfigs = {
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
                         characters02 = {
-                            {name = "dennisTheMenace"}, {name = "blank"},
+                            {name = "dennisTheMenace"},
                             {name = "dennisTheMenace"}
                         }
                     }, {
@@ -335,12 +242,12 @@ module.questConfigs = {
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
                         characters02 = {
-                            {name = "dennisTheMenace"}, {name = "blank"},
+                            {name = "dennisTheMenace"},
                             {name = "dennisTheMenace"}
                         }
                     }
                 },
-                coordinates = {row = 0, col = 2},
+                coordinates = {col = 2, row = 0},
                 showBottomPath = false,
                 showRightPath = false,
                 showTopPath = false,
