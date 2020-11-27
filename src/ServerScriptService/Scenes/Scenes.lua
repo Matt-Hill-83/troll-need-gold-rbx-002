@@ -124,49 +124,50 @@ function module.addScenes(props)
             numPages = numPages
         })
 
-        function incrementPage()
-            local buttonPressed = false
+        function updateFrameItems(props)
+            local pageNum2 = props.pageNum
+            local clonedScene2 = props.clonedScene
+            local numPages2 = props.numPages
 
-            local newPageNum = pageNum + 1
+            local buttonPressed = false
             if not buttonPressed then
                 buttonPressed = true
-                if newPageNum <= numPages then
-                    pageNum = newPageNum
-                    updateButtonActiveStatus(
-                        {
-                            pageNum = pageNum,
-                            clonedScene = clonedScene,
-                            numPages = numPages
-                        })
+                updateButtonActiveStatus(
+                    {
+                        pageNum = pageNum2,
+                        clonedScene = clonedScene2,
+                        numPages = numPages2
+                    })
 
-                    local newFrameConfig = sceneConfig.frames[pageNum]
-                    local newSceneProps =
-                        {
-                            frameConfig = newFrameConfig,
-                            clonedScene = clonedScene
-                        }
-                    Characters.addCharactersToScene(newSceneProps)
-                end
+                local newFrameConfig = sceneConfig.frames[pageNum2]
+                local newSceneProps = {
+                    frameConfig = newFrameConfig,
+                    clonedScene = clonedScene2
+                }
+                Characters.addCharactersToScene(newSceneProps)
                 buttonPressed = false
             end
         end
 
+        function incrementPage()
+            if pageNum < numPages then
+                pageNum = pageNum + 1
+                updateFrameItems({
+                    pageNum = pageNum,
+                    clonedScene = clonedScene,
+                    numPages = numPages
+                })
+            end
+        end
+
         function decrementPage()
-            local newPageNum = pageNum - 1
-            if newPageNum > 0 then
-                pageNum = newPageNum
-                updateButtonActiveStatus(
-                    {
-                        pageNum = pageNum,
-                        clonedScene = clonedScene,
-                        numPages = numPages
-                    })
-                local newFrameConfig = sceneConfig.frames[pageNum]
-                local newSceneProps = {
-                    frameConfig = newFrameConfig,
-                    clonedScene = clonedScene
-                }
-                Characters.addCharactersToScene(newSceneProps)
+            if pageNum > 1 then
+                pageNum = pageNum - 1
+                updateFrameItems({
+                    pageNum = pageNum,
+                    clonedScene = clonedScene,
+                    numPages = numPages
+                })
             end
         end
 
