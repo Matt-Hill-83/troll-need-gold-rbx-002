@@ -102,7 +102,7 @@ module.characters = {
         decalId = '5991275978',
         backgroundColorIdx = 1
     },
-    lucky = {displayName = "Lucky", decalId = 'xxxxxx', backgroundColorIdx = 1},
+    lucky = {displayName = "Lucky", decalId = 'xxxxxx', backgroundColorIdx = 3},
     mat = {displayName = "Mat", decalId = '5991341059', backgroundColorIdx = 1},
     mop = {displayName = "Mop", decalId = '5991340991', backgroundColorIdx = 1},
     pan = {displayName = "Pan", decalId = '5991340855', backgroundColorIdx = 1},
@@ -129,7 +129,7 @@ module.characters = {
         backgroundColorIdx = 1
     },
     bee = {displayName = "Bee", decalId = '5999465084', backgroundColorIdx = 1},
-    elf = {displayName = "Elf", decalId = '5991266909', backgroundColorIdx = 1},
+    elf = {displayName = "Elf", decalId = '5991266909', backgroundColorIdx = 4},
     bun = {displayName = "Bun", decalId = '5991343501', backgroundColorIdx = 1},
     dog01 = {
         displayName = "Dog",
@@ -154,12 +154,12 @@ module.characters = {
     troll02 = {
         displayName = "Troll02",
         decalId = '5999464489',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 3
     },
     rori = {
         displayName = "Rori",
         decalId = '5991267444',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 4
     },
     vulcan = vulcan,
     vulcan01 = vulcan,
@@ -194,7 +194,7 @@ module.characters = {
     },
     mitzyMeow01 = mitzy02,
     mitzy02 = mitzy02,
-    kat = {displayName = "Kat", decalId = '5977951764', backgroundColorIdx = 1},
+    kat = {displayName = "Kat", decalId = '5977951764', backgroundColorIdx = 3},
     liz2 = {displayName = "Liz", decalId = '5981806423', backgroundColorIdx = 2}
 }
 
