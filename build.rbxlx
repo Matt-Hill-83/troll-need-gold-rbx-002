@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>315.98053</X>
-					<Y>31.4212456</Y>
-					<Z>-220.553436</Z>
-					<R00>-0.564166665</R00>
-					<R01>-0.488364637</R01>
-					<R02>0.665744722</R02>
-					<R10>-1.4901163e-08</R10>
-					<R11>0.806317449</R11>
-					<R12>0.591483176</R12>
-					<R20>-0.825661063</R20>
-					<R21>0.333695084</R21>
-					<R22>-0.454897314</R22>
+					<X>317.817352</X>
+					<Y>45.9973831</Y>
+					<Z>-259.066711</Z>
+					<R00>-0.493091941</R00>
+					<R01>-0.473320216</R01>
+					<R02>0.729950964</R02>
+					<R10>-0</R10>
+					<R11>0.839046121</R11>
+					<R12>0.544060469</R12>
+					<R20>-0.869977236</R20>
+					<R21>0.268271834</R21>
+					<R22>-0.413726866</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>301.999023</X>
-					<Y>18.9993286</Y>
-					<Z>-211</Z>
+					<X>292.999023</X>
+					<Y>27.4993286</Y>
+					<Z>-245</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1490,7 +1490,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gCA=]]></BinaryString>
 									<CoordinateFrame name="CFrame">
 										<X>290.499023</X>
 										<Y>27.4993286</Y>
-										<Z>-244</Z>
+										<Z>-245</Z>
 										<R00>0</R00>
 										<R01>0</R01>
 										<R02>-1</R02>
@@ -1546,12 +1546,12 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gCA=]]></BinaryString>
 									<token name="formFactorRaw">1</token>
 									<token name="shape">1</token>
 									<Vector3 name="size">
-										<X>32</X>
+										<X>34</X>
 										<Y>3</Y>
 										<Z>1</Z>
 									</Vector3>
 								</Properties>
-								<Item class="Weld" referent="RBXd87b182c60ce400bbc9b71614d04673c">
+								<Item class="Weld" referent="RBX31c55a4a5fb34c62ae75dfe6b678d516">
 									<Properties>
 										<BinaryString name="AttributesSerialize"></BinaryString>
 										<CoordinateFrame name="C0">
@@ -1569,7 +1569,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gCA=]]></BinaryString>
 											<R22>0</R22>
 										</CoordinateFrame>
 										<CoordinateFrame name="C1">
-											<X>0</X>
+											<X>-1</X>
 											<Y>0.5</Y>
 											<Z>2.5</Z>
 											<R00>1</R00>
@@ -1606,7 +1606,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gCA=]]></BinaryString>
 									<CoordinateFrame name="CFrame">
 										<X>295.499023</X>
 										<Y>27.4993286</Y>
-										<Z>-244</Z>
+										<Z>-245</Z>
 										<R00>0</R00>
 										<R01>0</R01>
 										<R02>-1</R02>
@@ -1662,12 +1662,12 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gCA=]]></BinaryString>
 									<token name="formFactorRaw">1</token>
 									<token name="shape">1</token>
 									<Vector3 name="size">
-										<X>32</X>
+										<X>34</X>
 										<Y>3</Y>
 										<Z>1</Z>
 									</Vector3>
 								</Properties>
-								<Item class="Weld" referent="RBXba6a11c587264df89e2c914ed335fd45">
+								<Item class="Weld" referent="RBXb2047ea27b4f4123811d98097756314d">
 									<Properties>
 										<BinaryString name="AttributesSerialize"></BinaryString>
 										<CoordinateFrame name="C0">
@@ -1685,7 +1685,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gCA=]]></BinaryString>
 											<R22>0</R22>
 										</CoordinateFrame>
 										<CoordinateFrame name="C1">
-											<X>0</X>
+											<X>-1</X>
 											<Y>0.5</Y>
 											<Z>-2.5</Z>
 											<R00>1</R00>
@@ -12150,7 +12150,7 @@ remoteCode.addRemoteObjects(base)
 local Sss = game:GetService("ServerScriptService")
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
 
-local Utils = require(Sss.Source.Utils.Utils)
+local Utils = require(Sss.Source.Utils.U001_GeneralUtils)
 local DetectUser = require(Sss.Source.Utils.DetectUser)
 local Scenes = require(Sss.Source.Scenes.Scenes)
 local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
@@ -12487,224 +12487,6 @@ return module
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBXc7010e3488d34a2baa06ca066519c00b">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">Utils</string>
-						<string name="ScriptGuid">{841adf3c-5fb6-434a-8bbb-7f5708f6107c}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Constants = require(Sss.Source.Constants.Constants)
-local module = {}
-
-function module.reportPlayerLocation()
-    local Players = game:GetService("Players")
-    Players.PlayerAdded:Connect(function(player)
-        player.CharacterAdded:Connect(function(character)
-            local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-            while humanoidRootPart do
-                print(player.Name, "is at", tostring(humanoidRootPart.Position))
-                wait(4)
-            end
-        end)
-    end)
-end
-
-function module.getDecalIdFromName(props)
-    local name = props.name
-    if (Constants.characters[name] and Constants.characters[name]["decalId"]) then
-        return Constants.characters[name]["decalId"]
-    else
-
-        if (name ~= "blank" and name ~= "empty") then
-            print("----------------- decalId not found: ------------" .. name)
-            print(tableToString({Constants.characters[name]}));
-        end
-        return '5999465084'
-    end
-end
-
-function module.getDisplayNameFromName(props)
-    local name = props.name
-    if (Constants.characters[name] and Constants.characters[name]["displayName"]) then
-        return Constants.characters[name]["displayName"]
-    else
-        print("---------------------- name not found: ------------" .. name)
-        print(tableToString({Constants.characters[name]}));
-        return name
-    end
-end
-
-function module.deleteChildrenByName(props)
-    local parent = props.parent
-    local childName = props.childName
-    local children = parent:GetDescendants()
-    for i, item in pairs(children) do
-        if item.Name == childName then
-            item:Destroy()
-            --
-        end
-    end
-end
-
-function getFromMyStuff(name)
-    local myStuff = workspace:FindFirstChild("MyStuff")
-    return getFirstDescendantByName(myStuff, name)
-end
-
-function module.getFromTemplates(name)
-    local myStuff = workspace:FindFirstChild("MyStuff")
-    local myTemplates = myStuff:FindFirstChild("MyTemplates")
-    return getFirstDescendantByName(myTemplates, name)
-end
-
-function getFirstDescendantByName(parent, name)
-    local model = parent:GetDescendants()
-    for i = 1, #model do
-        if model[i].Name == name then
-            return model[i]
-            -- 
-        end
-    end
-end
-
-function module.getDescendantsByName(parent, name)
-    local decendants = parent:GetDescendants()
-    local output = {}
-    for i = 1, #decendants do
-        if decendants[i].Name == name then
-            table.insert(output, decendants[i])
-            -- 
-        end
-    end
-    return output
-end
-
-function module.getDescendantsByNameMatch(parent, name)
-    local decendants = parent:GetDescendants()
-    local output = {}
-    for i = 1, #decendants do
-        local child = decendants[i]
-        local match = string.match(child.Name, name)
-        if match then
-            table.insert(output, child)
-            -- 
-        end
-    end
-    return output
-end
-
-function addcfv3(a, b)
-    local x, y, z, m11, m12, m13, m21, m22, m23, m31, m32, m33 = a:components()
-    return CFrame.new(x + b.x, y + b.y, z + b.z, m11, m12, m13, m21, m22, m23,
-                      m31, m32, m33);
-end
-
-function cloneModel(props)
-    local model = props.model
-    local position = props.position
-    local suffix = props.suffix
-
-    local sceneBaseModelClone = model:Clone()
-    sceneBaseModelClone.Parent = model.Parent
-    sceneBaseModelClone.Name = model.Name .. (suffix or "-clone")
-
-    sceneBaseModelClone:MoveTo(position)
-    return sceneBaseModelClone
-end
-
-local function getNames(tab, name, res, lev)
-    res = res or {[tab] = "ROOT"}
-    local pls = {}
-    lev = lev or 0
-    for k, v in pairs(tab) do
-        if type(v) == "table" and not res[v] then
-            local n = name .. "." .. tostring(k)
-            res[v] = n
-            pls[v] = n
-        end
-    end
-    for k, v in pairs(pls) do
-        getNames(k, v, res)
-        pls[k] = lev
-    end
-    return res, pls
-end
-
-function tableToString(tab, a, b, c, d)
-    a, b = a or 0, b or {[tab] = true}
-    local name = b[tab]
-    local white = ("\t"):rep(a + 1)
-    if not c then c, d = getNames(tab, "ROOT") end
-    local res = {"{"}
-    for k, v in pairs(tab) do
-        local value
-        if type(v) == "table" then
-            if d[v] == a and not b[v] then
-                b[v] = true
-                value = tableToString(v, a + 1, b, c, d)
-            else
-                value = c[v]
-            end
-        elseif type(v) == "string" then
-            value = '"' .. v:gsub("\n", "\\n"):gsub("\t", "\\t") .. '"'
-        else
-            value = tostring(v)
-        end
-        table.insert(res, white .. tostring(k) .. " = " .. value)
-    end
-    white = white:sub(2)
-    table.insert(res, white .. "}")
-    return table.concat(res, "\n")
-end
-
-local test = {
-    str = "Result:\n\t- Unknown",
-    number = 12345,
-    child = {a = "b"},
-    cyclic = {}
-}
-test.child.cyclic = test.cyclic
-test.another = test.child
-
-function module.mergeTables(t1, t2)
-    for k, v in pairs(t2) do
-        t1[k] = v
-        --
-    end
-end
-
-addPadding = function(props)
-    local parent = props.parent
-    local paddingPct = props.paddingPct
-
-    local UIPadding = Instance.new("UIPadding", parent)
-
-    UIPadding.PaddingBottom = UDim.new(paddingPct, 0)
-    UIPadding.PaddingTop = UDim.new(paddingPct, 0)
-    UIPadding.PaddingLeft = UDim.new(paddingPct, 0)
-    UIPadding.PaddingRight = UDim.new(paddingPct, 0)
-end
-
-setMaterialPebble = function(part)
-    part.Material = Enum.Material.Pebble
-    part.BrickColor = BrickColor.new("Institutional white")
-end
-
-module.addcfv3 = addcfv3
-module.addPadding = addPadding
-module.cloneModel = cloneModel
-module.getFirstDescendantByName = getFirstDescendantByName
-module.getFromMyStuff = getFromMyStuff
-module.setMaterialPebble = setMaterialPebble
-module.tableToString = tableToString
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
 				<Item class="ModuleScript" referent="RBX93dc984d7b654f5eb189ec80e5f80060">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -13648,7 +13430,7 @@ return module
 						<string name="ScriptGuid">{a9b90c2d-6219-433d-9de0-6d04699dee85}</string>
 						<ProtectedString name="Source"><![CDATA[local TextService = game:GetService("TextService")
 local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils.Utils)
+local Utils = require(Sss.Source.Utils.U001_GeneralUtils)
 local Constants = require(Sss.Source.Constants.Constants)
 
 local dialogColors = {
@@ -14437,6 +14219,8 @@ module.islandLength = islandLength
 module.bridgeLength = bridgeLength
 module.totalIslandLength = islandLength + bridgeLength
 
+module.buttonLabels = {PrevPage = "Prev Page", NextPage = "Next Page"}
+
 local raven = {
     displayName = "Raven",
     decalId = '5897424121',
@@ -14653,7 +14437,7 @@ return module
 						<string name="Name">Bridges</string>
 						<string name="ScriptGuid">{0f6f3d3b-3dfa-4866-85e6-41b6473d8028}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils.Utils)
+local Utils = require(Sss.Source.Utils.U001_GeneralUtils)
 local module = {}
 
 function module.destroyBridges(props)
@@ -14743,7 +14527,8 @@ return module
 						<string name="Name">Characters</string>
 						<string name="ScriptGuid">{3a08ac63-fffb-4a52-baa3-4e08a7cd4d2b}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils.Utils)
+local Utils = require(Sss.Source.Utils.U001_GeneralUtils)
+local InstanceUtils = require(Sss.Source.Utils.U002_InstanceUtils)
 local Dialog = require(Sss.Source.AddDialog.Dialog)
 
 local module = {}
@@ -14754,20 +14539,8 @@ renderCharacters = function(props)
     local xGap = 1
     local nameStub = 'CharacterClone'
 
-    -- put templates out of sight
-    -- characterTemplate.CFrame = characterTemplate.CFrame + Vector3.new(0, 100, 0)
-
-    local children = characterTemplate:GetChildren()
-    for _, item in pairs(children) do
-        print('item.Name' .. ' - start');
-        print(item.Name);
-        print('item.Name' .. ' - end');
-        local match = string.match(item.Name, nameStub)
-        if item:IsA('Part') and match then
-            item:Destroy()
-            --
-        end
-    end
+    InstanceUtils.deleteInstanceByNameStub(
+        {parent = characterTemplate, nameStub = nameStub})
 
     -- Hide decal on template
     applyDecalsToCharacter({part = characterTemplate, decalId = ""})
@@ -14781,7 +14554,6 @@ renderCharacters = function(props)
             local x = (i - 1) * -(characterTemplate.Size.X + xGap)
 
             Utils.mergeTables(newItem, {
-                -- Transparency = 1,
                 CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
                 Parent = characterTemplate,
                 Name = nameStub .. i
@@ -14858,7 +14630,7 @@ return module
 						<string name="Name">Scenes</string>
 						<string name="ScriptGuid">{7ad4421e-fa9d-4253-b43f-c5efe06735fb}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils.Utils)
+local Utils = require(Sss.Source.Utils.U001_GeneralUtils)
 local Bridges = require(Sss.Source.Bridges.Bridges)
 local Characters = require(Sss.Source.Characters.Characters)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
@@ -14959,11 +14731,15 @@ function module.addScenes(props)
 
             local nextButton = Utils.getFirstDescendantByName(clonedScene2,
                                                               "NextPageButton")
-            nextButton.Active = not nextButton.Active
+            nextButton.Active = pageNum2 < numPages2
+            nextButton.Text = nextButton.Active and
+                                  Constants.buttonLabels.NextPage or "---"
 
             local prevButton = Utils.getFirstDescendantByName(clonedScene2,
                                                               "PrevPageButton")
-            prevButton.Active = not prevButton.Active
+            prevButton.Active = pageNum2 > 1
+            prevButton.Text = prevButton.Active and
+                                  Constants.buttonLabels.PrevPage or "---"
 
             local pageNumLabel = Utils.getFirstDescendantByName(clonedScene2,
                                                                 "PageNumLabel")
@@ -14980,11 +14756,7 @@ function module.addScenes(props)
         })
 
         function incrementPage()
-            print('in   crementPage')
             local newPageNum = pageNum + 1
-            print('numPages' .. ' - start');
-            print(numPages);
-            print('numPages' .. ' - end');
             if newPageNum <= numPages then
                 pageNum = newPageNum
                 updateButtonActiveStatus(
@@ -15005,8 +14777,6 @@ function module.addScenes(props)
 
         function decrementPage()
             local newPageNum = pageNum - 1
-            print('decrementPage')
-            print(newPageNum);
             if newPageNum > 0 then
                 pageNum = newPageNum
                 updateButtonActiveStatus(

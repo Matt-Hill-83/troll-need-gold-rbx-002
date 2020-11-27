@@ -1,6 +1,6 @@
 local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils.U001_GeneralUtils)
-local InstanceUtils = require(Sss.Source.Utils.U002_InstanceUtils)
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local InstanceUtils = require(Sss.Source.Utils.U002InstanceUtils)
 local Dialog = require(Sss.Source.AddDialog.Dialog)
 
 local module = {}
