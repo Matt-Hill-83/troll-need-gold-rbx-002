@@ -2,6 +2,7 @@ local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Bridges = require(Sss.Source.Bridges.Bridges)
 local Characters = require(Sss.Source.Characters.Characters)
+local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
 
@@ -34,29 +35,6 @@ function getNewPosition(props)
                      (Constants.islandLength + Constants.bridgeLength +
                          Constants.buffer)
     return Vector3.new(newX, 0, -newZ)
-end
-
-function addLocation(props)
-    local scene = props.scene
-    local sceneConfig = props.sceneConfig
-
-    -- Image
-    -- Image
-    local locationModelImage = Utils.getFirstDescendantByName(scene,
-                                                              "LocationModelImage")
-    local imageLabelFront = Utils.getFirstDescendantByName(locationModelImage,
-                                                           'ImageLabel')
-    local imageId = Utils.getDecalIdFromName({name = sceneConfig.name})
-    imageLabelFront.Image = 'rbxassetid://' .. imageId
-
-    -- Label
-    -- Label
-    local locationModelLabel = Utils.getFirstDescendantByName(scene,
-                                                              "LocationModelLabel")
-    local textLabel = Utils.getFirstDescendantByName(locationModelLabel,
-                                                     'TextLabel')
-    textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
-
 end
 
 function module.addScenes(props)
@@ -98,7 +76,7 @@ function module.addScenes(props)
 
         Characters.addCharactersToScene(sceneProps)
 
-        addLocation({scene = clonedScene, sceneConfig = sceneConfig})
+        Location.addLocation({scene = clonedScene, sceneConfig = sceneConfig})
 
         function updateButtonActiveStatus(props)
             print('updateButtonActiveStatus===============================')
