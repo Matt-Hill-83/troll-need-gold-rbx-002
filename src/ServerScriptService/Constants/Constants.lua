@@ -7,6 +7,8 @@ module.islandLength = islandLength
 module.bridgeLength = bridgeLength
 module.totalIslandLength = islandLength + bridgeLength
 
+module.buttonLabels = {PrevPage = "Prev Page", NextPage = "Next Page"}
+
 local raven = {
     displayName = "Raven",
     decalId = '5897424121',

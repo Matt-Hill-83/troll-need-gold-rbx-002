@@ -100,11 +100,15 @@ function module.addScenes(props)
 
             local nextButton = Utils.getFirstDescendantByName(clonedScene2,
                                                               "NextPageButton")
-            nextButton.Active = not nextButton.Active
+            nextButton.Active = pageNum2 < numPages2
+            nextButton.Text = nextButton.Active and
+                                  Constants.buttonLabels.NextPage or "---"
 
             local prevButton = Utils.getFirstDescendantByName(clonedScene2,
                                                               "PrevPageButton")
-            prevButton.Active = not prevButton.Active
+            prevButton.Active = pageNum2 > 1
+            prevButton.Text = prevButton.Active and
+                                  Constants.buttonLabels.PrevPage or "---"
 
             local pageNumLabel = Utils.getFirstDescendantByName(clonedScene2,
                                                                 "PageNumLabel")
@@ -121,11 +125,7 @@ function module.addScenes(props)
         })
 
         function incrementPage()
-            print('in   crementPage')
             local newPageNum = pageNum + 1
-            print('numPages' .. ' - start');
-            print(numPages);
-            print('numPages' .. ' - end');
             if newPageNum <= numPages then
                 pageNum = newPageNum
                 updateButtonActiveStatus(
@@ -146,8 +146,6 @@ function module.addScenes(props)
 
         function decrementPage()
             local newPageNum = pageNum - 1
-            print('decrementPage')
-            print(newPageNum);
             if newPageNum > 0 then
                 pageNum = newPageNum
                 updateButtonActiveStatus(
