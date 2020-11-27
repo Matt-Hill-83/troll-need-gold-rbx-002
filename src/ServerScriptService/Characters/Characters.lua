@@ -7,8 +7,24 @@ local module = {}
 renderCharacters = function(props)
     local characterTemplate = props.template
     local itemConfigs = props.itemConfigs
-
     local xGap = 1
+    local nameStub = 'CharacterClone'
+
+    local children = characterTemplate:GetChildren()
+    for _, item in pairs(children) do
+        print('item.Name' .. ' - start');
+        print(item.Name);
+        print('item.Name' .. ' - end');
+        local match = string.match(item.Name, nameStub)
+        print('match' .. ' - start');
+        print(match);
+        print('match' .. ' - end');
+        if item:IsA('Part') and match then
+            item:Destroy()
+            --
+        end
+    end
+
     for i, itemConfig in ipairs(itemConfigs) do
 
         local name = itemConfig.name
@@ -19,7 +35,8 @@ renderCharacters = function(props)
             Utils.mergeTables(newItem, {
                 Transparency = 1,
                 CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
-                Parent = characterTemplate
+                Parent = characterTemplate,
+                Name = nameStub .. i
             })
 
             local decalFront = Utils.getFirstDescendantByName(newItem,
