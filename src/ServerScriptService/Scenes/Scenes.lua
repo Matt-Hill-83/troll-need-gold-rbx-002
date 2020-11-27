@@ -69,8 +69,6 @@ function module.addScenes(props)
             clonedScene = clonedScene
         })
 
-        local newWall = clonedScene.PrimaryPart
-
         local frameConfig = sceneConfig.frames[pageNum]
         local sceneProps = {
             frameConfig = frameConfig,
@@ -98,9 +96,6 @@ function module.addScenes(props)
             local clonedScene2 = props.clonedScene
             local pageNum2 = props.pageNum
             local numPages2 = props.numPages
-            print('pageNum2' .. ' - start');
-            print(pageNum2);
-            print('pageNum2' .. ' - end');
 
             local nextButton = Utils.getFirstDescendantByName(clonedScene2,
                                                               "NextPageButton")
@@ -118,7 +113,7 @@ function module.addScenes(props)
             print('pageNumLabel' .. ' - end');
             -- pageNumLabel.Text = "test" .. pageNum2
             pageNumLabel.Text = "<b>" .. "Page: " .. "</b>" .. pageNum2 ..
-                                    " of " .. numPages
+                                    " of " .. numPages2
 
         end
 
@@ -131,8 +126,6 @@ function module.addScenes(props)
         function incrementPage()
             print('in   crementPage')
             local newPageNum = pageNum + 1
-            print('newPageNum' .. ' - start');
-            print(newPageNum);
             print('numPages' .. ' - start');
             print(numPages);
             print('numPages' .. ' - end');
@@ -157,7 +150,6 @@ function module.addScenes(props)
         function decrementPage()
             local newPageNum = pageNum - 1
             print('decrementPage')
-            print('newPageNum' .. ' - start');
             print(newPageNum);
             if newPageNum > 0 then
                 pageNum = newPageNum
@@ -167,9 +159,9 @@ function module.addScenes(props)
                         clonedScene = clonedScene,
                         numPages = numPages
                     })
-
-                print('decrementPage=----------yes')
-
+                print('pageNum' .. ' - start');
+                print(pageNum);
+                print('pageNum' .. ' - end');
                 local newFrameConfig = sceneConfig.frames[pageNum]
                 local newSceneProps = {
                     frameConfig = newFrameConfig,
@@ -178,23 +170,14 @@ function module.addScenes(props)
                 Characters.addCharactersToScene(newSceneProps)
             end
         end
-        -- 
-        -- 
+
         local nextButton = Utils.getFirstDescendantByName(clonedScene,
                                                           "NextPageButton")
         nextButton.MouseButton1Click:Connect(incrementPage)
-        -- 
-        -- 
         local prevButton = Utils.getFirstDescendantByName(clonedScene,
                                                           "PrevPageButton")
         prevButton.MouseButton1Click:Connect(decrementPage)
 
-        -- local pageNumLabel = Utils.getFirstDescendantByName(clonedScene,
-        --                                                     "PageNumLabel")
-        -- pageNumLabel.Text = "<b>" .. "Page: " .. "</b>" .. pageNum .. " of " ..
-        --                         numPages
-        -- 
-        -- 
     end
 end
 
