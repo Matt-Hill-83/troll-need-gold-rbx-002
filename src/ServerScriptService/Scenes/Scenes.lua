@@ -2,6 +2,7 @@ local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Bridges = require(Sss.Source.Bridges.Bridges)
 local Characters = require(Sss.Source.Characters.Characters)
+local Buttons = require(Sss.Source.Buttons.Buttons)
 local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
@@ -84,6 +85,9 @@ function module.addScenes(props)
             local pageNum2 = props.pageNum
             local numPages2 = props.numPages
 
+            print('pageNum2' .. ' - start');
+            print(pageNum2);
+            print('pageNum2' .. ' - end');
             local nextButton = Utils.getFirstDescendantByName(clonedScene2,
                                                               "NextPageButton")
             nextButton.Active = pageNum2 < numPages2
@@ -110,100 +114,13 @@ function module.addScenes(props)
             numPages = numPages
         })
 
-        function updateFrameItems(props)
-
-            print('updateFrameItems' .. ' - start');
-            print(updateFrameItems);
-            print('updateFrameItems' .. ' - end');
-            local pageNum2 = props.pageNum
-            local clonedScene2 = props.clonedScene
-            local numPages2 = props.numPages
-            local sceneConfig2 = props.sceneConfig
-            print('numPages2' .. ' - start');
-            print(numPages2);
-            print('numPages2' .. ' - end');
-            print('pageNum2' .. ' - start');
-            print(pageNum2);
-            print('pageNum2' .. ' - end');
-            local buttonPressed = false
-            if not buttonPressed then
-                buttonPressed = true
-                updateButtonActiveStatus(
-                    {
-                        pageNum = pageNum2,
-                        clonedScene = clonedScene2,
-                        numPages = numPages2
-                    })
-
-                local newFrameConfig = sceneConfig2.frames[pageNum2]
-                local newSceneProps = {
-                    frameConfig = newFrameConfig,
-                    clonedScene = clonedScene2
-                }
-                Characters.addCharactersToScene(newSceneProps)
-                buttonPressed = false
-            end
-        end
-
-        function incrementPage(props)
-
-            local pageNum1 = props.pageNum
-            local clonedScene1 = props.clonedScene
-            local numPages1 = props.numPages
-            local sceneConfig1 = props.sceneConfig
-            local index = props.i
-            print('index' .. ' - start');
-            print(index);
-            print('index' .. ' - end');
-
-            print('clonedScene1' .. ' - start');
-            print(clonedScene1);
-            print('clonedScene1' .. ' - end');
-            print('numPages1' .. ' - start');
-            print(numPages1);
-            print('numPages1' .. ' - end');
-
-            if pageNum < numPages1 then
-                pageNum = pageNum + 1
-                updateFrameItems({
-                    pageNum = pageNum,
-                    clonedScene = clonedScene1,
-                    numPages = numPages1,
-                    sceneConfig = sceneConfig1
-                })
-            end
-        end
-
-        function decrementPage()
-            if pageNum > 1 then
-                pageNum = pageNum - 1
-                updateFrameItems({
-                    pageNum = pageNum,
-                    clonedScene = clonedScene,
-                    numPages = numPages
-                })
-            end
-        end
-
-        local function onIncrementPage()
-            incrementPage({
-                i = i,
-                pageNum = pageNum,
-                clonedScene = clonedScene,
-                numPages = numPages,
-                sceneConfig = sceneConfig
-            })
-        end
-
-        -- textButton.MouseButton1Click:Connect(onActivated)
-
-        local nextButton = Utils.getFirstDescendantByName(clonedScene,
-                                                          "NextPageButton")
-        nextButton.MouseButton1Click:Connect(onIncrementPage)
-
-        local prevButton = Utils.getFirstDescendantByName(clonedScene,
-                                                          "PrevPageButton")
-        prevButton.MouseButton1Click:Connect(decrementPage)
+        local props2 = {
+            updateButtonActiveStatus = updateButtonActiveStatus,
+            clonedScene = clonedScene,
+            numPages = numPages,
+            sceneConfig = sceneConfig
+        }
+        Buttons.doFrameStuff(props2)
 
     end
 end
