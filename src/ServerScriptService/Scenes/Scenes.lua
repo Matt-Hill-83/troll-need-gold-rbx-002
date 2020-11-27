@@ -95,12 +95,16 @@ function module.addScenes(props)
         Characters.addCharactersToScene(sceneProps)
 
         function incrementPage()
+            print('in   crementPage')
             local newPageNum = pageNum + 1
             print('newPageNum' .. ' - start');
             print(newPageNum);
-            print('newPageNum' .. ' - end');
+            print('numPages' .. ' - start');
+            print(numPages);
+            print('numPages' .. ' - end');
             if newPageNum <= numPages then
                 pageNum = newPageNum
+                print('incrementPage------------------yes')
 
                 local children = newWall:GetChildren()
                 -- TODO - fix this
@@ -127,10 +131,12 @@ function module.addScenes(props)
 
         function decrementPage()
             local newPageNum = pageNum - 1
+            print('decrementPage')
             print('newPageNum' .. ' - start');
             print(newPageNum);
-            print('newPageNum' .. ' - end');
-            if newPageNum > 0 then
+            if newPageNum > 1 then
+
+                print('decrementPage=----------yes')
                 pageNum = newPageNum
 
                 local children = newWall:GetChildren()
