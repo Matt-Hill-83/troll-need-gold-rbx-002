@@ -93,6 +93,40 @@ function module.addScenes(props)
         textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
 
         Characters.addCharactersToScene(sceneProps)
+        function updateButtonActiveStatus(props)
+            print('updateButtonActiveStatus===============================')
+            local clonedScene2 = props.clonedScene
+            local pageNum2 = props.pageNum
+            local numPages2 = props.numPages
+            print('pageNum2' .. ' - start');
+            print(pageNum2);
+            print('pageNum2' .. ' - end');
+
+            local nextButton = Utils.getFirstDescendantByName(clonedScene2,
+                                                              "NextPageButton")
+            nextButton.Active = not nextButton.Active
+
+            local prevButton = Utils.getFirstDescendantByName(clonedScene2,
+                                                              "PrevPageButton")
+            prevButton.Active = not prevButton.Active
+
+            local pageNumLabel = Utils.getFirstDescendantByName(clonedScene2,
+                                                                "PageNumLabel")
+
+            print('pageNumLabel' .. ' - start');
+            print(pageNumLabel);
+            print('pageNumLabel' .. ' - end');
+            -- pageNumLabel.Text = "test" .. pageNum2
+            pageNumLabel.Text = "<b>" .. "Page: " .. "</b>" .. pageNum2 ..
+                                    " of " .. numPages
+
+        end
+
+        updateButtonActiveStatus({
+            pageNum = pageNum,
+            clonedScene = clonedScene,
+            numPages = numPages
+        })
 
         function incrementPage()
             print('in   crementPage')
@@ -104,6 +138,12 @@ function module.addScenes(props)
             print('numPages' .. ' - end');
             if newPageNum <= numPages then
                 pageNum = newPageNum
+                updateButtonActiveStatus(
+                    {
+                        pageNum = pageNum,
+                        clonedScene = clonedScene,
+                        numPages = numPages
+                    })
                 print('incrementPage------------------yes')
 
                 local children = newWall:GetChildren()
@@ -134,10 +174,16 @@ function module.addScenes(props)
             print('decrementPage')
             print('newPageNum' .. ' - start');
             print(newPageNum);
-            if newPageNum > 1 then
+            if newPageNum > 0 then
+                pageNum = newPageNum
+                updateButtonActiveStatus(
+                    {
+                        pageNum = pageNum,
+                        clonedScene = clonedScene,
+                        numPages = numPages
+                    })
 
                 print('decrementPage=----------yes')
-                pageNum = newPageNum
 
                 local children = newWall:GetChildren()
 
@@ -160,26 +206,19 @@ function module.addScenes(props)
         end
         -- 
         -- 
-        local nextPageButtonTemplate = Utils.getFirstDescendantByName(
-                                           clonedScene, "NextPageButton")
-        local nextButton = Utils.getFirstDescendantByName(
-                               nextPageButtonTemplate, "TextButton")
+        local nextButton = Utils.getFirstDescendantByName(clonedScene,
+                                                          "NextPageButton")
         nextButton.MouseButton1Click:Connect(incrementPage)
         -- 
         -- 
-        local prevPageButtonTemplate = Utils.getFirstDescendantByName(
-                                           clonedScene, "PrevPageButton")
-        local prevButton = Utils.getFirstDescendantByName(
-                               prevPageButtonTemplate, "TextButton")
+        local prevButton = Utils.getFirstDescendantByName(clonedScene,
+                                                          "PrevPageButton")
         prevButton.MouseButton1Click:Connect(decrementPage)
 
-        local pageNumBlock = Utils.getFirstDescendantByName(clonedScene,
-                                                            "PageNum")
-        local pageNumLabel = Utils.getFirstDescendantByName(pageNumBlock,
-                                                            "TextLabel")
-        pageNumLabel.RichText = true
-        pageNumLabel.Text = "<b>" .. "Page: " .. "</b>" .. pageNum .. " of " ..
-                                numPages
+        -- local pageNumLabel = Utils.getFirstDescendantByName(clonedScene,
+        --                                                     "PageNumLabel")
+        -- pageNumLabel.Text = "<b>" .. "Page: " .. "</b>" .. pageNum .. " of " ..
+        --                         numPages
         -- 
         -- 
     end

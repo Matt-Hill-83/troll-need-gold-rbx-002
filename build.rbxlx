@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>347.07782</X>
-					<Y>33.3869705</Y>
-					<Z>-247.723007</Z>
-					<R00>-0.860440671</R00>
-					<R01>0.0339052528</R01>
-					<R02>0.508421361</R02>
-					<R10>-0</R10>
-					<R11>0.99778378</R11>
-					<R12>-0.0665395185</R12>
-					<R20>-0.509550631</R20>
-					<R21>-0.0572533086</R21>
-					<R22>-0.85853374</R22>
+					<X>206.447296</X>
+					<Y>40.9451256</Y>
+					<Z>-162.865051</Z>
+					<R00>-0.945330858</R00>
+					<R01>-0.143961474</R01>
+					<R02>0.292616904</R02>
+					<R10>-7.4505806e-09</R10>
+					<R11>0.897287428</R11>
+					<R12>0.441446841</R12>
+					<R20>-0.326112807</R20>
+					<R21>0.417313308</R21>
+					<R22>-0.848233461</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>331.82489</X>
-					<Y>35.383194</Y>
-					<Z>-221.966507</Z>
+					<X>205.862061</X>
+					<Y>40.0622292</Y>
+					<Z>-161.168579</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -5471,7 +5471,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gCA=]]></BinaryString>
 										<bool name="Locked">false</bool>
 										<bool name="Massless">false</bool>
 										<token name="Material">256</token>
-										<string name="Name">NextPageButton</string>
+										<string name="Name">NextPageButtonBox</string>
 										<float name="Reflectance">0</float>
 										<float name="RightParamA">-0.5</float>
 										<float name="RightParamB">0.5</float>
@@ -5559,7 +5559,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gCA=]]></BinaryString>
 												<int name="LayoutOrder">0</int>
 												<float name="LineHeight">1</float>
 												<bool name="Modal">false</bool>
-												<string name="Name">TextButton</string>
+												<string name="Name">NextPageButton</string>
 												<Ref name="NextSelectionDown">null</Ref>
 												<Ref name="NextSelectionLeft">null</Ref>
 												<Ref name="NextSelectionRight">null</Ref>
@@ -5694,7 +5694,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gCA=]]></BinaryString>
 										<bool name="Locked">false</bool>
 										<bool name="Massless">false</bool>
 										<token name="Material">256</token>
-										<string name="Name">PrevPageButton</string>
+										<string name="Name">PrevPageButtonBox</string>
 										<float name="Reflectance">0</float>
 										<float name="RightParamA">-0.5</float>
 										<float name="RightParamB">0.5</float>
@@ -5782,7 +5782,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gCA=]]></BinaryString>
 												<int name="LayoutOrder">0</int>
 												<float name="LineHeight">1</float>
 												<bool name="Modal">false</bool>
-												<string name="Name">TextButton</string>
+												<string name="Name">PrevPageButton</string>
 												<Ref name="NextSelectionDown">null</Ref>
 												<Ref name="NextSelectionLeft">null</Ref>
 												<Ref name="NextSelectionRight">null</Ref>
@@ -6003,7 +6003,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gCA=]]></BinaryString>
 												<token name="Font">3</token>
 												<int name="LayoutOrder">0</int>
 												<float name="LineHeight">1</float>
-												<string name="Name">TextLabel</string>
+												<string name="Name">PageNumLabel</string>
 												<Ref name="NextSelectionDown">null</Ref>
 												<Ref name="NextSelectionLeft">null</Ref>
 												<Ref name="NextSelectionRight">null</Ref>
@@ -11555,12 +11555,12 @@ remoteCode.addRemoteObjects(base)
 				<token name="BottomSurface">0</token>
 				<token name="BottomSurfaceInput">0</token>
 				<CoordinateFrame name="CFrame">
-					<X>250</X>
+					<X>226.690018</X>
 					<Y>13.4900265</Y>
-					<Z>-224</Z>
+					<Z>-81.890007</Z>
 					<R00>0</R00>
 					<R01>0</R01>
-					<R02>0.99999994</R02>
+					<R02>0.999999583</R02>
 					<R10>0</R10>
 					<R11>1</R11>
 					<R12>0</R12>
@@ -11636,45 +11636,6 @@ remoteCode.addRemoteObjects(base)
 					<BinaryString name="Tags"></BinaryString>
 					<Content name="Texture"><url>rbxasset://textures/SpawnLocation.png</url></Content>
 					<float name="Transparency">0</float>
-				</Properties>
-			</Item>
-			<Item class="Weld" referent="RBXe14df308c8c34c359338f57808d38aeb">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<CoordinateFrame name="C0">
-						<X>0</X>
-						<Y>-0.489999771</Y>
-						<Z>0</Z>
-						<R00>1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>0</R11>
-						<R12>-1</R12>
-						<R20>0</R20>
-						<R21>0.99999994</R21>
-						<R22>0</R22>
-					</CoordinateFrame>
-					<CoordinateFrame name="C1">
-						<X>224</X>
-						<Y>8</Y>
-						<Z>0</Z>
-						<R00>1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>0</R11>
-						<R12>-1</R12>
-						<R20>0</R20>
-						<R21>1</R21>
-						<R22>0</R22>
-					</CoordinateFrame>
-					<bool name="Enabled">true</bool>
-					<string name="Name">Weld</string>
-					<Ref name="Part0">RBX20423fbfc3f843b6bee9d9b7f1aa1500</Ref>
-					<Ref name="Part1">RBX2dfd484a3008492d82388863313b746f</Ref>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
 		</Item>
@@ -16732,6 +16693,32 @@ function module.addScenes(props)
         textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
 
         Characters.addCharactersToScene(sceneProps)
+        function updateButtonActiveStatus(props)
+            print('updateButtonActiveStatus===============================')
+            local numPages2 = props.numPages
+            local pageNum2 = props.pageNum
+            print('pageNum2' .. ' - start');
+            print(pageNum2);
+            print('pageNum2' .. ' - end');
+
+            local nextButton = Utils.getFirstDescendantByName(clonedScene,
+                                                              "NextPageButton")
+            local prevButton = Utils.getFirstDescendantByName(clonedScene,
+                                                              "PrevPageButton")
+
+            local pageNumLabel = Utils.getFirstDescendantByName(clonedScene,
+                                                                "PageNumLabel")
+
+            print('pageNumLabel' .. ' - start');
+            print(pageNumLabel);
+            print('pageNumLabel' .. ' - end');
+            -- pageNumLabel.Text = "test"
+            pageNumLabel.Text = "<b>" .. "Page: " .. "</b>" .. pageNum2 ..
+                                    " of " .. numPages2
+
+        end
+
+        updateButtonActiveStatus({pageNum = pageNum, numPages = numPages})
 
         function incrementPage()
             print('in   crementPage')
@@ -16743,6 +16730,8 @@ function module.addScenes(props)
             print('numPages' .. ' - end');
             if newPageNum <= numPages then
                 pageNum = newPageNum
+                updateButtonActiveStatus(
+                    {pageNum = pageNum, numPages = numPages})
                 print('incrementPage------------------yes')
 
                 local children = newWall:GetChildren()
@@ -16774,9 +16763,11 @@ function module.addScenes(props)
             print('newPageNum' .. ' - start');
             print(newPageNum);
             if newPageNum > 1 then
+                pageNum = newPageNum
+                updateButtonActiveStatus(
+                    {pageNum = pageNum, numPages = numPages})
 
                 print('decrementPage=----------yes')
-                pageNum = newPageNum
 
                 local children = newWall:GetChildren()
 
@@ -16797,34 +16788,21 @@ function module.addScenes(props)
                 Characters.addCharactersToScene(newSceneProps)
             end
         end
-
         -- 
         -- 
-        local nextPageButtonTemplate = Utils.getFirstDescendantByName(
-                                           clonedScene, "NextPageButton")
-        local nextButton = Utils.getFirstDescendantByName(
-                               nextPageButtonTemplate, "TextButton")
+        local nextButton = Utils.getFirstDescendantByName(clonedScene,
+                                                          "NextPageButton")
         nextButton.MouseButton1Click:Connect(incrementPage)
         -- 
         -- 
-        -- 
-        -- 
-        local prevPageButtonTemplate = Utils.getFirstDescendantByName(
-                                           clonedScene, "PrevPageButton")
-        local prevButton = Utils.getFirstDescendantByName(
-                               prevPageButtonTemplate, "TextButton")
+        local prevButton = Utils.getFirstDescendantByName(clonedScene,
+                                                          "PrevPageButton")
         prevButton.MouseButton1Click:Connect(decrementPage)
 
-        local pageNumBlock = Utils.getFirstDescendantByName(clonedScene,
-                                                            "PageNum")
-        local pageNumLabel = Utils.getFirstDescendantByName(pageNumBlock,
-                                                            "TextLabel")
-        pageNumLabel.RichText = true
-        local text = "<b>" .. numPages .. ": " .. "</b>"
-
-        -- pageNumLabel.Text = text
-        pageNumLabel.Text = "<b>" .. "Page: " .. "</b>" .. pageNum .. " of " ..
-                                numPages
+        -- local pageNumLabel = Utils.getFirstDescendantByName(clonedScene,
+        --                                                     "PageNumLabel")
+        -- pageNumLabel.Text = "<b>" .. "Page: " .. "</b>" .. pageNum .. " of " ..
+        --                         numPages
         -- 
         -- 
     end
