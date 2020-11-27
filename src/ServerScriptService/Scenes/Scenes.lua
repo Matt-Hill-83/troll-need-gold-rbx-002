@@ -36,12 +36,35 @@ function getNewPosition(props)
     return Vector3.new(newX, 0, -newZ)
 end
 
+function addLocation(props)
+    local scene = props.scene
+    local sceneConfig = props.sceneConfig
+
+    -- Image
+    -- Image
+    local locationModelImage = Utils.getFirstDescendantByName(scene,
+                                                              "LocationModelImage")
+    local imageLabelFront = Utils.getFirstDescendantByName(locationModelImage,
+                                                           'ImageLabel')
+    local imageId = Utils.getDecalIdFromName({name = sceneConfig.name})
+    imageLabelFront.Image = 'rbxassetid://' .. imageId
+
+    -- Label
+    -- Label
+    local locationModelLabel = Utils.getFirstDescendantByName(scene,
+                                                              "LocationModelLabel")
+    local textLabel = Utils.getFirstDescendantByName(locationModelLabel,
+                                                     'TextLabel')
+    textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
+
+end
+
 function module.addScenes(props)
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
 
     local sceneTemplateModel = Utils.getFromTemplates("SceneTemplate")
-    local wallTemplate = Utils.getFromTemplates("WallTemplate")
+    local wallTemplate = Utils.getFromTemplates("SceneBase")
 
     local startPosition = getStartPosition(parent, wallTemplate)
 
@@ -73,24 +96,9 @@ function module.addScenes(props)
             clonedScene = clonedScene
         }
 
-        -- Image
-        -- Image
-        local locationModelImage = Utils.getFirstDescendantByName(clonedScene,
-                                                                  "LocationModelImage")
-        local imageLabelFront = Utils.getFirstDescendantByName(
-                                    locationModelImage, 'ImageLabel')
-        local imageId = Utils.getDecalIdFromName({name = sceneConfig.name})
-        imageLabelFront.Image = 'rbxassetid://' .. imageId
-
-        -- Label
-        -- Label
-        local locationModelLabel = Utils.getFirstDescendantByName(clonedScene,
-                                                                  "LocationModelLabel")
-        local textLabel = Utils.getFirstDescendantByName(locationModelLabel,
-                                                         'TextLabel')
-        textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
-
         Characters.addCharactersToScene(sceneProps)
+
+        addLocation({scene = clonedScene, sceneConfig = sceneConfig})
 
         function updateButtonActiveStatus(props)
             print('updateButtonActiveStatus===============================')
