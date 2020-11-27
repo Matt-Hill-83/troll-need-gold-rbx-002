@@ -91,6 +91,7 @@ function module.addScenes(props)
         textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
 
         Characters.addCharactersToScene(sceneProps)
+
         function updateButtonActiveStatus(props)
             print('updateButtonActiveStatus===============================')
             local clonedScene2 = props.clonedScene
@@ -108,10 +109,6 @@ function module.addScenes(props)
             local pageNumLabel = Utils.getFirstDescendantByName(clonedScene2,
                                                                 "PageNumLabel")
 
-            print('pageNumLabel' .. ' - start');
-            print(pageNumLabel);
-            print('pageNumLabel' .. ' - end');
-            -- pageNumLabel.Text = "test" .. pageNum2
             pageNumLabel.Text = "<b>" .. "Page: " .. "</b>" .. pageNum2 ..
                                     " of " .. numPages2
 
@@ -159,9 +156,6 @@ function module.addScenes(props)
                         clonedScene = clonedScene,
                         numPages = numPages
                     })
-                print('pageNum' .. ' - start');
-                print(pageNum);
-                print('pageNum' .. ' - end');
                 local newFrameConfig = sceneConfig.frames[pageNum]
                 local newSceneProps = {
                     frameConfig = newFrameConfig,

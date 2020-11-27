@@ -10,8 +10,14 @@ renderCharacters = function(props)
     local xGap = 1
     local nameStub = 'CharacterClone'
 
+    -- put templates out of sight
+    -- characterTemplate.CFrame = characterTemplate.CFrame + Vector3.new(0, 100, 0)
+
     local children = characterTemplate:GetChildren()
     for _, item in pairs(children) do
+        print('item.Name' .. ' - start');
+        print(item.Name);
+        print('item.Name' .. ' - end');
         local match = string.match(item.Name, nameStub)
         if item:IsA('Part') and match then
             item:Destroy()
@@ -33,21 +39,30 @@ renderCharacters = function(props)
                 Name = nameStub .. i
             })
 
-            local decalFront = Utils.getFirstDescendantByName(newItem,
-                                                              "DecalFront")
-            local decalBack = Utils.getFirstDescendantByName(newItem,
-                                                             "DecalBack")
             local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
-
-            decalFront.Texture = 'rbxassetid://' .. decalId
-            decalBack.Texture = 'rbxassetid://' .. decalId
+            applyDecalsToCharacter({part = newItem, decalId = decalId})
         end
     end
+
+    applyDecalsToCharacter({part = characterTemplate, decalId = ""})
+    -- restore position of clones
+    -- characterTemplate.CFrame = characterTemplate.CFrame +
+    --                                Vector3.new(0, -100, 0)
     characterTemplate.Transparency = 1
 
-    -- put templates out of sight
-    characterTemplate.Position = characterTemplate.Position +
-                                     Vector3.new(0, -100, 0)
+end
+
+function applyDecalsToCharacter(props)
+    local part = props.part
+    local decalId = props.decalId
+
+    local decalFront = Utils.getFirstDescendantByName(part,
+                                                      "CharacterDecalFront")
+    local decalBack = Utils.getFirstDescendantByName(part, "CharacterDecalBack")
+
+    decalFront.Texture = 'rbxassetid://' .. decalId
+    decalBack.Texture = 'rbxassetid://' .. decalId
+
 end
 
 function module.addCharactersToScene(props)
