@@ -158,7 +158,6 @@ function module.addScenes(props)
                 Characters.addCharactersToScene(newSceneProps)
             end
         end
-
         -- 
         -- 
         local nextPageButtonTemplate = Utils.getFirstDescendantByName(
@@ -168,13 +167,19 @@ function module.addScenes(props)
         nextButton.MouseButton1Click:Connect(incrementPage)
         -- 
         -- 
-        -- 
-        -- 
         local prevPageButtonTemplate = Utils.getFirstDescendantByName(
                                            clonedScene, "PrevPageButton")
         local prevButton = Utils.getFirstDescendantByName(
                                prevPageButtonTemplate, "TextButton")
         prevButton.MouseButton1Click:Connect(decrementPage)
+
+        local pageNumBlock = Utils.getFirstDescendantByName(clonedScene,
+                                                            "PageNum")
+        local pageNumLabel = Utils.getFirstDescendantByName(pageNumBlock,
+                                                            "TextLabel")
+        pageNumLabel.RichText = true
+        pageNumLabel.Text = "<b>" .. "Page: " .. "</b>" .. pageNum .. " of " ..
+                                numPages
         -- 
         -- 
     end
