@@ -11555,8 +11555,8 @@ remoteCode.addRemoteObjects(base)
 				<token name="BottomSurface">0</token>
 				<token name="BottomSurfaceInput">0</token>
 				<CoordinateFrame name="CFrame">
-					<X>147.999985</X>
-					<Y>8.41187477</Y>
+					<X>250.999893</X>
+					<Y>13.4118748</Y>
 					<Z>-188</Z>
 					<R00>0</R00>
 					<R01>0</R01>
@@ -14087,9 +14087,78 @@ return module
 
 module.questConfigs = {
     {
-        questTitle = "330 Merlinda The Fairy Princess Part3",
+        questTitle = "200 - Dennis the Menace",
         sceneConfigs = {
             {
+                name = "home",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "dog01", text = "Yo, what’s up Kat?"},
+                            {
+                                char = "kat",
+                                text = "Nothin’ dog. Just chillin with my girl Liz."
+                            }, {
+                                char = "dog01",
+                                text = "Sweet! Keep it Fresh Kat! I gotta bounce. I’ll catch you on the flip!"
+                            }
+                        },
+                        characters01 = {{name = "kat"}, {name = "liz2"}},
+                        characters02 = {{name = "dog01"}}
+                    }, {
+                        dialogs = {
+                            {char = "kat", text = "Laters!"},
+                            {char = "liz2", text = "Bye Bye Pete! Hee Hee!"}, {
+                                char = "liz2",
+                                text = "Wow Kat, where did you learn all those cool things to say?"
+                            }
+                        },
+                        characters01 = {{name = "kat"}, {name = "liz2"}},
+                        characters02 = {}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "kat",
+                                text = "Cool right? It’s called slang."
+                            }, {char = "liz2", text = "Wow! I want to learn!"},
+                            {
+                                char = "kat",
+                                text = "I used to ride the bus with this second grader who knew like a million slangs. Like literally."
+                            }, {char = "liz2", text = "Cooooool!!!!"}
+                        },
+                        characters01 = {{name = "kat"}, {name = "liz2"}},
+                        characters02 = {}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "kat",
+                                text = "He’d say Kat, I like you, but sometimes, think you are a couple sandwiches short of a picnic."
+                            },
+                            {
+                                char = "liz2",
+                                text = "Cooooool! What does that mean?"
+                            },
+                            {
+                                char = "kat",
+                                text = "I dunno, but I say it all the time now."
+                            },
+                            {
+                                char = "liz2",
+                                text = "Wait, you know a second grader?"
+                            }
+                        },
+                        characters01 = {{name = "kat"}, {name = "liz2"}},
+                        characters02 = {}
+                    }
+                },
+                coordinates = {col = 0, row = 0},
+                showBottomPath = false,
+                showRightPath = true,
+                showTopPath = false,
+                showLeftPath = false,
+                maxRow = 0,
+                maxCol = 0
+            }, {
                 name = "log",
                 frames = {
                     {
@@ -14110,7 +14179,7 @@ module.questConfigs = {
                             }
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "blank"}, {name = "blank"}}
+                        characters02 = {}
                     }, {
                         dialogs = {
                             {char = "kat", text = "Yeah, that’s him."},
@@ -14126,7 +14195,7 @@ module.questConfigs = {
                             }
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "blank"}, {name = "blank"}}
+                        characters02 = {}
                     }, {
                         dialogs = {
                             {
@@ -14138,7 +14207,7 @@ module.questConfigs = {
                             }
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "blank"}, {name = "blank"}}
+                        characters02 = {}
                     }, {
                         dialogs = {
                             {
@@ -14157,7 +14226,7 @@ module.questConfigs = {
                             }, {char = "liz2", text = "Wow!"}
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "blank"}, {name = "blank"}}
+                        characters02 = {}
                     }, {
                         dialogs = {
                             {
@@ -14166,10 +14235,10 @@ module.questConfigs = {
                             }, {char = "liz2", text = "Fine with me."}
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "blank"}, {name = "blank"}}
+                        characters02 = {}
                     }
                 },
-                coordinates = {row = 0, col = 1},
+                coordinates = {col = 1, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -14194,10 +14263,7 @@ module.questConfigs = {
                             }
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "dennisTheMenace"}, {name = "blank"},
-                            {name = "dennisTheMenace"}
-                        }
+                        characters02 = {{name = "dennisTheMenace"}}
                     }, {
                         dialogs = {
                             {
@@ -14219,10 +14285,7 @@ module.questConfigs = {
                             }
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "dennisTheMenace"}, {name = "blank"},
-                            {name = "dennisTheMenace"}
-                        }
+                        characters02 = {{name = "dennisTheMenace"}}
                     }, {
                         dialogs = {
                             {char = "kat", text = "Keep talking..."}, {
@@ -14238,10 +14301,7 @@ module.questConfigs = {
                             }
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "dennisTheMenace"}, {name = "blank"},
-                            {name = "dennisTheMenace"}
-                        }
+                        characters02 = {{name = "dennisTheMenace"}}
                     }, {
                         dialogs = {
                             {
@@ -14257,13 +14317,10 @@ module.questConfigs = {
                             }
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "dennisTheMenace"}, {name = "blank"},
-                            {name = "dennisTheMenace"}
-                        }
+                        characters02 = {{name = "dennisTheMenace"}}
                     }
                 },
-                coordinates = {row = 0, col = 2},
+                coordinates = {col = 2, row = 0},
                 showBottomPath = false,
                 showRightPath = false,
                 showTopPath = false,
@@ -14631,8 +14688,6 @@ renderCharacters = function(props)
     InstanceUtils.deleteInstanceByNameStub(
         {parent = characterTemplate, nameStub = nameStub})
 
-    -- Hide decal on template
-    applyDecalsToCharacter({part = characterTemplate, decalId = ""})
     characterTemplate.Transparency = 1
 
     for i, itemConfig in ipairs(itemConfigs) do
@@ -14652,6 +14707,11 @@ renderCharacters = function(props)
             applyDecalsToCharacter({part = newItem, decalId = decalId})
         end
     end
+
+    -- Hide decal on template
+    applyDecalsToCharacter({part = characterTemplate, decalId = ""})
+    -- Ensure player doesn't crash into invisivble template
+    characterTemplate.CanCollide = false
 
 end
 
@@ -14728,8 +14788,6 @@ local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 getStartPosition = function(parent, child)
     local childSize = child.Size
-    -- local desiredOffsetFromParentEdge = -childSize / 2
-    -- local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
     local desiredOffsetFromParentEdge = Vector3.new(-4, 0, -4)
 
     local itemDuplicationConfig = {

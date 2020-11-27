@@ -37,7 +37,7 @@ module.questConfigs = {
                                 text = "Cool right? It’s called slang."
                             }, {char = "liz2", text = "Wow! I want to learn!"},
                             {
-                                char = "liz2",
+                                char = "kat",
                                 text = "I used to ride the bus with this second grader who knew like a million slangs. Like literally."
                             }, {char = "liz2", text = "Cooooool!!!!"}
                         },
@@ -47,14 +47,14 @@ module.questConfigs = {
                         dialogs = {
                             {
                                 char = "kat",
-                                text = "He’d say Kat, I like you, but sometimes, think you are a couple sandwiches short of a picnic?"
+                                text = "He’d say Kat, I like you, but sometimes, think you are a couple sandwiches short of a picnic."
                             },
                             {
                                 char = "liz2",
                                 text = "Cooooool! What does that mean?"
                             },
                             {
-                                char = "liz2",
+                                char = "kat",
                                 text = "I dunno, but I say it all the time now."
                             },
                             {
@@ -66,7 +66,7 @@ module.questConfigs = {
                         characters02 = {}
                     }
                 },
-                coordinates = {row = 0, col = 0},
+                coordinates = {col = 0, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -153,7 +153,7 @@ module.questConfigs = {
                         characters02 = {}
                     }
                 },
-                coordinates = {row = 0, col = 1},
+                coordinates = {col = 1, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -178,10 +178,7 @@ module.questConfigs = {
                             }
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "dennisTheMenace"},
-                            {name = "dennisTheMenace"}
-                        }
+                        characters02 = {{name = "dennisTheMenace"}}
                     }, {
                         dialogs = {
                             {
@@ -203,10 +200,7 @@ module.questConfigs = {
                             }
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "dennisTheMenace"},
-                            {name = "dennisTheMenace"}
-                        }
+                        characters02 = {{name = "dennisTheMenace"}}
                     }, {
                         dialogs = {
                             {char = "kat", text = "Keep talking..."}, {
@@ -222,10 +216,7 @@ module.questConfigs = {
                             }
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "dennisTheMenace"},
-                            {name = "dennisTheMenace"}
-                        }
+                        characters02 = {{name = "dennisTheMenace"}}
                     }, {
                         dialogs = {
                             {
@@ -241,10 +232,7 @@ module.questConfigs = {
                             }
                         },
                         characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "dennisTheMenace"},
-                            {name = "dennisTheMenace"}
-                        }
+                        characters02 = {{name = "dennisTheMenace"}}
                     }
                 },
                 coordinates = {col = 2, row = 0},

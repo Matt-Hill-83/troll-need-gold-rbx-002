@@ -14,8 +14,6 @@ renderCharacters = function(props)
     InstanceUtils.deleteInstanceByNameStub(
         {parent = characterTemplate, nameStub = nameStub})
 
-    -- Hide decal on template
-    applyDecalsToCharacter({part = characterTemplate, decalId = ""})
     characterTemplate.Transparency = 1
 
     for i, itemConfig in ipairs(itemConfigs) do
@@ -35,6 +33,11 @@ renderCharacters = function(props)
             applyDecalsToCharacter({part = newItem, decalId = decalId})
         end
     end
+
+    -- Hide decal on template
+    applyDecalsToCharacter({part = characterTemplate, decalId = ""})
+    -- Ensure player doesn't crash into invisivble template
+    characterTemplate.CanCollide = false
 
 end
 
