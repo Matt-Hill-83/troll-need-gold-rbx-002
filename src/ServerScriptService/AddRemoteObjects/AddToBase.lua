@@ -67,14 +67,16 @@ function addRemoteObjects()
         local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
                       Constants.bridgeLength
 
+        local questBlockTemplate = Utils.getFromTemplates("DockBase")
         local questBlockProps = {
             parent = questsOrigin,
             size = Vector3.new(x, 2, z),
             sibling = sibling,
+            questBlockTemplate = questBlockTemplate,
             isFirst = i == 1
         }
-
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
+
         -- questBlock.Transparency = 1
         local addScenesProps = {
             parent = questBlock,
