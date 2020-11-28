@@ -59,19 +59,21 @@ function addRemoteObjects()
 
     for i, questConfig in pairs(questConfigs) do
         local gridSize = questConfig.gridSize
+
+        local desiredPadding = 8
+        local wallWidth = 4
+        local wallSize = Vector3.new(wallWidth, 12, wallWidth)
+        local gridPadding = desiredPadding + wallWidth * 2
         -- local gridPadding = 0
-        local gridPadding = 0
 
         local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
                       Constants.bridgeLength
         local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
                       Constants.bridgeLength
 
-        -- local questBlockTemplateClone = Utils.getFromTemplates("DockBase")
         local questBlockTemplateClone = Utils.cloneModel(
                                             {
                 model = questBlockTemplate,
-                -- position = newPosition + startPosition,
                 suffix = "Clone--" .. i
             })
 
@@ -79,6 +81,7 @@ function addRemoteObjects()
             parent = questsOrigin,
             size = Vector3.new(x, 2, z),
             sibling = sibling,
+            wallSize = wallSize,
             questBlockTemplate = questBlockTemplateClone,
             isFirst = i == 1
         }
@@ -89,7 +92,7 @@ function addRemoteObjects()
             parent = questBlock,
             sceneConfigs = questConfig.sceneConfigs,
             questConfig = questConfig,
-            offsetFromParent = Vector3.new(0, 0, 0)
+            gridPadding = gridPadding
         }
         Scenes.addScenes(addScenesProps)
         sibling = questBlock

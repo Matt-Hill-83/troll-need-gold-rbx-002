@@ -11,10 +11,12 @@ local module = {}
 getStartPosition = function(props)
     local parent = props.parent
     local child = props.child
+    local gridPadding = props.gridPadding
 
     local childSize = child.Size
-    -- local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
-    local desiredOffsetFromParentEdge = Vector3.new(-4, 0, -4)
+    local desiredOffsetFromParentEdge = Vector3.new(-gridPadding / 2, 0,
+                                                    -gridPadding / 2)
+    -- local desiredOffsetFromParentEdge = Vector3.new(-4, 0, -4)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
@@ -46,12 +48,17 @@ function module.addScenes(props)
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
     local questConfig = props.questConfig
+    local gridPadding = props.gridPadding
 
     local sceneTemplateModel = Utils.getFromTemplates("SceneTemplate")
     local wallTemplate = Utils.getFromTemplates("SceneBase")
 
     local startPosition = getStartPosition(
-                              {parent = parent, child = wallTemplate})
+                              {
+            gridPadding = gridPadding,
+            parent = parent,
+            child = wallTemplate
+        })
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames

@@ -1,7 +1,6 @@
 local Sss = game:GetService("ServerScriptService")
 local Part = require(Sss.Source.AddRemoteObjects.Part)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
-local Constants = require(Sss.Source.Constants.Constants)
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 
 local module = {}
@@ -25,24 +24,15 @@ renderFrontWall = function(props)
         itemDuplicationConfig = itemDuplicationConfig
     }
 
-    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
     template.Size = childSize
-    template.Position = childPos
-
-    local blockProps = {
-        name = 'FrontWall',
-        parent = parent,
-        color = BrickColor.new("Lime green"),
-        size = childSize,
-        position = childPos
-    }
-
-    -- Part.createPartWithVectors(blockProps)
+    template.Position =
+        RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 end
 
 renderBackWall = function(props)
     local parent = props.parent
     local wallSize = props.wallSize
+    local template = props.template
 
     local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
 
@@ -58,22 +48,15 @@ renderBackWall = function(props)
         itemDuplicationConfig = itemDuplicationConfig
     }
 
-    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
-
-    local blockProps = {
-        name = 'FrontWall',
-        parent = parent,
-        color = BrickColor.new("Pastel green"),
-        size = childSize,
-        position = childPos
-    }
-
-    Part.createPartWithVectors(blockProps)
+    template.Size = childSize
+    template.Position =
+        RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 end
 
 renderLeftWall = function(props)
     local parent = props.parent
     local wallSize = props.wallSize
+    local template = props.template
 
     local childSize = Vector3.new(wallSize.X, wallSize.Y, parent.Size.Z)
 
@@ -89,23 +72,15 @@ renderLeftWall = function(props)
         itemDuplicationConfig = itemDuplicationConfig
     }
 
-    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
-
-    local blockProps = {
-        name = 'FrontWall',
-        parent = parent,
-        color = BrickColor.new("Lime green"),
-        size = childSize,
-        position = childPos
-    }
-
-    Part.createPartWithVectors(blockProps)
+    template.Size = childSize
+    template.Position =
+        RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 end
 
 renderRightWall = function(props)
     local parent = props.parent
     local wallSize = props.wallSize
-
+    local template = props.template
     local childSize = Vector3.new(wallSize.X, wallSize.Y, parent.Size.Z)
 
     local itemDuplicationConfig = {
@@ -120,17 +95,9 @@ renderRightWall = function(props)
         itemDuplicationConfig = itemDuplicationConfig
     }
 
-    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
-
-    local blockProps = {
-        name = 'FrontWall',
-        parent = parent,
-        color = BrickColor.new("Lime green"),
-        size = childSize,
-        position = childPos
-    }
-
-    Part.createPartWithVectors(blockProps)
+    template.Size = childSize
+    template.Position =
+        RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 end
 
 renderQuestBlock = function(props)
@@ -138,8 +105,11 @@ renderQuestBlock = function(props)
     local sibling = props.sibling
     local size = props.size
     local isFirst = props.isFirst
+    local wallSize = props.wallSize
     local dockModel = props.questBlockTemplate
+
     local dockBase = Utils.getFirstDescendantByName(dockModel, "DockBase")
+
     local dockWallFront = Utils.getFirstDescendantByName(dockModel,
                                                          "DockWallFront")
     local dockWallBack = Utils.getFirstDescendantByName(dockModel,
@@ -147,9 +117,9 @@ renderQuestBlock = function(props)
     local dockWallRight = Utils.getFirstDescendantByName(dockModel,
                                                          "DockWallRight")
     local dockWallLeft = Utils.getFirstDescendantByName(dockModel,
-                                                        "DockWalLeftt")
+                                                        "DockWallLeft")
 
-    local offset = 30
+    local offset = 20
     -- local offset = 60
 
     if (isFirst) then offset = 0 end
@@ -183,17 +153,28 @@ renderQuestBlock = function(props)
     dockBase.CFrame = dockPositioner.CFrame
     dockBase.Size = dockPositioner.Size
 
-    -- local wallSize = nil
-    local wallSize = Vector3.new(3, 6, 3)
+    -- local wallSize = Vector3.new(3, 6, 3)
 
     renderFrontWall({
         parent = dockBase,
         wallSize = wallSize,
         template = dockWallFront
     })
-    renderBackWall({parent = dockBase, wallSize = wallSize})
-    renderLeftWall({parent = dockBase, wallSize = wallSize})
-    renderRightWall({parent = dockBase, wallSize = wallSize})
+    renderBackWall({
+        parent = dockBase,
+        wallSize = wallSize,
+        template = dockWallBack
+    })
+    renderLeftWall({
+        parent = dockBase,
+        wallSize = wallSize,
+        template = dockWallLeft
+    })
+    renderRightWall({
+        parent = dockBase,
+        wallSize = wallSize,
+        template = dockWallRight
+    })
     return dockPositioner
 end
 
