@@ -114,7 +114,7 @@ function cloneModel(props)
     sceneBaseModelClone.Parent = model.Parent
     sceneBaseModelClone.Name = model.Name .. (suffix or "-clone")
 
-    sceneBaseModelClone:MoveTo(position)
+    if (position) then sceneBaseModelClone:MoveTo(position) end
     return sceneBaseModelClone
 end
 

@@ -55,6 +55,7 @@ function addRemoteObjects()
 
     local questsOrigin = Utils.getFirstDescendantByName(myStuff, "QuestsOrigin")
     local sibling = questsOrigin
+    local questBlockTemplate = Utils.getFromTemplates("Dock")
 
     for i, questConfig in pairs(questConfigs) do
         local gridSize = questConfig.gridSize
@@ -66,12 +67,19 @@ function addRemoteObjects()
         local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
                       Constants.bridgeLength
 
-        local questBlockTemplate = Utils.getFromTemplates("DockBase")
+        -- local questBlockTemplateClone = Utils.getFromTemplates("DockBase")
+        local questBlockTemplateClone = Utils.cloneModel(
+                                            {
+                model = questBlockTemplate,
+                -- position = newPosition + startPosition,
+                suffix = "Clone--" .. i
+            })
+
         local questBlockProps = {
             parent = questsOrigin,
             size = Vector3.new(x, 2, z),
             sibling = sibling,
-            questBlockTemplate = questBlockTemplate,
+            questBlockTemplate = questBlockTemplateClone,
             isFirst = i == 1
         }
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)

@@ -9,6 +9,7 @@ local module = {}
 renderFrontWall = function(props)
     local parent = props.parent
     local wallSize = props.wallSize
+    local template = props.template
 
     local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
 
@@ -135,15 +136,13 @@ renderQuestBlock = function(props)
     local sibling = props.sibling
     local size = props.size
     local isFirst = props.isFirst
-    -- local newDockBase = props.questBlockTemplate
-    local questBlockTemplate1 = props.questBlockTemplate
+    local newDock = props.questBlockTemplate
+    local newDockBase = Utils.getFirstDescendantByName(newDock, "DockBase")
+    -- local questBlockTemplate = props.questBlockTemplate
 
-    local newDockBase = questBlockTemplate1:Clone()
-    Utils.mergeTables(newDockBase, {
-        -- CFrame = newDockBase.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
-        Parent = questBlockTemplate1.parent,
-        Name = 'nameStub'
-    })
+    -- local newDockBase = questBlockTemplate:Clone()
+    -- Utils.mergeTables(newDockBase,
+    --                   {Parent = questBlockTemplate.parent, Name = 'nameStub'})
 
     local offset = 30
     -- local offset = 60
@@ -182,7 +181,11 @@ renderQuestBlock = function(props)
     -- local wallSize = nil
     local wallSize = Vector3.new(3, 6, 3)
 
-    renderFrontWall({parent = newDockBase, wallSize = wallSize})
+    renderFrontWall({
+        parent = newDockBase,
+        wallSize = wallSize,
+        template = Utils.getFromTemplates("DockWallFront")
+    })
     renderBackWall({parent = newDockBase, wallSize = wallSize})
     renderLeftWall({parent = newDockBase, wallSize = wallSize})
     renderRightWall({parent = newDockBase, wallSize = wallSize})
