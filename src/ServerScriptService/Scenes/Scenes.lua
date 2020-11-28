@@ -88,7 +88,6 @@ function module.addScenes(props)
                                                               "GameTitleLabel")
         gameTitleLabel.Text = "Quest:   " ..
                                   (questConfig.questTitle or 'Game Title')
-        -- gameTitleLabel.Text = "test"
 
         function updateButtonActiveStatus(props)
             print('updateButtonActiveStatus===============================')

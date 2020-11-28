@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>243.31636</X>
-					<Y>63.4508705</Y>
-					<Z>-314.014862</Z>
-					<R00>-0.80099535</R00>
-					<R01>0.214636877</R01>
-					<R02>-0.558871567</R02>
-					<R10>-1.49011612e-08</R10>
-					<R11>0.933521032</R11>
-					<R12>0.358522564</R12>
-					<R20>0.598670542</R20>
-					<R21>0.28717491</R21>
-					<R22>-0.747745991</R22>
+					<X>160.312027</X>
+					<Y>66.9240646</Y>
+					<Z>-262.618805</Z>
+					<R00>-0.187987059</R00>
+					<R01>0.26922977</R01>
+					<R02>-0.944550753</R02>
+					<R10>-0</R10>
+					<R11>0.961696386</R11>
+					<R12>0.274116844</R12>
+					<R20>0.982171595</R20>
+					<R21>0.0515304208</R21>
+					<R22>-0.180786446</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -12839,157 +12839,6 @@ remoteCode.addRemoteObjects(base)
 					</Item>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXd207cf71550a40cdbaca9bdad35d44a2">
-				<Properties>
-					<bool name="Anchored">true</bool>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<float name="BackParamA">-0.5</float>
-					<float name="BackParamB">0.5</float>
-					<token name="BackSurface">0</token>
-					<token name="BackSurfaceInput">0</token>
-					<float name="BottomParamA">-0.5</float>
-					<float name="BottomParamB">0.5</float>
-					<token name="BottomSurface">0</token>
-					<token name="BottomSurfaceInput">0</token>
-					<CoordinateFrame name="CFrame">
-						<X>244</X>
-						<Y>-1</Y>
-						<Z>-218</Z>
-						<R00>1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>1</R11>
-						<R12>0</R12>
-						<R20>0</R20>
-						<R21>0</R21>
-						<R22>0.999999046</R22>
-					</CoordinateFrame>
-					<bool name="CanCollide">false</bool>
-					<bool name="CastShadow">true</bool>
-					<int name="CollisionGroupId">0</int>
-					<Color3uint8 name="Color3uint8">4294506744</Color3uint8>
-					<PhysicalProperties name="CustomPhysicalProperties">
-						<CustomPhysics>false</CustomPhysics>
-					</PhysicalProperties>
-					<float name="FrontParamA">-0.5</float>
-					<float name="FrontParamB">0.5</float>
-					<token name="FrontSurface">0</token>
-					<token name="FrontSurfaceInput">0</token>
-					<float name="LeftParamA">-0.5</float>
-					<float name="LeftParamB">0.5</float>
-					<token name="LeftSurface">0</token>
-					<token name="LeftSurfaceInput">0</token>
-					<bool name="Locked">false</bool>
-					<bool name="Massless">false</bool>
-					<token name="Material">1088</token>
-					<string name="Name">QuestsOrigin</string>
-					<float name="Reflectance">0</float>
-					<float name="RightParamA">-0.5</float>
-					<float name="RightParamB">0.5</float>
-					<token name="RightSurface">0</token>
-					<token name="RightSurfaceInput">0</token>
-					<int name="RootPriority">0</int>
-					<Vector3 name="RotVelocity">
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-					</Vector3>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-					<float name="TopParamA">-0.5</float>
-					<float name="TopParamB">0.5</float>
-					<token name="TopSurface">0</token>
-					<token name="TopSurfaceInput">0</token>
-					<float name="Transparency">0</float>
-					<Vector3 name="Velocity">
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-					</Vector3>
-					<token name="formFactorRaw">1</token>
-					<token name="shape">1</token>
-					<Vector3 name="size">
-						<X>4</X>
-						<Y>4</Y>
-						<Z>4</Z>
-					</Vector3>
-				</Properties>
-				<Item class="Decal" referent="RBXd8f5c952ca4b482b804762dede77c9ae">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Color3 name="Color3">
-							<R>1</R>
-							<G>1</G>
-							<B>1</B>
-						</Color3>
-						<token name="Face">5</token>
-						<string name="Name">Images/meadow</string>
-						<int64 name="SourceAssetId">5902119696</int64>
-						<BinaryString name="Tags"></BinaryString>
-						<Content name="Texture"><url>http://www.roblox.com/asset/?id=5902119676</url></Content>
-						<float name="Transparency">0</float>
-					</Properties>
-				</Item>
-				<Item class="SurfaceLight" referent="RBXe0e2922cdf30493a93b08799d44deff4">
-					<Properties>
-						<float name="Angle">90</float>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<float name="Brightness">1</float>
-						<Color3 name="Color">
-							<R>1</R>
-							<G>1</G>
-							<B>1</B>
-						</Color3>
-						<bool name="Enabled">true</bool>
-						<token name="Face">5</token>
-						<string name="Name">SurfaceLight</string>
-						<float name="Range">16</float>
-						<bool name="Shadows">false</bool>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="Weld" referent="RBXce534a4d5f4d4a39b790dfeb3af6a789">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<CoordinateFrame name="C0">
-							<X>0</X>
-							<Y>-2</Y>
-							<Z>0</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>0</R11>
-							<R12>-1</R12>
-							<R20>0</R20>
-							<R21>0.999999046</R21>
-							<R22>0</R22>
-						</CoordinateFrame>
-						<CoordinateFrame name="C1">
-							<X>244</X>
-							<Y>27</Y>
-							<Z>-218</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>0</R11>
-							<R12>-1</R12>
-							<R20>0</R20>
-							<R21>1</R21>
-							<R22>0</R22>
-						</CoordinateFrame>
-						<bool name="Enabled">true</bool>
-						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXd207cf71550a40cdbaca9bdad35d44a2</Ref>
-						<Ref name="Part1">RBXf70eef44c6474e63b75672292a29dcc7</Ref>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-			</Item>
 			<Item class="TrussPart" referent="RBXbffdb8c33fce433e90e16b1324e1ff9e">
 				<Properties>
 					<bool name="Anchored">true</bool>
@@ -13183,6 +13032,118 @@ remoteCode.addRemoteObjects(base)
 					</Properties>
 				</Item>
 			</Item>
+			<Item class="Part" referent="RBXd207cf71550a40cdbaca9bdad35d44a2">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">0</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>240</X>
+						<Y>-1</Y>
+						<Z>-218</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>0.999999046</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4294506744</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">1088</token>
+					<string name="Name">QuestsOrigin</string>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">1</token>
+					<token name="shape">1</token>
+					<Vector3 name="size">
+						<X>4</X>
+						<Y>4</Y>
+						<Z>4</Z>
+					</Vector3>
+				</Properties>
+				<Item class="Decal" referent="RBXd8f5c952ca4b482b804762dede77c9ae">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Color3 name="Color3">
+							<R>1</R>
+							<G>1</G>
+							<B>1</B>
+						</Color3>
+						<token name="Face">5</token>
+						<string name="Name">Images/meadow</string>
+						<int64 name="SourceAssetId">5902119696</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<Content name="Texture"><url>http://www.roblox.com/asset/?id=5902119676</url></Content>
+						<float name="Transparency">0</float>
+					</Properties>
+				</Item>
+				<Item class="SurfaceLight" referent="RBXe0e2922cdf30493a93b08799d44deff4">
+					<Properties>
+						<float name="Angle">90</float>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<float name="Brightness">1</float>
+						<Color3 name="Color">
+							<R>1</R>
+							<G>1</G>
+							<B>1</B>
+						</Color3>
+						<bool name="Enabled">true</bool>
+						<token name="Face">5</token>
+						<string name="Name">SurfaceLight</string>
+						<float name="Range">16</float>
+						<bool name="Shadows">false</bool>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+			</Item>
 		</Item>
 		<Item class="SpawnLocation" referent="RBX20423fbfc3f843b6bee9d9b7f1aa1500">
 			<Properties>
@@ -13198,12 +13159,12 @@ remoteCode.addRemoteObjects(base)
 				<token name="BottomSurface">0</token>
 				<token name="BottomSurfaceInput">0</token>
 				<CoordinateFrame name="CFrame">
-					<X>251</X>
+					<X>250</X>
 					<Y>13.4900265</Y>
-					<Z>-2</Z>
+					<Z>-71</Z>
 					<R00>0</R00>
 					<R01>0</R01>
-					<R02>0.999999583</R02>
+					<R02>0.999999106</R02>
 					<R10>0</R10>
 					<R11>1</R11>
 					<R12>0</R12>
@@ -13281,7 +13242,7 @@ remoteCode.addRemoteObjects(base)
 					<float name="Transparency">0</float>
 				</Properties>
 			</Item>
-			<Item class="Weld" referent="RBXf850e1fd3cdd41479446b0b801b893d7">
+			<Item class="Weld" referent="RBX0656de48b0aa40f6a56114a0f997649c">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<CoordinateFrame name="C0">
@@ -13295,13 +13256,13 @@ remoteCode.addRemoteObjects(base)
 						<R11>0</R11>
 						<R12>-1</R12>
 						<R20>0</R20>
-						<R21>0.999999583</R21>
+						<R21>0.999999106</R21>
 						<R22>0</R22>
 					</CoordinateFrame>
 					<CoordinateFrame name="C1">
-						<X>2</X>
+						<X>71</X>
 						<Y>8</Y>
-						<Z>1</Z>
+						<Z>0</Z>
 						<R00>1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
@@ -14003,7 +13964,7 @@ function getCenterPosFromDesiredEdgeOffset(props)
     local childSize = props.childSize
 
     -- Which direction does the offset move toward?
-    local desiredOffset = props.offset
+    local desiredOffset = props.offset or Vector3.new(0, 0, 0)
     local itemDuplicationConfig = props.itemDuplicationConfig
 
     -- Is the origin side of the box at the new offset location?
@@ -14093,24 +14054,20 @@ local module = {}
 
 renderFrontWall = function(props)
     local parent = props.parent
-    local wallSize = props.wallSize or Vector3.new(3, 3, 3)
+    local wallSize = props.wallSize
 
-    local desiredOffsetFromParentEdge = Vector3.new(0, 5, 0)
+    local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, -1, 1),
-        moveTowardZero = Vector3.new(-1, 1, 1),
+        alignToParentFarEdge = Vector3.new(1, 1, 1),
+        moveTowardZero = Vector3.new(-1, 1, -1),
         alignToChildFarEdge = Vector3.new(-1, -1, 1)
     }
-    local childSize = Vector3.new(parent.Size.X, parent.Size.Y / 2,
-                                  parent.Size.Z)
-    -- local childSize = parent.Size / 2
 
     local offsetProps = {
         parent = parent,
         childSize = childSize,
-        itemDuplicationConfig = itemDuplicationConfig,
-        offset = desiredOffsetFromParentEdge
+        itemDuplicationConfig = itemDuplicationConfig
     }
 
     local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
@@ -14123,8 +14080,100 @@ renderFrontWall = function(props)
         position = childPos
     }
 
-    local wall = Part.createPartWithVectors(blockProps)
-    return wall
+    Part.createPartWithVectors(blockProps)
+end
+
+renderBackWall = function(props)
+    local parent = props.parent
+    local wallSize = props.wallSize
+
+    local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
+
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        moveTowardZero = Vector3.new(-1, 1, 1),
+        alignToChildFarEdge = Vector3.new(-1, -1, -1)
+    }
+
+    local offsetProps = {
+        parent = parent,
+        childSize = childSize,
+        itemDuplicationConfig = itemDuplicationConfig
+    }
+
+    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
+
+    local blockProps = {
+        name = 'FrontWall',
+        parent = parent,
+        color = BrickColor.new("Lime green"),
+        size = childSize,
+        position = childPos
+    }
+
+    Part.createPartWithVectors(blockProps)
+end
+
+renderLeftWall = function(props)
+    local parent = props.parent
+    local wallSize = props.wallSize
+
+    local childSize = Vector3.new(wallSize.X, wallSize.Y, parent.Size.Z)
+
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        moveTowardZero = Vector3.new(-1, 1, 1),
+        alignToChildFarEdge = Vector3.new(-1, -1, -1)
+    }
+
+    local offsetProps = {
+        parent = parent,
+        childSize = childSize,
+        itemDuplicationConfig = itemDuplicationConfig
+    }
+
+    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
+
+    local blockProps = {
+        name = 'FrontWall',
+        parent = parent,
+        color = BrickColor.new("Lime green"),
+        size = childSize,
+        position = childPos
+    }
+
+    Part.createPartWithVectors(blockProps)
+end
+
+renderRightWall = function(props)
+    local parent = props.parent
+    local wallSize = props.wallSize
+
+    local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
+
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        moveTowardZero = Vector3.new(-1, 1, 1),
+        alignToChildFarEdge = Vector3.new(-1, -1, -1)
+    }
+
+    local offsetProps = {
+        parent = parent,
+        childSize = childSize,
+        itemDuplicationConfig = itemDuplicationConfig
+    }
+
+    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
+
+    local blockProps = {
+        name = 'FrontWall',
+        parent = parent,
+        color = BrickColor.new("Lime green"),
+        size = childSize,
+        position = childPos
+    }
+
+    Part.createPartWithVectors(blockProps)
 end
 
 renderQuestBlock = function(props)
@@ -14167,7 +14216,14 @@ renderQuestBlock = function(props)
     local dockPositioner = Part.createPartWithVectors(blockProps)
     questBlockTemplate.CFrame = dockPositioner.CFrame
     questBlockTemplate.Size = dockPositioner.Size
-    renderFrontWall({parent = questBlockTemplate})
+
+    -- local wallSize = nil
+    local wallSize = Vector3.new(3, 6, 3)
+
+    renderFrontWall({parent = questBlockTemplate, wallSize = wallSize})
+    renderBackWall({parent = questBlockTemplate, wallSize = wallSize})
+    renderLeftWall({parent = questBlockTemplate, wallSize = wallSize})
+    renderRightWall({parent = questBlockTemplate, wallSize = wallSize})
     return dockPositioner
 end
 

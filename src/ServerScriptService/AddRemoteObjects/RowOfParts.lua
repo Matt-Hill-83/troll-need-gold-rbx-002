@@ -26,7 +26,7 @@ function getCenterPosFromDesiredEdgeOffset(props)
     local childSize = props.childSize
 
     -- Which direction does the offset move toward?
-    local desiredOffset = props.offset
+    local desiredOffset = props.offset or Vector3.new(0, 0, 0)
     local itemDuplicationConfig = props.itemDuplicationConfig
 
     -- Is the origin side of the box at the new offset location?
