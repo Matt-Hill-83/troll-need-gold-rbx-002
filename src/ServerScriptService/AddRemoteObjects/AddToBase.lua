@@ -61,10 +61,9 @@ function addRemoteObjects()
         local gridSize = questConfig.gridSize
 
         local desiredPadding = 8
-        local wallWidth = 4
+        local wallWidth = 8
         local wallSize = Vector3.new(wallWidth, 12, wallWidth)
         local gridPadding = desiredPadding + wallWidth * 2
-        -- local gridPadding = 0
 
         local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
                       Constants.bridgeLength

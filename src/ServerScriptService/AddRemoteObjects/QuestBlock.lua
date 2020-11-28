@@ -119,7 +119,7 @@ renderQuestBlock = function(props)
     local dockWallLeft = Utils.getFirstDescendantByName(dockModel,
                                                         "DockWallLeft")
 
-    local offset = 20
+    local offset = 10
     -- local offset = 60
 
     if (isFirst) then offset = 0 end
@@ -152,8 +152,6 @@ renderQuestBlock = function(props)
     local dockPositioner = Part.createPartWithVectors(blockProps)
     dockBase.CFrame = dockPositioner.CFrame
     dockBase.Size = dockPositioner.Size
-
-    -- local wallSize = Vector3.new(3, 6, 3)
 
     renderFrontWall({
         parent = dockBase,
