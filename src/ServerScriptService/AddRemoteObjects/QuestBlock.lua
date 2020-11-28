@@ -26,6 +26,8 @@ renderFrontWall = function(props)
     }
 
     local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
+    template.Size = childSize
+    template.Position = childPos
 
     local blockProps = {
         name = 'FrontWall',
@@ -35,7 +37,7 @@ renderFrontWall = function(props)
         position = childPos
     }
 
-    Part.createPartWithVectors(blockProps)
+    -- Part.createPartWithVectors(blockProps)
 end
 
 renderBackWall = function(props)
@@ -136,9 +138,16 @@ renderQuestBlock = function(props)
     local sibling = props.sibling
     local size = props.size
     local isFirst = props.isFirst
-    local newDock = props.questBlockTemplate
-    local dockBase = Utils.getFirstDescendantByName(newDock, "DockBase")
-    local dockBase = Utils.getFirstDescendantByName(newDock, "DockBase")
+    local dockModel = props.questBlockTemplate
+    local dockBase = Utils.getFirstDescendantByName(dockModel, "DockBase")
+    local dockWallFront = Utils.getFirstDescendantByName(dockModel,
+                                                         "DockWallFront")
+    local dockWallBack = Utils.getFirstDescendantByName(dockModel,
+                                                        "DockWallBack")
+    local dockWallRight = Utils.getFirstDescendantByName(dockModel,
+                                                         "DockWallRight")
+    local dockWallLeft = Utils.getFirstDescendantByName(dockModel,
+                                                        "DockWalLeftt")
 
     local offset = 30
     -- local offset = 60
@@ -180,7 +189,7 @@ renderQuestBlock = function(props)
     renderFrontWall({
         parent = dockBase,
         wallSize = wallSize,
-        template = Utils.getFromTemplates("DockWallFront")
+        template = dockWallFront
     })
     renderBackWall({parent = dockBase, wallSize = wallSize})
     renderLeftWall({parent = dockBase, wallSize = wallSize})
