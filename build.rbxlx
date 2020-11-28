@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>160.312027</X>
-					<Y>66.9240646</Y>
-					<Z>-262.618805</Z>
-					<R00>-0.187987059</R00>
-					<R01>0.26922977</R01>
-					<R02>-0.944550753</R02>
+					<X>285.102295</X>
+					<Y>90.4085388</Y>
+					<Z>-369.822266</Z>
+					<R00>-0.992180824</R00>
+					<R01>0.0537518822</R01>
+					<R02>-0.112640969</R02>
 					<R10>-0</R10>
-					<R11>0.961696386</R11>
-					<R12>0.274116844</R12>
-					<R20>0.982171595</R20>
-					<R21>0.0515304208</R21>
-					<R22>-0.180786446</R22>
+					<R11>0.902507782</R11>
+					<R12>0.430673629</R12>
+					<R20>0.124808855</R20>
+					<R21>0.427306116</R21>
+					<R22>-0.89545089</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -13794,7 +13794,6 @@ local Sss = game:GetService("ServerScriptService")
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
 
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
--- local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local DetectUser = require(Sss.Source.Utils.DetectUser)
 local Scenes = require(Sss.Source.Scenes.Scenes)
 local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
@@ -14049,6 +14048,7 @@ return module
 local Part = require(Sss.Source.AddRemoteObjects.Part)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 
 local module = {}
 
@@ -14106,7 +14106,7 @@ renderBackWall = function(props)
     local blockProps = {
         name = 'FrontWall',
         parent = parent,
-        color = BrickColor.new("Lime green"),
+        color = BrickColor.new("Pastel green"),
         size = childSize,
         position = childPos
     }
@@ -14149,12 +14149,12 @@ renderRightWall = function(props)
     local parent = props.parent
     local wallSize = props.wallSize
 
-    local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
+    local childSize = Vector3.new(wallSize.X, wallSize.Y, parent.Size.Z)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, -1),
-        moveTowardZero = Vector3.new(-1, 1, 1),
-        alignToChildFarEdge = Vector3.new(-1, -1, -1)
+        alignToParentFarEdge = Vector3.new(-1, 1, -1),
+        moveTowardZero = Vector3.new(1, 1, 1),
+        alignToChildFarEdge = Vector3.new(1, -1, -1)
     }
 
     local offsetProps = {
@@ -14181,7 +14181,15 @@ renderQuestBlock = function(props)
     local sibling = props.sibling
     local size = props.size
     local isFirst = props.isFirst
-    local questBlockTemplate = props.questBlockTemplate
+    -- local newDockBase = props.questBlockTemplate
+    local questBlockTemplate1 = props.questBlockTemplate
+
+    local newDockBase = questBlockTemplate1:Clone()
+    Utils.mergeTables(newDockBase, {
+        -- CFrame = newDockBase.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
+        Parent = questBlockTemplate1.parent,
+        Name = 'nameStub'
+    })
 
     local offset = 30
     -- local offset = 60
@@ -14214,16 +14222,16 @@ renderQuestBlock = function(props)
     }
 
     local dockPositioner = Part.createPartWithVectors(blockProps)
-    questBlockTemplate.CFrame = dockPositioner.CFrame
-    questBlockTemplate.Size = dockPositioner.Size
+    newDockBase.CFrame = dockPositioner.CFrame
+    newDockBase.Size = dockPositioner.Size
 
     -- local wallSize = nil
     local wallSize = Vector3.new(3, 6, 3)
 
-    renderFrontWall({parent = questBlockTemplate, wallSize = wallSize})
-    renderBackWall({parent = questBlockTemplate, wallSize = wallSize})
-    renderLeftWall({parent = questBlockTemplate, wallSize = wallSize})
-    renderRightWall({parent = questBlockTemplate, wallSize = wallSize})
+    renderFrontWall({parent = newDockBase, wallSize = wallSize})
+    renderBackWall({parent = newDockBase, wallSize = wallSize})
+    renderLeftWall({parent = newDockBase, wallSize = wallSize})
+    renderRightWall({parent = newDockBase, wallSize = wallSize})
     return dockPositioner
 end
 
@@ -16701,7 +16709,6 @@ function module.addScenes(props)
                                                               "GameTitleLabel")
         gameTitleLabel.Text = "Quest:   " ..
                                   (questConfig.questTitle or 'Game Title')
-        -- gameTitleLabel.Text = "test"
 
         function updateButtonActiveStatus(props)
             print('updateButtonActiveStatus===============================')
