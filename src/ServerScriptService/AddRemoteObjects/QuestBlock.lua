@@ -137,12 +137,8 @@ renderQuestBlock = function(props)
     local size = props.size
     local isFirst = props.isFirst
     local newDock = props.questBlockTemplate
-    local newDockBase = Utils.getFirstDescendantByName(newDock, "DockBase")
-    -- local questBlockTemplate = props.questBlockTemplate
-
-    -- local newDockBase = questBlockTemplate:Clone()
-    -- Utils.mergeTables(newDockBase,
-    --                   {Parent = questBlockTemplate.parent, Name = 'nameStub'})
+    local dockBase = Utils.getFirstDescendantByName(newDock, "DockBase")
+    local dockBase = Utils.getFirstDescendantByName(newDock, "DockBase")
 
     local offset = 30
     -- local offset = 60
@@ -175,20 +171,20 @@ renderQuestBlock = function(props)
     }
 
     local dockPositioner = Part.createPartWithVectors(blockProps)
-    newDockBase.CFrame = dockPositioner.CFrame
-    newDockBase.Size = dockPositioner.Size
+    dockBase.CFrame = dockPositioner.CFrame
+    dockBase.Size = dockPositioner.Size
 
     -- local wallSize = nil
     local wallSize = Vector3.new(3, 6, 3)
 
     renderFrontWall({
-        parent = newDockBase,
+        parent = dockBase,
         wallSize = wallSize,
         template = Utils.getFromTemplates("DockWallFront")
     })
-    renderBackWall({parent = newDockBase, wallSize = wallSize})
-    renderLeftWall({parent = newDockBase, wallSize = wallSize})
-    renderRightWall({parent = newDockBase, wallSize = wallSize})
+    renderBackWall({parent = dockBase, wallSize = wallSize})
+    renderLeftWall({parent = dockBase, wallSize = wallSize})
+    renderRightWall({parent = dockBase, wallSize = wallSize})
     return dockPositioner
 end
 
