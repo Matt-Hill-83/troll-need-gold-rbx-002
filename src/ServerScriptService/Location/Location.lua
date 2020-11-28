@@ -13,8 +13,11 @@ function module.addLocation(props)
                                                               "LocationModelImage")
     local imageLabelFront = Utils.getFirstDescendantByName(locationModelImage,
                                                            'ImageLabel')
+    local locationBillboardImage = Utils.getFirstDescendantByName(scene,
+                                                                  'LocationBillboardImage')
     local imageId = Utils.getDecalIdFromName({name = sceneConfig.name})
     imageLabelFront.Image = 'rbxassetid://' .. imageId
+    locationBillboardImage.Image = 'rbxassetid://' .. imageId
 
     -- Label
     -- Label
@@ -22,7 +25,11 @@ function module.addLocation(props)
                                                               "LocationModelLabel")
     local textLabel = Utils.getFirstDescendantByName(locationModelLabel,
                                                      'TextLabel')
+    local locationBillboardText = Utils.getFirstDescendantByName(scene,
+                                                                 'LocationBillboardText')
     textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
+    locationBillboardText.Text = Utils.getDisplayNameFromName(
+                                     {name = sceneConfig.name})
 
 end
 

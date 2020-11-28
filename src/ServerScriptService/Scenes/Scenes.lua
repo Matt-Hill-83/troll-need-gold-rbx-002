@@ -8,8 +8,12 @@ local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
 
 local module = {}
-getStartPosition = function(parent, child)
+getStartPosition = function(props)
+    local parent = props.parent
+    local child = props.child
+
     local childSize = child.Size
+    -- local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
     local desiredOffsetFromParentEdge = Vector3.new(-4, 0, -4)
 
     local itemDuplicationConfig = {
@@ -41,11 +45,13 @@ end
 function module.addScenes(props)
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
+    local questConfig = props.questConfig
 
     local sceneTemplateModel = Utils.getFromTemplates("SceneTemplate")
     local wallTemplate = Utils.getFromTemplates("SceneBase")
 
-    local startPosition = getStartPosition(parent, wallTemplate)
+    local startPosition = getStartPosition(
+                              {parent = parent, child = wallTemplate})
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
@@ -76,8 +82,13 @@ function module.addScenes(props)
         }
 
         Characters.addCharactersToScene(sceneProps)
-
         Location.addLocation({scene = clonedScene, sceneConfig = sceneConfig})
+
+        local gameTitleLabel = Utils.getFirstDescendantByName(clonedScene,
+                                                              "GameTitleLabel")
+        gameTitleLabel.Text = "Quest:   " ..
+                                  (questConfig.questTitle or 'Game Title')
+        -- gameTitleLabel.Text = "test"
 
         function updateButtonActiveStatus(props)
             print('updateButtonActiveStatus===============================')
@@ -99,7 +110,6 @@ function module.addScenes(props)
 
             local pageNumLabel = Utils.getFirstDescendantByName(clonedScene2,
                                                                 "PageNumLabel")
-
             pageNumLabel.Text = "<b>" .. "Page: " .. "</b>" .. pageNum2 ..
                                     " of " .. numPages2
 

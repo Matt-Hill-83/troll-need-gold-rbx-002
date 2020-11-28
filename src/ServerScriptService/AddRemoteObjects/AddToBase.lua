@@ -39,9 +39,7 @@ function setupUserDetectionRegions()
         local scene = clones[i]
         local region =
             Utils.getFirstDescendantByName(scene, "UserDectionRegion")
-        -- local part = Utils.getFirstDescendantByName(region, "UserDectionRegion")
         region.Name = region.Name .. "-" .. i
-        -- part.Name = part.Name .. "-" .. i
     end
 
     local places = Utils.getDescendantsByNameMatch(myTemplates,
@@ -53,10 +51,6 @@ end
 function addRemoteObjects()
     configGame()
 
-    -- TODO: don't rerender the entire world when you click the page button.
-    -- TODO: don't rerender the entire world when you click the page button.
-    -- TODO: don't rerender the entire world when you click the page button.
-
     local questConfigs = SceneConfig.getScenesConfig()
     local myStuff = workspace:FindFirstChild("MyStuff")
 
@@ -66,7 +60,7 @@ function addRemoteObjects()
     for i, questConfig in pairs(questConfigs) do
         local gridSize = questConfig.gridSize
         -- local gridPadding = 0
-        local gridPadding = 12
+        local gridPadding = 0
 
         local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
                       Constants.bridgeLength
@@ -84,7 +78,9 @@ function addRemoteObjects()
         -- questBlock.Transparency = 1
         local addScenesProps = {
             parent = questBlock,
-            sceneConfigs = questConfig.sceneConfigs
+            sceneConfigs = questConfig.sceneConfigs,
+            questConfig = questConfig,
+            offsetFromParent = Vector3.new(0, 0, 0)
         }
         Scenes.addScenes(addScenesProps)
         sibling = questBlock
