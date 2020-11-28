@@ -135,15 +135,15 @@ renderQuestBlock = function(props)
     local sibling = props.sibling
     local size = props.size
     local isFirst = props.isFirst
-    local newDockBase = props.questBlockTemplate
-    -- local questBlockTemplate1 = props.questBlockTemplate
+    -- local newDockBase = props.questBlockTemplate
+    local questBlockTemplate1 = props.questBlockTemplate
 
-    -- local newDockBase = questBlockTemplate1:Clone()
-    -- Utils.mergeTables(newDockBase, {
-    --     -- CFrame = newDockBase.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
-    --     Parent = parent,
-    --     Name = 'nameStub'
-    -- })
+    local newDockBase = questBlockTemplate1:Clone()
+    Utils.mergeTables(newDockBase, {
+        -- CFrame = newDockBase.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
+        Parent = questBlockTemplate1.parent,
+        Name = 'nameStub'
+    })
 
     local offset = 30
     -- local offset = 60
