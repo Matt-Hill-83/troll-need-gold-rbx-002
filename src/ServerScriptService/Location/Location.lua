@@ -9,25 +9,33 @@ function module.addLocation(props)
 
     -- Image
     -- Image
-    local locationModelImage = Utils.getFirstDescendantByName(scene,
-                                                              "LocationModelImage")
-    local imageLabelFront = Utils.getFirstDescendantByName(locationModelImage,
-                                                           'ImageLabel')
+    local imageId = Utils.getDecalIdFromName({name = sceneConfig.name})
+
+    local locationImageFront = Utils.getFirstDescendantByName(scene,
+                                                              "LocationImageFront")
+    local locationImageBack = Utils.getFirstDescendantByName(scene,
+                                                             "LocationImageBack")
+    locationImageFront.Image = 'rbxassetid://' .. imageId
+    locationImageBack.Image = 'rbxassetid://' .. imageId
+
     local locationBillboardImage = Utils.getFirstDescendantByName(scene,
                                                                   'LocationBillboardImage')
-    local imageId = Utils.getDecalIdFromName({name = sceneConfig.name})
-    imageLabelFront.Image = 'rbxassetid://' .. imageId
     locationBillboardImage.Image = 'rbxassetid://' .. imageId
 
     -- Label
     -- Label
-    local locationModelLabel = Utils.getFirstDescendantByName(scene,
-                                                              "LocationModelLabel")
-    local textLabel = Utils.getFirstDescendantByName(locationModelLabel,
-                                                     'TextLabel')
+    local locationLabel =
+        Utils.getDisplayNameFromName({name = sceneConfig.name})
+    local locationLabelFront = Utils.getFirstDescendantByName(scene,
+                                                              "LocationLabelFront")
+    local locationLabelBack = Utils.getFirstDescendantByName(scene,
+                                                             "LocationLabelBack")
+
+    locationLabelBack.Text = locationLabel
+    locationLabelFront.Text = locationLabel
+
     local locationBillboardText = Utils.getFirstDescendantByName(scene,
                                                                  'LocationBillboardText')
-    textLabel.Text = Utils.getDisplayNameFromName({name = sceneConfig.name})
     locationBillboardText.Text = Utils.getDisplayNameFromName(
                                      {name = sceneConfig.name})
 

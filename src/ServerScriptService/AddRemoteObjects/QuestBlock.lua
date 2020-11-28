@@ -11,8 +11,8 @@ renderQuestBlock = function(props)
     local size = props.size
     local isFirst = props.isFirst
 
-    -- local offset = 30
-    local offset = 60
+    local offset = 30
+    -- local offset = 60
 
     if (isFirst) then offset = 0 end
 
