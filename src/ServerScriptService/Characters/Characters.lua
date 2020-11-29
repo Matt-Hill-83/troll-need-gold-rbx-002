@@ -30,11 +30,15 @@ renderCharacters = function(props)
 
     -- Hide decal on template
     applyDecalsToCharacter({part = charImageBlock, decalId = ""})
+    applyLabelsToCharacter({part = charImageBlock, text = ""})
+
     -- Ensure player doesn't crash into invisivble template
     charImageBlock.CanCollide = false
     -- characters blocks are left visible during development, so I can move them around.
     charImageBlock.Transparency = 1
+    toggleLabelVisibility({part = charImageBlock, visible = false})
 
+    -- For each character
     for i, itemConfig in ipairs(itemConfigs) do
         local name = itemConfig.name
 
@@ -57,21 +61,51 @@ renderCharacters = function(props)
 
             local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
             applyDecalsToCharacter({part = newChar, decalId = decalId})
+            applyLabelsToCharacter({part = newChar, text = itemConfig.name})
+            toggleLabelVisibility({part = newChar, visible = true})
         end
     end
+
+    -- Hide decal on template
+    -- applyDecalsToCharacter({part = charImageBlock, decalId = ""})
+    -- applyLabelsToCharacter({part = charImageBlock, text = ""})
+    charImageBlock.Transparency = 1
 
 end
 
 function applyDecalsToCharacter(props)
     local part = props.part
     local decalId = props.decalId
+
+    local decalUri = 'rbxassetid://' .. decalId
     local decalFront = Utils.getFirstDescendantByName(part,
                                                       "CharacterDecalFront")
     local decalBack = Utils.getFirstDescendantByName(part, "CharacterDecalBack")
 
-    decalFront.Image = 'rbxassetid://' .. decalId
-    decalBack.Image = 'rbxassetid://' .. decalId
+    decalFront.Image = decalUri
+    decalBack.Image = decalUri
+end
 
+function applyLabelsToCharacter(props)
+    local part = props.part
+    local text = props.text or "no label"
+
+    local charLabelFront =
+        Utils.getFirstDescendantByName(part, "CharLabelFront")
+    local charLabelBack = Utils.getFirstDescendantByName(part, "CharLabelBack")
+    charLabelFront.Text = text
+    charLabelBack.Text = text
+end
+
+function toggleLabelVisibility(props)
+    local part = props.part
+    local visible = props.visible
+
+    local charLabelFront =
+        Utils.getFirstDescendantByName(part, "CharLabelFront")
+    local charLabelBack = Utils.getFirstDescendantByName(part, "CharLabelBack")
+    charLabelFront.Visible = visible
+    charLabelBack.Visible = visible
 end
 
 function module.addCharactersToScene(props)

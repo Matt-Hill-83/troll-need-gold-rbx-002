@@ -4745,7 +4745,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 												<token name="Font">3</token>
 												<int name="LayoutOrder">0</int>
 												<float name="LineHeight">1</float>
-												<string name="Name">TextLabel</string>
+												<string name="Name">CharLabelFront</string>
 												<Ref name="NextSelectionDown">null</Ref>
 												<Ref name="NextSelectionLeft">null</Ref>
 												<Ref name="NextSelectionRight">null</Ref>
@@ -4871,6 +4871,109 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
+									</Item>
+									<Item class="SurfaceGui" referent="RBXbec8c2b050394109ae56331a69af670f">
+										<Properties>
+											<bool name="Active">true</bool>
+											<Ref name="Adornee">null</Ref>
+											<bool name="AlwaysOnTop">false</bool>
+											<BinaryString name="AttributesSerialize"></BinaryString>
+											<bool name="AutoLocalize">true</bool>
+											<Vector2 name="CanvasSize">
+												<X>800</X>
+												<Y>600</Y>
+											</Vector2>
+											<bool name="ClipsDescendants">true</bool>
+											<bool name="Enabled">true</bool>
+											<token name="Face">2</token>
+											<float name="LightInfluence">1</float>
+											<string name="Name">SurfaceGui</string>
+											<float name="PixelsPerStud">50</float>
+											<bool name="ResetOnSpawn">true</bool>
+											<Ref name="RootLocalizationTable">null</Ref>
+											<token name="SizingMode">1</token>
+											<int64 name="SourceAssetId">-1</int64>
+											<BinaryString name="Tags"></BinaryString>
+											<float name="ToolPunchThroughDistance">0</float>
+											<token name="ZIndexBehavior">1</token>
+											<float name="ZOffset">0</float>
+										</Properties>
+										<Item class="TextLabel" referent="RBX5188e00a3b3349a78993d7ac8871150d">
+											<Properties>
+												<bool name="Active">false</bool>
+												<Vector2 name="AnchorPoint">
+													<X>0</X>
+													<Y>0</Y>
+												</Vector2>
+												<BinaryString name="AttributesSerialize"></BinaryString>
+												<bool name="AutoLocalize">true</bool>
+												<token name="AutomaticSize">0</token>
+												<Color3 name="BackgroundColor3">
+													<R>1</R>
+													<G>1</G>
+													<B>1</B>
+												</Color3>
+												<float name="BackgroundTransparency">0</float>
+												<Color3 name="BorderColor3">
+													<R>0.105882362</R>
+													<G>0.164705887</G>
+													<B>0.207843155</B>
+												</Color3>
+												<token name="BorderMode">0</token>
+												<int name="BorderSizePixel">1</int>
+												<bool name="ClipsDescendants">false</bool>
+												<bool name="Draggable">false</bool>
+												<token name="Font">3</token>
+												<int name="LayoutOrder">0</int>
+												<float name="LineHeight">1</float>
+												<string name="Name">CharLabelBack</string>
+												<Ref name="NextSelectionDown">null</Ref>
+												<Ref name="NextSelectionLeft">null</Ref>
+												<Ref name="NextSelectionRight">null</Ref>
+												<Ref name="NextSelectionUp">null</Ref>
+												<UDim2 name="Position">
+													<XS>0</XS>
+													<XO>0</XO>
+													<YS>0</YS>
+													<YO>0</YO>
+												</UDim2>
+												<bool name="RichText">false</bool>
+												<Ref name="RootLocalizationTable">null</Ref>
+												<float name="Rotation">0</float>
+												<bool name="Selectable">false</bool>
+												<Ref name="SelectionImageObject">null</Ref>
+												<UDim2 name="Size">
+													<XS>1</XS>
+													<XO>0</XO>
+													<YS>1</YS>
+													<YO>0</YO>
+												</UDim2>
+												<token name="SizeConstraint">0</token>
+												<int64 name="SourceAssetId">-1</int64>
+												<BinaryString name="Tags"></BinaryString>
+												<string name="Text">My Texxt</string>
+												<Color3 name="TextColor3">
+													<R>0</R>
+													<G>0</G>
+													<B>0</B>
+												</Color3>
+												<bool name="TextScaled">false</bool>
+												<float name="TextSize">48</float>
+												<Color3 name="TextStrokeColor3">
+													<R>0</R>
+													<G>0</G>
+													<B>0</B>
+												</Color3>
+												<float name="TextStrokeTransparency">1</float>
+												<float name="TextTransparency">0</float>
+												<token name="TextTruncate">0</token>
+												<bool name="TextWrapped">true</bool>
+												<token name="TextXAlignment">2</token>
+												<token name="TextYAlignment">1</token>
+												<bool name="Visible">true</bool>
+												<int name="ZIndex">1</int>
+											</Properties>
+										</Item>
 									</Item>
 								</Item>
 								<Item class="SurfaceGui" referent="RBXdc05881926074567800581a0996c29cc">
@@ -5390,7 +5493,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 												<token name="Font">3</token>
 												<int name="LayoutOrder">0</int>
 												<float name="LineHeight">1</float>
-												<string name="Name">TextLabel</string>
+												<string name="Name">CharLabelFront</string>
 												<Ref name="NextSelectionDown">null</Ref>
 												<Ref name="NextSelectionLeft">null</Ref>
 												<Ref name="NextSelectionRight">null</Ref>
@@ -5516,6 +5619,109 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
+									</Item>
+									<Item class="SurfaceGui" referent="RBX31e712e1bf464aa68dd91154229ef37d">
+										<Properties>
+											<bool name="Active">true</bool>
+											<Ref name="Adornee">null</Ref>
+											<bool name="AlwaysOnTop">false</bool>
+											<BinaryString name="AttributesSerialize"></BinaryString>
+											<bool name="AutoLocalize">true</bool>
+											<Vector2 name="CanvasSize">
+												<X>800</X>
+												<Y>600</Y>
+											</Vector2>
+											<bool name="ClipsDescendants">true</bool>
+											<bool name="Enabled">true</bool>
+											<token name="Face">2</token>
+											<float name="LightInfluence">1</float>
+											<string name="Name">SurfaceGui</string>
+											<float name="PixelsPerStud">50</float>
+											<bool name="ResetOnSpawn">true</bool>
+											<Ref name="RootLocalizationTable">null</Ref>
+											<token name="SizingMode">1</token>
+											<int64 name="SourceAssetId">-1</int64>
+											<BinaryString name="Tags"></BinaryString>
+											<float name="ToolPunchThroughDistance">0</float>
+											<token name="ZIndexBehavior">1</token>
+											<float name="ZOffset">0</float>
+										</Properties>
+										<Item class="TextLabel" referent="RBXf28b74d9616c4623a65c79c4b0cb4386">
+											<Properties>
+												<bool name="Active">false</bool>
+												<Vector2 name="AnchorPoint">
+													<X>0</X>
+													<Y>0</Y>
+												</Vector2>
+												<BinaryString name="AttributesSerialize"></BinaryString>
+												<bool name="AutoLocalize">true</bool>
+												<token name="AutomaticSize">0</token>
+												<Color3 name="BackgroundColor3">
+													<R>1</R>
+													<G>1</G>
+													<B>1</B>
+												</Color3>
+												<float name="BackgroundTransparency">0</float>
+												<Color3 name="BorderColor3">
+													<R>0.105882362</R>
+													<G>0.164705887</G>
+													<B>0.207843155</B>
+												</Color3>
+												<token name="BorderMode">0</token>
+												<int name="BorderSizePixel">1</int>
+												<bool name="ClipsDescendants">false</bool>
+												<bool name="Draggable">false</bool>
+												<token name="Font">3</token>
+												<int name="LayoutOrder">0</int>
+												<float name="LineHeight">1</float>
+												<string name="Name">CharLabelBack</string>
+												<Ref name="NextSelectionDown">null</Ref>
+												<Ref name="NextSelectionLeft">null</Ref>
+												<Ref name="NextSelectionRight">null</Ref>
+												<Ref name="NextSelectionUp">null</Ref>
+												<UDim2 name="Position">
+													<XS>0</XS>
+													<XO>0</XO>
+													<YS>0</YS>
+													<YO>0</YO>
+												</UDim2>
+												<bool name="RichText">false</bool>
+												<Ref name="RootLocalizationTable">null</Ref>
+												<float name="Rotation">0</float>
+												<bool name="Selectable">false</bool>
+												<Ref name="SelectionImageObject">null</Ref>
+												<UDim2 name="Size">
+													<XS>1</XS>
+													<XO>0</XO>
+													<YS>1</YS>
+													<YO>0</YO>
+												</UDim2>
+												<token name="SizeConstraint">0</token>
+												<int64 name="SourceAssetId">-1</int64>
+												<BinaryString name="Tags"></BinaryString>
+												<string name="Text">My Texxt</string>
+												<Color3 name="TextColor3">
+													<R>0</R>
+													<G>0</G>
+													<B>0</B>
+												</Color3>
+												<bool name="TextScaled">false</bool>
+												<float name="TextSize">48</float>
+												<Color3 name="TextStrokeColor3">
+													<R>0</R>
+													<G>0</G>
+													<B>0</B>
+												</Color3>
+												<float name="TextStrokeTransparency">1</float>
+												<float name="TextTransparency">0</float>
+												<token name="TextTruncate">0</token>
+												<bool name="TextWrapped">true</bool>
+												<token name="TextXAlignment">2</token>
+												<token name="TextYAlignment">1</token>
+												<bool name="Visible">true</bool>
+												<int name="ZIndex">1</int>
+											</Properties>
+										</Item>
 									</Item>
 								</Item>
 								<Item class="SurfaceGui" referent="RBX4a0a85e414bd412fb37cb4016836ffd8">
@@ -16645,7 +16851,12 @@ local module = {}
 renderCharacters = function(props)
     local characterTemplate = props.template
     local itemConfigs = props.itemConfigs
-    local charFolder = props.charFolder
+    -- local charFolder = props.charFolder
+    local characterType = props.characterType
+    local sceneFolder = props.sceneFolder
+
+    local charFolder = Utils.getOrCreateFolder(
+                           {name = characterType, parent = sceneFolder})
 
     local xGap = 1
     local nameStub = 'CharacterClone'
@@ -16667,6 +16878,7 @@ renderCharacters = function(props)
     -- characters blocks are left visible during development, so I can move them around.
     charImageBlock.Transparency = 1
 
+    -- For each character
     for i, itemConfig in ipairs(itemConfigs) do
         local name = itemConfig.name
 
@@ -16688,7 +16900,8 @@ renderCharacters = function(props)
             })
 
             local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
-            -- applyDecalsToCharacter({part = newChar, decalId = decalId})
+            applyDecalsToCharacter({part = newChar, decalId = decalId})
+            applyLabelsToCharacter({part = newChar, text = itemConfig.name})
         end
     end
 
@@ -16697,13 +16910,29 @@ end
 function applyDecalsToCharacter(props)
     local part = props.part
     local decalId = props.decalId
+
+    local decalUri = 'rbxassetid://' .. decalId
     local decalFront = Utils.getFirstDescendantByName(part,
                                                       "CharacterDecalFront")
     local decalBack = Utils.getFirstDescendantByName(part, "CharacterDecalBack")
 
-    decalFront.Image = 'rbxassetid://' .. decalId
-    decalBack.Image = 'rbxassetid://' .. decalId
+    decalFront.Image = decalUri
+    decalBack.Image = decalUri
+end
 
+function applyLabelsToCharacter(props)
+    local part = props.part
+    local text = props.text or "no label"
+
+    print('part' .. ' - start');
+    print(part);
+    print('part' .. ' - end');
+
+    local charLabelFront =
+        Utils.getFirstDescendantByName(part, "CharLabelFront")
+    local charLabelBack = Utils.getFirstDescendantByName(part, "CharLabelBack")
+    charLabelFront.Text = text
+    charLabelBack.Text = text
 end
 
 function module.addCharactersToScene(props)
@@ -16715,20 +16944,23 @@ function module.addCharactersToScene(props)
     local characterConfigs02 = frameConfig.characters02
 
     local characterType = "Character01"
-    local charFolder = Utils.getOrCreateFolder(
-                           {name = characterType, parent = sceneFolder})
-    clonedScene.Parent = sceneFolder
-
     renderCharacters({
         template = Utils.getFirstDescendantByName(clonedScene, characterType),
         itemConfigs = characterConfigs01,
-        charFolder = charFolder
+        sceneFolder = sceneFolder,
+        characterType = characterType
     })
-    -- renderCharacters({
-    --     template = Utils.getFirstDescendantByName(clonedScene,
-    --                                               "CharacterTemplate02"),
-    --     itemConfigs = characterConfigs02
-    -- })
+    -- 
+    -- 
+    local characterType2 = "Character02"
+    renderCharacters({
+        template = Utils.getFirstDescendantByName(clonedScene, characterType2),
+        itemConfigs = characterConfigs02,
+        sceneFolder = sceneFolder,
+        characterType = characterType2
+    })
+    -- 
+    -- 
 
     local dialogTemplate = Utils.getFirstDescendantByName(clonedScene,
                                                           "DialogTemplate")
