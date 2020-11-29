@@ -54,15 +54,15 @@ function addRemoteObjects()
     local myStuff = workspace:FindFirstChild("MyStuff")
 
     local questsOrigin = Utils.getFirstDescendantByName(myStuff, "QuestsOrigin")
-    local folderProps = {name = "RuntimeQuests", parent = myStuff}
 
-    local folder = Utils.getOrCreateFolder(folderProps)
-    print('folder' .. ' - start');
-    print(folder);
-    print('folder' .. ' - end');
+    local runtimeQuestsFolder = Utils.getOrCreateFolder(
+                                    {name = "RunTimeQuests", parent = myStuff})
+    print('runtimeQuestsFolder' .. ' - start');
+    print(runtimeQuestsFolder);
+    print('runtimeQuestsFolder' .. ' - end');
 
     local sibling = questsOrigin
-    local questBlockTemplate = Utils.getFromTemplates("Dock")
+    local questBlockTemplate = Utils.getFromTemplates("QuestBox")
 
     for i, questConfig in pairs(questConfigs) do
         local gridSize = questConfig.gridSize
@@ -81,9 +81,15 @@ function addRemoteObjects()
         local questBlockTemplateClone = Utils.cloneModel(
                                             {
                 model = questBlockTemplate,
-                -- position = questBlockTemplate.PrimaryPart.CFrame,
                 suffix = "Clone--" .. i
             })
+
+        local questFolder = Utils.getOrCreateFolder(
+                                {
+                name = questBlockTemplateClone.Name,
+                parent = runtimeQuestsFolder
+            })
+        questBlockTemplateClone.Parent = questFolder
 
         local questBlockProps = {
             parent = questsOrigin,
