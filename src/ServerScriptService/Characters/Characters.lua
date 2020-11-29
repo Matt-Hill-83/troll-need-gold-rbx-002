@@ -8,8 +8,12 @@ local module = {}
 renderCharacters = function(props)
     local characterTemplate = props.template
     local itemConfigs = props.itemConfigs
-    local charFolder = props.charFolder
+    -- local charFolder = props.charFolder
     local characterType = props.characterType
+    local sceneFolder = props.sceneFolder
+
+    local charFolder = Utils.getOrCreateFolder(
+                           {name = characterType, parent = sceneFolder})
 
     local xGap = 1
     local nameStub = 'CharacterClone'
@@ -79,34 +83,23 @@ function module.addCharactersToScene(props)
     local characterConfigs02 = frameConfig.characters02
 
     local characterType = "Character01"
-    local charFolder = Utils.getOrCreateFolder(
-                           {name = characterType, parent = sceneFolder})
-    clonedScene.Parent = sceneFolder
-
     renderCharacters({
         template = Utils.getFirstDescendantByName(clonedScene, characterType),
         itemConfigs = characterConfigs01,
-        charFolder = charFolder,
         sceneFolder = sceneFolder,
-        characterType = "Character01"
+        characterType = characterType
     })
     -- 
     -- 
-
     local characterType2 = "Character02"
-    local charFolder2 = Utils.getOrCreateFolder(
-                            {name = characterType2, parent = sceneFolder})
-    clonedScene.Parent = sceneFolder
     renderCharacters({
         template = Utils.getFirstDescendantByName(clonedScene, characterType2),
         itemConfigs = characterConfigs02,
-        charFolder = charFolder2
+        sceneFolder = sceneFolder,
+        characterType = characterType2
     })
-    -- renderCharacters({
-    --     template = Utils.getFirstDescendantByName(clonedScene,
-    --                                               "CharacterTemplate02"),
-    --     itemConfigs = characterConfigs02
-    -- })
+    -- 
+    -- 
 
     local dialogTemplate = Utils.getFirstDescendantByName(clonedScene,
                                                           "DialogTemplate")
