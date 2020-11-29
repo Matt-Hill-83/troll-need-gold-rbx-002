@@ -113,8 +113,12 @@ function cloneModel(props)
     local sceneBaseModelClone = model:Clone()
     sceneBaseModelClone.Parent = model.Parent
     sceneBaseModelClone.Name = model.Name .. (suffix or "-clone")
-
-    if (position) then sceneBaseModelClone:MoveTo(position) end
+    if (position) then
+        local newCFrame = model.PrimaryPart.CFrame * position
+        -- local newCFrame = model.PrimaryPart.CFrame + position
+        sceneBaseModelClone:SetPrimaryPartCFrame(newCFrame)
+        -- sceneBaseModelClone:MoveTo(position)
+    end
     return sceneBaseModelClone
 end
 

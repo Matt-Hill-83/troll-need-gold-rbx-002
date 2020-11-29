@@ -13,9 +13,9 @@ renderFrontWall = function(props)
     local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, 1),
-        moveTowardZero = Vector3.new(-1, 1, -1),
-        alignToChildFarEdge = Vector3.new(-1, -1, 1)
+        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        moveTowardZero = Vector3.new(-1, 1, 1),
+        alignToChildFarEdge = Vector3.new(-1, -1, -1)
     }
 
     local offsetProps = {
@@ -37,9 +37,9 @@ renderBackWall = function(props)
     local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, -1),
-        moveTowardZero = Vector3.new(-1, 1, 1),
-        alignToChildFarEdge = Vector3.new(-1, -1, -1)
+        alignToParentFarEdge = Vector3.new(1, 1, 1),
+        moveTowardZero = Vector3.new(-1, 1, -1),
+        alignToChildFarEdge = Vector3.new(-1, -1, 1)
     }
 
     local offsetProps = {
@@ -124,13 +124,20 @@ renderQuestBlock = function(props)
 
     if (isFirst) then offset = 0 end
 
-    local desiredOffsetFromParentEdge = Vector3.new(0, 0, offset)
+    local desiredOffsetFromParentEdge = Vector3.new(-offset, 0, 0)
+    -- local desiredOffsetFromParentEdge = Vector3.new(0, 0, offset)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, -1, 1),
+        alignToParentFarEdge = Vector3.new(-1, -1, -1),
         moveTowardZero = Vector3.new(-1, 1, 1),
-        alignToChildFarEdge = Vector3.new(-1, -1, 1)
+        alignToChildFarEdge = Vector3.new(1, -1, 1)
     }
+
+    -- local itemDuplicationConfig = {
+    --     alignToParentFarEdge = Vector3.new(1, -1, 1),
+    --     moveTowardZero = Vector3.new(-1, 1, 1),
+    --     alignToChildFarEdge = Vector3.new(-1, -1, 1)
+    -- }
 
     local offsetProps = {
         parent = sibling,

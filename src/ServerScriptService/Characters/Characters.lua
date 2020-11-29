@@ -14,23 +14,32 @@ renderCharacters = function(props)
     InstanceUtils.deleteInstanceByNameStub(
         {parent = characterTemplate, nameStub = nameStub})
 
+    local charImageBlock = Utils.getFirstDescendantByName(characterTemplate,
+                                                          "CharacterImage")
+
     -- Hide decal on template
-    applyDecalsToCharacter({part = characterTemplate, decalId = ""})
+    applyDecalsToCharacter({part = charImageBlock, decalId = ""})
     -- Ensure player doesn't crash into invisivble template
-    characterTemplate.CanCollide = false
+    charImageBlock.CanCollide = false
     -- characters blocks are left visible during development, so I can move them around.
-    characterTemplate.Transparency = 1
+    charImageBlock.Transparency = 1
 
     for i, itemConfig in ipairs(itemConfigs) do
         local name = itemConfig.name
 
         if (name ~= "blank" and name ~= "empty" and name ~= "") then
-            local newItem = characterTemplate:Clone()
-            local x = (i - 1) * -(characterTemplate.Size.X + xGap)
+            local x = (i - 1) * -(charImageBlock.Size.X + xGap)
+            local newItem = Utils.cloneModel(
+                                {
+                    model = characterTemplate,
+                    position = CFrame.new(x, 0, 0),
+                    suffix = "Clone--" .. i
+                })
+            -- local newItem = characterTemplate:Clone()
 
             Utils.mergeTables(newItem, {
-                CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
-                Parent = characterTemplate,
+                -- CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
+                Parent = charImageBlock.Parent,
                 Name = nameStub .. i
             })
 
@@ -60,16 +69,15 @@ function module.addCharactersToScene(props)
     local characterConfigs01 = frameConfig.characters01
     local characterConfigs02 = frameConfig.characters02
 
-    renderCharacters({
-        template = Utils.getFirstDescendantByName(clonedScene,
-                                                  "CharacterTemplate01"),
-        itemConfigs = characterConfigs01
-    })
-    renderCharacters({
-        template = Utils.getFirstDescendantByName(clonedScene,
-                                                  "CharacterTemplate02"),
-        itemConfigs = characterConfigs02
-    })
+    -- renderCharacters({
+    --     template = Utils.getFirstDescendantByName(clonedScene, "Character01"),
+    --     itemConfigs = characterConfigs01
+    -- })
+    -- renderCharacters({
+    --     template = Utils.getFirstDescendantByName(clonedScene,
+    --                                               "CharacterTemplate02"),
+    --     itemConfigs = characterConfigs02
+    -- })
 
     local dialogTemplate = Utils.getFirstDescendantByName(clonedScene,
                                                           "DialogTemplate")

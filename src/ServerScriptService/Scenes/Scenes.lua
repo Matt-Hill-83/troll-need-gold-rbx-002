@@ -73,7 +73,7 @@ function module.addScenes(props)
         local clonedScene = Utils.cloneModel(
                                 {
                 model = sceneTemplateModel,
-                position = newPosition + startPosition,
+                position = CFrame.new(newPosition + startPosition),
                 suffix = "Clone--" .. i
             })
 
