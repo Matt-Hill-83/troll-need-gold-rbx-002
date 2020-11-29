@@ -30,13 +30,13 @@ renderCharacters = function(props)
 
     -- Hide decal on template
     applyDecalsToCharacter({part = charImageBlock, decalId = ""})
-    applyLabelsToCharacter({part = charImageBlock, text = ""})
+    -- applyLabelsToCharacter({part = charImageBlock, text = ""})
+    toggleLabelVisibility({part = charImageBlock, visible = false})
 
     -- Ensure player doesn't crash into invisivble template
     charImageBlock.CanCollide = false
     -- characters blocks are left visible during development, so I can move them around.
     charImageBlock.Transparency = 1
-    toggleLabelVisibility({part = charImageBlock, visible = false})
 
     -- For each character
     for i, itemConfig in ipairs(itemConfigs) do
@@ -66,9 +66,6 @@ renderCharacters = function(props)
         end
     end
 
-    -- Hide decal on template
-    -- applyDecalsToCharacter({part = charImageBlock, decalId = ""})
-    -- applyLabelsToCharacter({part = charImageBlock, text = ""})
     charImageBlock.Transparency = 1
 
 end
