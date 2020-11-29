@@ -2,6 +2,28 @@ local Sss = game:GetService("ServerScriptService")
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 
+function module.getOrCreateFolder(props)
+    local name = props.name
+    local parent = props.parent
+
+    local runtimeQuestsFolder = getFirstDescendantByName(parent, name)
+    print('runtimeQuestsFolder' .. ' - start');
+    print(runtimeQuestsFolder);
+    print('runtimeQuestsFolder' .. ' - end');
+
+    if not runtimeQuestsFolder then
+        runtimeQuestsFolder = Instance.new("Folder", parent)
+        runtimeQuestsFolder.Name = name
+
+        runtimeQuestsFolder = getFirstDescendantByName(parent, name)
+        print('runtimeQuestsFolder' .. ' - start');
+        print(runtimeQuestsFolder);
+        print('runtimeQuestsFolder' .. ' - end');
+    end
+
+    return runtimeQuestsFolder
+end
+
 function module.reportPlayerLocation()
     local Players = game:GetService("Players")
     Players.PlayerAdded:Connect(function(player)

@@ -54,30 +54,12 @@ function addRemoteObjects()
     local myStuff = workspace:FindFirstChild("MyStuff")
 
     local questsOrigin = Utils.getFirstDescendantByName(myStuff, "QuestsOrigin")
-
-    function getOrCreateFolder(props)
-        local name = props.name
-        local parent = props.parent
-
-        local runtimeQuestsFolder = Utils.getFirstDescendantByName(parent, name)
-        print('runtimeQuestsFolder' .. ' - start');
-        print(runtimeQuestsFolder);
-        print('runtimeQuestsFolder' .. ' - end');
-
-        if not runtimeQuestsFolder then
-            runtimeQuestsFolder = Instance.new("Folder", parent)
-            runtimeQuestsFolder.Name = name
-
-            runtimeQuestsFolder = Utils.getFirstDescendantByName(parent, name)
-            print('runtimeQuestsFolder' .. ' - start');
-            print(runtimeQuestsFolder);
-            print('runtimeQuestsFolder' .. ' - end');
-        end
-    end
-
     local folderProps = {name = "RuntimeQuests", parent = myStuff}
 
-    local folder = getOrCreateFolder(folderProps)
+    local folder = Utils.getOrCreateFolder(folderProps)
+    print('folder' .. ' - start');
+    print(folder);
+    print('folder' .. ' - end');
 
     local sibling = questsOrigin
     local questBlockTemplate = Utils.getFromTemplates("Dock")
