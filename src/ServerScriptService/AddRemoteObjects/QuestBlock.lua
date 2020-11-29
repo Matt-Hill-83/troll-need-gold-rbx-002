@@ -151,7 +151,6 @@ renderQuestBlock = function(props)
     local blockProps = {
         name = 'QuestContainer',
         parent = parent,
-        -- material = "Grass",
 
         material = Enum.Material.DiamondPlate,
         color = BrickColor.new("Bright red"),
@@ -160,10 +159,21 @@ renderQuestBlock = function(props)
     }
 
     local dockPositioner = Part.createPartWithVectors(blockProps)
-    -- dockPositioner.Parent = parent
 
     dockBase.CFrame = dockPositioner.CFrame
     dockBase.Size = dockPositioner.Size
+    local glassFloor = Utils.getFirstDescendantByName(dockBase, "GlassFloor")
+
+    print('glassFloor' .. ' - start');
+    print(glassFloor);
+    print('glassFloor' .. ' - end');
+    local glassFloorY = glassFloor.CFrame.Y
+    print('glassFloorY' .. ' - start');
+    print(glassFloorY);
+    print('glassFloorY' .. ' - end');
+
+    glassFloor.CFrame = dockBase.CFrame * CFrame.new(Vector3.new(0, 10, 0))
+    glassFloor.Size = dockBase.Size
 
     renderFrontWall({
         parent = dockBase,
