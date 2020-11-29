@@ -9,6 +9,7 @@ renderCharacters = function(props)
     local characterTemplate = props.template
     local itemConfigs = props.itemConfigs
     local charFolder = props.charFolder
+    local characterType = props.characterType
 
     local xGap = 1
     local nameStub = 'CharacterClone'
@@ -85,7 +86,21 @@ function module.addCharactersToScene(props)
     renderCharacters({
         template = Utils.getFirstDescendantByName(clonedScene, characterType),
         itemConfigs = characterConfigs01,
-        charFolder = charFolder
+        charFolder = charFolder,
+        sceneFolder = sceneFolder,
+        characterType = "Character01"
+    })
+    -- 
+    -- 
+
+    local characterType2 = "Character02"
+    local charFolder2 = Utils.getOrCreateFolder(
+                            {name = characterType2, parent = sceneFolder})
+    clonedScene.Parent = sceneFolder
+    renderCharacters({
+        template = Utils.getFirstDescendantByName(clonedScene, characterType2),
+        itemConfigs = characterConfigs02,
+        charFolder = charFolder2
     })
     -- renderCharacters({
     --     template = Utils.getFirstDescendantByName(clonedScene,
