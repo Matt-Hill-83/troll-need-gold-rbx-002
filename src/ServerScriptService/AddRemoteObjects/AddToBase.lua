@@ -64,9 +64,10 @@ function addRemoteObjects()
     for i, questConfig in pairs(questConfigs) do
         local gridSize = questConfig.gridSize
 
-        local desiredPadding = 8
-        local wallWidth = 4
+        local desiredPadding = 18
+        local wallWidth = 1
         local wallHeight = 16
+        local sceneHeight = 40
         local wallSize = Vector3.new(wallWidth, wallHeight, wallWidth)
         local gridPadding = desiredPadding + wallWidth * 2
 
@@ -80,6 +81,14 @@ function addRemoteObjects()
                 model = questBlockTemplate,
                 suffix = "Clone--" .. i
             })
+        -- questBlockTemplateClone:SetPrimaryPartCFrame(
+        --     questBlockTemplateClone.PrimaryPart.CFrame *
+        --         CFrame.fromEulerAnglesXYZ(0, 1, 0))
+
+        -- local questCFrame2 = questBlockTemplateClone.PrimaryPart.CFrame
+        -- questBlockTemplateClone.PrimaryPart.CFrame =
+        --     questCFrame2 * CFrame.new(Vector3.new(0, -40, 0)) *
+        --         CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
 
         local questFolder = Utils.getOrCreateFolder(
                                 {
@@ -94,9 +103,16 @@ function addRemoteObjects()
             sibling = sibling,
             wallSize = wallSize,
             questBlockTemplate = questBlockTemplateClone,
-            isFirst = i == 1
+            -- isFirst = i == 1,
+            index = i
         }
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
+        local questCFrame = questBlock.CFrame
+        -- questBlock.CFrame = questCFrame * CFrame.new(Vector3.new(0, -40, 0))
+
+        print('questCFrame' .. ' - start');
+        print(Utils.tableToString({questCFrame}));
+        print('questCFrame' .. ' - end');
 
         -- questBlock.Transparency = 1
         local addScenesProps = {
@@ -107,6 +123,10 @@ function addRemoteObjects()
             questFolder = questFolder
         }
         Scenes.addScenes(addScenesProps)
+
+        questBlock.CFrame = questCFrame *
+                                CFrame.new(Vector3.new(0, -sceneHeight, 0)) *
+                                CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
         sibling = questBlock
 
     end

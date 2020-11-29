@@ -104,9 +104,11 @@ renderQuestBlock = function(props)
     local parent = props.parent
     local sibling = props.sibling
     local size = props.size
-    local isFirst = props.isFirst
+    -- local isFirst = props.isFirst
     local wallSize = props.wallSize
     local dockModel = props.questBlockTemplate
+    local index = props.index
+    local isFirst = index == 1
 
     local dockBase = Utils.getFirstDescendantByName(dockModel, "DockBase")
 
@@ -124,21 +126,28 @@ renderQuestBlock = function(props)
 
     if (isFirst) then offset = 0 end
 
-    local desiredOffsetFromParentEdge = Vector3.new(-offset, 0, 0)
-    -- local desiredOffsetFromParentEdge = Vector3.new(0, 0, offset)
+    local changeOffset = index % 2 == 0
 
-    local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(-1, -1, -1),
-        moveTowardZero = Vector3.new(-1, 1, 1),
-        alignToChildFarEdge = Vector3.new(1, -1, 1)
-    }
+    local desiredOffsetFromParentEdge = nil
+    local itemDuplicationConfig = nil
 
-    -- local itemDuplicationConfig = {
-    --     alignToParentFarEdge = Vector3.new(1, -1, 1),
-    --     moveTowardZero = Vector3.new(-1, 1, 1),
-    --     alignToChildFarEdge = Vector3.new(-1, -1, 1)
-    -- }
+    if (true) then
+        -- if (changeOffset) then
+        desiredOffsetFromParentEdge = Vector3.new(-offset, 0, 0)
+        itemDuplicationConfig = {
+            alignToParentFarEdge = Vector3.new(-1, -1, -1),
+            moveTowardZero = Vector3.new(-1, 1, 1),
+            alignToChildFarEdge = Vector3.new(1, -1, 1)
+        }
+    else
+        desiredOffsetFromParentEdge = Vector3.new(0, 0, offset)
+        itemDuplicationConfig = {
+            alignToParentFarEdge = Vector3.new(1, -1, 1),
+            moveTowardZero = Vector3.new(-1, 1, 1),
+            alignToChildFarEdge = Vector3.new(-1, -1, 1)
+        }
 
+    end
     local offsetProps = {
         parent = sibling,
         childSize = size,
@@ -163,6 +172,11 @@ renderQuestBlock = function(props)
     dockBase.CFrame = dockPositioner.CFrame
     dockBase.Size = dockPositioner.Size
     local glassFloor = Utils.getFirstDescendantByName(dockBase, "GlassFloor")
+
+    local weld = Instance.new("WeldConstraint")
+    weld.Parent = dockBase
+    weld.Part0 = dockBase
+    weld.Part1 = dockPositioner
 
     -- put in a layer of glass to walk on below the water
     local glassFloorY = 10
@@ -191,6 +205,10 @@ renderQuestBlock = function(props)
         wallSize = wallSize,
         template = dockWallRight
     })
+
+    -- local questCFrame = dockPositioner.CFrame
+    -- dockPositioner.CFrame = questCFrame * CFrame.new(Vector3.new(0, -40, 0)) *
+    --                             CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
     return dockPositioner
 end
 

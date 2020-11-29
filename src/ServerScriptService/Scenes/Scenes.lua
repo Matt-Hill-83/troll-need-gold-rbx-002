@@ -74,12 +74,21 @@ function module.addScenes(props)
         local clonedScene = Utils.cloneModel(
                                 {
                 model = sceneTemplateModel,
+                -- position = CFrame.new(newPosition + startPosition) *
+                --     CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0),
+
                 position = CFrame.new(newPosition + startPosition),
                 suffix = "Clone--" .. i
             })
 
+        local weld = Instance.new("WeldConstraint")
+        weld.Parent = parent
+        weld.Part0 = parent
+        weld.Part1 = clonedScene.PrimaryPart
+
         local sceneFolder = Utils.getOrCreateFolder(
                                 {name = clonedScene.Name, parent = questFolder})
+        -- clonedScene.Parent = parent
         clonedScene.Parent = sceneFolder
 
         Bridges.destroyBridges({
