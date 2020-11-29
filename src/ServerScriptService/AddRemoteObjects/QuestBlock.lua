@@ -164,15 +164,11 @@ renderQuestBlock = function(props)
     dockBase.Size = dockPositioner.Size
     local glassFloor = Utils.getFirstDescendantByName(dockBase, "GlassFloor")
 
-    print('glassFloor' .. ' - start');
-    print(glassFloor);
-    print('glassFloor' .. ' - end');
-    local glassFloorY = glassFloor.CFrame.Y
-    print('glassFloorY' .. ' - start');
-    print(glassFloorY);
-    print('glassFloorY' .. ' - end');
+    -- put in a layer of glass to walk on below the water
+    local glassFloorY = 10
 
-    glassFloor.CFrame = dockBase.CFrame * CFrame.new(Vector3.new(0, 10, 0))
+    glassFloor.CFrame = dockBase.CFrame *
+                            CFrame.new(Vector3.new(0, glassFloorY, 0))
     glassFloor.Size = dockBase.Size
 
     renderFrontWall({
