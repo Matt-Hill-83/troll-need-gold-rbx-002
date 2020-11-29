@@ -57,9 +57,6 @@ function addRemoteObjects()
 
     local runtimeQuestsFolder = Utils.getOrCreateFolder(
                                     {name = "RunTimeQuests", parent = myStuff})
-    print('runtimeQuestsFolder' .. ' - start');
-    print(runtimeQuestsFolder);
-    print('runtimeQuestsFolder' .. ' - end');
 
     local sibling = questsOrigin
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
@@ -106,7 +103,8 @@ function addRemoteObjects()
             parent = questBlock,
             sceneConfigs = questConfig.sceneConfigs,
             questConfig = questConfig,
-            gridPadding = gridPadding
+            gridPadding = gridPadding,
+            questFolder = questFolder
         }
         Scenes.addScenes(addScenesProps)
         sibling = questBlock

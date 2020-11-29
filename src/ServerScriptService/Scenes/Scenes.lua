@@ -49,6 +49,7 @@ function module.addScenes(props)
     local sceneConfigs = props.sceneConfigs
     local questConfig = props.questConfig
     local gridPadding = props.gridPadding
+    local questFolder = props.questFolder
 
     local sceneTemplateModel = Utils.getFromTemplates("SceneTemplate")
     local wallTemplate = Utils.getFromTemplates("SceneBase")
@@ -76,6 +77,7 @@ function module.addScenes(props)
                 position = CFrame.new(newPosition + startPosition),
                 suffix = "Clone--" .. i
             })
+        clonedScene.Parent = questFolder
 
         Bridges.destroyBridges({
             sceneConfig = sceneConfig,
