@@ -31,8 +31,8 @@ function setupUserDetectionRegions()
     local myStuff = workspace:FindFirstChild("MyStuff")
     local myTemplates = myStuff:FindFirstChild("MyTemplates")
 
-    local clones =
-        Utils.getDescendantsByNameMatch(myTemplates, "SceneTemplate-")
+    local clones = Utils.getDescendantsByNameMatch(myTemplates,
+                                                   "SceneTemplateClone")
 
     for i = 1, #clones do
         local scene = clones[i]
@@ -54,6 +54,31 @@ function addRemoteObjects()
     local myStuff = workspace:FindFirstChild("MyStuff")
 
     local questsOrigin = Utils.getFirstDescendantByName(myStuff, "QuestsOrigin")
+
+    function getOrCreateFolder(props)
+        local name = props.name
+        local parent = props.parent
+
+        local runtimeQuestsFolder = Utils.getFirstDescendantByName(parent, name)
+        print('runtimeQuestsFolder' .. ' - start');
+        print(runtimeQuestsFolder);
+        print('runtimeQuestsFolder' .. ' - end');
+
+        if not runtimeQuestsFolder then
+            runtimeQuestsFolder = Instance.new("Folder", parent)
+            runtimeQuestsFolder.Name = name
+
+            runtimeQuestsFolder = Utils.getFirstDescendantByName(parent, name)
+            print('runtimeQuestsFolder' .. ' - start');
+            print(runtimeQuestsFolder);
+            print('runtimeQuestsFolder' .. ' - end');
+        end
+    end
+
+    local folderProps = {name = "RuntimeQuests", parent = myStuff}
+
+    local folder = getOrCreateFolder(folderProps)
+
     local sibling = questsOrigin
     local questBlockTemplate = Utils.getFromTemplates("Dock")
 
@@ -62,7 +87,8 @@ function addRemoteObjects()
 
         local desiredPadding = 8
         local wallWidth = 8
-        local wallSize = Vector3.new(wallWidth, 12, wallWidth)
+        local wallHeight = 16
+        local wallSize = Vector3.new(wallWidth, wallHeight, wallWidth)
         local gridPadding = desiredPadding + wallWidth * 2
 
         local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
@@ -98,7 +124,7 @@ function addRemoteObjects()
         sibling = questBlock
 
     end
-    -- setupUserDetectionRegions()
+    setupUserDetectionRegions()
 end
 
 module.addRemoteObjects = addRemoteObjects

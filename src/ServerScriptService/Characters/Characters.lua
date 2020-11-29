@@ -52,9 +52,6 @@ end
 function applyDecalsToCharacter(props)
     local part = props.part
     local decalId = props.decalId
-    print('part' .. ' - start');
-    print(part);
-    print('part' .. ' - end');
     local decalFront = Utils.getFirstDescendantByName(part,
                                                       "CharacterDecalFront")
     local decalBack = Utils.getFirstDescendantByName(part, "CharacterDecalBack")

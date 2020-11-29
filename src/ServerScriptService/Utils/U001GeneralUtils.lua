@@ -46,9 +46,6 @@ function module.deleteChildrenByName(props)
     local children = parent:GetDescendants()
     for i, item in pairs(children) do
         if item.Name == childName then
-            print('item' .. ' - start----------------');
-            print(item);
-            print('item' .. ' - end');
             item:Destroy()
             --
         end

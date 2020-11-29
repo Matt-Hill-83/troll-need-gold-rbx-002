@@ -151,7 +151,11 @@ renderQuestBlock = function(props)
     local blockProps = {
         name = 'QuestContainer',
         parent = parent,
-        color = BrickColor.new("Buttermilk"),
+        -- material = "Grass",
+
+        brickColor = BrickColor.new("Bright red"),
+        material = Enum.Material.DiamondPlate,
+        -- color = BrickColor.new("Buttermilk"),
         size = size,
         position = childPos
     }

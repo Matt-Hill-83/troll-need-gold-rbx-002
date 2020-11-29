@@ -1,6 +1,8 @@
 local module = {}
 
-function module.func001() print('in sub function') end
---
+function module.func001()
+    -- 
+end
+
 return module
 

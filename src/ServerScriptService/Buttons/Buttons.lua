@@ -7,13 +7,10 @@ local Characters = require(Sss.Source.Characters.Characters)
 local module = {}
 
 function module.doFrameStuff(props)
-    print('doFrameStuff')
     local updateButtonActiveStatus = props.updateButtonActiveStatus
     local clonedScene = props.clonedScene
     local numPages = props.numPages
     local sceneConfig = props.sceneConfig
-
-    -- local pageNum = 1
 
     function updateFrameItems(props)
 
