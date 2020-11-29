@@ -73,6 +73,7 @@ function addRemoteObjects()
         local questBlockTemplateClone = Utils.cloneModel(
                                             {
                 model = questBlockTemplate,
+                -- position = questBlockTemplate.PrimaryPart.CFrame,
                 suffix = "Clone--" .. i
             })
 

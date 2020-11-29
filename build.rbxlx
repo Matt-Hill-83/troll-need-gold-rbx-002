@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>143.278366</X>
-					<Y>70.9306641</Y>
-					<Z>-340.60022</Z>
-					<R00>-0.825471938</R00>
-					<R01>0.251014829</R01>
-					<R02>-0.505556941</R02>
-					<R10>-1.49011612e-08</R10>
-					<R11>0.895673633</R11>
-					<R12>0.444712222</R12>
-					<R20>0.56444329</R20>
-					<R21>0.367097467</R21>
-					<R22>-0.739353359</R22>
+					<X>231.768555</X>
+					<Y>181.516846</Y>
+					<Z>-369.428192</Z>
+					<R00>-0.997515917</R00>
+					<R01>-0.0549804084</R01>
+					<R02>0.0440369733</R02>
+					<R10>-3.72529074e-09</R10>
+					<R11>0.625150681</R11>
+					<R12>0.780504048</R12>
+					<R20>-0.0704421774</R20>
+					<R21>0.778565228</R21>
+					<R22>-0.623597682</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -8115,7 +8115,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 							<bool name="CanCollide">true</bool>
 							<bool name="CastShadow">true</bool>
 							<int name="CollisionGroupId">0</int>
-							<Color3uint8 name="Color3uint8">4294967040</Color3uint8>
+							<Color3uint8 name="Color3uint8">4278255360</Color3uint8>
 							<PhysicalProperties name="CustomPhysicalProperties">
 								<CustomPhysics>false</CustomPhysics>
 							</PhysicalProperties>
@@ -13412,9 +13412,9 @@ remoteCode.addRemoteObjects(base)
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>221.639999</X>
-						<Y>2</Y>
-						<Z>6.54999924</Z>
+						<X>243.809998</X>
+						<Y>-1</Y>
+						<Z>-206.869995</Z>
 						<R00>1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
@@ -13510,6 +13510,45 @@ remoteCode.addRemoteObjects(base)
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
+				<Item class="Weld" referent="RBX43d96d4a7807416abb07103dc9940757">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>0</X>
+							<Y>-2</Y>
+							<Z>0</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>0</R11>
+							<R12>-1</R12>
+							<R20>0</R20>
+							<R21>1</R21>
+							<R22>0</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>243.809998</X>
+							<Y>27</Y>
+							<Z>-206.869995</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>0</R11>
+							<R12>-1</R12>
+							<R20>0</R20>
+							<R21>1</R21>
+							<R22>0</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Weld</string>
+						<Ref name="Part0">RBXd207cf71550a40cdbaca9bdad35d44a2</Ref>
+						<Ref name="Part1">RBXf70eef44c6474e63b75672292a29dcc7</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
 			</Item>
 			<Item class="SpawnLocation" referent="RBX20423fbfc3f843b6bee9d9b7f1aa1500">
 				<Properties>
@@ -13525,12 +13564,12 @@ remoteCode.addRemoteObjects(base)
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>141.700012</X>
-						<Y>-2.51000023</Y>
-						<Z>95.2400055</Z>
+						<X>249.049973</X>
+						<Y>13.4900265</Y>
+						<Z>-171.840012</Z>
 						<R00>0</R00>
 						<R01>0</R01>
-						<R02>0.999996305</R02>
+						<R02>0.999992549</R02>
 						<R10>0</R10>
 						<R11>1</R11>
 						<R12>0</R12>
@@ -13608,7 +13647,7 @@ remoteCode.addRemoteObjects(base)
 						<float name="Transparency">0</float>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBXc20f6a2666f54972be9c850a0981f9f0">
+				<Item class="Weld" referent="RBXf837c04d9f1c4bc1b2eca7fdaef0e668">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -13622,27 +13661,27 @@ remoteCode.addRemoteObjects(base)
 							<R11>0</R11>
 							<R12>-1</R12>
 							<R20>0</R20>
-							<R21>0.999996305</R21>
+							<R21>0.999992549</R21>
 							<R22>0</R22>
 						</CoordinateFrame>
 						<CoordinateFrame name="C1">
-							<X>141.700012</X>
-							<Y>27</Y>
-							<Z>95.2400055</Z>
-							<R00>0</R00>
-							<R01>1</R01>
+							<X>171.840012</X>
+							<Y>8</Y>
+							<Z>-0.950027466</Z>
+							<R00>1</R00>
+							<R01>0</R01>
 							<R02>0</R02>
 							<R10>0</R10>
 							<R11>0</R11>
 							<R12>-1</R12>
-							<R20>-1</R20>
-							<R21>0</R21>
+							<R20>0</R20>
+							<R21>1</R21>
 							<R22>0</R22>
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
 						<Ref name="Part0">RBX20423fbfc3f843b6bee9d9b7f1aa1500</Ref>
-						<Ref name="Part1">RBXf70eef44c6474e63b75672292a29dcc7</Ref>
+						<Ref name="Part1">RBX2dfd484a3008492d82388863313b746f</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -14231,6 +14270,7 @@ function addRemoteObjects()
         local questBlockTemplateClone = Utils.cloneModel(
                                             {
                 model = questBlockTemplate,
+                -- position = questBlockTemplate.PrimaryPart.CFrame,
                 suffix = "Clone--" .. i
             })
 
@@ -14436,9 +14476,9 @@ renderFrontWall = function(props)
     local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, 1),
-        moveTowardZero = Vector3.new(-1, 1, -1),
-        alignToChildFarEdge = Vector3.new(-1, -1, 1)
+        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        moveTowardZero = Vector3.new(-1, 1, 1),
+        alignToChildFarEdge = Vector3.new(-1, -1, -1)
     }
 
     local offsetProps = {
@@ -14460,9 +14500,9 @@ renderBackWall = function(props)
     local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, -1),
-        moveTowardZero = Vector3.new(-1, 1, 1),
-        alignToChildFarEdge = Vector3.new(-1, -1, -1)
+        alignToParentFarEdge = Vector3.new(1, 1, 1),
+        moveTowardZero = Vector3.new(-1, 1, -1),
+        alignToChildFarEdge = Vector3.new(-1, -1, 1)
     }
 
     local offsetProps = {
@@ -14580,6 +14620,8 @@ renderQuestBlock = function(props)
     }
 
     local dockPositioner = Part.createPartWithVectors(blockProps)
+    -- dockPositioner.Parent = parent
+
     dockBase.CFrame = dockPositioner.CFrame
     dockBase.Size = dockPositioner.Size
 
@@ -15566,6 +15608,9 @@ function module.deleteChildrenByName(props)
     local children = parent:GetDescendants()
     for i, item in pairs(children) do
         if item.Name == childName then
+            print('item' .. ' - start----------------');
+            print(item);
+            print('item' .. ' - end');
             item:Destroy()
             --
         end
@@ -15630,16 +15675,14 @@ function cloneModel(props)
     local position = props.position
     local suffix = props.suffix
 
-    local sceneBaseModelClone = model:Clone()
-    sceneBaseModelClone.Parent = model.Parent
-    sceneBaseModelClone.Name = model.Name .. (suffix or "-clone")
+    local modelClone = model:Clone()
+    modelClone.Parent = model.Parent
+    modelClone.Name = model.Name .. (suffix or "-clone")
     if (position) then
-        local newCFrame = model.PrimaryPart.CFrame * position
-        -- local newCFrame = model.PrimaryPart.CFrame + position
-        sceneBaseModelClone:SetPrimaryPartCFrame(newCFrame)
-        -- sceneBaseModelClone:MoveTo(position)
+        modelClone:SetPrimaryPartCFrame(position)
+        -- 
     end
-    return sceneBaseModelClone
+    return modelClone
 end
 
 local function getNames(tab, name, res, lev)
@@ -15752,6 +15795,9 @@ deleteInstanceByNameStub = function(props)
     for _, item in pairs(children) do
         local match = string.match(item.Name, nameStub)
         if item:IsA('Part') and match then
+            print('item' .. ' - start');
+            print(item);
+            print('item' .. ' - end');
             item:Destroy()
             --
         end
@@ -16362,6 +16408,184 @@ module.questConfigs = {
             }
         },
         gridSize = {rows = 3, cols = 4}
+    }, {
+        questTitle = "--- R002 - A Bee in a Tree",
+        sceneConfigs = {
+            {
+                name = "log",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "I see a dog..."},
+                            {
+                                char = "britta04",
+                                text = "I see a dog... on a log."
+                            }, {char = "raven04", text = "Tee hee hee."},
+                            {char = "angus01", text = "bark!    bark!"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "cat_king"}}
+                    }
+                },
+                coordinates = {row = 0, col = 6},
+                showBottomPath = true,
+                showRightPath = false,
+                showTopPath = false,
+                showLeftPath = false,
+                maxRow = 0,
+                maxCol = 6
+            }, {
+                name = "mat",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "I see a dog..."},
+                            {
+                                char = "britta04",
+                                text = "I see a dog... on a log."
+                            }, {char = "raven04", text = "Tee hee hee."},
+                            {char = "angus01", text = "bark!    bark!"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "angus01"}}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "raven04",
+                                text = "Now we can go to the log!"
+                            }, {char = "britta04", text = "I love the log!"},
+                            {char = "britta04", text = "Tee Hee Hee!"},
+                            {char = "angus01", text = "bark bark"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "angus01"}}
+                    }
+                },
+                coordinates = {col = 0, row = 1},
+                showBottomPath = false,
+                showRightPath = true,
+                showTopPath = false,
+                showLeftPath = false,
+                maxRow = 1,
+                maxCol = 6
+            }, {
+                name = "log",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "I see a dog..."},
+                            {
+                                char = "britta04",
+                                text = "I see a dog... on a log."
+                            }, {char = "raven04", text = "Tee hee hee."},
+                            {char = "angus01", text = "bark!    bark!"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "cat_king"}}
+                    }
+                },
+                coordinates = {col = 1, row = 1},
+                showBottomPath = false,
+                showRightPath = false,
+                showTopPath = false,
+                showLeftPath = true,
+                maxRow = 1,
+                maxCol = 6
+            }, {
+                name = "mop",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "I see a dog..."},
+                            {
+                                char = "britta04",
+                                text = "I see a dog... on a log."
+                            }, {char = "raven04", text = "Tee hee hee."},
+                            {char = "angus01", text = "bark!    bark!"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "cat_king"}}
+                    }
+                },
+                coordinates = {col = 3, row = 1},
+                showBottomPath = false,
+                showRightPath = true,
+                showTopPath = false,
+                showLeftPath = false,
+                maxRow = 1,
+                maxCol = 6
+            }, {
+                name = "gold",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "I see a dog..."},
+                            {
+                                char = "britta04",
+                                text = "I see a dog... on a log."
+                            }, {char = "raven04", text = "Tee hee hee."},
+                            {char = "angus01", text = "bark!    bark!"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "cat_king"}}
+                    }
+                },
+                coordinates = {col = 4, row = 1},
+                showBottomPath = false,
+                showRightPath = false,
+                showTopPath = false,
+                showLeftPath = true,
+                maxRow = 1,
+                maxCol = 6
+            }, {
+                name = "log",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "I see a dog..."},
+                            {
+                                char = "britta04",
+                                text = "I see a dog... on a log."
+                            }, {char = "raven04", text = "Tee hee hee."},
+                            {char = "angus01", text = "bark!    bark!"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "cat_king"}}
+                    }
+                },
+                coordinates = {col = 6, row = 1},
+                showBottomPath = true,
+                showRightPath = false,
+                showTopPath = true,
+                showLeftPath = false,
+                maxRow = 1,
+                maxCol = 6
+            }, {
+                name = "log",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "I see a dog..."},
+                            {
+                                char = "britta04",
+                                text = "I see a dog... on a log."
+                            }, {char = "raven04", text = "Tee hee hee."},
+                            {char = "angus01", text = "bark!    bark!"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "cat_king"}}
+                    }
+                },
+                coordinates = {row = 3, col = 6},
+                showBottomPath = false,
+                showRightPath = false,
+                showTopPath = true,
+                showLeftPath = false,
+                maxRow = 3,
+                maxCol = 6
+            }
+        },
+        gridSize = {rows = 4, cols = 7}
     }
 }
 return module
@@ -16744,7 +16968,9 @@ renderCharacters = function(props)
             local newItem = Utils.cloneModel(
                                 {
                     model = characterTemplate,
-                    position = CFrame.new(x, 0, 0),
+                    position = characterTemplate.PrimaryPart.CFrame *
+                        CFrame.new(Vector3.new(x, 0, 0)),
+                    -- position = CFrame.new(x, 0, 0),
                     suffix = "Clone--" .. i
                 })
             -- local newItem = characterTemplate:Clone()
@@ -16781,10 +17007,10 @@ function module.addCharactersToScene(props)
     local characterConfigs01 = frameConfig.characters01
     local characterConfigs02 = frameConfig.characters02
 
-    -- renderCharacters({
-    --     template = Utils.getFirstDescendantByName(clonedScene, "Character01"),
-    --     itemConfigs = characterConfigs01
-    -- })
+    renderCharacters({
+        template = Utils.getFirstDescendantByName(clonedScene, "Character01"),
+        itemConfigs = characterConfigs01
+    })
     -- renderCharacters({
     --     template = Utils.getFirstDescendantByName(clonedScene,
     --                                               "CharacterTemplate02"),

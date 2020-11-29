@@ -46,6 +46,9 @@ function module.deleteChildrenByName(props)
     local children = parent:GetDescendants()
     for i, item in pairs(children) do
         if item.Name == childName then
+            print('item' .. ' - start----------------');
+            print(item);
+            print('item' .. ' - end');
             item:Destroy()
             --
         end
@@ -110,16 +113,14 @@ function cloneModel(props)
     local position = props.position
     local suffix = props.suffix
 
-    local sceneBaseModelClone = model:Clone()
-    sceneBaseModelClone.Parent = model.Parent
-    sceneBaseModelClone.Name = model.Name .. (suffix or "-clone")
+    local modelClone = model:Clone()
+    modelClone.Parent = model.Parent
+    modelClone.Name = model.Name .. (suffix or "-clone")
     if (position) then
-        local newCFrame = model.PrimaryPart.CFrame * position
-        -- local newCFrame = model.PrimaryPart.CFrame + position
-        sceneBaseModelClone:SetPrimaryPartCFrame(newCFrame)
-        -- sceneBaseModelClone:MoveTo(position)
+        modelClone:SetPrimaryPartCFrame(position)
+        -- 
     end
-    return sceneBaseModelClone
+    return modelClone
 end
 
 local function getNames(tab, name, res, lev)

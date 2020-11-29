@@ -32,7 +32,9 @@ renderCharacters = function(props)
             local newItem = Utils.cloneModel(
                                 {
                     model = characterTemplate,
-                    position = CFrame.new(x, 0, 0),
+                    position = characterTemplate.PrimaryPart.CFrame *
+                        CFrame.new(Vector3.new(x, 0, 0)),
+                    -- position = CFrame.new(x, 0, 0),
                     suffix = "Clone--" .. i
                 })
             -- local newItem = characterTemplate:Clone()
@@ -69,10 +71,10 @@ function module.addCharactersToScene(props)
     local characterConfigs01 = frameConfig.characters01
     local characterConfigs02 = frameConfig.characters02
 
-    -- renderCharacters({
-    --     template = Utils.getFirstDescendantByName(clonedScene, "Character01"),
-    --     itemConfigs = characterConfigs01
-    -- })
+    renderCharacters({
+        template = Utils.getFirstDescendantByName(clonedScene, "Character01"),
+        itemConfigs = characterConfigs01
+    })
     -- renderCharacters({
     --     template = Utils.getFirstDescendantByName(clonedScene,
     --                                               "CharacterTemplate02"),

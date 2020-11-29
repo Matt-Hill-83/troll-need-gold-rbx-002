@@ -157,6 +157,8 @@ renderQuestBlock = function(props)
     }
 
     local dockPositioner = Part.createPartWithVectors(blockProps)
+    -- dockPositioner.Parent = parent
+
     dockBase.CFrame = dockPositioner.CFrame
     dockBase.Size = dockPositioner.Size
 

@@ -122,6 +122,184 @@ module.questConfigs = {
             }
         },
         gridSize = {rows = 3, cols = 4}
+    }, {
+        questTitle = "--- R002 - A Bee in a Tree",
+        sceneConfigs = {
+            {
+                name = "log",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "I see a dog..."},
+                            {
+                                char = "britta04",
+                                text = "I see a dog... on a log."
+                            }, {char = "raven04", text = "Tee hee hee."},
+                            {char = "angus01", text = "bark!    bark!"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "cat_king"}}
+                    }
+                },
+                coordinates = {row = 0, col = 6},
+                showBottomPath = true,
+                showRightPath = false,
+                showTopPath = false,
+                showLeftPath = false,
+                maxRow = 0,
+                maxCol = 6
+            }, {
+                name = "mat",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "I see a dog..."},
+                            {
+                                char = "britta04",
+                                text = "I see a dog... on a log."
+                            }, {char = "raven04", text = "Tee hee hee."},
+                            {char = "angus01", text = "bark!    bark!"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "angus01"}}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "raven04",
+                                text = "Now we can go to the log!"
+                            }, {char = "britta04", text = "I love the log!"},
+                            {char = "britta04", text = "Tee Hee Hee!"},
+                            {char = "angus01", text = "bark bark"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "angus01"}}
+                    }
+                },
+                coordinates = {col = 0, row = 1},
+                showBottomPath = false,
+                showRightPath = true,
+                showTopPath = false,
+                showLeftPath = false,
+                maxRow = 1,
+                maxCol = 6
+            }, {
+                name = "log",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "I see a dog..."},
+                            {
+                                char = "britta04",
+                                text = "I see a dog... on a log."
+                            }, {char = "raven04", text = "Tee hee hee."},
+                            {char = "angus01", text = "bark!    bark!"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "cat_king"}}
+                    }
+                },
+                coordinates = {col = 1, row = 1},
+                showBottomPath = false,
+                showRightPath = false,
+                showTopPath = false,
+                showLeftPath = true,
+                maxRow = 1,
+                maxCol = 6
+            }, {
+                name = "mop",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "I see a dog..."},
+                            {
+                                char = "britta04",
+                                text = "I see a dog... on a log."
+                            }, {char = "raven04", text = "Tee hee hee."},
+                            {char = "angus01", text = "bark!    bark!"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "cat_king"}}
+                    }
+                },
+                coordinates = {col = 3, row = 1},
+                showBottomPath = false,
+                showRightPath = true,
+                showTopPath = false,
+                showLeftPath = false,
+                maxRow = 1,
+                maxCol = 6
+            }, {
+                name = "gold",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "I see a dog..."},
+                            {
+                                char = "britta04",
+                                text = "I see a dog... on a log."
+                            }, {char = "raven04", text = "Tee hee hee."},
+                            {char = "angus01", text = "bark!    bark!"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "cat_king"}}
+                    }
+                },
+                coordinates = {col = 4, row = 1},
+                showBottomPath = false,
+                showRightPath = false,
+                showTopPath = false,
+                showLeftPath = true,
+                maxRow = 1,
+                maxCol = 6
+            }, {
+                name = "log",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "I see a dog..."},
+                            {
+                                char = "britta04",
+                                text = "I see a dog... on a log."
+                            }, {char = "raven04", text = "Tee hee hee."},
+                            {char = "angus01", text = "bark!    bark!"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "cat_king"}}
+                    }
+                },
+                coordinates = {col = 6, row = 1},
+                showBottomPath = true,
+                showRightPath = false,
+                showTopPath = true,
+                showLeftPath = false,
+                maxRow = 1,
+                maxCol = 6
+            }, {
+                name = "log",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "raven04", text = "I see a dog..."},
+                            {
+                                char = "britta04",
+                                text = "I see a dog... on a log."
+                            }, {char = "raven04", text = "Tee hee hee."},
+                            {char = "angus01", text = "bark!    bark!"}
+                        },
+                        characters01 = {{name = "raven04"}, {name = "britta04"}},
+                        characters02 = {{name = "cat_king"}}
+                    }
+                },
+                coordinates = {row = 3, col = 6},
+                showBottomPath = false,
+                showRightPath = false,
+                showTopPath = true,
+                showLeftPath = false,
+                maxRow = 3,
+                maxCol = 6
+            }
+        },
+        gridSize = {rows = 4, cols = 7}
     }
 }
 return module
