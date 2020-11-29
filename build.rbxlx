@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>339.983826</X>
-					<Y>94.7466354</Y>
-					<Z>-348.411224</Z>
-					<R00>-0.999579847</R00>
-					<R01>-0.0137031432</R01>
-					<R02>0.0255434029</R02>
-					<R10>-0</R10>
-					<R11>0.881204545</R11>
-					<R12>0.472735405</R12>
-					<R20>-0.0289869197</R20>
-					<R21>0.472536772</R21>
-					<R22>-0.880834222</R22>
+					<X>396.297821</X>
+					<Y>104.503471</Y>
+					<Z>-307.293915</Z>
+					<R00>-0.847542763</R00>
+					<R01>-0.314308345</R01>
+					<R02>0.427646697</R02>
+					<R10>1.49011612e-08</R10>
+					<R11>0.805774987</R11>
+					<R12>0.592221975</R12>
+					<R20>-0.530727267</R20>
+					<R21>0.501933455</R21>
+					<R22>-0.682928622</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -8750,7 +8750,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 							<bool name="CanCollide">true</bool>
 							<bool name="CastShadow">true</bool>
 							<int name="CollisionGroupId">0</int>
-							<Color3uint8 name="Color3uint8">4290364593</Color3uint8>
+							<Color3uint8 name="Color3uint8">4283144011</Color3uint8>
 							<PhysicalProperties name="CustomPhysicalProperties">
 								<CustomPhysics>false</CustomPhysics>
 							</PhysicalProperties>
@@ -8864,7 +8864,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 								<bool name="CanCollide">true</bool>
 								<bool name="CastShadow">true</bool>
 								<int name="CollisionGroupId">0</int>
-								<Color3uint8 name="Color3uint8">4290364593</Color3uint8>
+								<Color3uint8 name="Color3uint8">4283144011</Color3uint8>
 								<PhysicalProperties name="CustomPhysicalProperties">
 									<CustomPhysics>false</CustomPhysics>
 								</PhysicalProperties>
@@ -9018,7 +9018,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 								<bool name="CanCollide">true</bool>
 								<bool name="CastShadow">true</bool>
 								<int name="CollisionGroupId">0</int>
-								<Color3uint8 name="Color3uint8">4290364593</Color3uint8>
+								<Color3uint8 name="Color3uint8">4283144011</Color3uint8>
 								<PhysicalProperties name="CustomPhysicalProperties">
 									<CustomPhysics>false</CustomPhysics>
 								</PhysicalProperties>
@@ -9172,7 +9172,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 								<bool name="CanCollide">true</bool>
 								<bool name="CastShadow">true</bool>
 								<int name="CollisionGroupId">0</int>
-								<Color3uint8 name="Color3uint8">4290364593</Color3uint8>
+								<Color3uint8 name="Color3uint8">4283144011</Color3uint8>
 								<PhysicalProperties name="CustomPhysicalProperties">
 									<CustomPhysics>false</CustomPhysics>
 								</PhysicalProperties>
@@ -9326,7 +9326,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 								<bool name="CanCollide">true</bool>
 								<bool name="CastShadow">true</bool>
 								<int name="CollisionGroupId">0</int>
-								<Color3uint8 name="Color3uint8">4290364593</Color3uint8>
+								<Color3uint8 name="Color3uint8">4283144011</Color3uint8>
 								<PhysicalProperties name="CustomPhysicalProperties">
 									<CustomPhysics>false</CustomPhysics>
 								</PhysicalProperties>
@@ -12747,7 +12747,7 @@ function addRemoteObjects()
         local gridSize = questConfig.gridSize
 
         local desiredPadding = 8
-        local wallWidth = 8
+        local wallWidth = 4
         local wallHeight = 16
         local wallSize = Vector3.new(wallWidth, wallHeight, wallWidth)
         local gridPadding = desiredPadding + wallWidth * 2
@@ -13122,12 +13122,15 @@ renderQuestBlock = function(props)
 
     dockBase.CFrame = dockPositioner.CFrame
     dockBase.Size = dockPositioner.Size
-    local glassFloor = Utils.getFirstDescendantByName(parent, "GlassFloor")
+    local glassFloor = Utils.getFirstDescendantByName(dockBase, "GlassFloor")
 
-    print('glassFloor' .. ' - start');
-    print(glassFloor);
-    print('glassFloor' .. ' - end');
-    local glassFloorY = glassFloor.CFrame.Y
+    -- put in a layer of glass to walk on below the water
+    local glassFloorY = 10
+
+    glassFloor.CFrame = dockBase.CFrame *
+                            CFrame.new(Vector3.new(0, glassFloorY, 0))
+    glassFloor.Size = dockBase.Size
+
     renderFrontWall({
         parent = dockBase,
         wallSize = wallSize,

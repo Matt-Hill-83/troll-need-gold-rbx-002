@@ -51,7 +51,7 @@ renderCharacters = function(props)
             })
 
             local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
-            -- applyDecalsToCharacter({part = newChar, decalId = decalId})
+            applyDecalsToCharacter({part = newChar, decalId = decalId})
         end
     end
 
