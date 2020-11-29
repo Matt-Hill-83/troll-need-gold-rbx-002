@@ -7,18 +7,11 @@ function module.getOrCreateFolder(props)
     local parent = props.parent
 
     local runtimeQuestsFolder = getFirstDescendantByName(parent, name)
-    print('runtimeQuestsFolder' .. ' - start');
-    print(runtimeQuestsFolder);
-    print('runtimeQuestsFolder' .. ' - end');
 
     if not runtimeQuestsFolder then
         runtimeQuestsFolder = Instance.new("Folder", parent)
         runtimeQuestsFolder.Name = name
-
         runtimeQuestsFolder = getFirstDescendantByName(parent, name)
-        print('runtimeQuestsFolder' .. ' - start');
-        print(runtimeQuestsFolder);
-        print('runtimeQuestsFolder' .. ' - end');
     end
 
     return runtimeQuestsFolder

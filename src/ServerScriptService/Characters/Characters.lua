@@ -8,11 +8,17 @@ local module = {}
 renderCharacters = function(props)
     local characterTemplate = props.template
     local itemConfigs = props.itemConfigs
+    local charFolder = props.charFolder
+
     local xGap = 1
     local nameStub = 'CharacterClone'
 
     InstanceUtils.deleteInstanceByNameStub(
-        {parent = characterTemplate, nameStub = nameStub})
+        {parent = charFolder, nameStub = nameStub})
+
+    print('characterTemplate' .. ' - start');
+    print(characterTemplate);
+    print('characterTemplate' .. ' - end');
 
     local charImageBlock = Utils.getFirstDescendantByName(characterTemplate,
                                                           "CharacterImage")
@@ -29,7 +35,7 @@ renderCharacters = function(props)
 
         if (name ~= "blank" and name ~= "empty" and name ~= "") then
             local x = (i - 1) * -(charImageBlock.Size.X + xGap)
-            local newItem = Utils.cloneModel(
+            local newChar = Utils.cloneModel(
                                 {
                     model = characterTemplate,
                     position = characterTemplate.PrimaryPart.CFrame *
@@ -37,13 +43,15 @@ renderCharacters = function(props)
                     suffix = "Clone--" .. i
                 })
 
-            Utils.mergeTables(newItem, {
+            newChar.Parent = charFolder
+
+            Utils.mergeTables(newChar, {
                 Parent = characterTemplate.Parent,
                 Name = nameStub .. i
             })
 
             local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
-            applyDecalsToCharacter({part = newItem, decalId = decalId})
+            -- applyDecalsToCharacter({part = newChar, decalId = decalId})
         end
     end
 
@@ -64,12 +72,20 @@ end
 function module.addCharactersToScene(props)
     local frameConfig = props.frameConfig
     local clonedScene = props.clonedScene
+    local sceneFolder = props.sceneFolder
+
     local characterConfigs01 = frameConfig.characters01
     local characterConfigs02 = frameConfig.characters02
 
+    local characterType = "Character01"
+    local charFolder = Utils.getOrCreateFolder(
+                           {name = characterType, parent = sceneFolder})
+    clonedScene.Parent = sceneFolder
+
     renderCharacters({
-        template = Utils.getFirstDescendantByName(clonedScene, "Character01"),
-        itemConfigs = characterConfigs01
+        template = Utils.getFirstDescendantByName(clonedScene, characterType),
+        itemConfigs = characterConfigs01,
+        charFolder = charFolder
     })
     -- renderCharacters({
     --     template = Utils.getFirstDescendantByName(clonedScene,

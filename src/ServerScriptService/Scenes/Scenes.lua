@@ -77,7 +77,10 @@ function module.addScenes(props)
                 position = CFrame.new(newPosition + startPosition),
                 suffix = "Clone--" .. i
             })
-        clonedScene.Parent = questFolder
+
+        local sceneFolder = Utils.getOrCreateFolder(
+                                {name = clonedScene.Name, parent = questFolder})
+        clonedScene.Parent = sceneFolder
 
         Bridges.destroyBridges({
             sceneConfig = sceneConfig,
@@ -85,12 +88,13 @@ function module.addScenes(props)
         })
 
         local frameConfig = sceneConfig.frames[pageNum]
-        local sceneProps = {
+        local charProps = {
             frameConfig = frameConfig,
-            clonedScene = clonedScene
+            clonedScene = clonedScene,
+            sceneFolder = sceneFolder
         }
 
-        Characters.addCharactersToScene(sceneProps)
+        Characters.addCharactersToScene(charProps)
         Location.addLocation({scene = clonedScene, sceneConfig = sceneConfig})
 
         local gameTitleLabel = Utils.getFirstDescendantByName(clonedScene,
