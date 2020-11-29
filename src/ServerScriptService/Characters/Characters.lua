@@ -34,14 +34,12 @@ renderCharacters = function(props)
                     model = characterTemplate,
                     position = characterTemplate.PrimaryPart.CFrame *
                         CFrame.new(Vector3.new(x, 0, 0)),
-                    -- position = CFrame.new(x, 0, 0),
                     suffix = "Clone--" .. i
                 })
-            -- local newItem = characterTemplate:Clone()
+            -- newItem.Parent = characterTemplate.Parent
 
             Utils.mergeTables(newItem, {
-                -- CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
-                Parent = charImageBlock.Parent,
+                Parent = characterTemplate.Parent,
                 Name = nameStub .. i
             })
 
@@ -55,13 +53,15 @@ end
 function applyDecalsToCharacter(props)
     local part = props.part
     local decalId = props.decalId
-
+    print('part' .. ' - start');
+    print(part);
+    print('part' .. ' - end');
     local decalFront = Utils.getFirstDescendantByName(part,
                                                       "CharacterDecalFront")
     local decalBack = Utils.getFirstDescendantByName(part, "CharacterDecalBack")
 
-    decalFront.Texture = 'rbxassetid://' .. decalId
-    decalBack.Texture = 'rbxassetid://' .. decalId
+    decalFront.Image = 'rbxassetid://' .. decalId
+    decalBack.Image = 'rbxassetid://' .. decalId
 
 end
 

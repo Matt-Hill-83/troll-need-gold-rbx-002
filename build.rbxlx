@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>231.768555</X>
-					<Y>181.516846</Y>
-					<Z>-369.428192</Z>
-					<R00>-0.997515917</R00>
-					<R01>-0.0549804084</R01>
-					<R02>0.0440369733</R02>
-					<R10>-3.72529074e-09</R10>
-					<R11>0.625150681</R11>
-					<R12>0.780504048</R12>
-					<R20>-0.0704421774</R20>
-					<R21>0.778565228</R21>
-					<R22>-0.623597682</R22>
+					<X>343.027832</X>
+					<Y>64.3120346</Y>
+					<Z>-235.709305</Z>
+					<R00>-0.816728473</R00>
+					<R01>-0.28855741</R01>
+					<R02>0.499689132</R02>
+					<R10>-1.49011612e-08</R10>
+					<R11>0.865979075</R11>
+					<R12>0.500080287</R12>
+					<R20>-0.577022195</R20>
+					<R21>0.408429801</R21>
+					<R22>-0.707269728</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>221.639999</X>
-					<Y>2</Y>
-					<Z>-226</Z>
+					<X>316.644257</X>
+					<Y>37.9078064</Y>
+					<Z>-198.365479</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -6835,38 +6835,6 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="Decal" referent="RBX001de26c24434af7b7c8e31c919f0e97">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<Color3 name="Color3">
-											<R>1</R>
-											<G>1</G>
-											<B>1</B>
-										</Color3>
-										<token name="Face">2</token>
-										<string name="Name">CharacterDecalBack</string>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-										<Content name="Texture"><url>rbxassetid://5897424121</url></Content>
-										<float name="Transparency">0</float>
-									</Properties>
-								</Item>
-								<Item class="Decal" referent="RBX5f8ce79d713641789e177763e05ca689">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<Color3 name="Color3">
-											<R>1</R>
-											<G>1</G>
-											<B>1</B>
-										</Color3>
-										<token name="Face">5</token>
-										<string name="Name">CharacterDecalFront</string>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-										<Content name="Texture"><url>rbxassetid://5897424121</url></Content>
-										<float name="Transparency">0</float>
-									</Properties>
-								</Item>
 								<Item class="Part" referent="RBX898807dbe43c4f539a5ccc3439e39e44">
 									<Properties>
 										<bool name="Anchored">true</bool>
@@ -7141,6 +7109,234 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 											<Ref name="Part1">RBXa3bcf753fde5464899a4f15d57c876c7</Ref>
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
+										</Properties>
+									</Item>
+								</Item>
+								<Item class="SurfaceGui" referent="RBXdc05881926074567800581a0996c29cc">
+									<Properties>
+										<bool name="Active">true</bool>
+										<Ref name="Adornee">null</Ref>
+										<bool name="AlwaysOnTop">false</bool>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<bool name="AutoLocalize">true</bool>
+										<Vector2 name="CanvasSize">
+											<X>800</X>
+											<Y>600</Y>
+										</Vector2>
+										<bool name="ClipsDescendants">true</bool>
+										<bool name="Enabled">true</bool>
+										<token name="Face">5</token>
+										<float name="LightInfluence">1</float>
+										<string name="Name">SurfaceGui</string>
+										<float name="PixelsPerStud">50</float>
+										<bool name="ResetOnSpawn">true</bool>
+										<Ref name="RootLocalizationTable">null</Ref>
+										<token name="SizingMode">1</token>
+										<int64 name="SourceAssetId">-1</int64>
+										<BinaryString name="Tags"></BinaryString>
+										<float name="ToolPunchThroughDistance">0</float>
+										<token name="ZIndexBehavior">1</token>
+										<float name="ZOffset">0</float>
+									</Properties>
+									<Item class="ImageLabel" referent="RBX577d38182d324accbabb99ff22bc16f0">
+										<Properties>
+											<bool name="Active">false</bool>
+											<Vector2 name="AnchorPoint">
+												<X>0</X>
+												<Y>0</Y>
+											</Vector2>
+											<BinaryString name="AttributesSerialize"></BinaryString>
+											<bool name="AutoLocalize">true</bool>
+											<token name="AutomaticSize">0</token>
+											<Color3 name="BackgroundColor3">
+												<R>1</R>
+												<G>1</G>
+												<B>1</B>
+											</Color3>
+											<float name="BackgroundTransparency">1</float>
+											<Color3 name="BorderColor3">
+												<R>0.105882362</R>
+												<G>0.164705887</G>
+												<B>0.207843155</B>
+											</Color3>
+											<token name="BorderMode">0</token>
+											<int name="BorderSizePixel">1</int>
+											<bool name="ClipsDescendants">false</bool>
+											<bool name="Draggable">false</bool>
+											<Content name="Image"><url>rbxassetid://5897424121</url></Content>
+											<Color3 name="ImageColor3">
+												<R>1</R>
+												<G>1</G>
+												<B>1</B>
+											</Color3>
+											<Vector2 name="ImageRectOffset">
+												<X>0</X>
+												<Y>0</Y>
+											</Vector2>
+											<Vector2 name="ImageRectSize">
+												<X>0</X>
+												<Y>0</Y>
+											</Vector2>
+											<float name="ImageTransparency">0</float>
+											<int name="LayoutOrder">0</int>
+											<string name="Name">CharacterDecalFront</string>
+											<Ref name="NextSelectionDown">null</Ref>
+											<Ref name="NextSelectionLeft">null</Ref>
+											<Ref name="NextSelectionRight">null</Ref>
+											<Ref name="NextSelectionUp">null</Ref>
+											<UDim2 name="Position">
+												<XS>0</XS>
+												<XO>0</XO>
+												<YS>0</YS>
+												<YO>0</YO>
+											</UDim2>
+											<Ref name="RootLocalizationTable">null</Ref>
+											<float name="Rotation">0</float>
+											<token name="ScaleType">0</token>
+											<bool name="Selectable">false</bool>
+											<Ref name="SelectionImageObject">null</Ref>
+											<UDim2 name="Size">
+												<XS>1</XS>
+												<XO>0</XO>
+												<YS>1</YS>
+												<YO>0</YO>
+											</UDim2>
+											<token name="SizeConstraint">0</token>
+											<Rect2D name="SliceCenter">
+												<min>
+													<X>0</X>
+													<Y>0</Y>
+												</min>
+												<max>
+													<X>0</X>
+													<Y>0</Y>
+												</max>
+											</Rect2D>
+											<float name="SliceScale">1</float>
+											<int64 name="SourceAssetId">-1</int64>
+											<BinaryString name="Tags"></BinaryString>
+											<UDim2 name="TileSize">
+												<XS>1</XS>
+												<XO>0</XO>
+												<YS>1</YS>
+												<YO>0</YO>
+											</UDim2>
+											<bool name="Visible">true</bool>
+											<int name="ZIndex">1</int>
+										</Properties>
+									</Item>
+								</Item>
+								<Item class="SurfaceGui" referent="RBXc655b788151e4373a8554e97fda6986e">
+									<Properties>
+										<bool name="Active">true</bool>
+										<Ref name="Adornee">null</Ref>
+										<bool name="AlwaysOnTop">false</bool>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<bool name="AutoLocalize">true</bool>
+										<Vector2 name="CanvasSize">
+											<X>800</X>
+											<Y>600</Y>
+										</Vector2>
+										<bool name="ClipsDescendants">true</bool>
+										<bool name="Enabled">true</bool>
+										<token name="Face">2</token>
+										<float name="LightInfluence">1</float>
+										<string name="Name">SurfaceGui</string>
+										<float name="PixelsPerStud">50</float>
+										<bool name="ResetOnSpawn">true</bool>
+										<Ref name="RootLocalizationTable">null</Ref>
+										<token name="SizingMode">1</token>
+										<int64 name="SourceAssetId">-1</int64>
+										<BinaryString name="Tags"></BinaryString>
+										<float name="ToolPunchThroughDistance">0</float>
+										<token name="ZIndexBehavior">1</token>
+										<float name="ZOffset">0</float>
+									</Properties>
+									<Item class="ImageLabel" referent="RBX52c8abbd529242ebabf4e6046dce4e0b">
+										<Properties>
+											<bool name="Active">false</bool>
+											<Vector2 name="AnchorPoint">
+												<X>0</X>
+												<Y>0</Y>
+											</Vector2>
+											<BinaryString name="AttributesSerialize"></BinaryString>
+											<bool name="AutoLocalize">true</bool>
+											<token name="AutomaticSize">0</token>
+											<Color3 name="BackgroundColor3">
+												<R>1</R>
+												<G>1</G>
+												<B>1</B>
+											</Color3>
+											<float name="BackgroundTransparency">1</float>
+											<Color3 name="BorderColor3">
+												<R>0.105882362</R>
+												<G>0.164705887</G>
+												<B>0.207843155</B>
+											</Color3>
+											<token name="BorderMode">0</token>
+											<int name="BorderSizePixel">1</int>
+											<bool name="ClipsDescendants">false</bool>
+											<bool name="Draggable">false</bool>
+											<Content name="Image"><url>rbxassetid://5897424121</url></Content>
+											<Color3 name="ImageColor3">
+												<R>1</R>
+												<G>1</G>
+												<B>1</B>
+											</Color3>
+											<Vector2 name="ImageRectOffset">
+												<X>0</X>
+												<Y>0</Y>
+											</Vector2>
+											<Vector2 name="ImageRectSize">
+												<X>0</X>
+												<Y>0</Y>
+											</Vector2>
+											<float name="ImageTransparency">0</float>
+											<int name="LayoutOrder">0</int>
+											<string name="Name">CharacterDecalBack</string>
+											<Ref name="NextSelectionDown">null</Ref>
+											<Ref name="NextSelectionLeft">null</Ref>
+											<Ref name="NextSelectionRight">null</Ref>
+											<Ref name="NextSelectionUp">null</Ref>
+											<UDim2 name="Position">
+												<XS>0</XS>
+												<XO>0</XO>
+												<YS>0</YS>
+												<YO>0</YO>
+											</UDim2>
+											<Ref name="RootLocalizationTable">null</Ref>
+											<float name="Rotation">0</float>
+											<token name="ScaleType">0</token>
+											<bool name="Selectable">false</bool>
+											<Ref name="SelectionImageObject">null</Ref>
+											<UDim2 name="Size">
+												<XS>1</XS>
+												<XO>0</XO>
+												<YS>1</YS>
+												<YO>0</YO>
+											</UDim2>
+											<token name="SizeConstraint">0</token>
+											<Rect2D name="SliceCenter">
+												<min>
+													<X>0</X>
+													<Y>0</Y>
+												</min>
+												<max>
+													<X>0</X>
+													<Y>0</Y>
+												</max>
+											</Rect2D>
+											<float name="SliceScale">1</float>
+											<int64 name="SourceAssetId">-1</int64>
+											<BinaryString name="Tags"></BinaryString>
+											<UDim2 name="TileSize">
+												<XS>1</XS>
+												<XO>0</XO>
+												<YS>1</YS>
+												<YO>0</YO>
+											</UDim2>
+											<bool name="Visible">true</bool>
+											<int name="ZIndex">1</int>
 										</Properties>
 									</Item>
 								</Item>
@@ -13412,7 +13608,7 @@ remoteCode.addRemoteObjects(base)
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>243.809998</X>
+						<X>245.479996</X>
 						<Y>-1</Y>
 						<Z>-206.869995</Z>
 						<R00>1</R00>
@@ -13510,7 +13706,7 @@ remoteCode.addRemoteObjects(base)
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBX43d96d4a7807416abb07103dc9940757">
+				<Item class="Weld" referent="RBX3a13bc545baa45b09b09ac1b06604926">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -13528,7 +13724,7 @@ remoteCode.addRemoteObjects(base)
 							<R22>0</R22>
 						</CoordinateFrame>
 						<CoordinateFrame name="C1">
-							<X>243.809998</X>
+							<X>245.479996</X>
 							<Y>27</Y>
 							<Z>-206.869995</Z>
 							<R00>1</R00>
@@ -16970,14 +17166,12 @@ renderCharacters = function(props)
                     model = characterTemplate,
                     position = characterTemplate.PrimaryPart.CFrame *
                         CFrame.new(Vector3.new(x, 0, 0)),
-                    -- position = CFrame.new(x, 0, 0),
                     suffix = "Clone--" .. i
                 })
-            -- local newItem = characterTemplate:Clone()
+            -- newItem.Parent = characterTemplate.Parent
 
             Utils.mergeTables(newItem, {
-                -- CFrame = newItem.CFrame * CFrame.new(Vector3.new(x, 0, 0)),
-                Parent = charImageBlock.Parent,
+                Parent = characterTemplate.Parent,
                 Name = nameStub .. i
             })
 
@@ -16991,13 +17185,15 @@ end
 function applyDecalsToCharacter(props)
     local part = props.part
     local decalId = props.decalId
-
+    print('part' .. ' - start');
+    print(part);
+    print('part' .. ' - end');
     local decalFront = Utils.getFirstDescendantByName(part,
                                                       "CharacterDecalFront")
     local decalBack = Utils.getFirstDescendantByName(part, "CharacterDecalBack")
 
-    decalFront.Texture = 'rbxassetid://' .. decalId
-    decalBack.Texture = 'rbxassetid://' .. decalId
+    decalFront.Image = 'rbxassetid://' .. decalId
+    decalBack.Image = 'rbxassetid://' .. decalId
 
 end
 
