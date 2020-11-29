@@ -36,7 +36,6 @@ renderCharacters = function(props)
                         CFrame.new(Vector3.new(x, 0, 0)),
                     suffix = "Clone--" .. i
                 })
-            -- newItem.Parent = characterTemplate.Parent
 
             Utils.mergeTables(newItem, {
                 Parent = characterTemplate.Parent,
