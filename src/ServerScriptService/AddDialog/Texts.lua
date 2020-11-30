@@ -20,7 +20,7 @@ renderTexts = function(props)
     sgui.SizingMode = "PixelsPerStud"
 
     local scrollingFrame =
-        Utils.getFirstDescendantByName(sgui, "ScrollingFrame")
+        Utils.getFirstDescendantByName(sgui, "DialogScroller")
     local children = scrollingFrame:GetChildren()
     for i, item in pairs(children) do
         if item:IsA('TextLabel') then

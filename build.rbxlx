@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>548.359619</X>
-					<Y>60.3278046</Y>
-					<Z>-237.244263</Z>
-					<R00>-0.99999404</R00>
-					<R01>-0.00120283698</R01>
-					<R02>0.00323486351</R02>
+					<X>584.222839</X>
+					<Y>80.2958374</Y>
+					<Z>-268.008118</Z>
+					<R00>-0.867860794</R00>
+					<R01>-0.178064331</R01>
+					<R02>0.46380046</R02>
 					<R10>-0</R10>
-					<R11>0.937300682</R11>
-					<R12>0.34852165</R12>
-					<R20>-0.00345125468</R20>
-					<R21>0.348519564</R21>
-					<R22>-0.937295139</R22>
+					<R11>0.933561683</R11>
+					<R12>0.358417064</R12>
+					<R20>-0.496807635</R20>
+					<R21>0.311056107</R21>
+					<R22>-0.810201406</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>548.269043</X>
-					<Y>50.5691986</Y>
-					<Z>-211</Z>
+					<X>548.046265</X>
+					<Y>52.3391991</Y>
+					<Z>-204.812164</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -3850,17 +3850,17 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 									<token name="BottomSurfaceInput">0</token>
 									<CoordinateFrame name="CFrame">
 										<X>548</X>
-										<Y>52.5098763</Y>
-										<Z>-210.999954</Z>
-										<R00>0.999991417</R00>
+										<Y>49.7397804</Y>
+										<Z>-210.999878</Z>
+										<R00>1</R00>
 										<R01>0</R01>
-										<R02>-8.01682472e-06</R02>
+										<R02>8.04666251e-06</R02>
 										<R10>0</R10>
-										<R11>0.99998343</R11>
+										<R11>1</R11>
 										<R12>0</R12>
-										<R20>-8.01682472e-06</R20>
+										<R20>-8.04666161e-06</R20>
 										<R21>0</R21>
-										<R22>0.999991417</R22>
+										<R22>1</R22>
 									</CoordinateFrame>
 									<bool name="CanCollide">false</bool>
 									<bool name="CastShadow">true</bool>
@@ -3950,80 +3950,41 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="Weld" referent="RBX29fe4683f62a4ca8b30e3347153fd255">
+								<Item class="Weld" referent="RBX79f38a2d755a42fd8269a2a0b30cd8dd">
 									<Properties>
 										<BinaryString name="AttributesSerialize"></BinaryString>
 										<CoordinateFrame name="C0">
 											<X>0</X>
-											<Y>-6.41999817</Y>
+											<Y>-6.41989136</Y>
 											<Z>0</Z>
 											<R00>1</R00>
-											<R01>0</R01>
+											<R01>7.98705696e-06</R01>
 											<R02>0</R02>
 											<R10>0</R10>
 											<R11>0</R11>
 											<R12>-1</R12>
-											<R20>0</R20>
+											<R20>-7.98705605e-06</R20>
 											<R21>1</R21>
 											<R22>0</R22>
 										</CoordinateFrame>
 										<CoordinateFrame name="C1">
-											<X>-3.66960144</X>
-											<Y>0.751846313</Y>
-											<Z>-3.36291504</Z>
-											<R00>0.707100928</R00>
-											<R01>0.707100928</R01>
+											<X>-0.269042969</X>
+											<Y>1.99068832</Y>
+											<Z>0.000122070312</Z>
+											<R00>1</R00>
+											<R01>1.60337186e-05</R01>
 											<R02>0</R02>
 											<R10>0</R10>
 											<R11>0</R11>
-											<R12>-0.999991715</R12>
-											<R20>-0.70710659</R20>
-											<R21>0.70710659</R21>
+											<R12>-1</R12>
+											<R20>-1.60337186e-05</R20>
+											<R21>1</R21>
 											<R22>0</R22>
 										</CoordinateFrame>
 										<bool name="Enabled">true</bool>
 										<string name="Name">Weld</string>
 										<Ref name="Part0">RBXc25c55253a8f48ddb9dc3e3e5e27d63a</Ref>
-										<Ref name="Part1">RBXb8c95cff3c214721b7f87a83b7d1d62c</Ref>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-									</Properties>
-								</Item>
-								<Item class="Weld" referent="RBX92e86a92af6a4fbca5b95536af9fd4c6">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<CoordinateFrame name="C0">
-											<X>0</X>
-											<Y>-6.41999817</Y>
-											<Z>0</Z>
-											<R00>1</R00>
-											<R01>0</R01>
-											<R02>0</R02>
-											<R10>0</R10>
-											<R11>0</R11>
-											<R12>-1</R12>
-											<R20>0</R20>
-											<R21>1</R21>
-											<R22>0</R22>
-										</CoordinateFrame>
-										<CoordinateFrame name="C1">
-											<X>3.33009338</X>
-											<Y>0.751846313</Y>
-											<Z>-3.36297607</Z>
-											<R00>0.707100928</R00>
-											<R01>0.707100928</R01>
-											<R02>0</R02>
-											<R10>0</R10>
-											<R11>0</R11>
-											<R12>-0.999991715</R12>
-											<R20>-0.70710659</R20>
-											<R21>0.70710659</R21>
-											<R22>0</R22>
-										</CoordinateFrame>
-										<bool name="Enabled">true</bool>
-										<string name="Name">Weld</string>
-										<Ref name="Part0">RBXc25c55253a8f48ddb9dc3e3e5e27d63a</Ref>
-										<Ref name="Part1">RBX598e68435feb4d2e9f0aae1827aba354</Ref>
+										<Ref name="Part1">RBXa3bcf753fde5464899a4f15d57c876c7</Ref>
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
@@ -5331,7 +5292,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 									<float name="TopParamB">0.5</float>
 									<token name="TopSurface">3</token>
 									<token name="TopSurfaceInput">0</token>
-									<float name="Transparency">0</float>
+									<float name="Transparency">1</float>
 									<Vector3 name="Velocity">
 										<X>0</X>
 										<Y>0</Y>
@@ -5436,18 +5397,18 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 											<token name="BottomSurface">4</token>
 											<token name="BottomSurfaceInput">0</token>
 											<CoordinateFrame name="CFrame">
-												<X>543.267334</X>
-												<Y>45.3381577</Y>
-												<Z>-210.976639</Z>
-												<R00>0.707089186</R00>
+												<X>543.267273</X>
+												<Y>45.3381462</Y>
+												<Z>-210.976822</Z>
+												<R00>0.707100928</R00>
 												<R01>0</R01>
-												<R02>-0.707106173</R02>
+												<R02>-0.70710659</R02>
 												<R10>0</R10>
-												<R11>0.999975145</R11>
+												<R11>0.999991715</R11>
 												<R12>0</R12>
-												<R20>0.707089186</R20>
+												<R20>0.707100928</R20>
 												<R21>0</R21>
-												<R22>0.707106173</R22>
+												<R22>0.70710659</R22>
 											</CoordinateFrame>
 											<bool name="CanCollide">true</bool>
 											<bool name="CastShadow">true</bool>
@@ -6151,7 +6112,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 										<float name="TopParamB">0.5</float>
 										<token name="TopSurface">3</token>
 										<token name="TopSurfaceInput">0</token>
-										<float name="Transparency">0</float>
+										<float name="Transparency">1</float>
 										<Vector3 name="Velocity">
 											<X>0</X>
 											<Y>0</Y>
@@ -6232,7 +6193,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 												<token name="HorizontalScrollBarInset">0</token>
 												<int name="LayoutOrder">0</int>
 												<Content name="MidImage"><url>rbxasset://textures/ui/Scroll/scroll-middle.png</url></Content>
-												<string name="Name">ScrollingFrame</string>
+												<string name="Name">DialogScroller</string>
 												<Ref name="NextSelectionDown">null</Ref>
 												<Ref name="NextSelectionLeft">null</Ref>
 												<Ref name="NextSelectionRight">null</Ref>
@@ -11041,7 +11002,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 							<token name="LeftSurfaceInput">0</token>
 							<bool name="Locked">true</bool>
 							<bool name="Massless">false</bool>
-							<token name="Material">1280</token>
+							<token name="Material">256</token>
 							<string name="Name">DockBase</string>
 							<float name="Reflectance">0</float>
 							<float name="RightParamA">-0.5</float>
@@ -16071,7 +16032,8 @@ function setupUserDetectionRegions()
     end
 
     local myStuff = workspace:FindFirstChild("MyStuff")
-    local myTemplates = myStuff:FindFirstChild("MyTemplates")
+    local runTimeQuests = Utils.getFirstDescendantByName(myStuff,
+                                                         "RunTimeQuests")
 
     local clones =
         Utils.getDescendantsByNameMatch(myStuff, "SceneTemplateClone")
@@ -16079,23 +16041,24 @@ function setupUserDetectionRegions()
     -- print('clones' .. ' - start');
     -- print(Utils.tableToString({clones}));
     -- print('clones' .. ' - end');
-    -- for i = 1, #clones do
-    --     local scene = clones[i]
+    for i = 1, #clones do
+        local scene = clones[i]
 
-    --     if scene:IsA('Model') then
-    --         local region = Utils.getFirstDescendantByName(scene,
-    --                                                       "UserDectionRegion")
-    --         if region then
+        if scene:IsA('Model') then
+            local region = Utils.getFirstDescendantByName(scene,
+                                                          "UserDectionRegion")
+            if region then
 
-    --             print('region' .. ' - start');
-    --             print(region);
-    --             print('region' .. ' - end');
-    --             region.Name = region.Name .. "-" .. i
-    --         end
-    --     end
-    -- end
+                print('region' .. ' - start');
+                print(region);
+                print('region' .. ' - end');
+                region.Name = region.Name .. "-" .. i
+            end
+        end
+    end
 
-    local places = Utils.getDescendantsByNameMatch(myStuff, "UserDectionRegion")
+    local places = Utils.getDescendantsByNameMatch(runTimeQuests,
+                                                   "UserDectionRegion")
     print('places' .. ' - start');
     print(Utils.tableToString({places}));
     print('places' .. ' - end');
@@ -17848,7 +17811,7 @@ renderTexts = function(props)
     sgui.SizingMode = "PixelsPerStud"
 
     local scrollingFrame =
-        Utils.getFirstDescendantByName(sgui, "ScrollingFrame")
+        Utils.getFirstDescendantByName(sgui, "DialogScroller")
     local children = scrollingFrame:GetChildren()
     for i, item in pairs(children) do
         if item:IsA('TextLabel') then
@@ -20289,6 +20252,7 @@ function module.addScenes(props)
         })
 
     for i, sceneConfig in ipairs(sceneConfigs) do
+        local entered = {value = false}
         local numPages = #sceneConfig.frames
         local pageNum = 1
 
@@ -20307,14 +20271,29 @@ function module.addScenes(props)
             })
         clonedScene.Name = clonedScene.Name .. i
 
+        local function regionEnter(plr, clonedScene, entered)
+            if not entered.value then
+                print('plr' .. ' - start');
+                print(Utils.tableToString({plr}));
+                print('plr' .. ' - end');
+                print(plr.Name .. " entered " .. clonedScene.Name)
+                local dialog = Utils.getFirstDescendantByName(clonedScene,
+                                                              "DialogTemplate")
+                dialog.Transparency = 1
+                dialog.Name = dialog.Name .. "xxxxxx"
+                print('dialog' .. ' - start');
+                print(Utils.tableToString({dialog}));
+                print('dialog' .. ' - end');
+                dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
+                entered.value = true
+            end
+        end
+
         -- 
         -- 
         -- local part = script.Parent
         local part = Utils.getFirstDescendantByName(clonedScene,
                                                     "UserDectionRegion")
-        print('part' .. ' - start');
-        print(part);
-        print('part' .. ' - end');
 
         local function onPartTouched(otherPart)
             -- Get the other part's parent
@@ -20322,7 +20301,8 @@ function module.addScenes(props)
             -- Look for a humanoid in the parent
             local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
             if humanoid then
-                print("part is touched!!!!!!!!!!!!!!-----------------------")
+                regionEnter(humanoid, clonedScene, entered)
+                -- print("part is touched!!!!!!!!!!!!!!-----------------------")
                 -- Do something to the humanoid, like set its health to 0
                 -- humanoid.Health = 0
             end
