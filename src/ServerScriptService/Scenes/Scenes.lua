@@ -52,7 +52,14 @@ function module.addScenes(props)
     local questFolder = props.questFolder
 
     -- 
-    local sceneTemplateModel = Utils.getFromTemplates("SceneTemplate")
+
+    local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
+                                                              "SceneTemplate")
+    print('sceneTemplateModel' .. ' - start');
+    print(sceneTemplateModel);
+    print('sceneTemplateModel' .. ' - end');
+
+    -- local sceneTemplateModel = Utils.getFromTemplates("SceneTemplate")
     local wallTemplate = Utils.getFromTemplates("SceneBase")
 
     local startPosition = getStartPosition(
@@ -81,16 +88,26 @@ function module.addScenes(props)
                 position = CFrame.new(newPosition + startPosition),
                 suffix = "Clone--" .. i
             })
-
+        clonedScene.Name = clonedScene.Name .. i
         local weld = Instance.new("WeldConstraint")
         weld.Parent = workspace
         weld.Part0 = parent
         weld.Part1 = clonedScene.PrimaryPart
         weld.Name = 'zzz-scene weld'
+        print('clonedScene.Name' .. ' - start');
+        print(clonedScene.Name);
+        print('clonedScene.Name' .. ' - end');
 
+        print('questFolder' .. ' - start');
+        print(questFolder);
+        print('questFolder' .. ' - end');
         local sceneFolder = Utils.getOrCreateFolder(
-                                {name = clonedScene.Name, parent = questFolder})
+                                {
+                name = clonedScene.Name .. i,
+                parent = questFolder
+            })
         -- clonedScene.Parent = parent
+        -- clonedScene.Parent = questFolder
         clonedScene.Parent = sceneFolder
 
         Bridges.destroyBridges({
