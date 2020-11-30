@@ -112,7 +112,7 @@ function module.unAttachAllChildParts(parent)
                 print(item.Name);
                 print('item.Name' .. ' - end');
 
-                -- item.Anchored = false
+                item.Anchored = false
                 table.insert(output, item)
             end
             --
