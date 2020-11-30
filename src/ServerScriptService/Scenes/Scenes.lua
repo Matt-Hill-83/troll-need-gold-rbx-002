@@ -50,8 +50,6 @@ function module.addScenes(props)
     local gridPadding = props.gridPadding
     local questFolder = props.questFolder
 
-    -- 
-
     local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
                                                               "SceneTemplate")
     local wallTemplate =
