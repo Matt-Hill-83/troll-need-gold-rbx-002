@@ -81,6 +81,32 @@ function module.addScenes(props)
             })
         clonedScene.Name = clonedScene.Name .. i
 
+        -- 
+        -- 
+        -- local part = script.Parent
+        local part = Utils.getFirstDescendantByName(clonedScene,
+                                                    "UserDectionRegion")
+        print('part' .. ' - start');
+        print(part);
+        print('part' .. ' - end');
+
+        local function onPartTouched(otherPart)
+            -- Get the other part's parent
+            local partParent = otherPart.Parent
+            -- Look for a humanoid in the parent
+            local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
+            if humanoid then
+                print("part is touched!!!!!!!!!!!!!!-----------------------")
+                -- Do something to the humanoid, like set its health to 0
+                -- humanoid.Health = 0
+            end
+        end
+
+        part.Touched:Connect(onPartTouched)
+
+        -- 
+        -- 
+
         local weld = Instance.new("WeldConstraint")
         weld.Parent = workspace
         weld.Part0 = parent
