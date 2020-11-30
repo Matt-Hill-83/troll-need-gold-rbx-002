@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>444.205444</X>
-					<Y>71.9484329</Y>
-					<Z>-353.330383</Z>
-					<R00>-0.962340176</R00>
-					<R01>-0.0100091761</R01>
-					<R02>0.271663845</R02>
-					<R10>-0</R10>
-					<R11>0.999321997</R11>
-					<R12>0.0368189886</R12>
-					<R20>-0.271848202</R20>
-					<R21>0.0354323909</R21>
-					<R22>-0.961687624</R22>
+					<X>408.265625</X>
+					<Y>37.0712814</Y>
+					<Z>-278.634827</Z>
+					<R00>-0.996250451</R00>
+					<R01>-0.0267540868</R01>
+					<R02>0.0822753534</R02>
+					<R10>-1.86264515e-09</R10>
+					<R11>0.950984418</R11>
+					<R12>0.309238642</R12>
+					<R20>-0.0865159854</R20>
+					<R21>0.308079123</R21>
+					<R22>-0.94741869</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>403.999023</X>
-					<Y>66.4991989</Y>
-					<Z>-211</Z>
+					<X>403</X>
+					<Y>17.2799988</Y>
+					<Z>-218</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -3833,7 +3833,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
 									<X>403</X>
-									<Y>17.2799988</Y>
+									<Y>32.9499969</Y>
 									<Z>-218</Z>
 									<R00>1</R00>
 									<R01>0</R01>
@@ -3896,27 +3896,30 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 								</Vector3>
 							</Properties>
 						</Item>
-						<Item class="Attachment" referent="RBXeaef68154fe04dcba3f2fe2ed0d2eb92">
+						<Item class="WeldConstraint" referent="RBX84d629d9ab0b4328bcb5ddbba98f2a16">
 							<Properties>
 								<BinaryString name="AttributesSerialize"></BinaryString>
-								<CoordinateFrame name="CFrame">
+								<CoordinateFrame name="CFrame0">
 									<X>0</X>
-									<Y>1</Y>
-									<Z>-1</Z>
-									<R00>0</R00>
-									<R01>-1</R01>
+									<Y>18.9499969</Y>
+									<Z>0</Z>
+									<R00>1</R00>
+									<R01>0</R01>
 									<R02>0</R02>
-									<R10>1</R10>
-									<R11>0</R11>
-									<R12>-0</R12>
+									<R10>0</R10>
+									<R11>1</R11>
+									<R12>0</R12>
 									<R20>0</R20>
 									<R21>0</R21>
 									<R22>1</R22>
 								</CoordinateFrame>
-								<string name="Name">Attachment</string>
+								<bool name="Enabled">true</bool>
+								<string name="Name">WeldConstraint</string>
+								<Ref name="Part0Internal">RBX9de7d3de27aa4f3c92cc15ca943dd7fc</Ref>
+								<Ref name="Part1Internal">RBX4e88c8803d784a11877d42568ac0e9ae</Ref>
 								<int64 name="SourceAssetId">-1</int64>
+								<int name="State">3</int>
 								<BinaryString name="Tags"></BinaryString>
-								<bool name="Visible">false</bool>
 							</Properties>
 						</Item>
 					</Item>
@@ -4118,29 +4121,6 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 										<bool name="Shadows">false</bool>
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
-									</Properties>
-								</Item>
-								<Item class="Attachment" referent="RBX6c46371b03374a8397b8022d251017ff">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<CoordinateFrame name="CFrame">
-											<X>0</X>
-											<Y>-6</Y>
-											<Z>-1</Z>
-											<R00>0</R00>
-											<R01>1</R01>
-											<R02>-0</R02>
-											<R10>-1</R10>
-											<R11>0</R11>
-											<R12>0</R12>
-											<R20>0</R20>
-											<R21>0</R21>
-											<R22>1</R22>
-										</CoordinateFrame>
-										<string name="Name">Attachment</string>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-										<bool name="Visible">false</bool>
 									</Properties>
 								</Item>
 								<Item class="Decal" referent="RBXac164647d4b24f1a8a021d61afc5e41c">
@@ -16949,18 +16929,32 @@ function setupUserDetectionRegions()
     local myStuff = workspace:FindFirstChild("MyStuff")
     local myTemplates = myStuff:FindFirstChild("MyTemplates")
 
-    local clones = Utils.getDescendantsByNameMatch(myTemplates,
-                                                   "SceneTemplateClone")
+    local clones =
+        Utils.getDescendantsByNameMatch(myStuff, "SceneTemplateClone")
 
+    print('clones' .. ' - start');
+    print(Utils.tableToString({clones}));
+    print('clones' .. ' - end');
     for i = 1, #clones do
         local scene = clones[i]
-        local region =
-            Utils.getFirstDescendantByName(scene, "UserDectionRegion")
-        region.Name = region.Name .. "-" .. i
+
+        if scene:IsA('Model') then
+            -- item:Destroy()
+            --
+
+            local region = Utils.getFirstDescendantByName(scene,
+                                                          "UserDectionRegion")
+            if region then
+
+                print('region' .. ' - start');
+                print(region);
+                print('region' .. ' - end');
+                region.Name = region.Name .. "-" .. i
+            end
+        end
     end
 
-    local places = Utils.getDescendantsByNameMatch(myTemplates,
-                                                   "UserDectionRegion")
+    local places = Utils.getDescendantsByNameMatch(myStuff, "UserDectionRegion")
 
     regionsSetup(places, regionEnter, regionExit)
 end
@@ -17016,7 +17010,6 @@ function addRemoteObjects()
             index = i
         }
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
-        local questCFrame = questBlock.CFrame
 
         -- questBlock.Transparency = 1
         local addScenesProps = {
@@ -17028,6 +17021,7 @@ function addRemoteObjects()
         }
         Scenes.addScenes(addScenesProps)
 
+        local questCFrame = questBlock.CFrame
         questBlock.CFrame = questCFrame *
                                 CFrame.new(Vector3.new(0, -sceneHeight, 0)) *
                                 CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
@@ -18254,7 +18248,7 @@ return module
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">DetectUser</string>
 						<string name="ScriptGuid">{0b80bb76-5289-4f18-9d84-59c516f3e491}</string>
-						<ProtectedString name="Source"><![CDATA[local regionEnter, regionExit
+						<ProtectedString name="Source"><![CDATA[	local regionEnter, regionExit
 local module = {Players = {}, Regions = {}}
 
 function module.refreshPlayers(region)
@@ -18371,7 +18365,7 @@ function module.getDecalIdFromName(props)
     else
 
         if (name ~= "blank" and name ~= "empty" and name ~= "") then
-            print("----------------- decalId not found: ------------" .. name)
+            -- print("----------------- decalId not found: ------------" .. name)
             print(tableToString({Constants.characters[name]}));
         end
         return '5999465084'
@@ -21148,8 +21142,6 @@ function module.addScenes(props)
     local questConfig = props.questConfig
     local gridPadding = props.gridPadding
     local questFolder = props.questFolder
-
-    -- 
 
     local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
                                                               "SceneTemplate")

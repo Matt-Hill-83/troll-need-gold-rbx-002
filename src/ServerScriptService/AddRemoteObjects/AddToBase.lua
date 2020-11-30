@@ -31,18 +31,32 @@ function setupUserDetectionRegions()
     local myStuff = workspace:FindFirstChild("MyStuff")
     local myTemplates = myStuff:FindFirstChild("MyTemplates")
 
-    local clones = Utils.getDescendantsByNameMatch(myTemplates,
-                                                   "SceneTemplateClone")
+    local clones =
+        Utils.getDescendantsByNameMatch(myStuff, "SceneTemplateClone")
 
+    print('clones' .. ' - start');
+    print(Utils.tableToString({clones}));
+    print('clones' .. ' - end');
     for i = 1, #clones do
         local scene = clones[i]
-        local region =
-            Utils.getFirstDescendantByName(scene, "UserDectionRegion")
-        region.Name = region.Name .. "-" .. i
+
+        if scene:IsA('Model') then
+            -- item:Destroy()
+            --
+
+            local region = Utils.getFirstDescendantByName(scene,
+                                                          "UserDectionRegion")
+            if region then
+
+                print('region' .. ' - start');
+                print(region);
+                print('region' .. ' - end');
+                region.Name = region.Name .. "-" .. i
+            end
+        end
     end
 
-    local places = Utils.getDescendantsByNameMatch(myTemplates,
-                                                   "UserDectionRegion")
+    local places = Utils.getDescendantsByNameMatch(myStuff, "UserDectionRegion")
 
     regionsSetup(places, regionEnter, regionExit)
 end
