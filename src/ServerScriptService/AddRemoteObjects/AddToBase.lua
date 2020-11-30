@@ -124,9 +124,9 @@ function addRemoteObjects()
         Scenes.addScenes(addScenesProps)
 
         local questCFrame = questBlock.CFrame
-        questBlock.CFrame = questCFrame *
-                                CFrame.new(Vector3.new(0, -sceneHeight, 0)) *
-                                CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
+        -- questBlock.CFrame = questCFrame *
+        --                         CFrame.new(Vector3.new(0, -sceneHeight, 0)) *
+        --                         CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
         sibling = questBlock
 
     end

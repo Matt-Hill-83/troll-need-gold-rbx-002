@@ -8,7 +8,6 @@ local module = {}
 renderCharacters = function(props)
     local characterTemplate = props.template
     local itemConfigs = props.itemConfigs
-    -- local charFolder = props.charFolder
     local characterType = props.characterType
     local sceneFolder = props.sceneFolder
 
@@ -26,7 +25,7 @@ renderCharacters = function(props)
 
     -- Hide decal on template
     applyDecalsToCharacter({part = charImageBlock, decalId = ""})
-    toggleLabelVisibility({part = charImageBlock, visible = false})
+    toggleLabelVisibility({part = charImageBlock, visible = true})
 
     -- Ensure player doesn't crash into invisivble template
     charImageBlock.CanCollide = false
@@ -60,6 +59,9 @@ renderCharacters = function(props)
             toggleLabelVisibility({part = newChar, visible = true})
         end
     end
+    -- Hide decal on template
+    applyDecalsToCharacter({part = charImageBlock, decalId = ""})
+    toggleLabelVisibility({part = charImageBlock, visible = false})
 
     charImageBlock.Transparency = 1
 
