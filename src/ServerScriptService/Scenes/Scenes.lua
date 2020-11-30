@@ -91,6 +91,8 @@ function module.addScenes(props)
                 suffix = "Clone--" .. i
             })
         clonedScene.Name = clonedScene.Name .. i
+
+        Utils.unAttachAllChildParts(clonedScene)
         local weld = Instance.new("WeldConstraint")
         weld.Parent = workspace
         weld.Part0 = parent

@@ -100,6 +100,27 @@ function module.getDescendantsByName(parent, name)
     return output
 end
 
+function module.unAttachAllChildParts(parent)
+    local items = parent:GetDescendants()
+    local output = {}
+    for i = 1, #items do
+        if items[i]:IsA('Part') then
+            local item = items[i]
+            if item.Anchored == true then
+                print('item.Name' .. ' - start');
+                print(item.Name);
+                print('item.Name' .. ' - end');
+            end
+
+            item.Anchored = false
+            table.insert(output, item)
+            --
+        end
+
+    end
+    return output
+end
+
 function module.getDescendantsByNameMatch(parent, name)
     local descendants = parent:GetDescendants()
     local output = {}

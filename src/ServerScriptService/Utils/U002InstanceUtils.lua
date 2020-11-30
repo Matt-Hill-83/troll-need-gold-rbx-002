@@ -16,6 +16,20 @@ deleteInstanceByNameStub = function(props)
     end
 end
 
+getInstanceByNameStub = function(props)
+    local nameStub = props.nameStub
+    local parent = props.parent
+
+    local children = parent:GetChildren()
+    for _, item in pairs(children) do
+        local match = string.match(item.Name, nameStub)
+        if item:IsA('Part') and match then
+            -- item:Destroy()
+            --
+        end
+    end
+end
+
 module.deleteInstanceByNameStub = deleteInstanceByNameStub
 
 return module
