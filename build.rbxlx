@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>544.906372</X>
-					<Y>46.6194572</Y>
-					<Z>-209.476715</Z>
-					<R00>-0.721488595</R00>
-					<R01>0.179244459</R01>
-					<R02>-0.668824077</R02>
-					<R10>-7.4505806e-09</R10>
-					<R11>0.965913773</R11>
-					<R12>0.258864284</R12>
-					<R20>0.692426383</R20>
-					<R21>0.186767623</R21>
-					<R22>-0.696895719</R22>
+					<X>248.630493</X>
+					<Y>96.2875214</Y>
+					<Z>-230.464096</Z>
+					<R00>0.0800281316</R00>
+					<R01>-0.701129854</R01>
+					<R02>0.70852828</R02>
+					<R10>3.7252903e-09</R10>
+					<R11>0.710808098</R11>
+					<R12>0.70338589</R12>
+					<R20>-0.996792614</R20>
+					<R21>-0.0562906563</R21>
+					<R22>0.0568846501</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>548.216858</X>
-					<Y>45.3381538</Y>
-					<Z>-206.027283</Z>
+					<X>229.5</X>
+					<Y>77.2958755</Y>
+					<Z>-232</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -9504,18 +9504,18 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 										<token name="BottomSurface">0</token>
 										<token name="BottomSurfaceInput">0</token>
 										<CoordinateFrame name="CFrame">
-											<X>548.268982</X>
-											<Y>45.3392258</Y>
+											<X>548.269043</X>
+											<Y>45.3392143</Y>
 											<Z>-228.5</Z>
-											<R00>0.999996424</R00>
+											<R00>1</R00>
 											<R01>0</R01>
-											<R02>1.69406589e-21</R02>
+											<R02>0</R02>
 											<R10>0</R10>
-											<R11>0.999997139</R11>
+											<R11>1</R11>
 											<R12>0</R12>
-											<R20>1.69406589e-21</R20>
+											<R20>0</R20>
 											<R21>0</R21>
-											<R22>0.999997139</R22>
+											<R22>1</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
@@ -12118,7 +12118,7 @@ remoteCode.addRemoteObjects(base)
 				</Item>
 				<Item class="Part" referent="RBXd207cf71550a40cdbaca9bdad35d44a2">
 					<Properties>
-						<bool name="Anchored">false</bool>
+						<bool name="Anchored">true</bool>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="BackParamA">-0.5</float>
 						<float name="BackParamB">0.5</float>
@@ -12129,9 +12129,9 @@ remoteCode.addRemoteObjects(base)
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>241</X>
+							<X>221.649994</X>
 							<Y>71.0908813</Y>
-							<Z>-226</Z>
+							<Z>-245.059998</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -12227,10 +12227,49 @@ remoteCode.addRemoteObjects(base)
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
+					<Item class="Weld" referent="RBXa115c16d97cf4569bdb72284ffef0850">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>2</X>
+								<Y>0</Y>
+								<Z>0</Z>
+								<R00>0</R00>
+								<R01>0</R01>
+								<R02>1</R02>
+								<R10>0</R10>
+								<R11>-1</R11>
+								<R12>0</R12>
+								<R20>1</R20>
+								<R21>0</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>-6.5</X>
+								<Y>-3.91000366</Y>
+								<Z>0</Z>
+								<R00>0</R00>
+								<R01>0</R01>
+								<R02>1</R02>
+								<R10>0</R10>
+								<R11>-1</R11>
+								<R12>0</R12>
+								<R20>1</R20>
+								<R21>0</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<bool name="Enabled">true</bool>
+							<string name="Name">Weld</string>
+							<Ref name="Part0">RBXd207cf71550a40cdbaca9bdad35d44a2</Ref>
+							<Ref name="Part1">RBXb8cb7bb751eb4e79826ac8cf98bb8981</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
 				</Item>
 				<Item class="Part" referent="RBXb8cb7bb751eb4e79826ac8cf98bb8981">
 					<Properties>
-						<bool name="Anchored">false</bool>
+						<bool name="Anchored">true</bool>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="BackParamA">-0.5</float>
 						<float name="BackParamB">0.5</float>
@@ -12241,9 +12280,9 @@ remoteCode.addRemoteObjects(base)
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>232.5</X>
+							<X>230.149994</X>
 							<Y>75.000885</Y>
-							<Z>-226</Z>
+							<Z>-245.059998</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -12304,84 +12343,6 @@ remoteCode.addRemoteObjects(base)
 							<Z>4</Z>
 						</Vector3>
 					</Properties>
-					<Item class="Weld" referent="RBXccbf969c258141b49dd8e7b6e3aa0a01">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<CoordinateFrame name="C0">
-								<X>6.5</X>
-								<Y>0</Y>
-								<Z>0</Z>
-								<R00>0</R00>
-								<R01>0</R01>
-								<R02>1</R02>
-								<R10>0</R10>
-								<R11>-1</R11>
-								<R12>0</R12>
-								<R20>1</R20>
-								<R21>0</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>-2</X>
-								<Y>3.91000366</Y>
-								<Z>0</Z>
-								<R00>0</R00>
-								<R01>0</R01>
-								<R02>1</R02>
-								<R10>0</R10>
-								<R11>-1</R11>
-								<R12>0</R12>
-								<R20>1</R20>
-								<R21>0</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Weld</string>
-							<Ref name="Part0">RBXb8cb7bb751eb4e79826ac8cf98bb8981</Ref>
-							<Ref name="Part1">RBXd207cf71550a40cdbaca9bdad35d44a2</Ref>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-					<Item class="Weld" referent="RBXd3a0926256f74bc1b8d5b28da181542d">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<CoordinateFrame name="C0">
-								<X>0</X>
-								<Y>5.5</Y>
-								<Z>0</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>1</R12>
-								<R20>0</R20>
-								<R21>-1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>-0.499984741</X>
-								<Y>-5.5</Y>
-								<Z>6</Z>
-								<R00>0</R00>
-								<R01>0</R01>
-								<R02>1</R02>
-								<R10>-1</R10>
-								<R11>0</R11>
-								<R12>0</R12>
-								<R20>0</R20>
-								<R21>-1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Weld</string>
-							<Ref name="Part0">RBXb8cb7bb751eb4e79826ac8cf98bb8981</Ref>
-							<Ref name="Part1">RBXa6426ef88d1f48e59fd053aae6a000b6</Ref>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
 				</Item>
 			</Item>
 			<Item class="Model" referent="RBXed3cfc6a2bcb45508e72fddd2cf4176d">
@@ -17284,7 +17245,7 @@ return module
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">DetectUser</string>
 						<string name="ScriptGuid">{0b80bb76-5289-4f18-9d84-59c516f3e491}</string>
-						<ProtectedString name="Source"><![CDATA[	local regionEnter, regionExit
+						<ProtectedString name="Source"><![CDATA[local regionEnter, regionExit
 local module = {Players = {}, Regions = {}}
 
 function module.refreshPlayers(region)
@@ -20206,6 +20167,22 @@ function module.addScenes(props)
             child = wallTemplate
         })
 
+    local function hideWall(clonedScene)
+        local dialog = Utils.getFirstDescendantByName(clonedScene,
+                                                      "WallTemplate")
+
+        dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
+        dialog.Anchored = true
+    end
+
+    local function unHideWall(clonedScene)
+        local dialog = Utils.getFirstDescendantByName(clonedScene,
+                                                      "WallTemplate")
+
+        dialog.Position = dialog.Position + Vector3.new(0, -200, 0)
+        dialog.Anchored = false
+    end
+
     for i, sceneConfig in ipairs(sceneConfigs) do
         local entered = {value = false}
         local numPages = #sceneConfig.frames
@@ -20228,22 +20205,14 @@ function module.addScenes(props)
 
         local function regionEnter(plr, clonedScene, entered)
             if not entered.value then
-                local dialog = Utils.getFirstDescendantByName(clonedScene,
-                                                              "WallTemplate")
-
-                dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
-                dialog.Anchored = true
+                hideWall(clonedScene)
                 entered.value = true
             end
         end
 
         local function regionExit(plr, clonedScene, entered)
             if entered.value then
-                local dialog = Utils.getFirstDescendantByName(clonedScene,
-                                                              "WallTemplate")
-
-                dialog.Position = dialog.Position + Vector3.new(0, -200, 0)
-                dialog.Anchored = false
+                unHideWall(clonedScene)
                 entered.value = false
             end
         end
@@ -20305,6 +20274,8 @@ function module.addScenes(props)
 
         Characters.addCharactersToScene(charProps)
         Location.addLocation({scene = clonedScene, sceneConfig = sceneConfig})
+
+        hideWall(clonedScene)
 
         local gameTitleLabel = Utils.getFirstDescendantByName(clonedScene,
                                                               "GameTitleLabel")

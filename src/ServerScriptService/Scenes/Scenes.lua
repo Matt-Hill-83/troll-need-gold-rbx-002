@@ -170,6 +170,8 @@ function module.addScenes(props)
         Characters.addCharactersToScene(charProps)
         Location.addLocation({scene = clonedScene, sceneConfig = sceneConfig})
 
+        hideWall(clonedScene)
+
         local gameTitleLabel = Utils.getFirstDescendantByName(clonedScene,
                                                               "GameTitleLabel")
         gameTitleLabel.Text = "Quest:   " ..
