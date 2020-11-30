@@ -131,7 +131,8 @@ renderQuestBlock = function(props)
     local desiredOffsetFromParentEdge = nil
     local itemDuplicationConfig = nil
 
-    if (false) then
+    if (true) then
+        -- if (false) then
         -- if (changeOffset) then
         desiredOffsetFromParentEdge = Vector3.new(-offset, 0, 0)
         itemDuplicationConfig = {
