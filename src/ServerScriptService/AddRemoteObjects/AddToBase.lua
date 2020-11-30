@@ -34,29 +34,29 @@ function setupUserDetectionRegions()
     local clones =
         Utils.getDescendantsByNameMatch(myStuff, "SceneTemplateClone")
 
-    print('clones' .. ' - start');
-    print(Utils.tableToString({clones}));
-    print('clones' .. ' - end');
-    for i = 1, #clones do
-        local scene = clones[i]
+    -- print('clones' .. ' - start');
+    -- print(Utils.tableToString({clones}));
+    -- print('clones' .. ' - end');
+    -- for i = 1, #clones do
+    --     local scene = clones[i]
 
-        if scene:IsA('Model') then
-            -- item:Destroy()
-            --
+    --     if scene:IsA('Model') then
+    --         local region = Utils.getFirstDescendantByName(scene,
+    --                                                       "UserDectionRegion")
+    --         if region then
 
-            local region = Utils.getFirstDescendantByName(scene,
-                                                          "UserDectionRegion")
-            if region then
-
-                print('region' .. ' - start');
-                print(region);
-                print('region' .. ' - end');
-                region.Name = region.Name .. "-" .. i
-            end
-        end
-    end
+    --             print('region' .. ' - start');
+    --             print(region);
+    --             print('region' .. ' - end');
+    --             region.Name = region.Name .. "-" .. i
+    --         end
+    --     end
+    -- end
 
     local places = Utils.getDescendantsByNameMatch(myStuff, "UserDectionRegion")
+    print('places' .. ' - start');
+    print(Utils.tableToString({places}));
+    print('places' .. ' - end');
 
     regionsSetup(places, regionEnter, regionExit)
 end
