@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>505.939758</X>
-					<Y>150.987595</Y>
-					<Z>-144.86499</Z>
-					<R00>0.544256449</R00>
-					<R01>-0.478911072</R01>
-					<R02>0.688788056</R02>
-					<R10>1.49011612e-08</R10>
-					<R11>0.821042538</R11>
-					<R12>0.570866942</R12>
-					<R20>-0.838918924</R20>
-					<R21>-0.310698003</R21>
-					<R22>0.446857721</R22>
+					<X>444.205444</X>
+					<Y>71.9484329</Y>
+					<Z>-353.330383</Z>
+					<R00>-0.962340176</R00>
+					<R01>-0.0100091761</R01>
+					<R02>0.271663845</R02>
+					<R10>-0</R10>
+					<R11>0.999321997</R11>
+					<R12>0.0368189886</R12>
+					<R20>-0.271848202</R20>
+					<R21>0.0354323909</R21>
+					<R22>-0.961687624</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -3833,7 +3833,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
 									<X>403</X>
-									<Y>10</Y>
+									<Y>17.2799988</Y>
 									<Z>-218</Z>
 									<R00>1</R00>
 									<R01>0</R01>
@@ -3860,7 +3860,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 								<float name="LeftParamB">0.5</float>
 								<token name="LeftSurface">0</token>
 								<token name="LeftSurfaceInput">0</token>
-								<bool name="Locked">true</bool>
+								<bool name="Locked">false</bool>
 								<bool name="Massless">false</bool>
 								<token name="Material">256</token>
 								<string name="Name">GlassFloor</string>
@@ -3895,45 +3895,6 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 									<Z>64</Z>
 								</Vector3>
 							</Properties>
-							<Item class="Weld" referent="RBXcb34250542ee455f802d54152e229ddb">
-								<Properties>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<CoordinateFrame name="C0">
-										<X>0</X>
-										<Y>-1</Y>
-										<Z>0</Z>
-										<R00>1</R00>
-										<R01>0</R01>
-										<R02>0</R02>
-										<R10>0</R10>
-										<R11>0</R11>
-										<R12>-1</R12>
-										<R20>0</R20>
-										<R21>1</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<CoordinateFrame name="C1">
-										<X>14</X>
-										<Y>4</Y>
-										<Z>0.5</Z>
-										<R00>1</R00>
-										<R01>0</R01>
-										<R02>0</R02>
-										<R10>0</R10>
-										<R11>0</R11>
-										<R12>-1</R12>
-										<R20>0</R20>
-										<R21>1</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<bool name="Enabled">true</bool>
-									<string name="Name">Weld</string>
-									<Ref name="Part0">RBX4e88c8803d784a11877d42568ac0e9ae</Ref>
-									<Ref name="Part1">RBX9e435cbb4f7a4adeac4c7bdf49a85264</Ref>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-								</Properties>
-							</Item>
 						</Item>
 						<Item class="Attachment" referent="RBXeaef68154fe04dcba3f2fe2ed0d2eb92">
 							<Properties>
@@ -17074,6 +17035,7 @@ function addRemoteObjects()
 
     end
     setupUserDetectionRegions()
+    questBlockTemplate:Destroy()
 end
 
 module.addRemoteObjects = addRemoteObjects

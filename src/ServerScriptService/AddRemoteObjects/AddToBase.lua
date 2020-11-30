@@ -117,6 +117,7 @@ function addRemoteObjects()
 
     end
     setupUserDetectionRegions()
+    questBlockTemplate:Destroy()
 end
 
 module.addRemoteObjects = addRemoteObjects
