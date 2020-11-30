@@ -174,10 +174,10 @@ renderQuestBlock = function(props)
     dockBase.Size = dockPositioner.Size
     local glassFloor = Utils.getFirstDescendantByName(dockBase, "GlassFloor")
 
-    local weld = Instance.new("WeldConstraint")
-    weld.Parent = dockBase
-    weld.Part0 = dockBase
-    weld.Part1 = dockPositioner
+    -- local weld = Instance.new("WeldConstraint")
+    -- weld.Parent = dockBase
+    -- weld.Part0 = dockBase
+    -- weld.Part1 = dockPositioner
 
     -- put in a layer of glass to walk on below the water
     local glassFloorY = 10
@@ -207,10 +207,12 @@ renderQuestBlock = function(props)
         template = dockWallRight
     })
 
+    dockPositioner:Destroy()
     -- local questCFrame = dockPositioner.CFrame
     -- dockPositioner.CFrame = questCFrame * CFrame.new(Vector3.new(0, -40, 0)) *
     --                             CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
-    return dockPositioner
+    return dockBase
+    -- return dockPositioner
 end
 
 module.renderQuestBlock = renderQuestBlock

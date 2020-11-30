@@ -82,9 +82,10 @@ function module.addScenes(props)
             })
 
         local weld = Instance.new("WeldConstraint")
-        weld.Parent = parent
+        weld.Parent = workspace
         weld.Part0 = parent
         weld.Part1 = clonedScene.PrimaryPart
+        weld.Name = 'zzz-scene weld'
 
         local sceneFolder = Utils.getOrCreateFolder(
                                 {name = clonedScene.Name, parent = questFolder})
@@ -146,7 +147,8 @@ function module.addScenes(props)
             updateButtonActiveStatus = updateButtonActiveStatus,
             clonedScene = clonedScene,
             numPages = numPages,
-            sceneConfig = sceneConfig
+            sceneConfig = sceneConfig,
+            sceneFolder = sceneFolder
         }
         Buttons.doFrameStuff(props2)
 

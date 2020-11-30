@@ -11,6 +11,7 @@ function module.doFrameStuff(props)
     local clonedScene = props.clonedScene
     local numPages = props.numPages
     local sceneConfig = props.sceneConfig
+    local sceneFolder = props.sceneFolder
 
     function updateFrameItems(props)
 
@@ -30,8 +31,11 @@ function module.doFrameStuff(props)
             local newFrameConfig = sceneConfig2.frames[pn.value]
             local newSceneProps = {
                 frameConfig = newFrameConfig,
-                clonedScene = clonedScene2
+                clonedScene = clonedScene2,
+                sceneFolder = sceneFolder
             }
+
+            -- TODO :move this to parent
             Characters.addCharactersToScene(newSceneProps)
             buttonPressed = false
         end

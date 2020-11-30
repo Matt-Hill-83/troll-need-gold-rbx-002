@@ -110,6 +110,9 @@ function module.addCharactersToScene(props)
     local clonedScene = props.clonedScene
     local sceneFolder = props.sceneFolder
 
+    print('clonedScene' .. ' - start');
+    print(clonedScene);
+    print('clonedScene' .. ' - end');
     local characterConfigs01 = frameConfig.characters01
     local characterConfigs02 = frameConfig.characters02
 
