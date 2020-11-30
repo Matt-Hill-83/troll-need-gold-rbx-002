@@ -63,19 +63,30 @@ function module.addScenes(props)
         })
 
     local function hideWall(clonedScene)
+
         local dialog = Utils.getFirstDescendantByName(clonedScene,
                                                       "WallTemplate")
+        print('dialog' .. ' - start');
+        print(Utils.tableToString({dialog.Position.Y}));
+        print('dialog' .. ' - end');
 
+        dialog.Anchored = false
         dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
         dialog.Anchored = true
+
+        print('dialog' .. ' - start');
+        print(Utils.tableToString({dialog.Position.Y}));
+        print('dialog' .. ' - end');
+        print('');
     end
 
     local function unHideWall(clonedScene)
         local dialog = Utils.getFirstDescendantByName(clonedScene,
                                                       "WallTemplate")
 
-        dialog.Position = dialog.Position + Vector3.new(0, -200, 0)
         dialog.Anchored = false
+        dialog.Position = dialog.Position + Vector3.new(0, -200, 0)
+        dialog.Anchored = true
     end
 
     for i, sceneConfig in ipairs(sceneConfigs) do
@@ -128,7 +139,7 @@ function module.addScenes(props)
         part.Touched:Connect(onPartTouched)
 
         local function onPartTouchEnded(otherPart)
-            print(part.Name .. " is no longer touching " .. otherPart.Name)
+            -- print(part.Name .. " is no longer touching " .. otherPart.Name)
             local partParent = otherPart.Parent
             local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
             if humanoid then
