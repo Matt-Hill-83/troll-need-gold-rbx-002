@@ -107,13 +107,14 @@ function module.unAttachAllChildParts(parent)
         if items[i]:IsA('Part') then
             local item = items[i]
             if item.Anchored == true then
-                print('item.Name' .. ' - start');
+                print('item.Name------------------------------------->>>>' ..
+                          ' - start');
                 print(item.Name);
                 print('item.Name' .. ' - end');
-            end
 
-            item.Anchored = false
-            table.insert(output, item)
+                -- item.Anchored = false
+                table.insert(output, item)
+            end
             --
         end
 

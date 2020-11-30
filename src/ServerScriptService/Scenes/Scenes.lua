@@ -57,12 +57,6 @@ function module.addScenes(props)
                                                               "SceneTemplate")
     local wallTemplate =
         Utils.getFirstDescendantByName(questFolder, "SceneBase")
-    print('sceneTemplateModel' .. ' - start');
-    print(sceneTemplateModel);
-    print('sceneTemplateModel' .. ' - end');
-
-    -- local sceneTemplateModel = Utils.getFromTemplates("SceneTemplate")
-    -- local wallTemplate = Utils.getFromTemplates("SceneBase")
 
     local startPosition = getStartPosition(
                               {
@@ -84,8 +78,6 @@ function module.addScenes(props)
         local clonedScene = Utils.cloneModel(
                                 {
                 model = sceneTemplateModel,
-                -- position = CFrame.new(newPosition + startPosition) *
-                --     CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0),
 
                 position = CFrame.new(newPosition + startPosition),
                 suffix = "Clone--" .. i
@@ -98,13 +90,7 @@ function module.addScenes(props)
         weld.Part0 = parent
         weld.Part1 = clonedScene.PrimaryPart
         weld.Name = 'zzz-scene weld'
-        print('clonedScene.Name' .. ' - start');
-        print(clonedScene.Name);
-        print('clonedScene.Name' .. ' - end');
 
-        print('questFolder' .. ' - start');
-        print(questFolder);
-        print('questFolder' .. ' - end');
         local sceneFolder = Utils.getOrCreateFolder(
                                 {
                 name = clonedScene.Name .. i,
@@ -135,7 +121,6 @@ function module.addScenes(props)
                                   (questConfig.questTitle or 'Game Title')
 
         function updateButtonActiveStatus(props)
-            print('updateButtonActiveStatus===============================')
             local clonedScene2 = props.clonedScene
             local pageNum2 = props.pageNum
             local numPages2 = props.numPages

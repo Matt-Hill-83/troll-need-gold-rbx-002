@@ -21,16 +21,11 @@ renderCharacters = function(props)
     InstanceUtils.deleteInstanceByNameStub(
         {parent = charFolder, nameStub = nameStub})
 
-    print('characterTemplate' .. ' - start');
-    print(characterTemplate);
-    print('characterTemplate' .. ' - end');
-
     local charImageBlock = Utils.getFirstDescendantByName(characterTemplate,
                                                           "CharacterImage")
 
     -- Hide decal on template
     applyDecalsToCharacter({part = charImageBlock, decalId = ""})
-    -- applyLabelsToCharacter({part = charImageBlock, text = ""})
     toggleLabelVisibility({part = charImageBlock, visible = false})
 
     -- Ensure player doesn't crash into invisivble template
@@ -110,9 +105,6 @@ function module.addCharactersToScene(props)
     local clonedScene = props.clonedScene
     local sceneFolder = props.sceneFolder
 
-    print('clonedScene' .. ' - start');
-    print(clonedScene);
-    print('clonedScene' .. ' - end');
     local characterConfigs01 = frameConfig.characters01
     local characterConfigs02 = frameConfig.characters02
 

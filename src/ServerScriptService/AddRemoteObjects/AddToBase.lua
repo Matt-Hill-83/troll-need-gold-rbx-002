@@ -81,14 +81,6 @@ function addRemoteObjects()
                 model = questBlockTemplate,
                 suffix = "Clone--" .. i
             })
-        -- questBlockTemplateClone:SetPrimaryPartCFrame(
-        --     questBlockTemplateClone.PrimaryPart.CFrame *
-        --         CFrame.fromEulerAnglesXYZ(0, 1, 0))
-
-        -- local questCFrame2 = questBlockTemplateClone.PrimaryPart.CFrame
-        -- questBlockTemplateClone.PrimaryPart.CFrame =
-        --     questCFrame2 * CFrame.new(Vector3.new(0, -40, 0)) *
-        --         CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
 
         local questFolder = Utils.getOrCreateFolder(
                                 {
@@ -108,11 +100,6 @@ function addRemoteObjects()
         }
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
         local questCFrame = questBlock.CFrame
-        -- questBlock.CFrame = questCFrame * CFrame.new(Vector3.new(0, -40, 0))
-
-        print('questCFrame' .. ' - start');
-        print(Utils.tableToString({questCFrame}));
-        print('questCFrame' .. ' - end');
 
         -- questBlock.Transparency = 1
         local addScenesProps = {
