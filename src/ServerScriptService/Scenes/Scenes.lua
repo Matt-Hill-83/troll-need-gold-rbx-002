@@ -55,12 +55,14 @@ function module.addScenes(props)
 
     local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
                                                               "SceneTemplate")
+    local wallTemplate =
+        Utils.getFirstDescendantByName(questFolder, "SceneBase")
     print('sceneTemplateModel' .. ' - start');
     print(sceneTemplateModel);
     print('sceneTemplateModel' .. ' - end');
 
     -- local sceneTemplateModel = Utils.getFromTemplates("SceneTemplate")
-    local wallTemplate = Utils.getFromTemplates("SceneBase")
+    -- local wallTemplate = Utils.getFromTemplates("SceneBase")
 
     local startPosition = getStartPosition(
                               {
