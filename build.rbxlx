@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>530.504578</X>
-					<Y>55.4810295</Y>
-					<Z>-220.792053</Z>
-					<R00>-0.721489906</R00>
-					<R01>0.179244041</R01>
-					<R02>-0.668822765</R02>
+					<X>544.906372</X>
+					<Y>46.6194572</Y>
+					<Z>-209.476715</Z>
+					<R00>-0.721488595</R00>
+					<R01>0.179244459</R01>
+					<R02>-0.668824077</R02>
 					<R10>-7.4505806e-09</R10>
 					<R11>0.965913773</R11>
-					<R12>0.258864224</R12>
-					<R20>0.692424953</R20>
-					<R21>0.186767921</R21>
-					<R22>-0.69689703</R22>
+					<R12>0.258864284</R12>
+					<R20>0.692426383</R20>
+					<R21>0.186767623</R21>
+					<R22>-0.696895719</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>541.20575</X>
-					<Y>51.3391991</Y>
-					<Z>-209.641693</Z>
+					<X>548.216858</X>
+					<Y>45.3381538</Y>
+					<Z>-206.027283</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -5214,7 +5214,7 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 									<float name="TopParamB">0.5</float>
 									<token name="TopSurface">3</token>
 									<token name="TopSurfaceInput">0</token>
-									<float name="Transparency">0</float>
+									<float name="Transparency">1</float>
 									<Vector3 name="Velocity">
 										<X>0</X>
 										<Y>0</Y>
@@ -5228,22 +5228,6 @@ gP+A/4D/gP+A/4D/gP+A/w==]]></BinaryString>
 										<Z>1</Z>
 									</Vector3>
 								</Properties>
-								<Item class="Decal" referent="RBX8a50133999804557876c32224ed8d012">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<Color3 name="Color3">
-											<R>1</R>
-											<G>1</G>
-											<B>1</B>
-										</Color3>
-										<token name="Face">5</token>
-										<string name="Name">Decal</string>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-										<Content name="Texture"><url>rbxassetid://5902121857</url></Content>
-										<float name="Transparency">0</float>
-									</Properties>
-								</Item>
 								<Item class="SurfaceLight" referent="RBXc16f3e1c183948a08d269fb1dcf5334c">
 									<Properties>
 										<float name="Angle">90</float>
@@ -15980,51 +15964,48 @@ function configGame()
 end
 
 function setupUserDetectionRegions()
-    local regionsSetup = DetectUser
-    local function regionEnter(plr, region)
-        print(plr.Name .. " entered " .. region.Name)
+    -- local regionsSetup = DetectUser
+    -- local function regionEnter(plr, region)
+    --     print(plr.Name .. " entered " .. region.Name)
 
-    end
+    -- end
 
-    local function regionExit(plr, region)
-        print(plr.Name .. " left " .. region.Name)
-        local dialog = Utils.getFirstDescendantByName(region, "WallTemplate")
-        dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
-    end
+    -- local function regionExit(plr, region)
+    --     print(plr.Name .. " left " .. region.Name)
+    --     local dialog = Utils.getFirstDescendantByName(region, "WallTemplate")
+    --     dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
+    -- end
 
-    local myStuff = workspace:FindFirstChild("MyStuff")
-    local runTimeQuests = Utils.getFirstDescendantByName(myStuff,
-                                                         "RunTimeQuests")
+    -- local myStuff = workspace:FindFirstChild("MyStuff")
+    -- local runTimeQuests = Utils.getFirstDescendantByName(myStuff,
+    --                                                      "RunTimeQuests")
 
-    local clones =
-        Utils.getDescendantsByNameMatch(myStuff, "SceneTemplateClone")
+    -- local clones =
+    --     Utils.getDescendantsByNameMatch(myStuff, "SceneTemplateClone")
 
-    -- print('clones' .. ' - start');
-    -- print(Utils.tableToString({clones}));
-    -- print('clones' .. ' - end');
-    for i = 1, #clones do
-        local scene = clones[i]
+    -- for i = 1, #clones do
+    --     local scene = clones[i]
 
-        if scene:IsA('Model') then
-            local region = Utils.getFirstDescendantByName(scene,
-                                                          "UserDectionRegion")
-            if region then
+    --     if scene:IsA('Model') then
+    --         local region = Utils.getFirstDescendantByName(scene,
+    --                                                       "UserDectionRegion")
+    --         if region then
 
-                print('region' .. ' - start');
-                print(region);
-                print('region' .. ' - end');
-                region.Name = region.Name .. "-" .. i
-            end
-        end
-    end
+    --             print('region' .. ' - start');
+    --             print(region);
+    --             print('region' .. ' - end');
+    --             region.Name = region.Name .. "-" .. i
+    --         end
+    --     end
+    -- end
 
-    local places = Utils.getDescendantsByNameMatch(runTimeQuests,
-                                                   "UserDectionRegion")
-    print('places' .. ' - start');
-    print(Utils.tableToString({places}));
-    print('places' .. ' - end');
+    -- local places = Utils.getDescendantsByNameMatch(runTimeQuests,
+    --                                                "UserDectionRegion")
+    -- print('places' .. ' - start');
+    -- print(Utils.tableToString({places}));
+    -- print('places' .. ' - end');
 
-    regionsSetup(places, regionEnter, regionExit)
+    -- regionsSetup(places, regionEnter, regionExit)
 end
 
 function addRemoteObjects()
@@ -17477,6 +17458,19 @@ function module.getDescendantsByName(parent, name)
     for i = 1, #descendants do
         if descendants[i].Name == name then
             table.insert(output, descendants[i])
+            -- 
+        end
+    end
+    return output
+end
+
+function module.getDescendantsByType(parent, type)
+    local items = parent:GetDescendants()
+    local output = {}
+
+    for i, item in pairs(items) do
+        if item:IsA(type) then
+            table.insert(output, item)
             -- 
         end
     end
@@ -20234,58 +20228,51 @@ function module.addScenes(props)
 
         local function regionEnter(plr, clonedScene, entered)
             if not entered.value then
-                print('plr' .. ' - start');
-                print(Utils.tableToString({plr}));
-                print('plr' .. ' - end');
-                print(plr.Name .. " entered " .. clonedScene.Name)
                 local dialog = Utils.getFirstDescendantByName(clonedScene,
-                                                              "DialogTemplate")
-                dialog.Transparency = 1
-                dialog.Name = dialog.Name .. "xxxxxx"
-                print('dialog' .. ' - start');
-                print(Utils.tableToString({dialog}));
-                print('dialog' .. ' - end');
+                                                              "WallTemplate")
+
                 dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
-
-                -- 
-                local scroller = Utils.getFirstDescendantByName(clonedScene,
-                                                                "DialogScroller")
-
-                scroller.Visible = false
-                -- 
-                -- 
-                local wall = Utils.getFirstDescendantByName(clonedScene,
-                                                            "WallTemplate")
-                -- wall.Transparency = 1
-                wall.Position = wall.Position + Vector3.new(0, 20, 0)
-                wall.Anchored = true
-                -- 
-                -- 
+                dialog.Anchored = true
                 entered.value = true
+            end
+        end
 
+        local function regionExit(plr, clonedScene, entered)
+            if entered.value then
+                local dialog = Utils.getFirstDescendantByName(clonedScene,
+                                                              "WallTemplate")
+
+                dialog.Position = dialog.Position + Vector3.new(0, -200, 0)
+                dialog.Anchored = false
+                entered.value = false
             end
         end
 
         -- 
         -- 
-        -- local part = script.Parent
         local part = Utils.getFirstDescendantByName(clonedScene,
                                                     "UserDectionRegion")
 
         local function onPartTouched(otherPart)
-            -- Get the other part's parent
             local partParent = otherPart.Parent
-            -- Look for a humanoid in the parent
             local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
             if humanoid then
                 regionEnter(humanoid, clonedScene, entered)
-                -- print("part is touched!!!!!!!!!!!!!!-----------------------")
-                -- Do something to the humanoid, like set its health to 0
-                -- humanoid.Health = 0
             end
         end
 
         part.Touched:Connect(onPartTouched)
+
+        local function onPartTouchEnded(otherPart)
+            print(part.Name .. " is no longer touching " .. otherPart.Name)
+            local partParent = otherPart.Parent
+            local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
+            if humanoid then
+                regionExit(humanoid, clonedScene, entered)
+            end
+        end
+
+        part.TouchEnded:Connect(onPartTouchEnded)
 
         -- 
         -- 

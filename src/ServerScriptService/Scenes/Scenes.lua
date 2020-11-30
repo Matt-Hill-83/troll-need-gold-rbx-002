@@ -62,6 +62,22 @@ function module.addScenes(props)
             child = wallTemplate
         })
 
+    local function hideWall(clonedScene)
+        local dialog = Utils.getFirstDescendantByName(clonedScene,
+                                                      "WallTemplate")
+
+        dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
+        dialog.Anchored = true
+    end
+
+    local function unHideWall(clonedScene)
+        local dialog = Utils.getFirstDescendantByName(clonedScene,
+                                                      "WallTemplate")
+
+        dialog.Position = dialog.Position + Vector3.new(0, -200, 0)
+        dialog.Anchored = false
+    end
+
     for i, sceneConfig in ipairs(sceneConfigs) do
         local entered = {value = false}
         local numPages = #sceneConfig.frames
@@ -84,12 +100,15 @@ function module.addScenes(props)
 
         local function regionEnter(plr, clonedScene, entered)
             if not entered.value then
-                local dialog = Utils.getFirstDescendantByName(clonedScene,
-                                                              "WallTemplate")
-
-                dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
-                dialog.Anchored = true
+                hideWall(clonedScene)
                 entered.value = true
+            end
+        end
+
+        local function regionExit(plr, clonedScene, entered)
+            if entered.value then
+                unHideWall(clonedScene)
+                entered.value = false
             end
         end
 
@@ -99,9 +118,7 @@ function module.addScenes(props)
                                                     "UserDectionRegion")
 
         local function onPartTouched(otherPart)
-            -- Get the other part's parent
             local partParent = otherPart.Parent
-            -- Look for a humanoid in the parent
             local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
             if humanoid then
                 regionEnter(humanoid, clonedScene, entered)
@@ -109,6 +126,17 @@ function module.addScenes(props)
         end
 
         part.Touched:Connect(onPartTouched)
+
+        local function onPartTouchEnded(otherPart)
+            print(part.Name .. " is no longer touching " .. otherPart.Name)
+            local partParent = otherPart.Parent
+            local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
+            if humanoid then
+                regionExit(humanoid, clonedScene, entered)
+            end
+        end
+
+        part.TouchEnded:Connect(onPartTouchEnded)
 
         -- 
         -- 
