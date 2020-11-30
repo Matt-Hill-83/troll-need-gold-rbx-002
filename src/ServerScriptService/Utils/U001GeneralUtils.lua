@@ -100,6 +100,19 @@ function module.getDescendantsByName(parent, name)
     return output
 end
 
+function module.getDescendantsByType(parent, type)
+    local items = parent:GetDescendants()
+    local output = {}
+
+    for i, item in pairs(items) do
+        if item:IsA(type) then
+            table.insert(output, item)
+            -- 
+        end
+    end
+    return output
+end
+
 function module.unAttachAllChildParts(parent)
     local items = parent:GetDescendants()
     local output = {}

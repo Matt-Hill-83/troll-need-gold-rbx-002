@@ -84,33 +84,17 @@ function module.addScenes(props)
 
         local function regionEnter(plr, clonedScene, entered)
             if not entered.value then
-                print('plr' .. ' - start');
-                print(Utils.tableToString({plr}));
-                print('plr' .. ' - end');
-                print(plr.Name .. " entered " .. clonedScene.Name)
                 local dialog = Utils.getFirstDescendantByName(clonedScene,
-                                                              "DialogTemplate")
-                dialog.Transparency = 1
-                dialog.Name = dialog.Name .. "xxxxxx"
-                print('dialog' .. ' - start');
-                print(Utils.tableToString({dialog}));
-                print('dialog' .. ' - end');
+                                                              "WallTemplate")
+
                 dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
-
-                -- 
-                local scroller = Utils.getFirstDescendantByName(clonedScene,
-                                                                "DialogScroller")
-
-                scroller.Visible = false
-
+                dialog.Anchored = true
                 entered.value = true
-
             end
         end
 
         -- 
         -- 
-        -- local part = script.Parent
         local part = Utils.getFirstDescendantByName(clonedScene,
                                                     "UserDectionRegion")
 
@@ -121,9 +105,6 @@ function module.addScenes(props)
             local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
             if humanoid then
                 regionEnter(humanoid, clonedScene, entered)
-                -- print("part is touched!!!!!!!!!!!!!!-----------------------")
-                -- Do something to the humanoid, like set its health to 0
-                -- humanoid.Health = 0
             end
         end
 

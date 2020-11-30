@@ -16,51 +16,48 @@ function configGame()
 end
 
 function setupUserDetectionRegions()
-    local regionsSetup = DetectUser
-    local function regionEnter(plr, region)
-        print(plr.Name .. " entered " .. region.Name)
+    -- local regionsSetup = DetectUser
+    -- local function regionEnter(plr, region)
+    --     print(plr.Name .. " entered " .. region.Name)
 
-    end
+    -- end
 
-    local function regionExit(plr, region)
-        print(plr.Name .. " left " .. region.Name)
-        local dialog = Utils.getFirstDescendantByName(region, "WallTemplate")
-        dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
-    end
+    -- local function regionExit(plr, region)
+    --     print(plr.Name .. " left " .. region.Name)
+    --     local dialog = Utils.getFirstDescendantByName(region, "WallTemplate")
+    --     dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
+    -- end
 
-    local myStuff = workspace:FindFirstChild("MyStuff")
-    local runTimeQuests = Utils.getFirstDescendantByName(myStuff,
-                                                         "RunTimeQuests")
+    -- local myStuff = workspace:FindFirstChild("MyStuff")
+    -- local runTimeQuests = Utils.getFirstDescendantByName(myStuff,
+    --                                                      "RunTimeQuests")
 
-    local clones =
-        Utils.getDescendantsByNameMatch(myStuff, "SceneTemplateClone")
+    -- local clones =
+    --     Utils.getDescendantsByNameMatch(myStuff, "SceneTemplateClone")
 
-    -- print('clones' .. ' - start');
-    -- print(Utils.tableToString({clones}));
-    -- print('clones' .. ' - end');
-    for i = 1, #clones do
-        local scene = clones[i]
+    -- for i = 1, #clones do
+    --     local scene = clones[i]
 
-        if scene:IsA('Model') then
-            local region = Utils.getFirstDescendantByName(scene,
-                                                          "UserDectionRegion")
-            if region then
+    --     if scene:IsA('Model') then
+    --         local region = Utils.getFirstDescendantByName(scene,
+    --                                                       "UserDectionRegion")
+    --         if region then
 
-                print('region' .. ' - start');
-                print(region);
-                print('region' .. ' - end');
-                region.Name = region.Name .. "-" .. i
-            end
-        end
-    end
+    --             print('region' .. ' - start');
+    --             print(region);
+    --             print('region' .. ' - end');
+    --             region.Name = region.Name .. "-" .. i
+    --         end
+    --     end
+    -- end
 
-    local places = Utils.getDescendantsByNameMatch(runTimeQuests,
-                                                   "UserDectionRegion")
-    print('places' .. ' - start');
-    print(Utils.tableToString({places}));
-    print('places' .. ' - end');
+    -- local places = Utils.getDescendantsByNameMatch(runTimeQuests,
+    --                                                "UserDectionRegion")
+    -- print('places' .. ' - start');
+    -- print(Utils.tableToString({places}));
+    -- print('places' .. ' - end');
 
-    regionsSetup(places, regionEnter, regionExit)
+    -- regionsSetup(places, regionEnter, regionExit)
 end
 
 function addRemoteObjects()
