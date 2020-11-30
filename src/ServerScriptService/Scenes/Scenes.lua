@@ -67,7 +67,7 @@ function module.addScenes(props)
         local dialog = Utils.getFirstDescendantByName(clonedScene,
                                                       "WallTemplate")
         print('dialog' .. ' - start');
-        print(Utils.tableToString({dialog.Position.Y}));
+        print(Utils.tableToString({dialog.Position}));
         print('dialog' .. ' - end');
 
         dialog.Anchored = false
@@ -75,7 +75,7 @@ function module.addScenes(props)
         dialog.Anchored = true
 
         print('dialog' .. ' - start');
-        print(Utils.tableToString({dialog.Position.Y}));
+        print(Utils.tableToString({dialog.Position}));
         print('dialog' .. ' - end');
         print('');
     end
@@ -89,6 +89,7 @@ function module.addScenes(props)
         dialog.Anchored = true
     end
 
+    local output = {}
     for i, sceneConfig in ipairs(sceneConfigs) do
         local entered = {value = false}
         local numPages = #sceneConfig.frames
@@ -152,12 +153,6 @@ function module.addScenes(props)
         -- 
         -- 
 
-        local weld = Instance.new("WeldConstraint")
-        weld.Parent = workspace
-        weld.Part0 = parent
-        weld.Part1 = clonedScene.PrimaryPart
-        weld.Name = 'zzz-scene weld'
-
         local sceneFolder = Utils.getOrCreateFolder(
                                 {
                 name = clonedScene.Name .. i,
@@ -180,8 +175,6 @@ function module.addScenes(props)
 
         Characters.addCharactersToScene(charProps)
         Location.addLocation({scene = clonedScene, sceneConfig = sceneConfig})
-
-        hideWall(clonedScene)
 
         local gameTitleLabel = Utils.getFirstDescendantByName(clonedScene,
                                                               "GameTitleLabel")
@@ -227,8 +220,17 @@ function module.addScenes(props)
         }
         Buttons.doFrameStuff(props2)
 
+        -- hideWall(clonedScene)
+        -- local weld = Instance.new("WeldConstraint")
+        -- weld.Parent = workspace
+        -- weld.Part0 = parent
+        -- weld.Part1 = clonedScene.PrimaryPart
+        -- weld.Name = 'zzz-scene weld'
+
+        table.insert(output, clonedScene)
     end
     sceneTemplateModel:Destroy()
+    return output
 end
 
 return module

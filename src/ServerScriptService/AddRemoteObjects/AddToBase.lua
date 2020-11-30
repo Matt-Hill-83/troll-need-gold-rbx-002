@@ -15,51 +15,6 @@ function configGame()
     -- Utils.reportPlayerLocation()
 end
 
-function setupUserDetectionRegions()
-    -- local regionsSetup = DetectUser
-    -- local function regionEnter(plr, region)
-    --     print(plr.Name .. " entered " .. region.Name)
-
-    -- end
-
-    -- local function regionExit(plr, region)
-    --     print(plr.Name .. " left " .. region.Name)
-    --     local dialog = Utils.getFirstDescendantByName(region, "WallTemplate")
-    --     dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
-    -- end
-
-    -- local myStuff = workspace:FindFirstChild("MyStuff")
-    -- local runTimeQuests = Utils.getFirstDescendantByName(myStuff,
-    --                                                      "RunTimeQuests")
-
-    -- local clones =
-    --     Utils.getDescendantsByNameMatch(myStuff, "SceneTemplateClone")
-
-    -- for i = 1, #clones do
-    --     local scene = clones[i]
-
-    --     if scene:IsA('Model') then
-    --         local region = Utils.getFirstDescendantByName(scene,
-    --                                                       "UserDectionRegion")
-    --         if region then
-
-    --             print('region' .. ' - start');
-    --             print(region);
-    --             print('region' .. ' - end');
-    --             region.Name = region.Name .. "-" .. i
-    --         end
-    --     end
-    -- end
-
-    -- local places = Utils.getDescendantsByNameMatch(runTimeQuests,
-    --                                                "UserDectionRegion")
-    -- print('places' .. ' - start');
-    -- print(Utils.tableToString({places}));
-    -- print('places' .. ' - end');
-
-    -- regionsSetup(places, regionEnter, regionExit)
-end
-
 function addRemoteObjects()
     configGame()
 
@@ -120,16 +75,39 @@ function addRemoteObjects()
             gridPadding = gridPadding,
             questFolder = questFolder
         }
-        Scenes.addScenes(addScenesProps)
+        local scenes = Scenes.addScenes(addScenesProps)
 
-        local questCFrame = questBlock.CFrame
+        local function hideWall(clonedScene)
+
+            local dialog = Utils.getFirstDescendantByName(clonedScene,
+                                                          "WallTemplate")
+            print('dialog' .. ' - start');
+            print(Utils.tableToString({dialog.Position}));
+            print('dialog' .. ' - end');
+
+            dialog.Anchored = false
+            dialog.Position = dialog.Position + Vector3.new(-20, 200, 0)
+            dialog.Anchored = true
+
+            print('dialog' .. ' - start');
+            print(Utils.tableToString({dialog.Position}));
+            print('dialog' .. ' - end');
+            print('');
+        end
+
+        for i, scene in ipairs(scenes) do
+            hideWall(scene)
+            -- 
+        end
+
+        -- local questCFrame = questBlock.CFrame
         -- questBlock.CFrame = questCFrame *
         --                         CFrame.new(Vector3.new(0, -sceneHeight, 0)) *
         --                         CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
         sibling = questBlock
 
     end
-    setupUserDetectionRegions()
+    -- setupUserDetectionRegions()
     questBlockTemplate:Destroy()
 end
 
