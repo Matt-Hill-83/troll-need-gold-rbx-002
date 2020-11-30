@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>399.988892</X>
-					<Y>74.3149567</Y>
-					<Z>-184.413666</Z>
-					<R00>0.98881501</R00>
-					<R01>0.041632086</R01>
-					<R02>-0.143218949</R02>
-					<R10>-0</R10>
-					<R11>0.960252106</R11>
-					<R12>0.279134125</R12>
-					<R20>0.149147242</R20>
-					<R21>-0.276012003</R21>
-					<R22>0.949511707</R22>
+					<X>505.939758</X>
+					<Y>150.987595</Y>
+					<Z>-144.86499</Z>
+					<R00>0.544256449</R00>
+					<R01>-0.478911072</R01>
+					<R02>0.688788056</R02>
+					<R10>1.49011612e-08</R10>
+					<R11>0.821042538</R11>
+					<R12>0.570866942</R12>
+					<R20>-0.838918924</R20>
+					<R21>-0.310698003</R21>
+					<R22>0.446857721</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -17052,7 +17052,6 @@ function addRemoteObjects()
             sibling = sibling,
             wallSize = wallSize,
             questBlockTemplate = questBlockTemplateClone,
-            -- isFirst = i == 1,
             index = i
         }
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
@@ -21154,7 +21153,6 @@ getStartPosition = function(props)
     local childSize = child.Size
     local desiredOffsetFromParentEdge = Vector3.new(-gridPadding / 2, 0,
                                                     -gridPadding / 2)
-    -- local desiredOffsetFromParentEdge = Vector3.new(-4, 0, -4)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
@@ -21222,7 +21220,6 @@ function module.addScenes(props)
             })
         clonedScene.Name = clonedScene.Name .. i
 
-        Utils.unAttachAllChildParts(clonedScene)
         local weld = Instance.new("WeldConstraint")
         weld.Parent = workspace
         weld.Part0 = parent
@@ -21234,8 +21231,7 @@ function module.addScenes(props)
                 name = clonedScene.Name .. i,
                 parent = questFolder
             })
-        -- clonedScene.Parent = parent
-        -- clonedScene.Parent = questFolder
+
         clonedScene.Parent = sceneFolder
 
         Bridges.destroyBridges({
@@ -21298,6 +21294,7 @@ function module.addScenes(props)
         Buttons.doFrameStuff(props2)
 
     end
+    sceneTemplateModel:Destroy()
 end
 
 return module

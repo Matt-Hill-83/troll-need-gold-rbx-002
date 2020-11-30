@@ -95,7 +95,6 @@ function addRemoteObjects()
             sibling = sibling,
             wallSize = wallSize,
             questBlockTemplate = questBlockTemplateClone,
-            -- isFirst = i == 1,
             index = i
         }
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)

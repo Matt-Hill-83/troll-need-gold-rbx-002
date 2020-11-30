@@ -16,7 +16,6 @@ getStartPosition = function(props)
     local childSize = child.Size
     local desiredOffsetFromParentEdge = Vector3.new(-gridPadding / 2, 0,
                                                     -gridPadding / 2)
-    -- local desiredOffsetFromParentEdge = Vector3.new(-4, 0, -4)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
@@ -84,7 +83,6 @@ function module.addScenes(props)
             })
         clonedScene.Name = clonedScene.Name .. i
 
-        Utils.unAttachAllChildParts(clonedScene)
         local weld = Instance.new("WeldConstraint")
         weld.Parent = workspace
         weld.Part0 = parent
@@ -96,8 +94,7 @@ function module.addScenes(props)
                 name = clonedScene.Name .. i,
                 parent = questFolder
             })
-        -- clonedScene.Parent = parent
-        -- clonedScene.Parent = questFolder
+
         clonedScene.Parent = sceneFolder
 
         Bridges.destroyBridges({
@@ -160,6 +157,7 @@ function module.addScenes(props)
         Buttons.doFrameStuff(props2)
 
     end
+    sceneTemplateModel:Destroy()
 end
 
 return module
