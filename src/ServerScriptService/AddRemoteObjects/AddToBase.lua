@@ -84,7 +84,7 @@ function addRemoteObjects()
         sibling = questBlock
 
     end
-    questBlockTemplate:Destroy()
+    -- questBlockTemplate:Destroy()
 end
 
 module.addRemoteObjects = addRemoteObjects

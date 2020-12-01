@@ -187,7 +187,7 @@ function module.addScenes(props)
         Buttons.doFrameStuff(props2)
 
     end
-    -- sceneTemplateModel:Destroy()
+    sceneTemplateModel:Destroy()
 end
 
 return module

@@ -194,7 +194,7 @@ renderQuestBlock = function(props)
         template = dockWallRight
     })
 
-    dockPositioner:Destroy()
+    -- dockPositioner:Destroy()
     -- local questCFrame = dockPositioner.CFrame
     -- dockPositioner.CFrame = questCFrame * CFrame.new(Vector3.new(0, -40, 0)) *
     --                             CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
