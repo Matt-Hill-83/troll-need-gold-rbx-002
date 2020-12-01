@@ -72,6 +72,9 @@ function module.addScenes(props)
             if descendant:IsA("BasePart") then
                 descendant.Transparency = 1
                 descendant.CanCollide = true
+
+                -- This is unrelaetd, but needs to happen.
+                descendant.Anchored = true
             end
             if descendant:IsA("ScrollingFrame") then
                 descendant.Visible = false
