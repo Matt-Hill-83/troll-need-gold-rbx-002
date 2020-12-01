@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>148.136002</X>
-					<Y>219.505951</Y>
-					<Z>-719.375183</Z>
-					<R00>-0.745188415</R00>
-					<R01>0.0488644876</R01>
-					<R02>-0.665061355</R02>
+					<X>534.625854</X>
+					<Y>135.81781</Y>
+					<Z>-223.482422</Z>
+					<R00>-0.682318449</R00>
+					<R01>0.715083539</R01>
+					<R02>-0.151977867</R02>
 					<R10>-0</R10>
-					<R11>0.997311831</R11>
-					<R12>0.0732761323</R12>
-					<R20>0.666854084</R20>
-					<R21>0.0546045266</R21>
-					<R22>-0.743185103</R22>
+					<R11>0.207888395</R11>
+					<R12>0.978152633</R12>
+					<R20>0.73105514</R20>
+					<R21>0.667411566</R21>
+					<R22>-0.141846091</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>158.776901</X>
-					<Y>218.333542</Y>
-					<Z>-707.484314</Z>
+					<X>548</X>
+					<Y>49.7397804</Y>
+					<Z>-210.999878</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -382,11 +382,11 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 										<Z>-211</Z>
 										<R00>1</R00>
 										<R01>0</R01>
-										<R02>0</R02>
+										<R02>2.72848411e-12</R02>
 										<R10>0</R10>
 										<R11>1</R11>
 										<R12>0</R12>
-										<R20>0</R20>
+										<R20>2.72848411e-12</R20>
 										<R21>0</R21>
 										<R22>1</R22>
 									</CoordinateFrame>
@@ -988,6 +988,32 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
+								<Item class="WeldConstraint" referent="RBX3989a8706ec545ef8886f0a9c27ba70d">
+									<Properties>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<CoordinateFrame name="CFrame0">
+											<X>-0.22277832</X>
+											<Y>11.0099907</Y>
+											<Z>6.18778992</Z>
+											<R00>0.707104325</R00>
+											<R01>0</R01>
+											<R02>-0.707105339</R02>
+											<R10>0</R10>
+											<R11>0.999997854</R11>
+											<R12>0</R12>
+											<R20>0.707104325</R20>
+											<R21>0</R21>
+											<R22>0.707105339</R22>
+										</CoordinateFrame>
+										<bool name="Enabled">true</bool>
+										<string name="Name">WeldConstraint</string>
+										<Ref name="Part0Internal">RBXa3bcf753fde5464899a4f15d57c876c7</Ref>
+										<Ref name="Part1Internal">RBX1df64d7ef9b74b9abd91982517212af3</Ref>
+										<int64 name="SourceAssetId">-1</int64>
+										<int name="State">3</int>
+										<BinaryString name="Tags"></BinaryString>
+									</Properties>
+								</Item>
 							</Item>
 							<Item class="Part" referent="RBXc25c55253a8f48ddb9dc3e3e5e27d63a">
 								<Properties>
@@ -1002,9 +1028,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<token name="BottomSurface">0</token>
 									<token name="BottomSurfaceInput">0</token>
 									<CoordinateFrame name="CFrame">
-										<X>548</X>
+										<X>550.5</X>
 										<Y>49.7397804</Y>
-										<Z>-210.999878</Z>
+										<Z>-208.999893</Z>
 										<R00>1</R00>
 										<R01>0</R01>
 										<R02>8.04666251e-06</R02>
@@ -1060,9 +1086,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<token name="formFactorRaw">1</token>
 									<token name="shape">1</token>
 									<Vector3 name="size">
-										<X>28</X>
+										<X>57</X>
 										<Y>12.8400002</Y>
-										<Z>28</Z>
+										<Z>54</Z>
 									</Vector3>
 								</Properties>
 								<Item class="SpotLight" referent="RBX0950209b564e40b3b5228b3a43e2e76c">
@@ -1103,34 +1129,34 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
-								<Item class="Weld" referent="RBX79f38a2d755a42fd8269a2a0b30cd8dd">
+								<Item class="Weld" referent="RBXaa4d3bd7a7964f468e7db1f2ab7dcf27">
 									<Properties>
 										<BinaryString name="AttributesSerialize"></BinaryString>
 										<CoordinateFrame name="C0">
 											<X>0</X>
-											<Y>-6.41989136</Y>
+											<Y>-6.42000198</Y>
 											<Z>0</Z>
 											<R00>1</R00>
-											<R01>7.98705696e-06</R01>
+											<R01>0</R01>
 											<R02>0</R02>
 											<R10>0</R10>
 											<R11>0</R11>
 											<R12>-1</R12>
-											<R20>-7.98705605e-06</R20>
+											<R20>9.09494702e-13</R20>
 											<R21>1</R21>
 											<R22>0</R22>
 										</CoordinateFrame>
 										<CoordinateFrame name="C1">
-											<X>-0.269042969</X>
-											<Y>1.99068832</Y>
-											<Z>0.000122070312</Z>
+											<X>2.23095703</X>
+											<Y>1.9905777</Y>
+											<Z>2.00010681</Z>
 											<R00>1</R00>
-											<R01>1.60337186e-05</R01>
+											<R01>8.04666342e-06</R01>
 											<R02>0</R02>
 											<R10>0</R10>
 											<R11>0</R11>
 											<R12>-1</R12>
-											<R20>-1.60337186e-05</R20>
+											<R20>-8.04665979e-06</R20>
 											<R21>1</R21>
 											<R22>0</R22>
 										</CoordinateFrame>
@@ -1203,7 +1229,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 										<X>532.239258</X>
 										<Y>70.2878113</Y>
 										<Z>-226.970062</Z>
-										<R00>-4.37113101e-08</R00>
+										<R00>-4.37140386e-08</R00>
 										<R01>0</R01>
 										<R02>0.999998093</R02>
 										<R10>0</R10>
@@ -1211,7 +1237,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 										<R12>0</R12>
 										<R20>-0.999997377</R20>
 										<R21>0</R21>
-										<R22>-4.37112782e-08</R22>
+										<R22>-4.37085497e-08</R22>
 									</CoordinateFrame>
 									<bool name="CanCollide">true</bool>
 									<bool name="CastShadow">true</bool>
@@ -1782,7 +1808,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 										<X>532.299255</X>
 										<Y>78.2878113</Y>
 										<Z>-226.969971</Z>
-										<R00>0</R00>
+										<R00>2.72848411e-12</R00>
 										<R01>0</R01>
 										<R02>-0.999998093</R02>
 										<R10>0</R10>
@@ -1790,7 +1816,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 										<R12>0</R12>
 										<R20>0.999997377</R20>
 										<R21>0</R21>
-										<R22>0</R22>
+										<R22>-2.72848411e-12</R22>
 									</CoordinateFrame>
 									<bool name="CanCollide">true</bool>
 									<bool name="CastShadow">true</bool>
@@ -2125,11 +2151,11 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 										<Z>-227.021561</Z>
 										<R00>0.999998212</R00>
 										<R01>0</R01>
-										<R02>3.55270606e-15</R02>
+										<R02>2.73202988e-12</R02>
 										<R10>0</R10>
 										<R11>0.999999523</R11>
 										<R12>0</R12>
-										<R20>-3.55270944e-15</R20>
+										<R20>2.72492662e-12</R20>
 										<R21>0</R21>
 										<R22>0.999997497</R22>
 									</CoordinateFrame>
@@ -4459,7 +4485,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<X>566.338989</X>
 									<Y>46.3392143</Y>
 									<Z>-200.549896</Z>
-									<R00>0</R00>
+									<R00>2.72848411e-12</R00>
 									<R01>0</R01>
 									<R02>-1</R02>
 									<R10>0</R10>
@@ -4467,7 +4493,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<R12>0</R12>
 									<R20>1</R20>
 									<R21>0</R21>
-									<R22>0</R22>
+									<R22>-2.72848411e-12</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
 								<bool name="CastShadow">true</bool>
@@ -5638,7 +5664,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<X>540.343933</X>
 											<Y>48.2572861</Y>
 											<Z>-222.593811</Z>
-											<R00>0</R00>
+											<R00>2.72846524e-12</R00>
 											<R01>0</R01>
 											<R02>-0.999993086</R02>
 											<R10>0</R10>
@@ -5646,7 +5672,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<R12>0</R12>
 											<R20>0.999993086</R20>
 											<R21>0</R21>
-											<R22>0</R22>
+											<R22>-2.72846524e-12</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
@@ -5733,7 +5759,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 												<X>540.343994</X>
 												<Y>43.858223</Y>
 												<Z>-222.593887</Z>
-												<R00>0</R00>
+												<R00>2.72848411e-12</R00>
 												<R01>0</R01>
 												<R02>-1</R02>
 												<R10>0</R10>
@@ -5741,7 +5767,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 												<R12>0</R12>
 												<R20>1</R20>
 												<R21>0</R21>
-												<R22>0</R22>
+												<R22>-2.72848411e-12</R22>
 											</CoordinateFrame>
 											<bool name="CanCollide">true</bool>
 											<bool name="CastShadow">true</bool>
@@ -6394,7 +6420,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<X>530.769043</X>
 											<Y>45.3391991</Y>
 											<Z>-221</Z>
-											<R00>0</R00>
+											<R00>2.72848411e-12</R00>
 											<R01>0</R01>
 											<R02>-1</R02>
 											<R10>0</R10>
@@ -6402,7 +6428,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<R12>0</R12>
 											<R20>1</R20>
 											<R21>0</R21>
-											<R22>0</R22>
+											<R22>-2.72848411e-12</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
@@ -6551,11 +6577,11 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<Z>-228.5</Z>
 											<R00>1</R00>
 											<R01>0</R01>
-											<R02>0</R02>
+											<R02>2.72848411e-12</R02>
 											<R10>0</R10>
 											<R11>1</R11>
 											<R12>0</R12>
-											<R20>0</R20>
+											<R20>2.72848411e-12</R20>
 											<R21>0</R21>
 											<R22>1</R22>
 										</CoordinateFrame>
@@ -6628,11 +6654,11 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<Z>-228.5</Z>
 											<R00>1</R00>
 											<R01>0</R01>
-											<R02>0</R02>
+											<R02>2.72848411e-12</R02>
 											<R10>0</R10>
 											<R11>1</R11>
 											<R12>0</R12>
-											<R20>0</R20>
+											<R20>2.72848411e-12</R20>
 											<R21>0</R21>
 											<R22>1</R22>
 										</CoordinateFrame>
@@ -6703,7 +6729,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<X>530.769043</X>
 											<Y>45.3391991</Y>
 											<Z>-201.5</Z>
-											<R00>0</R00>
+											<R00>2.72848411e-12</R00>
 											<R01>0</R01>
 											<R02>-1</R02>
 											<R10>0</R10>
@@ -6711,7 +6737,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<R12>0</R12>
 											<R20>1</R20>
 											<R21>0</R21>
-											<R22>0</R22>
+											<R22>-2.72848411e-12</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
@@ -6782,11 +6808,11 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<Z>-228.5</Z>
 											<R00>1</R00>
 											<R01>0</R01>
-											<R02>0</R02>
+											<R02>2.72848411e-12</R02>
 											<R10>0</R10>
 											<R11>1</R11>
 											<R12>0</R12>
-											<R20>0</R20>
+											<R20>2.72848411e-12</R20>
 											<R21>0</R21>
 											<R22>1</R22>
 										</CoordinateFrame>
@@ -6857,7 +6883,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<X>530.769043</X>
 											<Y>45.3392143</Y>
 											<Z>-212</Z>
-											<R00>0</R00>
+											<R00>2.72848411e-12</R00>
 											<R01>0</R01>
 											<R02>-1</R02>
 											<R10>0</R10>
@@ -6865,7 +6891,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<R12>0</R12>
 											<R20>1</R20>
 											<R21>0</R21>
-											<R22>0</R22>
+											<R22>-2.72848411e-12</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
@@ -6977,7 +7003,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 												<X>565.769043</X>
 												<Y>45.3392143</Y>
 												<Z>-211</Z>
-												<R00>0</R00>
+												<R00>2.72848411e-12</R00>
 												<R01>0</R01>
 												<R02>-1</R02>
 												<R10>0</R10>
@@ -6985,7 +7011,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 												<R12>0</R12>
 												<R20>1</R20>
 												<R21>0</R21>
-												<R22>0</R22>
+												<R22>-2.72848411e-12</R22>
 											</CoordinateFrame>
 											<bool name="CanCollide">true</bool>
 											<bool name="CastShadow">true</bool>
@@ -7054,7 +7080,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 												<X>565.769043</X>
 												<Y>45.3391991</Y>
 												<Z>-222</Z>
-												<R00>0</R00>
+												<R00>2.72848411e-12</R00>
 												<R01>0</R01>
 												<R02>-1</R02>
 												<R10>0</R10>
@@ -7062,7 +7088,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 												<R12>0</R12>
 												<R20>1</R20>
 												<R21>0</R21>
-												<R22>0</R22>
+												<R22>-2.72848411e-12</R22>
 											</CoordinateFrame>
 											<bool name="CanCollide">true</bool>
 											<bool name="CastShadow">true</bool>
@@ -7131,7 +7157,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 												<X>565.769043</X>
 												<Y>45.3391991</Y>
 												<Z>-201</Z>
-												<R00>0</R00>
+												<R00>2.72848411e-12</R00>
 												<R01>0</R01>
 												<R02>-1</R02>
 												<R10>0</R10>
@@ -7139,7 +7165,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 												<R12>0</R12>
 												<R20>1</R20>
 												<R21>0</R21>
-												<R22>0</R22>
+												<R22>-2.72848411e-12</R22>
 											</CoordinateFrame>
 											<bool name="CanCollide">true</bool>
 											<bool name="CastShadow">true</bool>
@@ -7254,11 +7280,11 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 												<Z>-193.5</Z>
 												<R00>1</R00>
 												<R01>0</R01>
-												<R02>0</R02>
+												<R02>2.72848411e-12</R02>
 												<R10>0</R10>
 												<R11>1</R11>
 												<R12>0</R12>
-												<R20>0</R20>
+												<R20>2.72848411e-12</R20>
 												<R21>0</R21>
 												<R22>1</R22>
 											</CoordinateFrame>
@@ -7331,11 +7357,11 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 												<Z>-193.5</Z>
 												<R00>1</R00>
 												<R01>0</R01>
-												<R02>0</R02>
+												<R02>2.72848411e-12</R02>
 												<R10>0</R10>
 												<R11>1</R11>
 												<R12>0</R12>
-												<R20>0</R20>
+												<R20>2.72848411e-12</R20>
 												<R21>0</R21>
 												<R22>1</R22>
 											</CoordinateFrame>
@@ -7408,11 +7434,11 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 												<Z>-193.5</Z>
 												<R00>1</R00>
 												<R01>0</R01>
-												<R02>0</R02>
+												<R02>2.72848411e-12</R02>
 												<R10>0</R10>
 												<R11>1</R11>
 												<R12>0</R12>
-												<R20>0</R20>
+												<R20>2.72848411e-12</R20>
 												<R21>0</R21>
 												<R22>1</R22>
 											</CoordinateFrame>
@@ -7528,7 +7554,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<X>539.269043</X>
 											<Y>43.8391991</Y>
 											<Z>-244</Z>
-											<R00>0</R00>
+											<R00>2.72848411e-12</R00>
 											<R01>0</R01>
 											<R02>-1</R02>
 											<R10>0</R10>
@@ -7536,7 +7562,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<R12>0</R12>
 											<R20>1</R20>
 											<R21>0</R21>
-											<R22>0</R22>
+											<R22>-2.72848411e-12</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
@@ -7605,7 +7631,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<X>536.769043</X>
 											<Y>45.8391991</Y>
 											<Z>-245</Z>
-											<R00>0</R00>
+											<R00>2.72848411e-12</R00>
 											<R01>0</R01>
 											<R02>-1</R02>
 											<R10>0</R10>
@@ -7613,7 +7639,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<R12>0</R12>
 											<R20>1</R20>
 											<R21>0</R21>
-											<R22>0</R22>
+											<R22>-2.72848411e-12</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
@@ -7721,7 +7747,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<X>541.769043</X>
 											<Y>45.8391991</Y>
 											<Z>-245</Z>
-											<R00>0</R00>
+											<R00>2.72848411e-12</R00>
 											<R01>0</R01>
 											<R02>-1</R02>
 											<R10>0</R10>
@@ -7729,7 +7755,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<R12>0</R12>
 											<R20>1</R20>
 											<R21>0</R21>
-											<R22>0</R22>
+											<R22>-2.72848411e-12</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
@@ -7883,11 +7909,11 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<Z>-212</Z>
 											<R00>1</R00>
 											<R01>0</R01>
-											<R02>0</R02>
+											<R02>2.72848411e-12</R02>
 											<R10>0</R10>
 											<R11>1</R11>
 											<R12>0</R12>
-											<R20>0</R20>
+											<R20>2.72848411e-12</R20>
 											<R21>0</R21>
 											<R22>1</R22>
 										</CoordinateFrame>
@@ -7960,11 +7986,11 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<Z>-214.5</Z>
 											<R00>1</R00>
 											<R01>0</R01>
-											<R02>0</R02>
+											<R02>2.72848411e-12</R02>
 											<R10>0</R10>
 											<R11>1</R11>
 											<R12>0</R12>
-											<R20>0</R20>
+											<R20>2.72848411e-12</R20>
 											<R21>0</R21>
 											<R22>1</R22>
 										</CoordinateFrame>
@@ -8076,11 +8102,11 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 											<Z>-209.5</Z>
 											<R00>1</R00>
 											<R01>0</R01>
-											<R02>0</R02>
+											<R02>2.72848411e-12</R02>
 											<R10>0</R10>
 											<R11>1</R11>
 											<R12>0</R12>
-											<R20>0</R20>
+											<R20>2.72848411e-12</R20>
 											<R21>0</R21>
 											<R22>1</R22>
 										</CoordinateFrame>
@@ -13324,24 +13350,19 @@ function addRemoteObjects()
         }
         Scenes.addScenes(addScenesProps)
 
-        local changeOffset = i % 2 == 0
-
         local questCFrame = questBlock.CFrame
-        if not changeOffset then
-            print('no turn')
-            questBlock.CFrame = questCFrame *
-                                    CFrame.new(Vector3.new(0, -sceneHeight, 0))
-        else
-            print('turn')
-            questBlock.CFrame = questCFrame *
-                                    CFrame.new(Vector3.new(0, -sceneHeight, 0)) *
-                                    CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
 
-        end
+        local deg = (i % 2) * 90
+        -- questBlock.CFrame = questCFrame *
+        --                         CFrame.new(Vector3.new(0, -sceneHeight, 0)) *
+        --                         CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
+        questBlock.CFrame = questCFrame *
+                                CFrame.new(Vector3.new(0, -sceneHeight, 0))
+
         sibling = questBlock
 
     end
-    -- questBlockTemplate:Destroy()
+    questBlockTemplate:Destroy()
 end
 
 module.addRemoteObjects = addRemoteObjects
@@ -13630,38 +13651,21 @@ renderQuestBlock = function(props)
     local dockWallLeft = Utils.getFirstDescendantByName(dockModel,
                                                         "DockWallLeft")
 
-    local offset = -10
+    local offset = size.X
     -- local offset = 60
 
     if (isFirst) then offset = 0 end
 
-    local changeOffset = index % 2 == 0
-
     local desiredOffsetFromParentEdge = nil
     local itemDuplicationConfig = nil
 
-    -- if (true) then
+    desiredOffsetFromParentEdge = Vector3.new(offset, 0, -size.Z)
+    itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(-1, -1, -1),
+        moveTowardZero = Vector3.new(-1, 1, 1),
+        alignToChildFarEdge = Vector3.new(1, -1, 1)
+    }
 
-    -- if (false) then
-    if (not changeOffset) then
-        print('---------------true---------------')
-        desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
-        -- desiredOffsetFromParentEdge = Vector3.new(0, 0, offset)
-        itemDuplicationConfig = {
-            alignToParentFarEdge = Vector3.new(-1, -1, -1),
-            moveTowardZero = Vector3.new(-1, 1, 1),
-            alignToChildFarEdge = Vector3.new(1, -1, 1)
-        }
-    else
-        print('---------------false---------------')
-        desiredOffsetFromParentEdge = Vector3.new(-size.Z, 0, 0)
-        itemDuplicationConfig = {
-            alignToParentFarEdge = Vector3.new(-1, -1, 1),
-            moveTowardZero = Vector3.new(1, 1, 1),
-            alignToChildFarEdge = Vector3.new(1, -1, 1)
-        }
-
-    end
     local offsetProps = {
         parent = sibling,
         childSize = size,
@@ -15417,83 +15421,6 @@ module.questConfigs = {
     {
         questTitle = "--- rbx-001",
         startSceneCoords = {row = 0, col = 0},
-        endSceneCoords = {col = 2, row = 0},
-        sceneConfigs = {
-            {
-                name = "home",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "dog01",
-                                text = "Did you see the space ship?"
-                            }, {char = "robby01", text = "I am new here..."}
-                        },
-                        characters01 = {{name = "dog01"}},
-                        characters02 = {{name = "robby01"}}
-                    }
-                },
-                coordinates = {row = 0, col = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                maxRow = 0,
-                maxCol = 0
-            }, {
-                name = "log",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "dog01",
-                                text = "Did you see the space ship?"
-                            }, {char = "robby01", text = "I am new here..."}
-                        },
-                        characters01 = {{name = "dog01"}},
-                        characters02 = {{name = "robby01"}}
-                    }
-                },
-                coordinates = {col = 1, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 1
-            }, {
-                name = "cave",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "dog01",
-                                text = "Did you see the space ship?"
-                            }, {char = "robby01", text = "I am new here..."},
-                            {
-                                char = "trollKing01",
-                                text = "Mwa...  ha-ha ha-ha ha!!!"
-                            }
-                        },
-                        characters01 = {{name = "dog01"}},
-                        characters02 = {
-                            {name = "robby01"}, {name = "trollKing01"}
-                        }
-                    }
-                },
-                coordinates = {col = 2, row = 0},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = true,
-                maxRow = 0,
-                maxCol = 2
-            }
-        },
-        gridSize = {rows = 1, cols = 3}
-    }, {
-        questTitle = "--- rbx-002",
-        startSceneCoords = {row = 0, col = 0},
         endSceneCoords = {row = 0, col = 2},
         sceneConfigs = {
             {
@@ -15501,13 +15428,20 @@ module.questConfigs = {
                 frames = {
                     {
                         dialogs = {
-                            {
-                                char = "dog01",
-                                text = "Did you see the space ship?"
-                            }, {char = "robby01", text = "I am new here..."}
+                            {char = "kat", text = "Did you see the space ship?"},
+                            {char = "liz2", text = "I am new here..."},
+                            {char = "dog01", text = "I like bees"}
                         },
-                        characters01 = {{name = "dog01"}},
-                        characters02 = {{name = "robby01"}}
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {{name = "liz2"}}
+                    }, {
+                        dialogs = {
+                            {char = "kat", text = "yay bees"},
+                            {char = "dog01", text = "Bees are fun"},
+                            {char = "liz2", text = "We can play with bees!"}
+                        },
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {{name = "liz2"}}
                     }
                 },
                 coordinates = {row = 0, col = 0},
@@ -15569,7 +15503,7 @@ module.questConfigs = {
         },
         gridSize = {rows = 1, cols = 3}
     }, {
-        questTitle = "--- rbx-003",
+        questTitle = "--- rbx-002",
         startSceneCoords = {col = 0, row = 0},
         endSceneCoords = {col = 2, row = 0},
         sceneConfigs = {
@@ -15609,6 +15543,83 @@ module.questConfigs = {
                     }
                 },
                 coordinates = {row = 0, col = 1},
+                showBottomPath = false,
+                showRightPath = true,
+                showTopPath = false,
+                showLeftPath = true,
+                maxRow = 0,
+                maxCol = 1
+            }, {
+                name = "cave",
+                frames = {
+                    {
+                        dialogs = {
+                            {
+                                char = "dog01",
+                                text = "Did you see the space ship?"
+                            }, {char = "robby01", text = "I am new here..."},
+                            {
+                                char = "trollKing01",
+                                text = "Mwa...  ha-ha ha-ha ha!!!"
+                            }
+                        },
+                        characters01 = {{name = "dog01"}},
+                        characters02 = {
+                            {name = "robby01"}, {name = "trollKing01"}
+                        }
+                    }
+                },
+                coordinates = {col = 2, row = 0},
+                showBottomPath = false,
+                showRightPath = false,
+                showTopPath = false,
+                showLeftPath = true,
+                maxRow = 0,
+                maxCol = 2
+            }
+        },
+        gridSize = {rows = 1, cols = 3}
+    }, {
+        questTitle = "--- rbx-003",
+        startSceneCoords = {row = 0, col = 0},
+        endSceneCoords = {col = 2, row = 0},
+        sceneConfigs = {
+            {
+                name = "home",
+                frames = {
+                    {
+                        dialogs = {
+                            {
+                                char = "dog01",
+                                text = "Did you see the space ship?"
+                            }, {char = "robby01", text = "I am new here..."}
+                        },
+                        characters01 = {{name = "dog01"}},
+                        characters02 = {{name = "robby01"}}
+                    }
+                },
+                coordinates = {row = 0, col = 0},
+                showBottomPath = false,
+                showRightPath = true,
+                showTopPath = false,
+                showLeftPath = false,
+                maxRow = 0,
+                maxCol = 0
+            }, {
+                name = "log",
+                frames = {
+                    {
+                        dialogs = {
+                            {
+                                char = "dog01",
+                                text = "Did you see the space ship?"
+                            }, {char = "robby01", text = "I am new here..."}
+                        },
+                        characters01 = {{name = "dog01"}},
+                        characters02 = {{name = "robby01"}}
+                    }
+                },
+                coordinates = {col = 1, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
