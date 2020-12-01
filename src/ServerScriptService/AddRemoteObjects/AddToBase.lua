@@ -43,7 +43,7 @@ function addRemoteObjects()
 
         local desiredPadding = 18
         local wallWidth = 1
-        local wallHeight = 8
+        local wallHeight = 4
         local sceneHeight = 20
         local wallSize = Vector3.new(wallWidth, wallHeight, wallWidth)
         local gridPadding = desiredPadding + wallWidth * 2

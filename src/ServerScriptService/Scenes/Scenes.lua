@@ -91,7 +91,7 @@ function module.addScenes(props)
                 local descendant = descendants[i]
                 if descendant:IsA("BasePart") then
                     descendant.Transparency = 1
-                    descendant.CanCollide = true
+                    descendant.CanCollide = false
 
                     -- This is unrelaetd, but needs to happen.
                     descendant.Anchored = true
