@@ -63,7 +63,6 @@ function module.addScenes(props)
         })
 
     local function hideWall(clonedScene)
-        print("-----------------------------------hideWall")
         local dialog = Utils.getFirstDescendantByName(clonedScene,
                                                       "WallTemplate")
 
@@ -72,6 +71,7 @@ function module.addScenes(props)
             local descendant = descendants[i]
             if descendant:IsA("BasePart") then
                 descendant.Transparency = 1
+                descendant.CanCollide = true
             end
             if descendant:IsA("ScrollingFrame") then
                 descendant.Visible = false
@@ -87,7 +87,6 @@ function module.addScenes(props)
     end
 
     local function unHideWall(clonedScene)
-        print("-----------------------------------unhideWall---->>>>>>>>>>>>")
         local dialog = Utils.getFirstDescendantByName(clonedScene,
                                                       "WallTemplate")
         local descendants = dialog:GetDescendants()
@@ -95,6 +94,7 @@ function module.addScenes(props)
             local descendant = descendants[i]
             if descendant:IsA("BasePart") then
                 descendant.Transparency = 0
+                descendant.CanCollide = true
             end
             if descendant:IsA("ScrollingFrame") then
                 descendant.Visible = true
@@ -169,7 +169,6 @@ function module.addScenes(props)
         part.Touched:Connect(onPartTouched)
 
         local function onPartTouchEnded(otherPart)
-            -- print(part.Name .. " is no longer touching " .. otherPart.Name)
             local partParent = otherPart.Parent
             local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
             if humanoid then

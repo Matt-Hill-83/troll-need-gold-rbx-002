@@ -122,7 +122,6 @@ renderQuestBlock = function(props)
                                                         "DockWallLeft")
 
     local offset = 10
-    -- local offset = 60
 
     if (isFirst) then offset = 0 end
 
