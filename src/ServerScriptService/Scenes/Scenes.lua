@@ -127,10 +127,10 @@ function module.addScenes(props)
 
         clonedScene.Parent = sceneFolder
 
-        Bridges.destroyBridges({
-            sceneConfig = sceneConfig,
-            clonedScene = clonedScene
-        })
+        -- Bridges.destroyBridges({
+        --     sceneConfig = sceneConfig,
+        --     clonedScene = clonedScene
+        -- })
 
         local frameConfig = sceneConfig.frames[pageNum]
         local charProps = {
@@ -139,8 +139,8 @@ function module.addScenes(props)
             sceneFolder = sceneFolder
         }
 
-        Characters.addCharactersToScene(charProps)
-        Location.addLocation({scene = clonedScene, sceneConfig = sceneConfig})
+        -- Characters.addCharactersToScene(charProps)
+        -- Location.addLocation({scene = clonedScene, sceneConfig = sceneConfig})
 
         local gameTitleLabel = Utils.getFirstDescendantByName(clonedScene,
                                                               "GameTitleLabel")

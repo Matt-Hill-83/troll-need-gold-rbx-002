@@ -59,6 +59,7 @@ function addRemoteObjects()
         local questBlockProps = {
             parent = questsOrigin,
             size = Vector3.new(x, 2, z),
+            -- size = Vector3.new(z, 2, x),
             sibling = sibling,
             wallSize = wallSize,
             questBlockTemplate = questBlockTemplateClone,
