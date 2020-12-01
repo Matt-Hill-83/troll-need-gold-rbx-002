@@ -82,19 +82,79 @@ function module.addScenes(props)
             })
         clonedScene.Name = clonedScene.Name .. i
 
-        local function regionEnter(plr, clonedScene, entered)
-            if not entered.value then
-                local dialog = Utils.getFirstDescendantByName(clonedScene,
-                                                              "WallTemplate")
+        local function hideWall(clonedScene)
+            local dialog = Utils.getFirstDescendantByName(clonedScene,
+                                                          "WallTemplate")
 
-                dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
-                dialog.Anchored = true
-                entered.value = true
+            local descendants = dialog:GetDescendants()
+            for i = 1, #descendants do
+                local descendant = descendants[i]
+                if descendant:IsA("BasePart") then
+                    descendant.Transparency = 1
+                    descendant.CanCollide = true
+
+                    -- This is unrelaetd, but needs to happen.
+                    descendant.Anchored = true
+                end
+                if descendant:IsA("ScrollingFrame") then
+                    descendant.Visible = false
+                end
+                if descendant:IsA("TextLabel") then
+                    descendant.Visible = false
+                end
+                if descendant:IsA("TextButton") then
+                    descendant.Visible = false
+                end
+            end
+
+        end
+
+        local function unHideWall(clonedScene)
+            local dialog = Utils.getFirstDescendantByName(clonedScene,
+                                                          "WallTemplate")
+            local descendants = dialog:GetDescendants()
+            for i = 1, #descendants do
+                local descendant = descendants[i]
+                if descendant:IsA("BasePart") then
+                    descendant.Transparency = 0
+                    descendant.CanCollide = true
+                end
+                if descendant:IsA("ScrollingFrame") then
+                    descendant.Visible = true
+                end
+                if descendant:IsA("TextLabel") then
+                    descendant.Visible = true
+                end
+                if descendant:IsA("TextButton") then
+                    descendant.Visible = true
+                end
             end
         end
 
-        -- 
-        -- 
+        local function regionEnter(plr, clonedScene, entered)
+            local buttonPressed = false
+            if not buttonPressed then
+                buttonPressed = true
+                if not entered.value then
+                    unHideWall(clonedScene)
+                    entered.value = true
+                end
+                buttonPressed = false
+            end
+        end
+
+        local function regionExit(plr, clonedScene, entered)
+            local buttonPressed = false
+            if not buttonPressed then
+                buttonPressed = true
+                if entered.value then
+                    hideWall(clonedScene)
+                    entered.value = false
+                end
+                buttonPressed = false
+            end
+        end
+
         local part = Utils.getFirstDescendantByName(clonedScene,
                                                     "UserDectionRegion")
 
@@ -110,14 +170,17 @@ function module.addScenes(props)
 
         part.Touched:Connect(onPartTouched)
 
-        -- 
-        -- 
+        local function onPartTouchEnded(otherPart)
+            local partParent = otherPart.Parent
+            local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
+            if humanoid then
+                regionExit(humanoid, clonedScene, entered)
+            end
+        end
 
-        local weld = Instance.new("WeldConstraint")
-        weld.Parent = workspace
-        weld.Part0 = parent
-        weld.Part1 = clonedScene.PrimaryPart
-        weld.Name = 'zzz-scene weld'
+        part.TouchEnded:Connect(onPartTouchEnded)
+        -- 
+        -- 
 
         local sceneFolder = Utils.getOrCreateFolder(
                                 {
@@ -185,6 +248,13 @@ function module.addScenes(props)
             sceneFolder = sceneFolder
         }
         Buttons.doFrameStuff(props2)
+
+        hideWall(clonedScene)
+        -- local weld = Instance.new("WeldConstraint")
+        -- weld.Parent = workspace
+        -- weld.Part0 = parent
+        -- weld.Part1 = clonedScene.PrimaryPart
+        -- weld.Name = 'zzz-scene weld'
 
     end
     sceneTemplateModel:Destroy()
