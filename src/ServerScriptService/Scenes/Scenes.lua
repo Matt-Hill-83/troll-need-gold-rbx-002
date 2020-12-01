@@ -63,30 +63,49 @@ function module.addScenes(props)
         })
 
     local function hideWall(clonedScene)
-
+        print("-----------------------------------hideWall")
         local dialog = Utils.getFirstDescendantByName(clonedScene,
                                                       "WallTemplate")
-        print('dialog' .. ' - start');
-        print(Utils.tableToString({dialog.Position}));
-        print('dialog' .. ' - end');
 
-        dialog.Anchored = false
-        dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
-        dialog.Anchored = true
+        local descendants = dialog:GetDescendants()
+        for i = 1, #descendants do
+            local descendant = descendants[i]
+            if descendant:IsA("BasePart") then
+                descendant.Transparency = 1
+            end
+            if descendant:IsA("ScrollingFrame") then
+                descendant.Visible = false
+            end
+            if descendant:IsA("TextLabel") then
+                descendant.Visible = false
+            end
+            if descendant:IsA("TextButton") then
+                descendant.Visible = false
+            end
+        end
 
-        print('dialog' .. ' - start');
-        print(Utils.tableToString({dialog.Position}));
-        print('dialog' .. ' - end');
-        print('');
     end
 
     local function unHideWall(clonedScene)
+        print("-----------------------------------unhideWall---->>>>>>>>>>>>")
         local dialog = Utils.getFirstDescendantByName(clonedScene,
                                                       "WallTemplate")
-
-        dialog.Anchored = false
-        dialog.Position = dialog.Position + Vector3.new(0, -200, 0)
-        dialog.Anchored = true
+        local descendants = dialog:GetDescendants()
+        for i = 1, #descendants do
+            local descendant = descendants[i]
+            if descendant:IsA("BasePart") then
+                descendant.Transparency = 0
+            end
+            if descendant:IsA("ScrollingFrame") then
+                descendant.Visible = true
+            end
+            if descendant:IsA("TextLabel") then
+                descendant.Visible = true
+            end
+            if descendant:IsA("TextButton") then
+                descendant.Visible = true
+            end
+        end
     end
 
     local output = {}
@@ -111,16 +130,26 @@ function module.addScenes(props)
         clonedScene.Name = clonedScene.Name .. i
 
         local function regionEnter(plr, clonedScene, entered)
-            if not entered.value then
-                hideWall(clonedScene)
-                entered.value = true
+            local buttonPressed = false
+            if not buttonPressed then
+                buttonPressed = true
+                if not entered.value then
+                    unHideWall(clonedScene)
+                    entered.value = true
+                end
+                buttonPressed = false
             end
         end
 
         local function regionExit(plr, clonedScene, entered)
-            if entered.value then
-                unHideWall(clonedScene)
-                entered.value = false
+            local buttonPressed = false
+            if not buttonPressed then
+                buttonPressed = true
+                if entered.value then
+                    hideWall(clonedScene)
+                    entered.value = false
+                end
+                buttonPressed = false
             end
         end
 
@@ -220,7 +249,7 @@ function module.addScenes(props)
         }
         Buttons.doFrameStuff(props2)
 
-        -- hideWall(clonedScene)
+        hideWall(clonedScene)
         -- local weld = Instance.new("WeldConstraint")
         -- weld.Parent = workspace
         -- weld.Part0 = parent

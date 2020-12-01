@@ -29,6 +29,7 @@ function addRemoteObjects()
     local sibling = questsOrigin
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
 
+    local quests = {}
     for i, questConfig in pairs(questConfigs) do
         local gridSize = questConfig.gridSize
 
@@ -77,38 +78,20 @@ function addRemoteObjects()
         }
         local scenes = Scenes.addScenes(addScenesProps)
 
-        local function hideWall(clonedScene)
-
-            local dialog = Utils.getFirstDescendantByName(clonedScene,
-                                                          "WallTemplate")
-            print('dialog' .. ' - start');
-            print(Utils.tableToString({dialog.Position}));
-            print('dialog' .. ' - end');
-
-            dialog.Anchored = false
-            dialog.Position = dialog.Position + Vector3.new(-20, 200, 0)
-            dialog.Anchored = true
-
-            print('dialog' .. ' - start');
-            print(Utils.tableToString({dialog.Position}));
-            print('dialog' .. ' - end');
-            print('');
-        end
-
-        for i, scene in ipairs(scenes) do
-            hideWall(scene)
-            -- 
-        end
-
         -- local questCFrame = questBlock.CFrame
         -- questBlock.CFrame = questCFrame *
         --                         CFrame.new(Vector3.new(0, -sceneHeight, 0)) *
         --                         CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
         sibling = questBlock
 
+        table.insert(quests, scenes)
     end
-    -- setupUserDetectionRegions()
+
     questBlockTemplate:Destroy()
+
+    for i, quest in pairs(quests) do
+        -- 
+    end
 end
 
 module.addRemoteObjects = addRemoteObjects
