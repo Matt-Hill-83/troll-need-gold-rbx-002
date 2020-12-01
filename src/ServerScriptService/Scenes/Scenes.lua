@@ -95,20 +95,20 @@ function module.addScenes(props)
 
         -- 
         -- 
-        -- local part = Utils.getFirstDescendantByName(clonedScene,
-        --                                             "UserDectionRegion")
+        local part = Utils.getFirstDescendantByName(clonedScene,
+                                                    "UserDectionRegion")
 
-        -- local function onPartTouched(otherPart)
-        --     -- Get the other part's parent
-        --     local partParent = otherPart.Parent
-        --     -- Look for a humanoid in the parent
-        --     local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
-        --     if humanoid then
-        --         regionEnter(humanoid, clonedScene, entered)
-        --     end
-        -- end
+        local function onPartTouched(otherPart)
+            -- Get the other part's parent
+            local partParent = otherPart.Parent
+            -- Look for a humanoid in the parent
+            local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
+            if humanoid then
+                regionEnter(humanoid, clonedScene, entered)
+            end
+        end
 
-        -- part.Touched:Connect(onPartTouched)
+        part.Touched:Connect(onPartTouched)
 
         -- 
         -- 

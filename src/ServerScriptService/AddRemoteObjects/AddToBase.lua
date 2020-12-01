@@ -3,7 +3,6 @@ local Sss = game:GetService("ServerScriptService")
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
 
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
-local DetectUser = require(Sss.Source.Utils.DetectUser)
 local Scenes = require(Sss.Source.Scenes.Scenes)
 local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
 
@@ -13,51 +12,6 @@ function configGame()
     local Players = game:GetService("Players")
     Players.RespawnTime = 0
     -- Utils.reportPlayerLocation()
-end
-
-function setupUserDetectionRegions()
-    -- local regionsSetup = DetectUser
-    -- local function regionEnter(plr, region)
-    --     print(plr.Name .. " entered " .. region.Name)
-
-    -- end
-
-    -- local function regionExit(plr, region)
-    --     print(plr.Name .. " left " .. region.Name)
-    --     local dialog = Utils.getFirstDescendantByName(region, "WallTemplate")
-    --     dialog.Position = dialog.Position + Vector3.new(0, 200, 0)
-    -- end
-
-    -- local myStuff = workspace:FindFirstChild("MyStuff")
-    -- local runTimeQuests = Utils.getFirstDescendantByName(myStuff,
-    --                                                      "RunTimeQuests")
-
-    -- local clones =
-    --     Utils.getDescendantsByNameMatch(myStuff, "SceneTemplateClone")
-
-    -- for i = 1, #clones do
-    --     local scene = clones[i]
-
-    --     if scene:IsA('Model') then
-    --         local region = Utils.getFirstDescendantByName(scene,
-    --                                                       "UserDectionRegion")
-    --         if region then
-
-    --             print('region' .. ' - start');
-    --             print(region);
-    --             print('region' .. ' - end');
-    --             region.Name = region.Name .. "-" .. i
-    --         end
-    --     end
-    -- end
-
-    -- local places = Utils.getDescendantsByNameMatch(runTimeQuests,
-    --                                                "UserDectionRegion")
-    -- print('places' .. ' - start');
-    -- print(Utils.tableToString({places}));
-    -- print('places' .. ' - end');
-
-    -- regionsSetup(places, regionEnter, regionExit)
 end
 
 function addRemoteObjects()
@@ -129,7 +83,6 @@ function addRemoteObjects()
         sibling = questBlock
 
     end
-    setupUserDetectionRegions()
     questBlockTemplate:Destroy()
 end
 
