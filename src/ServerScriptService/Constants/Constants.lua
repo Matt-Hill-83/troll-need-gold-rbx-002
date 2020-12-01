@@ -47,6 +47,11 @@ module.characters = {
     britta01 = britta,
     britta04 = britta,
 
+    robby01 = {
+        displayName = "Robby",
+        decalId = '5991273473',
+        backgroundColorIdx = 1
+    },
     waterfall = {
         displayName = "Waterfall",
         decalId = '5991339525',

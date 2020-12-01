@@ -94,7 +94,7 @@ function module.addScenes(props)
                     descendant.CanCollide = false
 
                     -- This is unrelaetd, but needs to happen.
-                    descendant.Anchored = true
+                    -- descendant.Anchored = true
                 end
                 if descendant:IsA("ScrollingFrame") then
                     descendant.Visible = false
