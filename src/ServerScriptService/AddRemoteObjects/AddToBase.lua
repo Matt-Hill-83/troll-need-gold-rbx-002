@@ -80,7 +80,7 @@ function addRemoteObjects()
         local desiredPadding = 18
         local wallWidth = 1
         local wallHeight = 16
-        local sceneHeight = 40
+        local sceneHeight = 80
         local wallSize = Vector3.new(wallWidth, wallHeight, wallWidth)
         local gridPadding = desiredPadding + wallWidth * 2
 
@@ -123,9 +123,9 @@ function addRemoteObjects()
         Scenes.addScenes(addScenesProps)
 
         local questCFrame = questBlock.CFrame
-        -- questBlock.CFrame = questCFrame *
-        --                         CFrame.new(Vector3.new(0, -sceneHeight, 0)) *
-        --                         CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
+        questBlock.CFrame = questCFrame *
+                                CFrame.new(Vector3.new(0, -sceneHeight, 0)) *
+                                CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
         sibling = questBlock
 
     end
