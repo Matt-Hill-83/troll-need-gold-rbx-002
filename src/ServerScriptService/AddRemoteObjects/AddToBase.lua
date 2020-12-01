@@ -78,6 +78,9 @@ function addRemoteObjects()
         }
         local scenes = Scenes.addScenes(addScenesProps)
 
+        local questCFrame = questBlock.CFrame
+        questBlock.CFrame = questCFrame *
+                                CFrame.new(Vector3.new(0, -sceneHeight, 0))
         -- local questCFrame = questBlock.CFrame
         -- questBlock.CFrame = questCFrame *
         --                         CFrame.new(Vector3.new(0, -sceneHeight, 0)) *
