@@ -2,6 +2,7 @@ local Sss = game:GetService("ServerScriptService")
 local Part = require(Sss.Source.AddRemoteObjects.Part)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local Constants = require(Sss.Source.Constants.Constants)
 
 local module = {}
 
@@ -104,8 +105,8 @@ renderQuestBlock = function(props)
     local parent = props.parent
     local sibling = props.sibling
     local size = props.size
-    -- local isFirst = props.isFirst
     local wallSize = props.wallSize
+    local sceneHeight = props.sceneHeight
     local dockModel = props.questBlockTemplate
     local index = props.index
     local isFirst = index == 1
@@ -121,16 +122,15 @@ renderQuestBlock = function(props)
     local dockWallLeft = Utils.getFirstDescendantByName(dockModel,
                                                         "DockWallLeft")
 
-    -- local offset = size.X
-    local offset = 100
+    local offsetX = Constants.islandLength
+    local offsetZ = Constants.islandLength
 
-    if (isFirst) then offset = 0 end
+    if (isFirst) then offsetX = 0 end
 
     local desiredOffsetFromParentEdge = nil
     local itemDuplicationConfig = nil
 
-    desiredOffsetFromParentEdge = Vector3.new(offset, -20, offset)
-    -- desiredOffsetFromParentEdge = Vector3.new(offset, 0, -size.Z)
+    desiredOffsetFromParentEdge = Vector3.new(offsetX, -sceneHeight, -offsetZ)
     itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(-1, -1, -1),
         moveTowardZero = Vector3.new(-1, 1, 1),

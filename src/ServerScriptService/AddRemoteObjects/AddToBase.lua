@@ -5,7 +5,6 @@ local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Scenes = require(Sss.Source.Scenes.Scenes)
 local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
-
 local Constants = require(Sss.Source.Constants.Constants)
 
 function configGame()
@@ -44,7 +43,7 @@ function addRemoteObjects()
         local desiredPadding = 18
         local wallWidth = 1
         local wallHeight = 4
-        local sceneHeight = 20
+        local sceneHeight = 50
         local wallSize = Vector3.new(wallWidth, wallHeight, wallWidth)
         local gridPadding = desiredPadding + wallWidth * 2
 
@@ -69,9 +68,9 @@ function addRemoteObjects()
         local questBlockProps = {
             parent = questsOrigin,
             size = Vector3.new(x, 2, z),
-            -- size = Vector3.new(z, 2, x),
             sibling = sibling,
             wallSize = wallSize,
+            sceneHeight = sceneHeight,
             questBlockTemplate = questBlockTemplateClone,
             index = i
         }
