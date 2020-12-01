@@ -40,7 +40,7 @@ function addRemoteObjects()
         print(endSceneCoords);
         print('endSceneCoords' .. ' - end');
 
-        local desiredPadding = 18
+        local desiredPadding = 12
         local wallWidth = 1
         local wallHeight = 4
         local sceneHeight = 50
@@ -87,7 +87,6 @@ function addRemoteObjects()
         Scenes.addScenes(addScenesProps)
 
         sibling = questBlock
-
     end
     questBlockTemplate:Destroy()
 end
