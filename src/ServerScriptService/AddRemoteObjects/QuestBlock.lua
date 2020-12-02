@@ -122,9 +122,13 @@ renderQuestBlock = function(props)
     local dockWallLeft = Utils.getFirstDescendantByName(dockModel,
                                                         "DockWallLeft")
 
-    local offsetX = Constants.islandLength
+    local offsetX = -Constants.islandLength
     local offsetY = -sceneHeight
-    local offsetZ = Constants.islandLength
+    local offsetZ = 0
+
+    -- local offsetX = Constants.islandLength
+    -- local offsetY = -sceneHeight
+    -- local offsetZ = Constants.islandLength
 
     if (isFirst) then
         offsetX = 0
@@ -135,7 +139,7 @@ renderQuestBlock = function(props)
     local desiredOffsetFromParentEdge = nil
     local itemDuplicationConfig = nil
 
-    desiredOffsetFromParentEdge = Vector3.new(offsetX, -offsetY, offsetZ)
+    desiredOffsetFromParentEdge = Vector3.new(offsetX, offsetY, offsetZ)
     itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(-1, -1, -1),
         moveTowardZero = Vector3.new(-1, 1, 1),

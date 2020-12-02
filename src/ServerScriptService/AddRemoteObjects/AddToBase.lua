@@ -11,35 +11,15 @@ function configPlayers()
     local Players = game:GetService("Players")
     Players.RespawnTime = 0
 
-    local RunService = game:GetService("RunService")
-
-    -- Check if the given object is an Accessory (such as a hat)
-    local function destroyAccessories(object)
-        -- if object:IsA("Hat") or object:IsA("Accessory") then
-        --     object:Destroy()
-        -- end
-    end
-
     local function onCharacterAdded(character)
-
         character:WaitForChild("Humanoid").WalkSpeed = 30
-
-        -- Wait a brief moment before removing accessories to avoid the
-        -- "Something unexpectedly set ___ parent to NULL" warning
-        RunService.Stepped:Wait()
-
-        -- Check for any existing accessories in the player's character
-        for _, child in pairs(character:GetChildren()) do
-            destroyAccessories(child)
-        end
-
-        -- Hats may be added to the character a moment after
-        -- CharacterAdded fires, so we listen for those using ChildAdded
-        character.ChildAdded:Connect(destroyAccessories)
+        local currentlyTeleporting = character.currentlyTeleporting
+        print('currentlyTeleporting' .. ' - start');
+        print(Utils.tableToString({currentlyTeleporting}));
+        print('currentlyTeleporting' .. ' - end');
     end
 
     local function onPlayerAdded(player)
-        -- Listen for spawns
         player.CharacterAdded:Connect(onCharacterAdded)
     end
 
@@ -50,18 +30,22 @@ function setVisibility()
     local itemsToHideAtRuntine = {'QuestsOrigin', 'TemplatesPedestal'}
     for i, item in ipairs(itemsToHideAtRuntine) do
         Utils.hideItemAndChildrenByName({name = item, hide = true})
-
     end
 
     local itemsToMakeTransparentAtRuntine =
         {"UserDectionRegion", "StartPositioner"}
     for i, item in ipairs(itemsToMakeTransparentAtRuntine) do
         Utils.setItemAndChildrenPropsByName(
-            {name = item, props = {Transparency = 0.4}})
+            {name = item, props = {Transparency = 1}})
     end
 
     Utils.setItemAndChildrenPropsByName({
         name = "DockWalls",
+        props = {Transparency = .8}
+    })
+
+    Utils.setItemAndChildrenPropsByName({
+        name = "SkyBox",
         props = {Transparency = .8}
     })
 
