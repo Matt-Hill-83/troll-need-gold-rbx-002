@@ -115,9 +115,12 @@ function module.addScenes(props)
                     -- test
                     -- test
                     -- test
-                    game.Workspace.Player.HumanoidRootPart.CFrame =
-                        CFrame.new(Vector3.new(0, 50, 0))
 
+                    if workspace:FindFirstChild("Player") then
+
+                        game.Workspace.Player.HumanoidRootPart.CFrame =
+                            CFrame.new(Vector3.new(0, 50, 0))
+                    end
                     -- local Players = game:GetService("Players")
 
                     -- game.Workspace:WaitForChild("Player", 100)
