@@ -15,7 +15,6 @@ function hideItem(part, hide)
     if part:IsA("TextButton") then part.Visible = visible end
 
     if part:IsA("SurfaceGui") then part.Enabled = enabled end
-
 end
 
 function setChildrenProps(parent, props)
@@ -34,10 +33,7 @@ function hideItemAndChildren(props)
     hideItem(parent, hide)
 
     local children = parent:GetDescendants()
-    for i, item in ipairs(children) do
-        hideItem(item, hide)
-        -- 
-    end
+    for i, item in ipairs(children) do hideItem(item, hide) end
 end
 
 function module.hideItemAndChildrenByName(props)
