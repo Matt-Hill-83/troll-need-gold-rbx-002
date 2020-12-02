@@ -24,8 +24,6 @@ function configPlayers()
     end
 
     Players.PlayerAdded:Connect(onPlayerAdded)
-    -- Players.PlayerAdded:Move(Vector3.new(0, 0, -1), true)
-    -- Players.LocalPlayer:Move(Vector3.new(0, 0, -1), true)
 end
 
 function setVisibility()
@@ -34,7 +32,8 @@ function setVisibility()
         Utils.hideItemAndChildrenByName({name = item, hide = true})
     end
 
-    local itemsToMakeTransparentAtRuntine = {"UserDectionRegion"}
+    local itemsToMakeTransparentAtRuntine =
+        {"UserDectionRegion", "WallTemplate"}
     for i, item in ipairs(itemsToMakeTransparentAtRuntine) do
         Utils.setItemAndChildrenPropsByName(
             {name = item, props = {Transparency = 1}})
@@ -42,7 +41,7 @@ function setVisibility()
 
     Utils.setItemAndChildrenPropsByName({
         name = "DockWalls",
-        props = {Transparency = .8}
+        props = {Transparency = 1}
     })
 
     Utils.setItemAndChildrenPropsByName({
@@ -76,14 +75,6 @@ function addRemoteObjects()
         local gridSize = questConfig.gridSize
         local startSceneCoords = questConfig.startSceneCoords
         local endSceneCoords = questConfig.ebdSceneCoords
-
-        print('startSceneCoords.row' .. ' - start');
-        print(startSceneCoords.row);
-        print('startSceneCoords.row' .. ' - end');
-
-        print('endSceneCoords' .. ' - start');
-        print(endSceneCoords);
-        print('endSceneCoords' .. ' - end');
 
         local desiredPadding = 12
         local wallWidth = 1

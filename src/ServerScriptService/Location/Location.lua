@@ -18,10 +18,6 @@ function module.addLocation(props)
     locationImageFront.Image = 'rbxassetid://' .. imageId
     locationImageBack.Image = 'rbxassetid://' .. imageId
 
-    local locationBillboardImage = Utils.getFirstDescendantByName(scene,
-                                                                  'LocationBillboardImage')
-    locationBillboardImage.Image = 'rbxassetid://' .. imageId
-
     -- Label
     -- Label
     local locationLabel =
@@ -33,11 +29,6 @@ function module.addLocation(props)
 
     locationLabelBack.Text = locationLabel
     locationLabelFront.Text = locationLabel
-
-    local locationBillboardText = Utils.getFirstDescendantByName(scene,
-                                                                 'LocationBillboardText')
-    locationBillboardText.Text = Utils.getDisplayNameFromName(
-                                     {name = sceneConfig.name})
 
 end
 

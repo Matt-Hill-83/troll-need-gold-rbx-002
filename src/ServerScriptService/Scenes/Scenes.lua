@@ -124,9 +124,10 @@ function module.addScenes(props)
                 end
             end)
         end
+
+        local thisTeleporter = Utils.getFirstDescendantByName(clonedScene,
+                                                              "QuestTeleporter")
         if (i == 1) then
-            local thisTeleporter = Utils.getFirstDescendantByName(questFolder,
-                                                                  "QuestTeleporter")
             local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
                                                                "SkyBoxTeleporter")
             thisTeleporter.Name = clonedScene.Name .. "-zzz"
@@ -136,11 +137,13 @@ function module.addScenes(props)
             homeTeleporter.Name = thisTeleporter.Name .. "-home"
             homeTeleporter.CFrame = dummyHomeTP.CFrame *
                                         CFrame.new(
-                                            Vector3.new(10 * i, 0,
-                                                        -10 * questIndex))
+                                            Vector3.new(10 * questIndex, 0, 0))
 
             setTP(thisTeleporter, homeTeleporter)
             setTP(homeTeleporter, thisTeleporter)
+        else
+            thisTeleporter:Destroy()
+
         end
 
         -- 
