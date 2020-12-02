@@ -88,9 +88,10 @@ function module.addScenes(props)
                     touchPart.Parent.currentlyTeleporting.Value == false then
                     print('touchPart')
                     local Character = touchPart.Parent
+
                     local teleportLocation =
-                        CFrame.new(homeTP.CFrame.X, homeTP.CFrame.Y + 5,
-                                   homeTP.CFrame.Z)
+                        CFrame.new(homeTP.CFrame.X + 5 * i, homeTP.CFrame.Y,
+                                   homeTP.CFrame.Z + 5 * i)
                     -- Character:SetPrimaryPartCFrame(teleportLocation)
 
                     local ts = game:GetService("TweenService")
@@ -103,8 +104,6 @@ function module.addScenes(props)
 
                     local t = ts:Create(Character.PrimaryPart, tweenInfo,
                                         {CFrame = teleportLocation})
-                    -- local t = ts:Create(Character.PrimaryPart, tweenInfo,
-                    --                     {CFrame = CFrame.new(0, 50, 50)})
                     Character.PrimaryPart.Anchored = true
                     -- Anchor the player's rootpart so physics doesn't mess things up.
                     t:Play()
@@ -115,7 +114,7 @@ function module.addScenes(props)
 
                     local teleportingValue = Character.currentlyTeleporting
                     teleportingValue.Value = true
-                    wait(3)
+                    wait(5)
                     teleportingValue.Value = false
                 end
             end)
@@ -131,7 +130,7 @@ function module.addScenes(props)
 
         homeTeleporter.Name = thisTeleporter.Name .. "-home"
         homeTeleporter.CFrame = dummyHomeTP.CFrame *
-                                    CFrame.new(Vector3.new(5, 0, 10))
+                                    CFrame.new(Vector3.new(10 * i, 0, 0))
 
         setTP(thisTeleporter, homeTeleporter)
         setTP(homeTeleporter, thisTeleporter)
