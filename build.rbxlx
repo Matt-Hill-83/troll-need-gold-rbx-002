@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>493.260498</X>
-					<Y>94.2989349</Y>
-					<Z>-277.2948</Z>
-					<R00>-0.775550961</R00>
-					<R01>0.311833084</R01>
-					<R02>-0.54889065</R02>
-					<R10>1.49011594e-08</R10>
-					<R11>0.869481564</R11>
-					<R12>0.493965626</R12>
-					<R20>0.631285012</R20>
-					<R21>0.383095503</R21>
-					<R22>-0.674327254</R22>
+					<X>150.68721</X>
+					<Y>97.2368011</Y>
+					<Z>-649.907654</Z>
+					<R00>-0.978433728</R00>
+					<R01>0.0148392273</R01>
+					<R02>-0.206027269</R02>
+					<R10>1.86264515e-09</R10>
+					<R11>0.997416198</R11>
+					<R12>0.0718394369</R12>
+					<R20>0.206560999</R20>
+					<R21>0.0702901259</R21>
+					<R22>-0.975905657</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>538.269775</X>
-					<Y>53.7935333</Y>
-					<Z>-221.999664</Z>
+					<X>197.25</X>
+					<Y>81.0008698</Y>
+					<Z>-429.350006</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -15623,7 +15623,7 @@ remoteCode.addRemoteObjects(base)
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<string name="Name">Base</string>
+					<string name="Name">StartLocation</string>
 					<Ref name="PrimaryPart">RBX20423fbfc3f843b6bee9d9b7f1aa1500</Ref>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -15892,6 +15892,109 @@ remoteCode.addRemoteObjects(base)
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
+						</Item>
+						<Item class="SurfaceGui" referent="RBX9a0c4964aa044499ae2198a3975c234d">
+							<Properties>
+								<bool name="Active">true</bool>
+								<Ref name="Adornee">null</Ref>
+								<bool name="AlwaysOnTop">false</bool>
+								<BinaryString name="AttributesSerialize"></BinaryString>
+								<bool name="AutoLocalize">true</bool>
+								<Vector2 name="CanvasSize">
+									<X>800</X>
+									<Y>600</Y>
+								</Vector2>
+								<bool name="ClipsDescendants">true</bool>
+								<bool name="Enabled">true</bool>
+								<token name="Face">5</token>
+								<float name="LightInfluence">1</float>
+								<string name="Name">SurfaceGui</string>
+								<float name="PixelsPerStud">50</float>
+								<bool name="ResetOnSpawn">true</bool>
+								<Ref name="RootLocalizationTable">null</Ref>
+								<token name="SizingMode">1</token>
+								<int64 name="SourceAssetId">-1</int64>
+								<BinaryString name="Tags"></BinaryString>
+								<float name="ToolPunchThroughDistance">0</float>
+								<token name="ZIndexBehavior">1</token>
+								<float name="ZOffset">0</float>
+							</Properties>
+							<Item class="TextLabel" referent="RBX265599a18fe246c5abf12393ea700c27">
+								<Properties>
+									<bool name="Active">false</bool>
+									<Vector2 name="AnchorPoint">
+										<X>0</X>
+										<Y>0</Y>
+									</Vector2>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<bool name="AutoLocalize">true</bool>
+									<token name="AutomaticSize">0</token>
+									<Color3 name="BackgroundColor3">
+										<R>0.46274513</R>
+										<G>0.600000024</G>
+										<B>1</B>
+									</Color3>
+									<float name="BackgroundTransparency">0</float>
+									<Color3 name="BorderColor3">
+										<R>0.105882362</R>
+										<G>0.164705887</G>
+										<B>0.207843155</B>
+									</Color3>
+									<token name="BorderMode">0</token>
+									<int name="BorderSizePixel">1</int>
+									<bool name="ClipsDescendants">false</bool>
+									<bool name="Draggable">false</bool>
+									<token name="Font">3</token>
+									<int name="LayoutOrder">0</int>
+									<float name="LineHeight">1</float>
+									<string name="Name">TextLabel</string>
+									<Ref name="NextSelectionDown">null</Ref>
+									<Ref name="NextSelectionLeft">null</Ref>
+									<Ref name="NextSelectionRight">null</Ref>
+									<Ref name="NextSelectionUp">null</Ref>
+									<UDim2 name="Position">
+										<XS>0</XS>
+										<XO>0</XO>
+										<YS>0</YS>
+										<YO>0</YO>
+									</UDim2>
+									<bool name="RichText">false</bool>
+									<Ref name="RootLocalizationTable">null</Ref>
+									<float name="Rotation">0</float>
+									<bool name="Selectable">false</bool>
+									<Ref name="SelectionImageObject">null</Ref>
+									<UDim2 name="Size">
+										<XS>1</XS>
+										<XO>0</XO>
+										<YS>1</YS>
+										<YO>0</YO>
+									</UDim2>
+									<token name="SizeConstraint">0</token>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<string name="Text">Front</string>
+									<Color3 name="TextColor3">
+										<R>0</R>
+										<G>0</G>
+										<B>0</B>
+									</Color3>
+									<bool name="TextScaled">false</bool>
+									<float name="TextSize">100</float>
+									<Color3 name="TextStrokeColor3">
+										<R>0</R>
+										<G>0</G>
+										<B>0</B>
+									</Color3>
+									<float name="TextStrokeTransparency">1</float>
+									<float name="TextTransparency">0</float>
+									<token name="TextTruncate">0</token>
+									<bool name="TextWrapped">false</bool>
+									<token name="TextXAlignment">2</token>
+									<token name="TextYAlignment">1</token>
+									<bool name="Visible">true</bool>
+									<int name="ZIndex">1</int>
+								</Properties>
+							</Item>
 						</Item>
 					</Item>
 				</Item>
@@ -19458,6 +19561,70 @@ LW5YMSAwBDQZDncMkV0AGg==]]></BinaryString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
+			<Item class="LocalScript" referent="RBX3a166b0d68c243788b3c9737ab593d66">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="Disabled">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">LocalScript</string>
+					<string name="ScriptGuid">{fba3cdb1-8b77-4e38-8f74-6be449869cc1}</string>
+					<ProtectedString name="Source"><![CDATA[--print("StarterPlayerScripts")
+
+
+--local Players = game:GetService("Players")
+--local ContextActionService = game:GetService("ContextActionService")
+--local UserInputService = game:GetService("UserInputService")
+--local RunService = game:GetService("RunService")
+
+--local camera = workspace.CurrentCamera
+--local cameraOffset = Vector3.new(2, 2, 8)
+--local player = Players.LocalPlayer
+
+--player.CharacterAdded:Connect(function(character)
+
+--	local humanoid = character:WaitForChild("Humanoid")
+--	local rootPart = character:WaitForChild("HumanoidRootPart")
+--	humanoid.AutoRotate = false
+
+--	local cameraAngleX = 0
+--	local cameraAngleY = 0
+
+--	local function playerInput(actionName, inputState, inputObject)
+--		-- Calculate camera/player rotation on input change
+--		if inputState == Enum.UserInputState.Change then
+--			cameraAngleX = cameraAngleX - inputObject.Delta.X
+--			-- Reduce vertical mouse/touch sensitivity and clamp vertical axis
+--			cameraAngleY = math.clamp(cameraAngleY-inputObject.Delta.Y*0.4, -75, 75)
+--			-- Rotate root part CFrame by X delta
+--			rootPart.CFrame = rootPart.CFrame * CFrame.Angles(0, math.rad(-inputObject.Delta.X), 0)
+--		end
+--	end
+--	ContextActionService:BindAction("PlayerInput", playerInput, false, Enum.UserInputType.MouseMovement, Enum.UserInputType.Touch)
+
+--	RunService.RenderStepped:Connect(function()
+--		if camera.CameraType ~= Enum.CameraType.Scriptable then
+--			camera.CameraType = Enum.CameraType.Scriptable
+--		end
+--		local startCFrame = CFrame.new((rootPart.CFrame.Position)) * CFrame.Angles(0, math.rad(cameraAngleX), 0) * CFrame.Angles(math.rad(cameraAngleY), 0, 0)
+--		local cameraCFrame = startCFrame:ToWorldSpace(CFrame.new(cameraOffset.X, cameraOffset.Y, cameraOffset.Z))
+--		local cameraFocus = startCFrame:ToWorldSpace(CFrame.new(cameraOffset.X, cameraOffset.Y, -10000))
+--		camera.CFrame = CFrame.new(cameraCFrame.Position, cameraFocus.Position)
+--	end)
+--end)
+
+--local function focusControl(actionName, inputState, inputObject)
+--	-- Lock and hide mouse icon on input began
+--	if inputState == Enum.UserInputState.Begin then
+--		UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
+--		UserInputService.MouseIconEnabled = false
+--		ContextActionService:UnbindAction("FocusControl", focusControl, false, Enum.UserInputType.MouseButton1, Enum.UserInputType.Touch, Enum.UserInputType.Focus)
+--	end
+--end
+--ContextActionService:BindAction("FocusControl", focusControl, false, Enum.UserInputType.MouseButton1, Enum.UserInputType.Touch, Enum.UserInputType.Focus)]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
 		</Item>
 		<Item class="StarterCharacterScripts" referent="RBX9d1385455bc54ea4a381848f0c02cb4d">
 			<Properties>
@@ -19473,7 +19640,63 @@ LW5YMSAwBDQZDncMkV0AGg==]]></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">LocalScript</string>
 					<string name="ScriptGuid">{091fe700-45ae-4487-8e1f-4541675ed910}</string>
-					<ProtectedString name="Source"></ProtectedString>
+					<ProtectedString name="Source"><![CDATA[print("new script 2------------------------------------")
+
+
+local Players = game:GetService("Players")
+local ContextActionService = game:GetService("ContextActionService")
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+local camera = workspace.CurrentCamera
+local cameraOffset = Vector3.new(2, 2, 8)
+local player = Players.LocalPlayer
+
+player.CharacterAdded:Connect(function(character)
+
+
+
+	print("character added")
+
+	local humanoid = character:WaitForChild("Humanoid")
+	local rootPart = character:WaitForChild("HumanoidRootPart")
+	humanoid.AutoRotate = false
+
+	local cameraAngleX = 0
+	local cameraAngleY = 0
+
+	local function playerInput(actionName, inputState, inputObject)
+		-- Calculate camera/player rotation on input change
+		if inputState == Enum.UserInputState.Change then
+			cameraAngleX = cameraAngleX - inputObject.Delta.X
+			-- Reduce vertical mouse/touch sensitivity and clamp vertical axis
+			cameraAngleY = math.clamp(cameraAngleY-inputObject.Delta.Y*0.4, -75, 75)
+			-- Rotate root part CFrame by X delta
+			rootPart.CFrame = rootPart.CFrame * CFrame.Angles(0, math.rad(-inputObject.Delta.X), 0)
+		end
+	end
+	ContextActionService:BindAction("PlayerInput", playerInput, false, Enum.UserInputType.MouseMovement, Enum.UserInputType.Touch)
+
+	RunService.RenderStepped:Connect(function()
+		if camera.CameraType ~= Enum.CameraType.Scriptable then
+			camera.CameraType = Enum.CameraType.Scriptable
+		end
+		local startCFrame = CFrame.new((rootPart.CFrame.Position)) * CFrame.Angles(0, math.rad(cameraAngleX), 0) * CFrame.Angles(math.rad(cameraAngleY), 0, 0)
+		local cameraCFrame = startCFrame:ToWorldSpace(CFrame.new(cameraOffset.X, cameraOffset.Y, cameraOffset.Z))
+		local cameraFocus = startCFrame:ToWorldSpace(CFrame.new(cameraOffset.X, cameraOffset.Y, -10000))
+		camera.CFrame = CFrame.new(cameraCFrame.Position, cameraFocus.Position)
+	end)
+end)
+
+local function focusControl(actionName, inputState, inputObject)
+	-- Lock and hide mouse icon on input began
+	if inputState == Enum.UserInputState.Begin then
+		UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
+		UserInputService.MouseIconEnabled = false
+		ContextActionService:UnbindAction("FocusControl", focusControl, false, Enum.UserInputType.MouseButton1, Enum.UserInputType.Touch, Enum.UserInputType.Focus)
+	end
+end
+ContextActionService:BindAction("FocusControl", focusControl, false, Enum.UserInputType.MouseButton1, Enum.UserInputType.Touch, Enum.UserInputType.Focus)]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
@@ -19506,7 +19729,7 @@ LW5YMSAwBDQZDncMkV0AGg==]]></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">bs</string>
 						<string name="ScriptGuid">{1d0956b3-8e7b-4008-a29c-8381d203085c}</string>
-						<ProtectedString name="Source"></ProtectedString>
+						<ProtectedString name="Source">--- test</ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -19548,12 +19771,136 @@ LW5YMSAwBDQZDncMkV0AGg==]]></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">bs</string>
 						<string name="ScriptGuid">{c83d7866-cddf-4fe4-baec-dc58cd8e2374}</string>
-						<ProtectedString name="Source">--- test</ProtectedString>
+						<ProtectedString name="Source"><![CDATA[print("new script ------------------------------------")
+
+
+local Players = game:GetService("Players")
+local ContextActionService = game:GetService("ContextActionService")
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+local camera = workspace.CurrentCamera
+local cameraOffset = Vector3.new(2, 2, 8)
+local player = Players.LocalPlayer
+
+player.CharacterAdded:Connect(function(character)
+
+
+
+	print("character added")
+
+	local humanoid = character:WaitForChild("Humanoid")
+	local rootPart = character:WaitForChild("HumanoidRootPart")
+	humanoid.AutoRotate = false
+
+	local cameraAngleX = 0
+	local cameraAngleY = 0
+
+	local function playerInput(actionName, inputState, inputObject)
+		-- Calculate camera/player rotation on input change
+		if inputState == Enum.UserInputState.Change then
+			cameraAngleX = cameraAngleX - inputObject.Delta.X
+			-- Reduce vertical mouse/touch sensitivity and clamp vertical axis
+			cameraAngleY = math.clamp(cameraAngleY-inputObject.Delta.Y*0.4, -75, 75)
+			-- Rotate root part CFrame by X delta
+			rootPart.CFrame = rootPart.CFrame * CFrame.Angles(0, math.rad(-inputObject.Delta.X), 0)
+		end
+	end
+	ContextActionService:BindAction("PlayerInput", playerInput, false, Enum.UserInputType.MouseMovement, Enum.UserInputType.Touch)
+
+	RunService.RenderStepped:Connect(function()
+		if camera.CameraType ~= Enum.CameraType.Scriptable then
+			camera.CameraType = Enum.CameraType.Scriptable
+		end
+		local startCFrame = CFrame.new((rootPart.CFrame.Position)) * CFrame.Angles(0, math.rad(cameraAngleX), 0) * CFrame.Angles(math.rad(cameraAngleY), 0, 0)
+		local cameraCFrame = startCFrame:ToWorldSpace(CFrame.new(cameraOffset.X, cameraOffset.Y, cameraOffset.Z))
+		local cameraFocus = startCFrame:ToWorldSpace(CFrame.new(cameraOffset.X, cameraOffset.Y, -10000))
+		camera.CFrame = CFrame.new(cameraCFrame.Position, cameraFocus.Position)
+	end)
+end)
+
+local function focusControl(actionName, inputState, inputObject)
+	-- Lock and hide mouse icon on input began
+	if inputState == Enum.UserInputState.Begin then
+		UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
+		UserInputService.MouseIconEnabled = false
+		ContextActionService:UnbindAction("FocusControl", focusControl, false, Enum.UserInputType.MouseButton1, Enum.UserInputType.Touch, Enum.UserInputType.Focus)
+	end
+end
+ContextActionService:BindAction("FocusControl", focusControl, false, Enum.UserInputType.MouseButton1, Enum.UserInputType.Touch, Enum.UserInputType.Focus)--- test]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
 			</Item>
+		</Item>
+		<Item class="LocalScript" referent="RBX63d143f7c47f4e348ed6036f51e14faf">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">camera test</string>
+				<string name="ScriptGuid">{ad639fdf-2720-4622-ae0f-ab6dd51beeba}</string>
+				<ProtectedString name="Source"><![CDATA[--print("new script ------------------------------------")
+
+
+--local Players = game:GetService("Players")
+--local ContextActionService = game:GetService("ContextActionService")
+--local UserInputService = game:GetService("UserInputService")
+--local RunService = game:GetService("RunService")
+
+--local camera = workspace.CurrentCamera
+--local cameraOffset = Vector3.new(2, 2, 8)
+--local player = Players.LocalPlayer
+
+--player.CharacterAdded:Connect(function(character)
+
+
+
+--	print("character added")
+
+--	local humanoid = character:WaitForChild("Humanoid")
+--	local rootPart = character:WaitForChild("HumanoidRootPart")
+--	humanoid.AutoRotate = false
+
+--	local cameraAngleX = 0
+--	local cameraAngleY = 0
+
+--	local function playerInput(actionName, inputState, inputObject)
+--		-- Calculate camera/player rotation on input change
+--		if inputState == Enum.UserInputState.Change then
+--			cameraAngleX = cameraAngleX - inputObject.Delta.X
+--			-- Reduce vertical mouse/touch sensitivity and clamp vertical axis
+--			cameraAngleY = math.clamp(cameraAngleY-inputObject.Delta.Y*0.4, -75, 75)
+--			-- Rotate root part CFrame by X delta
+--			rootPart.CFrame = rootPart.CFrame * CFrame.Angles(0, math.rad(-inputObject.Delta.X), 0)
+--		end
+--	end
+--	ContextActionService:BindAction("PlayerInput", playerInput, false, Enum.UserInputType.MouseMovement, Enum.UserInputType.Touch)
+
+--	RunService.RenderStepped:Connect(function()
+--		if camera.CameraType ~= Enum.CameraType.Scriptable then
+--			camera.CameraType = Enum.CameraType.Scriptable
+--		end
+--		local startCFrame = CFrame.new((rootPart.CFrame.Position)) * CFrame.Angles(0, math.rad(cameraAngleX), 0) * CFrame.Angles(math.rad(cameraAngleY), 0, 0)
+--		local cameraCFrame = startCFrame:ToWorldSpace(CFrame.new(cameraOffset.X, cameraOffset.Y, cameraOffset.Z))
+--		local cameraFocus = startCFrame:ToWorldSpace(CFrame.new(cameraOffset.X, cameraOffset.Y, -10000))
+--		camera.CFrame = CFrame.new(cameraCFrame.Position, cameraFocus.Position)
+--	end)
+--end)
+
+--local function focusControl(actionName, inputState, inputObject)
+--	-- Lock and hide mouse icon on input began
+--	if inputState == Enum.UserInputState.Begin then
+--		UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
+--		UserInputService.MouseIconEnabled = false
+--		ContextActionService:UnbindAction("FocusControl", focusControl, false, Enum.UserInputType.MouseButton1, Enum.UserInputType.Touch, Enum.UserInputType.Focus)
+--	end
+--end
+--ContextActionService:BindAction("FocusControl", focusControl, false, Enum.UserInputType.MouseButton1, Enum.UserInputType.Touch, Enum.UserInputType.Focus)]]></ProtectedString>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
 		</Item>
 	</Item>
 	<Item class="StarterGui" referent="RBXfad8e8a50fb044e28e00a92ffb65f759">
@@ -22417,96 +22764,6 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBXf2afea50264e463895ceeabc8d9f3b88">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">Bridges</string>
-					<string name="ScriptGuid">{0845c059-1e27-4c28-9da9-dc591707b67d}</string>
-					<ProtectedString name="Source"><![CDATA[
-]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-				<Item class="ModuleScript" referent="RBX3b61d4523f784482b5bc28d17f5ceedc">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">Bridges</string>
-						<string name="ScriptGuid">{0f6f3d3b-3dfa-4866-85e6-41b6473d8028}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils.U001GeneralUtils)
-local module = {}
-
-function module.destroyBridges(props)
-    -- all bridges are created in clone.
-    -- remove bridges that do not go anywhere
-    local sceneConfig = props.sceneConfig
-    local clonedScene = props.clonedScene
-
-    local showBottomPath = sceneConfig.showBottomPath
-    local showRightPath = sceneConfig.showRightPath
-    local showTopPath = sceneConfig.showTopPath
-    local showLeftPath = sceneConfig.showLeftPath
-
-    local bridgeRightModel = Utils.getFirstDescendantByName(clonedScene,
-                                                            "BridgeRightModel")
-    if (showRightPath) then
-        local bridgeWallRight = Utils.getFirstDescendantByName(clonedScene,
-                                                               "BridgeWallRight")
-        bridgeWallRight.Parent = nil
-        bridgeWallRight:Destroy()
-    else
-        bridgeRightModel.Parent = nil
-        bridgeRightModel:Destroy()
-    end
-
-    if (showLeftPath) then
-        local bridgeWallLeft = Utils.getFirstDescendantByName(clonedScene,
-                                                              "BridgeWallLeft")
-
-        bridgeWallLeft.Parent = nil
-        bridgeWallLeft:Destroy()
-    else
-        Utils.deleteChildrenByName({
-            parent = clonedScene,
-            childName = "WallLeftOld"
-        })
-    end
-
-    local bridgeBottomModel = Utils.getFirstDescendantByName(clonedScene,
-                                                             "BridgeBottomModel")
-    if (showBottomPath) then
-        local bridgeWallFront = Utils.getFirstDescendantByName(clonedScene,
-                                                               "BridgeWallFront")
-        bridgeWallFront.Parent = nil
-        bridgeWallFront:Destroy()
-    else
-        bridgeBottomModel.Parent = nil
-        bridgeBottomModel:Destroy()
-    end
-
-    if (showTopPath) then
-        local bridgeWallBack = Utils.getFirstDescendantByName(clonedScene,
-                                                              "BridgeWallBack")
-        bridgeWallBack.Parent = nil
-        bridgeWallBack:Destroy()
-    else
-        Utils.deleteChildrenByName({
-            parent = clonedScene,
-            childName = "WallBackOld"
-        })
-    end
-
-end
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-			</Item>
 			<Item class="ModuleScript" referent="RBX0b81909ac7b743b8add06babed3064b7">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -23154,6 +23411,92 @@ return module
 					</Properties>
 				</Item>
 			</Item>
+			<Item class="Folder" referent="RBXfb315b2950134d17a5338195dc8e3556">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<string name="Name">Bridges</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="ModuleScript" referent="RBXab272528edf44111b238acec57a5d997">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Bridges</string>
+						<string name="ScriptGuid">{1ba52c77-b039-49b5-8231-8caa0c78d8a6}</string>
+						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local module = {}
+
+function module.destroyBridges(props)
+    -- all bridges are created in clone.
+    -- remove bridges that do not go anywhere
+    local sceneConfig = props.sceneConfig
+    local clonedScene = props.clonedScene
+
+    local showBottomPath = sceneConfig.showBottomPath
+    local showRightPath = sceneConfig.showRightPath
+    local showTopPath = sceneConfig.showTopPath
+    local showLeftPath = sceneConfig.showLeftPath
+
+    local bridgeRightModel = Utils.getFirstDescendantByName(clonedScene,
+                                                            "BridgeRightModel")
+    if (showRightPath) then
+        local bridgeWallRight = Utils.getFirstDescendantByName(clonedScene,
+                                                               "BridgeWallRight")
+        bridgeWallRight.Parent = nil
+        bridgeWallRight:Destroy()
+    else
+        bridgeRightModel.Parent = nil
+        bridgeRightModel:Destroy()
+    end
+
+    if (showLeftPath) then
+        local bridgeWallLeft = Utils.getFirstDescendantByName(clonedScene,
+                                                              "BridgeWallLeft")
+
+        bridgeWallLeft.Parent = nil
+        bridgeWallLeft:Destroy()
+    else
+        Utils.deleteChildrenByName({
+            parent = clonedScene,
+            childName = "WallLeftOld"
+        })
+    end
+
+    local bridgeBottomModel = Utils.getFirstDescendantByName(clonedScene,
+                                                             "BridgeBottomModel")
+    if (showBottomPath) then
+        local bridgeWallFront = Utils.getFirstDescendantByName(clonedScene,
+                                                               "BridgeWallFront")
+        bridgeWallFront.Parent = nil
+        bridgeWallFront:Destroy()
+    else
+        bridgeBottomModel.Parent = nil
+        bridgeBottomModel:Destroy()
+    end
+
+    if (showTopPath) then
+        local bridgeWallBack = Utils.getFirstDescendantByName(clonedScene,
+                                                              "BridgeWallBack")
+        bridgeWallBack.Parent = nil
+        bridgeWallBack:Destroy()
+    else
+        Utils.deleteChildrenByName({
+            parent = clonedScene,
+            childName = "WallBackOld"
+        })
+    end
+
+end
+
+return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+			</Item>
 		</Item>
 	</Item>
 	<Item class="ServerStorage" referent="RBX83b078fdc9c44d22ae0004e5583c750d">
@@ -23486,9 +23829,9 @@ return module
 						<string name="ScriptGuid">{a139a056-b62f-437f-84e2-1d6ddc7dda5b}</string>
 						<ProtectedString name="Source"><![CDATA[local my_functions = {}
 
-function my_functions.foo() end
-
-function my_functions.bar() print("Bar!---------------111") end
+function my_functions.bar()
+    -- 
+end
 
 -- ModuleScripts must return exactly one value
 return my_functions

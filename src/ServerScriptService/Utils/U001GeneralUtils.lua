@@ -2,6 +2,39 @@ local Sss = game:GetService("ServerScriptService")
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 
+function hideItem(part)
+    print('part.Name' .. ' - start');
+    print("-----------" .. part.Name .. ": " .. part.className);
+    print('part.Name' .. ' - end');
+
+    if part:IsA("BasePart") then part.Transparency = 1 end
+    if part:IsA("Decal") then part.Transparency = 1 end
+
+    if part:IsA("ScrollingFrame") then part.Visible = false end
+    if part:IsA("TextLabel") then part.Visible = false end
+    if part:IsA("TextButton") then part.Visible = false end
+
+    if part:IsA("SurfaceGui") then part.Enabled = false end
+end
+
+function hideItemAndChildren(parent)
+    hideItem(parent)
+
+    local children = parent:GetDescendants()
+    for i, item in ipairs(children) do
+        print(item.Name .. ": ----------------- " .. item.className);
+        hideItem(item)
+        -- 
+    end
+end
+
+function module.hideItemAndChildrenByName(props)
+    local name = props.name
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local item = getFirstDescendantByName(myStuff, name)
+    hideItemAndChildren(item)
+end
+
 function module.getOrCreateFolder(props)
     local name = props.name
     local parent = props.parent
@@ -255,5 +288,6 @@ module.getFirstDescendantByName = getFirstDescendantByName
 module.getFromMyStuff = getFromMyStuff
 module.setMaterialPebble = setMaterialPebble
 module.tableToString = tableToString
+module.hideItemAndChildren = hideItemAndChildren
 
 return module

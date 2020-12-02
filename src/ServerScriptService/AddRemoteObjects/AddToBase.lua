@@ -10,6 +10,9 @@ local Constants = require(Sss.Source.Constants.Constants)
 function configGame()
     local Players = game:GetService("Players")
     Players.RespawnTime = 0
+
+    Utils.hideItemAndChildrenByName({name = "QuestsOrigin"})
+    Utils.hideItemAndChildrenByName({name = "TemplatesPedestal"})
     -- Utils.reportPlayerLocation()
 end
 
