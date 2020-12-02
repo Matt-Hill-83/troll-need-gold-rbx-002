@@ -25,7 +25,7 @@ renderCharacters = function(props)
 
     -- Hide decal on template
     applyDecalsToCharacter({part = charImageBlock, decalId = ""})
-    toggleLabelVisibility({part = charImageBlock, visible = true})
+    toggleLabelVisibility({part = charImageBlock, visible = false})
 
     -- Ensure player doesn't crash into invisivble template
     charImageBlock.CanCollide = false

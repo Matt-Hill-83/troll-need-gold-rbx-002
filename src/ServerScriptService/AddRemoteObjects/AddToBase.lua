@@ -13,10 +13,27 @@ function configGame()
 
     Utils.hideItemAndChildrenByName({name = "QuestsOrigin", hide = true})
     Utils.hideItemAndChildrenByName({name = "TemplatesPedestal", hide = true})
+
+    local itemsToMakeTransparentAtRuntine =
+        {"UserDectionRegion", "StartPositioner"}
+    for i, item in ipairs(itemsToMakeTransparentAtRuntine) do
+        Utils.setItemAndChildrenPropsByName(
+            {name = item, props = {Transparency = 1}})
+
+    end
+
     Utils.setItemAndChildrenPropsByName({
         name = "DockWalls",
         props = {Transparency = .8}
     })
+    -- Utils.setItemAndChildrenPropsByName({
+    --     name = "UserDectionRegion",
+    --     props = {Transparency = 0}
+    -- })
+    -- Utils.setItemAndChildrenPropsByName({
+    --     name = "StartPositioner",
+    --     props = {Transparency = 0}
+    -- })
     -- Utils.reportPlayerLocation()
 end
 
@@ -34,7 +51,7 @@ function addRemoteObjects()
     local sibling = questsOrigin
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
 
-    for i, questConfig in pairs(questConfigs) do
+    for i, questConfig in ipairs(questConfigs) do
         local gridSize = questConfig.gridSize
         local startSceneCoords = questConfig.startSceneCoords
         local endSceneCoords = questConfig.ebdSceneCoords
