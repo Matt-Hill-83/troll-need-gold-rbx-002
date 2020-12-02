@@ -49,6 +49,7 @@ function module.addScenes(props)
     local questConfig = props.questConfig
     local gridPadding = props.gridPadding
     local questFolder = props.questFolder
+    local questIndex = props.questIndex
 
     local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
                                                               "SceneTemplate")
@@ -81,6 +82,10 @@ function module.addScenes(props)
                 suffix = "Clone--" .. i
             })
         clonedScene.Name = clonedScene.Name .. i
+
+        -- 
+        -- 
+        -- 
 
         local function setTP(thisTP, homeTP)
             thisTP.Touched:Connect(function(touchPart)
@@ -119,22 +124,27 @@ function module.addScenes(props)
                 end
             end)
         end
+        if (i == 1) then
+            local thisTeleporter = Utils.getFirstDescendantByName(questFolder,
+                                                                  "QuestTeleporter")
+            local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
+                                                               "SkyBoxTeleporter")
+            thisTeleporter.Name = clonedScene.Name .. "-zzz"
+            local homeTeleporter = thisTeleporter:Clone()
+            homeTeleporter.Parent = clonedScene
 
-        local thisTeleporter = Utils.getFirstDescendantByName(clonedScene,
-                                                              "TeleporterB")
-        local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
-                                                           "TeleporterA")
-        thisTeleporter.Name = clonedScene.Name .. "-zzz"
-        local homeTeleporter = thisTeleporter:Clone()
-        homeTeleporter.Parent = clonedScene
+            homeTeleporter.Name = thisTeleporter.Name .. "-home"
+            homeTeleporter.CFrame = dummyHomeTP.CFrame *
+                                        CFrame.new(
+                                            Vector3.new(10 * i, 0,
+                                                        -10 * questIndex))
 
-        homeTeleporter.Name = thisTeleporter.Name .. "-home"
-        homeTeleporter.CFrame = dummyHomeTP.CFrame *
-                                    CFrame.new(Vector3.new(10 * i, 0, 0))
+            setTP(thisTeleporter, homeTeleporter)
+            setTP(homeTeleporter, thisTeleporter)
+        end
 
-        setTP(thisTeleporter, homeTeleporter)
-        setTP(homeTeleporter, thisTeleporter)
-
+        -- 
+        -- 
         local function hideWall(clonedScene)
             local dialog = Utils.getFirstDescendantByName(clonedScene,
                                                           "WallTemplate")

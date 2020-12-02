@@ -128,7 +128,8 @@ function addRemoteObjects()
             sceneConfigs = questConfig.sceneConfigs,
             questConfig = questConfig,
             gridPadding = gridPadding,
-            questFolder = questFolder
+            questFolder = questFolder,
+            questIndex = i
         }
         Scenes.addScenes(addScenesProps)
 
