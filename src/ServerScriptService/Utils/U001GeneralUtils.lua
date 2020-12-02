@@ -2,37 +2,60 @@ local Sss = game:GetService("ServerScriptService")
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 
-function hideItem(part)
-    print('part.Name' .. ' - start');
-    print("-----------" .. part.Name .. ": " .. part.className);
-    print('part.Name' .. ' - end');
+function hideItem(part, hide)
+    local transparency = hide and 1 or 0
+    local visible = not hide
+    local enabled = not hide
 
-    if part:IsA("BasePart") then part.Transparency = 1 end
-    if part:IsA("Decal") then part.Transparency = 1 end
+    if part:IsA("BasePart") then part.Transparency = transparency end
+    if part:IsA("Decal") then part.Transparency = transparency end
 
-    if part:IsA("ScrollingFrame") then part.Visible = false end
-    if part:IsA("TextLabel") then part.Visible = false end
-    if part:IsA("TextButton") then part.Visible = false end
+    if part:IsA("ScrollingFrame") then part.Visible = visible end
+    if part:IsA("TextLabel") then part.Visible = visible end
+    if part:IsA("TextButton") then part.Visible = visible end
 
-    if part:IsA("SurfaceGui") then part.Enabled = false end
+    if part:IsA("SurfaceGui") then part.Enabled = enabled end
+
 end
 
-function hideItemAndChildren(parent)
-    hideItem(parent)
+function setChildrenProps(parent, props)
+    if parent:IsA("BasePart") then mergeTables(parent, props) end
 
     local children = parent:GetDescendants()
     for i, item in ipairs(children) do
-        print(item.Name .. ": ----------------- " .. item.className);
-        hideItem(item)
+        if item:IsA("BasePart") then mergeTables(item, props) end
+    end
+end
+
+function hideItemAndChildren(props)
+    local parent = props.item
+    local hide = props.hide
+
+    hideItem(parent, hide)
+
+    local children = parent:GetDescendants()
+    for i, item in ipairs(children) do
+        hideItem(item, hide)
         -- 
     end
 end
 
 function module.hideItemAndChildrenByName(props)
     local name = props.name
+    local hide = props.hide
+
     local myStuff = workspace:FindFirstChild("MyStuff")
     local item = getFirstDescendantByName(myStuff, name)
-    hideItemAndChildren(item)
+    hideItemAndChildren({item = item, hide = hide})
+end
+
+function module.setItemAndChildrenPropsByName(myProps)
+    local name = myProps.name
+    local props = myProps.props
+
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local item = getFirstDescendantByName(myStuff, name)
+    setChildrenProps(item, props)
 end
 
 function module.getOrCreateFolder(props)
@@ -257,12 +280,7 @@ local test = {
 test.child.cyclic = test.cyclic
 test.another = test.child
 
-function module.mergeTables(t1, t2)
-    for k, v in pairs(t2) do
-        t1[k] = v
-        --
-    end
-end
+function mergeTables(t1, t2) for k, v in pairs(t2) do t1[k] = v end end
 
 addPadding = function(props)
     local parent = props.parent
@@ -289,5 +307,6 @@ module.getFromMyStuff = getFromMyStuff
 module.setMaterialPebble = setMaterialPebble
 module.tableToString = tableToString
 module.hideItemAndChildren = hideItemAndChildren
+module.mergeTables = mergeTables
 
 return module

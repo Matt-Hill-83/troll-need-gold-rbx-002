@@ -88,7 +88,7 @@ function module.addScenes(props)
 
             local items = dialog:GetDescendants()
             for i, item in ipairs(items) do
-                Utils.hideItemAndChildren(item)
+                Utils.hideItemAndChildren({item = item, hide = true})
                 if item:IsA("BasePart") then
                     item.CanCollide = false
                 end
@@ -99,21 +99,9 @@ function module.addScenes(props)
         local function unHideWall(clonedScene)
             local dialog = Utils.getFirstDescendantByName(clonedScene,
                                                           "WallTemplate")
-            local descendants = dialog:GetDescendants()
-            for i = 1, #descendants do
-                local descendant = descendants[i]
-                if descendant:IsA("BasePart") then
-                    descendant.Transparency = 0
-                end
-                if descendant:IsA("ScrollingFrame") then
-                    descendant.Visible = true
-                end
-                if descendant:IsA("TextLabel") then
-                    descendant.Visible = true
-                end
-                if descendant:IsA("TextButton") then
-                    descendant.Visible = true
-                end
+            local items = dialog:GetDescendants()
+            for i, item in ipairs(items) do
+                Utils.hideItemAndChildren({item = item, hide = false})
             end
         end
 

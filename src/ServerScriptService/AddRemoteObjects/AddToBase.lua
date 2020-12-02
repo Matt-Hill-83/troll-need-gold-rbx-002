@@ -11,8 +11,12 @@ function configGame()
     local Players = game:GetService("Players")
     Players.RespawnTime = 0
 
-    Utils.hideItemAndChildrenByName({name = "QuestsOrigin"})
-    Utils.hideItemAndChildrenByName({name = "TemplatesPedestal"})
+    Utils.hideItemAndChildrenByName({name = "QuestsOrigin", hide = true})
+    Utils.hideItemAndChildrenByName({name = "TemplatesPedestal", hide = true})
+    Utils.setItemAndChildrenPropsByName({
+        name = "DockWalls",
+        props = {Transparency = 0}
+    })
     -- Utils.reportPlayerLocation()
 end
 
