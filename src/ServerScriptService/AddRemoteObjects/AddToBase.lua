@@ -24,6 +24,8 @@ function configPlayers()
     end
 
     Players.PlayerAdded:Connect(onPlayerAdded)
+    -- Players.PlayerAdded:Move(Vector3.new(0, 0, -1), true)
+    -- Players.LocalPlayer:Move(Vector3.new(0, 0, -1), true)
 end
 
 function setVisibility()
@@ -133,6 +135,7 @@ function addRemoteObjects()
         sibling = questBlock
     end
     questBlockTemplate:Destroy()
+
 end
 
 module.addRemoteObjects = addRemoteObjects

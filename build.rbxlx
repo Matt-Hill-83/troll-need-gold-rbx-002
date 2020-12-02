@@ -26968,21 +26968,26 @@ DCRZZRoEelZ/blgxIjAENGkMdwwVXwAa]]></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">LocalScript</string>
 					<string name="ScriptGuid">{091fe700-45ae-4487-8e1f-4541675ed910}</string>
-					<ProtectedString name="Source"><![CDATA[print("new script 2------------------------------------")
-local player = game.Players.LocalPlayer
-local char = player.CharacterAdded:wait()
-local h = char.Humanoid
-
-h.WalkSpeed = 0
+					<ProtectedString name="Source"><![CDATA[print("Starter Character Script")
 
 
-local newWalkspeed = 0
+--local RunService = game:GetService("RunService")
+--local Players = game:GetService("Players")
 
-game.Players.PlayedAdded:Connect(function(player)
-	player.CharacterAdded:Connect(function(character)
-		character:WaitForChild("Humanoid").WalkSpeed = newWalkspeed
-	end)
-end)
+--local localPlayer = Players.LocalPlayer
+
+--RunService:BindToRenderStep("move",
+--	-- run after the character
+--	Enum.RenderPriority.Character.Value + 1,
+--	function()
+--		if localPlayer.Character then
+--			local humanoid = localPlayer.Character:FindFirstChild("Humanoid")
+--			if humanoid then
+--				humanoid:Move(Vector3.new(0, 0, -1), true)
+--			end
+--		end
+--	end
+--)
 
 
 --local Players = game:GetService("Players")
@@ -27448,6 +27453,8 @@ function configPlayers()
     end
 
     Players.PlayerAdded:Connect(onPlayerAdded)
+    -- Players.PlayerAdded:Move(Vector3.new(0, 0, -1), true)
+    -- Players.LocalPlayer:Move(Vector3.new(0, 0, -1), true)
 end
 
 function setVisibility()
@@ -27557,6 +27564,7 @@ function addRemoteObjects()
         sibling = questBlock
     end
     questBlockTemplate:Destroy()
+
 end
 
 module.addRemoteObjects = addRemoteObjects

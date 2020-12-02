@@ -91,7 +91,27 @@ function module.addScenes(props)
                     local teleportLocation =
                         CFrame.new(homeTP.CFrame.X, homeTP.CFrame.Y + 5,
                                    homeTP.CFrame.Z)
-                    Character:SetPrimaryPartCFrame(teleportLocation)
+                    -- Character:SetPrimaryPartCFrame(teleportLocation)
+
+                    local ts = game:GetService("TweenService")
+                    -- local plrs = game:GetService("Players")
+
+                    wait(2)
+                    -- 
+
+                    local tweenInfo = TweenInfo.new(2) -- 2 sec
+
+                    local t = ts:Create(Character.PrimaryPart, tweenInfo,
+                                        {CFrame = teleportLocation})
+                    -- local t = ts:Create(Character.PrimaryPart, tweenInfo,
+                    --                     {CFrame = CFrame.new(0, 50, 50)})
+                    Character.PrimaryPart.Anchored = true
+                    -- Anchor the player's rootpart so physics doesn't mess things up.
+                    t:Play()
+                    t.Completed:Connect(function()
+                        Character.PrimaryPart.Anchored = false
+                    end)
+                    print("Hello world!")
 
                     local teleportingValue = Character.currentlyTeleporting
                     teleportingValue.Value = true
@@ -146,22 +166,6 @@ function module.addScenes(props)
                 if not entered.value then
                     unHideWall(clonedScene)
                     entered.value = true
-                    -- test
-                    -- test
-                    -- test
-
-                    if workspace:FindFirstChild("Player") then
-
-                        game.Workspace.Player.HumanoidRootPart.CFrame =
-                            CFrame.new(Vector3.new(0, 50, 0))
-                    end
-                    -- local Players = game:GetService("Players")
-
-                    -- game.Workspace:WaitForChild("Player", 100)
-                    -- local plr2 = workspace:FindFirstChild("Player")
-                    -- local hum = plr2:FindFirstChild("Humanoid")
-                    -- hum.HumanoidRootPart.CFrame = -- workspace.Player.HumanoidRootPart.CFrame =
-                    -- CFrame.new(Vector3.new(0, 50, 0))
                 end
                 buttonPressed = false
             end
