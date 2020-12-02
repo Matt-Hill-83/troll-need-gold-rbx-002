@@ -11,29 +11,31 @@ function configGame()
     local Players = game:GetService("Players")
     Players.RespawnTime = 0
 
-    Utils.hideItemAndChildrenByName({name = "QuestsOrigin", hide = true})
-    Utils.hideItemAndChildrenByName({name = "TemplatesPedestal", hide = true})
+    -- Utils.hideItemAndChildrenByName({name = "QuestsOrigin", hide = true})
+
+    local itemsToHideAtRuntine = {'QuestsOrigin', 'TemplatesPedestal'}
+    for i, item in ipairs(itemsToHideAtRuntine) do
+        Utils.hideItemAndChildrenByName({name = item, hide = true})
+
+    end
 
     local itemsToMakeTransparentAtRuntine =
         {"UserDectionRegion", "StartPositioner"}
     for i, item in ipairs(itemsToMakeTransparentAtRuntine) do
         Utils.setItemAndChildrenPropsByName(
-            {name = item, props = {Transparency = 1}})
-
+            {name = item, props = {Transparency = 0.4}})
     end
 
     Utils.setItemAndChildrenPropsByName({
         name = "DockWalls",
         props = {Transparency = .8}
     })
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "UserDectionRegion",
-    --     props = {Transparency = 0}
-    -- })
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "StartPositioner",
-    --     props = {Transparency = 0}
-    -- })
+
+    Utils.setItemAndChildrenPropsByName({
+        name = "StartPositioner",
+        props = {Transparency = 1}
+    })
+
     -- Utils.reportPlayerLocation()
 end
 
@@ -68,7 +70,7 @@ function addRemoteObjects()
         local wallWidth = 1
         local wallHeight = 8
         -- local wallHeight = 20
-        local sceneHeight = 20
+        local sceneHeight = 40
         local wallSize = Vector3.new(wallWidth, wallHeight, wallWidth)
         local gridPadding = desiredPadding + wallWidth * 2
 
