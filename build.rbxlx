@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-141.388214</X>
-					<Y>253.764862</Y>
-					<Z>-746.084473</Z>
-					<R00>-0.722103536</R00>
-					<R01>0.240958691</R01>
-					<R02>-0.648463964</R02>
+					<X>157.946838</X>
+					<Y>91.6279907</Y>
+					<Z>-424.87851</Z>
+					<R00>-0.404035777</R00>
+					<R01>0.250360489</R01>
+					<R02>-0.879815221</R02>
 					<R10>-0</R10>
-					<R11>0.93737787</R11>
-					<R12>0.348314404</R12>
-					<R20>0.691785038</R20>
-					<R21>0.251519054</R21>
-					<R22>-0.676883817</R22>
+					<R11>0.961816609</R11>
+					<R12>0.273694843</R12>
+					<R20>0.914743125</R20>
+					<R21>0.110582508</R21>
+					<R22>-0.388608366</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>180.25</X>
-					<Y>81.0008698</Y>
-					<Z>-410.350006</Z>
+					<X>190.5</X>
+					<Y>81.5012817</Y>
+					<Z>-410.5</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -16224,7 +16224,7 @@ remoteCode.addRemoteObjects(base)
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
 								<X>183.25</X>
-								<Y>81.0008698</Y>
+								<Y>71.0008698</Y>
 								<Z>-410.350006</Z>
 								<R00>0</R00>
 								<R01>0</R01>
@@ -20384,12 +20384,46 @@ local Scenes = require(Sss.Source.Scenes.Scenes)
 local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
 local Constants = require(Sss.Source.Constants.Constants)
 
-function configGame()
+function configPlayers()
     local Players = game:GetService("Players")
     Players.RespawnTime = 0
 
-    -- Utils.hideItemAndChildrenByName({name = "QuestsOrigin", hide = true})
+    local RunService = game:GetService("RunService")
 
+    -- Check if the given object is an Accessory (such as a hat)
+    local function destroyAccessories(object)
+        -- if object:IsA("Hat") or object:IsA("Accessory") then
+        --     object:Destroy()
+        -- end
+    end
+
+    local function onCharacterAdded(character)
+
+        character:WaitForChild("Humanoid").WalkSpeed = 2
+
+        -- Wait a brief moment before removing accessories to avoid the
+        -- "Something unexpectedly set ___ parent to NULL" warning
+        RunService.Stepped:Wait()
+
+        -- Check for any existing accessories in the player's character
+        for _, child in pairs(character:GetChildren()) do
+            destroyAccessories(child)
+        end
+
+        -- Hats may be added to the character a moment after
+        -- CharacterAdded fires, so we listen for those using ChildAdded
+        character.ChildAdded:Connect(destroyAccessories)
+    end
+
+    local function onPlayerAdded(player)
+        -- Listen for spawns
+        player.CharacterAdded:Connect(onCharacterAdded)
+    end
+
+    Players.PlayerAdded:Connect(onPlayerAdded)
+end
+
+function setVisibility()
     local itemsToHideAtRuntine = {'QuestsOrigin', 'TemplatesPedestal'}
     for i, item in ipairs(itemsToHideAtRuntine) do
         Utils.hideItemAndChildrenByName({name = item, hide = true})
@@ -20413,6 +20447,11 @@ function configGame()
         props = {Transparency = 1}
     })
 
+end
+
+function configGame()
+    setVisibility()
+    configPlayers()
     -- Utils.reportPlayerLocation()
 end
 
@@ -23368,8 +23407,19 @@ function module.addScenes(props)
                 if not entered.value then
                     unHideWall(clonedScene)
                     entered.value = true
+                    -- test
+                    -- test
+                    -- test
                     game.Workspace.Player.HumanoidRootPart.CFrame =
                         CFrame.new(Vector3.new(0, 50, 0))
+
+                    -- local Players = game:GetService("Players")
+
+                    -- game.Workspace:WaitForChild("Player", 100)
+                    -- local plr2 = workspace:FindFirstChild("Player")
+                    -- local hum = plr2:FindFirstChild("Humanoid")
+                    -- hum.HumanoidRootPart.CFrame = -- workspace.Player.HumanoidRootPart.CFrame =
+                    -- CFrame.new(Vector3.new(0, 50, 0))
                 end
                 buttonPressed = false
             end

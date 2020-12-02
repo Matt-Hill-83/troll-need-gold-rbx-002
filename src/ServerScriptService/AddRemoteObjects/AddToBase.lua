@@ -22,14 +22,17 @@ function configPlayers()
 
     local function onCharacterAdded(character)
 
-        character:WaitForChild("Humanoid").WalkSpeed = 2
+        character:WaitForChild("Humanoid").WalkSpeed = 30
+
         -- Wait a brief moment before removing accessories to avoid the
         -- "Something unexpectedly set ___ parent to NULL" warning
         RunService.Stepped:Wait()
+
         -- Check for any existing accessories in the player's character
         for _, child in pairs(character:GetChildren()) do
             destroyAccessories(child)
         end
+
         -- Hats may be added to the character a moment after
         -- CharacterAdded fires, so we listen for those using ChildAdded
         character.ChildAdded:Connect(destroyAccessories)
@@ -42,9 +45,8 @@ function configPlayers()
 
     Players.PlayerAdded:Connect(onPlayerAdded)
 end
-function configGame()
-    configPlayers()
 
+function setVisibility()
     local itemsToHideAtRuntine = {'QuestsOrigin', 'TemplatesPedestal'}
     for i, item in ipairs(itemsToHideAtRuntine) do
         Utils.hideItemAndChildrenByName({name = item, hide = true})
@@ -68,6 +70,11 @@ function configGame()
         props = {Transparency = 1}
     })
 
+end
+
+function configGame()
+    setVisibility()
+    configPlayers()
     -- Utils.reportPlayerLocation()
 end
 
