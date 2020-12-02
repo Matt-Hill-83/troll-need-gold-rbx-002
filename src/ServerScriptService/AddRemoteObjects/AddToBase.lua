@@ -15,7 +15,7 @@ function configGame()
     Utils.hideItemAndChildrenByName({name = "TemplatesPedestal", hide = true})
     Utils.setItemAndChildrenPropsByName({
         name = "DockWalls",
-        props = {Transparency = 0}
+        props = {Transparency = .8}
     })
     -- Utils.reportPlayerLocation()
 end
