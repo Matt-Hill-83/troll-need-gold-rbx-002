@@ -112,6 +112,14 @@ function module.addScenes(props)
                 if not entered.value then
                     unHideWall(clonedScene)
                     entered.value = true
+                    -- test
+                    -- test
+                    -- test
+                    game.Workspace:WaitForChild("Player", 100)
+                    local plr2 = workspace:FindFirstChild("Player")
+                    local hum = plr2:FindFirstChild("Humanoid")
+                    hum.HumanoidRootPart.CFrame = -- workspace.Player.HumanoidRootPart.CFrame =
+                    CFrame.new(Vector3.new(0, 50, 0))
                 end
                 buttonPressed = false
             end

@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>223.673767</X>
-					<Y>181.069611</Y>
-					<Z>-475.768463</Z>
-					<R00>-0.177472949</R00>
-					<R01>0.727716148</R01>
-					<R02>-0.662519872</R02>
+					<X>-141.388214</X>
+					<Y>253.764862</Y>
+					<Z>-746.084473</Z>
+					<R00>-0.722103536</R00>
+					<R01>0.240958691</R01>
+					<R02>-0.648463964</R02>
 					<R10>-0</R10>
-					<R11>0.673206627</R11>
-					<R12>0.739454448</R12>
-					<R20>0.984125733</R20>
-					<R21>0.131233156</R21>
-					<R22>-0.119475938</R22>
+					<R11>0.93737787</R11>
+					<R12>0.348314404</R12>
+					<R20>0.691785038</R20>
+					<R21>0.251519054</R21>
+					<R22>-0.676883817</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>278.000397</X>
-					<Y>120.434341</Y>
-					<Z>-465.971436</Z>
+					<X>180.25</X>
+					<Y>81.0008698</Y>
+					<Z>-410.350006</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -15391,11 +15391,32 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP8=]]></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">StartUpScript</string>
 					<string name="ScriptGuid">{b240a0d6-584a-4ab9-9877-08ec6e7459f1}</string>
-					<ProtectedString name="Source"><![CDATA[local base = script.Parent
+					<ProtectedString name="Source"><![CDATA[print("Startup Scripy------------------------------------")
+
+local base = script.Parent
 
 local remoteCode = require(game.ServerScriptService.Source.AddRemoteObjects.AddToBase)
 
 remoteCode.addRemoteObjects(base)
+
+--
+--
+--test stuff
+
+--local player = game.Players.LocalPlayer
+--local char = player.CharacterAdded:wait()
+--local h = char.Humanoid
+
+--h.WalkSpeed = 0
+
+
+--local newWalkspeed = 0
+
+--game.Players.PlayedAdded:Connect(function(player)
+--	player.CharacterAdded:Connect(function(character)
+--		character:WaitForChild("Humanoid").WalkSpeed = newWalkspeed
+--	end)
+--end)
 
 
 
@@ -16596,45 +16617,6 @@ remoteCode.addRemoteObjects(base)
 								<Z>23</Z>
 							</Vector3>
 						</Properties>
-						<Item class="Weld" referent="RBXe424fda9f282450b85dc05d37600fb24">
-							<Properties>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<CoordinateFrame name="C0">
-									<X>0</X>
-									<Y>0</Y>
-									<Z>-11.5</Z>
-									<R00>1</R00>
-									<R01>0</R01>
-									<R02>0</R02>
-									<R10>0</R10>
-									<R11>-1</R11>
-									<R12>0</R12>
-									<R20>0</R20>
-									<R21>0</R21>
-									<R22>-1</R22>
-								</CoordinateFrame>
-								<CoordinateFrame name="C1">
-									<X>-12</X>
-									<Y>67.0007172</Y>
-									<Z>2</Z>
-									<R00>1</R00>
-									<R01>0</R01>
-									<R02>0</R02>
-									<R10>0</R10>
-									<R11>-1</R11>
-									<R12>0</R12>
-									<R20>0</R20>
-									<R21>0</R21>
-									<R22>-1</R22>
-								</CoordinateFrame>
-								<bool name="Enabled">true</bool>
-								<string name="Name">Weld</string>
-								<Ref name="Part0">RBX9387eabf4bbf4e0098a11d08fafe5bb3</Ref>
-								<Ref name="Part1">RBXb8cb7bb751eb4e79826ac8cf98bb8981</Ref>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-							</Properties>
-						</Item>
 						<Item class="Weld" referent="RBXdcc709fbbe724462b0b7f83c277b3f11">
 							<Properties>
 								<BinaryString name="AttributesSerialize"></BinaryString>
@@ -16670,6 +16652,45 @@ remoteCode.addRemoteObjects(base)
 								<string name="Name">Weld</string>
 								<Ref name="Part0">RBX9387eabf4bbf4e0098a11d08fafe5bb3</Ref>
 								<Ref name="Part1">RBXa6426ef88d1f48e59fd053aae6a000b6</Ref>
+								<int64 name="SourceAssetId">-1</int64>
+								<BinaryString name="Tags"></BinaryString>
+							</Properties>
+						</Item>
+						<Item class="Weld" referent="RBXe424fda9f282450b85dc05d37600fb24">
+							<Properties>
+								<BinaryString name="AttributesSerialize"></BinaryString>
+								<CoordinateFrame name="C0">
+									<X>0</X>
+									<Y>0</Y>
+									<Z>-11.5</Z>
+									<R00>1</R00>
+									<R01>0</R01>
+									<R02>0</R02>
+									<R10>0</R10>
+									<R11>-1</R11>
+									<R12>0</R12>
+									<R20>0</R20>
+									<R21>0</R21>
+									<R22>-1</R22>
+								</CoordinateFrame>
+								<CoordinateFrame name="C1">
+									<X>-12</X>
+									<Y>67.0007172</Y>
+									<Z>2</Z>
+									<R00>1</R00>
+									<R01>0</R01>
+									<R02>0</R02>
+									<R10>0</R10>
+									<R11>-1</R11>
+									<R12>0</R12>
+									<R20>0</R20>
+									<R21>0</R21>
+									<R22>-1</R22>
+								</CoordinateFrame>
+								<bool name="Enabled">true</bool>
+								<string name="Name">Weld</string>
+								<Ref name="Part0">RBX9387eabf4bbf4e0098a11d08fafe5bb3</Ref>
+								<Ref name="Part1">RBXb8cb7bb751eb4e79826ac8cf98bb8981</Ref>
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
@@ -19780,7 +19801,8 @@ LW5YMSAwBDQZDncMkV0AGg==]]></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">LocalScript</string>
 					<string name="ScriptGuid">{fba3cdb1-8b77-4e38-8f74-6be449869cc1}</string>
-					<ProtectedString name="Source"><![CDATA[--print("StarterPlayerScripts")
+					<ProtectedString name="Source"><![CDATA[print("StarterPlayerScripts")
+
 
 
 --local Players = game:GetService("Players")
@@ -19852,7 +19874,21 @@ LW5YMSAwBDQZDncMkV0AGg==]]></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">LocalScript</string>
 					<string name="ScriptGuid">{091fe700-45ae-4487-8e1f-4541675ed910}</string>
-					<ProtectedString name="Source"><![CDATA[--print("new script 2------------------------------------")
+					<ProtectedString name="Source"><![CDATA[print("new script 2------------------------------------")
+local player = game.Players.LocalPlayer
+local char = player.CharacterAdded:wait()
+local h = char.Humanoid
+
+h.WalkSpeed = 0
+
+
+local newWalkspeed = 0
+
+game.Players.PlayedAdded:Connect(function(player)
+	player.CharacterAdded:Connect(function(character)
+		character:WaitForChild("Humanoid").WalkSpeed = newWalkspeed
+	end)
+end)
 
 
 --local Players = game:GetService("Players")
@@ -20747,7 +20783,7 @@ renderQuestBlock = function(props)
                                                         "DockWallLeft")
 
     local offsetX = Constants.islandLength
-    local offsetY = sceneHeight
+    local offsetY = -sceneHeight
     local offsetZ = Constants.islandLength
 
     if (isFirst) then
@@ -23332,6 +23368,8 @@ function module.addScenes(props)
                 if not entered.value then
                     unHideWall(clonedScene)
                     entered.value = true
+                    game.Workspace.Player.HumanoidRootPart.CFrame =
+                        CFrame.new(Vector3.new(0, 50, 0))
                 end
                 buttonPressed = false
             end

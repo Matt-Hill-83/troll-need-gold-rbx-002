@@ -7,11 +7,43 @@ local Scenes = require(Sss.Source.Scenes.Scenes)
 local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
 local Constants = require(Sss.Source.Constants.Constants)
 
-function configGame()
+function configPlayers()
     local Players = game:GetService("Players")
     Players.RespawnTime = 0
 
-    -- Utils.hideItemAndChildrenByName({name = "QuestsOrigin", hide = true})
+    local RunService = game:GetService("RunService")
+
+    -- Check if the given object is an Accessory (such as a hat)
+    local function destroyAccessories(object)
+        -- if object:IsA("Hat") or object:IsA("Accessory") then
+        --     object:Destroy()
+        -- end
+    end
+
+    local function onCharacterAdded(character)
+
+        character:WaitForChild("Humanoid").WalkSpeed = 2
+        -- Wait a brief moment before removing accessories to avoid the
+        -- "Something unexpectedly set ___ parent to NULL" warning
+        RunService.Stepped:Wait()
+        -- Check for any existing accessories in the player's character
+        for _, child in pairs(character:GetChildren()) do
+            destroyAccessories(child)
+        end
+        -- Hats may be added to the character a moment after
+        -- CharacterAdded fires, so we listen for those using ChildAdded
+        character.ChildAdded:Connect(destroyAccessories)
+    end
+
+    local function onPlayerAdded(player)
+        -- Listen for spawns
+        player.CharacterAdded:Connect(onCharacterAdded)
+    end
+
+    Players.PlayerAdded:Connect(onPlayerAdded)
+end
+function configGame()
+    configPlayers()
 
     local itemsToHideAtRuntine = {'QuestsOrigin', 'TemplatesPedestal'}
     for i, item in ipairs(itemsToHideAtRuntine) do
