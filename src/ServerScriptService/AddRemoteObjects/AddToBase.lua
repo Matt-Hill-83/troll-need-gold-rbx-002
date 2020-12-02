@@ -32,8 +32,7 @@ function setVisibility()
         Utils.hideItemAndChildrenByName({name = item, hide = true})
     end
 
-    local itemsToMakeTransparentAtRuntine =
-        {"UserDectionRegion", "StartPositioner"}
+    local itemsToMakeTransparentAtRuntine = {"UserDectionRegion"}
     for i, item in ipairs(itemsToMakeTransparentAtRuntine) do
         Utils.setItemAndChildrenPropsByName(
             {name = item, props = {Transparency = 1}})
@@ -47,11 +46,6 @@ function setVisibility()
     Utils.setItemAndChildrenPropsByName({
         name = "SkyBox",
         props = {Transparency = .8}
-    })
-
-    Utils.setItemAndChildrenPropsByName({
-        name = "StartPositioner",
-        props = {Transparency = 1}
     })
 
 end
