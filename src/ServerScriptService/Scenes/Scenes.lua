@@ -3,6 +3,7 @@ local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Bridges = require(Sss.Source.Bridges.Bridges)
 local Characters = require(Sss.Source.Characters.Characters)
 local Buttons = require(Sss.Source.Buttons.Buttons)
+local Teleporters = require(Sss.Source.Teleporters.Teleporters)
 local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
@@ -79,75 +80,16 @@ function module.addScenes(props)
                 model = sceneTemplateModel,
 
                 position = CFrame.new(newPosition + startPosition),
-                suffix = "Clone--" .. i
+                suffix = "Clone" .. i
             })
         clonedScene.Name = clonedScene.Name .. i
 
-        -- 
-        -- 
-        -- 
+        Teleporters.addTeleporters({
+            parent = clonedScene,
+            sceneIndex = i,
+            questIndex = questIndex
+        })
 
-        local function setTP(thisTP, homeTP)
-            thisTP.Touched:Connect(function(touchPart)
-                if touchPart and touchPart.Parent and touchPart.Parent.Humanoid and
-                    touchPart.Parent.currentlyTeleporting.Value == false then
-                    print('touchPart')
-                    local Character = touchPart.Parent
-
-                    local teleportLocation =
-                        CFrame.new(homeTP.CFrame.X + 5 * i, homeTP.CFrame.Y,
-                                   homeTP.CFrame.Z + 5 * i)
-                    -- Character:SetPrimaryPartCFrame(teleportLocation)
-
-                    local ts = game:GetService("TweenService")
-                    -- local plrs = game:GetService("Players")
-
-                    wait(2)
-                    -- 
-
-                    local tweenInfo = TweenInfo.new(2) -- 2 sec
-
-                    local t = ts:Create(Character.PrimaryPart, tweenInfo,
-                                        {CFrame = teleportLocation})
-                    Character.PrimaryPart.Anchored = true
-                    -- Anchor the player's rootpart so physics doesn't mess things up.
-                    t:Play()
-                    t.Completed:Connect(function()
-                        Character.PrimaryPart.Anchored = false
-                    end)
-                    print("Hello world!")
-
-                    local teleportingValue = Character.currentlyTeleporting
-                    teleportingValue.Value = true
-                    wait(5)
-                    teleportingValue.Value = false
-                end
-            end)
-        end
-
-        local thisTeleporter = Utils.getFirstDescendantByName(clonedScene,
-                                                              "QuestTeleporter")
-        if (i == 1) then
-            local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
-                                                               "SkyBoxTeleporter")
-            thisTeleporter.Name = clonedScene.Name .. "-zzz"
-            local homeTeleporter = thisTeleporter:Clone()
-            homeTeleporter.Parent = clonedScene
-
-            homeTeleporter.Name = thisTeleporter.Name .. "-home"
-            homeTeleporter.CFrame = dummyHomeTP.CFrame *
-                                        CFrame.new(
-                                            Vector3.new(10 * questIndex, 0, 0))
-
-            setTP(thisTeleporter, homeTeleporter)
-            setTP(homeTeleporter, thisTeleporter)
-        else
-            thisTeleporter:Destroy()
-
-        end
-
-        -- 
-        -- 
         local function hideWall(clonedScene)
             local dialog = Utils.getFirstDescendantByName(clonedScene,
                                                           "WallTemplate")
@@ -290,11 +232,6 @@ function module.addScenes(props)
         Buttons.doFrameStuff(props2)
 
         hideWall(clonedScene)
-        -- local weld = Instance.new("WeldConstraint")
-        -- weld.Parent = workspace
-        -- weld.Part0 = parent
-        -- weld.Part1 = clonedScene.PrimaryPart
-        -- weld.Name = 'zzz-scene weld'
 
     end
     sceneTemplateModel:Destroy()

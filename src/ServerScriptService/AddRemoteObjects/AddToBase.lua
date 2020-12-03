@@ -33,7 +33,7 @@ function setVisibility()
     end
 
     local itemsToMakeTransparentAtRuntine =
-        {"UserDectionRegion", "WallTemplate"}
+        {"UserDectionRegion", "WallTemplate", 'QuestTeleporter'}
     for i, item in ipairs(itemsToMakeTransparentAtRuntine) do
         Utils.setItemAndChildrenPropsByName(
             {name = item, props = {Transparency = 1}})
@@ -44,9 +44,19 @@ function setVisibility()
         props = {Transparency = 1}
     })
 
+    -- Utils.setItemAndChildrenPropsByName({
+    --     name = "DockBase",
+    --     props = {Transparency = 1}
+    -- })
+
     Utils.setItemAndChildrenPropsByName({
         name = "SkyBox",
         props = {Transparency = .8}
+    })
+
+    Utils.setItemAndChildrenPropsByName({
+        name = "SkyBoxWalls",
+        props = {Transparency = 1}
     })
 
 end
@@ -76,10 +86,9 @@ function addRemoteObjects()
         local startSceneCoords = questConfig.startSceneCoords
         local endSceneCoords = questConfig.ebdSceneCoords
 
-        local desiredPadding = 12
+        local desiredPadding = 1
         local wallWidth = 1
         local wallHeight = 8
-        -- local wallHeight = 20
         local sceneHeight = 50
         local wallSize = Vector3.new(wallWidth, wallHeight, wallWidth)
         local gridPadding = desiredPadding + wallWidth * 2
