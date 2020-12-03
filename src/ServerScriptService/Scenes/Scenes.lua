@@ -154,9 +154,11 @@ function module.addScenes(props)
 
         local function onPartTouchEnded(otherPart)
             local partParent = otherPart.Parent
-            local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
-            if humanoid then
-                regionExit(humanoid, clonedScene, entered)
+            if partParent then
+                local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
+                if humanoid then
+                    regionExit(humanoid, clonedScene, entered)
+                end
             end
         end
 
