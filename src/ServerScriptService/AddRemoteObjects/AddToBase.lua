@@ -33,7 +33,7 @@ function setVisibility()
     end
 
     local itemsToMakeTransparentAtRuntine =
-        {"UserDectionRegion", "WallTemplate", 'QuestTeleporter'}
+        {"UserDectionRegion", "WallTemplate"}
     for i, item in ipairs(itemsToMakeTransparentAtRuntine) do
         Utils.setItemAndChildrenPropsByName(
             {name = item, props = {Transparency = 1}})
@@ -43,11 +43,6 @@ function setVisibility()
         name = "DockWalls",
         props = {Transparency = 1}
     })
-
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "DockBase",
-    --     props = {Transparency = 1}
-    -- })
 
     Utils.setItemAndChildrenPropsByName({
         name = "SkyBox",

@@ -112,6 +112,10 @@ renderQuestBlock = function(props)
     local isFirst = index == 1
 
     local dockBase = Utils.getFirstDescendantByName(dockModel, "DockBase")
+    local dockBasement1 = Utils.getFirstDescendantByName(dockModel,
+                                                         "DockBasement1")
+    local dockBasement2 = Utils.getFirstDescendantByName(dockModel,
+                                                         "DockBasement2")
 
     local dockWallFront = Utils.getFirstDescendantByName(dockModel,
                                                          "DockWallFront")
@@ -169,6 +173,10 @@ renderQuestBlock = function(props)
 
     dockBase.CFrame = dockPositioner.CFrame
     dockBase.Size = dockPositioner.Size
+    dockBasement1.CFrame = dockPositioner.CFrame
+    dockBasement1.Size = dockPositioner.Size
+    dockBasement2.CFrame = dockPositioner.CFrame
+    dockBasement2.Size = dockPositioner.Size
 
     renderFrontWall({
         parent = dockBase,
@@ -192,11 +200,8 @@ renderQuestBlock = function(props)
     })
 
     dockPositioner:Destroy()
-    -- local questCFrame = dockPositioner.CFrame
-    -- dockPositioner.CFrame = questCFrame * CFrame.new(Vector3.new(0, -40, 0)) *
-    --                             CFrame.fromEulerAnglesXYZ(0, math.rad(90), 0)
+
     return dockBase
-    -- return dockPositioner
 end
 
 module.renderQuestBlock = renderQuestBlock
