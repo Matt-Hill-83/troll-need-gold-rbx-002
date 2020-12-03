@@ -51,7 +51,7 @@ function setVisibility()
 
     Utils.setItemAndChildrenPropsByName({
         name = "SkyBoxWalls",
-        props = {Transparency = 1}
+        props = {Transparency = .8}
     })
 
     Utils.setItemAndChildrenPropsByName({

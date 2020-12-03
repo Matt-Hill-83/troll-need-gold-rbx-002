@@ -77,7 +77,7 @@ function module.reportPlayerLocation()
             local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
             while humanoidRootPart do
                 local test2 = workspace.CurrentCamera.CFrame.Position
-                -- print(test2);
+                print(test2);
                 print(player.Name, "is at", tostring(humanoidRootPart.Position))
                 wait(4)
             end

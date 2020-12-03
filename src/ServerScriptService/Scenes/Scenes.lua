@@ -84,10 +84,13 @@ function module.addScenes(props)
             })
         clonedScene.Name = clonedScene.Name .. i
 
+        local isStartScene = sceneConfig.isStartScene
+
         Teleporters.addTeleporters({
             parent = clonedScene,
             sceneIndex = i,
             questIndex = questIndex,
+            isStartScene = isStartScene,
             questTitle = questConfig.questTitle
         })
 

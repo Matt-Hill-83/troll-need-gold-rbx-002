@@ -48,7 +48,8 @@ renderTexts = function(props)
             backgroundColor = dialogColors[charConfig.backgroundColorIdx]
         end
 
-        if (dialogText ~= "blank" and dialogText ~= "empty") then
+        if (dialogText ~= "blank") then
+            -- if (dialogText ~= "blank" and dialogText ~= "empty") then
             local text = "<b>" .. displayName .. ": " .. "</b>" .. dialogText
 
             local font = Enum.Font.Arial

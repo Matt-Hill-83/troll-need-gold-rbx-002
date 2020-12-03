@@ -2,25 +2,206 @@ local module = {}
 
 module.questConfigs = {
     {
-        questTitle = "8010-dogAndPup-002",
+        questTitle = "--- rbx-001",
         startSceneCoords = {row = 0, col = 0},
-        endSceneCoords = {col = 4, row = 1},
+        endSceneCoords = {col = 2, row = 0},
         sceneConfigs = {
             {
                 name = "home",
                 frames = {
                     {
                         dialogs = {
-                            {char = "kat", text = "Boo Hoo!"},
-                            {char = "kat", text = "Boo Hoo Hoo!"}
+                            {char = "kat", text = "Today is the day!"},
+                            {char = "liz2", text = "Today is the day?"},
+                            {char = "dog01", text = "Yes."},
+                            {char = "liz2", text = "Wait, today is what day?"},
+                            {char = "liz2", text = "Halloween?"}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
+                        characters01 = {{name = "liz2"}, {name = "kat"}},
                         characters02 = {}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "empty",
+                                text = "No, no no. Better than halloween!"
+                            },
+                            {
+                                char = "empty",
+                                text = "Today is the day we get cup cakes!"
+                            },
+                            {
+                                char = "empty",
+                                text = "Cupcakes?  Me likey cup cakes!"
+                            },
+                            {char = "elf", text = "DO NOT GO IN THE CAVE!!!"},
+                            {
+                                char = "empty",
+                                text = "Um thanks, Albert Elf-Stein.  We will steer clear."
+                            }, {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"}
+                        },
+                        characters01 = {{name = "liz2"}, {name = "kat"}},
+                        characters02 = {{name = "elf"}}
+                    }, {
+                        dialogs = {
+                            {char = "empty", text = "Wait... Kat no."},
+                            {
+                                char = "empty",
+                                text = "You have that look on your face."
+                            }, {char = "empty", text = "Pure joy?"},
+                            {
+                                char = "empty",
+                                text = "Not not that one... your sneaky look."
+                            },
+                            {
+                                char = "empty",
+                                text = "Kat, I can tell when you are up to no good..."
+                            }
+                        },
+                        characters01 = {{name = "liz2"}, {name = "kat"}},
+                        characters02 = {}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "empty",
+                                text = "Please tell me we are not going to Goblin Hill to take the cup cakes."
+                            }, {char = "empty", text = "My plan exactly!"},
+                            {
+                                char = "empty",
+                                text = "Oh no.  Oh no no. no no..."
+                            },
+                            {
+                                char = "empty",
+                                text = "I am not going to steal cupcakes from Goblins."
+                            },
+                            {
+                                char = "empty",
+                                text = "I like to call it borrowing..."
+                            }
+                        },
+                        characters01 = {{name = "liz2"}, {name = "kat"}},
+                        characters02 = {}
+                    }, {
+                        dialogs = {
+                            {char = "kat", text = "You have lost your mind!"},
+                            {
+                                char = "empty",
+                                text = "Did you wake up this morning and say="
+                            }, {
+                                char = "empty",
+                                text = "\"Oh gee, today is a good day to get eaten by a Goblin.\""
+                            },
+                            {
+                                char = "empty",
+                                text = "Liz, Liz, Liz.  Always so dramatic."
+                            },
+                            {
+                                char = "empty",
+                                text = "I've got a good feeling about this plan."
+                            }
+                        },
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {}
+                    }, {
+                        dialogs = {
+                            {char = "empty", text = "Ok, please, do tell."},
+                            {char = "empty", text = "I bet this is a doozy!"},
+                            {
+                                char = "empty",
+                                text = "I thought it up when I was brushing my teeth."
+                            },
+                            {
+                                char = "empty",
+                                text = "We sneak up from the back of Goblin Hill."
+                            }, {char = "empty", text = "Ok, and then what?"},
+                            {
+                                char = "dog01",
+                                text = "That's it.  That's my plan."
+                            }
+                        },
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "empty",
+                                text = "That sounds more like instructions for getting eaten by a Goblin."
+                            }, {char = "empty", text = "It does?"}, {
+                                char = "empty",
+                                text = "Maybe you should send them a fax and tell them we are coming."
+                            }, {char = "empty", text = "What's a fax."},
+                            {
+                                char = "empty",
+                                text = "I don't know, my dad says it."
+                            }
+                        },
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "empty",
+                                text = "Well, they have Razzle-berry Rainbow frosting."
+                            },
+                            {
+                                char = "empty",
+                                text = "What?  OMG! We have to, have to, have to try that!"
+                            },
+                            {
+                                char = "empty",
+                                text = "Ughh, Kat, you should have started with that."
+                            },
+                            {
+                                char = "empty",
+                                text = "I knew you would come around."
+                            }
+                        },
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {{name = "liz2"}}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "empty",
+                                text = "But we are going to need a real plan."
+                            },
+                            {
+                                char = "empty",
+                                text = "Your plan is a recipe for little girl stew!"
+                            },
+                            {
+                                char = "empty",
+                                text = "My mom says I'm not a planner."
+                            },
+                            {
+                                char = "empty",
+                                text = "I like to rely on my instincts."
+                            }, {
+                                char = "empty",
+                                text = "Kaaaattt!!!!  If I get eaten by a goblin, it's your fault!"
+                            }, {
+                                char = "empty",
+                                text = "Let's go find Gerald.  I bet he'll know what to do..."
+                            }, {char = "empty", text = "Gerald?"}, {
+                                char = "empty",
+                                text = "Yeah, Gerald.  And if I know Gerald, I'd guess he is at the playground running around making airplane noises."
+                            },
+                            {
+                                char = "empty",
+                                text = "Let's go to the slide.  Yay!  I love the slide."
+                            }, {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"}
+                        },
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {{name = "liz2"}}
                     }
                 },
                 coordinates = {row = 0, col = 0},
-                showBottomPath = true,
-                showRightPath = false,
+                showBottomPath = false,
+                showRightPath = true,
                 showTopPath = false,
                 showLeftPath = false,
                 isEndScene = false,
@@ -32,339 +213,188 @@ module.questConfigs = {
                 frames = {
                     {
                         dialogs = {
-                            {char = "liz2", text = "Hi Kat!"},
-                            {char = "kat", text = "Hi Liz!"},
-                            {char = "kat", text = "I am sad!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "You are sad?"},
-                            {char = "kat", text = "Yes! I am soooooo sad!"},
-                            {char = "liz2", text = "Why?"},
-                            {char = "liz2", text = "Why are you soooooooo sad?"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "Pup Pup is missing!"},
-                            {char = "liz2", text = "Pup Pup is missing?"},
-                            {char = "kat", text = "Liz! Can we find Pup Pup?"},
-                            {char = "liz2", text = "Yes Kat!"},
-                            {char = "liz2", text = "We can find Pup Pup!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "We can look for Pup Pup"},
-                            {char = "kat", text = "at the cup!"},
-                            {char = "liz2", text = "We can look for Pup Pup"},
-                            {char = "liz2", text = "at the cup cup!"},
-                            {char = "liz2", text = "Tee Hee Hee!"},
+                            {char = "dog01", text = "I see a bug."},
+                            {char = "robby01", text = "I see a bee on a tug..."},
+                            {char = "empty", text = "Tee hee hee..."},
+                            {char = "empty", text = "Liz that is not a bug!"},
+                            {char = "empty", text = "Here buggy buggy!"},
                             {
-                                char = "kat",
-                                text = "ha! Liz you crack me up! up!"
-                            }
+                                char = "empty",
+                                text = "Liz, that is a girl-eating vampire bat!!!"
+                            }, {char = "empty", text = "Run for the hills!"},
+                            {char = "empty", text = "Let's go to the well."},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
+                        characters01 = {{name = "liz2"}, {name = "kat"}},
+                        characters02 = {{name = "robby01"}}
                     }
                 },
-                coordinates = {row = 1, col = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = true,
-                showLeftPath = false,
-                isEndScene = false,
-                isStartScene = false,
-                maxRow = 1,
-                maxCol = 0
-            }, {
-                name = "cup",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "elf", text = "DO NOT GO IN THE CAVE!"},
-                            {char = "liz2", text = "I see a dog."},
-                            {char = "liz2", text = "I see a dog... and a log."},
-                            {char = "kat", text = "Liz! That is not a dog."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "elf"}}
-                    }, {
-                        dialogs = {
-                            {char = "elf", text = "DO NOT GO IN THE CAVE!"},
-                            {char = "liz2", text = "Hi doggy doggy!"},
-                            {char = "kat", text = "Liiiiizzzzzz!"},
-                            {char = "kat", text = "That is not a dog!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "elf"}}
-                    }
-                },
-                coordinates = {row = 1, col = 1},
+                coordinates = {col = 1, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
                 showLeftPath = true,
                 isEndScene = false,
                 isStartScene = false,
-                maxRow = 1,
+                maxRow = 0,
                 maxCol = 1
             }, {
-                name = "hill",
+                name = "slide",
                 frames = {
                     {
                         dialogs = {
-                            {char = "babyTroll01", text = "BOO HOO!"},
-                            {char = "kat", text = "oh brother..."},
-                            {char = "liz2", text = "I see a troll!"},
-                            {char = "babyTroll01", text = "<sniff> <sniff>"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "babyTroll01"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "Oh no!"},
-                            {char = "liz2", text = "Baby Troll, are you sad?"},
+                            {char = "dog01", text = "Hi kid."},
+                            {char = "robby01", text = "Bark Bark."},
                             {
-                                char = "babyTroll01",
-                                text = "BABY TROLL NEED MOMMY!"
-                            }, {char = "liz2", text = "We can help the troll!"}
+                                char = "trollKing01",
+                                text = "Uggggh....My mom is making me do this..."
+                            }, {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "babyTroll01"}}
-                    }, {
-                        dialogs = {
-                            {char = "babyTroll01", text = "MOMMY! MOMMY!"},
-                            {
-                                char = "liz2",
-                                text = "Troll, We will find your mommy!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "babyTroll01"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "We can look in the cave!"},
-                            {char = "kat", text = "That sounds super safe."},
-                            {char = "babyTroll01", text = "Goo Goo!"},
-                            {char = "babyTroll01", text = "Gaa Gaa!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "babyTroll01"}}
+                        characters01 = {{name = "dog01"}},
+                        characters02 = {
+                            {name = "robby01"}, {name = "trollKing01"},
+                            {name = "helicopter01"}
+                        }
                     }
                 },
-                coordinates = {col = 2, row = 1},
-                showBottomPath = true,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                isEndScene = false,
-                isStartScene = false,
-                maxRow = 1,
-                maxCol = 2
-            }, {
-                name = "lulu01",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "lulu01", text = "My Choo Choo!"},
-                            {char = "kat", text = "Hi Lulu!"},
-                            {char = "lulu01", text = "Are you mommy?"},
-                            {
-                                char = "liz2",
-                                text = "Lulu, we will find your mommy!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }
-                },
-                coordinates = {col = 3, row = 1},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                isEndScene = false,
-                isStartScene = false,
-                maxRow = 1,
-                maxCol = 3
-            }, {
-                name = "waterfall",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "kat", text = "I see Pup Pup!"},
-                            {char = "liz2", text = "Yay!"},
-                            {char = "kat", text = "Yay!"},
-                            {char = "kat", text = "Pup Pup made a new friend!"},
-                            {char = "pup01", text = "Bark! Bark!"},
-                            {char = "dog01", text = "Ruff! Ruff!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "pup01"}, {name = "dog01"}}
-                    }
-                },
-                coordinates = {col = 4, row = 1},
+                coordinates = {col = 2, row = 0},
                 showBottomPath = false,
                 showRightPath = false,
                 showTopPath = false,
                 showLeftPath = true,
                 isEndScene = true,
                 isStartScene = false,
-                maxRow = 1,
-                maxCol = 4
-            }, {
+                maxRow = 0,
+                maxCol = 2
+            }
+        },
+        gridSize = {rows = 1, cols = 3}
+    }, {
+        questTitle = "--- rbx-002",
+        startSceneCoords = {col = 0, row = 1},
+        endSceneCoords = {col = 1, row = 0},
+        sceneConfigs = {
+            {
                 name = "cave",
                 frames = {
                     {
                         dialogs = {
-                            {char = "babyTroll01", text = "MOMMY"},
-                            {char = "troll01", text = "BABY TROLL"},
-                            {char = "troll01", text = "GIRLS TAKE GIFT"},
                             {
-                                char = "kat",
-                                text = "A choo choo... ummmmmm...    ok...."
+                                char = "dog01",
+                                text = "Did you see the space ship?"
+                            }, {char = "robby01", text = "I am new here..."},
+                            {
+                                char = "trollKing01",
+                                text = "Mwa...  ha-ha ha-ha ha!!!"
                             }
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
+                        characters01 = {{name = "dog01"}},
                         characters02 = {
-                            {name = "babyTroll01"}, {name = "troll01"},
-                            {name = "chooChoo01"}
-                        }
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "A choo choo!"},
-                            {char = "kat", text = "Wow!  What a lovely gift!"},
-                            {char = "kat", text = "We can go to the bog."},
-                            {
-                                char = "liz2",
-                                text = "We can go to the bog to look for Pup Pup!."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "babyTroll01"}, {name = "troll01"},
-                            {name = "chooChoo01"}
+                            {name = "robby01"}, {name = "trollKing01"}
                         }
                     }
                 },
-                coordinates = {col = 2, row = 2},
-                showBottomPath = false,
+                coordinates = {col = 1, row = 0},
+                showBottomPath = true,
                 showRightPath = false,
-                showTopPath = true,
+                showTopPath = false,
                 showLeftPath = false,
-                isEndScene = false,
+                isEndScene = true,
                 isStartScene = false,
-                maxRow = 2,
-                maxCol = 4
-            }
-        },
-        gridSize = {rows = 3, cols = 5}
-    }, {
-        questTitle = "8000-dogAndPup-001",
-        startSceneCoords = {row = 0, col = 0},
-        endSceneCoords = {col = 2, row = 0},
-        sceneConfigs = {
-            {
-                name = "pin",
+                maxRow = 0,
+                maxCol = 1
+            }, {
+                name = "home",
                 frames = {
                     {
                         dialogs = {
-                            {char = "kat", text = "Hi Liz!"},
-                            {char = "liz2", text = "Hi Kat!"},
-                            {char = "kat", text = "I see a pup."},
-                            {char = "liz2", text = "I see a pup... and a cup!"}
+                            {char = "kat", text = "Did you see the space ship?"},
+                            {char = "liz2", text = "I am new here..."},
+                            {char = "dog01", text = "I like bees"}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "pup01"}, {name = "cup"}}
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {{name = "liz2"}}
                     }, {
                         dialogs = {
-                            {char = "kat", text = "I see a pup... go up!!!"},
-                            {char = "liz2", text = "No pup, no!"},
-                            {char = "kat", text = "Boo Hoo!"},
-                            {char = "liz2", text = "up... up... up..."}
+                            {char = "kat", text = "yay bees"},
+                            {char = "dog01", text = "Bees are fun"},
+                            {char = "liz2", text = "We can play with bees!"}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "pup01"}, {name = "cup"}}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "I see a pup."},
-                            {char = "liz2", text = "I see a pup... and a pin!"},
-                            {char = "kat", text = "Oh no. No pin! No pin!"},
-                            {char = "liz2", text = "Pup go POP!"},
-                            {char = "kat", text = "Boooooo... Hoooooooo....."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "pup01"}, {name = "cup"}}
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {{name = "liz2"}}
                     }
                 },
-                coordinates = {row = 0, col = 0},
+                coordinates = {col = 0, row = 1},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
                 showLeftPath = false,
                 isEndScene = false,
                 isStartScene = true,
-                maxRow = 0,
-                maxCol = 0
+                maxRow = 1,
+                maxCol = 1
+            }, {
+                name = "log",
+                frames = {
+                    {
+                        dialogs = {
+                            {
+                                char = "dog01",
+                                text = "Did you see the space ship?"
+                            }, {char = "robby01", text = "I am new here..."}
+                        },
+                        characters01 = {{name = "dog01"}},
+                        characters02 = {{name = "robby01"}}
+                    }
+                },
+                coordinates = {col = 1, row = 1},
+                showBottomPath = false,
+                showRightPath = false,
+                showTopPath = true,
+                showLeftPath = true,
+                isEndScene = false,
+                isStartScene = false,
+                maxRow = 1,
+                maxCol = 1
             }
         },
-        gridSize = {rows = 1, cols = 1}
+        gridSize = {rows = 2, cols = 2}
     }, {
-        questTitle = "001 - Troll Need Pet",
+        questTitle = "--- rbx-003",
         startSceneCoords = {col = 0, row = 0},
-        endSceneCoords = {row = 2, col = 2},
+        endSceneCoords = {row = 0, col = 1},
         sceneConfigs = {
             {
                 name = "home",
                 frames = {
                     {
                         dialogs = {
-                            {char = "troll02", text = "GOLD! GOLD!"},
-                            {char = "babyTroll01", text = "Daddy! Daddy!"},
-                            {char = "troll02", text = "TROLL NEED GOLD!"},
                             {
-                                char = "babyTroll01",
-                                text = "Baby Troll want pet!"
-                            },
-                            {char = "troll02", text = "BABY TROLL WANT PET?"},
-                            {char = "babyTroll01", text = "Me want pet!"}
+                                char = "dog01",
+                                text = "Did you see the space ship?"
+                            }, {char = "robby01", text = "I am new here..."}
                         },
-                        characters01 = {
-                            {name = "troll02"}, {name = "babyTroll01"}
-                        },
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "troll02", text = "BABY TROLL GET FROG."},
-                            {char = "babyTroll01", text = "Me want dog!"},
-                            {char = "troll02", text = "FROG GOOD PET."},
-                            {char = "troll02", text = "BABY TROLL GET FROG."}
-                        },
-                        characters01 = {
-                            {name = "troll02"}, {name = "babyTroll01"}
-                        },
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "babyTroll01",
-                                text = "Waaaa!  Me want dog!"
-                            }, {char = "troll02", text = "FROG GOOD PET."},
-                            {char = "babyTroll01", text = "Me want dog!"},
-                            {char = "troll02", text = "BABY TROLL GO TO BOG."},
-                            {char = "troll02", text = "GET FROG IN BOG."},
-                            {char = "babyTroll01", text = "Uuuuugh.... Fine."}
-                        },
-                        characters01 = {
-                            {name = "troll02"}, {name = "babyTroll01"}
-                        },
-                        characters02 = {}
+                        characters01 = {{name = "dog01"}},
+                        characters02 = {{name = "robby01"}}
                     }
                 },
                 coordinates = {col = 0, row = 0},
@@ -381,75 +411,62 @@ module.questConfigs = {
                 frames = {
                     {
                         dialogs = {
-                            {char = "babyTroll01", text = "Me find bun!"},
-                            {char = "cow01", text = "Moooooo!"},
-                            {char = "babyTroll01", text = "Me run with bun!"},
-                            {char = "cow01", text = "Moooooo!"},
-                            {char = "babyTroll01", text = "Fun Fun Fun!"}
+                            {
+                                char = "dog01",
+                                text = "Did you see the space ship?"
+                            }, {char = "robby01", text = "I am new here..."},
+                            {
+                                char = "trollKing01",
+                                text = "Mwa...  ha-ha ha-ha ha!!!"
+                            }
                         },
-                        characters01 = {{name = "babyTroll01"}},
-                        characters02 = {{name = "bun"}, {name = "cow01"}}
+                        characters01 = {{name = "dog01"}},
+                        characters02 = {
+                            {name = "robby01"}, {name = "trollKing01"}
+                        }
                     }
                 },
                 coordinates = {row = 0, col = 1},
-                showBottomPath = true,
+                showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
                 showLeftPath = true,
-                isEndScene = false,
+                isEndScene = true,
                 isStartScene = false,
                 maxRow = 0,
                 maxCol = 1
             }, {
-                name = "stump",
+                name = "cave",
                 frames = {
                     {
                         dialogs = {
-                            {char = "babyTroll01", text = "Run run run!"},
-                            {char = "elf", text = "DO NOT GO IN THE CAVE!!!"},
-                            {char = "babyTroll01", text = "Fun fun fun!"},
-                            {char = "elf", text = "DO NOT GO IN THE CAVE!!!"}
+                            {
+                                char = "dog01",
+                                text = "Did you see the space ship?"
+                            }, {char = "robby01", text = "I am new here..."},
+                            {
+                                char = "trollKing01",
+                                text = "Mwa...  ha-ha ha-ha ha!!!"
+                            }
                         },
-                        characters01 = {{name = "babyTroll01"}},
-                        characters02 = {{name = "elf"}, {name = "dress06"}}
+                        characters01 = {{name = "dog01"}},
+                        characters02 = {
+                            {name = "robby01"}, {name = "trollKing01"}
+                        }
                     }
                 },
                 coordinates = {row = 0, col = 2},
                 showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                isEndScene = false,
-                isStartScene = false,
-                maxRow = 0,
-                maxCol = 2
-            }, {
-                name = "pond",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "babyTroll01", text = "I see a cub!"},
-                            {char = "cub", text = "I need my Mommy!"},
-                            {char = "babyTroll01", text = "Me need frog!"},
-                            {char = "cub", text = "Mommy!!!"},
-                            {char = "babyTroll01", text = "Froggy!!!"}
-                        },
-                        characters01 = {{name = "babyTroll01"}},
-                        characters02 = {{name = "cub"}}
-                    }
-                },
-                coordinates = {col = 3, row = 0},
-                showBottomPath = false,
                 showRightPath = false,
                 showTopPath = false,
                 showLeftPath = true,
-                isEndScene = false,
+                isEndScene = true,
                 isStartScene = false,
                 maxRow = 0,
-                maxCol = 3
+                maxCol = 2
             }
         },
-        gridSize = {rows = 1, cols = 4}
+        gridSize = {rows = 1, cols = 3}
     }
 }
 return module
