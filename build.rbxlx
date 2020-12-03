@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>549.184692</X>
-					<Y>90.0244675</Y>
-					<Z>-826.487427</Z>
-					<R00>-0.446689367</R00>
-					<R01>0.32523033</R01>
-					<R02>-0.833482981</R02>
+					<X>913.313904</X>
+					<Y>-21.3836021</Y>
+					<Z>-707.001099</Z>
+					<R00>-0.991767883</R00>
+					<R01>-0.0622881651</R01>
+					<R02>0.111878268</R02>
 					<R10>-0</R10>
-					<R11>0.931589544</R11>
-					<R12>0.363512069</R12>
-					<R20>0.894689202</R20>
-					<R21>0.16237697</R21>
-					<R22>-0.416131079</R22>
+					<R11>0.873714209</R11>
+					<R12>0.486439854</R12>
+					<R20>-0.128049061</R20>
+					<R21>0.482435435</R21>
+					<R22>-0.866521597</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>925.090149</X>
-					<Y>-73.9214859</Y>
-					<Z>-638.809998</Z>
+					<X>904.11438</X>
+					<Y>-61.3825684</Y>
+					<Z>-635.748779</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -15210,7 +15210,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<float name="TopParamB">0.5</float>
 										<token name="TopSurface">0</token>
 										<token name="TopSurfaceInput">0</token>
-										<float name="Transparency">0.5</float>
+										<float name="Transparency">1</float>
 										<Vector3 name="Velocity">
 											<X>0</X>
 											<Y>0</Y>
@@ -21835,182 +21835,497 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 									</Item>
 								</Item>
 							</Item>
-							<Item class="Part" referent="RBX04189b0c86354359b136c02b85eb745c">
+							<Item class="Model" referent="RBX2a8d241184334d11af87d361e08d1c2b">
 								<Properties>
-									<bool name="Anchored">true</bool>
 									<BinaryString name="AttributesSerialize"></BinaryString>
-									<float name="BackParamA">-0.5</float>
-									<float name="BackParamB">0.5</float>
-									<token name="BackSurface">0</token>
-									<token name="BackSurfaceInput">0</token>
-									<float name="BottomParamA">-0.5</float>
-									<float name="BottomParamB">0.5</float>
-									<token name="BottomSurface">0</token>
-									<token name="BottomSurfaceInput">0</token>
-									<CoordinateFrame name="CFrame">
-										<X>925.480164</X>
-										<Y>-73.9214859</Y>
-										<Z>-639.929993</Z>
-										<R00>4.94774622e-06</R00>
+									<token name="LevelOfDetail">0</token>
+									<CoordinateFrame name="ModelInPrimary">
+										<X>0</X>
+										<Y>0</Y>
+										<Z>0</Z>
+										<R00>1</R00>
 										<R01>0</R01>
-										<R02>1</R02>
+										<R02>0</R02>
 										<R10>0</R10>
 										<R11>1</R11>
 										<R12>0</R12>
-										<R20>-1</R20>
+										<R20>0</R20>
 										<R21>0</R21>
-										<R22>4.94778305e-06</R22>
+										<R22>1</R22>
 									</CoordinateFrame>
-									<bool name="CanCollide">true</bool>
-									<bool name="CastShadow">true</bool>
-									<int name="CollisionGroupId">0</int>
-									<Color3uint8 name="Color3uint8">4294954137</Color3uint8>
-									<PhysicalProperties name="CustomPhysicalProperties">
-										<CustomPhysics>false</CustomPhysics>
-									</PhysicalProperties>
-									<float name="FrontParamA">-0.5</float>
-									<float name="FrontParamB">0.5</float>
-									<token name="FrontSurface">0</token>
-									<token name="FrontSurfaceInput">0</token>
-									<float name="LeftParamA">-0.5</float>
-									<float name="LeftParamB">0.5</float>
-									<token name="LeftSurface">0</token>
-									<token name="LeftSurfaceInput">0</token>
-									<bool name="Locked">false</bool>
-									<bool name="Massless">false</bool>
-									<token name="Material">256</token>
-									<string name="Name">QuestTeleporter</string>
-									<float name="Reflectance">0</float>
-									<float name="RightParamA">-0.5</float>
-									<float name="RightParamB">0.5</float>
-									<token name="RightSurface">0</token>
-									<token name="RightSurfaceInput">0</token>
-									<int name="RootPriority">0</int>
-									<Vector3 name="RotVelocity">
+									<CoordinateFrame name="ModelMeshCFrame">
+										<X>0</X>
+										<Y>0</Y>
+										<Z>0</Z>
+										<R00>1</R00>
+										<R01>0</R01>
+										<R02>0</R02>
+										<R10>0</R10>
+										<R11>1</R11>
+										<R12>0</R12>
+										<R20>0</R20>
+										<R21>0</R21>
+										<R22>1</R22>
+									</CoordinateFrame>
+									<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
+									<Vector3 name="ModelMeshSize">
 										<X>0</X>
 										<Y>0</Y>
 										<Z>0</Z>
 									</Vector3>
-									<int64 name="SourceAssetId">4778278500</int64>
+									<string name="Name">QuestTeleporterModel</string>
+									<Ref name="PrimaryPart">RBX04189b0c86354359b136c02b85eb745c</Ref>
+									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
-									<float name="TopParamA">-0.5</float>
-									<float name="TopParamB">0.5</float>
-									<token name="TopSurface">0</token>
-									<token name="TopSurfaceInput">0</token>
-									<float name="Transparency">0</float>
-									<Vector3 name="Velocity">
-										<X>0</X>
-										<Y>0</Y>
-										<Z>0</Z>
-									</Vector3>
-									<token name="formFactorRaw">1</token>
-									<token name="shape">1</token>
-									<Vector3 name="size">
-										<X>3.75999999</X>
-										<Y>0.099999994</Y>
-										<Z>11.1599998</Z>
-									</Vector3>
 								</Properties>
-								<Item class="SurfaceGui" referent="RBXb7a94a8c0eda464abcf3d8cafeecdb6e">
+								<Item class="Part" referent="RBX04189b0c86354359b136c02b85eb745c">
 									<Properties>
-										<bool name="Active">true</bool>
-										<Ref name="Adornee">null</Ref>
-										<bool name="AlwaysOnTop">false</bool>
+										<bool name="Anchored">true</bool>
 										<BinaryString name="AttributesSerialize"></BinaryString>
-										<bool name="AutoLocalize">true</bool>
-										<Vector2 name="CanvasSize">
-											<X>800</X>
-											<Y>600</Y>
-										</Vector2>
-										<bool name="ClipsDescendants">true</bool>
-										<bool name="Enabled">true</bool>
-										<token name="Face">1</token>
-										<float name="LightInfluence">1</float>
-										<string name="Name">SurfaceGui</string>
-										<float name="PixelsPerStud">50</float>
-										<bool name="ResetOnSpawn">true</bool>
-										<Ref name="RootLocalizationTable">null</Ref>
-										<token name="SizingMode">1</token>
-										<int64 name="SourceAssetId">-1</int64>
+										<float name="BackParamA">-0.5</float>
+										<float name="BackParamB">0.5</float>
+										<token name="BackSurface">0</token>
+										<token name="BackSurfaceInput">0</token>
+										<float name="BottomParamA">-0.5</float>
+										<float name="BottomParamB">0.5</float>
+										<token name="BottomSurface">0</token>
+										<token name="BottomSurfaceInput">0</token>
+										<CoordinateFrame name="CFrame">
+											<X>927.940186</X>
+											<Y>-73.5697556</Y>
+											<Z>-639.14209</Z>
+											<R00>4.94760479e-06</R00>
+											<R01>2.50793136e-10</R01>
+											<R02>1</R02>
+											<R10>9.85480271e-16</R10>
+											<R11>0.999999762</R11>
+											<R12>2.50793136e-10</R12>
+											<R20>-0.999999762</R20>
+											<R21>2.55380487e-16</R21>
+											<R22>4.94792312e-06</R22>
+										</CoordinateFrame>
+										<bool name="CanCollide">true</bool>
+										<bool name="CastShadow">true</bool>
+										<int name="CollisionGroupId">0</int>
+										<Color3uint8 name="Color3uint8">4294954137</Color3uint8>
+										<PhysicalProperties name="CustomPhysicalProperties">
+											<CustomPhysics>false</CustomPhysics>
+										</PhysicalProperties>
+										<float name="FrontParamA">-0.5</float>
+										<float name="FrontParamB">0.5</float>
+										<token name="FrontSurface">0</token>
+										<token name="FrontSurfaceInput">0</token>
+										<float name="LeftParamA">-0.5</float>
+										<float name="LeftParamB">0.5</float>
+										<token name="LeftSurface">0</token>
+										<token name="LeftSurfaceInput">0</token>
+										<bool name="Locked">false</bool>
+										<bool name="Massless">false</bool>
+										<token name="Material">256</token>
+										<string name="Name">QuestTeleporter</string>
+										<float name="Reflectance">0</float>
+										<float name="RightParamA">-0.5</float>
+										<float name="RightParamB">0.5</float>
+										<token name="RightSurface">0</token>
+										<token name="RightSurfaceInput">0</token>
+										<int name="RootPriority">0</int>
+										<Vector3 name="RotVelocity">
+											<X>0</X>
+											<Y>0</Y>
+											<Z>0</Z>
+										</Vector3>
+										<int64 name="SourceAssetId">4778278500</int64>
 										<BinaryString name="Tags"></BinaryString>
-										<float name="ToolPunchThroughDistance">0</float>
-										<token name="ZIndexBehavior">1</token>
-										<float name="ZOffset">0</float>
+										<float name="TopParamA">-0.5</float>
+										<float name="TopParamB">0.5</float>
+										<token name="TopSurface">0</token>
+										<token name="TopSurfaceInput">0</token>
+										<float name="Transparency">0</float>
+										<Vector3 name="Velocity">
+											<X>0</X>
+											<Y>0</Y>
+											<Z>0</Z>
+										</Vector3>
+										<token name="formFactorRaw">1</token>
+										<token name="shape">1</token>
+										<Vector3 name="size">
+											<X>6</X>
+											<Y>1</Y>
+											<Z>6</Z>
+										</Vector3>
 									</Properties>
-									<Item class="TextLabel" referent="RBXd6a8d9cb968a4e34bce7602e668691b6">
+									<Item class="Weld" referent="RBX6de177471ad24e888d7084bbff33ab82">
 										<Properties>
-											<bool name="Active">false</bool>
-											<Vector2 name="AnchorPoint">
-												<X>0</X>
-												<Y>0</Y>
-											</Vector2>
 											<BinaryString name="AttributesSerialize"></BinaryString>
-											<bool name="AutoLocalize">true</bool>
-											<token name="AutomaticSize">0</token>
-											<Color3 name="BackgroundColor3">
-												<R>1</R>
-												<G>1</G>
-												<B>1</B>
-											</Color3>
-											<float name="BackgroundTransparency">0</float>
-											<Color3 name="BorderColor3">
-												<R>0.105882362</R>
-												<G>0.164705887</G>
-												<B>0.207843155</B>
-											</Color3>
-											<token name="BorderMode">0</token>
-											<int name="BorderSizePixel">1</int>
-											<bool name="ClipsDescendants">false</bool>
-											<bool name="Draggable">false</bool>
-											<token name="Font">3</token>
-											<int name="LayoutOrder">0</int>
-											<float name="LineHeight">1</float>
-											<string name="Name">TeleporterLabel</string>
-											<Ref name="NextSelectionDown">null</Ref>
-											<Ref name="NextSelectionLeft">null</Ref>
-											<Ref name="NextSelectionRight">null</Ref>
-											<Ref name="NextSelectionUp">null</Ref>
-											<UDim2 name="Position">
-												<XS>0</XS>
-												<XO>0</XO>
-												<YS>0</YS>
-												<YO>0</YO>
-											</UDim2>
-											<bool name="RichText">false</bool>
-											<Ref name="RootLocalizationTable">null</Ref>
-											<float name="Rotation">0</float>
-											<bool name="Selectable">false</bool>
-											<Ref name="SelectionImageObject">null</Ref>
-											<UDim2 name="Size">
-												<XS>1</XS>
-												<XO>0</XO>
-												<YS>1</YS>
-												<YO>0</YO>
-											</UDim2>
-											<token name="SizeConstraint">0</token>
+											<CoordinateFrame name="C0">
+												<X>0</X>
+												<Y>-0.5</Y>
+												<Z>0</Z>
+												<R00>0.999999523</R00>
+												<R01>4.54747351e-13</R01>
+												<R02>2.11758237e-22</R02>
+												<R10>1.97092497e-15</R10>
+												<R11>1.26352141e-21</R11>
+												<R12>-0.999999762</R12>
+												<R20>-3.16958904e-10</R20>
+												<R21>0.999999523</R21>
+												<R22>-5.01586328e-10</R22>
+											</CoordinateFrame>
+											<CoordinateFrame name="C1">
+												<X>13.9458618</X>
+												<Y>2.50500488</Y>
+												<Z>-14.1386108</Z>
+												<R00>2.98065197e-06</R00>
+												<R01>0.999999523</R01>
+												<R02>-2.50793192e-10</R02>
+												<R10>9.85480271e-16</R10>
+												<R11>-2.50793081e-10</R11>
+												<R12>-1</R12>
+												<R20>-0.999999762</R20>
+												<R21>2.98065106e-06</R21>
+												<R22>-1.73300823e-15</R22>
+											</CoordinateFrame>
+											<bool name="Enabled">true</bool>
+											<string name="Name">Weld</string>
+											<Ref name="Part0">RBX04189b0c86354359b136c02b85eb745c</Ref>
+											<Ref name="Part1">RBXa3bcf753fde5464899a4f15d57c876c7</Ref>
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
-											<string name="Text">Label</string>
-											<Color3 name="TextColor3">
-												<R>0</R>
-												<G>0</G>
-												<B>0</B>
-											</Color3>
-											<bool name="TextScaled">false</bool>
-											<float name="TextSize">50</float>
-											<Color3 name="TextStrokeColor3">
-												<R>0</R>
-												<G>0</G>
-												<B>0</B>
-											</Color3>
-											<float name="TextStrokeTransparency">1</float>
-											<float name="TextTransparency">0</float>
-											<token name="TextTruncate">0</token>
-											<bool name="TextWrapped">true</bool>
-											<token name="TextXAlignment">2</token>
-											<token name="TextYAlignment">1</token>
-											<bool name="Visible">true</bool>
-											<int name="ZIndex">1</int>
+										</Properties>
+									</Item>
+								</Item>
+								<Item class="Part" referent="RBX2449b704a57643c0b00e7d32bcc96003">
+									<Properties>
+										<bool name="Anchored">true</bool>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<float name="BackParamA">-0.5</float>
+										<float name="BackParamB">0.5</float>
+										<token name="BackSurface">0</token>
+										<token name="BackSurfaceInput">0</token>
+										<float name="BottomParamA">-0.5</float>
+										<float name="BottomParamB">0.5</float>
+										<token name="BottomSurface">0</token>
+										<token name="BottomSurfaceInput">0</token>
+										<CoordinateFrame name="CFrame">
+											<X>927.910156</X>
+											<Y>-64.1903992</Y>
+											<Z>-637.677979</Z>
+											<R00>-2.70710787e-09</R00>
+											<R01>4.94635333e-06</R01>
+											<R02>1</R02>
+											<R10>-0.999997497</R10>
+											<R11>9.85325306e-15</R11>
+											<R12>2.55954213e-09</R12>
+											<R20>-2.5556767e-15</R20>
+											<R21>-0.999997497</R21>
+											<R22>4.94931055e-06</R22>
+										</CoordinateFrame>
+										<bool name="CanCollide">true</bool>
+										<bool name="CastShadow">true</bool>
+										<int name="CollisionGroupId">0</int>
+										<Color3uint8 name="Color3uint8">4294954137</Color3uint8>
+										<PhysicalProperties name="CustomPhysicalProperties">
+											<CustomPhysics>false</CustomPhysics>
+										</PhysicalProperties>
+										<float name="FrontParamA">-0.5</float>
+										<float name="FrontParamB">0.5</float>
+										<token name="FrontSurface">0</token>
+										<token name="FrontSurfaceInput">0</token>
+										<float name="LeftParamA">-0.5</float>
+										<float name="LeftParamB">0.5</float>
+										<token name="LeftSurface">0</token>
+										<token name="LeftSurfaceInput">0</token>
+										<bool name="Locked">false</bool>
+										<bool name="Massless">false</bool>
+										<token name="Material">256</token>
+										<string name="Name">QuestTeleporterSign</string>
+										<float name="Reflectance">0</float>
+										<float name="RightParamA">-0.5</float>
+										<float name="RightParamB">0.5</float>
+										<token name="RightSurface">0</token>
+										<token name="RightSurfaceInput">0</token>
+										<int name="RootPriority">0</int>
+										<Vector3 name="RotVelocity">
+											<X>0</X>
+											<Y>0</Y>
+											<Z>0</Z>
+										</Vector3>
+										<int64 name="SourceAssetId">4778278500</int64>
+										<BinaryString name="Tags"></BinaryString>
+										<float name="TopParamA">-0.5</float>
+										<float name="TopParamB">0.5</float>
+										<token name="TopSurface">0</token>
+										<token name="TopSurfaceInput">0</token>
+										<float name="Transparency">0</float>
+										<Vector3 name="Velocity">
+											<X>0</X>
+											<Y>0</Y>
+											<Z>0</Z>
+										</Vector3>
+										<token name="formFactorRaw">1</token>
+										<token name="shape">1</token>
+										<Vector3 name="size">
+											<X>3.75999999</X>
+											<Y>0.5</Y>
+											<Z>12.1599998</Z>
+										</Vector3>
+									</Properties>
+									<Item class="SurfaceGui" referent="RBX4d539727ca3445c9895dde3fc4ed81ec">
+										<Properties>
+											<bool name="Active">true</bool>
+											<Ref name="Adornee">null</Ref>
+											<bool name="AlwaysOnTop">false</bool>
+											<BinaryString name="AttributesSerialize"></BinaryString>
+											<bool name="AutoLocalize">true</bool>
+											<Vector2 name="CanvasSize">
+												<X>800</X>
+												<Y>600</Y>
+											</Vector2>
+											<bool name="ClipsDescendants">true</bool>
+											<bool name="Enabled">true</bool>
+											<token name="Face">1</token>
+											<float name="LightInfluence">1</float>
+											<string name="Name">SurfaceGui</string>
+											<float name="PixelsPerStud">50</float>
+											<bool name="ResetOnSpawn">true</bool>
+											<Ref name="RootLocalizationTable">null</Ref>
+											<token name="SizingMode">1</token>
+											<int64 name="SourceAssetId">-1</int64>
+											<BinaryString name="Tags"></BinaryString>
+											<float name="ToolPunchThroughDistance">0</float>
+											<token name="ZIndexBehavior">1</token>
+											<float name="ZOffset">0</float>
+										</Properties>
+										<Item class="TextLabel" referent="RBX3007c664fca548169c372d9ce81fb9a8">
+											<Properties>
+												<bool name="Active">false</bool>
+												<Vector2 name="AnchorPoint">
+													<X>0</X>
+													<Y>0</Y>
+												</Vector2>
+												<BinaryString name="AttributesSerialize"></BinaryString>
+												<bool name="AutoLocalize">true</bool>
+												<token name="AutomaticSize">0</token>
+												<Color3 name="BackgroundColor3">
+													<R>1</R>
+													<G>1</G>
+													<B>1</B>
+												</Color3>
+												<float name="BackgroundTransparency">0</float>
+												<Color3 name="BorderColor3">
+													<R>0.105882362</R>
+													<G>0.164705887</G>
+													<B>0.207843155</B>
+												</Color3>
+												<token name="BorderMode">0</token>
+												<int name="BorderSizePixel">1</int>
+												<bool name="ClipsDescendants">false</bool>
+												<bool name="Draggable">false</bool>
+												<token name="Font">3</token>
+												<int name="LayoutOrder">0</int>
+												<float name="LineHeight">1</float>
+												<string name="Name">TeleporterLabel</string>
+												<Ref name="NextSelectionDown">null</Ref>
+												<Ref name="NextSelectionLeft">null</Ref>
+												<Ref name="NextSelectionRight">null</Ref>
+												<Ref name="NextSelectionUp">null</Ref>
+												<UDim2 name="Position">
+													<XS>0</XS>
+													<XO>0</XO>
+													<YS>0</YS>
+													<YO>0</YO>
+												</UDim2>
+												<bool name="RichText">false</bool>
+												<Ref name="RootLocalizationTable">null</Ref>
+												<float name="Rotation">0</float>
+												<bool name="Selectable">false</bool>
+												<Ref name="SelectionImageObject">null</Ref>
+												<UDim2 name="Size">
+													<XS>1</XS>
+													<XO>0</XO>
+													<YS>1</YS>
+													<YO>0</YO>
+												</UDim2>
+												<token name="SizeConstraint">0</token>
+												<int64 name="SourceAssetId">-1</int64>
+												<BinaryString name="Tags"></BinaryString>
+												<string name="Text">Label</string>
+												<Color3 name="TextColor3">
+													<R>0</R>
+													<G>0</G>
+													<B>0</B>
+												</Color3>
+												<bool name="TextScaled">false</bool>
+												<float name="TextSize">50</float>
+												<Color3 name="TextStrokeColor3">
+													<R>0</R>
+													<G>0</G>
+													<B>0</B>
+												</Color3>
+												<float name="TextStrokeTransparency">1</float>
+												<float name="TextTransparency">0</float>
+												<token name="TextTruncate">0</token>
+												<bool name="TextWrapped">true</bool>
+												<token name="TextXAlignment">2</token>
+												<token name="TextYAlignment">1</token>
+												<bool name="Visible">true</bool>
+												<int name="ZIndex">1</int>
+											</Properties>
+										</Item>
+									</Item>
+									<Item class="Weld" referent="RBX5d13282094524f8b94a5409853c2beb7">
+										<Properties>
+											<BinaryString name="AttributesSerialize"></BinaryString>
+											<CoordinateFrame name="C0">
+												<X>1.87998962</X>
+												<Y>0</Y>
+												<Z>0</Z>
+												<R00>-5.26664357e-09</R00>
+												<R01>8.47032947e-22</R01>
+												<R02>0.999997497</R02>
+												<R10>-2.94494384e-09</R10>
+												<R11>-0.999994993</R11>
+												<R12>-2.07034317e-14</R12>
+												<R20>1</R20>
+												<R21>0</R21>
+												<R22>1.16361448e-19</R22>
+											</CoordinateFrame>
+											<CoordinateFrame name="C1">
+												<X>0.0358886719</X>
+												<Y>3.49935913</Y>
+												<Z>-0.0300292969</Z>
+												<R00>-1.70439307e-09</R00>
+												<R01>-0.999997258</R01>
+												<R02>-1.18325099e-14</R02>
+												<R10>2.81033463e-09</R10>
+												<R11>9.8567674e-15</R11>
+												<R12>-0.999999762</R12>
+												<R20>1</R20>
+												<R21>-1.38743417e-09</R21>
+												<R22>2.30874897e-09</R22>
+											</CoordinateFrame>
+											<bool name="Enabled">true</bool>
+											<string name="Name">Weld</string>
+											<Ref name="Part0">RBX2449b704a57643c0b00e7d32bcc96003</Ref>
+											<Ref name="Part1">RBX1378d0e323af4e85811c2c09561541e3</Ref>
+											<int64 name="SourceAssetId">-1</int64>
+											<BinaryString name="Tags"></BinaryString>
+										</Properties>
+									</Item>
+								</Item>
+								<Item class="Part" referent="RBX1378d0e323af4e85811c2c09561541e3">
+									<Properties>
+										<bool name="Anchored">true</bool>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<float name="BackParamA">-0.5</float>
+										<float name="BackParamB">0.5</float>
+										<token name="BackSurface">0</token>
+										<token name="BackSurfaceInput">0</token>
+										<float name="BottomParamA">-0.5</float>
+										<float name="BottomParamB">0.5</float>
+										<token name="BottomSurface">0</token>
+										<token name="BottomSurfaceInput">0</token>
+										<CoordinateFrame name="CFrame">
+											<X>927.940186</X>
+											<Y>-69.5697556</Y>
+											<Z>-637.64209</Z>
+											<R00>4.94760479e-06</R00>
+											<R01>2.50793136e-10</R01>
+											<R02>1</R02>
+											<R10>9.85480271e-16</R10>
+											<R11>0.999999762</R11>
+											<R12>2.50793136e-10</R12>
+											<R20>-0.999999762</R20>
+											<R21>2.55380487e-16</R21>
+											<R22>4.94792312e-06</R22>
+										</CoordinateFrame>
+										<bool name="CanCollide">true</bool>
+										<bool name="CastShadow">true</bool>
+										<int name="CollisionGroupId">0</int>
+										<Color3uint8 name="Color3uint8">4294954137</Color3uint8>
+										<PhysicalProperties name="CustomPhysicalProperties">
+											<CustomPhysics>false</CustomPhysics>
+										</PhysicalProperties>
+										<float name="FrontParamA">-0.5</float>
+										<float name="FrontParamB">0.5</float>
+										<token name="FrontSurface">0</token>
+										<token name="FrontSurfaceInput">0</token>
+										<float name="LeftParamA">-0.5</float>
+										<float name="LeftParamB">0.5</float>
+										<token name="LeftSurface">0</token>
+										<token name="LeftSurfaceInput">0</token>
+										<bool name="Locked">false</bool>
+										<bool name="Massless">false</bool>
+										<token name="Material">256</token>
+										<string name="Name">Pillar</string>
+										<float name="Reflectance">0</float>
+										<float name="RightParamA">-0.5</float>
+										<float name="RightParamB">0.5</float>
+										<token name="RightSurface">0</token>
+										<token name="RightSurfaceInput">0</token>
+										<int name="RootPriority">0</int>
+										<Vector3 name="RotVelocity">
+											<X>0</X>
+											<Y>0</Y>
+											<Z>0</Z>
+										</Vector3>
+										<int64 name="SourceAssetId">4778278500</int64>
+										<BinaryString name="Tags"></BinaryString>
+										<float name="TopParamA">-0.5</float>
+										<float name="TopParamB">0.5</float>
+										<token name="TopSurface">0</token>
+										<token name="TopSurfaceInput">0</token>
+										<float name="Transparency">0</float>
+										<Vector3 name="Velocity">
+											<X>0</X>
+											<Y>0</Y>
+											<Z>0</Z>
+										</Vector3>
+										<token name="formFactorRaw">1</token>
+										<token name="shape">1</token>
+										<Vector3 name="size">
+											<X>0.5</X>
+											<Y>7</Y>
+											<Z>2</Z>
+										</Vector3>
+									</Properties>
+									<Item class="Weld" referent="RBXae9f519c8f7942459b8fe2f11e407c96">
+										<Properties>
+											<BinaryString name="AttributesSerialize"></BinaryString>
+											<CoordinateFrame name="C0">
+												<X>0</X>
+												<Y>-3.5</Y>
+												<Z>0</Z>
+												<R00>1</R00>
+												<R01>0</R01>
+												<R02>0</R02>
+												<R10>0</R10>
+												<R11>0</R11>
+												<R12>-1</R12>
+												<R20>-3.68345354e-11</R20>
+												<R21>1</R21>
+												<R22>0</R22>
+											</CoordinateFrame>
+											<CoordinateFrame name="C1">
+												<X>-1.5</X>
+												<Y>0.5</Y>
+												<Z>0</Z>
+												<R00>1</R00>
+												<R01>0</R01>
+												<R02>0</R02>
+												<R10>0</R10>
+												<R11>0</R11>
+												<R12>-1</R12>
+												<R20>-3.68345354e-11</R20>
+												<R21>1</R21>
+												<R22>0</R22>
+											</CoordinateFrame>
+											<bool name="Enabled">true</bool>
+											<string name="Name">Weld</string>
+											<Ref name="Part0">RBX1378d0e323af4e85811c2c09561541e3</Ref>
+											<Ref name="Part1">RBX04189b0c86354359b136c02b85eb745c</Ref>
+											<int64 name="SourceAssetId">-1</int64>
+											<BinaryString name="Tags"></BinaryString>
 										</Properties>
 									</Item>
 								</Item>
@@ -24326,931 +24641,10 @@ remoteCode.addRemoteObjects(base)
 						<Z>0</Z>
 					</Vector3>
 					<string name="Name">StartLocation</string>
-					<Ref name="PrimaryPart">RBX20423fbfc3f843b6bee9d9b7f1aa1500</Ref>
+					<Ref name="PrimaryPart">null</Ref>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="Model" referent="RBXc60b84d88ca843bf9e6eb9d95e7df36e">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<token name="LevelOfDetail">0</token>
-						<CoordinateFrame name="ModelInPrimary">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>1</R11>
-							<R12>0</R12>
-							<R20>0</R20>
-							<R21>0</R21>
-							<R22>1</R22>
-						</CoordinateFrame>
-						<CoordinateFrame name="ModelMeshCFrame">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>1</R11>
-							<R12>0</R12>
-							<R20>0</R20>
-							<R21>0</R21>
-							<R22>1</R22>
-						</CoordinateFrame>
-						<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
-						<Vector3 name="ModelMeshSize">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<string name="Name">SkyBox</string>
-						<Ref name="PrimaryPart">null</Ref>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-					<Item class="Part" referent="RBX911bbe7a2a6f4f6a970ec62053c8ca03">
-						<Properties>
-							<bool name="Anchored">true</bool>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<float name="BackParamA">-0.5</float>
-							<float name="BackParamB">0.5</float>
-							<token name="BackSurface">0</token>
-							<token name="BackSurfaceInput">0</token>
-							<float name="BottomParamA">-0.5</float>
-							<float name="BottomParamB">0.5</float>
-							<token name="BottomSurface">0</token>
-							<token name="BottomSurfaceInput">0</token>
-							<CoordinateFrame name="CFrame">
-								<X>702.282837</X>
-								<Y>-71.6014557</Y>
-								<Z>-777.833496</Z>
-								<R00>0.711518288</R00>
-								<R01>-0.129409313</R01>
-								<R02>-0.690648198</R02>
-								<R10>-0.0669871792</R10>
-								<R11>0.965925813</R11>
-								<R12>-0.250000447</R12>
-								<R20>0.699467242</R20>
-								<R21>0.224144489</R21>
-								<R22>0.67860502</R22>
-							</CoordinateFrame>
-							<bool name="CanCollide">true</bool>
-							<bool name="CastShadow">true</bool>
-							<int name="CollisionGroupId">0</int>
-							<Color3uint8 name="Color3uint8">4288672745</Color3uint8>
-							<PhysicalProperties name="CustomPhysicalProperties">
-								<CustomPhysics>false</CustomPhysics>
-							</PhysicalProperties>
-							<float name="FrontParamA">-0.5</float>
-							<float name="FrontParamB">0.5</float>
-							<token name="FrontSurface">0</token>
-							<token name="FrontSurfaceInput">0</token>
-							<float name="LeftParamA">-0.5</float>
-							<float name="LeftParamB">0.5</float>
-							<token name="LeftSurface">0</token>
-							<token name="LeftSurfaceInput">0</token>
-							<bool name="Locked">false</bool>
-							<bool name="Massless">false</bool>
-							<token name="Material">832</token>
-							<string name="Name">Base</string>
-							<float name="Reflectance">0</float>
-							<float name="RightParamA">-0.5</float>
-							<float name="RightParamB">0.5</float>
-							<token name="RightSurface">0</token>
-							<token name="RightSurfaceInput">0</token>
-							<int name="RootPriority">0</int>
-							<Vector3 name="RotVelocity">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>0</Z>
-							</Vector3>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<float name="TopParamA">-0.5</float>
-							<float name="TopParamB">0.5</float>
-							<token name="TopSurface">0</token>
-							<token name="TopSurfaceInput">0</token>
-							<float name="Transparency">0</float>
-							<Vector3 name="Velocity">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>0</Z>
-							</Vector3>
-							<token name="formFactorRaw">1</token>
-							<token name="shape">1</token>
-							<Vector3 name="size">
-								<X>128</X>
-								<Y>2</Y>
-								<Z>30</Z>
-							</Vector3>
-						</Properties>
-						<Item class="Weld" referent="RBXdc504625d511469c9a240b1f81672ffc">
-							<Properties>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<CoordinateFrame name="C0">
-									<X>-63.999939</X>
-									<Y>0</Y>
-									<Z>0</Z>
-									<R00>0</R00>
-									<R01>0</R01>
-									<R02>-0.99999994</R02>
-									<R10>0</R10>
-									<R11>0.999999821</R11>
-									<R12>0</R12>
-									<R20>0.999999821</R20>
-									<R21>0</R21>
-									<R22>0</R22>
-								</CoordinateFrame>
-								<CoordinateFrame name="C1">
-									<X>0.499237061</X>
-									<Y>-2.49911499</Y>
-									<Z>6.10351562e-05</Z>
-									<R00>0</R00>
-									<R01>0</R01>
-									<R02>-1</R02>
-									<R10>0</R10>
-									<R11>0.999999821</R11>
-									<R12>0</R12>
-									<R20>0.999999881</R20>
-									<R21>0</R21>
-									<R22>0</R22>
-								</CoordinateFrame>
-								<bool name="Enabled">true</bool>
-								<string name="Name">Weld</string>
-								<Ref name="Part0">RBX911bbe7a2a6f4f6a970ec62053c8ca03</Ref>
-								<Ref name="Part1">RBX010bed22e8fe45c6b0cdf133991cd321</Ref>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-							</Properties>
-						</Item>
-						<Item class="Weld" referent="RBX03ae95d91dc442fdaf8a832a645ff719">
-							<Properties>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<CoordinateFrame name="C0">
-									<X>64</X>
-									<Y>0</Y>
-									<Z>0</Z>
-									<R00>0</R00>
-									<R01>0</R01>
-									<R02>0.99999994</R02>
-									<R10>0</R10>
-									<R11>-0.999999821</R11>
-									<R12>0</R12>
-									<R20>0.999999821</R20>
-									<R21>0</R21>
-									<R22>0</R22>
-								</CoordinateFrame>
-								<CoordinateFrame name="C1">
-									<X>-0.499084473</X>
-									<Y>-2.49911499</Y>
-									<Z>0</Z>
-									<R00>0</R00>
-									<R01>0</R01>
-									<R02>1</R02>
-									<R10>0</R10>
-									<R11>-0.999999821</R11>
-									<R12>0</R12>
-									<R20>0.999999881</R20>
-									<R21>0</R21>
-									<R22>0</R22>
-								</CoordinateFrame>
-								<bool name="Enabled">true</bool>
-								<string name="Name">Weld</string>
-								<Ref name="Part0">RBX911bbe7a2a6f4f6a970ec62053c8ca03</Ref>
-								<Ref name="Part1">RBXce48e91f9d3b4501a455655f29e8b656</Ref>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-							</Properties>
-						</Item>
-					</Item>
-					<Item class="Part" referent="RBXf1d6b66ded4445adbcd8a67eebe3c2c0">
-						<Properties>
-							<bool name="Anchored">true</bool>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<float name="BackParamA">-0.5</float>
-							<float name="BackParamB">0.5</float>
-							<token name="BackSurface">0</token>
-							<token name="BackSurfaceInput">0</token>
-							<float name="BottomParamA">-0.5</float>
-							<float name="BottomParamB">0.5</float>
-							<token name="BottomSurface">0</token>
-							<token name="BottomSurfaceInput">0</token>
-							<CoordinateFrame name="CFrame">
-								<X>713.239197</X>
-								<Y>-74.5569305</Y>
-								<Z>-753.418396</Z>
-								<R00>0.711520195</R00>
-								<R01>-0.129407153</R01>
-								<R02>-0.690646768</R02>
-								<R10>-0.0669870973</R10>
-								<R11>0.96592629</R11>
-								<R12>-0.249998242</R12>
-								<R20>0.699465334</R20>
-								<R21>0.224143207</R21>
-								<R22>0.678607464</R22>
-							</CoordinateFrame>
-							<bool name="CanCollide">true</bool>
-							<bool name="CastShadow">true</bool>
-							<int name="CollisionGroupId">0</int>
-							<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
-							<PhysicalProperties name="CustomPhysicalProperties">
-								<CustomPhysics>false</CustomPhysics>
-							</PhysicalProperties>
-							<float name="FrontParamA">-0.5</float>
-							<float name="FrontParamB">0.5</float>
-							<token name="FrontSurface">0</token>
-							<token name="FrontSurfaceInput">0</token>
-							<float name="LeftParamA">-0.5</float>
-							<float name="LeftParamB">0.5</float>
-							<token name="LeftSurface">0</token>
-							<token name="LeftSurfaceInput">0</token>
-							<bool name="Locked">false</bool>
-							<bool name="Massless">false</bool>
-							<token name="Material">256</token>
-							<string name="Name">SkyBoxTeleporter</string>
-							<float name="Reflectance">0</float>
-							<float name="RightParamA">-0.5</float>
-							<float name="RightParamB">0.5</float>
-							<token name="RightSurface">0</token>
-							<token name="RightSurfaceInput">0</token>
-							<int name="RootPriority">0</int>
-							<Vector3 name="RotVelocity">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>0</Z>
-							</Vector3>
-							<int64 name="SourceAssetId">4778278500</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<float name="TopParamA">-0.5</float>
-							<float name="TopParamB">0.5</float>
-							<token name="TopSurface">0</token>
-							<token name="TopSurfaceInput">0</token>
-							<float name="Transparency">0</float>
-							<Vector3 name="Velocity">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>0</Z>
-							</Vector3>
-							<token name="formFactorRaw">1</token>
-							<token name="shape">1</token>
-							<Vector3 name="size">
-								<X>5.79999876</X>
-								<Y>0.399999946</Y>
-								<Z>5.19999933</Z>
-							</Vector3>
-						</Properties>
-						<Item class="Weld" referent="RBX3bbf4d59701949c3b260296b5fff6f2c">
-							<Properties>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<CoordinateFrame name="C0">
-									<X>-3.05175781e-05</X>
-									<Y>-0.199981689</Y>
-									<Z>0</Z>
-									<R00>1</R00>
-									<R01>2.98023224e-08</R01>
-									<R02>-1.49011612e-08</R02>
-									<R10>1.49011612e-08</R10>
-									<R11>0</R11>
-									<R12>-1</R12>
-									<R20>-5.96046448e-08</R20>
-									<R21>1.00000012</R21>
-									<R22>-1.49011612e-08</R22>
-								</CoordinateFrame>
-								<CoordinateFrame name="C1">
-									<X>25.0712585</X>
-									<Y>0.99987793</Y>
-									<Z>9.74005127</Z>
-									<R00>1</R00>
-									<R01>2.65240669e-06</R01>
-									<R02>-5.81145287e-07</R02>
-									<R10>-6.10947609e-07</R10>
-									<R11>2.47359276e-06</R11>
-									<R12>-1.00000012</R12>
-									<R20>-2.62260437e-06</R20>
-									<R21>1</R21>
-									<R22>2.47359276e-06</R22>
-								</CoordinateFrame>
-								<bool name="Enabled">true</bool>
-								<string name="Name">Weld</string>
-								<Ref name="Part0">RBXf1d6b66ded4445adbcd8a67eebe3c2c0</Ref>
-								<Ref name="Part1">RBX911bbe7a2a6f4f6a970ec62053c8ca03</Ref>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-							</Properties>
-						</Item>
-					</Item>
-					<Item class="Model" referent="RBXcc260d0c134f41c888b1d5bed508ecde">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<token name="LevelOfDetail">0</token>
-							<CoordinateFrame name="ModelInPrimary">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>0</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>1</R11>
-								<R12>0</R12>
-								<R20>0</R20>
-								<R21>0</R21>
-								<R22>1</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="ModelMeshCFrame">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>0</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>1</R11>
-								<R12>0</R12>
-								<R20>0</R20>
-								<R21>0</R21>
-								<R22>1</R22>
-							</CoordinateFrame>
-							<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
-							<Vector3 name="ModelMeshSize">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>0</Z>
-							</Vector3>
-							<string name="Name">SkyBoxWalls</string>
-							<Ref name="PrimaryPart">null</Ref>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-						<Item class="Part" referent="RBXc94e16c5354b4300b67bf3e77db84a25">
-							<Properties>
-								<bool name="Anchored">true</bool>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<float name="BackParamA">-0.5</float>
-								<float name="BackParamB">0.5</float>
-								<token name="BackSurface">0</token>
-								<token name="BackSurfaceInput">0</token>
-								<float name="BottomParamA">-0.5</float>
-								<float name="BottomParamB">0.5</float>
-								<token name="BottomSurface">0</token>
-								<token name="BottomSurfaceInput">0</token>
-								<CoordinateFrame name="CFrame">
-									<X>691.557373</X>
-									<Y>-69.9144592</Y>
-									<Z>-766.761841</Z>
-									<R00>0.711518288</R00>
-									<R01>-0.129409283</R01>
-									<R02>-0.690648258</R02>
-									<R10>-0.0669871792</R10>
-									<R11>0.965925694</R11>
-									<R12>-0.250000477</R12>
-									<R20>0.699467242</R20>
-									<R21>0.224144474</R21>
-									<R22>0.67860508</R22>
-								</CoordinateFrame>
-								<bool name="CanCollide">true</bool>
-								<bool name="CastShadow">true</bool>
-								<int name="CollisionGroupId">0</int>
-								<Color3uint8 name="Color3uint8">4280374457</Color3uint8>
-								<PhysicalProperties name="CustomPhysicalProperties">
-									<CustomPhysics>false</CustomPhysics>
-								</PhysicalProperties>
-								<float name="FrontParamA">-0.5</float>
-								<float name="FrontParamB">0.5</float>
-								<token name="FrontSurface">0</token>
-								<token name="FrontSurfaceInput">0</token>
-								<float name="LeftParamA">-0.5</float>
-								<float name="LeftParamB">0.5</float>
-								<token name="LeftSurface">0</token>
-								<token name="LeftSurfaceInput">0</token>
-								<bool name="Locked">false</bool>
-								<bool name="Massless">false</bool>
-								<token name="Material">832</token>
-								<string name="Name">SkyBoxBack</string>
-								<float name="Reflectance">0</float>
-								<float name="RightParamA">-0.5</float>
-								<float name="RightParamB">0.5</float>
-								<token name="RightSurface">0</token>
-								<token name="RightSurfaceInput">0</token>
-								<int name="RootPriority">0</int>
-								<Vector3 name="RotVelocity">
-									<X>0</X>
-									<Y>0</Y>
-									<Z>0</Z>
-								</Vector3>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-								<float name="TopParamA">-0.5</float>
-								<float name="TopParamB">0.5</float>
-								<token name="TopSurface">0</token>
-								<token name="TopSurfaceInput">0</token>
-								<float name="Transparency">0</float>
-								<Vector3 name="Velocity">
-									<X>0</X>
-									<Y>0</Y>
-									<Z>0</Z>
-								</Vector3>
-								<token name="formFactorRaw">1</token>
-								<token name="shape">1</token>
-								<Vector3 name="size">
-									<X>128</X>
-									<Y>12</Y>
-									<Z>1</Z>
-								</Vector3>
-							</Properties>
-							<Item class="Weld" referent="RBX01a46a633e1345f19da73ca6d814bcbe">
-								<Properties>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<CoordinateFrame name="C0">
-										<X>-64</X>
-										<Y>1.52587891e-05</Y>
-										<Z>0</Z>
-										<R00>-5.96046448e-08</R00>
-										<R01>7.4505806e-09</R01>
-										<R02>-1.00000024</R02>
-										<R10>0</R10>
-										<R11>1.00000036</R11>
-										<R12>2.23517418e-08</R12>
-										<R20>1.00000012</R20>
-										<R21>0</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<CoordinateFrame name="C1">
-										<X>0.498504639</X>
-										<Y>3.00001526</Y>
-										<Z>14.4990845</Z>
-										<R00>-5.96046448e-08</R00>
-										<R01>7.4505806e-09</R01>
-										<R02>-1.00000024</R02>
-										<R10>0</R10>
-										<R11>1.00000036</R11>
-										<R12>2.23517418e-08</R12>
-										<R20>1.00000012</R20>
-										<R21>0</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<bool name="Enabled">true</bool>
-									<string name="Name">Weld</string>
-									<Ref name="Part0">RBXc94e16c5354b4300b67bf3e77db84a25</Ref>
-									<Ref name="Part1">RBX010bed22e8fe45c6b0cdf133991cd321</Ref>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-								</Properties>
-							</Item>
-							<Item class="Weld" referent="RBX0928285744534772b729c37f9c357bf9">
-								<Properties>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<CoordinateFrame name="C0">
-										<X>64.0000458</X>
-										<Y>0</Y>
-										<Z>0</Z>
-										<R00>-5.96046448e-08</R00>
-										<R01>-7.4505806e-09</R01>
-										<R02>1.00000024</R02>
-										<R10>0</R10>
-										<R11>-1.00000036</R11>
-										<R12>-2.23517418e-08</R12>
-										<R20>1.00000012</R20>
-										<R21>0</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<CoordinateFrame name="C1">
-										<X>-0.498397827</X>
-										<Y>3</Y>
-										<Z>14.4989624</Z>
-										<R00>-5.96046448e-08</R00>
-										<R01>-7.4505806e-09</R01>
-										<R02>1.00000024</R02>
-										<R10>0</R10>
-										<R11>-1.00000036</R11>
-										<R12>-2.23517418e-08</R12>
-										<R20>1.00000012</R20>
-										<R21>0</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<bool name="Enabled">true</bool>
-									<string name="Name">Weld</string>
-									<Ref name="Part0">RBXc94e16c5354b4300b67bf3e77db84a25</Ref>
-									<Ref name="Part1">RBXce48e91f9d3b4501a455655f29e8b656</Ref>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-								</Properties>
-							</Item>
-						</Item>
-						<Item class="Part" referent="RBXb684569f987049418c54ca1ce90d988b">
-							<Properties>
-								<bool name="Anchored">true</bool>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<float name="BackParamA">-0.5</float>
-								<float name="BackParamB">0.5</float>
-								<token name="BackSurface">0</token>
-								<token name="BackSurfaceInput">0</token>
-								<float name="BottomParamA">-0.5</float>
-								<float name="BottomParamB">0.5</float>
-								<token name="BottomSurface">0</token>
-								<token name="BottomSurfaceInput">0</token>
-								<CoordinateFrame name="CFrame">
-									<X>711.973816</X>
-									<Y>-65.5625153</Y>
-									<Z>-787.113159</Z>
-									<R00>0.711518288</R00>
-									<R01>-0.129409283</R01>
-									<R02>-0.690648258</R02>
-									<R10>-0.0669871792</R10>
-									<R11>0.965925694</R11>
-									<R12>-0.250000477</R12>
-									<R20>0.699467242</R20>
-									<R21>0.224144474</R21>
-									<R22>0.67860508</R22>
-								</CoordinateFrame>
-								<bool name="CanCollide">true</bool>
-								<bool name="CastShadow">true</bool>
-								<int name="CollisionGroupId">0</int>
-								<Color3uint8 name="Color3uint8">4280374457</Color3uint8>
-								<PhysicalProperties name="CustomPhysicalProperties">
-									<CustomPhysics>false</CustomPhysics>
-								</PhysicalProperties>
-								<float name="FrontParamA">-0.5</float>
-								<float name="FrontParamB">0.5</float>
-								<token name="FrontSurface">0</token>
-								<token name="FrontSurfaceInput">0</token>
-								<float name="LeftParamA">-0.5</float>
-								<float name="LeftParamB">0.5</float>
-								<token name="LeftSurface">0</token>
-								<token name="LeftSurfaceInput">0</token>
-								<bool name="Locked">false</bool>
-								<bool name="Massless">false</bool>
-								<token name="Material">832</token>
-								<string name="Name">SkyBoxFront</string>
-								<float name="Reflectance">0</float>
-								<float name="RightParamA">-0.5</float>
-								<float name="RightParamB">0.5</float>
-								<token name="RightSurface">0</token>
-								<token name="RightSurfaceInput">0</token>
-								<int name="RootPriority">0</int>
-								<Vector3 name="RotVelocity">
-									<X>0</X>
-									<Y>0</Y>
-									<Z>0</Z>
-								</Vector3>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-								<float name="TopParamA">-0.5</float>
-								<float name="TopParamB">0.5</float>
-								<token name="TopSurface">0</token>
-								<token name="TopSurfaceInput">0</token>
-								<float name="Transparency">0</float>
-								<Vector3 name="Velocity">
-									<X>0</X>
-									<Y>0</Y>
-									<Z>0</Z>
-								</Vector3>
-								<token name="formFactorRaw">1</token>
-								<token name="shape">1</token>
-								<Vector3 name="size">
-									<X>128</X>
-									<Y>4</Y>
-									<Z>1</Z>
-								</Vector3>
-							</Properties>
-						</Item>
-						<Item class="Part" referent="RBXce48e91f9d3b4501a455655f29e8b656">
-							<Properties>
-								<bool name="Anchored">true</bool>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<float name="BackParamA">-0.5</float>
-								<float name="BackParamB">0.5</float>
-								<token name="BackSurface">0</token>
-								<token name="BackSurfaceInput">0</token>
-								<float name="BottomParamA">-0.5</float>
-								<float name="BottomParamB">0.5</float>
-								<token name="BottomSurface">0</token>
-								<token name="BottomSurfaceInput">0</token>
-								<CoordinateFrame name="CFrame">
-									<X>747.851929</X>
-									<Y>-73.5081329</Y>
-									<Z>-732.158203</Z>
-									<R00>0.711518288</R00>
-									<R01>-0.129409283</R01>
-									<R02>-0.690648258</R02>
-									<R10>-0.0669871792</R10>
-									<R11>0.965925694</R11>
-									<R12>-0.250000477</R12>
-									<R20>0.699467242</R20>
-									<R21>0.224144474</R21>
-									<R22>0.67860508</R22>
-								</CoordinateFrame>
-								<bool name="CanCollide">true</bool>
-								<bool name="CastShadow">true</bool>
-								<int name="CollisionGroupId">0</int>
-								<Color3uint8 name="Color3uint8">4280374457</Color3uint8>
-								<PhysicalProperties name="CustomPhysicalProperties">
-									<CustomPhysics>false</CustomPhysics>
-								</PhysicalProperties>
-								<float name="FrontParamA">-0.5</float>
-								<float name="FrontParamB">0.5</float>
-								<token name="FrontSurface">0</token>
-								<token name="FrontSurfaceInput">0</token>
-								<float name="LeftParamA">-0.5</float>
-								<float name="LeftParamB">0.5</float>
-								<token name="LeftSurface">0</token>
-								<token name="LeftSurfaceInput">0</token>
-								<bool name="Locked">false</bool>
-								<bool name="Massless">false</bool>
-								<token name="Material">832</token>
-								<string name="Name">SkyBoxLeft</string>
-								<float name="Reflectance">0</float>
-								<float name="RightParamA">-0.5</float>
-								<float name="RightParamB">0.5</float>
-								<token name="RightSurface">0</token>
-								<token name="RightSurfaceInput">0</token>
-								<int name="RootPriority">0</int>
-								<Vector3 name="RotVelocity">
-									<X>0</X>
-									<Y>0</Y>
-									<Z>0</Z>
-								</Vector3>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-								<float name="TopParamA">-0.5</float>
-								<float name="TopParamB">0.5</float>
-								<token name="TopSurface">0</token>
-								<token name="TopSurfaceInput">0</token>
-								<float name="Transparency">0</float>
-								<Vector3 name="Velocity">
-									<X>0</X>
-									<Y>0</Y>
-									<Z>0</Z>
-								</Vector3>
-								<token name="formFactorRaw">1</token>
-								<token name="shape">1</token>
-								<Vector3 name="size">
-									<X>1</X>
-									<Y>4</Y>
-									<Z>30</Z>
-								</Vector3>
-							</Properties>
-							<Item class="Weld" referent="RBX37fef5e8b62d439885394fcf08abb016">
-								<Properties>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<CoordinateFrame name="C0">
-										<X>-0.5</X>
-										<Y>0</Y>
-										<Z>0</Z>
-										<R00>0</R00>
-										<R01>0</R01>
-										<R02>-1</R02>
-										<R10>0</R10>
-										<R11>1</R11>
-										<R12>0</R12>
-										<R20>1</R20>
-										<R21>0</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<CoordinateFrame name="C1">
-										<X>63.999176</X>
-										<Y>0.999107361</Y>
-										<Z>14.5</Z>
-										<R00>0</R00>
-										<R01>0</R01>
-										<R02>-1</R02>
-										<R10>0</R10>
-										<R11>1</R11>
-										<R12>0</R12>
-										<R20>1</R20>
-										<R21>0</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<bool name="Enabled">true</bool>
-									<string name="Name">Weld</string>
-									<Ref name="Part0">RBXce48e91f9d3b4501a455655f29e8b656</Ref>
-									<Ref name="Part1">RBXb684569f987049418c54ca1ce90d988b</Ref>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-								</Properties>
-							</Item>
-						</Item>
-						<Item class="Part" referent="RBX010bed22e8fe45c6b0cdf133991cd321">
-							<Properties>
-								<bool name="Anchored">true</bool>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<float name="BackParamA">-0.5</float>
-								<float name="BackParamB">0.5</float>
-								<token name="BackSurface">0</token>
-								<token name="BackSurfaceInput">0</token>
-								<float name="BottomParamA">-0.5</float>
-								<float name="BottomParamB">0.5</float>
-								<token name="BottomSurface">0</token>
-								<token name="BottomSurfaceInput">0</token>
-								<CoordinateFrame name="CFrame">
-									<X>656.066772</X>
-									<Y>-64.8668213</Y>
-									<Z>-822.388733</Z>
-									<R00>0.711518288</R00>
-									<R01>-0.129409283</R01>
-									<R02>-0.690648258</R02>
-									<R10>-0.0669871792</R10>
-									<R11>0.965925694</R11>
-									<R12>-0.250000477</R12>
-									<R20>0.699467242</R20>
-									<R21>0.224144474</R21>
-									<R22>0.67860508</R22>
-								</CoordinateFrame>
-								<bool name="CanCollide">true</bool>
-								<bool name="CastShadow">true</bool>
-								<int name="CollisionGroupId">0</int>
-								<Color3uint8 name="Color3uint8">4280374457</Color3uint8>
-								<PhysicalProperties name="CustomPhysicalProperties">
-									<CustomPhysics>false</CustomPhysics>
-								</PhysicalProperties>
-								<float name="FrontParamA">-0.5</float>
-								<float name="FrontParamB">0.5</float>
-								<token name="FrontSurface">0</token>
-								<token name="FrontSurfaceInput">0</token>
-								<float name="LeftParamA">-0.5</float>
-								<float name="LeftParamB">0.5</float>
-								<token name="LeftSurface">0</token>
-								<token name="LeftSurfaceInput">0</token>
-								<bool name="Locked">false</bool>
-								<bool name="Massless">false</bool>
-								<token name="Material">832</token>
-								<string name="Name">SkyBoxRight</string>
-								<float name="Reflectance">0</float>
-								<float name="RightParamA">-0.5</float>
-								<float name="RightParamB">0.5</float>
-								<token name="RightSurface">0</token>
-								<token name="RightSurfaceInput">0</token>
-								<int name="RootPriority">0</int>
-								<Vector3 name="RotVelocity">
-									<X>0</X>
-									<Y>0</Y>
-									<Z>0</Z>
-								</Vector3>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-								<float name="TopParamA">-0.5</float>
-								<float name="TopParamB">0.5</float>
-								<token name="TopSurface">0</token>
-								<token name="TopSurfaceInput">0</token>
-								<float name="Transparency">0</float>
-								<Vector3 name="Velocity">
-									<X>0</X>
-									<Y>0</Y>
-									<Z>0</Z>
-								</Vector3>
-								<token name="formFactorRaw">1</token>
-								<token name="shape">1</token>
-								<Vector3 name="size">
-									<X>1</X>
-									<Y>4</Y>
-									<Z>30</Z>
-								</Vector3>
-							</Properties>
-							<Item class="Weld" referent="RBXa6e6c0f845ad415aa390b8999cbfe488">
-								<Properties>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<CoordinateFrame name="C0">
-										<X>0.5</X>
-										<Y>0</Y>
-										<Z>0</Z>
-										<R00>0</R00>
-										<R01>0</R01>
-										<R02>1</R02>
-										<R10>0</R10>
-										<R11>-1</R11>
-										<R12>0</R12>
-										<R20>1</R20>
-										<R21>0</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<CoordinateFrame name="C1">
-										<X>-63.9991455</X>
-										<Y>0.999107361</Y>
-										<Z>14.5</Z>
-										<R00>0</R00>
-										<R01>0</R01>
-										<R02>1</R02>
-										<R10>0</R10>
-										<R11>-1</R11>
-										<R12>0</R12>
-										<R20>1</R20>
-										<R21>0</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<bool name="Enabled">true</bool>
-									<string name="Name">Weld</string>
-									<Ref name="Part0">RBX010bed22e8fe45c6b0cdf133991cd321</Ref>
-									<Ref name="Part1">RBXb684569f987049418c54ca1ce90d988b</Ref>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-								</Properties>
-							</Item>
-						</Item>
-					</Item>
-					<Item class="SpawnLocation" referent="RBX20423fbfc3f843b6bee9d9b7f1aa1500">
-						<Properties>
-							<bool name="AllowTeamChangeOnTouch">false</bool>
-							<bool name="Anchored">true</bool>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<float name="BackParamA">-0.5</float>
-							<float name="BackParamB">0.5</float>
-							<token name="BackSurface">0</token>
-							<token name="BackSurfaceInput">0</token>
-							<float name="BottomParamA">-0.5</float>
-							<float name="BottomParamB">0.5</float>
-							<token name="BottomSurface">0</token>
-							<token name="BottomSurfaceInput">0</token>
-							<CoordinateFrame name="CFrame">
-								<X>708.744263</X>
-								<Y>-69.7205505</Y>
-								<Z>-777.077881</Z>
-								<R00>-0.711518288</R00>
-								<R01>-0.129409283</R01>
-								<R02>0.690648258</R02>
-								<R10>0.0669871792</R10>
-								<R11>0.965925694</R11>
-								<R12>0.250000477</R12>
-								<R20>-0.699467242</R20>
-								<R21>0.224144474</R21>
-								<R22>-0.67860508</R22>
-							</CoordinateFrame>
-							<bool name="CanCollide">false</bool>
-							<bool name="CastShadow">true</bool>
-							<int name="CollisionGroupId">0</int>
-							<Color3uint8 name="Color3uint8">4285438410</Color3uint8>
-							<PhysicalProperties name="CustomPhysicalProperties">
-								<CustomPhysics>false</CustomPhysics>
-							</PhysicalProperties>
-							<int name="Duration">10</int>
-							<bool name="Enabled">true</bool>
-							<float name="FrontParamA">-0.5</float>
-							<float name="FrontParamB">0.5</float>
-							<token name="FrontSurface">0</token>
-							<token name="FrontSurfaceInput">0</token>
-							<float name="LeftParamA">-0.5</float>
-							<float name="LeftParamB">0.5</float>
-							<token name="LeftSurface">0</token>
-							<token name="LeftSurfaceInput">0</token>
-							<bool name="Locked">false</bool>
-							<bool name="Massless">false</bool>
-							<token name="Material">256</token>
-							<string name="Name">000-SpawnLocation</string>
-							<bool name="Neutral">true</bool>
-							<float name="Reflectance">0</float>
-							<float name="RightParamA">-0.5</float>
-							<float name="RightParamB">0.5</float>
-							<token name="RightSurface">0</token>
-							<token name="RightSurfaceInput">0</token>
-							<int name="RootPriority">0</int>
-							<Vector3 name="RotVelocity">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>0</Z>
-							</Vector3>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<int name="TeamColor">194</int>
-							<float name="TopParamA">-0.5</float>
-							<float name="TopParamB">0.5</float>
-							<token name="TopSurface">0</token>
-							<token name="TopSurfaceInput">0</token>
-							<float name="Transparency">0</float>
-							<Vector3 name="Velocity">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>0</Z>
-							</Vector3>
-							<token name="formFactorRaw">1</token>
-							<token name="shape">1</token>
-							<Vector3 name="size">
-								<X>4</X>
-								<Y>1</Y>
-								<Z>4</Z>
-							</Vector3>
-						</Properties>
-						<Item class="Decal" referent="RBX5e4cb2e30f4849758293fec27e334b4d">
-							<Properties>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<Color3 name="Color3">
-									<R>1</R>
-									<G>1</G>
-									<B>1</B>
-								</Color3>
-								<token name="Face">1</token>
-								<string name="Name">Decal</string>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-								<Content name="Texture"><url>rbxassetid://5897658720</url></Content>
-								<float name="Transparency">0</float>
-							</Properties>
-						</Item>
-					</Item>
-				</Item>
 				<Item class="Model" referent="RBX068a00d4fbff46b6afb669084b62ad07">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -25681,84 +25075,6 @@ remoteCode.addRemoteObjects(base)
 								<Z>30</Z>
 							</Vector3>
 						</Properties>
-						<Item class="Weld" referent="RBX6ea2d1f1507845a3a007d3480c38d816">
-							<Properties>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<CoordinateFrame name="C0">
-									<X>-63.999939</X>
-									<Y>0</Y>
-									<Z>0</Z>
-									<R00>0</R00>
-									<R01>0</R01>
-									<R02>-0.99999994</R02>
-									<R10>0</R10>
-									<R11>0.999999821</R11>
-									<R12>0</R12>
-									<R20>0.999999821</R20>
-									<R21>0</R21>
-									<R22>0</R22>
-								</CoordinateFrame>
-								<CoordinateFrame name="C1">
-									<X>0.499237061</X>
-									<Y>-2.49911499</Y>
-									<Z>6.10351562e-05</Z>
-									<R00>0</R00>
-									<R01>0</R01>
-									<R02>-1</R02>
-									<R10>0</R10>
-									<R11>0.999999821</R11>
-									<R12>0</R12>
-									<R20>0.999999881</R20>
-									<R21>0</R21>
-									<R22>0</R22>
-								</CoordinateFrame>
-								<bool name="Enabled">true</bool>
-								<string name="Name">Weld</string>
-								<Ref name="Part0">RBXd426c7a603e44fd38a7dcc2832b9d15a</Ref>
-								<Ref name="Part1">RBX3d603f03ed054a32aa89258b7153e19f</Ref>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-							</Properties>
-						</Item>
-						<Item class="Weld" referent="RBXad40ec9fe65e4c44901ed0aa201a795a">
-							<Properties>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<CoordinateFrame name="C0">
-									<X>64</X>
-									<Y>0</Y>
-									<Z>0</Z>
-									<R00>0</R00>
-									<R01>0</R01>
-									<R02>0.99999994</R02>
-									<R10>0</R10>
-									<R11>-0.999999821</R11>
-									<R12>0</R12>
-									<R20>0.999999821</R20>
-									<R21>0</R21>
-									<R22>0</R22>
-								</CoordinateFrame>
-								<CoordinateFrame name="C1">
-									<X>-0.499084473</X>
-									<Y>-2.49911499</Y>
-									<Z>0</Z>
-									<R00>0</R00>
-									<R01>0</R01>
-									<R02>1</R02>
-									<R10>0</R10>
-									<R11>-0.999999821</R11>
-									<R12>0</R12>
-									<R20>0.999999881</R20>
-									<R21>0</R21>
-									<R22>0</R22>
-								</CoordinateFrame>
-								<bool name="Enabled">true</bool>
-								<string name="Name">Weld</string>
-								<Ref name="Part0">RBXd426c7a603e44fd38a7dcc2832b9d15a</Ref>
-								<Ref name="Part1">RBXbdb5030ecad74bbcbf45f8f8d47589a1</Ref>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-							</Properties>
-						</Item>
 					</Item>
 					<Item class="SpawnLocation" referent="RBX826015c5b30b4afba22fc0f0177cff91">
 						<Properties>
@@ -26030,17 +25346,133 @@ remoteCode.addRemoteObjects(base)
 								<token name="BottomSurface">0</token>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
-									<X>691.557373</X>
-									<Y>-69.9144592</Y>
-									<Z>-766.761841</Z>
+									<X>691.217957</X>
+									<Y>-68.518158</Y>
+									<Z>-766.282959</Z>
 									<R00>0.711518288</R00>
-									<R01>-0.129409283</R01>
+									<R01>-0.129409164</R01>
 									<R02>-0.690648258</R02>
-									<R10>-0.0669871792</R10>
-									<R11>0.965925694</R11>
-									<R12>-0.250000477</R12>
+									<R10>-0.066987142</R10>
+									<R11>0.965925455</R11>
+									<R12>-0.250000566</R12>
 									<R20>0.699467242</R20>
-									<R21>0.224144474</R21>
+									<R21>0.224144369</R21>
+									<R22>0.678605139</R22>
+								</CoordinateFrame>
+								<bool name="CanCollide">true</bool>
+								<bool name="CastShadow">true</bool>
+								<int name="CollisionGroupId">0</int>
+								<Color3uint8 name="Color3uint8">4280374457</Color3uint8>
+								<PhysicalProperties name="CustomPhysicalProperties">
+									<CustomPhysics>false</CustomPhysics>
+								</PhysicalProperties>
+								<float name="FrontParamA">-0.5</float>
+								<float name="FrontParamB">0.5</float>
+								<token name="FrontSurface">0</token>
+								<token name="FrontSurfaceInput">0</token>
+								<float name="LeftParamA">-0.5</float>
+								<float name="LeftParamB">0.5</float>
+								<token name="LeftSurface">0</token>
+								<token name="LeftSurfaceInput">0</token>
+								<bool name="Locked">false</bool>
+								<bool name="Massless">false</bool>
+								<token name="Material">832</token>
+								<string name="Name">SkyBoxFront</string>
+								<float name="Reflectance">0</float>
+								<float name="RightParamA">-0.5</float>
+								<float name="RightParamB">0.5</float>
+								<token name="RightSurface">0</token>
+								<token name="RightSurfaceInput">0</token>
+								<int name="RootPriority">0</int>
+								<Vector3 name="RotVelocity">
+									<X>0</X>
+									<Y>0</Y>
+									<Z>0</Z>
+								</Vector3>
+								<int64 name="SourceAssetId">-1</int64>
+								<BinaryString name="Tags"></BinaryString>
+								<float name="TopParamA">-0.5</float>
+								<float name="TopParamB">0.5</float>
+								<token name="TopSurface">0</token>
+								<token name="TopSurfaceInput">0</token>
+								<float name="Transparency">0</float>
+								<Vector3 name="Velocity">
+									<X>0</X>
+									<Y>0</Y>
+									<Z>0</Z>
+								</Vector3>
+								<token name="formFactorRaw">1</token>
+								<token name="shape">1</token>
+								<Vector3 name="size">
+									<X>128</X>
+									<Y>20</Y>
+									<Z>1</Z>
+								</Vector3>
+							</Properties>
+							<Item class="Weld" referent="RBX39e8da263515460d82703c030452a43e">
+								<Properties>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<CoordinateFrame name="C0">
+										<X>0</X>
+										<Y>-6</Y>
+										<Z>0</Z>
+										<R00>0.99999994</R00>
+										<R01>5.96046448e-08</R01>
+										<R02>1.49011612e-08</R02>
+										<R10>7.4505806e-08</R10>
+										<R11>-1.49011612e-08</R11>
+										<R12>-0.999999762</R12>
+										<R20>2.98023224e-08</R20>
+										<R21>0.999999821</R21>
+										<R22>1.93715096e-07</R22>
+									</CoordinateFrame>
+									<CoordinateFrame name="C1">
+										<X>-0.000183105469</X>
+										<Y>0.999145508</Y>
+										<Z>14.7093506</Z>
+										<R00>0.99999994</R00>
+										<R01>5.96046448e-08</R01>
+										<R02>4.47034836e-08</R02>
+										<R10>2.98023224e-08</R10>
+										<R11>1.04308128e-07</R11>
+										<R12>-1.00000012</R12>
+										<R20>-2.98023224e-08</R20>
+										<R21>0.999999642</R21>
+										<R22>8.94069672e-08</R22>
+									</CoordinateFrame>
+									<bool name="Enabled">true</bool>
+									<string name="Name">Weld</string>
+									<Ref name="Part0">RBX75698444abac4a1ea96781c02b38f927</Ref>
+									<Ref name="Part1">RBXd426c7a603e44fd38a7dcc2832b9d15a</Ref>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+								</Properties>
+							</Item>
+						</Item>
+						<Item class="Part" referent="RBXf2cee7db3bdd468eb8ac19d5c0a9a526">
+							<Properties>
+								<bool name="Anchored">true</bool>
+								<BinaryString name="AttributesSerialize"></BinaryString>
+								<float name="BackParamA">-0.5</float>
+								<float name="BackParamB">0.5</float>
+								<token name="BackSurface">0</token>
+								<token name="BackSurfaceInput">0</token>
+								<float name="BottomParamA">-0.5</float>
+								<float name="BottomParamB">0.5</float>
+								<token name="BottomSurface">0</token>
+								<token name="BottomSurfaceInput">0</token>
+								<CoordinateFrame name="CFrame">
+									<X>711.246338</X>
+									<Y>-61.2681808</Y>
+									<Z>-785.961853</Z>
+									<R00>0.711518288</R00>
+									<R01>-0.129409254</R01>
+									<R02>-0.690648258</R02>
+									<R10>-0.0669871718</R10>
+									<R11>0.965925634</R11>
+									<R12>-0.250000507</R12>
+									<R20>0.699467242</R20>
+									<R21>0.224144444</R21>
 									<R22>0.67860508</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
@@ -26089,165 +25521,49 @@ remoteCode.addRemoteObjects(base)
 								<token name="shape">1</token>
 								<Vector3 name="size">
 									<X>128</X>
-									<Y>12</Y>
+									<Y>20</Y>
 									<Z>1</Z>
 								</Vector3>
 							</Properties>
-							<Item class="Weld" referent="RBX8329a68a85ea4e879ca9566e39ecb1f8">
+							<Item class="Weld" referent="RBX578e2dff95a1408c808f1385838e9511">
 								<Properties>
 									<BinaryString name="AttributesSerialize"></BinaryString>
 									<CoordinateFrame name="C0">
-										<X>-64</X>
-										<Y>1.52587891e-05</Y>
-										<Z>0</Z>
-										<R00>-5.96046448e-08</R00>
-										<R01>7.4505806e-09</R01>
-										<R02>-1.00000024</R02>
-										<R10>0</R10>
-										<R11>1.00000036</R11>
-										<R12>2.23517418e-08</R12>
-										<R20>1.00000012</R20>
-										<R21>0</R21>
-										<R22>0</R22>
+										<X>-3.05175781e-05</X>
+										<Y>-6</Y>
+										<Z>6.10351562e-05</Z>
+										<R00>0.99999994</R00>
+										<R01>-2.98023224e-08</R01>
+										<R02>0</R02>
+										<R10>2.98023224e-08</R10>
+										<R11>-1.49011612e-08</R11>
+										<R12>-1</R12>
+										<R20>0</R20>
+										<R21>0.99999994</R21>
+										<R22>4.47034836e-08</R22>
 									</CoordinateFrame>
 									<CoordinateFrame name="C1">
-										<X>0.498504639</X>
-										<Y>3.00001526</Y>
-										<Z>14.4990845</Z>
-										<R00>-5.96046448e-08</R00>
-										<R01>7.4505806e-09</R01>
-										<R02>-1.00000024</R02>
+										<X>-6.10351562e-05</X>
+										<Y>0.999328613</Y>
+										<Z>-14.289856</Z>
+										<R00>0.99999994</R00>
+										<R01>-2.98023224e-08</R01>
+										<R02>0</R02>
 										<R10>0</R10>
-										<R11>1.00000036</R11>
-										<R12>2.23517418e-08</R12>
-										<R20>1.00000012</R20>
-										<R21>0</R21>
+										<R11>0</R11>
+										<R12>-1.00000012</R12>
+										<R20>-2.98023224e-08</R20>
+										<R21>0.999999881</R21>
 										<R22>0</R22>
 									</CoordinateFrame>
 									<bool name="Enabled">true</bool>
 									<string name="Name">Weld</string>
-									<Ref name="Part0">RBX75698444abac4a1ea96781c02b38f927</Ref>
-									<Ref name="Part1">RBX3d603f03ed054a32aa89258b7153e19f</Ref>
+									<Ref name="Part0">RBXf2cee7db3bdd468eb8ac19d5c0a9a526</Ref>
+									<Ref name="Part1">RBXd426c7a603e44fd38a7dcc2832b9d15a</Ref>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
 							</Item>
-							<Item class="Weld" referent="RBX2ef0087a1da14b3ba6fa11374349b22c">
-								<Properties>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<CoordinateFrame name="C0">
-										<X>64.0000458</X>
-										<Y>0</Y>
-										<Z>0</Z>
-										<R00>-5.96046448e-08</R00>
-										<R01>-7.4505806e-09</R01>
-										<R02>1.00000024</R02>
-										<R10>0</R10>
-										<R11>-1.00000036</R11>
-										<R12>-2.23517418e-08</R12>
-										<R20>1.00000012</R20>
-										<R21>0</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<CoordinateFrame name="C1">
-										<X>-0.498397827</X>
-										<Y>3</Y>
-										<Z>14.4989624</Z>
-										<R00>-5.96046448e-08</R00>
-										<R01>-7.4505806e-09</R01>
-										<R02>1.00000024</R02>
-										<R10>0</R10>
-										<R11>-1.00000036</R11>
-										<R12>-2.23517418e-08</R12>
-										<R20>1.00000012</R20>
-										<R21>0</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<bool name="Enabled">true</bool>
-									<string name="Name">Weld</string>
-									<Ref name="Part0">RBX75698444abac4a1ea96781c02b38f927</Ref>
-									<Ref name="Part1">RBXbdb5030ecad74bbcbf45f8f8d47589a1</Ref>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-								</Properties>
-							</Item>
-						</Item>
-						<Item class="Part" referent="RBXf2cee7db3bdd468eb8ac19d5c0a9a526">
-							<Properties>
-								<bool name="Anchored">true</bool>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<float name="BackParamA">-0.5</float>
-								<float name="BackParamB">0.5</float>
-								<token name="BackSurface">0</token>
-								<token name="BackSurfaceInput">0</token>
-								<float name="BottomParamA">-0.5</float>
-								<float name="BottomParamB">0.5</float>
-								<token name="BottomSurface">0</token>
-								<token name="BottomSurfaceInput">0</token>
-								<CoordinateFrame name="CFrame">
-									<X>711.973816</X>
-									<Y>-65.5625153</Y>
-									<Z>-787.113159</Z>
-									<R00>0.711518288</R00>
-									<R01>-0.129409283</R01>
-									<R02>-0.690648258</R02>
-									<R10>-0.0669871792</R10>
-									<R11>0.965925694</R11>
-									<R12>-0.250000477</R12>
-									<R20>0.699467242</R20>
-									<R21>0.224144474</R21>
-									<R22>0.67860508</R22>
-								</CoordinateFrame>
-								<bool name="CanCollide">true</bool>
-								<bool name="CastShadow">true</bool>
-								<int name="CollisionGroupId">0</int>
-								<Color3uint8 name="Color3uint8">4280374457</Color3uint8>
-								<PhysicalProperties name="CustomPhysicalProperties">
-									<CustomPhysics>false</CustomPhysics>
-								</PhysicalProperties>
-								<float name="FrontParamA">-0.5</float>
-								<float name="FrontParamB">0.5</float>
-								<token name="FrontSurface">0</token>
-								<token name="FrontSurfaceInput">0</token>
-								<float name="LeftParamA">-0.5</float>
-								<float name="LeftParamB">0.5</float>
-								<token name="LeftSurface">0</token>
-								<token name="LeftSurfaceInput">0</token>
-								<bool name="Locked">false</bool>
-								<bool name="Massless">false</bool>
-								<token name="Material">832</token>
-								<string name="Name">SkyBoxFront</string>
-								<float name="Reflectance">0</float>
-								<float name="RightParamA">-0.5</float>
-								<float name="RightParamB">0.5</float>
-								<token name="RightSurface">0</token>
-								<token name="RightSurfaceInput">0</token>
-								<int name="RootPriority">0</int>
-								<Vector3 name="RotVelocity">
-									<X>0</X>
-									<Y>0</Y>
-									<Z>0</Z>
-								</Vector3>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-								<float name="TopParamA">-0.5</float>
-								<float name="TopParamB">0.5</float>
-								<token name="TopSurface">0</token>
-								<token name="TopSurfaceInput">0</token>
-								<float name="Transparency">0</float>
-								<Vector3 name="Velocity">
-									<X>0</X>
-									<Y>0</Y>
-									<Z>0</Z>
-								</Vector3>
-								<token name="formFactorRaw">1</token>
-								<token name="shape">1</token>
-								<Vector3 name="size">
-									<X>128</X>
-									<Y>4</Y>
-									<Z>1</Z>
-								</Vector3>
-							</Properties>
 						</Item>
 						<Item class="Part" referent="RBXbdb5030ecad74bbcbf45f8f8d47589a1">
 							<Properties>
@@ -26262,9 +25578,9 @@ remoteCode.addRemoteObjects(base)
 								<token name="BottomSurface">0</token>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
-									<X>747.851929</X>
-									<Y>-73.5081329</Y>
-									<Z>-732.158203</Z>
+									<X>746.582031</X>
+									<Y>-69.1158066</Y>
+									<Z>-731.832458</Z>
 									<R00>0.711518288</R00>
 									<R01>-0.129409283</R01>
 									<R02>-0.690648258</R02>
@@ -26321,49 +25637,10 @@ remoteCode.addRemoteObjects(base)
 								<token name="shape">1</token>
 								<Vector3 name="size">
 									<X>1</X>
-									<Y>4</Y>
+									<Y>20</Y>
 									<Z>30</Z>
 								</Vector3>
 							</Properties>
-							<Item class="Weld" referent="RBX542ebc4af2da466e8558aeaea52a9ead">
-								<Properties>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<CoordinateFrame name="C0">
-										<X>-0.5</X>
-										<Y>0</Y>
-										<Z>0</Z>
-										<R00>0</R00>
-										<R01>0</R01>
-										<R02>-1</R02>
-										<R10>0</R10>
-										<R11>1</R11>
-										<R12>0</R12>
-										<R20>1</R20>
-										<R21>0</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<CoordinateFrame name="C1">
-										<X>63.999176</X>
-										<Y>0.999107361</Y>
-										<Z>14.5</Z>
-										<R00>0</R00>
-										<R01>0</R01>
-										<R02>-1</R02>
-										<R10>0</R10>
-										<R11>1</R11>
-										<R12>0</R12>
-										<R20>1</R20>
-										<R21>0</R21>
-										<R22>0</R22>
-									</CoordinateFrame>
-									<bool name="Enabled">true</bool>
-									<string name="Name">Weld</string>
-									<Ref name="Part0">RBXbdb5030ecad74bbcbf45f8f8d47589a1</Ref>
-									<Ref name="Part1">RBXf2cee7db3bdd468eb8ac19d5c0a9a526</Ref>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-								</Properties>
-							</Item>
 						</Item>
 						<Item class="Part" referent="RBX3d603f03ed054a32aa89258b7153e19f">
 							<Properties>
@@ -26378,17 +25655,17 @@ remoteCode.addRemoteObjects(base)
 								<token name="BottomSurface">0</token>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
-									<X>656.066772</X>
-									<Y>-64.8668213</Y>
-									<Z>-822.388733</Z>
+									<X>656.19574</X>
+									<Y>-60.5857391</Y>
+									<Z>-820.680115</Z>
 									<R00>0.711518288</R00>
-									<R01>-0.129409283</R01>
+									<R01>-0.129409254</R01>
 									<R02>-0.690648258</R02>
-									<R10>-0.0669871792</R10>
-									<R11>0.965925694</R11>
-									<R12>-0.250000477</R12>
+									<R10>-0.0669871718</R10>
+									<R11>0.965925634</R11>
+									<R12>-0.250000507</R12>
 									<R20>0.699467242</R20>
-									<R21>0.224144474</R21>
+									<R21>0.224144444</R21>
 									<R22>0.67860508</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
@@ -26437,45 +25714,45 @@ remoteCode.addRemoteObjects(base)
 								<token name="shape">1</token>
 								<Vector3 name="size">
 									<X>1</X>
-									<Y>4</Y>
+									<Y>20</Y>
 									<Z>30</Z>
 								</Vector3>
 							</Properties>
-							<Item class="Weld" referent="RBXa9513f2e7a7e4f3bb018298219f9eb48">
+							<Item class="Weld" referent="RBXe943f4eaeafb4435b4780aa501a2ad10">
 								<Properties>
 									<BinaryString name="AttributesSerialize"></BinaryString>
 									<CoordinateFrame name="C0">
-										<X>0.5</X>
-										<Y>0</Y>
+										<X>0</X>
+										<Y>-6</Y>
 										<Z>0</Z>
-										<R00>0</R00>
-										<R01>0</R01>
-										<R02>1</R02>
-										<R10>0</R10>
-										<R11>-1</R11>
-										<R12>0</R12>
-										<R20>1</R20>
-										<R21>0</R21>
-										<R22>0</R22>
+										<R00>0.99999994</R00>
+										<R01>-2.98023224e-08</R01>
+										<R02>0</R02>
+										<R10>2.98023224e-08</R10>
+										<R11>-1.49011612e-08</R11>
+										<R12>-1</R12>
+										<R20>0</R20>
+										<R21>0.99999994</R21>
+										<R22>4.47034836e-08</R22>
 									</CoordinateFrame>
 									<CoordinateFrame name="C1">
-										<X>-63.9991455</X>
-										<Y>0.999107361</Y>
-										<Z>14.5</Z>
-										<R00>0</R00>
-										<R01>0</R01>
-										<R02>1</R02>
+										<X>-63.4995728</X>
+										<Y>1.00067139</Y>
+										<Z>0.000122070312</Z>
+										<R00>0.99999994</R00>
+										<R01>-2.98023224e-08</R01>
+										<R02>0</R02>
 										<R10>0</R10>
-										<R11>-1</R11>
-										<R12>0</R12>
-										<R20>1</R20>
-										<R21>0</R21>
+										<R11>0</R11>
+										<R12>-1.00000012</R12>
+										<R20>-2.98023224e-08</R20>
+										<R21>0.999999881</R21>
 										<R22>0</R22>
 									</CoordinateFrame>
 									<bool name="Enabled">true</bool>
 									<string name="Name">Weld</string>
 									<Ref name="Part0">RBX3d603f03ed054a32aa89258b7153e19f</Ref>
-									<Ref name="Part1">RBXf2cee7db3bdd468eb8ac19d5c0a9a526</Ref>
+									<Ref name="Part1">RBXd426c7a603e44fd38a7dcc2832b9d15a</Ref>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
@@ -27161,12 +26438,12 @@ function setVisibility()
 
     Utils.setItemAndChildrenPropsByName({
         name = "SkyBox",
-        props = {Transparency = .8}
+        props = {Transparency = 0.5}
     })
 
     Utils.setItemAndChildrenPropsByName({
         name = "SkyBoxWalls",
-        props = {Transparency = 1}
+        props = {Transparency = 0.8}
     })
 
     Utils.setItemAndChildrenPropsByName({
@@ -27179,12 +26456,17 @@ function setVisibility()
         props = {Transparency = 0.8}
     })
 
+    Utils.setItemAndChildrenPropsByName({
+        name = "SkyBoxBack",
+        props = {Transparency = 1}
+    })
+
 end
 
 function configGame()
     setVisibility()
     configPlayers()
-    Utils.reportPlayerLocation()
+    -- Utils.reportPlayerLocation()
 end
 
 function addRemoteObjects()
@@ -28614,7 +27896,6 @@ function module.getOrCreateFolder(props)
 end
 
 function module.reportPlayerLocation()
-    -- local Workspace = game:GetService("Workspace")
     -- game:GetService("Workspace").CurrentCamera.CFrame.Position
     local Players = game:GetService("Players")
     Players.PlayerAdded:Connect(function(player)
@@ -28622,9 +27903,7 @@ function module.reportPlayerLocation()
             local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
             while humanoidRootPart do
                 local test2 = workspace.CurrentCamera.CFrame.Position
-                print('test2' .. ' - start');
                 print(test2);
-                print('test2' .. ' - end');
                 print(player.Name, "is at", tostring(humanoidRootPart.Position))
                 wait(4)
             end
@@ -29015,7 +28294,8 @@ renderTexts = function(props)
             backgroundColor = dialogColors[charConfig.backgroundColorIdx]
         end
 
-        if (dialogText ~= "blank" and dialogText ~= "empty") then
+        if (dialogText ~= "blank") then
+            -- if (dialogText ~= "blank" and dialogText ~= "empty") then
             local text = "<b>" .. displayName .. ": " .. "</b>" .. dialogText
 
             local font = Enum.Font.Arial
@@ -29370,25 +28650,206 @@ return module
 
 module.questConfigs = {
     {
-        questTitle = "8010-dogAndPup-002",
+        questTitle = "--- rbx-001",
         startSceneCoords = {row = 0, col = 0},
-        endSceneCoords = {col = 4, row = 1},
+        endSceneCoords = {col = 2, row = 0},
         sceneConfigs = {
             {
                 name = "home",
                 frames = {
                     {
                         dialogs = {
-                            {char = "kat", text = "Boo Hoo!"},
-                            {char = "kat", text = "Boo Hoo Hoo!"}
+                            {char = "kat", text = "Today is the day!"},
+                            {char = "liz2", text = "Today is the day?"},
+                            {char = "dog01", text = "Yes."},
+                            {char = "liz2", text = "Wait, today is what day?"},
+                            {char = "liz2", text = "Halloween?"}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
+                        characters01 = {{name = "liz2"}, {name = "kat"}},
                         characters02 = {}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "empty",
+                                text = "No, no no. Better than halloween!"
+                            },
+                            {
+                                char = "empty",
+                                text = "Today is the day we get cup cakes!"
+                            },
+                            {
+                                char = "empty",
+                                text = "Cupcakes?  Me likey cup cakes!"
+                            },
+                            {char = "elf", text = "DO NOT GO IN THE CAVE!!!"},
+                            {
+                                char = "empty",
+                                text = "Um thanks, Albert Elf-Stein.  We will steer clear."
+                            }, {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"}
+                        },
+                        characters01 = {{name = "liz2"}, {name = "kat"}},
+                        characters02 = {{name = "elf"}}
+                    }, {
+                        dialogs = {
+                            {char = "empty", text = "Wait... Kat no."},
+                            {
+                                char = "empty",
+                                text = "You have that look on your face."
+                            }, {char = "empty", text = "Pure joy?"},
+                            {
+                                char = "empty",
+                                text = "Not not that one... your sneaky look."
+                            },
+                            {
+                                char = "empty",
+                                text = "Kat, I can tell when you are up to no good..."
+                            }
+                        },
+                        characters01 = {{name = "liz2"}, {name = "kat"}},
+                        characters02 = {}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "empty",
+                                text = "Please tell me we are not going to Goblin Hill to take the cup cakes."
+                            }, {char = "empty", text = "My plan exactly!"},
+                            {
+                                char = "empty",
+                                text = "Oh no.  Oh no no. no no..."
+                            },
+                            {
+                                char = "empty",
+                                text = "I am not going to steal cupcakes from Goblins."
+                            },
+                            {
+                                char = "empty",
+                                text = "I like to call it borrowing..."
+                            }
+                        },
+                        characters01 = {{name = "liz2"}, {name = "kat"}},
+                        characters02 = {}
+                    }, {
+                        dialogs = {
+                            {char = "kat", text = "You have lost your mind!"},
+                            {
+                                char = "empty",
+                                text = "Did you wake up this morning and say="
+                            }, {
+                                char = "empty",
+                                text = "\"Oh gee, today is a good day to get eaten by a Goblin.\""
+                            },
+                            {
+                                char = "empty",
+                                text = "Liz, Liz, Liz.  Always so dramatic."
+                            },
+                            {
+                                char = "empty",
+                                text = "I've got a good feeling about this plan."
+                            }
+                        },
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {}
+                    }, {
+                        dialogs = {
+                            {char = "empty", text = "Ok, please, do tell."},
+                            {char = "empty", text = "I bet this is a doozy!"},
+                            {
+                                char = "empty",
+                                text = "I thought it up when I was brushing my teeth."
+                            },
+                            {
+                                char = "empty",
+                                text = "We sneak up from the back of Goblin Hill."
+                            }, {char = "empty", text = "Ok, and then what?"},
+                            {
+                                char = "dog01",
+                                text = "That's it.  That's my plan."
+                            }
+                        },
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "empty",
+                                text = "That sounds more like instructions for getting eaten by a Goblin."
+                            }, {char = "empty", text = "It does?"}, {
+                                char = "empty",
+                                text = "Maybe you should send them a fax and tell them we are coming."
+                            }, {char = "empty", text = "What's a fax."},
+                            {
+                                char = "empty",
+                                text = "I don't know, my dad says it."
+                            }
+                        },
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "empty",
+                                text = "Well, they have Razzle-berry Rainbow frosting."
+                            },
+                            {
+                                char = "empty",
+                                text = "What?  OMG! We have to, have to, have to try that!"
+                            },
+                            {
+                                char = "empty",
+                                text = "Ughh, Kat, you should have started with that."
+                            },
+                            {
+                                char = "empty",
+                                text = "I knew you would come around."
+                            }
+                        },
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {{name = "liz2"}}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "empty",
+                                text = "But we are going to need a real plan."
+                            },
+                            {
+                                char = "empty",
+                                text = "Your plan is a recipe for little girl stew!"
+                            },
+                            {
+                                char = "empty",
+                                text = "My mom says I'm not a planner."
+                            },
+                            {
+                                char = "empty",
+                                text = "I like to rely on my instincts."
+                            }, {
+                                char = "empty",
+                                text = "Kaaaattt!!!!  If I get eaten by a goblin, it's your fault!"
+                            }, {
+                                char = "empty",
+                                text = "Let's go find Gerald.  I bet he'll know what to do..."
+                            }, {char = "empty", text = "Gerald?"}, {
+                                char = "empty",
+                                text = "Yeah, Gerald.  And if I know Gerald, I'd guess he is at the playground running around making airplane noises."
+                            },
+                            {
+                                char = "empty",
+                                text = "Let's go to the slide.  Yay!  I love the slide."
+                            }, {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"}
+                        },
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {{name = "liz2"}}
                     }
                 },
                 coordinates = {row = 0, col = 0},
-                showBottomPath = true,
-                showRightPath = false,
+                showBottomPath = false,
+                showRightPath = true,
                 showTopPath = false,
                 showLeftPath = false,
                 isEndScene = false,
@@ -29400,339 +28861,188 @@ module.questConfigs = {
                 frames = {
                     {
                         dialogs = {
-                            {char = "liz2", text = "Hi Kat!"},
-                            {char = "kat", text = "Hi Liz!"},
-                            {char = "kat", text = "I am sad!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "You are sad?"},
-                            {char = "kat", text = "Yes! I am soooooo sad!"},
-                            {char = "liz2", text = "Why?"},
-                            {char = "liz2", text = "Why are you soooooooo sad?"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "Pup Pup is missing!"},
-                            {char = "liz2", text = "Pup Pup is missing?"},
-                            {char = "kat", text = "Liz! Can we find Pup Pup?"},
-                            {char = "liz2", text = "Yes Kat!"},
-                            {char = "liz2", text = "We can find Pup Pup!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "We can look for Pup Pup"},
-                            {char = "kat", text = "at the cup!"},
-                            {char = "liz2", text = "We can look for Pup Pup"},
-                            {char = "liz2", text = "at the cup cup!"},
-                            {char = "liz2", text = "Tee Hee Hee!"},
+                            {char = "dog01", text = "I see a bug."},
+                            {char = "robby01", text = "I see a bee on a tug..."},
+                            {char = "empty", text = "Tee hee hee..."},
+                            {char = "empty", text = "Liz that is not a bug!"},
+                            {char = "empty", text = "Here buggy buggy!"},
                             {
-                                char = "kat",
-                                text = "ha! Liz you crack me up! up!"
-                            }
+                                char = "empty",
+                                text = "Liz, that is a girl-eating vampire bat!!!"
+                            }, {char = "empty", text = "Run for the hills!"},
+                            {char = "empty", text = "Let's go to the well."},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
+                        characters01 = {{name = "liz2"}, {name = "kat"}},
+                        characters02 = {{name = "robby01"}}
                     }
                 },
-                coordinates = {row = 1, col = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = true,
-                showLeftPath = false,
-                isEndScene = false,
-                isStartScene = false,
-                maxRow = 1,
-                maxCol = 0
-            }, {
-                name = "cup",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "elf", text = "DO NOT GO IN THE CAVE!"},
-                            {char = "liz2", text = "I see a dog."},
-                            {char = "liz2", text = "I see a dog... and a log."},
-                            {char = "kat", text = "Liz! That is not a dog."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "elf"}}
-                    }, {
-                        dialogs = {
-                            {char = "elf", text = "DO NOT GO IN THE CAVE!"},
-                            {char = "liz2", text = "Hi doggy doggy!"},
-                            {char = "kat", text = "Liiiiizzzzzz!"},
-                            {char = "kat", text = "That is not a dog!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "elf"}}
-                    }
-                },
-                coordinates = {row = 1, col = 1},
+                coordinates = {col = 1, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
                 showLeftPath = true,
                 isEndScene = false,
                 isStartScene = false,
-                maxRow = 1,
+                maxRow = 0,
                 maxCol = 1
             }, {
-                name = "hill",
+                name = "slide",
                 frames = {
                     {
                         dialogs = {
-                            {char = "babyTroll01", text = "BOO HOO!"},
-                            {char = "kat", text = "oh brother..."},
-                            {char = "liz2", text = "I see a troll!"},
-                            {char = "babyTroll01", text = "<sniff> <sniff>"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "babyTroll01"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "Oh no!"},
-                            {char = "liz2", text = "Baby Troll, are you sad?"},
+                            {char = "dog01", text = "Hi kid."},
+                            {char = "robby01", text = "Bark Bark."},
                             {
-                                char = "babyTroll01",
-                                text = "BABY TROLL NEED MOMMY!"
-                            }, {char = "liz2", text = "We can help the troll!"}
+                                char = "trollKing01",
+                                text = "Uggggh....My mom is making me do this..."
+                            }, {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"},
+                            {char = "empty", text = "-----------"}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "babyTroll01"}}
-                    }, {
-                        dialogs = {
-                            {char = "babyTroll01", text = "MOMMY! MOMMY!"},
-                            {
-                                char = "liz2",
-                                text = "Troll, We will find your mommy!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "babyTroll01"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "We can look in the cave!"},
-                            {char = "kat", text = "That sounds super safe."},
-                            {char = "babyTroll01", text = "Goo Goo!"},
-                            {char = "babyTroll01", text = "Gaa Gaa!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "babyTroll01"}}
+                        characters01 = {{name = "dog01"}},
+                        characters02 = {
+                            {name = "robby01"}, {name = "trollKing01"},
+                            {name = "helicopter01"}
+                        }
                     }
                 },
-                coordinates = {col = 2, row = 1},
-                showBottomPath = true,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                isEndScene = false,
-                isStartScene = false,
-                maxRow = 1,
-                maxCol = 2
-            }, {
-                name = "lulu01",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "lulu01", text = "My Choo Choo!"},
-                            {char = "kat", text = "Hi Lulu!"},
-                            {char = "lulu01", text = "Are you mommy?"},
-                            {
-                                char = "liz2",
-                                text = "Lulu, we will find your mommy!"
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {}
-                    }
-                },
-                coordinates = {col = 3, row = 1},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                isEndScene = false,
-                isStartScene = false,
-                maxRow = 1,
-                maxCol = 3
-            }, {
-                name = "waterfall",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "kat", text = "I see Pup Pup!"},
-                            {char = "liz2", text = "Yay!"},
-                            {char = "kat", text = "Yay!"},
-                            {char = "kat", text = "Pup Pup made a new friend!"},
-                            {char = "pup01", text = "Bark! Bark!"},
-                            {char = "dog01", text = "Ruff! Ruff!"}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "pup01"}, {name = "dog01"}}
-                    }
-                },
-                coordinates = {col = 4, row = 1},
+                coordinates = {col = 2, row = 0},
                 showBottomPath = false,
                 showRightPath = false,
                 showTopPath = false,
                 showLeftPath = true,
                 isEndScene = true,
                 isStartScene = false,
-                maxRow = 1,
-                maxCol = 4
-            }, {
+                maxRow = 0,
+                maxCol = 2
+            }
+        },
+        gridSize = {rows = 1, cols = 3}
+    }, {
+        questTitle = "--- rbx-002",
+        startSceneCoords = {col = 0, row = 1},
+        endSceneCoords = {col = 1, row = 0},
+        sceneConfigs = {
+            {
                 name = "cave",
                 frames = {
                     {
                         dialogs = {
-                            {char = "babyTroll01", text = "MOMMY"},
-                            {char = "troll01", text = "BABY TROLL"},
-                            {char = "troll01", text = "GIRLS TAKE GIFT"},
                             {
-                                char = "kat",
-                                text = "A choo choo... ummmmmm...    ok...."
+                                char = "dog01",
+                                text = "Did you see the space ship?"
+                            }, {char = "robby01", text = "I am new here..."},
+                            {
+                                char = "trollKing01",
+                                text = "Mwa...  ha-ha ha-ha ha!!!"
                             }
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
+                        characters01 = {{name = "dog01"}},
                         characters02 = {
-                            {name = "babyTroll01"}, {name = "troll01"},
-                            {name = "chooChoo01"}
-                        }
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "A choo choo!"},
-                            {char = "kat", text = "Wow!  What a lovely gift!"},
-                            {char = "kat", text = "We can go to the bog."},
-                            {
-                                char = "liz2",
-                                text = "We can go to the bog to look for Pup Pup!."
-                            }
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {
-                            {name = "babyTroll01"}, {name = "troll01"},
-                            {name = "chooChoo01"}
+                            {name = "robby01"}, {name = "trollKing01"}
                         }
                     }
                 },
-                coordinates = {col = 2, row = 2},
-                showBottomPath = false,
+                coordinates = {col = 1, row = 0},
+                showBottomPath = true,
                 showRightPath = false,
-                showTopPath = true,
+                showTopPath = false,
                 showLeftPath = false,
-                isEndScene = false,
+                isEndScene = true,
                 isStartScene = false,
-                maxRow = 2,
-                maxCol = 4
-            }
-        },
-        gridSize = {rows = 3, cols = 5}
-    }, {
-        questTitle = "8000-dogAndPup-001",
-        startSceneCoords = {row = 0, col = 0},
-        endSceneCoords = {col = 2, row = 0},
-        sceneConfigs = {
-            {
-                name = "pin",
+                maxRow = 0,
+                maxCol = 1
+            }, {
+                name = "home",
                 frames = {
                     {
                         dialogs = {
-                            {char = "kat", text = "Hi Liz!"},
-                            {char = "liz2", text = "Hi Kat!"},
-                            {char = "kat", text = "I see a pup."},
-                            {char = "liz2", text = "I see a pup... and a cup!"}
+                            {char = "kat", text = "Did you see the space ship?"},
+                            {char = "liz2", text = "I am new here..."},
+                            {char = "dog01", text = "I like bees"}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "pup01"}, {name = "cup"}}
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {{name = "liz2"}}
                     }, {
                         dialogs = {
-                            {char = "kat", text = "I see a pup... go up!!!"},
-                            {char = "liz2", text = "No pup, no!"},
-                            {char = "kat", text = "Boo Hoo!"},
-                            {char = "liz2", text = "up... up... up..."}
+                            {char = "kat", text = "yay bees"},
+                            {char = "dog01", text = "Bees are fun"},
+                            {char = "liz2", text = "We can play with bees!"}
                         },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "pup01"}, {name = "cup"}}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "I see a pup."},
-                            {char = "liz2", text = "I see a pup... and a pin!"},
-                            {char = "kat", text = "Oh no. No pin! No pin!"},
-                            {char = "liz2", text = "Pup go POP!"},
-                            {char = "kat", text = "Boooooo... Hoooooooo....."}
-                        },
-                        characters01 = {{name = "kat"}, {name = "liz2"}},
-                        characters02 = {{name = "pup01"}, {name = "cup"}}
+                        characters01 = {{name = "dog01"}, {name = "kat"}},
+                        characters02 = {{name = "liz2"}}
                     }
                 },
-                coordinates = {row = 0, col = 0},
+                coordinates = {col = 0, row = 1},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
                 showLeftPath = false,
                 isEndScene = false,
                 isStartScene = true,
-                maxRow = 0,
-                maxCol = 0
+                maxRow = 1,
+                maxCol = 1
+            }, {
+                name = "log",
+                frames = {
+                    {
+                        dialogs = {
+                            {
+                                char = "dog01",
+                                text = "Did you see the space ship?"
+                            }, {char = "robby01", text = "I am new here..."}
+                        },
+                        characters01 = {{name = "dog01"}},
+                        characters02 = {{name = "robby01"}}
+                    }
+                },
+                coordinates = {col = 1, row = 1},
+                showBottomPath = false,
+                showRightPath = false,
+                showTopPath = true,
+                showLeftPath = true,
+                isEndScene = false,
+                isStartScene = false,
+                maxRow = 1,
+                maxCol = 1
             }
         },
-        gridSize = {rows = 1, cols = 1}
+        gridSize = {rows = 2, cols = 2}
     }, {
-        questTitle = "001 - Troll Need Pet",
+        questTitle = "--- rbx-003",
         startSceneCoords = {col = 0, row = 0},
-        endSceneCoords = {row = 2, col = 2},
+        endSceneCoords = {row = 0, col = 1},
         sceneConfigs = {
             {
                 name = "home",
                 frames = {
                     {
                         dialogs = {
-                            {char = "troll02", text = "GOLD! GOLD!"},
-                            {char = "babyTroll01", text = "Daddy! Daddy!"},
-                            {char = "troll02", text = "TROLL NEED GOLD!"},
                             {
-                                char = "babyTroll01",
-                                text = "Baby Troll want pet!"
-                            },
-                            {char = "troll02", text = "BABY TROLL WANT PET?"},
-                            {char = "babyTroll01", text = "Me want pet!"}
+                                char = "dog01",
+                                text = "Did you see the space ship?"
+                            }, {char = "robby01", text = "I am new here..."}
                         },
-                        characters01 = {
-                            {name = "troll02"}, {name = "babyTroll01"}
-                        },
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "troll02", text = "BABY TROLL GET FROG."},
-                            {char = "babyTroll01", text = "Me want dog!"},
-                            {char = "troll02", text = "FROG GOOD PET."},
-                            {char = "troll02", text = "BABY TROLL GET FROG."}
-                        },
-                        characters01 = {
-                            {name = "troll02"}, {name = "babyTroll01"}
-                        },
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "babyTroll01",
-                                text = "Waaaa!  Me want dog!"
-                            }, {char = "troll02", text = "FROG GOOD PET."},
-                            {char = "babyTroll01", text = "Me want dog!"},
-                            {char = "troll02", text = "BABY TROLL GO TO BOG."},
-                            {char = "troll02", text = "GET FROG IN BOG."},
-                            {char = "babyTroll01", text = "Uuuuugh.... Fine."}
-                        },
-                        characters01 = {
-                            {name = "troll02"}, {name = "babyTroll01"}
-                        },
-                        characters02 = {}
+                        characters01 = {{name = "dog01"}},
+                        characters02 = {{name = "robby01"}}
                     }
                 },
                 coordinates = {col = 0, row = 0},
@@ -29749,75 +29059,62 @@ module.questConfigs = {
                 frames = {
                     {
                         dialogs = {
-                            {char = "babyTroll01", text = "Me find bun!"},
-                            {char = "cow01", text = "Moooooo!"},
-                            {char = "babyTroll01", text = "Me run with bun!"},
-                            {char = "cow01", text = "Moooooo!"},
-                            {char = "babyTroll01", text = "Fun Fun Fun!"}
+                            {
+                                char = "dog01",
+                                text = "Did you see the space ship?"
+                            }, {char = "robby01", text = "I am new here..."},
+                            {
+                                char = "trollKing01",
+                                text = "Mwa...  ha-ha ha-ha ha!!!"
+                            }
                         },
-                        characters01 = {{name = "babyTroll01"}},
-                        characters02 = {{name = "bun"}, {name = "cow01"}}
+                        characters01 = {{name = "dog01"}},
+                        characters02 = {
+                            {name = "robby01"}, {name = "trollKing01"}
+                        }
                     }
                 },
                 coordinates = {row = 0, col = 1},
-                showBottomPath = true,
+                showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
                 showLeftPath = true,
-                isEndScene = false,
+                isEndScene = true,
                 isStartScene = false,
                 maxRow = 0,
                 maxCol = 1
             }, {
-                name = "stump",
+                name = "cave",
                 frames = {
                     {
                         dialogs = {
-                            {char = "babyTroll01", text = "Run run run!"},
-                            {char = "elf", text = "DO NOT GO IN THE CAVE!!!"},
-                            {char = "babyTroll01", text = "Fun fun fun!"},
-                            {char = "elf", text = "DO NOT GO IN THE CAVE!!!"}
+                            {
+                                char = "dog01",
+                                text = "Did you see the space ship?"
+                            }, {char = "robby01", text = "I am new here..."},
+                            {
+                                char = "trollKing01",
+                                text = "Mwa...  ha-ha ha-ha ha!!!"
+                            }
                         },
-                        characters01 = {{name = "babyTroll01"}},
-                        characters02 = {{name = "elf"}, {name = "dress06"}}
+                        characters01 = {{name = "dog01"}},
+                        characters02 = {
+                            {name = "robby01"}, {name = "trollKing01"}
+                        }
                     }
                 },
                 coordinates = {row = 0, col = 2},
                 showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                isEndScene = false,
-                isStartScene = false,
-                maxRow = 0,
-                maxCol = 2
-            }, {
-                name = "pond",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "babyTroll01", text = "I see a cub!"},
-                            {char = "cub", text = "I need my Mommy!"},
-                            {char = "babyTroll01", text = "Me need frog!"},
-                            {char = "cub", text = "Mommy!!!"},
-                            {char = "babyTroll01", text = "Froggy!!!"}
-                        },
-                        characters01 = {{name = "babyTroll01"}},
-                        characters02 = {{name = "cub"}}
-                    }
-                },
-                coordinates = {col = 3, row = 0},
-                showBottomPath = false,
                 showRightPath = false,
                 showTopPath = false,
                 showLeftPath = true,
-                isEndScene = false,
+                isEndScene = true,
                 isStartScene = false,
                 maxRow = 0,
-                maxCol = 3
+                maxCol = 2
             }
         },
-        gridSize = {rows = 1, cols = 4}
+        gridSize = {rows = 1, cols = 3}
     }
 }
 return module
@@ -30120,7 +29417,8 @@ renderCharacters = function(props)
         local name = itemConfig.name
 
         if (name ~= "blank" and name ~= "empty" and name ~= "") then
-            local x = (i - 1) * -(charImageBlock.Size.X + xGap)
+            local x = (i - 1) * (charImageBlock.Size.X + xGap)
+            -- local x = (i - 1) * -(charImageBlock.Size.X + xGap)
             local newChar = Utils.cloneModel(
                                 {
                     model = characterTemplate,
@@ -30331,10 +29629,13 @@ function module.addScenes(props)
             })
         clonedScene.Name = clonedScene.Name .. i
 
+        local isStartScene = sceneConfig.isStartScene
+
         Teleporters.addTeleporters({
             parent = clonedScene,
             sceneIndex = i,
             questIndex = questIndex,
+            isStartScene = isStartScene,
             questTitle = questConfig.questTitle
         })
 
@@ -30796,6 +30097,7 @@ function module.addTeleporters(props)
     local sceneIndex = props.sceneIndex
     local questIndex = props.questIndex
     local questTitle = props.questTitle
+    local isStartScene = props.isStartScene
 
     local function setTP(thisTP, homeTP)
         thisTP.Touched:Connect(function(touchPart)
@@ -30833,11 +30135,12 @@ function module.addTeleporters(props)
     end
 
     local thisTeleporter = Utils.getFirstDescendantByName(parent,
-                                                          "QuestTeleporter")
+                                                          "QuestTeleporterModel")
     local teleporterLabel = Utils.getFirstDescendantByName(thisTeleporter,
                                                            "TeleporterLabel")
     teleporterLabel.Text = questTitle
-    if (sceneIndex == 1) then
+    if (isStartScene) then
+        -- if (sceneIndex == 1) then
         local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
                                                            "SkyBoxTeleporter")
         thisTeleporter.Name = parent.Name .. "-zzz"
@@ -30845,12 +30148,11 @@ function module.addTeleporters(props)
         homeTeleporter.Parent = parent
 
         homeTeleporter.Name = thisTeleporter.Name .. "-home"
-        homeTeleporter.CFrame = dummyHomeTP.CFrame *
-                                    CFrame.new(
-                                        Vector3.new(-20 * questIndex, 0, 0))
+        homeTeleporter.PrimaryPart.CFrame =
+            dummyHomeTP.CFrame * CFrame.new(Vector3.new(-20 * questIndex, 0, 0))
 
-        setTP(thisTeleporter, homeTeleporter)
-        setTP(homeTeleporter, thisTeleporter)
+        setTP(thisTeleporter.PrimaryPart, homeTeleporter.PrimaryPart)
+        setTP(homeTeleporter.PrimaryPart, thisTeleporter.PrimaryPart)
     else
         thisTeleporter:Destroy()
     end

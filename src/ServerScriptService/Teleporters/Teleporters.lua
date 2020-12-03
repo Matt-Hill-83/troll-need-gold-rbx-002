@@ -47,7 +47,7 @@ function module.addTeleporters(props)
     end
 
     local thisTeleporter = Utils.getFirstDescendantByName(parent,
-                                                          "QuestTeleporter")
+                                                          "QuestTeleporterModel")
     local teleporterLabel = Utils.getFirstDescendantByName(thisTeleporter,
                                                            "TeleporterLabel")
     teleporterLabel.Text = questTitle
@@ -60,12 +60,11 @@ function module.addTeleporters(props)
         homeTeleporter.Parent = parent
 
         homeTeleporter.Name = thisTeleporter.Name .. "-home"
-        homeTeleporter.CFrame = dummyHomeTP.CFrame *
-                                    CFrame.new(
-                                        Vector3.new(-20 * questIndex, 0, 0))
+        homeTeleporter.PrimaryPart.CFrame =
+            dummyHomeTP.CFrame * CFrame.new(Vector3.new(-20 * questIndex, 0, 0))
 
-        setTP(thisTeleporter, homeTeleporter)
-        setTP(homeTeleporter, thisTeleporter)
+        setTP(thisTeleporter.PrimaryPart, homeTeleporter.PrimaryPart)
+        setTP(homeTeleporter.PrimaryPart, thisTeleporter.PrimaryPart)
     else
         thisTeleporter:Destroy()
     end

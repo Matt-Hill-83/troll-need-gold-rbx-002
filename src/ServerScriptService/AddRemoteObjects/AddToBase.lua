@@ -46,12 +46,12 @@ function setVisibility()
 
     Utils.setItemAndChildrenPropsByName({
         name = "SkyBox",
-        props = {Transparency = .8}
+        props = {Transparency = 0.5}
     })
 
     Utils.setItemAndChildrenPropsByName({
         name = "SkyBoxWalls",
-        props = {Transparency = .8}
+        props = {Transparency = 0.8}
     })
 
     Utils.setItemAndChildrenPropsByName({
@@ -64,12 +64,17 @@ function setVisibility()
         props = {Transparency = 0.8}
     })
 
+    Utils.setItemAndChildrenPropsByName({
+        name = "SkyBoxBack",
+        props = {Transparency = 1}
+    })
+
 end
 
 function configGame()
     setVisibility()
     configPlayers()
-    Utils.reportPlayerLocation()
+    -- Utils.reportPlayerLocation()
 end
 
 function addRemoteObjects()

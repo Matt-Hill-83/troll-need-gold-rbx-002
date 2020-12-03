@@ -37,7 +37,8 @@ renderCharacters = function(props)
         local name = itemConfig.name
 
         if (name ~= "blank" and name ~= "empty" and name ~= "") then
-            local x = (i - 1) * -(charImageBlock.Size.X + xGap)
+            local x = (i - 1) * (charImageBlock.Size.X + xGap)
+            -- local x = (i - 1) * -(charImageBlock.Size.X + xGap)
             local newChar = Utils.cloneModel(
                                 {
                     model = characterTemplate,

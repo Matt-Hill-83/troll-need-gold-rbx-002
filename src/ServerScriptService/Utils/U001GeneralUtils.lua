@@ -69,7 +69,6 @@ function module.getOrCreateFolder(props)
 end
 
 function module.reportPlayerLocation()
-    -- local Workspace = game:GetService("Workspace")
     -- game:GetService("Workspace").CurrentCamera.CFrame.Position
     local Players = game:GetService("Players")
     Players.PlayerAdded:Connect(function(player)
