@@ -31,7 +31,6 @@ function hideItemAndChildren(props)
     local hide = props.hide
 
     hideItem(parent, hide)
-
     local children = parent:GetDescendants()
     for i, item in ipairs(children) do hideItem(item, hide) end
 end

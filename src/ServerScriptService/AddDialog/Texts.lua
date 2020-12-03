@@ -12,6 +12,7 @@ renderTexts = function(props)
     local dialogConfigs = props.dialogConfigs
 
     local pixelsPerStud = 45
+    -- local paddingInPx = pixelsPerStud / 4
     local paddingInPx = pixelsPerStud / 8
     local fontHeight = pixelsPerStud * 41 / 45
 

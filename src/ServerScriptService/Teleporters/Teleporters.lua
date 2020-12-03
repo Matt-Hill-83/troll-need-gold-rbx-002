@@ -18,7 +18,8 @@ function module.addTeleporters(props)
 
                 local teleportLocation =
                     CFrame.new(homeTP.CFrame.X + 0 * sceneIndex,
-                               homeTP.CFrame.Y, homeTP.CFrame.Z + 5 * sceneIndex)
+                               homeTP.CFrame.Y + 10,
+                               homeTP.CFrame.Z + 5 * sceneIndex)
 
                 local ts = game:GetService("TweenService")
 
