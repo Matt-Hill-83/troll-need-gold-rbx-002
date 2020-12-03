@@ -54,12 +54,22 @@ function setVisibility()
         props = {Transparency = 1}
     })
 
+    Utils.setItemAndChildrenPropsByName({
+        name = "Basement",
+        props = {Transparency = 1}
+    })
+
+    Utils.setItemAndChildrenPropsByName({
+        name = "DockBase",
+        props = {Transparency = 0.8}
+    })
+
 end
 
 function configGame()
     setVisibility()
     configPlayers()
-    -- Utils.reportPlayerLocation()
+    Utils.reportPlayerLocation()
 end
 
 function addRemoteObjects()
@@ -81,9 +91,9 @@ function addRemoteObjects()
         local startSceneCoords = questConfig.startSceneCoords
         local endSceneCoords = questConfig.ebdSceneCoords
 
-        local desiredPadding = 1
+        local desiredPadding = 12
         local wallWidth = 1
-        local wallHeight = 8
+        local wallHeight = 24
         local sceneHeight = 50
         local wallSize = Vector3.new(wallWidth, wallHeight, wallWidth)
         local gridPadding = desiredPadding + wallWidth * 2

@@ -69,11 +69,15 @@ function module.getOrCreateFolder(props)
 end
 
 function module.reportPlayerLocation()
+    -- local Workspace = game:GetService("Workspace")
+    -- game:GetService("Workspace").CurrentCamera.CFrame.Position
     local Players = game:GetService("Players")
     Players.PlayerAdded:Connect(function(player)
         player.CharacterAdded:Connect(function(character)
             local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
             while humanoidRootPart do
+                local test2 = workspace.CurrentCamera.CFrame.Position
+                -- print(test2);
                 print(player.Name, "is at", tostring(humanoidRootPart.Position))
                 wait(4)
             end

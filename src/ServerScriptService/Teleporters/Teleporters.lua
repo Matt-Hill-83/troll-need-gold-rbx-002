@@ -8,6 +8,7 @@ function module.addTeleporters(props)
     local parent = props.parent
     local sceneIndex = props.sceneIndex
     local questIndex = props.questIndex
+    local questTitle = props.questTitle
 
     local function setTP(thisTP, homeTP)
         thisTP.Touched:Connect(function(touchPart)
@@ -46,6 +47,9 @@ function module.addTeleporters(props)
 
     local thisTeleporter = Utils.getFirstDescendantByName(parent,
                                                           "QuestTeleporter")
+    local teleporterLabel = Utils.getFirstDescendantByName(thisTeleporter,
+                                                           "TeleporterLabel")
+    teleporterLabel.Text = questTitle
     if (sceneIndex == 1) then
         local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
                                                            "SkyBoxTeleporter")

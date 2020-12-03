@@ -87,7 +87,8 @@ function module.addScenes(props)
         Teleporters.addTeleporters({
             parent = clonedScene,
             sceneIndex = i,
-            questIndex = questIndex
+            questIndex = questIndex,
+            questTitle = questConfig.questTitle
         })
 
         local function hideWall(clonedScene)
