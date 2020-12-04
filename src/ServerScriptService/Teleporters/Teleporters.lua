@@ -12,6 +12,10 @@ function module.addTeleporters(props)
     local isStartScene = props.isStartScene
 
     local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
+        local teleporterBlocker = Utils.getFirstDescendantByName(localTP,
+                                                                 "TeleporterBlocker")
+        teleporterBlocker:Destroy()
+
         localTP.PrimaryPart.Touched:Connect(
             function(touchPart)
                 if touchPart and touchPart.Parent and touchPart.Parent.Humanoid and
@@ -64,6 +68,8 @@ function module.addTeleporters(props)
         homeTeleporter.PrimaryPart.CFrame =
             dummyHomeTP.CFrame * CFrame.new(Vector3.new(-20 * questIndex, 0, 0)) *
                 CFrame.Angles(0, math.rad(90), 0)
+        homeTeleporter.PrimaryPart.Anchored = true
+        -- 
 
         setLocalTPTargetToRemoteTP(thisTeleporter, homeTeleporter)
         setLocalTPTargetToRemoteTP(homeTeleporter, thisTeleporter)
