@@ -61,18 +61,19 @@ function module.addTeleporters(props)
         local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
                                                            "SkyBoxTeleporter")
         thisTeleporter.Name = parent.Name .. "-zzz"
-        local homeTeleporter = thisTeleporter:Clone()
-        homeTeleporter.Parent = parent
+        local skyBoxTeleporter = thisTeleporter:Clone()
+        skyBoxTeleporter.Parent = parent
 
-        homeTeleporter.Name = thisTeleporter.Name .. "-home"
-        homeTeleporter.PrimaryPart.CFrame =
+        skyBoxTeleporter.Name = thisTeleporter.Name .. "-home"
+        skyBoxTeleporter.PrimaryPart.CFrame =
             dummyHomeTP.CFrame * CFrame.new(Vector3.new(-20 * questIndex, 0, 0)) *
                 CFrame.Angles(0, math.rad(90), 0)
-        homeTeleporter.PrimaryPart.Anchored = true
+        skyBoxTeleporter.PrimaryPart.Anchored = true
+        thisTeleporter.PrimaryPart.Anchored = true
         -- 
 
-        setLocalTPTargetToRemoteTP(thisTeleporter, homeTeleporter)
-        setLocalTPTargetToRemoteTP(homeTeleporter, thisTeleporter)
+        -- setLocalTPTargetToRemoteTP(thisTeleporter, skyBoxTeleporter)
+        setLocalTPTargetToRemoteTP(skyBoxTeleporter, thisTeleporter)
     else
         thisTeleporter:Destroy()
     end

@@ -190,7 +190,7 @@ function module.addScenes(props)
             sceneFolder = sceneFolder
         }
 
-        -- Characters.addCharactersToScene(charProps)
+        Characters.addCharactersToScene(charProps)
         Location.addLocation({scene = clonedScene, sceneConfig = sceneConfig})
 
         local gameTitleLabel = Utils.getFirstDescendantByName(clonedScene,
