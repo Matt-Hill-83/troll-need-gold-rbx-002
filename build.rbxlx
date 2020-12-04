@@ -30981,25 +30981,22 @@ renderCharacters = function(props)
     local charImageBlock = Utils.getFirstDescendantByName(characterTemplate,
                                                           "CharacterImage")
 
-    -- Hide decal on template
-    applyDecalsToCharacter({part = charImageBlock, decalId = ""})
-    toggleLabelVisibility({part = charImageBlock, visible = false})
-
     -- Ensure player doesn't crash into invisivble template
-    charImageBlock.CanCollide = false
-    -- characters blocks are left visible during development, so I can move them around.
-    charImageBlock.Transparency = 1
-    -- Utils.hideItemAndChildren({item = characterTemplate, hide = true})
+    Utils.setItemAndChildrenPropsByInst({
+        item = characterTemplate,
+        props = {Transparency = 1, CanCollide = false, Anchored = true}
+    })
+
+    Utils.hideItemAndChildren({item = characterTemplate, hide = false})
+
+    -- If characters are welded to scenebase, things go bad.
     local welds = Utils.getDescendantsByType(characterTemplate, "Weld")
-    print('welds' .. ' - start');
-    print(Utils.tableToString({welds}));
-    print('welds' .. ' - end');
-    -- For each character
     for i, weld in ipairs(welds) do
         weld.Enabled = false
         -- 
     end
 
+    -- For each character
     for i, itemConfig in ipairs(itemConfigs) do
         local name = itemConfig.name
 
@@ -31023,12 +31020,13 @@ renderCharacters = function(props)
             local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
             applyDecalsToCharacter({part = newChar, decalId = decalId})
             applyLabelsToCharacter({part = newChar, text = itemConfig.name})
-            toggleLabelVisibility({part = newChar, visible = true})
+
+            Utils.hideItemAndChildren({item = newChar, hide = false})
+            newChar.PrimaryPart.Transparency = 1
         end
     end
 
     Utils.hideItemAndChildren({item = characterTemplate, hide = true})
-    -- charImageBlock.Transparency = 1
 
 end
 

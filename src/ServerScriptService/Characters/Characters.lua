@@ -24,7 +24,6 @@ renderCharacters = function(props)
                                                           "CharacterImage")
 
     -- Ensure player doesn't crash into invisivble template
-    -- charImageBlock.CanCollide = false
     Utils.setItemAndChildrenPropsByInst({
         item = characterTemplate,
         props = {Transparency = 1, CanCollide = false, Anchored = true}
@@ -63,7 +62,7 @@ renderCharacters = function(props)
             local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
             applyDecalsToCharacter({part = newChar, decalId = decalId})
             applyLabelsToCharacter({part = newChar, text = itemConfig.name})
-            -- toggleLabelVisibility({part = newChar, visible = true})
+
             Utils.hideItemAndChildren({item = newChar, hide = false})
             newChar.PrimaryPart.Transparency = 1
         end
