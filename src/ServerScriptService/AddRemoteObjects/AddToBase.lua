@@ -12,6 +12,15 @@ function addRemoteObjects()
     ConfigGame.configGame()
 
     local questConfigs = SceneConfig.getScenesConfig()
+
+    if (Constants.singleScene) then
+        -- slice out a single quest
+        questConfigs = {questConfigs[1]}
+        local sceneConfigs = questConfigs[1].sceneConfigs
+        questConfigs[1].sceneConfigs = {sceneConfigs[1]}
+        --  
+
+    end
     local myStuff = workspace:FindFirstChild("MyStuff")
 
     local questsOrigin = Utils.getFirstDescendantByName(myStuff, "QuestsOrigin")

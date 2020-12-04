@@ -43,7 +43,7 @@ renderCharacters = function(props)
                                 {
                     model = characterTemplate,
                     position = characterTemplate.PrimaryPart.CFrame *
-                        CFrame.new(Vector3.new(-x, 0, 0)),
+                        CFrame.new(Vector3.new(x, 0, 0)),
                     suffix = "Clone--" .. i
                 })
 
