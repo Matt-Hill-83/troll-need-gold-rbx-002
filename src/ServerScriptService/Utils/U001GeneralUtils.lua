@@ -163,9 +163,6 @@ function module.getDescendantsByName(parent, name)
     local output = {}
     for i, item in ipairs(items) do
         if item.Name == name then
-            print('item' .. ' - start');
-            print(item);
-            print('item' .. ' - end');
             table.insert(output, item)
             -- 
         end
@@ -192,15 +189,7 @@ function module.unAttachAllChildParts(parent)
     for i = 1, #items do
         if items[i]:IsA('Part') then
             local item = items[i]
-            if item.Anchored == true then
-                print('item.Name------------------------------------->>>>' ..
-                          ' - start');
-                print(item.Name);
-                print('item.Name' .. ' - end');
-
-                -- item.Anchored = false
-                table.insert(output, item)
-            end
+            if item.Anchored == true then table.insert(output, item) end
             --
         end
 

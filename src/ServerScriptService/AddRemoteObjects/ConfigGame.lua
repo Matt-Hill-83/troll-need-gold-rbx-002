@@ -50,10 +50,10 @@ function setVisibility()
         props = {Transparency = 1}
     })
 
-    Utils.setItemAndChildrenPropsByName({
-        name = "DockBase",
-        props = {Transparency = 0.8}
-    })
+    -- Utils.setItemAndChildrenPropsByName({
+    --     name = "DockBase",
+    --     props = {Transparency = 0.8}
+    -- })
 
     Utils.setItemAndChildrenPropsByName({
         name = "SkyBoxBack",

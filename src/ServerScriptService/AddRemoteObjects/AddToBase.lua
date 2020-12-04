@@ -21,9 +21,51 @@ function addRemoteObjects()
         --  
 
     end
+
     local myStuff = workspace:FindFirstChild("MyStuff")
 
     local questsOrigin = Utils.getFirstDescendantByName(myStuff, "QuestsOrigin")
+    local letterTemplate = Utils.getFirstDescendantByName(myStuff,
+                                                          "LetterTemplate")
+
+    local letters = {
+        A = {char = 'A'},
+        B = {char = 'B'},
+        C = {char = 'C'},
+        D = {char = 'D'},
+        E = {char = 'E'},
+        F = {char = 'F'},
+        G = {char = 'G'},
+        H = {char = 'H'},
+        I = {char = 'I'},
+        J = {char = 'J'},
+        K = {char = 'K'},
+        L = {char = 'L'},
+        M = {char = 'M'},
+        N = {char = 'N'},
+        O = {char = 'O'},
+        P = {char = 'P'},
+        Q = {char = 'Q'},
+        R = {char = 'R'},
+        S = {char = 'S'},
+        T = {char = 'T'},
+        U = {char = 'U'},
+        V = {char = 'V'},
+        W = {char = 'W'},
+        X = {char = 'X'},
+        Y = {char = 'Y'},
+        Z = {char = 'Z'}
+
+    }
+
+    for i, letter in ipairs(letters) do
+        print('i' .. ' - start');
+        print(i);
+        print('i' .. ' - end');
+        local newLetter = letterTemplate:Clone()
+        newLetter.Parent = letter.Parent
+        newLetter.Name = "letter-" .. letter.char
+    end
 
     local runtimeQuestsFolder = Utils.getOrCreateFolder(
                                     {name = "RunTimeQuests", parent = myStuff})
