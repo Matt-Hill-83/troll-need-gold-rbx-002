@@ -142,12 +142,24 @@ function getFirstDescendantByName(parent, name)
     end
 end
 
-function module.getDescendantsByName(parent, name)
-    local descendants = parent:GetDescendants()
+function module.getAllDescendantByName(parent, name)
+    local model = parent:GetDescendants()
     local output = {}
-    for i = 1, #descendants do
-        if descendants[i].Name == name then
-            table.insert(output, descendants[i])
+    for i, item in ipairs(model) do
+        if item.Name == name then table.insert(output, item) end
+    end
+end
+
+function module.getDescendantsByName(parent, name)
+    local items = parent:GetDescendants()
+
+    local output = {}
+    for i, item in ipairs(items) do
+        if item.Name == name then
+            print('item' .. ' - start');
+            print(item);
+            print('item' .. ' - end');
+            table.insert(output, item)
             -- 
         end
     end

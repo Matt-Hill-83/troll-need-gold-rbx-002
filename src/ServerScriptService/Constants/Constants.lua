@@ -1,4 +1,8 @@
-local module = {buffer = 0}
+local module = {
+    buffer = 0,
+    singleScene = true
+    -- 
+}
 
 module.dialogColors = {
     Color3.fromRGB(253, 158, 240), Color3.fromRGB(225, 253, 158),

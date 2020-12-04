@@ -11,45 +11,55 @@ function module.addTeleporters(props)
     local questTitle = props.questTitle
     local isStartScene = props.isStartScene
 
-    local function setTP(thisTP, homeTP)
-        thisTP.Touched:Connect(function(touchPart)
-            if touchPart and touchPart.Parent and touchPart.Parent.Humanoid and
-                touchPart.Parent.currentlyTeleporting.Value == false then
-                print('touchPart')
-                local Character = touchPart.Parent
+    local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
+        localTP.PrimaryPart.Touched:Connect(
+            function(touchPart)
+                if touchPart and touchPart.Parent and touchPart.Parent.Humanoid and
+                    touchPart.Parent.currentlyTeleporting.Value == false then
+                    print('touchPart')
+                    local Character = touchPart.Parent
 
-                local teleportLocation =
-                    CFrame.new(homeTP.CFrame.X + 0 * sceneIndex,
-                               homeTP.CFrame.Y + 10,
-                               homeTP.CFrame.Z + 5 * sceneIndex)
+                    local questTeleporterReceiver =
+                        Utils.getFirstDescendantByName(remoteTP,
+                                                       "QuestTeleporterReceiver")
+                    print('questTeleporterReceiver' .. ' - start');
+                    print(questTeleporterReceiver);
+                    print('questTeleporterReceiver' .. ' - end');
+                    local teleportLocation = questTeleporterReceiver.CFrame
 
-                local ts = game:GetService("TweenService")
+                    -- local teleportLocation =
+                    --     CFrame.new(remoteTP.PrimaryPart.CFrame.X,
+                    --                remoteTP.PrimaryPart.CFrame.Y + 20,
+                    --                remoteTP.PrimaryPart.CFrame.Z)
 
-                wait(2)
+                    local ts = game:GetService("TweenService")
 
-                local tweenInfo = TweenInfo.new(2)
-                local t = ts:Create(Character.PrimaryPart, tweenInfo,
-                                    {CFrame = teleportLocation})
-                Character.PrimaryPart.Anchored = true
-                -- Anchor the player's rootpart so physics doesn't mess things up.
-                t:Play()
-                t.Completed:Connect(function()
-                    Character.PrimaryPart.Anchored = false
-                end)
+                    wait(2)
 
-                local teleportingValue = Character.currentlyTeleporting
-                teleportingValue.Value = true
-                wait(5)
-                teleportingValue.Value = false
-            end
-        end)
+                    local tweenInfo = TweenInfo.new(2)
+                    local t = ts:Create(Character.PrimaryPart, tweenInfo,
+                                        {CFrame = teleportLocation})
+                    Character.PrimaryPart.Anchored = true
+                    -- Anchor the player's rootpart so physics doesn't mess things up.
+                    t:Play()
+                    t.Completed:Connect(function()
+                        Character.PrimaryPart.Anchored = false
+                    end)
+
+                    local teleportingValue = Character.currentlyTeleporting
+                    teleportingValue.Value = true
+                    wait(5)
+                    teleportingValue.Value = false
+                end
+            end)
     end
 
     local thisTeleporter = Utils.getFirstDescendantByName(parent,
                                                           "QuestTeleporterModel")
-    local teleporterLabel = Utils.getFirstDescendantByName(thisTeleporter,
-                                                           "TeleporterLabel")
-    teleporterLabel.Text = questTitle
+
+    local labels = Utils.getDescendantsByName(thisTeleporter, "TeleporterLabel")
+    for i, label in ipairs(labels) do label.Text = questTitle end
+
     if (isStartScene) then
         local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
                                                            "SkyBoxTeleporter")
@@ -62,8 +72,8 @@ function module.addTeleporters(props)
             dummyHomeTP.CFrame * CFrame.new(Vector3.new(-20 * questIndex, 0, 0)) *
                 CFrame.Angles(0, math.rad(90), 0)
 
-        setTP(thisTeleporter.PrimaryPart, homeTeleporter.PrimaryPart)
-        setTP(homeTeleporter.PrimaryPart, thisTeleporter.PrimaryPart)
+        setLocalTPTargetToRemoteTP(thisTeleporter, homeTeleporter)
+        setLocalTPTargetToRemoteTP(homeTeleporter, thisTeleporter)
     else
         thisTeleporter:Destroy()
     end
