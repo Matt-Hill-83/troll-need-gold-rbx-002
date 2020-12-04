@@ -28,7 +28,7 @@ function addRemoteObjects()
     local letterTemplate = Utils.getFirstDescendantByName(myStuff,
                                                           "LetterTemplate")
 
-    local letters = {
+    local letterDefs = {
         A = {char = 'A'},
         B = {char = 'B'},
         C = {char = 'C'},
@@ -57,14 +57,27 @@ function addRemoteObjects()
         Z = {char = 'Z'}
 
     }
+    local letters = {
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
+        'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
 
-    for i, letter in ipairs(letters) do
-        print('i' .. ' - start');
-        print(i);
-        print('i' .. ' - end');
+    }
+
+    for i, char in ipairs(letters) do
         local newLetter = letterTemplate:Clone()
-        newLetter.Parent = letter.Parent
-        newLetter.Name = "letter-" .. letter.char
+        newLetter.Parent = letterTemplate.Parent
+        newLetter.Name = "letter-" .. char
+
+        local letterHandle = Utils.getFirstDescendantByName(newLetter, "Handle")
+
+        letterHandle.CFrame = letterHandle.CFrame +
+                                  Vector3.new(0, letterHandle.Size.Y * 1.5, 0)
+
+        local textLabels = Utils.getDescendantsByName(letterHandle, "BlockChar")
+        for i, label in ipairs(textLabels) do
+            label.Text = char
+            -- 
+        end
     end
 
     local runtimeQuestsFolder = Utils.getOrCreateFolder(
