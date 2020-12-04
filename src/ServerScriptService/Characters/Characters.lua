@@ -31,8 +31,17 @@ renderCharacters = function(props)
     charImageBlock.CanCollide = false
     -- characters blocks are left visible during development, so I can move them around.
     charImageBlock.Transparency = 1
-
+    -- Utils.hideItemAndChildren({item = characterTemplate, hide = true})
+    local welds = Utils.getDescendantsByType(characterTemplate, "Weld")
+    print('welds' .. ' - start');
+    print(Utils.tableToString({welds}));
+    print('welds' .. ' - end');
     -- For each character
+    for i, weld in ipairs(welds) do
+        weld.Enabled = false
+        -- 
+    end
+
     for i, itemConfig in ipairs(itemConfigs) do
         local name = itemConfig.name
 
@@ -61,7 +70,7 @@ renderCharacters = function(props)
     end
 
     Utils.hideItemAndChildren({item = characterTemplate, hide = true})
-    charImageBlock.Transparency = 1
+    -- charImageBlock.Transparency = 1
 
 end
 

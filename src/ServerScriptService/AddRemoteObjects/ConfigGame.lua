@@ -64,15 +64,15 @@ function setVisibility()
         props = {Transparency = 1}
     })
 
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "BaseWalls",
-    --     props = {Transparency = 0, CanCollide = false}
-    -- })
+    Utils.setItemAndChildrenPropsByName({
+        name = "BaseWalls",
+        props = {Transparency = 0, CanCollide = true, Anchored = true}
+    })
 
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "BridgeWalls",
-    --     props = {Transparency = 0, CanCollide = false, Anchored = true}
-    -- })
+    Utils.setItemAndChildrenPropsByName({
+        name = "BridgeWalls",
+        props = {Transparency = 0, CanCollide = true, Anchored = true}
+    })
 
 end
 function module.configGame()
