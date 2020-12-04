@@ -16,21 +16,14 @@ function module.addTeleporters(props)
             function(touchPart)
                 if touchPart and touchPart.Parent and touchPart.Parent.Humanoid and
                     touchPart.Parent.currentlyTeleporting.Value == false then
-                    print('touchPart')
+
                     local Character = touchPart.Parent
 
                     local questTeleporterReceiver =
                         Utils.getFirstDescendantByName(remoteTP,
                                                        "QuestTeleporterReceiver")
-                    print('questTeleporterReceiver' .. ' - start');
-                    print(questTeleporterReceiver);
-                    print('questTeleporterReceiver' .. ' - end');
-                    local teleportLocation = questTeleporterReceiver.CFrame
-
-                    -- local teleportLocation =
-                    --     CFrame.new(remoteTP.PrimaryPart.CFrame.X,
-                    --                remoteTP.PrimaryPart.CFrame.Y + 20,
-                    --                remoteTP.PrimaryPart.CFrame.Z)
+                    local teleportLocation =
+                        questTeleporterReceiver.CFrame + Vector3.new(0, 6, 0)
 
                     local ts = game:GetService("TweenService")
 
