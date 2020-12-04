@@ -126,7 +126,7 @@ renderQuestBlock = function(props)
     local dockWallLeft = Utils.getFirstDescendantByName(dockModel,
                                                         "DockWallLeft")
 
-    local offsetX = -Constants.islandLength
+    local offsetX = -100
     -- local offsetY = 0
     local offsetY = -sceneHeight / 2
     local offsetZ = 0

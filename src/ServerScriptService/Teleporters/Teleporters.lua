@@ -63,10 +63,6 @@ function module.addTeleporters(props)
                                                "TeleporterLabel")
     for i, label in ipairs(labels2) do label.Text = questTitle end
 
-    -- local skyBoxTeleporter = thisTeleporter:Clone()
-    -- skyBoxTeleporter.Parent = parent
-    -- skyBoxTeleporter.Name = thisTeleporter.Name .. "-home"
-
     local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
                                                        "SkyBoxTeleporter")
     skyBoxTeleporter.PrimaryPart.CFrame =

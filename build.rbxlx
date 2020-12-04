@@ -28337,7 +28337,7 @@ renderQuestBlock = function(props)
     local dockWallLeft = Utils.getFirstDescendantByName(dockModel,
                                                         "DockWallLeft")
 
-    local offsetX = -Constants.islandLength
+    local offsetX = -100
     -- local offsetY = 0
     local offsetY = -sceneHeight / 2
     local offsetZ = 0
@@ -30767,8 +30767,8 @@ module.dialogColors = {
 }
 
 local islandLength = 36
--- local bridgeLength = 31.1
-local bridgeLength = 34
+local bridgeLength = 31.1
+-- local bridgeLength = 34
 module.islandLength = islandLength
 module.bridgeLength = bridgeLength
 module.totalIslandLength = islandLength + bridgeLength
@@ -31777,10 +31777,6 @@ function module.addTeleporters(props)
     local labels2 = Utils.getDescendantsByName(skyBoxTeleporter,
                                                "TeleporterLabel")
     for i, label in ipairs(labels2) do label.Text = questTitle end
-
-    -- local skyBoxTeleporter = thisTeleporter:Clone()
-    -- skyBoxTeleporter.Parent = parent
-    -- skyBoxTeleporter.Name = thisTeleporter.Name .. "-home"
 
     local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
                                                        "SkyBoxTeleporter")
