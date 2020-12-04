@@ -64,6 +64,12 @@ function module.addScenes(props)
             child = wallTemplate
         })
 
+    local thisTeleporter = Utils.getFirstDescendantByName(sceneTemplateModel,
+                                                          "QuestTeleporterModel")
+    local skyBoxTeleporter = thisTeleporter:Clone()
+    skyBoxTeleporter.Parent = questFolder
+    skyBoxTeleporter.Name = thisTeleporter.Name .. "-home"
+
     for i, sceneConfig in ipairs(sceneConfigs) do
         local entered = {value = false}
         local numPages = #sceneConfig.frames
@@ -78,20 +84,20 @@ function module.addScenes(props)
         local clonedScene = Utils.cloneModel(
                                 {
                 model = sceneTemplateModel,
-
                 position = CFrame.new(newPosition + startPosition),
                 suffix = "Clone" .. i
             })
-        clonedScene.Name = clonedScene.Name .. i
 
-        local isStartScene = sceneConfig.isStartScene
+        clonedScene.Name = clonedScene.Name .. i
 
         Teleporters.addTeleporters({
             parent = clonedScene,
             sceneIndex = i,
             questIndex = questIndex,
-            isStartScene = isStartScene,
-            questTitle = questConfig.questTitle
+            isStartScene = sceneConfig.isStartScene,
+            isEndScene = sceneConfig.isEndScene,
+            questTitle = questConfig.questTitle,
+            skyBoxTeleporter = skyBoxTeleporter
         })
 
         local function hideWall(clonedScene)

@@ -10,6 +10,8 @@ function module.addTeleporters(props)
     local questIndex = props.questIndex
     local questTitle = props.questTitle
     local isStartScene = props.isStartScene
+    local isEndScene = props.isEndScene
+    local skyBoxTeleporter = props.skyBoxTeleporter
 
     local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
         local teleporterBlocker = Utils.getFirstDescendantByName(localTP,
@@ -57,23 +59,31 @@ function module.addTeleporters(props)
     local labels = Utils.getDescendantsByName(thisTeleporter, "TeleporterLabel")
     for i, label in ipairs(labels) do label.Text = questTitle end
 
-    if (isStartScene) then
-        local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
-                                                           "SkyBoxTeleporter")
-        thisTeleporter.Name = parent.Name .. "-zzz"
-        local skyBoxTeleporter = thisTeleporter:Clone()
-        skyBoxTeleporter.Parent = parent
+    local labels2 = Utils.getDescendantsByName(skyBoxTeleporter,
+                                               "TeleporterLabel")
+    for i, label in ipairs(labels2) do label.Text = questTitle end
 
-        skyBoxTeleporter.Name = thisTeleporter.Name .. "-home"
-        skyBoxTeleporter.PrimaryPart.CFrame =
-            dummyHomeTP.CFrame * CFrame.new(Vector3.new(-20 * questIndex, 0, 0)) *
-                CFrame.Angles(0, math.rad(90), 0)
-        skyBoxTeleporter.PrimaryPart.Anchored = true
+    -- local skyBoxTeleporter = thisTeleporter:Clone()
+    -- skyBoxTeleporter.Parent = parent
+    -- skyBoxTeleporter.Name = thisTeleporter.Name .. "-home"
+
+    local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
+                                                       "SkyBoxTeleporter")
+    skyBoxTeleporter.PrimaryPart.CFrame =
+        dummyHomeTP.CFrame * CFrame.new(Vector3.new(-20 * questIndex, 0, 0)) *
+            CFrame.Angles(0, math.rad(90), 0)
+    skyBoxTeleporter.PrimaryPart.Anchored = true
+    thisTeleporter.Name = parent.Name .. "-sky- " .. sceneIndex
+
+    if (isStartScene or isEndScene) then
+        if isStartScene then
+            setLocalTPTargetToRemoteTP(skyBoxTeleporter, thisTeleporter)
+        end
+        if isEndScene then
+            setLocalTPTargetToRemoteTP(thisTeleporter, skyBoxTeleporter)
+        end
+
         thisTeleporter.PrimaryPart.Anchored = true
-        -- 
-
-        -- setLocalTPTargetToRemoteTP(thisTeleporter, skyBoxTeleporter)
-        setLocalTPTargetToRemoteTP(skyBoxTeleporter, thisTeleporter)
     else
         thisTeleporter:Destroy()
     end
