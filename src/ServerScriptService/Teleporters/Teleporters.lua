@@ -28,7 +28,6 @@ function module.addTeleporters(props)
                 wait(2)
 
                 local tweenInfo = TweenInfo.new(2)
-
                 local t = ts:Create(Character.PrimaryPart, tweenInfo,
                                     {CFrame = teleportLocation})
                 Character.PrimaryPart.Anchored = true
@@ -52,7 +51,6 @@ function module.addTeleporters(props)
                                                            "TeleporterLabel")
     teleporterLabel.Text = questTitle
     if (isStartScene) then
-        -- if (sceneIndex == 1) then
         local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
                                                            "SkyBoxTeleporter")
         thisTeleporter.Name = parent.Name .. "-zzz"
@@ -61,7 +59,8 @@ function module.addTeleporters(props)
 
         homeTeleporter.Name = thisTeleporter.Name .. "-home"
         homeTeleporter.PrimaryPart.CFrame =
-            dummyHomeTP.CFrame * CFrame.new(Vector3.new(-20 * questIndex, 0, 0))
+            dummyHomeTP.CFrame * CFrame.new(Vector3.new(-20 * questIndex, 0, 0)) *
+                CFrame.Angles(0, math.rad(90), 0)
 
         setTP(thisTeleporter.PrimaryPart, homeTeleporter.PrimaryPart)
         setTP(homeTeleporter.PrimaryPart, thisTeleporter.PrimaryPart)

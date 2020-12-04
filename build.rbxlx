@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>913.313904</X>
-					<Y>-21.3836021</Y>
-					<Z>-707.001099</Z>
-					<R00>-0.991767883</R00>
-					<R01>-0.0622881651</R01>
-					<R02>0.111878268</R02>
-					<R10>-0</R10>
-					<R11>0.873714209</R11>
-					<R12>0.486439854</R12>
-					<R20>-0.128049061</R20>
-					<R21>0.482435435</R21>
-					<R22>-0.866521597</R22>
+					<X>1014.29169</X>
+					<Y>-41.037941</Y>
+					<Z>-665.621033</Z>
+					<R00>-0.293167859</R00>
+					<R01>-0.323982656</R01>
+					<R02>0.899492979</R02>
+					<R10>-7.45058149e-09</R10>
+					<R11>0.940832257</R11>
+					<R12>0.338872373</R12>
+					<R20>-0.956061006</R20>
+					<R21>0.0993464813</R21>
+					<R22>-0.275821775</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>904.11438</X>
-					<Y>-61.3825684</Y>
-					<Z>-635.748779</Z>
+					<X>927.940186</X>
+					<Y>-73.5697556</Y>
+					<Z>-639.14209</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -21954,49 +21954,10 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<Z>6</Z>
 										</Vector3>
 									</Properties>
-									<Item class="Weld" referent="RBX6de177471ad24e888d7084bbff33ab82">
-										<Properties>
-											<BinaryString name="AttributesSerialize"></BinaryString>
-											<CoordinateFrame name="C0">
-												<X>0</X>
-												<Y>-0.5</Y>
-												<Z>0</Z>
-												<R00>0.999999523</R00>
-												<R01>4.54747351e-13</R01>
-												<R02>2.11758237e-22</R02>
-												<R10>1.97092497e-15</R10>
-												<R11>1.26352141e-21</R11>
-												<R12>-0.999999762</R12>
-												<R20>-3.16958904e-10</R20>
-												<R21>0.999999523</R21>
-												<R22>-5.01586328e-10</R22>
-											</CoordinateFrame>
-											<CoordinateFrame name="C1">
-												<X>13.9458618</X>
-												<Y>2.50500488</Y>
-												<Z>-14.1386108</Z>
-												<R00>2.98065197e-06</R00>
-												<R01>0.999999523</R01>
-												<R02>-2.50793192e-10</R02>
-												<R10>9.85480271e-16</R10>
-												<R11>-2.50793081e-10</R11>
-												<R12>-1</R12>
-												<R20>-0.999999762</R20>
-												<R21>2.98065106e-06</R21>
-												<R22>-1.73300823e-15</R22>
-											</CoordinateFrame>
-											<bool name="Enabled">true</bool>
-											<string name="Name">Weld</string>
-											<Ref name="Part0">RBX04189b0c86354359b136c02b85eb745c</Ref>
-											<Ref name="Part1">RBXa3bcf753fde5464899a4f15d57c876c7</Ref>
-											<int64 name="SourceAssetId">-1</int64>
-											<BinaryString name="Tags"></BinaryString>
-										</Properties>
-									</Item>
 								</Item>
 								<Item class="Part" referent="RBX2449b704a57643c0b00e7d32bcc96003">
 									<Properties>
-										<bool name="Anchored">true</bool>
+										<bool name="Anchored">false</bool>
 										<BinaryString name="AttributesSerialize"></BinaryString>
 										<float name="BackParamA">-0.5</float>
 										<float name="BackParamB">0.5</float>
@@ -22008,17 +21969,17 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<token name="BottomSurfaceInput">0</token>
 										<CoordinateFrame name="CFrame">
 											<X>927.910156</X>
-											<Y>-64.1903992</Y>
+											<Y>-64.1904144</Y>
 											<Z>-637.677979</Z>
-											<R00>-2.70710787e-09</R00>
-											<R01>4.94635333e-06</R01>
+											<R00>-3.20869287e-09</R00>
+											<R01>4.94597225e-06</R01>
 											<R02>1</R02>
-											<R10>-0.999997497</R10>
-											<R11>9.85325306e-15</R11>
-											<R12>2.55954213e-09</R12>
-											<R20>-2.5556767e-15</R20>
-											<R21>-0.999997497</R21>
-											<R22>4.94931055e-06</R22>
+											<R10>-0.99999702</R10>
+											<R11>1.18235025e-14</R11>
+											<R12>3.06112713e-09</R12>
+											<R20>-3.06744935e-15</R20>
+											<R21>-0.999992013</R21>
+											<R22>4.94966434e-06</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
@@ -22215,7 +22176,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 								</Item>
 								<Item class="Part" referent="RBX1378d0e323af4e85811c2c09561541e3">
 									<Properties>
-										<bool name="Anchored">true</bool>
+										<bool name="Anchored">false</bool>
 										<BinaryString name="AttributesSerialize"></BinaryString>
 										<float name="BackParamA">-0.5</float>
 										<float name="BackParamB">0.5</float>
@@ -22229,15 +22190,15 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<X>927.940186</X>
 											<Y>-69.5697556</Y>
 											<Z>-637.64209</Z>
-											<R00>4.94760479e-06</R00>
+											<R00>4.94756796e-06</R00>
 											<R01>2.50793136e-10</R01>
 											<R02>1</R02>
-											<R10>9.85480271e-16</R10>
+											<R10>9.85471059e-16</R10>
 											<R11>0.999999762</R11>
 											<R12>2.50793136e-10</R12>
 											<R20>-0.999999762</R20>
 											<R21>2.55380487e-16</R21>
-											<R22>4.94792312e-06</R22>
+											<R22>4.94795995e-06</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
@@ -26461,6 +26422,11 @@ function setVisibility()
         props = {Transparency = 1}
     })
 
+    Utils.setItemAndChildrenPropsByName({
+        name = "Bridges",
+        props = {Transparency = 0}
+    })
+
 end
 
 function configGame()
@@ -28861,29 +28827,35 @@ module.questConfigs = {
                 frames = {
                     {
                         dialogs = {
-                            {char = "dog01", text = "I see a bug."},
-                            {char = "robby01", text = "I see a bee on a tug..."},
-                            {char = "empty", text = "Tee hee hee..."},
-                            {char = "empty", text = "Liz that is not a bug!"},
-                            {char = "empty", text = "Here buggy buggy!"},
+                            {char = "liz2", text = "I see a bug."},
+                            {char = "kat", text = "Wow!"},
+                            {char = "robby01", text = "Bleep Bloop!"},
+                            {char = "liz2", text = "I see a bee on a rug..."},
+                            {char = "liz2", text = "Tee hee hee..."},
+                            {char = "kat", text = "Liz that is not a bug!"}
+                        },
+                        characters01 = {{name = "liz2"}, {name = "kat"}},
+                        characters02 = {{name = "robby01"}}
+                    }, {
+                        dialogs = {
+                            {char = "liz2", text = "Here buggy buggy!"},
                             {
                                 char = "empty",
-                                text = "Liz, that is a girl-eating vampire bat!!!"
-                            }, {char = "empty", text = "Run for the hills!"},
+                                text = "Liz, that is a giant girl-eating bat!!!"
+                            }, {char = "empty", text = "Run for the hills!"}
+                        },
+                        characters01 = {{name = "liz2"}, {name = "kat"}},
+                        characters02 = {{name = "robby01"}}
+                    }, {
+                        dialogs = {
                             {char = "empty", text = "Let's go to the well."},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"}
+                            {char = "empty", text = "I like the well"}
                         },
                         characters01 = {{name = "liz2"}, {name = "kat"}},
                         characters02 = {{name = "robby01"}}
                     }
                 },
-                coordinates = {col = 1, row = 0},
+                coordinates = {row = 0, col = 1},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -28902,20 +28874,7 @@ module.questConfigs = {
                             {
                                 char = "trollKing01",
                                 text = "Uggggh....My mom is making me do this..."
-                            }, {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"}
+                            }
                         },
                         characters01 = {{name = "dog01"}},
                         characters02 = {
@@ -28939,7 +28898,7 @@ module.questConfigs = {
     }, {
         questTitle = "--- rbx-002",
         startSceneCoords = {col = 0, row = 1},
-        endSceneCoords = {col = 1, row = 0},
+        endSceneCoords = {row = 0, col = 1},
         sceneConfigs = {
             {
                 name = "cave",
@@ -28961,7 +28920,7 @@ module.questConfigs = {
                         }
                     }
                 },
-                coordinates = {col = 1, row = 0},
+                coordinates = {row = 0, col = 1},
                 showBottomPath = true,
                 showRightPath = false,
                 showTopPath = false,
@@ -29029,7 +28988,7 @@ module.questConfigs = {
     }, {
         questTitle = "--- rbx-003",
         startSceneCoords = {col = 0, row = 0},
-        endSceneCoords = {row = 0, col = 1},
+        endSceneCoords = {col = 1, row = 0},
         sceneConfigs = {
             {
                 name = "home",
@@ -29074,7 +29033,7 @@ module.questConfigs = {
                         }
                     }
                 },
-                coordinates = {row = 0, col = 1},
+                coordinates = {col = 1, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -29103,7 +29062,7 @@ module.questConfigs = {
                         }
                     }
                 },
-                coordinates = {row = 0, col = 2},
+                coordinates = {col = 2, row = 0},
                 showBottomPath = false,
                 showRightPath = false,
                 showTopPath = false,
@@ -29423,7 +29382,7 @@ renderCharacters = function(props)
                                 {
                     model = characterTemplate,
                     position = characterTemplate.PrimaryPart.CFrame *
-                        CFrame.new(Vector3.new(x, 0, 0)),
+                        CFrame.new(Vector3.new(-x, 0, 0)),
                     suffix = "Clone--" .. i
                 })
 
@@ -29735,7 +29694,7 @@ function module.addScenes(props)
             sceneFolder = sceneFolder
         }
 
-        Characters.addCharactersToScene(charProps)
+        -- Characters.addCharactersToScene(charProps)
         Location.addLocation({scene = clonedScene, sceneConfig = sceneConfig})
 
         local gameTitleLabel = Utils.getFirstDescendantByName(clonedScene,
@@ -30116,7 +30075,6 @@ function module.addTeleporters(props)
                 wait(2)
 
                 local tweenInfo = TweenInfo.new(2)
-
                 local t = ts:Create(Character.PrimaryPart, tweenInfo,
                                     {CFrame = teleportLocation})
                 Character.PrimaryPart.Anchored = true
@@ -30140,7 +30098,6 @@ function module.addTeleporters(props)
                                                            "TeleporterLabel")
     teleporterLabel.Text = questTitle
     if (isStartScene) then
-        -- if (sceneIndex == 1) then
         local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
                                                            "SkyBoxTeleporter")
         thisTeleporter.Name = parent.Name .. "-zzz"

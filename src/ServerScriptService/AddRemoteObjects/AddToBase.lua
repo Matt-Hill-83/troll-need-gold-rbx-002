@@ -69,6 +69,11 @@ function setVisibility()
         props = {Transparency = 1}
     })
 
+    Utils.setItemAndChildrenPropsByName({
+        name = "Bridges",
+        props = {Transparency = 0}
+    })
+
 end
 
 function configGame()

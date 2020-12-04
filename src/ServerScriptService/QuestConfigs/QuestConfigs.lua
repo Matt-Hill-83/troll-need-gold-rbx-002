@@ -213,29 +213,35 @@ module.questConfigs = {
                 frames = {
                     {
                         dialogs = {
-                            {char = "dog01", text = "I see a bug."},
-                            {char = "robby01", text = "I see a bee on a tug..."},
-                            {char = "empty", text = "Tee hee hee..."},
-                            {char = "empty", text = "Liz that is not a bug!"},
-                            {char = "empty", text = "Here buggy buggy!"},
+                            {char = "liz2", text = "I see a bug."},
+                            {char = "kat", text = "Wow!"},
+                            {char = "robby01", text = "Bleep Bloop!"},
+                            {char = "liz2", text = "I see a bee on a rug..."},
+                            {char = "liz2", text = "Tee hee hee..."},
+                            {char = "kat", text = "Liz that is not a bug!"}
+                        },
+                        characters01 = {{name = "liz2"}, {name = "kat"}},
+                        characters02 = {{name = "robby01"}}
+                    }, {
+                        dialogs = {
+                            {char = "liz2", text = "Here buggy buggy!"},
                             {
                                 char = "empty",
-                                text = "Liz, that is a girl-eating vampire bat!!!"
-                            }, {char = "empty", text = "Run for the hills!"},
+                                text = "Liz, that is a giant girl-eating bat!!!"
+                            }, {char = "empty", text = "Run for the hills!"}
+                        },
+                        characters01 = {{name = "liz2"}, {name = "kat"}},
+                        characters02 = {{name = "robby01"}}
+                    }, {
+                        dialogs = {
                             {char = "empty", text = "Let's go to the well."},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"}
+                            {char = "empty", text = "I like the well"}
                         },
                         characters01 = {{name = "liz2"}, {name = "kat"}},
                         characters02 = {{name = "robby01"}}
                     }
                 },
-                coordinates = {col = 1, row = 0},
+                coordinates = {row = 0, col = 1},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -254,20 +260,7 @@ module.questConfigs = {
                             {
                                 char = "trollKing01",
                                 text = "Uggggh....My mom is making me do this..."
-                            }, {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"}
+                            }
                         },
                         characters01 = {{name = "dog01"}},
                         characters02 = {
@@ -291,7 +284,7 @@ module.questConfigs = {
     }, {
         questTitle = "--- rbx-002",
         startSceneCoords = {col = 0, row = 1},
-        endSceneCoords = {col = 1, row = 0},
+        endSceneCoords = {row = 0, col = 1},
         sceneConfigs = {
             {
                 name = "cave",
@@ -313,7 +306,7 @@ module.questConfigs = {
                         }
                     }
                 },
-                coordinates = {col = 1, row = 0},
+                coordinates = {row = 0, col = 1},
                 showBottomPath = true,
                 showRightPath = false,
                 showTopPath = false,
@@ -381,7 +374,7 @@ module.questConfigs = {
     }, {
         questTitle = "--- rbx-003",
         startSceneCoords = {col = 0, row = 0},
-        endSceneCoords = {row = 0, col = 1},
+        endSceneCoords = {col = 1, row = 0},
         sceneConfigs = {
             {
                 name = "home",
@@ -426,7 +419,7 @@ module.questConfigs = {
                         }
                     }
                 },
-                coordinates = {row = 0, col = 1},
+                coordinates = {col = 1, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -455,7 +448,7 @@ module.questConfigs = {
                         }
                     }
                 },
-                coordinates = {row = 0, col = 2},
+                coordinates = {col = 2, row = 0},
                 showBottomPath = false,
                 showRightPath = false,
                 showTopPath = false,
