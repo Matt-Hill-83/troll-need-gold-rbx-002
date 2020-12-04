@@ -38,12 +38,11 @@ renderCharacters = function(props)
 
         if (name ~= "blank" and name ~= "empty" and name ~= "") then
             local x = (i - 1) * (charImageBlock.Size.X + xGap)
-            -- local x = (i - 1) * -(charImageBlock.Size.X + xGap)
             local newChar = Utils.cloneModel(
                                 {
                     model = characterTemplate,
                     position = characterTemplate.PrimaryPart.CFrame *
-                        CFrame.new(Vector3.new(x, 0, 0)),
+                        CFrame.new(Vector3.new(-x, 0, 0)),
                     suffix = "Clone--" .. i
                 })
 
@@ -60,10 +59,8 @@ renderCharacters = function(props)
             toggleLabelVisibility({part = newChar, visible = true})
         end
     end
-    -- Hide decal on template
-    applyDecalsToCharacter({part = charImageBlock, decalId = ""})
-    toggleLabelVisibility({part = charImageBlock, visible = false})
 
+    Utils.hideItemAndChildren({item = characterTemplate, hide = true})
     charImageBlock.Transparency = 1
 
 end

@@ -65,8 +65,13 @@ function setVisibility()
     })
 
     Utils.setItemAndChildrenPropsByName({
-        name = "Bridges",
-        props = {Transparency = 0}
+        name = "BaseWalls",
+        props = {Transparency = 0, CanCollide = false}
+    })
+
+    Utils.setItemAndChildrenPropsByName({
+        name = "BridgeWalls",
+        props = {Transparency = 0, CanCollide = false, Anchored = true}
     })
 
 end

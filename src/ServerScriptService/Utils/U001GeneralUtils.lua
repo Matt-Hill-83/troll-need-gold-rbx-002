@@ -53,6 +53,13 @@ function module.setItemAndChildrenPropsByName(myProps)
     setChildrenProps(item, props)
 end
 
+function module.setItemAndChildrenPropsByInst(myProps)
+    local item = myProps.item
+    local props = myProps.props
+
+    setChildrenProps(item, props)
+end
+
 function module.getOrCreateFolder(props)
     local name = props.name
     local parent = props.parent
