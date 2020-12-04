@@ -127,13 +127,8 @@ renderQuestBlock = function(props)
                                                         "DockWallLeft")
 
     local offsetX = -100
-    -- local offsetY = 0
     local offsetY = -sceneHeight / 2
     local offsetZ = 0
-
-    -- local offsetX = Constants.islandLength
-    -- local offsetY = -sceneHeight
-    -- local offsetZ = Constants.islandLength
 
     if (isFirst) then
         offsetX = 0

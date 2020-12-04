@@ -8,10 +8,6 @@ function configPlayers()
 
     local function onCharacterAdded(character)
         character:WaitForChild("Humanoid").WalkSpeed = 30
-        local currentlyTeleporting = character.currentlyTeleporting
-        print('currentlyTeleporting' .. ' - start');
-        print(Utils.tableToString({currentlyTeleporting}));
-        print('currentlyTeleporting' .. ' - end');
     end
 
     local function onPlayerAdded(player)
@@ -66,12 +62,12 @@ function setVisibility()
 
     Utils.setItemAndChildrenPropsByName({
         name = "BaseWalls",
-        props = {Transparency = 0, CanCollide = true, Anchored = true}
+        props = {Transparency = 0.8, CanCollide = true, Anchored = true}
     })
 
     Utils.setItemAndChildrenPropsByName({
         name = "BridgeWalls",
-        props = {Transparency = 0, CanCollide = true, Anchored = true}
+        props = {Transparency = 0.8, CanCollide = true, Anchored = true}
     })
 
 end
