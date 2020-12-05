@@ -1,7 +1,7 @@
 local module = {
     buffer = 0,
-    -- singleScene = true
-    singleScene = false
+    singleScene = true
+    -- singleScene = false
     -- 
 }
 

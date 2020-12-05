@@ -60,8 +60,9 @@ function addRemoteObjects()
     local letters = {
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
         'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-
     }
+
+    local tool = script.Parent
 
     for i, char in ipairs(letters) do
         local newLetter = letterTemplate:Clone()
@@ -78,7 +79,12 @@ function addRemoteObjects()
             label.Text = char
             -- 
         end
+        newLetter.Equipped:Connect(function()
+            print('equipped')
+            newLetter.Parent = workspace
+        end)
     end
+    letterTemplate:Destroy()
 
     local runtimeQuestsFolder = Utils.getOrCreateFolder(
                                     {name = "RunTimeQuests", parent = myStuff})

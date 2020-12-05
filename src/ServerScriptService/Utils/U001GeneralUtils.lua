@@ -149,14 +149,6 @@ function getFirstDescendantByName(parent, name)
     end
 end
 
--- function module.getAllDescendantByName(parent, name)
---     local model = parent:GetDescendants()
---     local output = {}
---     for i, item in ipairs(model) do
---         if item.Name == name then table.insert(output, item) end
---     end
--- end
-
 function module.getDescendantsByName(parent, name)
     local items = parent:GetDescendants()
 
