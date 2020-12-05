@@ -66,7 +66,8 @@ function module.addTeleporters(props)
     local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
                                                        "SkyBoxTeleporter")
     skyBoxTeleporter.PrimaryPart.CFrame =
-        dummyHomeTP.CFrame * CFrame.new(Vector3.new(-20 * questIndex, 0, 0)) *
+        dummyHomeTP.CFrame *
+            CFrame.new(Vector3.new(20 * (questIndex - 1), 0, 0)) *
             CFrame.Angles(0, math.rad(90), 0)
     skyBoxTeleporter.PrimaryPart.Anchored = true
     thisTeleporter.Name = parent.Name .. "-sky- " .. sceneIndex
