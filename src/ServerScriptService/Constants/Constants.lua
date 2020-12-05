@@ -16,7 +16,8 @@ module.dialogColors = {
 local islandLength = 36
 -- local bridgeLength = 31.1
 -- local bridgeLength = 34
-local bridgeBaseLength = 96
+local bridgeBaseLength = 30
+-- local bridgeBaseLength = 96
 local bridgeOverlap = 2
 local bridgeLength = bridgeBaseLength - 2 * bridgeOverlap
 

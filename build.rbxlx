@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>733.17749</X>
-					<Y>100.984375</Y>
-					<Z>-738.380432</Z>
-					<R00>0.00850204099</R00>
-					<R01>-0.80306989</R01>
-					<R02>0.595824122</R02>
-					<R10>-4.65661287e-10</R10>
-					<R11>0.595845699</R11>
-					<R12>0.803098917</R12>
-					<R20>-0.99996388</R20>
-					<R21>-0.00682798028</R21>
-					<R22>0.005065904</R22>
+					<X>861.29071</X>
+					<Y>-62.7352219</Y>
+					<Z>-628.741211</Z>
+					<R00>-0.360931903</R00>
+					<R01>0.548214912</R01>
+					<R02>-0.754445851</R02>
+					<R10>1.49011612e-08</R10>
+					<R11>0.808977246</R11>
+					<R12>0.587839961</R12>
+					<R20>0.932592154</R20>
+					<R21>0.212170184</R21>
+					<R22>-0.29198572</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>601.5</X>
-					<Y>-76.5009766</Y>
-					<Z>-739.5</Z>
+					<X>868.457947</X>
+					<Y>-68.3197021</Y>
+					<Z>-625.967346</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -18752,8 +18752,8 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<CoordinateFrame name="CFrame">
 												<X>904.999146</X>
 												<Y>-73.5699158</Y>
-												<Z>-688.998047</Z>
-												<R00>-2.89658146e-08</R00>
+												<Z>-658.498047</Z>
+												<R00>-2.89653599e-08</R00>
 												<R01>0</R01>
 												<R02>-1</R02>
 												<R10>0</R10>
@@ -18761,7 +18761,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 												<R12>0</R12>
 												<R20>1</R20>
 												<R21>0</R21>
-												<R22>-2.89628588e-08</R22>
+												<R22>-2.89633135e-08</R22>
 											</CoordinateFrame>
 											<bool name="CanCollide">true</bool>
 											<bool name="CastShadow">true</bool>
@@ -18808,207 +18808,48 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<token name="formFactorRaw">1</token>
 											<token name="shape">1</token>
 											<Vector3 name="size">
-												<X>96</X>
+												<X>36</X>
 												<Y>1</Y>
 												<Z>6</Z>
 											</Vector3>
 										</Properties>
-									</Item>
-									<Item class="Model" referent="RBX2c9f360755f74ae5b4cffcbfab35254e">
-										<Properties>
-											<BinaryString name="AttributesSerialize"></BinaryString>
-											<token name="LevelOfDetail">0</token>
-											<CoordinateFrame name="ModelInPrimary">
-												<X>0</X>
-												<Y>0</Y>
-												<Z>0</Z>
-												<R00>1</R00>
-												<R01>0</R01>
-												<R02>0</R02>
-												<R10>0</R10>
-												<R11>1</R11>
-												<R12>0</R12>
-												<R20>0</R20>
-												<R21>0</R21>
-												<R22>1</R22>
-											</CoordinateFrame>
-											<CoordinateFrame name="ModelMeshCFrame">
-												<X>0</X>
-												<Y>0</Y>
-												<Z>0</Z>
-												<R00>1</R00>
-												<R01>0</R01>
-												<R02>0</R02>
-												<R10>0</R10>
-												<R11>1</R11>
-												<R12>0</R12>
-												<R20>0</R20>
-												<R21>0</R21>
-												<R22>1</R22>
-											</CoordinateFrame>
-											<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
-											<Vector3 name="ModelMeshSize">
-												<X>0</X>
-												<Y>0</Y>
-												<Z>0</Z>
-											</Vector3>
-											<string name="Name">BridgeWalls</string>
-											<Ref name="PrimaryPart">null</Ref>
-											<int64 name="SourceAssetId">-1</int64>
-											<BinaryString name="Tags"></BinaryString>
-										</Properties>
-										<Item class="Part" referent="RBX729678f3f82843c08090b3f0bcedc364">
+										<Item class="Weld" referent="RBXc5b0b848f16449728240b44f4b77f263">
 											<Properties>
-												<bool name="Anchored">true</bool>
 												<BinaryString name="AttributesSerialize"></BinaryString>
-												<float name="BackParamA">-0.5</float>
-												<float name="BackParamB">0.5</float>
-												<token name="BackSurface">0</token>
-												<token name="BackSurfaceInput">0</token>
-												<float name="BottomParamA">-0.5</float>
-												<float name="BottomParamB">0.5</float>
-												<token name="BottomSurface">0</token>
-												<token name="BottomSurfaceInput">0</token>
-												<CoordinateFrame name="CFrame">
-													<X>907.499146</X>
-													<Y>-66.5699158</Y>
-													<Z>-688.248047</Z>
-													<R00>-2.89649051e-08</R00>
-													<R01>0</R01>
-													<R02>-1</R02>
-													<R10>0</R10>
-													<R11>1</R11>
-													<R12>0</R12>
-													<R20>1</R20>
-													<R21>0</R21>
-													<R22>-2.89637683e-08</R22>
-												</CoordinateFrame>
-												<bool name="CanCollide">true</bool>
-												<bool name="CastShadow">true</bool>
-												<int name="CollisionGroupId">0</int>
-												<Color3uint8 name="Color3uint8">4278815183</Color3uint8>
-												<PhysicalProperties name="CustomPhysicalProperties">
-													<CustomPhysics>false</CustomPhysics>
-												</PhysicalProperties>
-												<float name="FrontParamA">-0.5</float>
-												<float name="FrontParamB">0.5</float>
-												<token name="FrontSurface">0</token>
-												<token name="FrontSurfaceInput">0</token>
-												<float name="LeftParamA">-0.5</float>
-												<float name="LeftParamB">0.5</float>
-												<token name="LeftSurface">0</token>
-												<token name="LeftSurfaceInput">0</token>
-												<bool name="Locked">false</bool>
-												<bool name="Massless">false</bool>
-												<token name="Material">256</token>
-												<string name="Name">BridgeWall</string>
-												<float name="Reflectance">0</float>
-												<float name="RightParamA">-0.5</float>
-												<float name="RightParamB">0.5</float>
-												<token name="RightSurface">0</token>
-												<token name="RightSurfaceInput">0</token>
-												<int name="RootPriority">0</int>
-												<Vector3 name="RotVelocity">
+												<CoordinateFrame name="C0">
 													<X>0</X>
-													<Y>0</Y>
+													<Y>-0.5</Y>
 													<Z>0</Z>
-												</Vector3>
+													<R00>1</R00>
+													<R01>0</R01>
+													<R02>0</R02>
+													<R10>0</R10>
+													<R11>0</R11>
+													<R12>-1</R12>
+													<R20>2.04636308e-12</R20>
+													<R21>1</R21>
+													<R22>0</R22>
+												</CoordinateFrame>
+												<CoordinateFrame name="C1">
+													<X>-8.99517822</X>
+													<Y>2.50484467</Y>
+													<Z>-33.4945068</Z>
+													<R00>1.93798792e-06</R00>
+													<R01>-1</R01>
+													<R02>0</R02>
+													<R10>0</R10>
+													<R11>0</R11>
+													<R12>-1</R12>
+													<R20>1</R20>
+													<R21>1.93798792e-06</R21>
+													<R22>0</R22>
+												</CoordinateFrame>
+												<bool name="Enabled">true</bool>
+												<string name="Name">Weld</string>
+												<Ref name="Part0">RBX960110eeec0a467fa54d1ac838bb1862</Ref>
+												<Ref name="Part1">RBXa3bcf753fde5464899a4f15d57c876c7</Ref>
 												<int64 name="SourceAssetId">-1</int64>
 												<BinaryString name="Tags"></BinaryString>
-												<float name="TopParamA">-0.5</float>
-												<float name="TopParamB">0.5</float>
-												<token name="TopSurface">0</token>
-												<token name="TopSurfaceInput">0</token>
-												<float name="Transparency">0.800000012</float>
-												<Vector3 name="Velocity">
-													<X>0</X>
-													<Y>0</Y>
-													<Z>0</Z>
-												</Vector3>
-												<token name="formFactorRaw">1</token>
-												<token name="shape">1</token>
-												<Vector3 name="size">
-													<X>92.5</X>
-													<Y>13</Y>
-													<Z>1</Z>
-												</Vector3>
-											</Properties>
-										</Item>
-										<Item class="Part" referent="RBXd011215dc40a475b84c3bcfb19500b0c">
-											<Properties>
-												<bool name="Anchored">true</bool>
-												<BinaryString name="AttributesSerialize"></BinaryString>
-												<float name="BackParamA">-0.5</float>
-												<float name="BackParamB">0.5</float>
-												<token name="BackSurface">0</token>
-												<token name="BackSurfaceInput">0</token>
-												<float name="BottomParamA">-0.5</float>
-												<float name="BottomParamB">0.5</float>
-												<token name="BottomSurface">0</token>
-												<token name="BottomSurfaceInput">0</token>
-												<CoordinateFrame name="CFrame">
-													<X>902.499146</X>
-													<Y>-66.5699158</Y>
-													<Z>-688.248047</Z>
-													<R00>-2.89646778e-08</R00>
-													<R01>0</R01>
-													<R02>-1</R02>
-													<R10>0</R10>
-													<R11>1</R11>
-													<R12>0</R12>
-													<R20>1</R20>
-													<R21>0</R21>
-													<R22>-2.89639956e-08</R22>
-												</CoordinateFrame>
-												<bool name="CanCollide">true</bool>
-												<bool name="CastShadow">true</bool>
-												<int name="CollisionGroupId">0</int>
-												<Color3uint8 name="Color3uint8">4278815183</Color3uint8>
-												<PhysicalProperties name="CustomPhysicalProperties">
-													<CustomPhysics>false</CustomPhysics>
-												</PhysicalProperties>
-												<float name="FrontParamA">-0.5</float>
-												<float name="FrontParamB">0.5</float>
-												<token name="FrontSurface">0</token>
-												<token name="FrontSurfaceInput">0</token>
-												<float name="LeftParamA">-0.5</float>
-												<float name="LeftParamB">0.5</float>
-												<token name="LeftSurface">0</token>
-												<token name="LeftSurfaceInput">0</token>
-												<bool name="Locked">false</bool>
-												<bool name="Massless">false</bool>
-												<token name="Material">256</token>
-												<string name="Name">BridgeWall</string>
-												<float name="Reflectance">0</float>
-												<float name="RightParamA">-0.5</float>
-												<float name="RightParamB">0.5</float>
-												<token name="RightSurface">0</token>
-												<token name="RightSurfaceInput">0</token>
-												<int name="RootPriority">0</int>
-												<Vector3 name="RotVelocity">
-													<X>0</X>
-													<Y>0</Y>
-													<Z>0</Z>
-												</Vector3>
-												<int64 name="SourceAssetId">-1</int64>
-												<BinaryString name="Tags"></BinaryString>
-												<float name="TopParamA">-0.5</float>
-												<float name="TopParamB">0.5</float>
-												<token name="TopSurface">0</token>
-												<token name="TopSurfaceInput">0</token>
-												<float name="Transparency">0.800000012</float>
-												<Vector3 name="Velocity">
-													<X>0</X>
-													<Y>0</Y>
-													<Z>0</Z>
-												</Vector3>
-												<token name="formFactorRaw">1</token>
-												<token name="shape">1</token>
-												<Vector3 name="size">
-													<X>92.5</X>
-													<Y>13</Y>
-													<Z>1</Z>
-												</Vector3>
 											</Properties>
 										</Item>
 									</Item>
@@ -19306,7 +19147,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 												<CoordinateFrame name="CFrame">
 													<X>919.498474</X>
 													<Y>-67.0699158</Y>
-													<Z>-734.498718</Z>
+													<Z>-671.498718</Z>
 													<R00>1</R00>
 													<R01>0</R01>
 													<R02>-2.89651325e-08</R02>
@@ -19367,47 +19208,6 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 													<Z>1</Z>
 												</Vector3>
 											</Properties>
-											<Item class="ManualWeld" referent="RBX796e8408550d4576a4a9938076e66ffa">
-												<Properties>
-													<BinaryString name="AttributesSerialize"></BinaryString>
-													<CoordinateFrame name="C0">
-														<X>0</X>
-														<Y>0</Y>
-														<Z>0</Z>
-														<R00>1</R00>
-														<R01>0</R01>
-														<R02>2.8964223e-08</R02>
-														<R10>0</R10>
-														<R11>1</R11>
-														<R12>0</R12>
-														<R20>-2.89644504e-08</R20>
-														<R21>0</R21>
-														<R22>1</R22>
-													</CoordinateFrame>
-													<CoordinateFrame name="C1">
-														<X>-45.5006714</X>
-														<Y>6.5</Y>
-														<Z>-14.4993286</Z>
-														<R00>-2.89644504e-08</R00>
-														<R01>0</R01>
-														<R02>1</R02>
-														<R10>0</R10>
-														<R11>1</R11>
-														<R12>0</R12>
-														<R20>-1</R20>
-														<R21>0</R21>
-														<R22>-2.8964223e-08</R22>
-													</CoordinateFrame>
-													<bool name="Enabled">true</bool>
-													<string name="Name">Weld</string>
-													<Ref name="Part0">RBXe861d2c4b2824d5c85f115a6464f4336</Ref>
-													<Ref name="Part1">RBX960110eeec0a467fa54d1ac838bb1862</Ref>
-													<int64 name="SourceAssetId">-1</int64>
-													<int name="Surface0">-1</int>
-													<int name="Surface1">-1</int>
-													<BinaryString name="Tags"></BinaryString>
-												</Properties>
-											</Item>
 										</Item>
 										<Item class="Part" referent="RBX3dfee9ccec4741de946cd94c6b3f7fe1">
 											<Properties>
@@ -19424,7 +19224,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 												<CoordinateFrame name="CFrame">
 													<X>899.499451</X>
 													<Y>-67.0699158</Y>
-													<Z>-734.49884</Z>
+													<Z>-671.49884</Z>
 													<R00>1</R00>
 													<R01>0</R01>
 													<R02>-2.89653599e-08</R02>
@@ -19485,47 +19285,204 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 													<Z>1</Z>
 												</Vector3>
 											</Properties>
-											<Item class="ManualWeld" referent="RBXf2b32402cbfa4aacbf8483e618e84e9d">
-												<Properties>
-													<BinaryString name="AttributesSerialize"></BinaryString>
-													<CoordinateFrame name="C0">
-														<X>0</X>
-														<Y>0</Y>
-														<Z>0</Z>
-														<R00>1</R00>
-														<R01>0</R01>
-														<R02>2.8964223e-08</R02>
-														<R10>0</R10>
-														<R11>1</R11>
-														<R12>0</R12>
-														<R20>-2.89644504e-08</R20>
-														<R21>0</R21>
-														<R22>1</R22>
-													</CoordinateFrame>
-													<CoordinateFrame name="C1">
-														<X>-45.5007935</X>
-														<Y>6.5</Y>
-														<Z>5.49969482</Z>
-														<R00>-2.89646778e-08</R00>
-														<R01>0</R01>
-														<R02>1</R02>
-														<R10>0</R10>
-														<R11>1</R11>
-														<R12>0</R12>
-														<R20>-1</R20>
-														<R21>0</R21>
-														<R22>-2.89639956e-08</R22>
-													</CoordinateFrame>
-													<bool name="Enabled">true</bool>
-													<string name="Name">Weld</string>
-													<Ref name="Part0">RBX3dfee9ccec4741de946cd94c6b3f7fe1</Ref>
-													<Ref name="Part1">RBX960110eeec0a467fa54d1ac838bb1862</Ref>
-													<int64 name="SourceAssetId">-1</int64>
-													<int name="Surface0">-1</int>
-													<int name="Surface1">-1</int>
-													<BinaryString name="Tags"></BinaryString>
-												</Properties>
-											</Item>
+										</Item>
+									</Item>
+									<Item class="Model" referent="RBX2c9f360755f74ae5b4cffcbfab35254e">
+										<Properties>
+											<BinaryString name="AttributesSerialize"></BinaryString>
+											<token name="LevelOfDetail">0</token>
+											<CoordinateFrame name="ModelInPrimary">
+												<X>0</X>
+												<Y>0</Y>
+												<Z>0</Z>
+												<R00>1</R00>
+												<R01>0</R01>
+												<R02>0</R02>
+												<R10>0</R10>
+												<R11>1</R11>
+												<R12>0</R12>
+												<R20>0</R20>
+												<R21>0</R21>
+												<R22>1</R22>
+											</CoordinateFrame>
+											<CoordinateFrame name="ModelMeshCFrame">
+												<X>0</X>
+												<Y>0</Y>
+												<Z>0</Z>
+												<R00>1</R00>
+												<R01>0</R01>
+												<R02>0</R02>
+												<R10>0</R10>
+												<R11>1</R11>
+												<R12>0</R12>
+												<R20>0</R20>
+												<R21>0</R21>
+												<R22>1</R22>
+											</CoordinateFrame>
+											<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
+											<Vector3 name="ModelMeshSize">
+												<X>0</X>
+												<Y>0</Y>
+												<Z>0</Z>
+											</Vector3>
+											<string name="Name">BridgeWalls</string>
+											<Ref name="PrimaryPart">null</Ref>
+											<int64 name="SourceAssetId">-1</int64>
+											<BinaryString name="Tags"></BinaryString>
+										</Properties>
+										<Item class="Part" referent="RBX729678f3f82843c08090b3f0bcedc364">
+											<Properties>
+												<bool name="Anchored">true</bool>
+												<BinaryString name="AttributesSerialize"></BinaryString>
+												<float name="BackParamA">-0.5</float>
+												<float name="BackParamB">0.5</float>
+												<token name="BackSurface">0</token>
+												<token name="BackSurfaceInput">0</token>
+												<float name="BottomParamA">-0.5</float>
+												<float name="BottomParamB">0.5</float>
+												<token name="BottomSurface">0</token>
+												<token name="BottomSurfaceInput">0</token>
+												<CoordinateFrame name="CFrame">
+													<X>907.499146</X>
+													<Y>-66.5699158</Y>
+													<Z>-657.748047</Z>
+													<R00>-2.89649051e-08</R00>
+													<R01>0</R01>
+													<R02>-1</R02>
+													<R10>0</R10>
+													<R11>1</R11>
+													<R12>0</R12>
+													<R20>1</R20>
+													<R21>0</R21>
+													<R22>-2.89637683e-08</R22>
+												</CoordinateFrame>
+												<bool name="CanCollide">true</bool>
+												<bool name="CastShadow">true</bool>
+												<int name="CollisionGroupId">0</int>
+												<Color3uint8 name="Color3uint8">4278815183</Color3uint8>
+												<PhysicalProperties name="CustomPhysicalProperties">
+													<CustomPhysics>false</CustomPhysics>
+												</PhysicalProperties>
+												<float name="FrontParamA">-0.5</float>
+												<float name="FrontParamB">0.5</float>
+												<token name="FrontSurface">0</token>
+												<token name="FrontSurfaceInput">0</token>
+												<float name="LeftParamA">-0.5</float>
+												<float name="LeftParamB">0.5</float>
+												<token name="LeftSurface">0</token>
+												<token name="LeftSurfaceInput">0</token>
+												<bool name="Locked">false</bool>
+												<bool name="Massless">false</bool>
+												<token name="Material">256</token>
+												<string name="Name">BridgeWall</string>
+												<float name="Reflectance">0</float>
+												<float name="RightParamA">-0.5</float>
+												<float name="RightParamB">0.5</float>
+												<token name="RightSurface">0</token>
+												<token name="RightSurfaceInput">0</token>
+												<int name="RootPriority">0</int>
+												<Vector3 name="RotVelocity">
+													<X>0</X>
+													<Y>0</Y>
+													<Z>0</Z>
+												</Vector3>
+												<int64 name="SourceAssetId">-1</int64>
+												<BinaryString name="Tags"></BinaryString>
+												<float name="TopParamA">-0.5</float>
+												<float name="TopParamB">0.5</float>
+												<token name="TopSurface">0</token>
+												<token name="TopSurfaceInput">0</token>
+												<float name="Transparency">0.800000012</float>
+												<Vector3 name="Velocity">
+													<X>0</X>
+													<Y>0</Y>
+													<Z>0</Z>
+												</Vector3>
+												<token name="formFactorRaw">1</token>
+												<token name="shape">1</token>
+												<Vector3 name="size">
+													<X>30</X>
+													<Y>13</Y>
+													<Z>1</Z>
+												</Vector3>
+											</Properties>
+										</Item>
+										<Item class="Part" referent="RBXd011215dc40a475b84c3bcfb19500b0c">
+											<Properties>
+												<bool name="Anchored">true</bool>
+												<BinaryString name="AttributesSerialize"></BinaryString>
+												<float name="BackParamA">-0.5</float>
+												<float name="BackParamB">0.5</float>
+												<token name="BackSurface">0</token>
+												<token name="BackSurfaceInput">0</token>
+												<float name="BottomParamA">-0.5</float>
+												<float name="BottomParamB">0.5</float>
+												<token name="BottomSurface">0</token>
+												<token name="BottomSurfaceInput">0</token>
+												<CoordinateFrame name="CFrame">
+													<X>902.499146</X>
+													<Y>-66.5699158</Y>
+													<Z>-657.748047</Z>
+													<R00>-2.89646778e-08</R00>
+													<R01>0</R01>
+													<R02>-1</R02>
+													<R10>0</R10>
+													<R11>1</R11>
+													<R12>0</R12>
+													<R20>1</R20>
+													<R21>0</R21>
+													<R22>-2.89639956e-08</R22>
+												</CoordinateFrame>
+												<bool name="CanCollide">true</bool>
+												<bool name="CastShadow">true</bool>
+												<int name="CollisionGroupId">0</int>
+												<Color3uint8 name="Color3uint8">4278815183</Color3uint8>
+												<PhysicalProperties name="CustomPhysicalProperties">
+													<CustomPhysics>false</CustomPhysics>
+												</PhysicalProperties>
+												<float name="FrontParamA">-0.5</float>
+												<float name="FrontParamB">0.5</float>
+												<token name="FrontSurface">0</token>
+												<token name="FrontSurfaceInput">0</token>
+												<float name="LeftParamA">-0.5</float>
+												<float name="LeftParamB">0.5</float>
+												<token name="LeftSurface">0</token>
+												<token name="LeftSurfaceInput">0</token>
+												<bool name="Locked">false</bool>
+												<bool name="Massless">false</bool>
+												<token name="Material">256</token>
+												<string name="Name">BridgeWall</string>
+												<float name="Reflectance">0</float>
+												<float name="RightParamA">-0.5</float>
+												<float name="RightParamB">0.5</float>
+												<token name="RightSurface">0</token>
+												<token name="RightSurfaceInput">0</token>
+												<int name="RootPriority">0</int>
+												<Vector3 name="RotVelocity">
+													<X>0</X>
+													<Y>0</Y>
+													<Z>0</Z>
+												</Vector3>
+												<int64 name="SourceAssetId">-1</int64>
+												<BinaryString name="Tags"></BinaryString>
+												<float name="TopParamA">-0.5</float>
+												<float name="TopParamB">0.5</float>
+												<token name="TopSurface">0</token>
+												<token name="TopSurfaceInput">0</token>
+												<float name="Transparency">0.800000012</float>
+												<Vector3 name="Velocity">
+													<X>0</X>
+													<Y>0</Y>
+													<Z>0</Z>
+												</Vector3>
+												<token name="formFactorRaw">1</token>
+												<token name="shape">1</token>
+												<Vector3 name="size">
+													<X>30</X>
+													<Y>13</Y>
+													<Z>1</Z>
+												</Vector3>
+											</Properties>
 										</Item>
 									</Item>
 								</Item>
@@ -19585,7 +19542,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<token name="BottomSurface">0</token>
 											<token name="BottomSurfaceInput">0</token>
 											<CoordinateFrame name="CFrame">
-												<X>850.000366</X>
+												<X>881.500366</X>
 												<Y>-73.5699158</Y>
 												<Z>-625.999634</Z>
 												<R00>1</R00>
@@ -19593,7 +19550,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 												<R02>-2.8971499e-08</R02>
 												<R10>-9.09494702e-12</R10>
 												<R11>1</R11>
-												<R12>-3.07377768e-17</R12>
+												<R12>-3.07377735e-17</R12>
 												<R20>2.89571744e-08</R20>
 												<R21>-3.10012073e-17</R21>
 												<R22>1</R22>
@@ -19643,11 +19600,283 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<token name="formFactorRaw">1</token>
 											<token name="shape">1</token>
 											<Vector3 name="size">
-												<X>96</X>
+												<X>36</X>
 												<Y>1</Y>
 												<Z>6</Z>
 											</Vector3>
 										</Properties>
+										<Item class="Weld" referent="RBX62fe4463a8ca49d3942e0c051e35b7fd">
+											<Properties>
+												<BinaryString name="AttributesSerialize"></BinaryString>
+												<CoordinateFrame name="C0">
+													<X>0</X>
+													<Y>-0.5</Y>
+													<Z>0</Z>
+													<R00>1</R00>
+													<R01>0</R01>
+													<R02>8.82454814e-25</R02>
+													<R10>-1.8189894e-11</R10>
+													<R11>0</R11>
+													<R12>-1</R12>
+													<R20>-1.43245416e-11</R20>
+													<R21>1</R21>
+													<R22>6.14757455e-17</R22>
+												</CoordinateFrame>
+												<CoordinateFrame name="C1">
+													<X>-32.4938965</X>
+													<Y>2.50484467</Y>
+													<Z>-0.996032715</Z>
+													<R00>1</R00>
+													<R01>1.9379961e-06</R01>
+													<R02>-9.09494702e-12</R02>
+													<R10>-9.09494702e-12</R10>
+													<R11>3.0737843e-17</R11>
+													<R12>-1</R12>
+													<R20>-1.9379961e-06</R20>
+													<R21>1</R21>
+													<R22>4.83638144e-17</R22>
+												</CoordinateFrame>
+												<bool name="Enabled">true</bool>
+												<string name="Name">Weld</string>
+												<Ref name="Part0">RBX2cacbcef2fb147c1bb21bd281c48b19d</Ref>
+												<Ref name="Part1">RBXa3bcf753fde5464899a4f15d57c876c7</Ref>
+												<int64 name="SourceAssetId">-1</int64>
+												<BinaryString name="Tags"></BinaryString>
+											</Properties>
+										</Item>
+										<Item class="Part" referent="RBX5dbe19ebf69d44b292acc328b717ee3f">
+											<Properties>
+												<bool name="Anchored">true</bool>
+												<BinaryString name="AttributesSerialize"></BinaryString>
+												<float name="BackParamA">-0.5</float>
+												<float name="BackParamB">0.5</float>
+												<token name="BackSurface">0</token>
+												<token name="BackSurfaceInput">0</token>
+												<float name="BottomParamA">-0.5</float>
+												<float name="BottomParamB">0.5</float>
+												<token name="BottomSurface">0</token>
+												<token name="BottomSurfaceInput">0</token>
+												<CoordinateFrame name="CFrame">
+													<X>868.457947</X>
+													<Y>-69.8197021</Y>
+													<Z>-625.967346</Z>
+													<R00>1</R00>
+													<R01>3.3840181e-06</R01>
+													<R02>-4.54747351e-12</R02>
+													<R10>-4.54747351e-12</R10>
+													<R11>8.27180613e-25</R11>
+													<R12>1</R12>
+													<R20>3.38401128e-06</R20>
+													<R21>-1</R21>
+													<R22>-1.56125063e-17</R22>
+												</CoordinateFrame>
+												<bool name="CanCollide">true</bool>
+												<bool name="CastShadow">true</bool>
+												<int name="CollisionGroupId">0</int>
+												<Color3uint8 name="Color3uint8">4291677645</Color3uint8>
+												<PhysicalProperties name="CustomPhysicalProperties">
+													<CustomPhysics>false</CustomPhysics>
+												</PhysicalProperties>
+												<float name="FrontParamA">-0.5</float>
+												<float name="FrontParamB">0.5</float>
+												<token name="FrontSurface">0</token>
+												<token name="FrontSurfaceInput">0</token>
+												<float name="LeftParamA">-0.5</float>
+												<float name="LeftParamB">0.5</float>
+												<token name="LeftSurface">0</token>
+												<token name="LeftSurfaceInput">0</token>
+												<bool name="Locked">false</bool>
+												<bool name="Massless">false</bool>
+												<token name="Material">528</token>
+												<string name="Name">Door</string>
+												<float name="Reflectance">0</float>
+												<float name="RightParamA">-0.5</float>
+												<float name="RightParamB">0.5</float>
+												<token name="RightSurface">0</token>
+												<token name="RightSurfaceInput">0</token>
+												<int name="RootPriority">0</int>
+												<Vector3 name="RotVelocity">
+													<X>0</X>
+													<Y>0</Y>
+													<Z>0</Z>
+												</Vector3>
+												<int64 name="SourceAssetId">-1</int64>
+												<BinaryString name="Tags"></BinaryString>
+												<float name="TopParamA">-0.5</float>
+												<float name="TopParamB">0.5</float>
+												<token name="TopSurface">0</token>
+												<token name="TopSurfaceInput">0</token>
+												<float name="Transparency">0</float>
+												<Vector3 name="Velocity">
+													<X>0</X>
+													<Y>0</Y>
+													<Z>0</Z>
+												</Vector3>
+												<token name="formFactorRaw">1</token>
+												<token name="shape">1</token>
+												<Vector3 name="size">
+													<X>1</X>
+													<Y>4</Y>
+													<Z>6.5</Z>
+												</Vector3>
+											</Properties>
+											<Item class="Weld" referent="RBXc35177490de34f5e8e118bd3e70885a2">
+												<Properties>
+													<BinaryString name="AttributesSerialize"></BinaryString>
+													<CoordinateFrame name="C0">
+														<X>0</X>
+														<Y>-2</Y>
+														<Z>0</Z>
+														<R00>1</R00>
+														<R01>5.20756429e-23</R01>
+														<R02>0</R02>
+														<R10>6.82121026e-12</R10>
+														<R11>0</R11>
+														<R12>-1</R12>
+														<R20>-9.09494702e-12</R20>
+														<R21>1</R21>
+														<R22>-2.23836728e-19</R22>
+													</CoordinateFrame>
+													<CoordinateFrame name="C1">
+														<X>-13.2924194</X>
+														<Y>-3.25064087</Y>
+														<Z>-0.467712402</Z>
+														<R00>1</R00>
+														<R01>4.54747351e-12</R01>
+														<R02>-3.35504706e-06</R02>
+														<R10>-4.54747351e-12</R10>
+														<R11>1</R11>
+														<R12>-3.14328633e-23</R12>
+														<R20>3.35504683e-06</R20>
+														<R21>1.52570172e-17</R21>
+														<R22>1</R22>
+													</CoordinateFrame>
+													<bool name="Enabled">true</bool>
+													<string name="Name">Weld</string>
+													<Ref name="Part0">RBX5dbe19ebf69d44b292acc328b717ee3f</Ref>
+													<Ref name="Part1">RBX075558f650f4404d8aa8ece47b9cc2f5</Ref>
+													<int64 name="SourceAssetId">-1</int64>
+													<BinaryString name="Tags"></BinaryString>
+												</Properties>
+											</Item>
+											<Item class="Weld" referent="RBXc183666f93e74f0cac40c2da8500f3ac">
+												<Properties>
+													<BinaryString name="AttributesSerialize"></BinaryString>
+													<CoordinateFrame name="C0">
+														<X>0</X>
+														<Y>2</Y>
+														<Z>0</Z>
+														<R00>1</R00>
+														<R01>-5.20756429e-23</R01>
+														<R02>0</R02>
+														<R10>6.82121026e-12</R10>
+														<R11>0</R11>
+														<R12>1</R12>
+														<R20>-9.09494702e-12</R20>
+														<R21>-1</R21>
+														<R22>2.23836728e-19</R22>
+													</CoordinateFrame>
+													<CoordinateFrame name="C1">
+														<X>-13.2924194</X>
+														<Y>-3.25064087</Y>
+														<Z>0.532287598</Z>
+														<R00>1</R00>
+														<R01>-4.54747351e-12</R01>
+														<R02>3.35504706e-06</R02>
+														<R10>-4.54747351e-12</R10>
+														<R11>-1</R11>
+														<R12>3.14328633e-23</R12>
+														<R20>3.35504683e-06</R20>
+														<R21>-1.52570172e-17</R21>
+														<R22>-1</R22>
+													</CoordinateFrame>
+													<bool name="Enabled">true</bool>
+													<string name="Name">Weld</string>
+													<Ref name="Part0">RBX5dbe19ebf69d44b292acc328b717ee3f</Ref>
+													<Ref name="Part1">RBX1b4e41aaa8a542408653f8063b67203e</Ref>
+													<int64 name="SourceAssetId">-1</int64>
+													<BinaryString name="Tags"></BinaryString>
+												</Properties>
+											</Item>
+											<Item class="Weld" referent="RBX50ebb173000244f280e28b84f395dcfe">
+												<Properties>
+													<BinaryString name="AttributesSerialize"></BinaryString>
+													<CoordinateFrame name="C0">
+														<X>0</X>
+														<Y>2</Y>
+														<Z>0</Z>
+														<R00>1</R00>
+														<R01>-5.20756429e-23</R01>
+														<R02>0</R02>
+														<R10>6.82121026e-12</R10>
+														<R11>0</R11>
+														<R12>1</R12>
+														<R20>-9.09494702e-12</R20>
+														<R21>-1</R21>
+														<R22>2.23836728e-19</R22>
+													</CoordinateFrame>
+													<CoordinateFrame name="C1">
+														<X>7.03179932</X>
+														<Y>-2.74978638</Y>
+														<Z>0.0416259766</Z>
+														<R00>3.3550466e-06</R00>
+														<R01>-1.52570155e-17</R01>
+														<R02>-1</R02>
+														<R10>-4.54747351e-12</R10>
+														<R11>-1</R11>
+														<R12>3.14328633e-23</R12>
+														<R20>-1</R20>
+														<R21>4.54747351e-12</R21>
+														<R22>-3.35504728e-06</R22>
+													</CoordinateFrame>
+													<bool name="Enabled">true</bool>
+													<string name="Name">Weld</string>
+													<Ref name="Part0">RBX5dbe19ebf69d44b292acc328b717ee3f</Ref>
+													<Ref name="Part1">RBX96b65dc343af4b6698c7a70fb5f7ac32</Ref>
+													<int64 name="SourceAssetId">-1</int64>
+													<BinaryString name="Tags"></BinaryString>
+												</Properties>
+											</Item>
+											<Item class="Weld" referent="RBX2186e1afe6364af4b87db6969774cb9b">
+												<Properties>
+													<BinaryString name="AttributesSerialize"></BinaryString>
+													<CoordinateFrame name="C0">
+														<X>0</X>
+														<Y>0</Y>
+														<Z>-3.25</Z>
+														<R00>1</R00>
+														<R01>0</R01>
+														<R02>-5.13181787e-23</R02>
+														<R10>6.82121026e-12</R10>
+														<R11>-1</R11>
+														<R12>-2.23836728e-19</R12>
+														<R20>-9.09494702e-12</R20>
+														<R21>0</R21>
+														<R22>-1</R22>
+													</CoordinateFrame>
+													<CoordinateFrame name="C1">
+														<X>-13.0424194</X>
+														<Y>0.500213623</Y>
+														<Z>0.0322875977</Z>
+														<R00>1</R00>
+														<R01>-3.3550541e-06</R01>
+														<R02>4.54747351e-12</R02>
+														<R10>-1.36424205e-11</R10>
+														<R11>0</R11>
+														<R12>-1</R12>
+														<R20>3.35503978e-06</R20>
+														<R21>1</R21>
+														<R22>1.57046245e-17</R22>
+													</CoordinateFrame>
+													<bool name="Enabled">true</bool>
+													<string name="Name">Weld</string>
+													<Ref name="Part0">RBX5dbe19ebf69d44b292acc328b717ee3f</Ref>
+													<Ref name="Part1">RBX2cacbcef2fb147c1bb21bd281c48b19d</Ref>
+													<int64 name="SourceAssetId">-1</int64>
+													<BinaryString name="Tags"></BinaryString>
+												</Properties>
+											</Item>
+										</Item>
 									</Item>
 									<Item class="Model" referent="RBX82f68ca82a2c491f92f60b8e08406b92">
 										<Properties>
@@ -19705,7 +19934,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 												<token name="BottomSurface">0</token>
 												<token name="BottomSurfaceInput">0</token>
 												<CoordinateFrame name="CFrame">
-													<X>850.250366</X>
+													<X>881.750366</X>
 													<Y>-66.5690613</Y>
 													<Z>-628.499634</Z>
 													<R00>1</R00>
@@ -19763,7 +19992,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 												<token name="formFactorRaw">1</token>
 												<token name="shape">1</token>
 												<Vector3 name="size">
-													<X>91.5</X>
+													<X>30</X>
 													<Y>13</Y>
 													<Z>1</Z>
 												</Vector3>
@@ -19782,7 +20011,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 												<token name="BottomSurface">0</token>
 												<token name="BottomSurfaceInput">0</token>
 												<CoordinateFrame name="CFrame">
-													<X>850.250366</X>
+													<X>881.750366</X>
 													<Y>-66.5690613</Y>
 													<Z>-623.499634</Z>
 													<R00>1</R00>
@@ -19840,7 +20069,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 												<token name="formFactorRaw">1</token>
 												<token name="shape">1</token>
 												<Vector3 name="size">
-													<X>91.5</X>
+													<X>30</X>
 													<Y>13</Y>
 													<Z>1</Z>
 												</Vector3>
@@ -19903,7 +20132,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 												<token name="BottomSurface">0</token>
 												<token name="BottomSurfaceInput">0</token>
 												<CoordinateFrame name="CFrame">
-													<X>804.499573</X>
+													<X>868.499573</X>
 													<Y>-67.0699158</Y>
 													<Z>-634.999146</Z>
 													<R00>-2.89646778e-08</R00>
@@ -19966,47 +20195,6 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 													<Z>1</Z>
 												</Vector3>
 											</Properties>
-											<Item class="ManualWeld" referent="RBXd803b98c24c341c48c1ae8f36927939b">
-												<Properties>
-													<BinaryString name="AttributesSerialize"></BinaryString>
-													<CoordinateFrame name="C0">
-														<X>0</X>
-														<Y>0</Y>
-														<Z>0</Z>
-														<R00>-2.89644504e-08</R00>
-														<R01>0</R01>
-														<R02>1</R02>
-														<R10>0</R10>
-														<R11>1</R11>
-														<R12>0</R12>
-														<R20>-1</R20>
-														<R21>0</R21>
-														<R22>-2.8964223e-08</R22>
-													</CoordinateFrame>
-													<CoordinateFrame name="C1">
-														<X>-45.5007935</X>
-														<Y>6.5</Y>
-														<Z>-8.99951172</Z>
-														<R00>1</R00>
-														<R01>0</R01>
-														<R02>2.8964223e-08</R02>
-														<R10>0</R10>
-														<R11>1</R11>
-														<R12>0</R12>
-														<R20>-2.89644504e-08</R20>
-														<R21>0</R21>
-														<R22>1</R22>
-													</CoordinateFrame>
-													<bool name="Enabled">true</bool>
-													<string name="Name">Weld</string>
-													<Ref name="Part0">RBX96b65dc343af4b6698c7a70fb5f7ac32</Ref>
-													<Ref name="Part1">RBX2cacbcef2fb147c1bb21bd281c48b19d</Ref>
-													<int64 name="SourceAssetId">-1</int64>
-													<int name="Surface0">-1</int>
-													<int name="Surface1">-1</int>
-													<BinaryString name="Tags"></BinaryString>
-												</Properties>
-											</Item>
 										</Item>
 										<Item class="Part" referent="RBX859f924d807346a99411a55e18a577ba">
 											<Properties>
@@ -20084,47 +20272,6 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 													<Z>1</Z>
 												</Vector3>
 											</Properties>
-											<Item class="ManualWeld" referent="RBX1c352200d9e446dcb2275c3164c2399a">
-												<Properties>
-													<BinaryString name="AttributesSerialize"></BinaryString>
-													<CoordinateFrame name="C0">
-														<X>0</X>
-														<Y>0</Y>
-														<Z>0</Z>
-														<R00>-2.89644504e-08</R00>
-														<R01>0</R01>
-														<R02>1</R02>
-														<R10>0</R10>
-														<R11>1</R11>
-														<R12>0</R12>
-														<R20>-1</R20>
-														<R21>0</R21>
-														<R22>-2.8964223e-08</R22>
-													</CoordinateFrame>
-													<CoordinateFrame name="C1">
-														<X>-45.5007324</X>
-														<Y>6.5</Y>
-														<Z>10.4996338</Z>
-														<R00>1</R00>
-														<R01>0</R01>
-														<R02>2.8964223e-08</R02>
-														<R10>0</R10>
-														<R11>1</R11>
-														<R12>0</R12>
-														<R20>-2.89644504e-08</R20>
-														<R21>0</R21>
-														<R22>1</R22>
-													</CoordinateFrame>
-													<bool name="Enabled">true</bool>
-													<string name="Name">Weld</string>
-													<Ref name="Part0">RBX859f924d807346a99411a55e18a577ba</Ref>
-													<Ref name="Part1">RBX2cacbcef2fb147c1bb21bd281c48b19d</Ref>
-													<int64 name="SourceAssetId">-1</int64>
-													<int name="Surface0">-1</int>
-													<int name="Surface1">-1</int>
-													<BinaryString name="Tags"></BinaryString>
-												</Properties>
-											</Item>
 										</Item>
 										<Item class="Part" referent="RBX8022cf58281c497d853d4878b2c04e94">
 											<Properties>
@@ -20280,200 +20427,6 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 												</Vector3>
 											</Properties>
 										</Item>
-									</Item>
-								</Item>
-								<Item class="Part" referent="RBX5dbe19ebf69d44b292acc328b717ee3f">
-									<Properties>
-										<bool name="Anchored">false</bool>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<float name="BackParamA">-0.5</float>
-										<float name="BackParamB">0.5</float>
-										<token name="BackSurface">0</token>
-										<token name="BackSurfaceInput">0</token>
-										<float name="BottomParamA">-0.5</float>
-										<float name="BottomParamB">0.5</float>
-										<token name="BottomSurface">0</token>
-										<token name="BottomSurfaceInput">0</token>
-										<CoordinateFrame name="CFrame">
-											<X>868.457947</X>
-											<Y>-68.3197021</Y>
-											<Z>-625.967346</Z>
-											<R00>1</R00>
-											<R01>3.3840181e-06</R01>
-											<R02>-4.54747351e-12</R02>
-											<R10>-4.54747351e-12</R10>
-											<R11>8.27180613e-25</R11>
-											<R12>1</R12>
-											<R20>3.38401128e-06</R20>
-											<R21>-1</R21>
-											<R22>-1.56125063e-17</R22>
-										</CoordinateFrame>
-										<bool name="CanCollide">true</bool>
-										<bool name="CastShadow">true</bool>
-										<int name="CollisionGroupId">0</int>
-										<Color3uint8 name="Color3uint8">4291677645</Color3uint8>
-										<PhysicalProperties name="CustomPhysicalProperties">
-											<CustomPhysics>false</CustomPhysics>
-										</PhysicalProperties>
-										<float name="FrontParamA">-0.5</float>
-										<float name="FrontParamB">0.5</float>
-										<token name="FrontSurface">0</token>
-										<token name="FrontSurfaceInput">0</token>
-										<float name="LeftParamA">-0.5</float>
-										<float name="LeftParamB">0.5</float>
-										<token name="LeftSurface">0</token>
-										<token name="LeftSurfaceInput">0</token>
-										<bool name="Locked">false</bool>
-										<bool name="Massless">false</bool>
-										<token name="Material">528</token>
-										<string name="Name">Door</string>
-										<float name="Reflectance">0</float>
-										<float name="RightParamA">-0.5</float>
-										<float name="RightParamB">0.5</float>
-										<token name="RightSurface">0</token>
-										<token name="RightSurfaceInput">0</token>
-										<int name="RootPriority">0</int>
-										<Vector3 name="RotVelocity">
-											<X>0</X>
-											<Y>0</Y>
-											<Z>0</Z>
-										</Vector3>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-										<float name="TopParamA">-0.5</float>
-										<float name="TopParamB">0.5</float>
-										<token name="TopSurface">0</token>
-										<token name="TopSurfaceInput">0</token>
-										<float name="Transparency">0</float>
-										<Vector3 name="Velocity">
-											<X>0</X>
-											<Y>0</Y>
-											<Z>0</Z>
-										</Vector3>
-										<token name="formFactorRaw">1</token>
-										<token name="shape">1</token>
-										<Vector3 name="size">
-											<X>1</X>
-											<Y>4</Y>
-											<Z>9.5</Z>
-										</Vector3>
-									</Properties>
-									<Item class="Weld" referent="RBX4857a55415a6491591bf11d00525206c">
-										<Properties>
-											<BinaryString name="AttributesSerialize"></BinaryString>
-											<CoordinateFrame name="C0">
-												<X>0</X>
-												<Y>-2</Y>
-												<Z>0</Z>
-												<R00>1</R00>
-												<R01>5.20756492e-23</R01>
-												<R02>0</R02>
-												<R10>6.36646291e-12</R10>
-												<R11>0</R11>
-												<R12>-1</R12>
-												<R20>-9.09494702e-12</R20>
-												<R21>1</R21>
-												<R22>-2.23835074e-19</R22>
-											</CoordinateFrame>
-											<CoordinateFrame name="C1">
-												<X>18.2075806</X>
-												<Y>-1.75064087</Y>
-												<Z>-0.467712402</Z>
-												<R00>1</R00>
-												<R01>4.54747351e-12</R01>
-												<R02>-3.35504728e-06</R02>
-												<R10>-4.54747351e-12</R10>
-												<R11>1</R11>
-												<R12>-2.97785021e-23</R12>
-												<R20>3.35504706e-06</R20>
-												<R21>1.52570172e-17</R21>
-												<R22>1</R22>
-											</CoordinateFrame>
-											<bool name="Enabled">true</bool>
-											<string name="Name">Weld</string>
-											<Ref name="Part0">RBX5dbe19ebf69d44b292acc328b717ee3f</Ref>
-											<Ref name="Part1">RBX075558f650f4404d8aa8ece47b9cc2f5</Ref>
-											<int64 name="SourceAssetId">-1</int64>
-											<BinaryString name="Tags"></BinaryString>
-										</Properties>
-									</Item>
-									<Item class="Weld" referent="RBX7daae52e88ac4b69bcc809a828fa12ab">
-										<Properties>
-											<BinaryString name="AttributesSerialize"></BinaryString>
-											<CoordinateFrame name="C0">
-												<X>0</X>
-												<Y>2</Y>
-												<Z>0</Z>
-												<R00>1</R00>
-												<R01>-5.20756492e-23</R01>
-												<R02>0</R02>
-												<R10>6.36646291e-12</R10>
-												<R11>0</R11>
-												<R12>1</R12>
-												<R20>-9.09494702e-12</R20>
-												<R21>-1</R21>
-												<R22>2.23835074e-19</R22>
-											</CoordinateFrame>
-											<CoordinateFrame name="C1">
-												<X>18.2075806</X>
-												<Y>-1.75064087</Y>
-												<Z>0.532287598</Z>
-												<R00>1</R00>
-												<R01>-4.54747351e-12</R01>
-												<R02>3.35504728e-06</R02>
-												<R10>-4.54747351e-12</R10>
-												<R11>-1</R11>
-												<R12>2.97785021e-23</R12>
-												<R20>3.35504706e-06</R20>
-												<R21>-1.52570172e-17</R21>
-												<R22>-1</R22>
-											</CoordinateFrame>
-											<bool name="Enabled">true</bool>
-											<string name="Name">Weld</string>
-											<Ref name="Part0">RBX5dbe19ebf69d44b292acc328b717ee3f</Ref>
-											<Ref name="Part1">RBX1b4e41aaa8a542408653f8063b67203e</Ref>
-											<int64 name="SourceAssetId">-1</int64>
-											<BinaryString name="Tags"></BinaryString>
-										</Properties>
-									</Item>
-									<Item class="Weld" referent="RBXd5dcbc8024d548738258bc349b392ffb">
-										<Properties>
-											<BinaryString name="AttributesSerialize"></BinaryString>
-											<CoordinateFrame name="C0">
-												<X>0</X>
-												<Y>0</Y>
-												<Z>-4.75</Z>
-												<R00>1</R00>
-												<R01>0</R01>
-												<R02>-5.13181881e-23</R02>
-												<R10>6.36646291e-12</R10>
-												<R11>-1</R11>
-												<R12>-2.23835074e-19</R12>
-												<R20>-9.09494702e-12</R20>
-												<R21>0</R21>
-												<R22>-1</R22>
-											</CoordinateFrame>
-											<CoordinateFrame name="C1">
-												<X>18.4575806</X>
-												<Y>0.500213623</Y>
-												<Z>0.0322875977</Z>
-												<R00>1</R00>
-												<R01>-3.35504774e-06</R01>
-												<R02>-4.54747351e-12</R02>
-												<R10>-4.54747351e-12</R10>
-												<R11>2.23805295e-19</R11>
-												<R12>-1</R12>
-												<R20>3.3550466e-06</R20>
-												<R21>1</R21>
-												<R22>-1.50331805e-17</R22>
-											</CoordinateFrame>
-											<bool name="Enabled">true</bool>
-											<string name="Name">Weld</string>
-											<Ref name="Part0">RBX5dbe19ebf69d44b292acc328b717ee3f</Ref>
-											<Ref name="Part1">RBX2cacbcef2fb147c1bb21bd281c48b19d</Ref>
-											<int64 name="SourceAssetId">-1</int64>
-											<BinaryString name="Tags"></BinaryString>
-										</Properties>
 									</Item>
 								</Item>
 							</Item>
@@ -25906,7 +25859,7 @@ remoteCode.addRemoteObjects(base)
 					</Properties>
 					<Item class="Part" referent="RBXd207cf71550a40cdbaca9bdad35d44a2">
 						<Properties>
-							<bool name="Anchored">false</bool>
+							<bool name="Anchored">true</bool>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<float name="BackParamA">-0.5</float>
 							<float name="BackParamB">0.5</float>
@@ -25918,8 +25871,8 @@ remoteCode.addRemoteObjects(base)
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
 								<X>763.752869</X>
-								<Y>-140.359772</Y>
-								<Z>-603.866577</Z>
+								<Y>-131.859619</Y>
+								<Z>-789.866699</Z>
 								<R00>1.00000322</R00>
 								<R01>-4.91733886e-07</R01>
 								<R02>-2.95045447e-06</R02>
@@ -26029,8 +25982,8 @@ remoteCode.addRemoteObjects(base)
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
 									<X>772.253113</X>
-									<Y>-225.117676</Y>
-									<Z>-603.865967</Z>
+									<Y>-216.617523</Y>
+									<Z>-789.866089</Z>
 									<R00>1.00000107</R00>
 									<R01>4.47034836e-08</R01>
 									<R02>2.68221072e-07</R02>
@@ -26130,7 +26083,7 @@ remoteCode.addRemoteObjects(base)
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
 							</Item>
-							<Item class="Weld" referent="RBX0a963824948d462791af42655020e2ba">
+							<Item class="Weld" referent="RBX6b9c9fde6dc24be2a15b84a6af9963e8">
 								<Properties>
 									<BinaryString name="AttributesSerialize"></BinaryString>
 									<CoordinateFrame name="C0">
@@ -26149,8 +26102,8 @@ remoteCode.addRemoteObjects(base)
 									</CoordinateFrame>
 									<CoordinateFrame name="C1">
 										<X>772.253113</X>
-										<Y>-225.117676</Y>
-										<Z>-603.865967</Z>
+										<Y>-216.617523</Y>
+										<Z>-789.866089</Z>
 										<R00>1.00000107</R00>
 										<R01>4.47034836e-08</R01>
 										<R02>2.68221072e-07</R02>
@@ -26230,9 +26183,9 @@ remoteCode.addRemoteObjects(base)
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>553.898132</X>
-							<Y>-82.9025726</Y>
-							<Z>-760.818787</Z>
+							<X>551.898132</X>
+							<Y>-28.9024658</Y>
+							<Z>-927.818848</Z>
 							<R00>-1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -26292,8 +26245,8 @@ remoteCode.addRemoteObjects(base)
 						<token name="formFactorRaw">1</token>
 						<token name="shape">1</token>
 						<Vector3 name="size">
-							<X>4</X>
-							<Y>4</Y>
+							<X>13</X>
+							<Y>7</Y>
 							<Z>4</Z>
 						</Vector3>
 					</Properties>
@@ -26328,8 +26281,8 @@ remoteCode.addRemoteObjects(base)
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>569.5</X>
-							<Y>-83.8009949</Y>
-							<Z>-748.5</Z>
+							<Y>-31.3009033</Y>
+							<Z>-934.5</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -26448,8 +26401,8 @@ remoteCode.addRemoteObjects(base)
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
 								<X>601.5</X>
-								<Y>-76.5009766</Y>
-								<Z>-772.5</Z>
+								<Y>-24.0009155</Y>
+								<Z>-958.500122</Z>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
@@ -26564,8 +26517,8 @@ remoteCode.addRemoteObjects(base)
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
 								<X>711.5</X>
-								<Y>-76.5009766</Y>
-								<Z>-756</Z>
+								<Y>-24.0009155</Y>
+								<Z>-942.000061</Z>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
@@ -26641,8 +26594,8 @@ remoteCode.addRemoteObjects(base)
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
 								<X>491.5</X>
-								<Y>-76.5009766</Y>
-								<Z>-756</Z>
+								<Y>-24.0009155</Y>
+								<Z>-942.000061</Z>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
@@ -26757,8 +26710,8 @@ remoteCode.addRemoteObjects(base)
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
 								<X>601.5</X>
-								<Y>-76.5009766</Y>
-								<Z>-739.5</Z>
+								<Y>-24.0009155</Y>
+								<Z>-925.500061</Z>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
@@ -26916,8 +26869,8 @@ remoteCode.addRemoteObjects(base)
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
 									<X>651</X>
-									<Y>-82.5007477</Y>
-									<Z>-753.749207</Z>
+									<Y>-30.0006714</Y>
+									<Z>-939.749268</Z>
 									<R00>1</R00>
 									<R01>0</R01>
 									<R02>0</R02>
@@ -27071,8 +27024,8 @@ remoteCode.addRemoteObjects(base)
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
 									<X>646.320007</X>
-									<Y>-82.5007477</Y>
-									<Z>-758.250671</Z>
+									<Y>-30.0006714</Y>
+									<Z>-944.250793</Z>
 									<R00>1</R00>
 									<R01>0</R01>
 									<R02>0</R02>
@@ -27226,8 +27179,8 @@ remoteCode.addRemoteObjects(base)
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
 									<X>638.22998</X>
-									<Y>-82.5008011</Y>
-									<Z>-753.749084</Z>
+									<Y>-30.0007019</Y>
+									<Z>-939.749146</Z>
 									<R00>1</R00>
 									<R01>0</R01>
 									<R02>0</R02>
@@ -27381,8 +27334,8 @@ remoteCode.addRemoteObjects(base)
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
 									<X>632.029968</X>
-									<Y>-82.500946</Y>
-									<Z>-764.250916</Z>
+									<Y>-30.0008545</Y>
+									<Z>-950.250977</Z>
 									<R00>1</R00>
 									<R01>0</R01>
 									<R02>0</R02>
@@ -27536,8 +27489,8 @@ remoteCode.addRemoteObjects(base)
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
 									<X>600.5</X>
-									<Y>-82.5</Y>
-									<Z>-757</Z>
+									<Y>-29.9999084</Y>
+									<Z>-943</Z>
 									<R00>1</R00>
 									<R01>0</R01>
 									<R02>0</R02>
@@ -27652,8 +27605,8 @@ remoteCode.addRemoteObjects(base)
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
 									<X>568.029968</X>
-									<Y>-82.500946</Y>
-									<Z>-764.250916</Z>
+									<Y>-30.0008545</Y>
+									<Z>-950.250977</Z>
 									<R00>1</R00>
 									<R01>0</R01>
 									<R02>0</R02>
@@ -27892,8 +27845,8 @@ remoteCode.addRemoteObjects(base)
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>601.5</X>
-							<Y>-85</Y>
-							<Z>-756</Z>
+							<Y>-32.4999084</Y>
+							<Z>-942.000061</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -29204,10 +29157,10 @@ function setVisibility()
     --     props = {Transparency = 1}
     -- })
 
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "DockBase",
-    --     props = {Transparency = 0.8}
-    -- })
+    Utils.setItemAndChildrenPropsByName({
+        name = "DockBase",
+        props = {Transparency = 1}
+    })
 
     -- Utils.setItemAndChildrenPropsByName({
     --     name = "SkyBoxBack",
@@ -31011,468 +30964,7 @@ return module
 						<string name="ScriptGuid">{db21442d-b712-4f21-b7af-85312afd0252}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
-module.questConfigs = {
-    {
-        questTitle = "--- rbx-001",
-        startSceneCoords = {row = 0, col = 0},
-        endSceneCoords = {col = 2, row = 0},
-        sceneConfigs = {
-            {
-                name = "home",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "kat", text = "Today is the day!"},
-                            {char = "liz2", text = "Today is the day?"},
-                            {char = "dog01", text = "Yes."},
-                            {char = "liz2", text = "Wait, today is what day?"},
-                            {char = "liz2", text = "Halloween?"}
-                        },
-                        characters01 = {{name = "liz2"}, {name = "kat"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "empty",
-                                text = "No, no no. Better than halloween!"
-                            },
-                            {
-                                char = "empty",
-                                text = "Today is the day we get cup cakes!"
-                            },
-                            {
-                                char = "empty",
-                                text = "Cupcakes?  Me likey cup cakes!"
-                            },
-                            {char = "elf", text = "DO NOT GO IN THE CAVE!!!"},
-                            {
-                                char = "empty",
-                                text = "Um thanks, Albert Elf-Stein.  We will steer clear."
-                            }, {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"}
-                        },
-                        characters01 = {{name = "liz2"}, {name = "kat"}},
-                        characters02 = {{name = "elf"}}
-                    }, {
-                        dialogs = {
-                            {char = "empty", text = "Wait... Kat no."},
-                            {
-                                char = "empty",
-                                text = "You have that look on your face."
-                            }, {char = "empty", text = "Pure joy?"},
-                            {
-                                char = "empty",
-                                text = "Not not that one... your sneaky look."
-                            },
-                            {
-                                char = "empty",
-                                text = "Kat, I can tell when you are up to no good..."
-                            }
-                        },
-                        characters01 = {{name = "liz2"}, {name = "kat"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "empty",
-                                text = "Please tell me we are not going to Goblin Hill to take the cup cakes."
-                            }, {char = "empty", text = "My plan exactly!"},
-                            {
-                                char = "empty",
-                                text = "Oh no.  Oh no no. no no..."
-                            },
-                            {
-                                char = "empty",
-                                text = "I am not going to steal cupcakes from Goblins."
-                            },
-                            {
-                                char = "empty",
-                                text = "I like to call it borrowing..."
-                            }
-                        },
-                        characters01 = {{name = "liz2"}, {name = "kat"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "You have lost your mind!"},
-                            {
-                                char = "empty",
-                                text = "Did you wake up this morning and say="
-                            }, {
-                                char = "empty",
-                                text = "\"Oh gee, today is a good day to get eaten by a Goblin.\""
-                            },
-                            {
-                                char = "empty",
-                                text = "Liz, Liz, Liz.  Always so dramatic."
-                            },
-                            {
-                                char = "empty",
-                                text = "I've got a good feeling about this plan."
-                            }
-                        },
-                        characters01 = {{name = "dog01"}, {name = "kat"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "empty", text = "Ok, please, do tell."},
-                            {char = "empty", text = "I bet this is a doozy!"},
-                            {
-                                char = "empty",
-                                text = "I thought it up when I was brushing my teeth."
-                            },
-                            {
-                                char = "empty",
-                                text = "We sneak up from the back of Goblin Hill."
-                            }, {char = "empty", text = "Ok, and then what?"},
-                            {
-                                char = "dog01",
-                                text = "That's it.  That's my plan."
-                            }
-                        },
-                        characters01 = {{name = "dog01"}, {name = "kat"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "empty",
-                                text = "That sounds more like instructions for getting eaten by a Goblin."
-                            }, {char = "empty", text = "It does?"}, {
-                                char = "empty",
-                                text = "Maybe you should send them a fax and tell them we are coming."
-                            }, {char = "empty", text = "What's a fax."},
-                            {
-                                char = "empty",
-                                text = "I don't know, my dad says it."
-                            }
-                        },
-                        characters01 = {{name = "dog01"}, {name = "kat"}},
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "empty",
-                                text = "Well, they have Razzle-berry Rainbow frosting."
-                            },
-                            {
-                                char = "empty",
-                                text = "What?  OMG! We have to, have to, have to try that!"
-                            },
-                            {
-                                char = "empty",
-                                text = "Ughh, Kat, you should have started with that."
-                            },
-                            {
-                                char = "empty",
-                                text = "I knew you would come around."
-                            }
-                        },
-                        characters01 = {{name = "dog01"}, {name = "kat"}},
-                        characters02 = {{name = "liz2"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "empty",
-                                text = "But we are going to need a real plan."
-                            },
-                            {
-                                char = "empty",
-                                text = "Your plan is a recipe for little girl stew!"
-                            },
-                            {
-                                char = "empty",
-                                text = "My mom says I'm not a planner."
-                            },
-                            {
-                                char = "empty",
-                                text = "I like to rely on my instincts."
-                            }, {
-                                char = "empty",
-                                text = "Kaaaattt!!!!  If I get eaten by a goblin, it's your fault!"
-                            }, {
-                                char = "empty",
-                                text = "Let's go find Gerald.  I bet he'll know what to do..."
-                            }, {char = "empty", text = "Gerald?"}, {
-                                char = "empty",
-                                text = "Yeah, Gerald.  And if I know Gerald, I'd guess he is at the playground running around making airplane noises."
-                            },
-                            {
-                                char = "empty",
-                                text = "Let's go to the slide.  Yay!  I love the slide."
-                            }, {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"},
-                            {char = "empty", text = "-----------"}
-                        },
-                        characters01 = {{name = "dog01"}, {name = "kat"}},
-                        characters02 = {{name = "liz2"}}
-                    }
-                },
-                coordinates = {row = 0, col = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                isEndScene = false,
-                isStartScene = true,
-                maxRow = 0,
-                maxCol = 0
-            }, {
-                name = "log",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "liz2", text = "I see a bug."},
-                            {char = "kat", text = "Wow!"},
-                            {char = "robby01", text = "Bleep Bloop!"},
-                            {char = "liz2", text = "I see a bee on a rug..."},
-                            {char = "liz2", text = "Tee hee hee..."},
-                            {char = "kat", text = "Liz that is not a bug!"}
-                        },
-                        characters01 = {{name = "liz2"}, {name = "kat"}},
-                        characters02 = {{name = "robby01"}}
-                    }, {
-                        dialogs = {
-                            {char = "liz2", text = "Here buggy buggy!"},
-                            {
-                                char = "empty",
-                                text = "Liz, that is a giant girl-eating bat!!!"
-                            }, {char = "empty", text = "Run for the hills!"}
-                        },
-                        characters01 = {{name = "liz2"}, {name = "kat"}},
-                        characters02 = {{name = "robby01"}}
-                    }, {
-                        dialogs = {
-                            {char = "empty", text = "Let's go to the well."},
-                            {char = "empty", text = "I like the well"}
-                        },
-                        characters01 = {{name = "liz2"}, {name = "kat"}},
-                        characters02 = {{name = "robby01"}}
-                    }
-                },
-                coordinates = {row = 0, col = 1},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                isEndScene = false,
-                isStartScene = false,
-                maxRow = 0,
-                maxCol = 1
-            }, {
-                name = "slide",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "dog01", text = "Hi kid."},
-                            {char = "robby01", text = "Bark Bark."},
-                            {
-                                char = "trollKing01",
-                                text = "Uggggh....My mom is making me do this..."
-                            }
-                        },
-                        characters01 = {{name = "dog01"}},
-                        characters02 = {
-                            {name = "robby01"}, {name = "trollKing01"},
-                            {name = "helicopter01"}
-                        }
-                    }
-                },
-                coordinates = {col = 2, row = 0},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = true,
-                isEndScene = true,
-                isStartScene = false,
-                maxRow = 0,
-                maxCol = 2
-            }
-        },
-        gridSize = {rows = 1, cols = 3}
-    }, {
-        questTitle = "--- rbx-002",
-        startSceneCoords = {col = 0, row = 1},
-        endSceneCoords = {row = 0, col = 1},
-        sceneConfigs = {
-            {
-                name = "cave",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "dog01",
-                                text = "Did you see the space ship?"
-                            }, {char = "robby01", text = "I am new here..."},
-                            {
-                                char = "trollKing01",
-                                text = "Mwa...  ha-ha ha-ha ha!!!"
-                            }
-                        },
-                        characters01 = {{name = "dog01"}},
-                        characters02 = {
-                            {name = "robby01"}, {name = "trollKing01"}
-                        }
-                    }
-                },
-                coordinates = {row = 0, col = 1},
-                showBottomPath = true,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = false,
-                isEndScene = true,
-                isStartScene = false,
-                maxRow = 0,
-                maxCol = 1
-            }, {
-                name = "home",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "kat", text = "Did you see the space ship?"},
-                            {char = "liz2", text = "I am new here..."},
-                            {char = "dog01", text = "I like bees"}
-                        },
-                        characters01 = {{name = "dog01"}, {name = "kat"}},
-                        characters02 = {{name = "liz2"}}
-                    }, {
-                        dialogs = {
-                            {char = "kat", text = "yay bees"},
-                            {char = "dog01", text = "Bees are fun"},
-                            {char = "liz2", text = "We can play with bees!"}
-                        },
-                        characters01 = {{name = "dog01"}, {name = "kat"}},
-                        characters02 = {{name = "liz2"}}
-                    }
-                },
-                coordinates = {col = 0, row = 1},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                isEndScene = false,
-                isStartScene = true,
-                maxRow = 1,
-                maxCol = 1
-            }, {
-                name = "log",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "dog01",
-                                text = "Did you see the space ship?"
-                            }, {char = "robby01", text = "I am new here..."}
-                        },
-                        characters01 = {{name = "dog01"}},
-                        characters02 = {{name = "robby01"}}
-                    }
-                },
-                coordinates = {col = 1, row = 1},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = true,
-                showLeftPath = true,
-                isEndScene = false,
-                isStartScene = false,
-                maxRow = 1,
-                maxCol = 1
-            }
-        },
-        gridSize = {rows = 2, cols = 2}
-    }, {
-        questTitle = "--- rbx-003",
-        startSceneCoords = {col = 0, row = 0},
-        endSceneCoords = {col = 1, row = 0},
-        sceneConfigs = {
-            {
-                name = "home",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "dog01",
-                                text = "Did you see the space ship?"
-                            }, {char = "robby01", text = "I am new here..."}
-                        },
-                        characters01 = {{name = "dog01"}},
-                        characters02 = {{name = "robby01"}}
-                    }
-                },
-                coordinates = {col = 0, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                isEndScene = false,
-                isStartScene = true,
-                maxRow = 0,
-                maxCol = 0
-            }, {
-                name = "log",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "dog01",
-                                text = "Did you see the space ship?"
-                            }, {char = "robby01", text = "I am new here..."},
-                            {
-                                char = "trollKing01",
-                                text = "Mwa...  ha-ha ha-ha ha!!!"
-                            }
-                        },
-                        characters01 = {{name = "dog01"}},
-                        characters02 = {
-                            {name = "robby01"}, {name = "trollKing01"}
-                        }
-                    }
-                },
-                coordinates = {col = 1, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                isEndScene = true,
-                isStartScene = false,
-                maxRow = 0,
-                maxCol = 1
-            }, {
-                name = "cave",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "dog01",
-                                text = "Did you see the space ship?"
-                            }, {char = "robby01", text = "I am new here..."},
-                            {
-                                char = "trollKing01",
-                                text = "Mwa...  ha-ha ha-ha ha!!!"
-                            }
-                        },
-                        characters01 = {{name = "dog01"}},
-                        characters02 = {
-                            {name = "robby01"}, {name = "trollKing01"}
-                        }
-                    }
-                },
-                coordinates = {col = 2, row = 0},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = true,
-                isEndScene = true,
-                isStartScene = false,
-                maxRow = 0,
-                maxCol = 2
-            }
-        },
-        gridSize = {rows = 1, cols = 3}
-    }
-}
+module.questConfigs = {{questTitle="--- rbx-002",startSceneCoords={col=0,row=6},sceneConfigs={{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={col=1,row=0},showBottomPath=true,showRightPath=true,showTopPath=false,showLeftPath=false,isStartScene=false,maxRow=0,maxCol=1},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=0,col=2},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=true,isStartScene=false,maxRow=0,maxCol=2},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={col=3,row=0},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=true,isStartScene=false,maxRow=0,maxCol=3},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={col=4,row=0},showBottomPath=true,showRightPath=false,showTopPath=false,showLeftPath=true,isStartScene=false,maxRow=0,maxCol=4},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=1,col=1},showBottomPath=true,showRightPath=false,showTopPath=true,showLeftPath=false,isStartScene=false,maxRow=1,maxCol=4},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={col=4,row=1},showBottomPath=true,showRightPath=false,showTopPath=true,showLeftPath=false,isStartScene=false,maxRow=1,maxCol=4},{name="stump",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=1,col=7},showBottomPath=true,showRightPath=false,showTopPath=false,showLeftPath=false,isStartScene=false,maxRow=1,maxCol=7},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=2,col=1},showBottomPath=true,showRightPath=true,showTopPath=true,showLeftPath=false,isStartScene=false,maxRow=2,maxCol=7},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=2,col=2},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=true,isStartScene=false,maxRow=2,maxCol=7},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=2,col=3},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=true,isStartScene=false,maxRow=2,maxCol=7},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=2,col=4},showBottomPath=true,showRightPath=true,showTopPath=true,showLeftPath=true,isStartScene=false,maxRow=2,maxCol=7},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={col=5,row=2},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=true,isStartScene=false,maxRow=2,maxCol=7},{name="castle",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={col=6,row=2},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=true,isStartScene=false,maxRow=2,maxCol=7},{name="castle",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=2,col=7},showBottomPath=true,showRightPath=true,showTopPath=true,showLeftPath=true,isStartScene=false,maxRow=2,maxCol=7},{name="castle",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={col=8,row=2},showBottomPath=false,showRightPath=false,showTopPath=false,showLeftPath=true,isStartScene=false,maxRow=2,maxCol=8},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={col=0,row=3},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=false,isStartScene=false,maxRow=3,maxCol=8},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=3,col=1},showBottomPath=true,showRightPath=false,showTopPath=true,showLeftPath=true,isStartScene=false,maxRow=3,maxCol=8},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=3,col=4},showBottomPath=true,showRightPath=false,showTopPath=true,showLeftPath=false,isStartScene=false,maxRow=3,maxCol=8},{name="stump",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=3,col=7},showBottomPath=true,showRightPath=false,showTopPath=true,showLeftPath=false,isStartScene=false,maxRow=3,maxCol=8},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={col=1,row=4},showBottomPath=true,showRightPath=false,showTopPath=true,showLeftPath=false,isStartScene=false,maxRow=4,maxCol=8},{name="stump",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={col=4,row=4},showBottomPath=true,showRightPath=false,showTopPath=true,showLeftPath=false,isStartScene=false,maxRow=4,maxCol=8},{name="stump",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=4,col=7},showBottomPath=true,showRightPath=false,showTopPath=true,showLeftPath=false,isStartScene=false,maxRow=4,maxCol=8},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={col=1,row=5},showBottomPath=true,showRightPath=true,showTopPath=true,showLeftPath=false,isStartScene=false,maxRow=5,maxCol=8},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={col=2,row=5},showBottomPath=false,showRightPath=false,showTopPath=false,showLeftPath=true,isStartScene=false,maxRow=5,maxCol=8},{name="log",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=5,col=4},showBottomPath=false,showRightPath=true,showTopPath=true,showLeftPath=false,isStartScene=false,maxRow=5,maxCol=8},{name="log",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=5,col=5},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=true,isStartScene=false,maxRow=5,maxCol=8},{name="log",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=5,col=6},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=true,isStartScene=false,maxRow=5,maxCol=8},{name="log",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=5,col=7},showBottomPath=false,showRightPath=false,showTopPath=true,showLeftPath=true,isStartScene=false,maxRow=5,maxCol=8},{name="bus",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={col=0,row=6},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=false,isStartScene=true,maxRow=6,maxCol=8},{name="home",frames={{dialogs={{char="raven04",text="So, where are we?"},{char="mitzy02",text="I think we are in the middle of a mystery."},{char="magenta01",text="I need to find the bun."},{char="puddyTat01",text="Who told you that?"}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}},{dialogs={{char="puddyTat01",text="I saw the bun"},{char="magenta01",text="Where is the bun?"},{char="puddyTat01",text="It is in the cave"},{char="raven04",text="But the elf said..."},{char="puddyTat01",text="Never mind what the elf said."},{char="mitzy02",text="This sounds safe..."}},characters01={{name="mitzy02"},{name="raven04"}},characters02={{name="magenta01"},{name="puddyTat01"}}}},coordinates={row=6,col=1},showBottomPath=false,showRightPath=false,showTopPath=true,showLeftPath=true,isStartScene=false,maxRow=6,maxCol=8}},gridSize={rows=7,cols=9}}, }
 return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
@@ -31515,7 +31007,8 @@ module.dialogColors = {
 local islandLength = 36
 -- local bridgeLength = 31.1
 -- local bridgeLength = 34
-local bridgeBaseLength = 96
+local bridgeBaseLength = 30
+-- local bridgeBaseLength = 96
 local bridgeOverlap = 2
 local bridgeLength = bridgeBaseLength - 2 * bridgeOverlap
 
