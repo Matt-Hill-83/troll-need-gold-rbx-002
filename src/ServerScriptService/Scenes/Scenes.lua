@@ -199,6 +199,7 @@ function module.addScenes(props)
                     end
                 end
                 if currentPlayer then
+                    hideWall(clonedScene)
                     print(currentPlayer.Name .. " has got up")
                     currentPlayer = nil
                 end

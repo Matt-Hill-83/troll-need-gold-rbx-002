@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>912.887634</X>
-					<Y>-39.8131638</Y>
-					<Z>-660.935181</Z>
+					<X>913.541321</X>
+					<Y>-17.2020187</Y>
+					<Z>-680.640747</Z>
 					<R00>-0.999450326</R00>
-					<R01>-0.024988018</R01>
-					<R02>0.0217889696</R02>
-					<R10>1.86264515e-09</R10>
-					<R11>0.657213151</R11>
-					<R12>0.753704906</R12>
-					<R20>-0.0331535861</R20>
-					<R21>0.753290594</R21>
-					<R22>-0.656851768</R22>
+					<R01>-0.0249882899</R01>
+					<R02>0.0217892118</R02>
+					<R10>-0</R10>
+					<R11>0.657213211</R11>
+					<R12>0.753704727</R12>
+					<R20>-0.0331539512</R20>
+					<R21>0.753290415</R21>
+					<R22>-0.656851828</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -20924,7 +20924,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<R21>0</R21>
 											<R22>1</R22>
 										</CoordinateFrame>
-										<bool name="CanCollide">false</bool>
+										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
 										<int name="CollisionGroupId">0</int>
 										<Color3uint8 name="Color3uint8">4290040548</Color3uint8>
@@ -22126,9 +22126,9 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<token name="BottomSurface">0</token>
 										<token name="BottomSurfaceInput">0</token>
 										<CoordinateFrame name="CFrame">
-											<X>920.999268</X>
+											<X>899.999268</X>
 											<Y>-72.9091187</Y>
-											<Z>-615.499878</Z>
+											<Z>-639.499878</Z>
 											<R00>1</R00>
 											<R01>0</R01>
 											<R02>-2.72848411e-12</R02>
@@ -28505,12 +28505,12 @@ function setVisibility()
 
     Utils.setItemAndChildrenPropsByName({
         name = "BaseWalls",
-        props = {Transparency = 0.8, CanCollide = true, Anchored = true}
+        props = {Transparency = 0.9, CanCollide = true, Anchored = true}
     })
 
     Utils.setItemAndChildrenPropsByName({
         name = "BridgeWalls",
-        props = {Transparency = 0.8, CanCollide = true, Anchored = true}
+        props = {Transparency = 0.9, CanCollide = true, Anchored = true}
     })
 
 end
@@ -31315,6 +31315,7 @@ function module.addScenes(props)
                     end
                 end
                 if currentPlayer then
+                    hideWall(clonedScene)
                     print(currentPlayer.Name .. " has got up")
                     currentPlayer = nil
                 end
