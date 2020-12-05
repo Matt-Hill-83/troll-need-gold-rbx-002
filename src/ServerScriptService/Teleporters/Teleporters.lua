@@ -14,9 +14,9 @@ function module.addTeleporters(props)
     local skyBoxTeleporter = props.skyBoxTeleporter
 
     local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
-        local teleporterBlocker = Utils.getFirstDescendantByName(localTP,
-                                                                 "TeleporterBlocker")
-        teleporterBlocker:Destroy()
+        -- local teleporterBlocker = Utils.getFirstDescendantByName(localTP,
+        --                                                          "TeleporterBlocker")
+        -- teleporterBlocker:Destroy()
 
         localTP.PrimaryPart.Touched:Connect(
             function(touchPart)
@@ -29,7 +29,7 @@ function module.addTeleporters(props)
                         Utils.getFirstDescendantByName(remoteTP,
                                                        "QuestTeleporterReceiver")
                     local teleportLocation =
-                        questTeleporterReceiver.CFrame + Vector3.new(0, 6, 0)
+                        questTeleporterReceiver.CFrame + Vector3.new(0, 12, 4)
 
                     local ts = game:GetService("TweenService")
 

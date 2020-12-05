@@ -54,6 +54,7 @@ function module.addScenes(props)
 
     local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
                                                               "SceneTemplate")
+
     local wallTemplate =
         Utils.getFirstDescendantByName(questFolder, "SceneBase")
 
@@ -173,6 +174,38 @@ function module.addScenes(props)
         end
 
         part.TouchEnded:Connect(onPartTouchEnded)
+
+        -- 
+        -- 
+        local seat = Utils.getFirstDescendantByName(clonedScene, "CouchSeat")
+
+        print('seat' .. ' - start');
+        print(seat);
+        print('seat' .. ' - end');
+        local Players = game:GetService("Players")
+        local currentPlayer = nil
+
+        seat:GetPropertyChangedSignal("Occupant"):Connect(
+            function()
+                local humanoid = seat.Occupant
+                if humanoid then
+                    local character = humanoid.Parent
+                    local player = Players:GetPlayerFromCharacter(character)
+                    if player then
+                        unHideWall(clonedScene)
+                        print(player.Name .. " has sat down")
+                        currentPlayer = player
+                        return
+                    end
+                end
+                if currentPlayer then
+                    print(currentPlayer.Name .. " has got up")
+                    currentPlayer = nil
+                end
+            end)
+        -- 
+        -- 
+
         -- 
         -- 
 
