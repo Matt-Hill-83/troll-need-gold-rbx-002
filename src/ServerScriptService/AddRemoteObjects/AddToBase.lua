@@ -75,10 +75,8 @@ function addRemoteObjects()
                                   Vector3.new(0, letterHandle.Size.Y * 1.5, 0)
 
         local textLabels = Utils.getDescendantsByName(letterHandle, "BlockChar")
-        for i, label in ipairs(textLabels) do
-            label.Text = char
-            -- 
-        end
+        for i, label in ipairs(textLabels) do label.Text = char end
+
         newLetter.Equipped:Connect(function()
             print('equipped')
             newLetter.Parent = workspace
