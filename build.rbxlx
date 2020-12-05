@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>539.752258</X>
-					<Y>-26.2542915</Y>
-					<Z>-812.62146</Z>
-					<R00>-0.997686565</R00>
-					<R01>0.0449210852</R01>
-					<R02>-0.0510254093</R02>
-					<R10>3.7252903e-09</R10>
-					<R11>0.750576973</R11>
-					<R12>0.660783052</R12>
-					<R20>0.0679815859</R20>
-					<R21>0.659254372</R21>
-					<R22>-0.74884057</R22>
+					<X>538.829895</X>
+					<Y>-26.7826653</Y>
+					<Z>-812.6474</Z>
+					<R00>-0.829865158</R00>
+					<R01>0.221286386</R01>
+					<R02>-0.51220721</R02>
+					<R10>-0</R10>
+					<R11>0.917993307</R11>
+					<R12>0.396596104</R12>
+					<R20>0.557964087</R20>
+					<R21>0.329121292</R21>
+					<R22>-0.761810601</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -32322,7 +32322,7 @@ function module.addTeleporters(props)
                                                "TeleporterLabel")
     for i, label in ipairs(labels2) do label.Text = questTitle end
 
-    local teleporterSpacing = 20
+    local teleporterSpacing = 10
 
     local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
                                                        "SkyBoxTeleporter")
