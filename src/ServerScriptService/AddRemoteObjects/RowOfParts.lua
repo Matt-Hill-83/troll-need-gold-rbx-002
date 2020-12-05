@@ -44,7 +44,6 @@ function getCenterPosFromDesiredEdgeOffset(props)
                                   moveTowardZero
 
     return parentOffsetPoint
-
 end
 
 function createRowOfParts(props)

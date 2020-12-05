@@ -62,26 +62,25 @@ function addRemoteObjects()
         'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
     }
 
-    local tool = script.Parent
+    -- for i, char in ipairs(letters) do
+    --     local newLetter = letterTemplate:Clone()
+    --     newLetter.Parent = letterTemplate.Parent
+    --     newLetter.Name = "letter-" .. char
 
-    for i, char in ipairs(letters) do
-        local newLetter = letterTemplate:Clone()
-        newLetter.Parent = letterTemplate.Parent
-        newLetter.Name = "letter-" .. char
+    --     local letterHandle = Utils.getFirstDescendantByName(newLetter, "Handle")
 
-        local letterHandle = Utils.getFirstDescendantByName(newLetter, "Handle")
+    --     letterHandle.CFrame = letterHandle.CFrame +
+    --                               Vector3.new(0, letterHandle.Size.Y * 1.5, 0)
 
-        letterHandle.CFrame = letterHandle.CFrame +
-                                  Vector3.new(0, letterHandle.Size.Y * 1.5, 0)
+    --     local textLabels = Utils.getDescendantsByName(letterHandle, "BlockChar")
+    --     for i, label in ipairs(textLabels) do label.Text = char end
 
-        local textLabels = Utils.getDescendantsByName(letterHandle, "BlockChar")
-        for i, label in ipairs(textLabels) do label.Text = char end
+    --     newLetter.Equipped:Connect(function()
+    --         print('equipped')
+    --         newLetter.Parent = workspace
+    --     end)
+    -- end
 
-        newLetter.Equipped:Connect(function()
-            print('equipped')
-            newLetter.Parent = workspace
-        end)
-    end
     letterTemplate:Destroy()
 
     local runtimeQuestsFolder = Utils.getOrCreateFolder(
@@ -98,6 +97,7 @@ function addRemoteObjects()
         local desiredPadding = 12
         local wallWidth = 1
         local wallHeight = 24
+
         local sceneHeight = 50
         local wallSize = Vector3.new(wallWidth, wallHeight, wallWidth)
         local gridPadding = desiredPadding + wallWidth * 2
