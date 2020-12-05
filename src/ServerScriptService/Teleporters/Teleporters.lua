@@ -63,14 +63,17 @@ function module.addTeleporters(props)
                                                "TeleporterLabel")
     for i, label in ipairs(labels2) do label.Text = questTitle end
 
+    local teleporterSpacing = 10
+
     local dummyHomeTP = Utils.getFirstDescendantByName(workspace,
                                                        "SkyBoxTeleporter")
     skyBoxTeleporter.PrimaryPart.CFrame =
         dummyHomeTP.CFrame *
-            CFrame.new(Vector3.new(20 * (questIndex - 1), 0, 0)) *
+            CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0)) *
             CFrame.Angles(0, math.rad(90), 0)
     skyBoxTeleporter.PrimaryPart.Anchored = true
-    thisTeleporter.Name = parent.Name .. "-sky- " .. sceneIndex
+    skyBoxTeleporter.Name = parent.Name .. "-sky- " .. sceneIndex
+    thisTeleporter.Name = parent.Name .. "-local- " .. sceneIndex
 
     if (isStartScene or isEndScene) then
         if isStartScene then
