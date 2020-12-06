@@ -91,7 +91,9 @@ function module.configDropBox(props)
         end
 
         part.TouchEnded:Connect(onPartTouchEnded)
-
+        print('dropBox' .. ' - start');
+        print(dropBox);
+        print('dropBox' .. ' - end');
         local labels = Utils.getDescendantsByName(dropBox, "ItemLabel")
         for i, label in ipairs(labels) do label.Text = item.name end
 
