@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>914.723083</X>
-					<Y>-18.7518921</Y>
-					<Z>-650.220276</Z>
-					<R00>-0.570932209</R00>
-					<R01>-0.760220945</R01>
-					<R02>0.310001075</R02>
-					<R10>-0</R10>
-					<R11>0.377590925</R11>
-					<R12>0.925972521</R12>
-					<R20>-0.820997298</R20>
-					<R21>0.52866751</R21>
-					<R22>-0.215578809</R22>
+					<X>938.287964</X>
+					<Y>-41.2951355</Y>
+					<Z>-646.420532</Z>
+					<R00>-0.570926964</R00>
+					<R01>-0.760224462</R01>
+					<R02>0.310002118</R02>
+					<R10>1.49011612e-08</R10>
+					<R11>0.377590537</R11>
+					<R12>0.9259727</R12>
+					<R20>-0.821000934</R20>
+					<R21>0.528662801</R21>
+					<R22>-0.215576574</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>897.207886</X>
-					<Y>-71.0697479</Y>
-					<Z>-638.039978</Z>
+					<X>916.228088</X>
+					<Y>-107.187721</Y>
+					<Z>-631.080017</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -15418,7 +15418,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<bool name="Locked">false</bool>
 										<bool name="Massless">false</bool>
 										<token name="Material">832</token>
-										<string name="Name">UserDectionRegion</string>
+										<string name="Name">UserDetectionRegion</string>
 										<float name="Reflectance">0</float>
 										<float name="RightParamA">-0.5</float>
 										<float name="RightParamB">0.5</float>
@@ -25276,7 +25276,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<bool name="Locked">false</bool>
 										<bool name="Massless">false</bool>
 										<token name="Material">288</token>
-										<string name="Name">UserDetectionRegion</string>
+										<string name="Name">DropBoxDetectionRegion</string>
 										<float name="Reflectance">0</float>
 										<float name="RightParamA">-0.5</float>
 										<float name="RightParamB">0.5</float>
@@ -53127,8 +53127,8 @@ function setVisibility()
         Utils.hideItemAndChildrenByName({name = item, hide = true})
     end
 
-    local itemsToMakeTransparentAtRuntine =
-        {"UserDetectionRegion", "WallTemplate"}
+    local itemsToMakeTransparentAtRuntine = {"WallTemplate"}
+    -- {"UserDetectionRegion", "WallTemplate"}
     for i, item in ipairs(itemsToMakeTransparentAtRuntine) do
         Utils.setItemAndChildrenPropsByName(
             {name = item, props = {Transparency = 1}})
@@ -55359,8 +55359,8 @@ return module
 						<string name="ScriptGuid">{398501bf-a4db-4733-aea8-9e60e4920214}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {
     buffer = 0,
-    singleScene = true,
-    -- singleScene = false,
+    -- singleScene = true,
+    singleScene = false,
     -- 
     baseWallHeight = 16
     -- 
@@ -55843,9 +55843,6 @@ function module.addScenes(props)
             child = wallTemplate
         })
 
-    local dropBox = Utils.getFirstDescendantByName(sceneTemplateModel,
-                                                   "DropBoxModel")
-
     local thisTeleporter = Utils.getFirstDescendantByName(sceneTemplateModel,
                                                           "QuestTeleporterModel")
     local skyBoxTeleporter = thisTeleporter:Clone()
@@ -55882,6 +55879,8 @@ function module.addScenes(props)
             skyBoxTeleporter = skyBoxTeleporter
         })
 
+        local dropBox = Utils.getFirstDescendantByName(sceneTemplateModel,
+                                                       "DropBoxModel")
         local dropBoxItem = sceneConfig.item or {name = "doggy"}
         DropBox.configDropBox({
             scene = clonedScene,
@@ -56536,20 +56535,22 @@ function module.configDropBox(props)
     local dropBox = props.dropBox
     local item = props.item
 
-    print('isEndScene' .. ' - start');
-    print(isEndScene);
-    print('isEndScene' .. ' - end');
-    print('scene' .. ' - start');
-    print(scene);
-    print('scene' .. ' - end');
     if (isEndScene) then
-        local part =
-            Utils.getFirstDescendantByName(scene, "UserDetectionRegion")
+        print('isEndScene' .. ' - start');
+        print(isEndScene);
+        print('isEndScene' .. ' - end');
+        print('scene' .. ' - start');
+        print(scene);
+        print('scene' .. ' - end');
+        local part = Utils.getFirstDescendantByName(scene,
+                                                    "DropBoxDetectionRegion")
 
         local function onPartTouched(otherPart)
-            -- Get the other part's parent
             local partParent = otherPart.Parent
-            -- Look for a humanoid in the parent
+            print('partParent' .. ' - start');
+            print(Utils.tableToString({partParent}));
+            print('partParent' .. ' - end');
+
             local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
             if humanoid then regionEnter(humanoid, scene, entered) end
         end
@@ -56568,20 +56569,14 @@ function module.configDropBox(props)
 
         part.TouchEnded:Connect(onPartTouchEnded)
 
-        local thisDropBox =
-            Utils.getFirstDescendantByName(scene, "DropBoxModel")
-
-        local labels = Utils.getDescendantsByName(thisDropBox, "ItemLabel")
+        local labels = Utils.getDescendantsByName(dropBox, "ItemLabel")
         for i, label in ipairs(labels) do label.Text = item.name end
 
-        local labels2 = Utils.getDescendantsByName(dropBox, "TeleporterLabel")
-        for i, label in ipairs(labels2) do label.Text = item.name end
+        dropBox.Name = scene.Name .. "-local- " .. sceneIndex
 
-        thisDropBox.Name = scene.Name .. "-local- " .. sceneIndex
-
-        thisDropBox.PrimaryPart.Anchored = true
+        -- dropBox.PrimaryPart.Anchored = true
     else
-        -- thisDropBox:Destroy()
+        -- dropBox:Destroy()
     end
 
 end

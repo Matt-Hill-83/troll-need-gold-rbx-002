@@ -58,20 +58,22 @@ function module.configDropBox(props)
     local dropBox = props.dropBox
     local item = props.item
 
-    print('isEndScene' .. ' - start');
-    print(isEndScene);
-    print('isEndScene' .. ' - end');
-    print('scene' .. ' - start');
-    print(scene);
-    print('scene' .. ' - end');
     if (isEndScene) then
-        local part =
-            Utils.getFirstDescendantByName(scene, "UserDetectionRegion")
+        print('isEndScene' .. ' - start');
+        print(isEndScene);
+        print('isEndScene' .. ' - end');
+        print('scene' .. ' - start');
+        print(scene);
+        print('scene' .. ' - end');
+        local part = Utils.getFirstDescendantByName(scene,
+                                                    "DropBoxDetectionRegion")
 
         local function onPartTouched(otherPart)
-            -- Get the other part's parent
             local partParent = otherPart.Parent
-            -- Look for a humanoid in the parent
+            print('partParent' .. ' - start');
+            print(Utils.tableToString({partParent}));
+            print('partParent' .. ' - end');
+
             local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
             if humanoid then regionEnter(humanoid, scene, entered) end
         end
@@ -90,20 +92,14 @@ function module.configDropBox(props)
 
         part.TouchEnded:Connect(onPartTouchEnded)
 
-        local thisDropBox =
-            Utils.getFirstDescendantByName(scene, "DropBoxModel")
-
-        local labels = Utils.getDescendantsByName(thisDropBox, "ItemLabel")
+        local labels = Utils.getDescendantsByName(dropBox, "ItemLabel")
         for i, label in ipairs(labels) do label.Text = item.name end
 
-        local labels2 = Utils.getDescendantsByName(dropBox, "TeleporterLabel")
-        for i, label in ipairs(labels2) do label.Text = item.name end
+        dropBox.Name = scene.Name .. "-local- " .. sceneIndex
 
-        thisDropBox.Name = scene.Name .. "-local- " .. sceneIndex
-
-        thisDropBox.PrimaryPart.Anchored = true
+        -- dropBox.PrimaryPart.Anchored = true
     else
-        -- thisDropBox:Destroy()
+        -- dropBox:Destroy()
     end
 
 end

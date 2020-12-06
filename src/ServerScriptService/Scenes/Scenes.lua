@@ -66,9 +66,6 @@ function module.addScenes(props)
             child = wallTemplate
         })
 
-    local dropBox = Utils.getFirstDescendantByName(sceneTemplateModel,
-                                                   "DropBoxModel")
-
     local thisTeleporter = Utils.getFirstDescendantByName(sceneTemplateModel,
                                                           "QuestTeleporterModel")
     local skyBoxTeleporter = thisTeleporter:Clone()
@@ -105,6 +102,8 @@ function module.addScenes(props)
             skyBoxTeleporter = skyBoxTeleporter
         })
 
+        local dropBox = Utils.getFirstDescendantByName(sceneTemplateModel,
+                                                       "DropBoxModel")
         local dropBoxItem = sceneConfig.item or {name = "doggy"}
         DropBox.configDropBox({
             scene = clonedScene,
