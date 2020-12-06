@@ -107,7 +107,7 @@ function module.addScenes(props)
 
         local dropBoxItem = sceneConfig.item or {name = "doggy"}
         DropBox.configDropBox({
-            parent = clonedScene,
+            scene = clonedScene,
             sceneIndex = i,
             questIndex = questIndex,
             isEndScene = sceneConfig.isEndScene,

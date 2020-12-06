@@ -61,43 +61,49 @@ function module.configDropBox(props)
     print('isEndScene' .. ' - start');
     print(isEndScene);
     print('isEndScene' .. ' - end');
-
-    local part = Utils.getFirstDescendantByName(scene, "UserDetectionRegion")
-
-    local function onPartTouched(otherPart)
-        -- Get the other part's parent
-        local partParent = otherPart.Parent
-        -- Look for a humanoid in the parent
-        local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
-        if humanoid then regionEnter(humanoid, scene, entered) end
-    end
-
-    part.Touched:Connect(onPartTouched)
-
-    local function onPartTouchEnded(otherPart)
-        local partParent = otherPart.Parent
-        if partParent then
-            local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
-            if humanoid then regionExit(humanoid, scene, entered) end
-        end
-    end
-
-    part.TouchEnded:Connect(onPartTouchEnded)
-
-    local thisDropBox = Utils.getFirstDescendantByName(scene, "DropBoxModel")
-
-    local labels = Utils.getDescendantsByName(thisDropBox, "ItemLabel")
-    for i, label in ipairs(labels) do label.Text = item.name end
-
-    local labels2 = Utils.getDescendantsByName(dropBox, "TeleporterLabel")
-    for i, label in ipairs(labels2) do label.Text = item.name end
-
-    thisDropBox.Name = scene.Name .. "-local- " .. sceneIndex
-
+    print('scene' .. ' - start');
+    print(scene);
+    print('scene' .. ' - end');
     if (isEndScene) then
+        local part =
+            Utils.getFirstDescendantByName(scene, "UserDetectionRegion")
+
+        local function onPartTouched(otherPart)
+            -- Get the other part's parent
+            local partParent = otherPart.Parent
+            -- Look for a humanoid in the parent
+            local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
+            if humanoid then regionEnter(humanoid, scene, entered) end
+        end
+
+        part.Touched:Connect(onPartTouched)
+
+        local function onPartTouchEnded(otherPart)
+            local partParent = otherPart.Parent
+            if partParent then
+                local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
+                if humanoid then
+                    regionExit(humanoid, scene, entered)
+                end
+            end
+        end
+
+        part.TouchEnded:Connect(onPartTouchEnded)
+
+        local thisDropBox =
+            Utils.getFirstDescendantByName(scene, "DropBoxModel")
+
+        local labels = Utils.getDescendantsByName(thisDropBox, "ItemLabel")
+        for i, label in ipairs(labels) do label.Text = item.name end
+
+        local labels2 = Utils.getDescendantsByName(dropBox, "TeleporterLabel")
+        for i, label in ipairs(labels2) do label.Text = item.name end
+
+        thisDropBox.Name = scene.Name .. "-local- " .. sceneIndex
+
         thisDropBox.PrimaryPart.Anchored = true
     else
-        thisDropBox:Destroy()
+        -- thisDropBox:Destroy()
     end
 
 end
