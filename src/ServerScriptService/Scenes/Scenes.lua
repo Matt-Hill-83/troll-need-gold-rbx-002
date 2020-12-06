@@ -4,6 +4,7 @@ local Bridges = require(Sss.Source.Bridges.Bridges)
 local Characters = require(Sss.Source.Characters.Characters)
 local Buttons = require(Sss.Source.Buttons.Buttons)
 local Teleporters = require(Sss.Source.Teleporters.Teleporters)
+local DropBox = require(Sss.Source.DropBox.DropBox)
 local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
@@ -65,6 +66,9 @@ function module.addScenes(props)
             child = wallTemplate
         })
 
+    local dropBox = Utils.getFirstDescendantByName(sceneTemplateModel,
+                                                   "DropBoxModel")
+
     local thisTeleporter = Utils.getFirstDescendantByName(sceneTemplateModel,
                                                           "QuestTeleporterModel")
     local skyBoxTeleporter = thisTeleporter:Clone()
@@ -99,6 +103,16 @@ function module.addScenes(props)
             isEndScene = sceneConfig.isEndScene,
             questTitle = questConfig.questTitle,
             skyBoxTeleporter = skyBoxTeleporter
+        })
+
+        local dropBoxItem = sceneConfig.item or {name = "doggy"}
+        DropBox.configDropBox({
+            parent = clonedScene,
+            sceneIndex = i,
+            questIndex = questIndex,
+            isEndScene = sceneConfig.isEndScene,
+            dropBox = dropBox,
+            item = dropBoxItem
         })
 
         local function hideWall(clonedScene)
@@ -149,7 +163,7 @@ function module.addScenes(props)
         end
 
         local part = Utils.getFirstDescendantByName(clonedScene,
-                                                    "UserDectionRegion")
+                                                    "UserDetectionRegion")
 
         local function onPartTouched(otherPart)
             -- Get the other part's parent

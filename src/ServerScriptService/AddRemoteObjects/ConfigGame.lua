@@ -24,7 +24,7 @@ function setVisibility()
     end
 
     local itemsToMakeTransparentAtRuntine =
-        {"UserDectionRegion", "WallTemplate"}
+        {"UserDetectionRegion", "WallTemplate"}
     for i, item in ipairs(itemsToMakeTransparentAtRuntine) do
         Utils.setItemAndChildrenPropsByName(
             {name = item, props = {Transparency = 1}})
