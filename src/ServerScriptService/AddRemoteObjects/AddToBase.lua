@@ -61,7 +61,8 @@ function addRemoteObjects()
     --     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
     --     'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
     -- }
-    local letters = {'A', 'B', 'C'}
+    -- local letters = {'A', 'B', 'C'}
+    local letters = {'C'}
 
     for i, char in ipairs(letters) do
         local newLetter = letterTemplate:Clone()

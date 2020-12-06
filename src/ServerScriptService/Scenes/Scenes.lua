@@ -74,6 +74,7 @@ function module.addScenes(props)
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local entered = {value = false}
+        local entered2 = {value = false}
         local numPages = #sceneConfig.frames
         local pageNum = 1
 
@@ -104,14 +105,17 @@ function module.addScenes(props)
 
         local dropBox = Utils.getFirstDescendantByName(clonedScene,
                                                        "DropBoxModel")
-        local dropBoxItem = sceneConfig.item or {name = "doggy"}
+        local dropBoxItem = sceneConfig.item or {name = "letter-C"}
         DropBox.configDropBox({
             scene = clonedScene,
             sceneIndex = i,
             questIndex = questIndex,
+            isStartScene = sceneConfig.isStartScene,
             isEndScene = sceneConfig.isEndScene,
             dropBox = dropBox,
+            entered2 = entered2,
             item = dropBoxItem
+
         })
 
         local function hideWall(clonedScene)
@@ -192,9 +196,6 @@ function module.addScenes(props)
         -- 
         local seat = Utils.getFirstDescendantByName(clonedScene, "CouchSeat")
 
-        print('seat' .. ' - start');
-        print(seat);
-        print('seat' .. ' - end');
         local Players = game:GetService("Players")
         local currentPlayer = nil
 
@@ -206,14 +207,12 @@ function module.addScenes(props)
                     local player = Players:GetPlayerFromCharacter(character)
                     if player then
                         unHideWall(clonedScene)
-                        print(player.Name .. " has sat down")
                         currentPlayer = player
                         return
                     end
                 end
                 if currentPlayer then
                     hideWall(clonedScene)
-                    print(currentPlayer.Name .. " has got up")
                     currentPlayer = nil
                 end
             end)

@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>938.287964</X>
-					<Y>-41.2951355</Y>
-					<Z>-646.420532</Z>
-					<R00>-0.570926964</R00>
-					<R01>-0.760224462</R01>
-					<R02>0.310002118</R02>
-					<R10>1.49011612e-08</R10>
-					<R11>0.377590537</R11>
-					<R12>0.9259727</R12>
-					<R20>-0.821000934</R20>
-					<R21>0.528662801</R21>
-					<R22>-0.215576574</R22>
+					<X>615.649414</X>
+					<Y>0.587034225</Y>
+					<Z>-956.038025</Z>
+					<R00>-0.419455945</R00>
+					<R01>-0.800135374</R01>
+					<R02>0.428765774</R02>
+					<R10>-1.49011612e-08</R10>
+					<R11>0.472325683</R11>
+					<R12>0.881424069</R12>
+					<R20>-0.9077757</R20>
+					<R21>0.369718552</R21>
+					<R22>-0.198119819</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>916.228088</X>
-					<Y>-107.187721</Y>
-					<Z>-631.080017</Z>
+					<X>601.500122</X>
+					<Y>-28.5000038</Y>
+					<Z>-949.500061</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -37388,9 +37388,9 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>601.500122</X>
-						<Y>-28.5000019</Y>
-						<Z>-949.500061</Z>
+						<X>588.500122</X>
+						<Y>-28.4999943</Y>
+						<Z>-951.500061</Z>
 						<R00>-3.41644082e-08</R00>
 						<R01>2.7456548e-07</R01>
 						<R02>1</R02>
@@ -37401,7 +37401,7 @@ end
 						<R21>1.71729505e-06</R21>
 						<R22>-3.41648807e-08</R22>
 					</CoordinateFrame>
-					<bool name="CanCollide">true</bool>
+					<bool name="CanCollide">false</bool>
 					<bool name="CastShadow">true</bool>
 					<int name="CollisionGroupId">0</int>
 					<Color3uint8 name="Color3uint8">4285438410</Color3uint8>
@@ -37450,7 +37450,7 @@ end
 					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
-						<X>13</X>
+						<X>7</X>
 						<Y>7</Y>
 						<Z>4</Z>
 					</Vector3>
@@ -37471,46 +37471,7 @@ end
 						<float name="Transparency">0</float>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBX0c47d1c4a1684abd94b539c3aa957939">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<CoordinateFrame name="C0">
-							<X>-6.5</X>
-							<Y>1.90734863e-06</Y>
-							<Z>0</Z>
-							<R00>0</R00>
-							<R01>0</R01>
-							<R02>-1</R02>
-							<R10>5.50156573e-14</R10>
-							<R11>1</R11>
-							<R12>-1.13686838e-13</R12>
-							<R20>1</R20>
-							<R21>-1.82776835e-15</R21>
-							<R22>0</R22>
-						</CoordinateFrame>
-						<CoordinateFrame name="C1">
-							<X>-18.4998779</X>
-							<Y>-4.49909592</Y>
-							<Z>-0.500061035</Z>
-							<R00>1</R00>
-							<R01>2.74565423e-07</R01>
-							<R02>3.41644082e-08</R02>
-							<R10>-2.74565366e-07</R10>
-							<R11>1</R11>
-							<R12>-1.71729516e-06</R12>
-							<R20>-3.41648807e-08</R20>
-							<R21>1.71729516e-06</R21>
-							<R22>1</R22>
-						</CoordinateFrame>
-						<bool name="Enabled">true</bool>
-						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX826015c5b30b4afba22fc0f0177cff91</Ref>
-						<Ref name="Part1">RBXfa67989035bc4542adcee048403fb253</Ref>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="Weld" referent="RBX1e409b8ab1df4b94b7bed930502d94a3">
+				<Item class="Weld" referent="RBXde8468ac3da1450783a39e4004cf2a50">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -37528,48 +37489,9 @@ end
 							<R22>-5.50156505e-14</R22>
 						</CoordinateFrame>
 						<CoordinateFrame name="C1">
-							<X>-18.4998779</X>
-							<Y>0.499908447</Y>
-							<Z>9.49993896</Z>
-							<R00>-3.41644082e-08</R00>
-							<R01>1</R01>
-							<R02>-2.7456548e-07</R02>
-							<R10>1.71729516e-06</R10>
-							<R11>-2.74565423e-07</R11>
-							<R12>-1</R12>
-							<R20>-1</R20>
-							<R21>-3.41648807e-08</R21>
-							<R22>-1.71729516e-06</R22>
-						</CoordinateFrame>
-						<bool name="Enabled">true</bool>
-						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX826015c5b30b4afba22fc0f0177cff91</Ref>
-						<Ref name="Part1">RBXc51e2714903846768940fdd062c039b8</Ref>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="Weld" referent="RBX6ec81a14f7b24f9aa5e0196904388209">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<CoordinateFrame name="C0">
-							<X>0</X>
-							<Y>-3.49999809</Y>
-							<Z>0</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>1.13686838e-13</R10>
-							<R11>-1.82776157e-15</R11>
-							<R12>-1</R12>
-							<R20>0</R20>
-							<R21>1</R21>
-							<R22>-5.50156505e-14</R22>
-						</CoordinateFrame>
-						<CoordinateFrame name="C1">
-							<X>-18.4998779</X>
-							<Y>0.499908447</Y>
-							<Z>9.49993896</Z>
+							<X>-31.4998779</X>
+							<Y>0.499916077</Y>
+							<Z>7.49993896</Z>
 							<R00>-3.41644082e-08</R00>
 							<R01>1</R01>
 							<R02>-2.7456548e-07</R02>
@@ -37584,6 +37506,45 @@ end
 						<string name="Name">Weld</string>
 						<Ref name="Part0">RBX826015c5b30b4afba22fc0f0177cff91</Ref>
 						<Ref name="Part1">RBX5d3c36d21ee2427d9b676ed57ad4b027</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Weld" referent="RBX27f2625ea76a42c6a6a5a68c654e5faf">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>0</X>
+							<Y>-3.49999809</Y>
+							<Z>0</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>1.13686838e-13</R10>
+							<R11>-1.82776157e-15</R11>
+							<R12>-1</R12>
+							<R20>0</R20>
+							<R21>1</R21>
+							<R22>-5.50156505e-14</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>-31.4998779</X>
+							<Y>0.499916077</Y>
+							<Z>7.49993896</Z>
+							<R00>-3.41644082e-08</R00>
+							<R01>1</R01>
+							<R02>-2.7456548e-07</R02>
+							<R10>1.71729516e-06</R10>
+							<R11>-2.74565423e-07</R11>
+							<R12>-1</R12>
+							<R20>-1</R20>
+							<R21>-3.41648807e-08</R21>
+							<R22>-1.71729516e-06</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Weld</string>
+						<Ref name="Part0">RBX826015c5b30b4afba22fc0f0177cff91</Ref>
+						<Ref name="Part1">RBXc51e2714903846768940fdd062c039b8</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -55359,9 +55320,10 @@ return module
 						<string name="ScriptGuid">{398501bf-a4db-4733-aea8-9e60e4920214}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {
     buffer = 0,
-    -- singleScene = true,
-    singleScene = false,
+    singleScene = true,
+    -- singleScene = false,
     -- 
+    entered = {value = false},
     baseWallHeight = 16
     -- 
 }
@@ -55851,6 +55813,7 @@ function module.addScenes(props)
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local entered = {value = false}
+        local entered2 = {value = false}
         local numPages = #sceneConfig.frames
         local pageNum = 1
 
@@ -55879,16 +55842,19 @@ function module.addScenes(props)
             skyBoxTeleporter = skyBoxTeleporter
         })
 
-        local dropBox = Utils.getFirstDescendantByName(sceneTemplateModel,
+        local dropBox = Utils.getFirstDescendantByName(clonedScene,
                                                        "DropBoxModel")
-        local dropBoxItem = sceneConfig.item or {name = "doggy"}
+        local dropBoxItem = sceneConfig.item or {name = "letter-C"}
         DropBox.configDropBox({
             scene = clonedScene,
             sceneIndex = i,
             questIndex = questIndex,
+            isStartScene = sceneConfig.isStartScene,
             isEndScene = sceneConfig.isEndScene,
             dropBox = dropBox,
+            entered2 = entered2,
             item = dropBoxItem
+
         })
 
         local function hideWall(clonedScene)
@@ -55969,9 +55935,6 @@ function module.addScenes(props)
         -- 
         local seat = Utils.getFirstDescendantByName(clonedScene, "CouchSeat")
 
-        print('seat' .. ' - start');
-        print(seat);
-        print('seat' .. ' - end');
         local Players = game:GetService("Players")
         local currentPlayer = nil
 
@@ -55983,14 +55946,12 @@ function module.addScenes(props)
                     local player = Players:GetPlayerFromCharacter(character)
                     if player then
                         unHideWall(clonedScene)
-                        print(player.Name .. " has sat down")
                         currentPlayer = player
                         return
                     end
                 end
                 if currentPlayer then
                     hideWall(clonedScene)
-                    print(currentPlayer.Name .. " has got up")
                     currentPlayer = nil
                 end
             end)
@@ -56477,8 +56438,8 @@ return module
 						<string name="ScriptGuid">{15913fed-4d0a-42b5-9748-e91c73e51502}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local Constants = require(Sss.Source.Constants.Constants)
 
-local entered = {value = false}
 local module = {}
 
 local function hideWall(scene)
@@ -56500,45 +56461,81 @@ local function unHideWall(scene)
     end
 end
 
+-- local function regionEnter(plr, scene)
 local function regionEnter(plr, scene, entered)
+    -- local entered = Constants.entered
+    print("")
     print("------------------------------------------->>regionEnter")
-    local buttonPressed = false
-    if not buttonPressed then
-        buttonPressed = true
+
+    print('plr' .. ' - start');
+    print(plr);
+    print('plr' .. ' - end');
+
+    -- if you need to check this outside of the one script, you can do this if check or use _G or modules (modules are definitely more recommended than _G especially if you're checking this on the client):
+    if plr.Character:FindFirstChild("ToolName") and
+        plr.Character["ToolName"]:IsA("Tool") then print("equipped") end
+
+    local deBounce = false
+    if not deBounce then
+        deBounce = true
+
+        print('entered.value' .. ' - start');
+        print(entered.value);
+        print('entered.value' .. ' - end');
         if not entered.value then
-            -- unHideWall(scene)
+            print('enter----------------------->>')
+            local Player = plr
+            -- local Player = game:GetService("Players").LocalPlayer
+            local Backpack = Player:WaitForChild("Backpack")
+            print('Backpack' .. ' - start');
+            print(Backpack);
+            print('Backpack' .. ' - end');
+
+            local ToolName = "Test"
+
+            for _, Tool in pairs(Backpack:GetChildren()) do
+                if Tool.Name == ToolName then
+                    print("This is the tool I'm looking for.")
+                end
+            end
+
+            unHideWall(scene)
             entered.value = true
         end
-        buttonPressed = false
+        deBounce = false
     end
 end
 
 local function regionExit(plr, scene, entered)
+    print("")
     print("------------------------------------------->>regionExit")
-    local buttonPressed = false
-    if not buttonPressed then
-        buttonPressed = true
+    local deBounce = false
+    if not deBounce then
+        deBounce = true
         if entered.value then
             -- hideWall(scene)
             entered.value = false
         end
-        buttonPressed = false
+        deBounce = false
     end
 end
 
 function module.configDropBox(props)
+    -- local entered = Constants.entered
+    -- local entered = {value = false}
 
     local scene = props.scene
     local sceneIndex = props.sceneIndex
     local questIndex = props.questIndex
     local isEndScene = props.isEndScene
+    local isStartScene = props.isStartScene
     local dropBox = props.dropBox
     local item = props.item
+    local entered = props.entered2
 
-    if (isEndScene) then
-        print('isEndScene' .. ' - start');
-        print(isEndScene);
-        print('isEndScene' .. ' - end');
+    if (isStartScene) then
+        -- if (isEndScene) then
+
         print('scene' .. ' - start');
         print(scene);
         print('scene' .. ' - end');
@@ -56547,17 +56544,32 @@ function module.configDropBox(props)
 
         local function onPartTouched(otherPart)
             local partParent = otherPart.Parent
-            print('partParent' .. ' - start');
-            print(Utils.tableToString({partParent}));
-            print('partParent' .. ' - end');
+            local match = partParent.Name == item.name
+            if true then
+                -- if match then
+                print('partParent' .. ' - start');
+                -- print(partParent);
+                print(partParent.Name);
+                print('partParent' .. ' - end');
 
-            local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
-            if humanoid then regionEnter(humanoid, scene, entered) end
+                -- print("match----------------------------->>>>>")
+                -- print("match----------------------------->>>>>")
+                -- print("match----------------------------->>>>>")
+                local humanoid = partParent:IsA("Humanoid")
+                -- local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
+                if humanoid then
+                    regionEnter(partParent, scene, entered)
+                    -- regionEnter(humanoid, scene, entered)
+                end
+            else
+            end
         end
 
         part.Touched:Connect(onPartTouched)
 
         local function onPartTouchEnded(otherPart)
+
+            print("onPartTouchEnded--------------------------00000000--------->")
             local partParent = otherPart.Parent
             if partParent then
                 local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
@@ -56565,9 +56577,10 @@ function module.configDropBox(props)
                     regionExit(humanoid, scene, entered)
                 end
             end
+
         end
 
-        part.TouchEnded:Connect(onPartTouchEnded)
+        -- part.TouchEnded:Connect(onPartTouchEnded)
 
         local labels = Utils.getDescendantsByName(dropBox, "ItemLabel")
         for i, label in ipairs(labels) do label.Text = item.name end
@@ -56576,7 +56589,7 @@ function module.configDropBox(props)
 
         -- dropBox.PrimaryPart.Anchored = true
     else
-        -- dropBox:Destroy()
+        dropBox:Destroy()
     end
 
 end
