@@ -69,8 +69,20 @@ function module.configDropBox(props)
             -- Get the other part's parent
             local partParent = otherPart.Parent
             -- Look for a humanoid in the parent
+
+            -- 
+
+            local match = partParent.Name == item.name
+            if match then
+
+                print('match' .. ' - start');
+                print(match);
+                print('match' .. ' - end');
+                partParent.Parent = workspace
+            end
+            -- 
             local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
-            if humanoid then
+            if humanoid and false then
                 print('');
                 print('');
                 print('humanoid' .. ' - start');
