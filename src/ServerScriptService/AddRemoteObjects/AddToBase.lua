@@ -93,7 +93,7 @@ function addRemoteObjects()
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
 
     -- add quests
-    for i, questConfig in ipairs(questConfigs) do
+    for questIndex, questConfig in ipairs(questConfigs) do
         local gridSize = questConfig.gridSize
         -- local startSceneCoords = questConfig.startSceneCoords
         -- local endSceneCoords = questConfig.ebdSceneCoords
@@ -131,7 +131,7 @@ function addRemoteObjects()
             wallSize = wallSize,
             sceneHeight = sceneHeight,
             questBlockTemplate = questBlockTemplateClone,
-            index = i
+            index = questIndex
         }
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
 
@@ -142,7 +142,7 @@ function addRemoteObjects()
             questConfig = questConfig,
             gridPadding = gridPadding,
             questFolder = questFolder,
-            questIndex = i
+            questIndex = questIndex
         }
         Scenes.addScenes(addScenesProps)
 

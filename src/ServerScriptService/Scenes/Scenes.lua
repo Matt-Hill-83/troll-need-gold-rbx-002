@@ -89,7 +89,7 @@ function module.addScenes(props)
                                 {
                 model = sceneTemplateModel,
                 position = CFrame.new(newPosition + startPosition),
-                suffix = "Clone" .. sceneIndex
+                suffix = "Clone" .. "-Q" .. questIndex .. "-S" .. sceneIndex
             })
 
         clonedScene.Name = clonedScene.Name .. sceneIndex

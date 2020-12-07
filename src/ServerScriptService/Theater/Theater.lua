@@ -28,16 +28,22 @@ function module.configTheater(props)
         local xGap = 10
         local x = (playerIndex - 1) * (benchModel.PrimaryPart.Size.X + xGap)
 
-        local newBench = Utils.cloneModel(
-                             {
-                model = benchModel,
-                -- position = benchModel.PrimaryPart.CFrame *
-                --     CFrame.new(Vector3.new(-x, 0, 0)),
-                suffix = "Clone-" .. "-S" .. sceneIndex .. "-P" .. playerIndex
-            })
+        local newBench = benchModel:Clone()
+        -- local newBench = Utils.cloneModel(
+        --                      {
+        --         model = benchModel,
+        --         -- position = benchModel.PrimaryPart.CFrame *
+        --         --     CFrame.new(Vector3.new(-x, 0, 0)),
+        --         suffix = "Clone-" .. "-S" .. sceneIndex .. "-P" .. playerIndex
+        --     })
 
+        -- suffix = "Clone-" .. "-S" .. sceneIndex .. "-P" .. playerIndex
+        newBench.PrimaryPart.Position = newBench.PrimaryPart.Position +
+                                            Vector3.new(-x, 0, 0)
         newBench.Parent = theaterFolder
-        newBench.Name = newBench.Name .. "aaa"
+        newBench.Name =
+            newBench.Name .. "Clone-" .. "-S" .. sceneIndex .. "-P" ..
+                playerIndex .. 'zzz'
 
         print('newBench' .. ' - start');
         print(newBench);
