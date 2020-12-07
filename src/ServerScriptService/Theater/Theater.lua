@@ -48,31 +48,27 @@ function module.configTheater(props)
         print(seat);
         print('seat' .. ' - end');
 
-        -- local Players = game:GetService("Players")
-        -- local currentPlayer = nil
+        seat.Changed:Connect(function()
+            print('sadfasdfasfasasdsafdasf-asdf-asd-f-asf-asd-asda-dsf')
 
-        -- seat:GetPropertyChangedSignal("Occupant"):Connect(
-        --     function()
+            if seat.Occupant ~= nil then
+                if seat.Occupant.Parent.Name ~= "PlayerNameHere" then
+                    local PlayerToJump =
+                        game.Players:FindFirstChild(seat.Occupant.Parent.Name)
+                    print('PlayerToJump' .. ' - start');
+                    print(PlayerToJump);
+                    print('PlayerToJump' .. ' - end');
+                    local Character = PlayerToJump.Character or
+                                          PlayerToJump.CharacterAdded:Wait()
+                    print('Character' .. ' - start');
+                    print(Character);
+                    print('Character' .. ' - end');
+                    wait(.1)
+                    Character.Humanoid.Jump = true
+                end
+            end
 
-        --         print(
-        --             'GetPropertyChangedSignal----------------------------->>>>')
-        --         local humanoid = seat.Occupant
-        --         if humanoid then
-        --             local character = humanoid.Parent
-        --             local player = Players:GetPlayerFromCharacter(character)
-        --             if player then
-        --                 print("unHideWall----------------------------")
-        --                 -- unHideWall(clonedScene)
-        --                 currentPlayer = player
-        --                 return
-        --             end
-        --         end
-        --         if currentPlayer then
-        --             print("hideWall")
-        --             -- hideWall(clonedScene)
-        --             currentPlayer = nil
-        --         end
-        --     end)
+        end)
 
     end
 
