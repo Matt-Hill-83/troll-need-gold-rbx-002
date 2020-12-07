@@ -92,14 +92,11 @@ function addRemoteObjects()
     local sibling = questsOrigin
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
 
-    -- set up Theater
-    Theater.configTheater()
-
     -- add quests
     for i, questConfig in ipairs(questConfigs) do
         local gridSize = questConfig.gridSize
-        local startSceneCoords = questConfig.startSceneCoords
-        local endSceneCoords = questConfig.ebdSceneCoords
+        -- local startSceneCoords = questConfig.startSceneCoords
+        -- local endSceneCoords = questConfig.ebdSceneCoords
 
         local desiredPadding = 12
         local wallWidth = 1
@@ -117,7 +114,7 @@ function addRemoteObjects()
         local questBlockTemplateClone = Utils.cloneModel(
                                             {
                 model = questBlockTemplate,
-                suffix = "Clone--" .. i
+                suffix = "Clone-Q" .. i
             })
 
         local questFolder = Utils.getOrCreateFolder(

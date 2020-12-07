@@ -8,6 +8,7 @@ local DropBox = require(Sss.Source.DropBox.DropBox)
 local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
+local Theater = require(Sss.Source.Theater.Theater)
 
 local module = {}
 getStartPosition = function(props)
@@ -72,7 +73,7 @@ function module.addScenes(props)
     skyBoxTeleporter.Parent = questFolder
     skyBoxTeleporter.Name = thisTeleporter.Name .. "-home"
 
-    for i, sceneConfig in ipairs(sceneConfigs) do
+    for sceneIndex, sceneConfig in ipairs(sceneConfigs) do
         local entered = {value = false}
         local entered2 = {value = false}
         local numPages = #sceneConfig.frames
@@ -88,14 +89,14 @@ function module.addScenes(props)
                                 {
                 model = sceneTemplateModel,
                 position = CFrame.new(newPosition + startPosition),
-                suffix = "Clone" .. i
+                suffix = "Clone" .. sceneIndex
             })
 
-        clonedScene.Name = clonedScene.Name .. i
+        clonedScene.Name = clonedScene.Name .. sceneIndex
 
         Teleporters.addTeleporters({
             parent = clonedScene,
-            sceneIndex = i,
+            sceneIndex = sceneIndex,
             questIndex = questIndex,
             isStartScene = sceneConfig.isStartScene,
             isEndScene = sceneConfig.isEndScene,
@@ -108,7 +109,7 @@ function module.addScenes(props)
         local dropBoxItem = sceneConfig.item or {name = "letter-C"}
         DropBox.configDropBox({
             scene = clonedScene,
-            sceneIndex = i,
+            sceneIndex = sceneIndex,
             questIndex = questIndex,
             isStartScene = sceneConfig.isStartScene,
             isEndScene = sceneConfig.isEndScene,
@@ -192,12 +193,32 @@ function module.addScenes(props)
 
         part.TouchEnded:Connect(onPartTouchEnded)
 
-        -- 
-        -- 
         local seat = Utils.getFirstDescendantByName(clonedScene, "CouchSeat")
 
         local Players = game:GetService("Players")
         local currentPlayer = nil
+
+        seat.Changed:Connect(function()
+            print('sadfasdfasfasasdsafdasf-asdf-asd-f-asf-asd-asda-dsf')
+
+            if seat.Occupant ~= nil then
+                if seat.Occupant.Parent.Name ~= "PlayerNameHere" then
+                    local PlayerToJump =
+                        game.Players:FindFirstChild(seat.Occupant.Parent.Name)
+                    print('PlayerToJump' .. ' - start');
+                    print(PlayerToJump);
+                    print('PlayerToJump' .. ' - end');
+                    local Character = PlayerToJump.Character or
+                                          PlayerToJump.CharacterAdded:Wait()
+                    print('Character' .. ' - start');
+                    print(Character);
+                    print('Character' .. ' - end');
+                    wait(.1)
+                    Character.Humanoid.Jump = true
+                end
+            end
+
+        end)
 
         seat:GetPropertyChangedSignal("Occupant"):Connect(
             function()
@@ -216,21 +237,16 @@ function module.addScenes(props)
                     currentPlayer = nil
                 end
             end)
-        -- 
-        -- 
-
-        -- 
-        -- 
 
         local sceneFolder = Utils.getOrCreateFolder(
                                 {
-                name = clonedScene.Name .. i,
+                name = clonedScene.Name .. sceneIndex,
                 parent = questFolder
             })
 
         clonedScene.Parent = sceneFolder
 
-        Bridges.destroyBridges({
+        Bridges.configBridges({
             sceneConfig = sceneConfig,
             clonedScene = clonedScene
         })
@@ -290,6 +306,16 @@ function module.addScenes(props)
         Buttons.doFrameStuff(props2)
 
         hideWall(clonedScene)
+
+        local theaterProps = {
+            sceneFolder = sceneFolder,
+            sceneIndex = sceneIndex,
+            questIndex = questIndex,
+            hideWall = hideWall,
+            unHideWall = unHideWall
+        }
+        -- set up Theater
+        Theater.configTheater(theaterProps)
 
     end
     sceneTemplateModel:Destroy()

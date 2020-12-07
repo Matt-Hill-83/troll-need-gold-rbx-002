@@ -2,6 +2,48 @@ local Sss = game:GetService("ServerScriptService")
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 
+-- 
+-- 
+
+function getFirstDescendantByName(parent, name)
+    local model = parent:GetDescendants()
+    for i = 1, #model do
+        if model[i].Name == name then
+            return model[i]
+            -- 
+        end
+    end
+end
+
+function module.getDescendantsByName(parent, name)
+    local items = parent:GetDescendants()
+
+    local output = {}
+    for i, item in ipairs(items) do
+        if item.Name == name then
+            table.insert(output, item)
+            -- 
+        end
+    end
+    return output
+end
+
+function module.getDescendantsByType(parent, type)
+    local items = parent:GetDescendants()
+    local output = {}
+
+    for i, item in pairs(items) do
+        if item:IsA(type) then
+            table.insert(output, item)
+            -- 
+        end
+    end
+    return output
+end
+
+-- 
+-- 
+
 function hideItem(part, hide)
     local transparency = hide and 1 or 0
     local visible = not hide
@@ -137,42 +179,6 @@ function module.getFromTemplates(name)
     local myStuff = workspace:FindFirstChild("MyStuff")
     local myTemplates = myStuff:FindFirstChild("MyTemplates")
     return getFirstDescendantByName(myTemplates, name)
-end
-
-function getFirstDescendantByName(parent, name)
-    local model = parent:GetDescendants()
-    for i = 1, #model do
-        if model[i].Name == name then
-            return model[i]
-            -- 
-        end
-    end
-end
-
-function module.getDescendantsByName(parent, name)
-    local items = parent:GetDescendants()
-
-    local output = {}
-    for i, item in ipairs(items) do
-        if item.Name == name then
-            table.insert(output, item)
-            -- 
-        end
-    end
-    return output
-end
-
-function module.getDescendantsByType(parent, type)
-    local items = parent:GetDescendants()
-    local output = {}
-
-    for i, item in pairs(items) do
-        if item:IsA(type) then
-            table.insert(output, item)
-            -- 
-        end
-    end
-    return output
 end
 
 function module.unAttachAllChildParts(parent)

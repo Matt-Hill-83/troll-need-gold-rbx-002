@@ -5,7 +5,7 @@ local Constants = require(Sss.Source.Constants.Constants)
 
 local module = {}
 
-function module.destroyBridges(props)
+function module.configBridges(props)
     -- all bridges are created in clone.
     -- remove bridges that do not go anywhere
     local sceneConfig = props.sceneConfig
