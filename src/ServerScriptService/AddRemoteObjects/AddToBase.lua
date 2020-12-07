@@ -114,7 +114,7 @@ function addRemoteObjects()
         local questBlockTemplateClone = Utils.cloneModel(
                                             {
                 model = questBlockTemplate,
-                suffix = "Clone-Q" .. i
+                suffix = "Clone-Q" .. questIndex
             })
 
         local questFolder = Utils.getOrCreateFolder(
