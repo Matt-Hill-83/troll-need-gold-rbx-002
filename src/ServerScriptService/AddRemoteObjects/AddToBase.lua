@@ -12,6 +12,7 @@ local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
 function addRemoteObjects()
     ConfigGame.configGame()
 
+    -- Group quests into books that are separate islands
     local questConfigs = SceneConfig.getScenesConfig()
 
     if (Constants.singleScene) then
