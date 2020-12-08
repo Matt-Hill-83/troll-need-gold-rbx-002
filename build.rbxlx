@@ -38463,16 +38463,23 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCamera1")
 
 
-local function onNotifyPlayer(cameraTarget)
+local function onNotifyPlayer(cameraTarget,freeze)
 	local camera = workspace.CurrentCamera
-	local cameraOffset = Vector3.new(0, 0, -30)
+	
+	if freeze then
+		
+		
+		local cameraOffset = Vector3.new(0, 0, -30)
 
-	if camera.CameraType ~= Enum.CameraType.Scriptable then
-		camera.CameraType = Enum.CameraType.Scriptable
+		if camera.CameraType ~= Enum.CameraType.Scriptable then
+			camera.CameraType = Enum.CameraType.Scriptable
+		end
+
+		camera.CFrame = CFrame.new(cameraTarget.Position + cameraOffset,
+			cameraTarget.Position)
+	else
+		camera.CameraType = Enum.CameraType.Custom
 	end
-
-	camera.CFrame = CFrame.new(cameraTarget.Position + cameraOffset,
-		cameraTarget.Position)
 end
 
 remoteEvent.OnClientEvent:Connect(onNotifyPlayer)]]></ProtectedString>
@@ -42292,12 +42299,9 @@ local DropBox = require(Sss.Source.DropBox.DropBox)
 local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
-local Theater = require(Sss.Source.Theater.Theater)
+-- local Theater = require(Sss.Source.Theater.Theater)
 
 local module = {}
-
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCamera1")
 
 getStartPosition = function(props)
     local parent = props.parent
@@ -43226,7 +43230,7 @@ return module
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">BindFreezeCamera1</string>
 				<string name="ScriptGuid">{afe0d0c8-c6cb-4e5a-98c7-920b22808587}</string>
-				<ProtectedString name="Source"><![CDATA[print("test 1")
+				<ProtectedString name="Source"><![CDATA[print("BindFreezeCamera1")
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
