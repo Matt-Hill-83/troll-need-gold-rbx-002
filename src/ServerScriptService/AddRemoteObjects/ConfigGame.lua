@@ -6,6 +6,7 @@ function configPlayers()
     local Players = game:GetService("Players")
     Players.RespawnTime = 0
 
+
     local function onCharacterAdded(character)
         character:WaitForChild("Humanoid").WalkSpeed = 30
     end
@@ -15,6 +16,11 @@ function configPlayers()
     end
 
     Players.PlayerAdded:Connect(onPlayerAdded)
+
+    -- local Players = game:GetService("Players")
+
+    -- Players.PlayerAdded:Connect(onPlayerAdded2)
+
 end
 
 function setVisibility()

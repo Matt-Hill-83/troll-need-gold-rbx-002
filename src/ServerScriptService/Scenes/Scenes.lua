@@ -193,45 +193,189 @@ function module.addScenes(props)
 
         part.TouchEnded:Connect(onPartTouchEnded)
 
-        local seat = Utils.getFirstDescendantByName(clonedScene, "CouchSeat")
+        -- seat.Changed:Connect(function()
+        --     print('sadfasdfasfasasdsafdasf-asdf-asd-f-asf-asd-asda-dsf')
 
+        --     if seat.Occupant ~= nil then
+        --         if seat.Occupant.Parent.Name ~= "PlayerNameHere" then
+        --             local PlayerToJump =
+        --                 game.Players:FindFirstChild(seat.Occupant.Parent.Name)
+        --             print('PlayerToJump' .. ' - start');
+        --             print(PlayerToJump);
+        --             print('PlayerToJump' .. ' - end');
+        --             local Character = PlayerToJump.Character or
+        --                                   PlayerToJump.CharacterAdded:Wait()
+        --             print('Character' .. ' - start');
+        --             print(Character);
+        --             print('Character' .. ' - end');
+        --             wait(.1)
+        --             Character.Humanoid.Jump = true
+        --         end
+        --     end
+
+        -- end)
+        local seat = Utils.getFirstDescendantByName(clonedScene, "CouchSeat")
         local Players = game:GetService("Players")
         local currentPlayer = nil
 
-        seat.Changed:Connect(function()
-            print('sadfasdfasfasasdsafdasf-asdf-asd-f-asf-asd-asda-dsf')
+        -- seat:GetPropertyChangedSignal("Occupant"):Connect(
+        --     function()
+        --         local humanoid = seat.Occupant
+        --         if humanoid then
+        --             local character = humanoid.Parent
+        --             character:WaitForChild("Humanoid").WalkSpeed = 0
 
-            if seat.Occupant ~= nil then
-                if seat.Occupant.Parent.Name ~= "PlayerNameHere" then
-                    local PlayerToJump =
-                        game.Players:FindFirstChild(seat.Occupant.Parent.Name)
-                    print('PlayerToJump' .. ' - start');
-                    print(PlayerToJump);
-                    print('PlayerToJump' .. ' - end');
-                    local Character = PlayerToJump.Character or
-                                          PlayerToJump.CharacterAdded:Wait()
-                    print('Character' .. ' - start');
-                    print(Character);
-                    print('Character' .. ' - end');
-                    wait(.1)
-                    Character.Humanoid.Jump = true
-                end
-            end
+        --             -- local humanoid = character:WaitForChild("Humanoid")
+        --             local rootPart = character:WaitForChild("HumanoidRootPart")
+        --             humanoid.AutoRotate = false
 
-        end)
+        --             local camera = workspace.CurrentCamera
+        --             -- local cameraOffset = Vector3.new(2, 2, 8)
+        --             local cameraOffset = Vector3.new(2, 2, 4)
 
+        --             if camera.CameraType ~= Enum.CameraType.Scriptable then
+        --                 camera.CameraType = Enum.CameraType.Scriptable
+        --             end
+        --             camera.CameraType = Enum.CameraType.Custom
+        --             -- camera.CameraType = 'Fixed'
+
+        --             local nextButton = Utils.getFirstDescendantByName(
+        --                                    clonedScene, "WallTemplate")
+
+        --             camera.Focus = nextButton.CFrame
+
+        --             local cameraAngleX = 0
+        --             local cameraAngleY = 0
+
+        --             camera.CFrame = camera.CFrame *
+        --                                 CFrame.new(Vector3.new(90, 90, 90))
+        --             -- camera.CFrame = CFrame.new(seat.Position,
+        --             --                            nextButton.Position)
+
+        --             camera.CameraSubject = nextButton
+        --             -- local cameraAngleY = 180
+
+        --             -- local startCFrame = CFrame.new((rootPart.CFrame.Position)) *
+        --             -- local startCFrame =
+        --             --     CFrame.new((nextButton.CFrame.Position)) *
+        --             --         CFrame.Angles(0, math.rad(cameraAngleX), 0) *
+        --             --         CFrame.Angles(math.rad(cameraAngleY), 0, 0)
+        --             -- local cameraCFrame =
+        --             --     startCFrame:ToWorldSpace(
+        --             --         CFrame.new(cameraOffset.X, cameraOffset.Y,
+        --             --                    cameraOffset.Z))
+        --             -- local cameraFocus = startCFrame:ToWorldSpace(
+        --             --                         CFrame.new(cameraOffset.X,
+        --             --                                    cameraOffset.Y, -10000))
+        --             -- camera.CFrame = CFrame.new(cameraCFrame.Position,
+        --             --                            cameraFocus.Position)
+
+        --             local player = Players:GetPlayerFromCharacter(character)
+
+        --             if player then
+        --                 unHideWall(clonedScene)
+        --                 currentPlayer = player
+        --                 return
+        --             end
+        --         end
+
+        --         if currentPlayer then
+        --             hideWall(clonedScene)
+        --             currentPlayer = nil
+        --         end
+        --     end)
         seat:GetPropertyChangedSignal("Occupant"):Connect(
             function()
+
+                local ReplicatedStorage = game:GetService("ReplicatedStorage")
+                local remoteEvent = ReplicatedStorage:WaitForChild(
+                                        "RemoteEventTest")
+                print('remoteEvent' .. ' - start');
+                print(remoteEvent);
+                print('remoteEvent' .. ' - end');
+                local function onPlayerAdded2(player)
+                    -- Fire the remote event
+                    -- print("remoteEvent:FireClient(player)")
+                end
+
                 local humanoid = seat.Occupant
                 if humanoid then
                     local character = humanoid.Parent
+                    -- character:WaitForChild("Humanoid").WalkSpeed = 0 
+
+                    -- local humanoid = character:WaitForChild("Humanoid")
+                    local rootPart = character:WaitForChild("HumanoidRootPart")
+
+                    local nextButton = Utils.getFirstDescendantByName(
+                                           clonedScene, "WallTemplate")
+
                     local player = Players:GetPlayerFromCharacter(character)
+                    remoteEvent:FireClient(player, nextButton)
+                    -- humanoid.AutoRotate = false
+
+                    -- local camera = workspace.CurrentCamera
+                    -- camera.CameraType = Enum.CameraType.Scriptable -- You could use Fixed, but you might still want to move the camera.
+
+                    -- game:GetService("RunService").RenderStepped:Connect(
+                    --     function()
+                    --         game.Workspace.CurrentCamera.CFrame =
+                    --             CFrame.new(10, 50, 30) -- You can use a variable if, for example, you want to zoom in or out.
+
+                    --         game.Workspace.CurrentCamera.Focus =
+                    --             CFrame.new(0, 10, 0)
+                    --     end)
+
+                    -- print(
+                    --     "Seat Script ---------------------------couch - server ---------------!")
+
+                    -- local seat = script.Parent
+
+                    -- function getFirstDescendantByName(parent, name)
+                    --	local model = parent:GetDescendants()
+                    --	for i = 1, #model do
+                    --		if model[i].Name == name then
+                    --			return model[i]
+                    --			-- 
+                    --		end
+                    --	end
+                    -- end
+
+                    ----seat:GetPropertyChangedSignal("Occupant"):Connect( function()
+                    --	print("GetPropertyChangedSignal")
+
+                    --		local camera = workspace.CurrentCamera
+                    --		-- local cameraOffset = Vector3.new(2, 2, 8)
+                    --		local cameraOffset = Vector3.new(2, 2, 4)
+
+                    --		--if camera.CameraType ~= Enum.CameraType.Scriptable then
+                    --		--	camera.CameraType = Enum.CameraType.Scriptable
+                    --		--end
+                    --		--camera.CameraType = Enum.CameraType.Custom
+                    --		 --camera.CameraType = 'Fixed'
+
+                    --		local wallStuff = getFirstDescendantByName(seat.Parent.Parent, "QuestTeleporterReceiver")
+                    --		--local wallStuff = getFirstDescendantByName(seat.Parent.Parent, "WallTemplate")
+
+                    --		print(wallStuff)
+                    --		camera.Focus = wallStuff.CFrame
+                    --		camera.CameraSubject= wallStuff
+
+                    --		camera.CFrame = camera.CFrame *
+                    --			CFrame.new(Vector3.new(90, 90, 90))
+
+                    --		--camera.CameraSubject = wallStuff
+
+                    ----end)
+
+                    -- local player = Players:GetPlayerFromCharacter(character)
+
                     if player then
                         unHideWall(clonedScene)
                         currentPlayer = player
                         return
                     end
                 end
+
                 if currentPlayer then
                     hideWall(clonedScene)
                     currentPlayer = nil
@@ -315,7 +459,7 @@ function module.addScenes(props)
             unHideWall = unHideWall
         }
         -- set up Theater
-        Theater.configTheater(theaterProps)
+        -- Theater.configTheater(theaterProps)
 
     end
     sceneTemplateModel:Destroy()
