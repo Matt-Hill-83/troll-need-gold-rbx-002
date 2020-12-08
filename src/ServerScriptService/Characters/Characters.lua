@@ -58,9 +58,6 @@ renderCharacters = function(props)
                 Parent = characterTemplate.Parent,
                 Name = nameStub .. i
             })
-            print('itemConfig.name' .. ' - start');
-            print(itemConfig.name);
-            print('itemConfig.name' .. ' - end');
 
             local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
             applyDecalsToCharacter({part = newChar, decalId = decalId})

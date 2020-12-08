@@ -61,6 +61,11 @@ module.characters = {
     britta01 = britta,
     britta04 = britta,
 
+    fancyDudeFromFrance01 = {
+        displayName = "fancyDudeFromFrance01",
+        decalId = 'rbxassetid://5991276655',
+        backgroundColorIdx = 1
+    },
     robby01 = {
         displayName = "Robby",
         decalId = '5991273473',
@@ -205,6 +210,11 @@ module.characters = {
         backgroundColorIdx = 3
     },
     trollKing01 = {
+        displayName = "Troll King",
+        decalId = '5897428591',
+        backgroundColorIdx = 3
+    },
+    trollKing = {
         displayName = "Troll King",
         decalId = '5897428591',
         backgroundColorIdx = 3
