@@ -35697,6 +35697,45 @@ end
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
 									</Item>
+									<Item class="Weld" referent="RBXf5dc92868ad843bf8cf822316c289225">
+										<Properties>
+											<BinaryString name="AttributesSerialize"></BinaryString>
+											<CoordinateFrame name="C0">
+												<X>0.00837624073</X>
+												<Y>0.928572655</Y>
+												<Z>-0.184735298</Z>
+												<R00>1</R00>
+												<R01>0</R01>
+												<R02>0</R02>
+												<R10>0</R10>
+												<R11>1</R11>
+												<R12>0</R12>
+												<R20>0</R20>
+												<R21>0</R21>
+												<R22>1</R22>
+											</CoordinateFrame>
+											<CoordinateFrame name="C1">
+												<X>0</X>
+												<Y>0.600000024</Y>
+												<Z>0</Z>
+												<R00>1</R00>
+												<R01>0</R01>
+												<R02>0</R02>
+												<R10>0</R10>
+												<R11>1</R11>
+												<R12>0</R12>
+												<R20>0</R20>
+												<R21>0</R21>
+												<R22>1</R22>
+											</CoordinateFrame>
+											<bool name="Enabled">true</bool>
+											<string name="Name">AccessoryWeld</string>
+											<Ref name="Part0">RBX6159fe7d30f94b228a4bf5bfe3ae8aab</Ref>
+											<Ref name="Part1">RBXe12812bc43ad4b4aa5dce145fe06c951</Ref>
+											<int64 name="SourceAssetId">-1</int64>
+											<BinaryString name="Tags"></BinaryString>
+										</Properties>
+									</Item>
 								</Item>
 							</Item>
 						</Item>
@@ -38934,7 +38973,7 @@ function addRemoteObjects()
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
 
     -- add quests
-    for i, questConfig in ipairs(questConfigs) do
+    for questIndex, questConfig in ipairs(questConfigs) do
         local gridSize = questConfig.gridSize
         -- local startSceneCoords = questConfig.startSceneCoords
         -- local endSceneCoords = questConfig.ebdSceneCoords
@@ -38955,7 +38994,7 @@ function addRemoteObjects()
         local questBlockTemplateClone = Utils.cloneModel(
                                             {
                 model = questBlockTemplate,
-                suffix = "Clone-Q" .. i
+                suffix = "Clone-Q" .. questIndex
             })
 
         local questFolder = Utils.getOrCreateFolder(
@@ -38972,7 +39011,7 @@ function addRemoteObjects()
             wallSize = wallSize,
             sceneHeight = sceneHeight,
             questBlockTemplate = questBlockTemplateClone,
-            index = i
+            index = questIndex
         }
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
 
@@ -38983,7 +39022,7 @@ function addRemoteObjects()
             questConfig = questConfig,
             gridPadding = gridPadding,
             questFolder = questFolder,
-            questIndex = i
+            questIndex = questIndex
         }
         Scenes.addScenes(addScenesProps)
 
@@ -42143,7 +42182,7 @@ function module.addScenes(props)
                                 {
                 model = sceneTemplateModel,
                 position = CFrame.new(newPosition + startPosition),
-                suffix = "Clone" .. sceneIndex
+                suffix = "Clone" .. "-Q" .. questIndex .. "-S" .. sceneIndex
             })
 
         clonedScene.Name = clonedScene.Name .. sceneIndex
@@ -42915,16 +42954,22 @@ function module.configTheater(props)
         local xGap = 10
         local x = (playerIndex - 1) * (benchModel.PrimaryPart.Size.X + xGap)
 
-        local newBench = Utils.cloneModel(
-                             {
-                model = benchModel,
-                -- position = benchModel.PrimaryPart.CFrame *
-                --     CFrame.new(Vector3.new(-x, 0, 0)),
-                suffix = "Clone-" .. "-S" .. sceneIndex .. "-P" .. playerIndex
-            })
+        local newBench = benchModel:Clone()
+        -- local newBench = Utils.cloneModel(
+        --                      {
+        --         model = benchModel,
+        --         -- position = benchModel.PrimaryPart.CFrame *
+        --         --     CFrame.new(Vector3.new(-x, 0, 0)),
+        --         suffix = "Clone-" .. "-S" .. sceneIndex .. "-P" .. playerIndex
+        --     })
 
+        -- suffix = "Clone-" .. "-S" .. sceneIndex .. "-P" .. playerIndex
+        newBench.PrimaryPart.Position = newBench.PrimaryPart.Position +
+                                            Vector3.new(-x, 0, 0)
         newBench.Parent = theaterFolder
-        newBench.Name = newBench.Name .. "aaa"
+        newBench.Name =
+            newBench.Name .. "Clone-" .. "-S" .. sceneIndex .. "-P" ..
+                playerIndex .. 'zzz'
 
         print('newBench' .. ' - start');
         print(newBench);
@@ -42935,31 +42980,27 @@ function module.configTheater(props)
         print(seat);
         print('seat' .. ' - end');
 
-        -- local Players = game:GetService("Players")
-        -- local currentPlayer = nil
+        seat.Changed:Connect(function()
+            print('sadfasdfasfasasdsafdasf-asdf-asd-f-asf-asd-asda-dsf')
 
-        -- seat:GetPropertyChangedSignal("Occupant"):Connect(
-        --     function()
+            if seat.Occupant ~= nil then
+                if seat.Occupant.Parent.Name ~= "PlayerNameHere" then
+                    local PlayerToJump =
+                        game.Players:FindFirstChild(seat.Occupant.Parent.Name)
+                    print('PlayerToJump' .. ' - start');
+                    print(PlayerToJump);
+                    print('PlayerToJump' .. ' - end');
+                    local Character = PlayerToJump.Character or
+                                          PlayerToJump.CharacterAdded:Wait()
+                    print('Character' .. ' - start');
+                    print(Character);
+                    print('Character' .. ' - end');
+                    wait(.1)
+                    Character.Humanoid.Jump = true
+                end
+            end
 
-        --         print(
-        --             'GetPropertyChangedSignal----------------------------->>>>')
-        --         local humanoid = seat.Occupant
-        --         if humanoid then
-        --             local character = humanoid.Parent
-        --             local player = Players:GetPlayerFromCharacter(character)
-        --             if player then
-        --                 print("unHideWall----------------------------")
-        --                 -- unHideWall(clonedScene)
-        --                 currentPlayer = player
-        --                 return
-        --             end
-        --         end
-        --         if currentPlayer then
-        --             print("hideWall")
-        --             -- hideWall(clonedScene)
-        --             currentPlayer = nil
-        --         end
-        --     end)
+        end)
 
     end
 
