@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>757.343262</X>
-					<Y>11.9110718</Y>
-					<Z>-1136.8573</Z>
-					<R00>-0.956834078</R00>
-					<R01>0.149239928</R01>
-					<R02>-0.249391288</R02>
-					<R10>7.45058149e-09</R10>
-					<R11>0.858091712</R11>
-					<R12>0.513496459</R12>
-					<R20>0.290634781</R20>
-					<R21>0.491330922</R21>
-					<R22>-0.821051359</R22>
+					<X>768.191711</X>
+					<Y>-10.4264441</Y>
+					<Z>-1101.14185</Z>
+					<R00>-0.956833959</R00>
+					<R01>0.149243295</R01>
+					<R02>-0.249389678</R02>
+					<R10>7.4505806e-09</R10>
+					<R11>0.858085155</R11>
+					<R12>0.513507426</R12>
+					<R20>0.290635139</R20>
+					<R21>0.491341352</R21>
+					<R22>-0.821045041</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>783.280457</X>
-					<Y>-41.4935913</Y>
-					<Z>-1051.46631</Z>
+					<X>768.690491</X>
+					<Y>-11.4534588</Y>
+					<Z>-1099.49976</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -38462,7 +38462,7 @@ end
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local remoteEvent = ReplicatedStorage:WaitForChild("RemoteEventTest")
+local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCamera1")
 
 -- Ignore the passed player; start with additional passed data
 local function onNotifyPlayer(cameraTarget)
@@ -38477,11 +38477,13 @@ local function onNotifyPlayer(cameraTarget)
 	--camera.CFrame = CFrame.new(0,100,0)
 	
 	             -- local cameraOffset = Vector3.new(2, 2, 8)
-	             local cameraOffset = Vector3.new(0, 0, -50)
+	             local cameraOffset = Vector3.new(0, 0, -30)
 
 	             if camera.CameraType ~= Enum.CameraType.Scriptable then
 	                 camera.CameraType = Enum.CameraType.Scriptable
-	             end
+	end
+	
+	 --character:WaitForChild("Humanoid").WalkSpeed = 0 
 	             --camera.CameraType = Enum.CameraType.Custom
 	              --camera.CameraType = 'Fixed'
 
@@ -41892,7 +41894,8 @@ return module
     singleScene = false,
     -- 
     entered = {value = false},
-    baseWallHeight = 16
+    baseWallHeight = 16,
+    walkSpeed = 16
     -- 
 }
 
@@ -42506,22 +42509,18 @@ function module.addScenes(props)
 
         seat:GetPropertyChangedSignal("Occupant"):Connect(
             function()
-
                 local ReplicatedStorage = game:GetService("ReplicatedStorage")
                 local remoteEvent = ReplicatedStorage:WaitForChild(
-                                        "RemoteEventTest")
+                                        "FreezeCamera1")
 
                 local humanoid = seat.Occupant
                 if humanoid then
                     local character = humanoid.Parent
-                    -- character:WaitForChild("Humanoid").WalkSpeed = 0 
-
-                    -- local humanoid = character:WaitForChild("Humanoid")
-                    local rootPart = character:WaitForChild("HumanoidRootPart")
+                    character:WaitForChild("Humanoid").WalkSpeed = 0
 
                     local cameraTarget =
                         Utils.getFirstDescendantByName(clonedScene,
-                                                       "LocationModelLabel")
+                                                       "WallTemplate")
 
                     local player = Players:GetPlayerFromCharacter(character)
                     remoteEvent:FireClient(player, cameraTarget)
@@ -42534,7 +42533,13 @@ function module.addScenes(props)
                 end
 
                 if currentPlayer then
+                    print('currentPlayer' .. ' - start');
+                    print(currentPlayer);
+                    print(currentPlayer.Character);
+                    print('currentPlayer' .. ' - end');
                     hideWall(clonedScene)
+                    currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
+                        Constants.walkSpeed
                     currentPlayer = nil
                 end
             end)
@@ -43246,14 +43251,14 @@ return module
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<bool name="Disabled">false</bool>
 				<Content name="LinkedSource"><null></null></Content>
-				<string name="Name">Script - test1</string>
+				<string name="Name">BindFreezeCamera1</string>
 				<string name="ScriptGuid">{afe0d0c8-c6cb-4e5a-98c7-920b22808587}</string>
 				<ProtectedString name="Source"><![CDATA[print("test 1")
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 
-local remoteEvent = ReplicatedStorage:WaitForChild("RemoteEventTest")
+local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCamera1")
 
 ]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
@@ -43479,7 +43484,7 @@ return my_functions
 		<Item class="RemoteEvent" referent="RBXd8a27200040e4ea4aa5592423b03a386">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
-				<string name="Name">RemoteEventTest</string>
+				<string name="Name">FreezeCamera1</string>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
