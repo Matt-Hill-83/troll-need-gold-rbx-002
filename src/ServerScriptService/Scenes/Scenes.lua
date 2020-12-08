@@ -8,12 +8,9 @@ local DropBox = require(Sss.Source.DropBox.DropBox)
 local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
-local Theater = require(Sss.Source.Theater.Theater)
+-- local Theater = require(Sss.Source.Theater.Theater)
 
 local module = {}
-
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCamera1")
 
 getStartPosition = function(props)
     local parent = props.parent
