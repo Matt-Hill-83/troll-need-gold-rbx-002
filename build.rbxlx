@@ -38483,7 +38483,7 @@ local function onNotifyPlayer(cameraTarget)
 	                 camera.CameraType = Enum.CameraType.Scriptable
 	             end
 	             --camera.CameraType = Enum.CameraType.Custom
-	              camera.CameraType = 'Fixed'
+	              --camera.CameraType = 'Fixed'
 
 
 	             --camera.Focus = nextButton.CFrame
@@ -42522,9 +42522,6 @@ function module.addScenes(props)
                     local cameraTarget =
                         Utils.getFirstDescendantByName(clonedScene,
                                                        "LocationModelLabel")
-
-                    -- local cameraTarget = Utils.getFirstDescendantByName(
-                    --                        clonedScene, "WallTemplate")
 
                     local player = Players:GetPlayerFromCharacter(character)
                     remoteEvent:FireClient(player, cameraTarget)

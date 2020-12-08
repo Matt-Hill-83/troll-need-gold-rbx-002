@@ -214,10 +214,7 @@ function module.addScenes(props)
 
                     local cameraTarget =
                         Utils.getFirstDescendantByName(clonedScene,
-                                                       "LocationModelLabel")
-
-                    -- local cameraTarget = Utils.getFirstDescendantByName(
-                    --                        clonedScene, "WallTemplate")
+                                                       "WallTemplate")
 
                     local player = Players:GetPlayerFromCharacter(character)
                     remoteEvent:FireClient(player, cameraTarget)
