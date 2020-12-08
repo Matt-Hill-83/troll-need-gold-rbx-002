@@ -212,11 +212,15 @@ function module.addScenes(props)
                     -- local humanoid = character:WaitForChild("Humanoid")
                     local rootPart = character:WaitForChild("HumanoidRootPart")
 
-                    local nextButton = Utils.getFirstDescendantByName(
-                                           clonedScene, "WallTemplate")
+                    local cameraTarget =
+                        Utils.getFirstDescendantByName(clonedScene,
+                                                       "LocationModelLabel")
+
+                    -- local cameraTarget = Utils.getFirstDescendantByName(
+                    --                        clonedScene, "WallTemplate")
 
                     local player = Players:GetPlayerFromCharacter(character)
-                    remoteEvent:FireClient(player, nextButton)
+                    remoteEvent:FireClient(player, cameraTarget)
 
                     if player then
                         unHideWall(clonedScene)
