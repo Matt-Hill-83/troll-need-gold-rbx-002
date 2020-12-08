@@ -38459,48 +38459,22 @@ end
 					<string name="ScriptGuid">{1d53be50-37a9-4e21-8341-6202f735eb2b}</string>
 					<ProtectedString name="Source"><![CDATA[print("test 2")
 
-
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
 local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCamera1")
 
--- Ignore the passed player; start with additional passed data
+
 local function onNotifyPlayer(cameraTarget)
-	print("")
-	print("")
-	print("Incoming server event... -    ----------------------------------------------------")
-	print(cameraTarget)
-	
-	
-
 	local camera = workspace.CurrentCamera
-	--camera.CFrame = CFrame.new(0,100,0)
-	
-	             -- local cameraOffset = Vector3.new(2, 2, 8)
-	             local cameraOffset = Vector3.new(0, 0, -30)
+	local cameraOffset = Vector3.new(0, 0, -30)
 
-	             if camera.CameraType ~= Enum.CameraType.Scriptable then
-	                 camera.CameraType = Enum.CameraType.Scriptable
+	if camera.CameraType ~= Enum.CameraType.Scriptable then
+		camera.CameraType = Enum.CameraType.Scriptable
 	end
-	
-	 --character:WaitForChild("Humanoid").WalkSpeed = 0 
-	             --camera.CameraType = Enum.CameraType.Custom
-	              --camera.CameraType = 'Fixed'
 
-
-	             --camera.Focus = nextButton.CFrame
-	             --camera.Subject = nextButton
-	             --camera.CFrame = nextButton.CFrame
-	--camera.CFrame = camera.CFrame * CFrame.new(Vector3.new(90, 90, 90)) 
-	camera.CFrame =  CFrame.new(cameraTarget.Position + cameraOffset,cameraTarget.Position)
-	--camera.CFrame = nextButton.CFrame * CFrame.new(cameraOffset,nextButton.Position)
-	
-	
-	
-	
+	camera.CFrame = CFrame.new(cameraTarget.Position + cameraOffset,
+		cameraTarget.Position)
 end
 
--- Call "onNotifyPlayer()" when the server fires the remote event
 remoteEvent.OnClientEvent:Connect(onNotifyPlayer)]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -42321,6 +42295,10 @@ local Constants = require(Sss.Source.Constants.Constants)
 local Theater = require(Sss.Source.Theater.Theater)
 
 local module = {}
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCamera1")
+
 getStartPosition = function(props)
     local parent = props.parent
     local child = props.child
@@ -42512,18 +42490,16 @@ function module.addScenes(props)
                 local ReplicatedStorage = game:GetService("ReplicatedStorage")
                 local remoteEvent = ReplicatedStorage:WaitForChild(
                                         "FreezeCamera1")
+                local cameraTarget = Utils.getFirstDescendantByName(clonedScene,
+                                                                    "WallTemplate")
 
                 local humanoid = seat.Occupant
                 if humanoid then
                     local character = humanoid.Parent
                     character:WaitForChild("Humanoid").WalkSpeed = 0
 
-                    local cameraTarget =
-                        Utils.getFirstDescendantByName(clonedScene,
-                                                       "WallTemplate")
-
                     local player = Players:GetPlayerFromCharacter(character)
-                    remoteEvent:FireClient(player, cameraTarget)
+                    remoteEvent:FireClient(player, cameraTarget, true)
 
                     if player then
                         unHideWall(clonedScene)
@@ -42533,13 +42509,10 @@ function module.addScenes(props)
                 end
 
                 if currentPlayer then
-                    print('currentPlayer' .. ' - start');
-                    print(currentPlayer);
-                    print(currentPlayer.Character);
-                    print('currentPlayer' .. ' - end');
                     hideWall(clonedScene)
                     currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
                         Constants.walkSpeed
+                    remoteEvent:FireClient(currentPlayer, cameraTarget, false)
                     currentPlayer = nil
                 end
             end)

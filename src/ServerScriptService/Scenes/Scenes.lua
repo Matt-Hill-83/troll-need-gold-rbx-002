@@ -11,6 +11,10 @@ local Constants = require(Sss.Source.Constants.Constants)
 local Theater = require(Sss.Source.Theater.Theater)
 
 local module = {}
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCamera1")
+
 getStartPosition = function(props)
     local parent = props.parent
     local child = props.child
@@ -202,18 +206,16 @@ function module.addScenes(props)
                 local ReplicatedStorage = game:GetService("ReplicatedStorage")
                 local remoteEvent = ReplicatedStorage:WaitForChild(
                                         "FreezeCamera1")
+                local cameraTarget = Utils.getFirstDescendantByName(clonedScene,
+                                                                    "WallTemplate")
 
                 local humanoid = seat.Occupant
                 if humanoid then
                     local character = humanoid.Parent
                     character:WaitForChild("Humanoid").WalkSpeed = 0
 
-                    local cameraTarget =
-                        Utils.getFirstDescendantByName(clonedScene,
-                                                       "WallTemplate")
-
                     local player = Players:GetPlayerFromCharacter(character)
-                    remoteEvent:FireClient(player, cameraTarget)
+                    remoteEvent:FireClient(player, cameraTarget, true)
 
                     if player then
                         unHideWall(clonedScene)
@@ -223,13 +225,10 @@ function module.addScenes(props)
                 end
 
                 if currentPlayer then
-                    print('currentPlayer' .. ' - start');
-                    print(currentPlayer);
-                    print(currentPlayer.Character);
-                    print('currentPlayer' .. ' - end');
                     hideWall(clonedScene)
                     currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
                         Constants.walkSpeed
+                    remoteEvent:FireClient(currentPlayer, cameraTarget, false)
                     currentPlayer = nil
                 end
             end)
