@@ -10,6 +10,7 @@ renderCharacters = function(props)
     local itemConfigs = props.itemConfigs
     local characterType = props.characterType
     local sceneFolder = props.sceneFolder
+    local type = props.type
 
     local charFolder = Utils.getOrCreateFolder(
                            {name = characterType, parent = sceneFolder})
@@ -43,7 +44,8 @@ renderCharacters = function(props)
         local name = itemConfig.name
 
         if (name ~= "blank" and name ~= "empty" and name ~= "") then
-            local x = (i - 1) * (charImageBlock.Size.X + xGap)
+            local x = (i - 1) * (charImageBlock.Size.X + xGap) *
+                          (type == 2 and 1 or -1)
             local newChar = Utils.cloneModel(
                                 {
                     model = characterTemplate,
@@ -120,7 +122,8 @@ function module.addCharactersToScene(props)
         template = Utils.getFirstDescendantByName(clonedScene, characterType),
         itemConfigs = characterConfigs01,
         sceneFolder = sceneFolder,
-        characterType = characterType
+        characterType = characterType,
+        type = 1
     })
     -- 
     -- 
@@ -129,7 +132,8 @@ function module.addCharactersToScene(props)
         template = Utils.getFirstDescendantByName(clonedScene, characterType2),
         itemConfigs = characterConfigs02,
         sceneFolder = sceneFolder,
-        characterType = characterType2
+        characterType = characterType2,
+        type = 2
     })
     -- 
     -- 

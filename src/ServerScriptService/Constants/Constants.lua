@@ -120,7 +120,7 @@ module.characters = {
     },
     chick01 = {
         displayName = "Chick",
-        decalId = 'xxxxxx',
+        decalId = '6060376973',
         backgroundColorIdx = 1
     },
     coop = {
@@ -128,13 +128,21 @@ module.characters = {
         decalId = '5991342867',
         backgroundColorIdx = 1
     },
-    cow01 = {displayName = "Cow", decalId = 'xxxxxx', backgroundColorIdx = 1},
+    cow01 = {
+        displayName = "Cow",
+        decalId = '6060376567',
+        backgroundColorIdx = 1
+    },
     girl09 = {
         displayName = "Girl",
         decalId = '5991275978',
         backgroundColorIdx = 1
     },
-    lucky = {displayName = "Lucky", decalId = 'xxxxxx', backgroundColorIdx = 3},
+    lucky = {
+        displayName = "Lucky",
+        decalId = '5977954909',
+        backgroundColorIdx = 3
+    },
     mat = {displayName = "Mat", decalId = '5991341059', backgroundColorIdx = 1},
     mop = {displayName = "Mop", decalId = '5991340991', backgroundColorIdx = 1},
     pan = {displayName = "Pan", decalId = '5991340855', backgroundColorIdx = 1},
