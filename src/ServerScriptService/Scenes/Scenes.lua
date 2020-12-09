@@ -226,7 +226,7 @@ function module.addScenes(props)
                         currentPlayer = player
                         local playerGui = player.PlayerGui.SceneDialogGui
 
-                        playerGui.Enabled = true
+                        -- playerGui.Enabled = true
 
                         local frameConfig = sceneConfig.frames[pageNum]
                         local charProps =

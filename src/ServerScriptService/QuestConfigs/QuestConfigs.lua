@@ -4,6 +4,7 @@ module.questConfigs = {
     {
         questTitle = "--- The Boys from CT - part 01",
         startSceneCoords = {row = 0, col = 0},
+        endSceneCoords = {row = 0, col = 3},
         sceneConfigs = {
             {
                 name = "mop",
@@ -196,6 +197,7 @@ module.questConfigs = {
                 showRightPath = true,
                 showTopPath = false,
                 showLeftPath = false,
+                isEndScene = false,
                 isStartScene = true,
                 maxRow = 0,
                 maxCol = 0
@@ -297,6 +299,7 @@ module.questConfigs = {
                 showRightPath = true,
                 showTopPath = false,
                 showLeftPath = true,
+                isEndScene = false,
                 isStartScene = false,
                 maxRow = 0,
                 maxCol = 1
@@ -423,6 +426,7 @@ module.questConfigs = {
                 showRightPath = true,
                 showTopPath = false,
                 showLeftPath = true,
+                isEndScene = false,
                 isStartScene = false,
                 maxRow = 0,
                 maxCol = 2
@@ -462,6 +466,7 @@ module.questConfigs = {
                 showRightPath = false,
                 showTopPath = true,
                 showLeftPath = true,
+                isEndScene = true,
                 isStartScene = false,
                 maxRow = 0,
                 maxCol = 3

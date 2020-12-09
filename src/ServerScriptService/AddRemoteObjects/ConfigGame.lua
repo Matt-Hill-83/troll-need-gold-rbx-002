@@ -24,10 +24,6 @@ function setVisibility()
     local taggedPartsTransparent = collectionService:GetTagged("Transparent")
 
     for i, item in ipairs(taggedPartsTransparent) do
-        print('item' .. ' - start');
-        print(item);
-        print('item' .. ' - end');
-
         Utils.setItemAndChildrenPropsByInst(
             {
                 item = item,
