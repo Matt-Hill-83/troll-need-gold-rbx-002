@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>784.528748</X>
-					<Y>-11.6132555</Y>
-					<Z>-1073.45361</Z>
-					<R00>-0.985508859</R00>
-					<R01>0.14907138</R01>
-					<R02>-0.0809326097</R02>
+					<X>780.158936</X>
+					<Y>9.35514355</Y>
+					<Z>-1139.17322</Z>
+					<R00>-0.996223688</R00>
+					<R01>0.0457533151</R01>
+					<R02>-0.0737915337</R02>
 					<R10>-0</R10>
-					<R11>0.477128983</R11>
-					<R12>0.878833354</R12>
-					<R20>0.16962418</R20>
-					<R21>0.866098046</R21>
-					<R22>-0.470214784</R22>
+					<R11>0.849889636</R11>
+					<R12>0.526961029</R12>
+					<R20>0.0868248567</R20>
+					<R21>0.524971068</R21>
+					<R22>-0.846679986</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>787.280457</X>
-					<Y>-41.4935913</Y>
-					<Z>-1057.46631</Z>
+					<X>780.306519</X>
+					<Y>8.30122185</Y>
+					<Z>-1137.47986</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -38468,8 +38468,7 @@ local function onNotifyPlayer(cameraTarget,freeze)
 	
 	if freeze then
 		
-		
-		local cameraOffset = Vector3.new(0, 0, -30)
+		local cameraOffset = Vector3.new(0, 0, -15)
 
 		if camera.CameraType ~= Enum.CameraType.Scriptable then
 			camera.CameraType = Enum.CameraType.Scriptable
