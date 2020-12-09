@@ -1,7 +1,7 @@
 local module = {
     buffer = 0,
-    singleScene = true,
-    -- singleScene = false,
+    -- singleScene = true,
+    singleScene = false,
     -- 
     entered = {value = false},
     baseWallHeight = 16,
@@ -65,7 +65,12 @@ module.characters = {
 
     fancyDudeFromFrance01 = {
         displayName = "fancyDudeFromFrance01",
-        decalId = 'rbxassetid://5991276655',
+        decalId = '5991276655',
+        backgroundColorIdx = 1
+    },
+    goat01 = {
+        displayName = "Goat",
+        decalId = '6063417478',
         backgroundColorIdx = 1
     },
     robby01 = {

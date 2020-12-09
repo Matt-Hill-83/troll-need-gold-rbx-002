@@ -9,7 +9,6 @@ local DropBox = require(Sss.Source.DropBox.DropBox)
 local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
--- local Theater = require(Sss.Source.Theater.Theater)
 
 local module = {}
 
@@ -207,8 +206,7 @@ function module.addScenes(props)
                 local ReplicatedStorage = game:GetService("ReplicatedStorage")
                 local remoteEvent = ReplicatedStorage:WaitForChild(
                                         "FreezeCamera1")
-                -- local cameraPath1 = Utils.getFirstDescendantByName(clonedScene,
-                --                                                     "WallTemplate")
+
                 local cameraPath1 = Utils.getFirstDescendantByName(clonedScene,
                                                                    "ScreenCameraPath1")
                 local cameraPath2 = Utils.getFirstDescendantByName(clonedScene,
@@ -226,14 +224,14 @@ function module.addScenes(props)
                     if player then
                         unHideWall(clonedScene)
                         currentPlayer = player
-                        sgui.Enabled = true
+                        player.PlayerGui.SceneDialogGui.Enabled = true
                         return
                     end
                 end
 
                 if currentPlayer then
-                    sgui.Enabled = false
-                    -- hideWall(clonedScene)
+                    currentPlayer.PlayerGui.SceneDialogGui.Enabled = false
+                    hideWall(clonedScene)
                     currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
                         Constants.walkSpeed
                     remoteEvent:FireClient(currentPlayer, cameraPath1,
@@ -310,16 +308,6 @@ function module.addScenes(props)
         Buttons.doFrameStuff(props2)
 
         hideWall(clonedScene)
-
-        local theaterProps = {
-            sceneFolder = sceneFolder,
-            sceneIndex = sceneIndex,
-            questIndex = questIndex,
-            hideWall = hideWall,
-            unHideWall = unHideWall
-        }
-        -- set up Theater
-        -- Theater.configTheater(theaterProps)
 
     end
     sceneTemplateModel:Destroy()
