@@ -238,7 +238,7 @@ function module.addScenes(props)
                             }
 
                         -- TODO: connect this to page buttons
-                        -- renderScreenDialog(charProps)
+                        renderScreenDialog(charProps)
 
                         return
                     end
