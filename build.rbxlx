@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>785.910522</X>
-					<Y>-35.9293785</Y>
-					<Z>-1014.10645</Z>
-					<R00>0.995476782</R00>
-					<R01>0.00246416242</R01>
-					<R02>-0.0949743614</R02>
-					<R10>2.32830699e-10</R10>
-					<R11>0.99966377</R11>
-					<R12>0.0259368252</R12>
-					<R20>0.0950063318</R20>
-					<R21>-0.0258195065</R21>
-					<R22>0.995141804</R22>
+					<X>816.825134</X>
+					<Y>-3.39234257</Y>
+					<Z>-1137.5354</Z>
+					<R00>-0.720808327</R00>
+					<R01>-0.217957973</R01>
+					<R02>0.657973945</R02>
+					<R10>-0</R10>
+					<R11>0.949273229</R11>
+					<R12>0.314452678</R12>
+					<R20>-0.693134427</R20>
+					<R21>0.226660103</R21>
+					<R22>-0.684244037</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>788</X>
-					<Y>-36.5</Y>
-					<Z>-1036</Z>
+					<X>815.508911</X>
+					<Y>-4.02137947</Y>
+					<Z>-1136.16663</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -14569,7 +14569,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 													<R21>0</R21>
 													<R22>1</R22>
 												</CoordinateFrame>
-												<bool name="CanCollide">true</bool>
+												<bool name="CanCollide">false</bool>
 												<bool name="CastShadow">true</bool>
 												<int name="CollisionGroupId">0</int>
 												<Color3uint8 name="Color3uint8">4278815183</Color3uint8>
@@ -14687,7 +14687,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 													<R21>0</R21>
 													<R22>1</R22>
 												</CoordinateFrame>
-												<bool name="CanCollide">true</bool>
+												<bool name="CanCollide">false</bool>
 												<bool name="CastShadow">true</bool>
 												<int name="CollisionGroupId">0</int>
 												<Color3uint8 name="Color3uint8">4278815183</Color3uint8>
@@ -14805,7 +14805,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 													<R21>0</R21>
 													<R22>-2.89637683e-08</R22>
 												</CoordinateFrame>
-												<bool name="CanCollide">true</bool>
+												<bool name="CanCollide">false</bool>
 												<bool name="CastShadow">true</bool>
 												<int name="CollisionGroupId">0</int>
 												<Color3uint8 name="Color3uint8">4278815183</Color3uint8>
@@ -14923,7 +14923,7 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 													<R21>0</R21>
 													<R22>-2.89637683e-08</R22>
 												</CoordinateFrame>
-												<bool name="CanCollide">true</bool>
+												<bool name="CanCollide">false</bool>
 												<bool name="CastShadow">true</bool>
 												<int name="CollisionGroupId">0</int>
 												<Color3uint8 name="Color3uint8">4278815183</Color3uint8>
@@ -38418,9 +38418,10 @@ function addRemoteObjects()
 
         local desiredPadding = 12
         local wallWidth = 1
-        local wallHeight = 24
+        local wallHeight = Constants.questWallHeight
 
-        local sceneHeight = 50
+        local sceneHeight = Constants.sceneHeight
+
         local wallSize = Vector3.new(wallWidth, wallHeight, wallWidth)
         local gridPadding = desiredPadding + wallWidth * 2
 
@@ -38856,7 +38857,6 @@ function configPlayers()
     local Players = game:GetService("Players")
     Players.RespawnTime = 0
 
-
     local function onCharacterAdded(character)
         character:WaitForChild("Humanoid").WalkSpeed = 30
     end
@@ -38866,10 +38866,6 @@ function configPlayers()
     end
 
     Players.PlayerAdded:Connect(onPlayerAdded)
-
-    -- local Players = game:GetService("Players")
-
-    -- Players.PlayerAdded:Connect(onPlayerAdded2)
 
 end
 
@@ -38919,13 +38915,17 @@ function setVisibility()
     Utils.setItemAndChildrenPropsByName({
         name = "BaseWalls",
         -- props = {Transparency = 0.9, CanCollide = false, Anchored = true}
-        props = {Transparency = 0.9, CanCollide = true, Anchored = true}
+        props = {Transparency = 0.6, CanCollide = true, Anchored = true}
     })
 
     Utils.setItemAndChildrenPropsByName({
         name = "BridgeWalls",
-        props = {Transparency = 0.9, CanCollide = true, Anchored = true}
+        props = {Transparency = 0.6, CanCollide = true, Anchored = true}
     })
+
+    Utils.setWallHeightbyParentModelName({name = "BridgeWalls", height = 4})
+
+    Utils.setWallHeightbyParentModelName({name = "BaseWalls", height = 4})
 
 end
 function module.configGame()
@@ -39863,7 +39863,7 @@ function getFirstDescendantByName(parent, name)
     end
 end
 
-function module.getDescendantsByName(parent, name)
+function getDescendantsByName(parent, name)
     local items = parent:GetDescendants()
 
     local output = {}
@@ -39925,6 +39925,39 @@ function hideItemAndChildren(props)
     for i, item in ipairs(children) do hideItem(item, hide) end
 end
 
+function sizeWalls(props)
+    local parent = props.item
+    local height = props.height
+
+    local children = parent:GetDescendants()
+    for i, item in ipairs(children) do
+        if item:isA("Part") then item.CanCollide = false end
+    end
+    for i, item in ipairs(children) do
+        if item:isA("Part") then
+            local posY = item.Position.Y - item.Size.Y / 2
+            local newPosY = posY + (height / 2)
+            item.Size = Vector3.new(item.Size.X, height, item.Size.Z)
+            item.Position = Vector3.new(item.Position.X, newPosY,
+                                        item.Position.Z)
+
+        end
+    end
+    for i, item in ipairs(children) do
+        if item:isA("Part") then
+            print('');
+            print('');
+            print('item.Name' .. ' - start');
+            print(item.Name);
+
+            item.CanCollide = true
+            item.Anchored = true
+            print('item.Size' .. ' - start');
+            print(item.Size);
+        end
+    end
+end
+
 function module.hideItemAndChildrenByName(props)
     local name = props.name
     local hide = props.hide
@@ -39932,6 +39965,20 @@ function module.hideItemAndChildrenByName(props)
     local myStuff = workspace:FindFirstChild("MyStuff")
     local item = getFirstDescendantByName(myStuff, name)
     hideItemAndChildren({item = item, hide = hide})
+end
+
+function module.setWallHeightbyParentModelName(props)
+    local name = props.name
+    local height = props.height
+
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    -- local item = getFirstDescendantByName(myStuff, name)
+    local items = getDescendantsByName(myStuff, name)
+
+    for i, item in ipairs(items) do
+        sizeWalls({item = item, height = height})
+        -- 
+    end
 end
 
 function module.setItemAndChildrenPropsByName(myProps)
@@ -40159,6 +40206,7 @@ module.setMaterialPebble = setMaterialPebble
 module.tableToString = tableToString
 module.hideItemAndChildren = hideItemAndChildren
 module.mergeTables = mergeTables
+module.getDescendantsByName = getDescendantsByName
 
 return module
 ]]></ProtectedString>
@@ -41222,7 +41270,9 @@ return module
     -- 
     entered = {value = false},
     baseWallHeight = 16,
-    walkSpeed = 16
+    walkSpeed = 16,
+    questWallHeight = 4,
+    sceneHeight = 50
     -- 
 }
 
@@ -42332,8 +42382,8 @@ function module.addTeleporters(props)
             CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0)) *
             CFrame.Angles(0, math.rad(90), 0)
     skyBoxTeleporter.PrimaryPart.Anchored = true
-    skyBoxTeleporter.Name = parent.Name .. "-sky- " .. sceneIndex
-    thisTeleporter.Name = parent.Name .. "-local- " .. sceneIndex
+    skyBoxTeleporter.Name = "teleporter" .. "-sky- " .. sceneIndex
+    thisTeleporter.Name = "teleporter" .. "-local- " .. sceneIndex
 
     if (isStartScene or isEndScene) then
         if isStartScene then
@@ -42570,25 +42620,6 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-			</Item>
-			<Item class="ModuleScript" referent="RBX3d1f2a5513f3405ebcb2aea9c42b503b">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">test copy</string>
-					<string name="ScriptGuid">{79b63365-8904-4494-b4e7-296707cc4f13}</string>
-					<ProtectedString name="Source"><![CDATA[local module = {}
-
-function module.func001()
-    -- 
-end
-
-return module
-
-]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
 			</Item>
 		</Item>
 		<Item class="Script" referent="RBXf3f6af24ae8e4a3c882de8fbb82176aa">

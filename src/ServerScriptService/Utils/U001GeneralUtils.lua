@@ -15,7 +15,7 @@ function getFirstDescendantByName(parent, name)
     end
 end
 
-function module.getDescendantsByName(parent, name)
+function getDescendantsByName(parent, name)
     local items = parent:GetDescendants()
 
     local output = {}
@@ -124,8 +124,13 @@ function module.setWallHeightbyParentModelName(props)
     local height = props.height
 
     local myStuff = workspace:FindFirstChild("MyStuff")
-    local item = getFirstDescendantByName(myStuff, name)
-    sizeWalls({item = item, height = height})
+    -- local item = getFirstDescendantByName(myStuff, name)
+    local items = getDescendantsByName(myStuff, name)
+
+    for i, item in ipairs(items) do
+        sizeWalls({item = item, height = height})
+        -- 
+    end
 end
 
 function module.setItemAndChildrenPropsByName(myProps)
@@ -353,5 +358,6 @@ module.setMaterialPebble = setMaterialPebble
 module.tableToString = tableToString
 module.hideItemAndChildren = hideItemAndChildren
 module.mergeTables = mergeTables
+module.getDescendantsByName = getDescendantsByName
 
 return module

@@ -72,9 +72,9 @@ function setVisibility()
         props = {Transparency = 0.6, CanCollide = true, Anchored = true}
     })
 
-    -- Utils.setWallHeightbyParentModelName({name = "BridgeWalls", height = 4})
+    Utils.setWallHeightbyParentModelName({name = "BridgeWalls", height = 2})
 
-    Utils.setWallHeightbyParentModelName({name = "BaseWalls", height = 4})
+    Utils.setWallHeightbyParentModelName({name = "BaseWalls", height = 2})
 
 end
 function module.configGame()
