@@ -104,6 +104,33 @@ function sizeWalls(props)
     end
 end
 
+function sizeWalls2(props)
+    local items = props.items
+    local height = props.height
+
+    -- local children = parent:GetDescendants()
+    for i, item in ipairs(items) do
+        if item:isA("Part") then item.CanCollide = false end
+    end
+    for i, item in ipairs(items) do
+        if item:isA("Part") then
+            local posY = item.Position.Y - item.Size.Y / 2
+            local newPosY = posY + (height / 2)
+            item.Size = Vector3.new(item.Size.X, height, item.Size.Z)
+            item.Position = Vector3.new(item.Position.X, newPosY,
+                                        item.Position.Z)
+
+        end
+    end
+    for i, item in ipairs(items) do
+        if item:isA("Part") then
+
+            item.CanCollide = true
+            item.Anchored = true
+        end
+    end
+end
+
 function module.hideItemAndChildrenByName(props)
     local name = props.name
     local hide = props.hide
@@ -111,6 +138,14 @@ function module.hideItemAndChildrenByName(props)
     local myStuff = workspace:FindFirstChild("MyStuff")
     local item = getFirstDescendantByName(myStuff, name)
     hideItemAndChildren({item = item, hide = hide})
+end
+
+function module.setWallHeightByList(props)
+    local items = props.items
+    local height = props.height
+
+    sizeWalls2({items = items, height = height})
+
 end
 
 function module.setWallHeightbyParentModelName(props)
