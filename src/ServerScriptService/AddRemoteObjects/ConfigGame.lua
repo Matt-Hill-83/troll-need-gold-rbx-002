@@ -32,7 +32,6 @@ function setVisibility()
                 item = item,
                 props = {Transparency = 1, CanCollide = false, Anchored = true}
             })
-
     end
 
     local itemsToHideAtRuntine = {'QuestsOrigin', 'TemplatesPedestal'}
