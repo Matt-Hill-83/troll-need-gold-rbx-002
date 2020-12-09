@@ -6,7 +6,6 @@ function configPlayers()
     local Players = game:GetService("Players")
     Players.RespawnTime = 0
 
-
     local function onCharacterAdded(character)
         character:WaitForChild("Humanoid").WalkSpeed = 30
     end
@@ -16,10 +15,6 @@ function configPlayers()
     end
 
     Players.PlayerAdded:Connect(onPlayerAdded)
-
-    -- local Players = game:GetService("Players")
-
-    -- Players.PlayerAdded:Connect(onPlayerAdded2)
 
 end
 
@@ -69,13 +64,17 @@ function setVisibility()
     Utils.setItemAndChildrenPropsByName({
         name = "BaseWalls",
         -- props = {Transparency = 0.9, CanCollide = false, Anchored = true}
-        props = {Transparency = 0.9, CanCollide = true, Anchored = true}
+        props = {Transparency = 0.6, CanCollide = true, Anchored = true}
     })
 
     Utils.setItemAndChildrenPropsByName({
         name = "BridgeWalls",
-        props = {Transparency = 0.9, CanCollide = true, Anchored = true}
+        props = {Transparency = 0.6, CanCollide = true, Anchored = true}
     })
+
+    -- Utils.setWallHeightbyParentModelName({name = "BridgeWalls", height = 4})
+
+    Utils.setWallHeightbyParentModelName({name = "BaseWalls", height = 4})
 
 end
 function module.configGame()

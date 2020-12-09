@@ -72,8 +72,8 @@ function module.addTeleporters(props)
             CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0)) *
             CFrame.Angles(0, math.rad(90), 0)
     skyBoxTeleporter.PrimaryPart.Anchored = true
-    skyBoxTeleporter.Name = parent.Name .. "-sky- " .. sceneIndex
-    thisTeleporter.Name = parent.Name .. "-local- " .. sceneIndex
+    skyBoxTeleporter.Name = "teleporter" .. "-sky- " .. sceneIndex
+    thisTeleporter.Name = "teleporter" .. "-local- " .. sceneIndex
 
     if (isStartScene or isEndScene) then
         if isStartScene then

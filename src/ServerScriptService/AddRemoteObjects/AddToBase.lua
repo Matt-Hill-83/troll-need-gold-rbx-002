@@ -101,9 +101,10 @@ function addRemoteObjects()
 
         local desiredPadding = 12
         local wallWidth = 1
-        local wallHeight = 24
+        local wallHeight = Constants.questWallHeight
 
-        local sceneHeight = 50
+        local sceneHeight = Constants.sceneHeight
+
         local wallSize = Vector3.new(wallWidth, wallHeight, wallWidth)
         local gridPadding = desiredPadding + wallWidth * 2
 
