@@ -97,15 +97,9 @@ function sizeWalls(props)
     end
     for i, item in ipairs(children) do
         if item:isA("Part") then
-            print('');
-            print('');
-            print('item.Name' .. ' - start');
-            print(item.Name);
 
             item.CanCollide = true
             item.Anchored = true
-            print('item.Size' .. ' - start');
-            print(item.Size);
         end
     end
 end

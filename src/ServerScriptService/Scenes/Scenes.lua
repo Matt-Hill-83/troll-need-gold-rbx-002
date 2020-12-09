@@ -203,8 +203,12 @@ function module.addScenes(props)
                 local ReplicatedStorage = game:GetService("ReplicatedStorage")
                 local remoteEvent = ReplicatedStorage:WaitForChild(
                                         "FreezeCamera1")
-                local cameraTarget = Utils.getFirstDescendantByName(clonedScene,
-                                                                    "WallTemplate")
+                -- local cameraPath1 = Utils.getFirstDescendantByName(clonedScene,
+                --                                                     "WallTemplate")
+                local cameraPath1 = Utils.getFirstDescendantByName(clonedScene,
+                                                                   "ScreenCameraPath1")
+                local cameraPath2 = Utils.getFirstDescendantByName(clonedScene,
+                                                                   "ScreenCameraPath2")
 
                 local humanoid = seat.Occupant
                 if humanoid then
@@ -212,7 +216,8 @@ function module.addScenes(props)
                     character:WaitForChild("Humanoid").WalkSpeed = 0
 
                     local player = Players:GetPlayerFromCharacter(character)
-                    remoteEvent:FireClient(player, cameraTarget, true)
+                    remoteEvent:FireClient(player, cameraPath1, cameraPath2,
+                                           true)
 
                     if player then
                         unHideWall(clonedScene)
@@ -225,7 +230,8 @@ function module.addScenes(props)
                     hideWall(clonedScene)
                     currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
                         Constants.walkSpeed
-                    remoteEvent:FireClient(currentPlayer, cameraTarget, false)
+                    remoteEvent:FireClient(currentPlayer, cameraPath1,
+                                           cameraPath2, false)
                     currentPlayer = nil
                 end
             end)
