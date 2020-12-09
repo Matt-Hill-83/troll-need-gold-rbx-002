@@ -222,7 +222,7 @@ module.characters = {
     luke01 = {
         displayName = "Luke",
         decalId = '5998961085',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     hudson01 = {
         displayName = "Hudson",
