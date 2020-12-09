@@ -12,9 +12,16 @@ renderTexts = function(props)
     local dialogConfigs = props.dialogConfigs
     local sgui = props.sgui
 
-    local pixelsPerStud = 45
+    local viewportSize = workspace.CurrentCamera.ViewportSize
+    print('viewportSize' .. ' - start');
+    print(viewportSize);
+    print('viewportSize' .. ' - end');
+    local pixelsPerStud = 20
+    local rowGap = pixelsPerStud / 2
+    -- local pixelsPerStud = 45
     local paddingInPx = pixelsPerStud / 8
-    local fontHeight = pixelsPerStud * 41 / 45
+    local fontHeight = 20
+    -- local fontHeight = pixelsPerStud * 41 / 45
 
     -- sgui.SizingMode = "PixelsPerStud"
 
@@ -65,12 +72,14 @@ renderTexts = function(props)
             local outerLabelProps = {
                 Name = "Dialog-" .. i,
                 Position = UDim2.new(0, 0, 0, dialogY),
-                Size = UDim2.new(0, parentWidth, 0, height + 2 * paddingInPx),
+                Size = UDim2.new(1, 0, 0, height + 2 * paddingInPx),
+                -- Size = UDim2.new(0, parentWidth, 0, height + 2 * paddingInPx),
 
                 Text = "",
                 Font = font,
                 TextSize = fontHeight,
                 TextWrapped = true,
+                TextScaled = true,
                 TextXAlignment = Enum.TextXAlignment.Left,
                 TextYAlignment = Enum.TextYAlignment.Top,
                 BorderColor3 = Color3.fromRGB(99, 46, 99),
@@ -88,7 +97,8 @@ renderTexts = function(props)
                 Name = "Dialog-" .. i,
                 Text = text,
                 ZIndex = 2,
-                Size = UDim2.new(0, innerLabelWidth, 0, height),
+                -- Size = UDim2.new(0, innerLabelWidth, 0, height),
+                Size = UDim2.new(1, 0, 0, height),
                 Position = UDim2.new(0, paddingInPx, 0, paddingInPx),
                 BackgroundTransparency = 1,
                 RichText = true
@@ -96,7 +106,7 @@ renderTexts = function(props)
             Utils.mergeTables(innerLabel, innerLabelProps)
 
             local absoluteHeight = outerLabel.AbsoluteSize.Y
-            dialogY = dialogY + (absoluteHeight + 25)
+            dialogY = dialogY + (absoluteHeight + rowGap)
 
         end
     end

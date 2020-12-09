@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>791.499084</X>
-					<Y>10.5059166</Y>
-					<Z>-1063.50049</Z>
-					<R00>-1</R00>
-					<R01>0</R01>
-					<R02>-0</R02>
-					<R10>-0</R10>
-					<R11>0</R11>
-					<R12>1</R12>
-					<R20>0</R20>
-					<R21>1</R21>
-					<R22>-0</R22>
+					<X>856.681763</X>
+					<Y>-28.2226982</Y>
+					<Z>-958.660278</Z>
+					<R00>-0.723637462</R00>
+					<R01>-0.185468554</R01>
+					<R02>0.664793432</R02>
+					<R10>1.49011612e-08</R10>
+					<R11>0.96321708</R11>
+					<R12>0.268724799</R12>
+					<R20>-0.690180302</R20>
+					<R21>0.194459349</R21>
+					<R22>-0.697019935</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>791.499084</X>
-					<Y>-29.4941216</Y>
-					<Z>-1063.50049</Z>
+					<X>855.352173</X>
+					<Y>-28.760149</Y>
+					<Z>-957.266235</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -24850,16 +24850,16 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<token name="BottomSurface">4</token>
 										<token name="BottomSurfaceInput">0</token>
 										<CoordinateFrame name="CFrame">
-											<X>794.086487</X>
+											<X>794.086548</X>
 											<Y>-27.9839363</Y>
-											<Z>-1041.62512</Z>
+											<Z>-1041.62524</Z>
 											<R00>0.999999881</R00>
-											<R01>2.52250051e-18</R01>
-											<R02>-3.29318186e-06</R02>
-											<R10>9.44091012e-19</R10>
+											<R01>0</R01>
+											<R02>-3.29315799e-06</R02>
+											<R10>0</R10>
 											<R11>1</R11>
-											<R12>-3.46944695e-18</R12>
-											<R20>3.29313139e-06</R20>
+											<R12>0</R12>
+											<R20>3.2931548e-06</R20>
 											<R21>0</R21>
 											<R22>0.999999881</R22>
 										</CoordinateFrame>
@@ -25012,18 +25012,18 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 													<token name="BottomSurface">4</token>
 													<token name="BottomSurfaceInput">0</token>
 													<CoordinateFrame name="CFrame">
-														<X>797.962219</X>
-														<Y>-34.2555351</Y>
-														<Z>-1042.15417</Z>
-														<R00>1</R00>
-														<R01>4.38101465e-11</R01>
-														<R02>-1.59442607e-06</R02>
-														<R10>-4.3810091e-11</R10>
-														<R11>1</R11>
+														<X>780.962219</X>
+														<Y>-27.2555351</Y>
+														<Z>-1042.1543</Z>
+														<R00>0.999999046</R00>
+														<R01>4.38100771e-11</R01>
+														<R02>-1.59443164e-06</R02>
+														<R10>-4.38100702e-11</R10>
+														<R11>0.999999046</R11>
 														<R12>3.32336832e-11</R12>
-														<R20>1.59439605e-06</R20>
-														<R21>-3.32336138e-11</R21>
-														<R22>1</R22>
+														<R20>1.59438798e-06</R20>
+														<R21>-3.32335652e-11</R21>
+														<R22>0.999999523</R22>
 													</CoordinateFrame>
 													<bool name="CanCollide">false</bool>
 													<bool name="CastShadow">true</bool>
@@ -25182,80 +25182,41 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 														</Properties>
 													</Item>
 												</Item>
-												<Item class="Weld" referent="RBX493cef34a7ec40bd97c7a45ac31dbe86">
+												<Item class="Weld" referent="RBX943121657a5d408fa9d59b157ea24e8c">
 													<Properties>
 														<BinaryString name="AttributesSerialize"></BinaryString>
 														<CoordinateFrame name="C0">
 															<X>0</X>
 															<Y>0</Y>
 															<Z>0.5</Z>
-															<R00>1</R00>
-															<R01>-9.46043158e-19</R01>
+															<R00>0.999999523</R00>
+															<R01>-9.45705668e-19</R01>
 															<R02>0</R02>
-															<R10>2.52340379e-18</R10>
-															<R11>1</R11>
-															<R12>0</R12>
-															<R20>-1.77351467e-11</R20>
-															<R21>0</R21>
-															<R22>1</R22>
+															<R10>-2.17623874e-17</R10>
+															<R11>0.999999523</R11>
+															<R12>1.73472348e-17</R12>
+															<R20>-3.63797881e-11</R20>
+															<R21>-3.46944695e-18</R21>
+															<R22>0.999999762</R22>
 														</CoordinateFrame>
 														<CoordinateFrame name="C1">
-															<X>3.87573242</X>
-															<Y>-6.27159882</Y>
+															<X>-13.1243286</X>
+															<Y>0.728401184</Y>
 															<Z>-0.0290527344</Z>
-															<R00>0.999999881</R00>
-															<R01>4.38100251e-11</R01>
-															<R02>1.69875329e-06</R02>
+															<R00>0.999999642</R00>
+															<R01>4.38100146e-11</R01>
+															<R02>1.69876228e-06</R02>
 															<R10>-4.3810091e-11</R10>
-															<R11>1</R11>
-															<R12>3.32336832e-11</R12>
-															<R20>-1.69875602e-06</R20>
-															<R21>-3.3233756e-11</R21>
+															<R11>0.999999523</R11>
+															<R12>3.32336936e-11</R12>
+															<R20>-1.69876512e-06</R20>
+															<R21>-3.32337491e-11</R21>
 															<R22>0.999999881</R22>
 														</CoordinateFrame>
 														<bool name="Enabled">true</bool>
 														<string name="Name">Weld</string>
 														<Ref name="Part0">RBX598e68435feb4d2e9f0aae1827aba354</Ref>
 														<Ref name="Part1">RBX1df64d7ef9b74b9abd91982517212af3</Ref>
-														<int64 name="SourceAssetId">-1</int64>
-														<BinaryString name="Tags"></BinaryString>
-													</Properties>
-												</Item>
-												<Item class="Weld" referent="RBXeac075a215924313bc6429a99ef7663c">
-													<Properties>
-														<BinaryString name="AttributesSerialize"></BinaryString>
-														<CoordinateFrame name="C0">
-															<X>0</X>
-															<Y>0.75</Y>
-															<Z>0</Z>
-															<R00>1</R00>
-															<R01>0</R01>
-															<R02>-9.46043158e-19</R02>
-															<R10>2.52340379e-18</R10>
-															<R11>0</R11>
-															<R12>1</R12>
-															<R20>-1.77351467e-11</R20>
-															<R21>-1</R21>
-															<R22>0</R22>
-														</CoordinateFrame>
-														<CoordinateFrame name="C1">
-															<X>4.46240234</X>
-															<Y>-6.50553513</Y>
-															<Z>-0.103637695</Z>
-															<R00>1</R00>
-															<R01>-4.47222419e-08</R01>
-															<R02>4.38102367e-11</R02>
-															<R10>-4.38102402e-11</R10>
-															<R11>-3.32335687e-11</R11>
-															<R12>1</R12>
-															<R20>-4.47281536e-08</R20>
-															<R21>-1</R21>
-															<R22>-3.32335721e-11</R22>
-														</CoordinateFrame>
-														<bool name="Enabled">true</bool>
-														<string name="Name">Weld</string>
-														<Ref name="Part0">RBX598e68435feb4d2e9f0aae1827aba354</Ref>
-														<Ref name="Part1">RBXf0ca8dd9d47241beb2ed4c76442bfa38</Ref>
 														<int64 name="SourceAssetId">-1</int64>
 														<BinaryString name="Tags"></BinaryString>
 													</Properties>
@@ -25274,18 +25235,18 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 													<token name="BottomSurface">4</token>
 													<token name="BottomSurfaceInput">0</token>
 													<CoordinateFrame name="CFrame">
-														<X>801.55249</X>
-														<Y>-34.1749763</Y>
-														<Z>-1042.15515</Z>
-														<R00>0.999999404</R00>
-														<R01>8.70885135e-12</R01>
-														<R02>-1.49015841e-06</R02>
-														<R10>-8.70884267e-12</R10>
-														<R11>0.999999523</R11>
-														<R12>6.59580507e-12</R12>
-														<R20>1.49010202e-06</R20>
-														<R21>-6.59579032e-12</R21>
-														<R22>0.999999642</R22>
+														<X>780.802612</X>
+														<Y>-28.6749916</Y>
+														<Z>-1042.1554</Z>
+														<R00>0.999999762</R00>
+														<R01>8.70882359e-12</R01>
+														<R02>-1.49011976e-06</R02>
+														<R10>-8.70885308e-12</R10>
+														<R11>0.999995708</R11>
+														<R12>6.59578902e-12</R12>
+														<R20>1.49011646e-06</R20>
+														<R21>-6.59575953e-12</R21>
+														<R22>0.999997735</R22>
 													</CoordinateFrame>
 													<bool name="CanCollide">false</bool>
 													<bool name="CastShadow">true</bool>
@@ -25444,36 +25405,36 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 														</Properties>
 													</Item>
 												</Item>
-												<Item class="Weld" referent="RBX76391dacee8c4af8936340df1b1c1500">
+												<Item class="Weld" referent="RBXe63b40a2f1d34eaa8e9fde31b05c9047">
 													<Properties>
 														<BinaryString name="AttributesSerialize"></BinaryString>
 														<CoordinateFrame name="C0">
-															<X>6.10351562e-05</X>
+															<X>1.79498291</X>
 															<Y>0</Y>
-															<Z>0.5</Z>
-															<R00>0.999999762</R00>
-															<R01>-2.87608217e-19</R01>
-															<R02>0</R02>
-															<R10>-2.02233169e-18</R10>
-															<R11>0.999999762</R11>
-															<R12>1.30104261e-18</R12>
-															<R20>-2.72848411e-12</R20>
-															<R21>0</R21>
-															<R22>0.999999881</R22>
+															<Z>0</Z>
+															<R00>-2.12595254e-11</R00>
+															<R01>2.8749585e-19</R01>
+															<R02>1</R02>
+															<R10>1.17094306e-17</R10>
+															<R11>-1</R11>
+															<R12>2.8749554e-19</R12>
+															<R20>1</R20>
+															<R21>1.17094306e-17</R21>
+															<R22>2.12595254e-11</R22>
 														</CoordinateFrame>
 														<CoordinateFrame name="C1">
-															<X>7.46606445</X>
-															<Y>-6.19104004</Y>
-															<Z>-0.0300292969</Z>
-															<R00>0.999999762</R00>
-															<R01>8.7088314e-12</R01>
-															<R02>1.80302595e-06</R02>
-															<R10>-8.70884528e-12</R10>
-															<R11>0.999999762</R11>
-															<R12>6.5958094e-12</R12>
-															<R20>-1.80302845e-06</R20>
-															<R21>-6.59582285e-12</R21>
-															<R22>0.999999881</R22>
+															<X>-11.4889526</X>
+															<Y>-0.691055298</Y>
+															<Z>-0.530151367</Z>
+															<R00>1.80301015e-06</R00>
+															<R01>-8.70880278e-12</R01>
+															<R02>0.999999881</R02>
+															<R10>6.59580073e-12</R10>
+															<R11>-0.999995708</R11>
+															<R12>-8.70885308e-12</R12>
+															<R20>0.999997854</R20>
+															<R21>6.59580073e-12</R21>
+															<R22>-1.80301686e-06</R22>
 														</CoordinateFrame>
 														<bool name="Enabled">true</bool>
 														<string name="Name">Weld</string>
@@ -25497,16 +25458,16 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 													<token name="BottomSurface">4</token>
 													<token name="BottomSurfaceInput">0</token>
 													<CoordinateFrame name="CFrame">
-														<X>800.940796</X>
+														<X>800.940857</X>
 														<Y>-19.7546387</Y>
-														<Z>-1042.15771</Z>
+														<Z>-1042.15784</Z>
 														<R00>0.999999881</R00>
-														<R01>-8.83922362e-12</R01>
-														<R02>-1.50505753e-06</R02>
-														<R10>8.83921668e-12</R10>
+														<R01>-8.83922623e-12</R01>
+														<R02>-1.50503365e-06</R02>
+														<R10>8.83921582e-12</R10>
 														<R11>1</R11>
-														<R12>-6.72516947e-12</R12>
-														<R20>1.50500159e-06</R20>
+														<R12>-6.725166e-12</R12>
+														<R20>1.50502501e-06</R20>
 														<R21>6.72515169e-12</R21>
 														<R22>0.999999881</R22>
 													</CoordinateFrame>
@@ -40396,18 +40357,18 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>827.948853</X>
-						<Y>-45.3300018</Y>
-						<Z>-950.663391</Z>
+						<X>819.719482</X>
+						<Y>-44.4309959</Y>
+						<Z>-951.153381</Z>
 						<R00>-1</R00>
-						<R01>-8.82471804e-11</R01>
-						<R02>1.10468898e-06</R02>
-						<R10>8.82473053e-11</R10>
+						<R01>1.76494611e-10</R01>
+						<R02>2.38742381e-12</R02>
+						<R10>1.76494611e-10</R10>
 						<R11>1</R11>
-						<R12>1.14543264e-10</R12>
-						<R20>-1.10469955e-06</R20>
-						<R21>-1.14543361e-10</R21>
-						<R22>-0.999992549</R22>
+						<R12>-2.29085667e-10</R12>
+						<R20>-2.38742359e-12</R20>
+						<R21>-2.29085667e-10</R21>
+						<R22>-1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
 					<bool name="CastShadow">true</bool>
@@ -40479,80 +40440,41 @@ end
 						<float name="Transparency">0</float>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBXc263093adea641c791769cedf11dcaf9">
+				<Item class="Weld" referent="RBXbaf148926e8e4f998cc13c7e9351cde5">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
 							<X>0</X>
 							<Y>-0.25</Y>
-							<Z>-6.10351562e-05</Z>
+							<Z>0</Z>
 							<R00>1</R00>
 							<R01>0</R01>
-							<R02>-1.63570003e-18</R02>
-							<R10>1.76494611e-10</R10>
+							<R02>-5.4692451e-22</R02>
+							<R10>5.4692451e-22</R10>
 							<R11>0</R11>
 							<R12>-1</R12>
-							<R20>2.38742359e-12</R20>
-							<R21>0.999992549</R21>
-							<R22>-2.29085667e-10</R22>
+							<R20>-2.16840434e-19</R20>
+							<R21>1</R21>
+							<R22>0</R22>
 						</CoordinateFrame>
 						<CoordinateFrame name="C1">
-							<X>-23.6712036</X>
-							<Y>0.5</Y>
-							<Z>9.09020996</Z>
+							<X>0.0999755859</X>
+							<Y>0.200000763</Y>
+							<Z>0.100036621</Z>
 							<R00>-1.00000954</R00>
-							<R01>-1.46999355e-07</R01>
-							<R02>-8.82481241e-11</R02>
-							<R10>8.82473053e-11</R10>
-							<R11>-1.14543264e-10</R11>
+							<R01>-1.25170709e-06</R01>
+							<R02>-1.76495998e-10</R02>
+							<R10>1.76494611e-10</R10>
+							<R11>-2.29085667e-10</R11>
 							<R12>-1</R12>
-							<R20>1.46999355e-07</R20>
+							<R20>1.25170709e-06</R20>
 							<R21>-1.00000954</R21>
-							<R22>1.14544367e-10</R22>
+							<R22>2.29088068e-10</R22>
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
 						<Ref name="Part0">RBX6f1e5550c2ec4ce993a20b3f569adca5</Ref>
-						<Ref name="Part1">RBX5d3c36d21ee2427d9b676ed57ad4b027</Ref>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="Weld" referent="RBXafb037df769d46a29ee39628571159ab">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<CoordinateFrame name="C0">
-							<X>0</X>
-							<Y>-0.25</Y>
-							<Z>-6.10351562e-05</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>-1.63570003e-18</R02>
-							<R10>1.76494611e-10</R10>
-							<R11>0</R11>
-							<R12>-1</R12>
-							<R20>2.38742359e-12</R20>
-							<R21>0.999992549</R21>
-							<R22>-2.29085667e-10</R22>
-						</CoordinateFrame>
-						<CoordinateFrame name="C1">
-							<X>-23.6712036</X>
-							<Y>0.5</Y>
-							<Z>9.09020996</Z>
-							<R00>-1.00000954</R00>
-							<R01>-1.46999355e-07</R01>
-							<R02>-8.82481241e-11</R02>
-							<R10>8.82473053e-11</R10>
-							<R11>-1.14543264e-10</R11>
-							<R12>-1</R12>
-							<R20>1.46999355e-07</R20>
-							<R21>-1.00000954</R21>
-							<R22>1.14544367e-10</R22>
-						</CoordinateFrame>
-						<bool name="Enabled">true</bool>
-						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX6f1e5550c2ec4ce993a20b3f569adca5</Ref>
-						<Ref name="Part1">RBXc51e2714903846768940fdd062c039b8</Ref>
+						<Ref name="Part1">RBXf2f567726c2443c2bb19ab37a6679ad4</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -41295,7 +41217,7 @@ return module
 			<string name="Name">StarterGui</string>
 			<bool name="ResetPlayerGuiOnSpawn">true</bool>
 			<token name="ScreenOrientation">2</token>
-			<bool name="ShowDevelopmentGui">true</bool>
+			<bool name="ShowDevelopmentGui">false</bool>
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
@@ -41338,7 +41260,7 @@ return module
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<bool name="AutoLocalize">true</bool>
 				<int name="DisplayOrder">0</int>
-				<bool name="Enabled">false</bool>
+				<bool name="Enabled">true</bool>
 				<bool name="IgnoreGuiInset">false</bool>
 				<string name="Name">SceneDialogGui</string>
 				<bool name="ResetOnSpawn">true</bool>
@@ -41347,82 +41269,6 @@ return module
 				<BinaryString name="Tags"></BinaryString>
 				<token name="ZIndexBehavior">0</token>
 			</Properties>
-			<Item class="TextLabel" referent="RBX7d841620399942d5a07e1921e0bd9ddb">
-				<Properties>
-					<bool name="Active">false</bool>
-					<Vector2 name="AnchorPoint">
-						<X>0</X>
-						<Y>0</Y>
-					</Vector2>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<bool name="AutoLocalize">true</bool>
-					<token name="AutomaticSize">0</token>
-					<Color3 name="BackgroundColor3">
-						<R>1</R>
-						<G>1</G>
-						<B>1</B>
-					</Color3>
-					<float name="BackgroundTransparency">0</float>
-					<Color3 name="BorderColor3">
-						<R>0.105882362</R>
-						<G>0.164705887</G>
-						<B>0.207843155</B>
-					</Color3>
-					<token name="BorderMode">0</token>
-					<int name="BorderSizePixel">1</int>
-					<bool name="ClipsDescendants">false</bool>
-					<bool name="Draggable">false</bool>
-					<token name="Font">3</token>
-					<int name="LayoutOrder">0</int>
-					<float name="LineHeight">1</float>
-					<string name="Name">TextLabel</string>
-					<Ref name="NextSelectionDown">null</Ref>
-					<Ref name="NextSelectionLeft">null</Ref>
-					<Ref name="NextSelectionRight">null</Ref>
-					<Ref name="NextSelectionUp">null</Ref>
-					<UDim2 name="Position">
-						<XS>0</XS>
-						<XO>0</XO>
-						<YS>0</YS>
-						<YO>0</YO>
-					</UDim2>
-					<bool name="RichText">false</bool>
-					<Ref name="RootLocalizationTable">null</Ref>
-					<float name="Rotation">0</float>
-					<bool name="Selectable">false</bool>
-					<Ref name="SelectionImageObject">null</Ref>
-					<UDim2 name="Size">
-						<XS>0</XS>
-						<XO>200</XO>
-						<YS>0</YS>
-						<YO>50</YO>
-					</UDim2>
-					<token name="SizeConstraint">0</token>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-					<string name="Text">Label</string>
-					<Color3 name="TextColor3">
-						<R>0</R>
-						<G>0</G>
-						<B>0</B>
-					</Color3>
-					<bool name="TextScaled">false</bool>
-					<float name="TextSize">14</float>
-					<Color3 name="TextStrokeColor3">
-						<R>0</R>
-						<G>0</G>
-						<B>0</B>
-					</Color3>
-					<float name="TextStrokeTransparency">1</float>
-					<float name="TextTransparency">0</float>
-					<token name="TextTruncate">0</token>
-					<bool name="TextWrapped">false</bool>
-					<token name="TextXAlignment">2</token>
-					<token name="TextYAlignment">1</token>
-					<bool name="Visible">true</bool>
-					<int name="ZIndex">1</int>
-				</Properties>
-			</Item>
 			<Item class="ScrollingFrame" referent="RBX6e7cf28a46894e0299c561e458d4c96a">
 				<Properties>
 					<bool name="Active">false</bool>
@@ -41586,7 +41432,7 @@ return module
 							<G>0</G>
 							<B>0</B>
 						</Color3>
-						<bool name="TextScaled">false</bool>
+						<bool name="TextScaled">true</bool>
 						<float name="TextSize">41</float>
 						<Color3 name="TextStrokeColor3">
 							<R>0</R>
@@ -43094,32 +42940,15 @@ function setVisibility()
         props = {Transparency = 0.6, CanCollide = true, Anchored = true}
     })
 
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "BaseWallClones",
-    --     props = {Transparency = .4, CanCollide = true, Anchored = true}
-    --     -- props = {Transparency = 1, CanCollide = false, Anchored = true}
-    -- })
-
     Utils.setWallHeightbyParentModelName({name = "BaseWalls", height = 2})
 
     local tagBaseWallTransparent = collectionService:GetTagged(
                                        "BaseWallTransparent")
-    print('tagBaseWallTransparent' .. ' - start');
-    print(tagBaseWallTransparent);
-    print('tagBaseWallTransparent' .. ' - end');
-    Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 20})
+    Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 4})
     Utils.setPropsByTag({
         tag = "BaseWallTransparent",
-        props = {Transparency = 0}
+        props = {Transparency = 1}
     })
-
-    -- for i, item in ipairs(tagBaseWallTransparent) do
-    --     Utils.setItemAndChildrenPropsByInst(
-    --         {
-    --             item = item,
-    --             props = {Transparency = .4, CanCollide = false, Anchored = true}
-    --         })
-    -- end
 
 end
 function module.configGame()
@@ -44615,9 +44444,16 @@ renderTexts = function(props)
     local dialogConfigs = props.dialogConfigs
     local sgui = props.sgui
 
-    local pixelsPerStud = 45
+    local viewportSize = workspace.CurrentCamera.ViewportSize
+    print('viewportSize' .. ' - start');
+    print(viewportSize);
+    print('viewportSize' .. ' - end');
+    local pixelsPerStud = 20
+    local rowGap = pixelsPerStud / 2
+    -- local pixelsPerStud = 45
     local paddingInPx = pixelsPerStud / 8
-    local fontHeight = pixelsPerStud * 41 / 45
+    local fontHeight = 20
+    -- local fontHeight = pixelsPerStud * 41 / 45
 
     -- sgui.SizingMode = "PixelsPerStud"
 
@@ -44668,12 +44504,14 @@ renderTexts = function(props)
             local outerLabelProps = {
                 Name = "Dialog-" .. i,
                 Position = UDim2.new(0, 0, 0, dialogY),
-                Size = UDim2.new(0, parentWidth, 0, height + 2 * paddingInPx),
+                Size = UDim2.new(1, 0, 0, height + 2 * paddingInPx),
+                -- Size = UDim2.new(0, parentWidth, 0, height + 2 * paddingInPx),
 
                 Text = "",
                 Font = font,
                 TextSize = fontHeight,
                 TextWrapped = true,
+                TextScaled = true,
                 TextXAlignment = Enum.TextXAlignment.Left,
                 TextYAlignment = Enum.TextYAlignment.Top,
                 BorderColor3 = Color3.fromRGB(99, 46, 99),
@@ -44691,7 +44529,8 @@ renderTexts = function(props)
                 Name = "Dialog-" .. i,
                 Text = text,
                 ZIndex = 2,
-                Size = UDim2.new(0, innerLabelWidth, 0, height),
+                -- Size = UDim2.new(0, innerLabelWidth, 0, height),
+                Size = UDim2.new(1, 0, 0, height),
                 Position = UDim2.new(0, paddingInPx, 0, paddingInPx),
                 BackgroundTransparency = 1,
                 RichText = true
@@ -44699,7 +44538,7 @@ renderTexts = function(props)
             Utils.mergeTables(innerLabel, innerLabelProps)
 
             local absoluteHeight = outerLabel.AbsoluteSize.Y
-            dialogY = dialogY + (absoluteHeight + 25)
+            dialogY = dialogY + (absoluteHeight + rowGap)
 
         end
     end
@@ -46179,7 +46018,7 @@ function module.addScenes(props)
                         currentPlayer = player
                         local playerGui = player.PlayerGui.SceneDialogGui
 
-                        -- playerGui.Enabled = true
+                        playerGui.Enabled = true
 
                         local frameConfig = sceneConfig.frames[pageNum]
                         local charProps =
@@ -46190,7 +46029,6 @@ function module.addScenes(props)
                                 sgui = playerGui
                             }
 
-                        -- TODO: connect this to page buttons
                         renderScreenDialog(charProps)
 
                         return
@@ -46226,11 +46064,6 @@ function module.addScenes(props)
             local frameConfig2 = charProps.frameConfig
             local player = thisPlayer
 
-            print('player' .. ' - start');
-            print(player);
-            print('player' .. ' - end');
-            -- local player = charProps.player
-
             local sguiPlayer = player.PlayerGui.SceneDialogGui
             local dialogTemplate = Utils.getFirstDescendantByName(clonedScene2,
                                                                   "DialogTemplate")
@@ -46254,11 +46087,11 @@ function module.addScenes(props)
             local dialogTemplate = Utils.getFirstDescendantByName(clonedScene2,
                                                                   "DialogTemplate")
 
-            Dialog.renderDialog({
-                dialogConfigs = frameConfig2.dialogs,
-                dialogTemplate = dialogTemplate,
-                sgui = sgui2
-            })
+            -- Dialog.renderDialog({
+            --     dialogConfigs = frameConfig2.dialogs,
+            --     dialogTemplate = dialogTemplate,
+            --     sgui = sgui2
+            -- })
 
             if thisPlayer then
                 local sguiPlayer = thisPlayer.PlayerGui.SceneDialogGui

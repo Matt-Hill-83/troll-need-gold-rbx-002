@@ -226,7 +226,7 @@ function module.addScenes(props)
                         currentPlayer = player
                         local playerGui = player.PlayerGui.SceneDialogGui
 
-                        -- playerGui.Enabled = true
+                        playerGui.Enabled = true
 
                         local frameConfig = sceneConfig.frames[pageNum]
                         local charProps =
@@ -237,7 +237,6 @@ function module.addScenes(props)
                                 sgui = playerGui
                             }
 
-                        -- TODO: connect this to page buttons
                         renderScreenDialog(charProps)
 
                         return
@@ -273,11 +272,6 @@ function module.addScenes(props)
             local frameConfig2 = charProps.frameConfig
             local player = thisPlayer
 
-            print('player' .. ' - start');
-            print(player);
-            print('player' .. ' - end');
-            -- local player = charProps.player
-
             local sguiPlayer = player.PlayerGui.SceneDialogGui
             local dialogTemplate = Utils.getFirstDescendantByName(clonedScene2,
                                                                   "DialogTemplate")
@@ -301,11 +295,11 @@ function module.addScenes(props)
             local dialogTemplate = Utils.getFirstDescendantByName(clonedScene2,
                                                                   "DialogTemplate")
 
-            Dialog.renderDialog({
-                dialogConfigs = frameConfig2.dialogs,
-                dialogTemplate = dialogTemplate,
-                sgui = sgui2
-            })
+            -- Dialog.renderDialog({
+            --     dialogConfigs = frameConfig2.dialogs,
+            --     dialogTemplate = dialogTemplate,
+            --     sgui = sgui2
+            -- })
 
             if thisPlayer then
                 local sguiPlayer = thisPlayer.PlayerGui.SceneDialogGui

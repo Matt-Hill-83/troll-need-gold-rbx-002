@@ -87,32 +87,15 @@ function setVisibility()
         props = {Transparency = 0.6, CanCollide = true, Anchored = true}
     })
 
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "BaseWallClones",
-    --     props = {Transparency = .4, CanCollide = true, Anchored = true}
-    --     -- props = {Transparency = 1, CanCollide = false, Anchored = true}
-    -- })
-
     Utils.setWallHeightbyParentModelName({name = "BaseWalls", height = 2})
 
     local tagBaseWallTransparent = collectionService:GetTagged(
                                        "BaseWallTransparent")
-    print('tagBaseWallTransparent' .. ' - start');
-    print(tagBaseWallTransparent);
-    print('tagBaseWallTransparent' .. ' - end');
-    Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 20})
+    Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 4})
     Utils.setPropsByTag({
         tag = "BaseWallTransparent",
-        props = {Transparency = 0}
+        props = {Transparency = 1}
     })
-
-    -- for i, item in ipairs(tagBaseWallTransparent) do
-    --     Utils.setItemAndChildrenPropsByInst(
-    --         {
-    --             item = item,
-    --             props = {Transparency = .4, CanCollide = false, Anchored = true}
-    --         })
-    -- end
 
 end
 function module.configGame()
