@@ -251,23 +251,10 @@ function module.addScenes(props)
             clonedScene = clonedScene
         })
 
-        local frameConfig = sceneConfig.frames[pageNum]
-        local charProps = {
-            frameConfig = frameConfig,
-            clonedScene = clonedScene,
-            sceneFolder = sceneFolder
-        }
-
         function addCharactersToScene(charProps)
-            print('addCharactersToScene')
-
             Characters.addCharactersToScene(charProps)
             local clonedScene2 = charProps.clonedScene
             local frameConfig2 = charProps.frameConfig
-
-            print('clonedScene2.Name' .. ' - start');
-            print(clonedScene2.Name);
-            print('clonedScene2.Name' .. ' - end');
 
             local sgui2 = Utils.getFirstDescendantByName(clonedScene2,
                                                          "SurfaceGuiTemplate")
@@ -281,6 +268,13 @@ function module.addScenes(props)
                 sgui = sgui2
             })
         end
+
+        local frameConfig = sceneConfig.frames[pageNum]
+        local charProps = {
+            frameConfig = frameConfig,
+            clonedScene = clonedScene,
+            sceneFolder = sceneFolder
+        }
 
         addCharactersToScene(charProps)
 

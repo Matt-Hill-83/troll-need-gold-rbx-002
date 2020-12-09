@@ -33,8 +33,7 @@ function module.doFrameStuff(props)
             local newSceneProps = {
                 frameConfig = newFrameConfig,
                 clonedScene = clonedScene2,
-                sceneFolder = sceneFolder,
-                pageNum = pn.value
+                sceneFolder = sceneFolder
             }
 
             addCharactersToScene(newSceneProps)
