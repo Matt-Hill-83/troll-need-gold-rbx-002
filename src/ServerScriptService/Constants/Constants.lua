@@ -1,7 +1,7 @@
 local module = {
     buffer = 0,
-    -- singleScene = true,
-    singleScene = false,
+    singleScene = true,
+    -- singleScene = false,
     -- 
     entered = {value = false},
     baseWallHeight = 16,
@@ -146,6 +146,11 @@ module.characters = {
         backgroundColorIdx = 1
     },
     lucky = {
+        displayName = "Lucky",
+        decalId = '5977954909',
+        backgroundColorIdx = 3
+    },
+    lucky01 = {
         displayName = "Lucky",
         decalId = '5977954909',
         backgroundColorIdx = 3

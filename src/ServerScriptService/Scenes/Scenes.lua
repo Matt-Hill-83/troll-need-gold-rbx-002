@@ -10,6 +10,7 @@ local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
 
+local Dialog = require(Sss.Source.AddDialog.Dialog)
 local module = {}
 
 getStartPosition = function(props)
@@ -57,9 +58,6 @@ function module.addScenes(props)
 
     local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
                                                               "SceneTemplate")
-
-    local sgui = Utils.getFirstDescendantByName(StarterGui, "SceneDialogGui")
-    sgui.Enabled = false
 
     local wallTemplate =
         Utils.getFirstDescendantByName(questFolder, "SceneBase")
@@ -260,7 +258,32 @@ function module.addScenes(props)
             sceneFolder = sceneFolder
         }
 
-        Characters.addCharactersToScene(charProps)
+        function addCharactersToScene(charProps)
+            print('addCharactersToScene')
+
+            Characters.addCharactersToScene(charProps)
+            local clonedScene2 = charProps.clonedScene
+            local frameConfig2 = charProps.frameConfig
+
+            print('clonedScene2.Name' .. ' - start');
+            print(clonedScene2.Name);
+            print('clonedScene2.Name' .. ' - end');
+
+            local sgui2 = Utils.getFirstDescendantByName(clonedScene2,
+                                                         "SurfaceGuiTemplate")
+
+            local dialogTemplate = Utils.getFirstDescendantByName(clonedScene2,
+                                                                  "DialogTemplate")
+
+            Dialog.renderDialog({
+                dialogConfigs = frameConfig2.dialogs,
+                dialogTemplate = dialogTemplate,
+                sgui = sgui2
+            })
+        end
+
+        addCharactersToScene(charProps)
+
         Location.addLocation({scene = clonedScene, sceneConfig = sceneConfig})
 
         local gameTitleLabel = Utils.getFirstDescendantByName(clonedScene,
@@ -303,7 +326,8 @@ function module.addScenes(props)
             clonedScene = clonedScene,
             numPages = numPages,
             sceneConfig = sceneConfig,
-            sceneFolder = sceneFolder
+            sceneFolder = sceneFolder,
+            addCharactersToScene = addCharactersToScene
         }
         Buttons.doFrameStuff(props2)
 

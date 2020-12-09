@@ -140,25 +140,25 @@ function module.addCharactersToScene(props)
     -- 
     -- 
 
-    local dialogTemplate = Utils.getFirstDescendantByName(clonedScene,
-                                                          "DialogTemplate")
+    -- local dialogTemplate = Utils.getFirstDescendantByName(clonedScene,
+    --                                                       "DialogTemplate")
 
     -- local sgui2 = Utils.getFirstDescendantByName(StarterGui, "SceneDialogGui")
 
-    local sgui2 = Utils.getFirstDescendantByName(StarterGui, "SceneDialogGui")
-    local sgui = Utils.getFirstDescendantByName(clonedScene,
-                                                "SurfaceGuiTemplate")
+    -- local sgui2 = Utils.getFirstDescendantByName(StarterGui, "SceneDialogGui")
+    -- local sgui = Utils.getFirstDescendantByName(clonedScene,
+    --                                             "SurfaceGuiTemplate")
 
-    Dialog.renderDialog({
-        dialogConfigs = frameConfig.dialogs,
-        dialogTemplate = dialogTemplate,
-        sgui = sgui
-    })
-    Dialog.renderDialog({
-        dialogConfigs = frameConfig.dialogs,
-        dialogTemplate = dialogTemplate,
-        sgui = sgui2
-    })
+    -- Dialog.renderDialog({
+    --     dialogConfigs = frameConfig.dialogs,
+    --     dialogTemplate = dialogTemplate,
+    --     sgui = sgui
+    -- })
+    -- Dialog.renderDialog({
+    --     dialogConfigs = frameConfig.dialogs,
+    --     dialogTemplate = dialogTemplate,
+    --     sgui = sgui2
+    -- })
 
 end
 

@@ -35,6 +35,10 @@ renderTexts = function(props)
     for i, dialog in ipairs(dialogConfigs) do
         local line = dialogConfigs[i]
 
+        print('line' .. ' - start');
+        print(line);
+        print('line' .. ' - end');
+
         local charName = line['char']
         local dialogText = dialog['text']
 
