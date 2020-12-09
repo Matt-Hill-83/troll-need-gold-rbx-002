@@ -3,6 +3,8 @@ local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local InstanceUtils = require(Sss.Source.Utils.U002InstanceUtils)
 local Dialog = require(Sss.Source.AddDialog.Dialog)
 
+local StarterGui = game:GetService("StarterGui")
+
 local module = {}
 
 renderCharacters = function(props)
@@ -140,9 +142,15 @@ function module.addCharactersToScene(props)
 
     local dialogTemplate = Utils.getFirstDescendantByName(clonedScene,
                                                           "DialogTemplate")
+
+    -- local sgui = Utils.getFirstDescendantByName(StarterGui, "SceneDialogGui")
+    local sgui = Utils.getFirstDescendantByName(clonedScene,
+                                                "SurfaceGuiTemplate")
+
     Dialog.renderDialog({
         dialogConfigs = frameConfig.dialogs,
-        dialogTemplate = dialogTemplate
+        dialogTemplate = dialogTemplate,
+        sgui = sgui
     })
 
 end

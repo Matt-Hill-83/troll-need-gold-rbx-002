@@ -1,4 +1,5 @@
 local Sss = game:GetService("ServerScriptService")
+local StarterGui = game:GetService("StarterGui")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Bridges = require(Sss.Source.Bridges.Bridges)
 local Characters = require(Sss.Source.Characters.Characters)
@@ -57,6 +58,9 @@ function module.addScenes(props)
 
     local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
                                                               "SceneTemplate")
+
+    local sgui = Utils.getFirstDescendantByName(StarterGui, "SceneDialogGui")
+    sgui.Enabled = false
 
     local wallTemplate =
         Utils.getFirstDescendantByName(questFolder, "SceneBase")
@@ -222,12 +226,14 @@ function module.addScenes(props)
                     if player then
                         unHideWall(clonedScene)
                         currentPlayer = player
+                        sgui.Enabled = true
                         return
                     end
                 end
 
                 if currentPlayer then
-                    hideWall(clonedScene)
+                    sgui.Enabled = false
+                    -- hideWall(clonedScene)
                     currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
                         Constants.walkSpeed
                     remoteEvent:FireClient(currentPlayer, cameraPath1,

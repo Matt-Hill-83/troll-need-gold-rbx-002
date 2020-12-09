@@ -1,5 +1,6 @@
 local TextService = game:GetService("TextService")
 local Sss = game:GetService("ServerScriptService")
+local StarterGui = game:GetService("StarterGui")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Constants = require(Sss.Source.Constants.Constants)
 
@@ -10,15 +11,17 @@ local module = {}
 renderTexts = function(props)
     local parent = props.parent
     local dialogConfigs = props.dialogConfigs
+    local sgui = props.sgui
 
     local pixelsPerStud = 45
     -- local paddingInPx = pixelsPerStud / 4
     local paddingInPx = pixelsPerStud / 8
     local fontHeight = pixelsPerStud * 41 / 45
 
-    local sgui = Utils.getFirstDescendantByName(parent, "SurfaceGuiTemplate")
+    -- local sgui = Utils.getFirstDescendantByName(StarterGui, "SceneDialogGui")
+    -- local sgui = Utils.getFirstDescendantByName(parent, "SurfaceGuiTemplate")
 
-    sgui.SizingMode = "PixelsPerStud"
+    -- sgui.SizingMode = "PixelsPerStud"
 
     local scrollingFrame =
         Utils.getFirstDescendantByName(sgui, "DialogScroller")
