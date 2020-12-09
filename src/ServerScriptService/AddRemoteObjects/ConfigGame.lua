@@ -1,6 +1,8 @@
 local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 
+local collectionService = game:GetService("CollectionService")
+
 local module = {}
 function configPlayers()
     local Players = game:GetService("Players")
@@ -19,6 +21,21 @@ function configPlayers()
 end
 
 function setVisibility()
+    local taggedPartsTransparent = collectionService:GetTagged("Transparent")
+
+    for i, item in ipairs(taggedPartsTransparent) do
+        print('item' .. ' - start');
+        print(item);
+        print('item' .. ' - end');
+
+        Utils.setItemAndChildrenPropsByInst(
+            {
+                item = item,
+                props = {Transparency = 1, CanCollide = false, Anchored = true}
+            })
+
+    end
+
     local itemsToHideAtRuntine = {'QuestsOrigin', 'TemplatesPedestal'}
     for i, item in ipairs(itemsToHideAtRuntine) do
         Utils.hideItemAndChildrenByName({name = item, hide = true})
