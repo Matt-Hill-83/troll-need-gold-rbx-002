@@ -30,40 +30,10 @@ function addRemoteObjects()
     local letterTemplate = Utils.getFirstDescendantByName(myStuff,
                                                           "LetterTemplate")
 
-    local letterDefs = {
-        A = {char = 'A'},
-        B = {char = 'B'},
-        C = {char = 'C'},
-        D = {char = 'D'},
-        E = {char = 'E'},
-        F = {char = 'F'},
-        G = {char = 'G'},
-        H = {char = 'H'},
-        I = {char = 'I'},
-        J = {char = 'J'},
-        K = {char = 'K'},
-        L = {char = 'L'},
-        M = {char = 'M'},
-        N = {char = 'N'},
-        O = {char = 'O'},
-        P = {char = 'P'},
-        Q = {char = 'Q'},
-        R = {char = 'R'},
-        S = {char = 'S'},
-        T = {char = 'T'},
-        U = {char = 'U'},
-        V = {char = 'V'},
-        W = {char = 'W'},
-        X = {char = 'X'},
-        Y = {char = 'Y'},
-        Z = {char = 'Z'}
-
-    }
     -- local letters = {
     --     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
     --     'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
     -- }
-    -- local letters = {'A', 'B', 'C'}
     local letters = {'C'}
 
     for i, char in ipairs(letters) do

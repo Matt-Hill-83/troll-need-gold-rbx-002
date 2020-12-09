@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>790.600098</X>
-					<Y>3.30635571</Y>
-					<Z>-1087.51514</Z>
-					<R00>-0.907819748</R00>
-					<R01>-0.255368292</R01>
-					<R02>0.332641602</R02>
-					<R10>-1.4901163e-08</R10>
-					<R11>0.793211222</R11>
-					<R12>0.608946681</R12>
-					<R20>-0.419360697</R20>
-					<R21>0.552813828</R21>
-					<R22>-0.720092773</R22>
+					<X>692.207947</X>
+					<Y>16.6224613</Y>
+					<Z>-1064.45117</Z>
+					<R00>-0.869271815</R00>
+					<R01>0.186975643</R01>
+					<R02>-0.457609743</R02>
+					<R10>-0</R10>
+					<R11>0.925708771</R11>
+					<R12>0.378237128</R12>
+					<R20>0.494334459</R20>
+					<R21>0.328790873</R21>
+					<R22>-0.804692507</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>789.934814</X>
-					<Y>2.08846235</Y>
-					<Z>-1086.07495</Z>
+					<X>693.12323</X>
+					<Y>15.8659344</Y>
+					<Z>-1062.84167</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -37344,7 +37344,7 @@ end
 						<bool name="Locked">false</bool>
 						<bool name="Massless">false</bool>
 						<token name="Material">1056</token>
-						<string name="Name">Base</string>
+						<string name="Name">TestLabBase</string>
 						<float name="Reflectance">0</float>
 						<float name="RightParamA">-0.5</float>
 						<float name="RightParamB">0.5</float>
@@ -37376,84 +37376,6 @@ end
 							<Z>64.5</Z>
 						</Vector3>
 					</Properties>
-					<Item class="Weld" referent="RBX43dc31f513044bdcb1464ec12fedf93f">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<CoordinateFrame name="C0">
-								<X>0</X>
-								<Y>0.5</Y>
-								<Z>0</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>1</R12>
-								<R20>0</R20>
-								<R21>-1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>-4.28490448</X>
-								<Y>88.7550659</Y>
-								<Z>1.58325195</Z>
-								<R00>0</R00>
-								<R01>0</R01>
-								<R02>1</R02>
-								<R10>-1</R10>
-								<R11>0</R11>
-								<R12>0</R12>
-								<R20>0</R20>
-								<R21>-1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Weld</string>
-							<Ref name="Part0">RBXe2e50bd6df2b452198ed2c01227912a9</Ref>
-							<Ref name="Part1">RBX169367a35c2547d6bc639b0b540c1976</Ref>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-					<Item class="Weld" referent="RBXbee43a89c87947ee9501a4f9dfbd6f27">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<CoordinateFrame name="C0">
-								<X>0</X>
-								<Y>0.5</Y>
-								<Z>0</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>1</R12>
-								<R20>0</R20>
-								<R21>-1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>-4.65224457</X>
-								<Y>88.7244873</Y>
-								<Z>21.7976074</Z>
-								<R00>0</R00>
-								<R01>0</R01>
-								<R02>1</R02>
-								<R10>-1</R10>
-								<R11>0</R11>
-								<R12>0</R12>
-								<R20>0</R20>
-								<R21>-1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Weld</string>
-							<Ref name="Part0">RBXe2e50bd6df2b452198ed2c01227912a9</Ref>
-							<Ref name="Part1">RBX410d64f099cf42e4bd2d184d7c7d6782</Ref>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
 					<Item class="Model" referent="RBX41f99ae7a5414b9ab5e0077c7146e5e6">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
@@ -41757,40 +41679,10 @@ function addRemoteObjects()
     local letterTemplate = Utils.getFirstDescendantByName(myStuff,
                                                           "LetterTemplate")
 
-    local letterDefs = {
-        A = {char = 'A'},
-        B = {char = 'B'},
-        C = {char = 'C'},
-        D = {char = 'D'},
-        E = {char = 'E'},
-        F = {char = 'F'},
-        G = {char = 'G'},
-        H = {char = 'H'},
-        I = {char = 'I'},
-        J = {char = 'J'},
-        K = {char = 'K'},
-        L = {char = 'L'},
-        M = {char = 'M'},
-        N = {char = 'N'},
-        O = {char = 'O'},
-        P = {char = 'P'},
-        Q = {char = 'Q'},
-        R = {char = 'R'},
-        S = {char = 'S'},
-        T = {char = 'T'},
-        U = {char = 'U'},
-        V = {char = 'V'},
-        W = {char = 'W'},
-        X = {char = 'X'},
-        Y = {char = 'Y'},
-        Z = {char = 'Z'}
-
-    }
     -- local letters = {
     --     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
     --     'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
     -- }
-    -- local letters = {'A', 'B', 'C'}
     local letters = {'C'}
 
     for i, char in ipairs(letters) do
@@ -42282,6 +42174,9 @@ function configPlayers()
 end
 
 function setVisibility()
+    local testLabBase = Utils.getFirstDescendantByName(workspace, "TestLabBase")
+    testLabBase:Destroy()
+
     local taggedPartsTransparent = collectionService:GetTagged("Transparent")
 
     for i, item in ipairs(taggedPartsTransparent) do
@@ -42299,7 +42194,6 @@ function setVisibility()
     end
 
     local itemsToMakeTransparentAtRuntine = {"WallTemplate"}
-    -- {"UserDetectionRegion", "WallTemplate"}
     for i, item in ipairs(itemsToMakeTransparentAtRuntine) do
         Utils.setItemAndChildrenPropsByName(
             {name = item, props = {Transparency = 1}})
@@ -42325,10 +42219,10 @@ function setVisibility()
     --     props = {Transparency = 1}
     -- })
 
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "DockBase",
-    --     props = {Transparency = 1}
-    -- })
+    Utils.setItemAndChildrenPropsByName({
+        name = "DockBase",
+        props = {Transparency = 1}
+    })
 
     -- Utils.setItemAndChildrenPropsByName({
     --     name = "SkyBoxBack",

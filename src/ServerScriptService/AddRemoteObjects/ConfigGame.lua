@@ -21,6 +21,9 @@ function configPlayers()
 end
 
 function setVisibility()
+    local testLabBase = Utils.getFirstDescendantByName(workspace, "TestLabBase")
+    testLabBase:Destroy()
+
     local taggedPartsTransparent = collectionService:GetTagged("Transparent")
 
     for i, item in ipairs(taggedPartsTransparent) do
@@ -38,7 +41,6 @@ function setVisibility()
     end
 
     local itemsToMakeTransparentAtRuntine = {"WallTemplate"}
-    -- {"UserDetectionRegion", "WallTemplate"}
     for i, item in ipairs(itemsToMakeTransparentAtRuntine) do
         Utils.setItemAndChildrenPropsByName(
             {name = item, props = {Transparency = 1}})
@@ -64,10 +66,10 @@ function setVisibility()
     --     props = {Transparency = 1}
     -- })
 
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "DockBase",
-    --     props = {Transparency = 1}
-    -- })
+    Utils.setItemAndChildrenPropsByName({
+        name = "DockBase",
+        props = {Transparency = 1}
+    })
 
     -- Utils.setItemAndChildrenPropsByName({
     --     name = "SkyBoxBack",
