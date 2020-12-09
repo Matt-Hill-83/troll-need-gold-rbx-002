@@ -101,6 +101,10 @@ function setVisibility()
     print(tagBaseWallTransparent);
     print('tagBaseWallTransparent' .. ' - end');
     Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 20})
+    Utils.setPropsByTag({
+        tag = "BaseWallTransparent",
+        props = {Transparency = 0}
+    })
 
     -- for i, item in ipairs(tagBaseWallTransparent) do
     --     Utils.setItemAndChildrenPropsByInst(
