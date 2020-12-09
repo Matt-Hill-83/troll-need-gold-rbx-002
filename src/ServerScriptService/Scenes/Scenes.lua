@@ -1,5 +1,4 @@
 local Sss = game:GetService("ServerScriptService")
-local StarterGui = game:GetService("StarterGui")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Bridges = require(Sss.Source.Bridges.Bridges)
 local Characters = require(Sss.Source.Characters.Characters)
@@ -56,6 +55,7 @@ function module.addScenes(props)
     local questFolder = props.questFolder
     local questIndex = props.questIndex
 
+    local thisPlayer = nil
     local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
                                                               "SceneTemplate")
 
@@ -144,56 +144,56 @@ function module.addScenes(props)
             end
         end
 
-        local function regionEnter(plr, clonedScene, entered)
-            local buttonPressed = false
-            if not buttonPressed then
-                buttonPressed = true
-                if not entered.value then
-                    unHideWall(clonedScene)
-                    entered.value = true
-                end
-                buttonPressed = false
-            end
-        end
+        -- local function regionEnter(plr, clonedScene, entered)
+        --     local buttonPressed = false
+        --     if not buttonPressed then
+        --         buttonPressed = true
+        --         if not entered.value then
+        --             unHideWall(clonedScene)
+        --             entered.value = true
+        --         end
+        --         buttonPressed = false
+        --     end
+        -- end
 
-        local function regionExit(plr, clonedScene, entered)
-            local buttonPressed = false
-            if not buttonPressed then
-                buttonPressed = true
-                if entered.value then
-                    hideWall(clonedScene)
-                    entered.value = false
-                end
-                buttonPressed = false
-            end
-        end
+        -- local function regionExit(plr, clonedScene, entered)
+        --     local buttonPressed = false
+        --     if not buttonPressed then
+        --         buttonPressed = true
+        --         if entered.value then
+        --             hideWall(clonedScene)
+        --             entered.value = false
+        --         end
+        --         buttonPressed = false
+        --     end
+        -- end
 
-        local part = Utils.getFirstDescendantByName(clonedScene,
-                                                    "UserDetectionRegion")
+        -- local part = Utils.getFirstDescendantByName(clonedScene,
+        --                                             "UserDetectionRegion")
 
-        local function onPartTouched(otherPart)
-            -- Get the other part's parent
-            local partParent = otherPart.Parent
-            -- Look for a humanoid in the parent
-            local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
-            if humanoid then
-                regionEnter(humanoid, clonedScene, entered)
-            end
-        end
+        -- local function onPartTouched(otherPart)
+        --     -- Get the other part's parent
+        --     local partParent = otherPart.Parent
+        --     -- Look for a humanoid in the parent
+        --     local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
+        --     if humanoid then
+        --         regionEnter(humanoid, clonedScene, entered)
+        --     end
+        -- end
 
-        part.Touched:Connect(onPartTouched)
+        -- part.Touched:Connect(onPartTouched)
 
-        local function onPartTouchEnded(otherPart)
-            local partParent = otherPart.Parent
-            if partParent then
-                local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
-                if humanoid then
-                    regionExit(humanoid, clonedScene, entered)
-                end
-            end
-        end
+        -- local function onPartTouchEnded(otherPart)
+        --     local partParent = otherPart.Parent
+        --     if partParent then
+        --         local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
+        --         if humanoid then
+        --             regionExit(humanoid, clonedScene, entered)
+        --         end
+        --     end
+        -- end
 
-        part.TouchEnded:Connect(onPartTouchEnded)
+        -- part.TouchEnded:Connect(onPartTouchEnded)
 
         local seat = Utils.getFirstDescendantByName(clonedScene, "CouchSeat")
         local Players = game:GetService("Players")
@@ -212,6 +212,7 @@ function module.addScenes(props)
 
                 local humanoid = seat.Occupant
                 if humanoid then
+                    pageNum = 1
                     local character = humanoid.Parent
                     character:WaitForChild("Humanoid").WalkSpeed = 0
 
@@ -220,9 +221,25 @@ function module.addScenes(props)
                                            true)
 
                     if player then
+                        thisPlayer = player
                         unHideWall(clonedScene)
                         currentPlayer = player
-                        player.PlayerGui.SceneDialogGui.Enabled = true
+                        local playerGui = player.PlayerGui.SceneDialogGui
+
+                        playerGui.Enabled = true
+
+                        local frameConfig = sceneConfig.frames[pageNum]
+                        local charProps =
+                            {
+                                frameConfig = frameConfig,
+                                clonedScene = clonedScene,
+                                player = player,
+                                sgui = playerGui
+                            }
+
+                        -- TODO: connect this to page buttons
+                        -- renderScreenDialog(charProps)
+
                         return
                     end
                 end
@@ -251,6 +268,28 @@ function module.addScenes(props)
             clonedScene = clonedScene
         })
 
+        function renderScreenDialog(charProps)
+            local clonedScene2 = charProps.clonedScene
+            local frameConfig2 = charProps.frameConfig
+            local player = thisPlayer
+
+            print('player' .. ' - start');
+            print(player);
+            print('player' .. ' - end');
+            -- local player = charProps.player
+
+            local sguiPlayer = player.PlayerGui.SceneDialogGui
+            local dialogTemplate = Utils.getFirstDescendantByName(clonedScene2,
+                                                                  "DialogTemplate")
+
+            Dialog.renderDialog({
+                dialogConfigs = frameConfig2.dialogs,
+                dialogTemplate = dialogTemplate,
+                sgui = sguiPlayer
+            })
+
+        end
+
         function addCharactersToScene(charProps)
             Characters.addCharactersToScene(charProps)
             local clonedScene2 = charProps.clonedScene
@@ -267,6 +306,15 @@ function module.addScenes(props)
                 dialogTemplate = dialogTemplate,
                 sgui = sgui2
             })
+
+            if thisPlayer then
+                local sguiPlayer = thisPlayer.PlayerGui.SceneDialogGui
+                Dialog.renderDialog({
+                    dialogConfigs = frameConfig2.dialogs,
+                    dialogTemplate = dialogTemplate,
+                    sgui = sguiPlayer
+                })
+            end
         end
 
         local frameConfig = sceneConfig.frames[pageNum]
