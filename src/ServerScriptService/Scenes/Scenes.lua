@@ -8,7 +8,6 @@ local DropBox = require(Sss.Source.DropBox.DropBox)
 local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
--- local Texts = require(Sss.Source.AddDialog.Texts)
 
 local StarterPlayer = game:GetService("StarterPlayer")
 local Texts = require(StarterPlayer.Source.Texts)
@@ -144,8 +143,10 @@ function module.addScenes(props)
                     character:WaitForChild("Humanoid").WalkSpeed = 0
 
                     local player = Players:GetPlayerFromCharacter(character)
+                    local frameConfig = sceneConfig.frames[pageNum]
+
                     remoteEvent:FireClient(player, cameraPath1, cameraPath2,
-                                           true)
+                                           true, frameConfig.dialogs)
 
                     if player then
                         thisPlayer = player
@@ -154,10 +155,9 @@ function module.addScenes(props)
                         playerGui.Enabled = true
 
                         pageNum = 1
-                        local frameConfig = sceneConfig.frames[pageNum]
                         local charProps = {frameConfig = frameConfig}
 
-                        renderScreenDialog(charProps)
+                        -- renderScreenDialog(charProps)    
 
                         -- local charProps =
                         --     {

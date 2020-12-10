@@ -10,8 +10,11 @@ local module = {}
 renderTexts = function(props)
 
     print("new function ------------------------->>>>>")
+    print("new function ------------------------->>>>>")
+
     local dialogConfigs = props.dialogConfigs
     local sgui = props.sgui
+    -- local sgui = props.sgui
 
     local viewPortSize = sgui.AbsoluteSize
     print('viewPortSize' .. ' --------------------------- start');
