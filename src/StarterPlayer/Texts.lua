@@ -8,13 +8,8 @@ local dialogColors = Constants.dialogColors
 local module = {}
 
 renderTexts = function(props)
-
-    print("new function ------------------------->>>>>")
-    print("new function ------------------------->>>>>")
-
     local dialogConfigs = props.dialogConfigs
     local sgui = props.sgui
-    -- local sgui = props.sgui
 
     local viewPortSize = sgui.AbsoluteSize
     print('viewPortSize' .. ' --------------------------- start');
@@ -24,12 +19,16 @@ renderTexts = function(props)
     local rowGap = pixelsPerStud / 2
     local paddingInPx = pixelsPerStud / 8
     local fontHeight = viewPortSize.Y / 40
+    fontHeight = math.floor(fontHeight)
     print('fontHeight' .. ' - start');
     print(fontHeight);
     print('fontHeight' .. ' - end');
 
     local scrollingFrame =
         Utils.getFirstDescendantByName(sgui, "DialogScroller")
+
+    local scrollBarThickness = 4 * fontHeight
+    scrollingFrame.ScrollBarThickness = scrollBarThickness
 
     print('scrollingFrame.AbsoluteSize' .. ' - start');
     print(scrollingFrame.AbsoluteSize);
@@ -61,7 +60,6 @@ renderTexts = function(props)
         end
 
         if (dialogText ~= "blank") then
-            -- if (dialogText ~= "blank" and dialogText ~= "empty") then
             local text = "<b>" .. displayName .. ": " .. "</b>" .. dialogText
 
             local font = Enum.Font.Arial
@@ -75,12 +73,10 @@ renderTexts = function(props)
             local height = calcSize.Y
 
             local outerLabel = Instance.new("TextLabel", scrollingFrame)
-
             local outerLabelProps = {
                 Name = "Dialog-" .. i,
                 Position = UDim2.new(0, 0, 0, dialogY),
                 Size = UDim2.new(1, 0, 0, height + 2 * paddingInPx),
-                -- Size = UDim2.new(0, parentWidth, 0, height + 2 * paddingInPx),
 
                 Text = "",
                 Font = font,
@@ -98,7 +94,6 @@ renderTexts = function(props)
             Utils.mergeTables(outerLabel, outerLabelProps)
 
             local innerLabel = outerLabel:Clone()
-
             local innerLabelProps = {
                 Parent = outerLabel,
                 Name = "Dialog-" .. i,
