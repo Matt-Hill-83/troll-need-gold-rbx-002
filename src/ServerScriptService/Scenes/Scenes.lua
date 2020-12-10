@@ -12,6 +12,10 @@ local Constants = require(Sss.Source.Constants.Constants)
 local StarterPlayer = game:GetService("StarterPlayer")
 local Texts = require(StarterPlayer.Source.Texts)
 
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local freezeCameraRE = ReplicatedStorage:WaitForChild("FreezeCameraRE")
+local renderDialogRE = ReplicatedStorage:WaitForChild("RenderDialogRE")
+
 local module = {}
 
 getStartPosition = function(props)
@@ -128,9 +132,6 @@ function module.addScenes(props)
 
         seat:GetPropertyChangedSignal("Occupant"):Connect(
             function()
-                local ReplicatedStorage = game:GetService("ReplicatedStorage")
-                local remoteEvent = ReplicatedStorage:WaitForChild(
-                                        "FreezeCamera1")
 
                 local cameraPath1 = Utils.getFirstDescendantByName(clonedScene,
                                                                    "ScreenCameraPath1")
@@ -140,19 +141,17 @@ function module.addScenes(props)
                 local humanoid = seat.Occupant
                 if humanoid then
                     local character = humanoid.Parent
-                    character:WaitForChild("Humanoid").WalkSpeed = 0
 
                     local player = Players:GetPlayerFromCharacter(character)
                     local frameConfig = sceneConfig.frames[pageNum]
 
-                    remoteEvent:FireClient(player, cameraPath1, cameraPath2,
-                                           true, frameConfig.dialogs)
+                    freezeCameraRE:FireClient(player, cameraPath1, cameraPath2,
+                                              true, frameConfig.dialogs)
+                    renderDialogRE:FireClient(player, frameConfig.dialogs)
 
                     if player then
                         thisPlayer = player
                         currentPlayer = player
-                        local playerGui = player.PlayerGui.SceneDialogGui
-                        playerGui.Enabled = true
 
                         pageNum = 1
                         local charProps = {frameConfig = frameConfig}
@@ -172,11 +171,10 @@ function module.addScenes(props)
                 end
 
                 if currentPlayer then
-                    currentPlayer.PlayerGui.SceneDialogGui.Enabled = false
                     currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
                         Constants.walkSpeed
-                    remoteEvent:FireClient(currentPlayer, cameraPath1,
-                                           cameraPath2, false)
+                    freezeCameraRE:FireClient(currentPlayer, cameraPath1,
+                                              cameraPath2, false)
                     currentPlayer = nil
                 end
             end)
