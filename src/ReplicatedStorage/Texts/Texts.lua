@@ -1,7 +1,10 @@
 local TextService = game:GetService("TextService")
-local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils.U001GeneralUtils)
-local Constants = require(Sss.Source.Constants.Constants)
+local StarterPlayer = game:GetService("StarterPlayer")
+local Utils = require(StarterPlayer.Source.StarterPlayerScripts.RSUtils)
+
+-- local RS = game:GetService("ReplicatedStorage")
+-- local Utils = require(RS.Source.Utils.U001GeneralUtils)
+-- local Constants = require(RS.Source.Constants.Constants)
 
 local dialogColors = Constants.dialogColors
 

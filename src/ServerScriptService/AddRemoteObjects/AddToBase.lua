@@ -1,7 +1,6 @@
 local module = {}
 local Sss = game:GetService("ServerScriptService")
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
-local Theater = require(Sss.Source.Theater.Theater)
 
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Scenes = require(Sss.Source.Scenes.Scenes)

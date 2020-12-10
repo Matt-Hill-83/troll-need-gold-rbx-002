@@ -27233,87 +27233,11 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">StartUpScript</string>
 					<string name="ScriptGuid">{b240a0d6-584a-4ab9-9877-08ec6e7459f1}</string>
-					<ProtectedString name="Source"><![CDATA[print("Startup Scripy------------------------------------")
-
-local base = script.Parent
+					<ProtectedString name="Source"><![CDATA[print("Startup Script------------------------------------")
 
 local remoteCode = require(game.ServerScriptService.Source.AddRemoteObjects.AddToBase)
 
-remoteCode.addRemoteObjects(base)
-
-
-
-
---
---
---test stuff
-
---local player = game.Players.LocalPlayer
---local char = player.CharacterAdded:wait()
---local h = char.Humanoid
-
---h.WalkSpeed = 0
-
-
---local newWalkspeed = 0
-
---game.Players.PlayedAdded:Connect(function(player)
---	player.CharacterAdded:Connect(function(character)
---		character:WaitForChild("Humanoid").WalkSpeed = newWalkspeed
---	end)
---end)
-
-
-
---local terrainRegion = workspace.Terrain:CopyRegion(workspace.Terrain.MaxExtents)
---workspace.Terrain:Clear()
---wait(5)
---workspace.Terrain:PasteRegion(terrainRegion, workspace.Terrain.MaxExtents.Min, true)
-
---local region = Region3.new(Vector3.new(0,0,-3), Vector3.new(4,4,4))
---region = region:ExpandToGrid(4)
---game.Workspace.Terrain:FillRegion(region, 4, Enum.Material.Slate)
-
---local region = Region3.new(Vector3.new(0,0,-15), Vector3.new(4,8,4))
---region = region:ExpandToGrid(4)
---local material, occupancy = game.Workspace.Terrain:ReadVoxels(region, 4)
---local size = material.Size
---for x = 1, size.X do
---	for y = 1, size.Y do
---		for z = 1, size.Z do
---			print("Material at (", x, y, z, "): ", material[x][y][z])
---			print("Occupancy at (", x, y, z, "): ", occupancy[x][y][z])
---		end
---	end
---end
-
---local region = Region3.new(Vector3.new(0,0,0), Vector3.new(4,4,16))
---region = region:ExpandToGrid(4)
-
---local function create3dTable(size)
---	local ret = {}
---	for x = 1, size.X do
---		ret[x] = {}
---		for y = 1, size.Y do
---			ret[x][y] = {}
---		end
---	end	
---	return ret
---end
-
---local material = create3dTable(Vector3.new(1,1,4))
---material[1][1][1] = Enum.Material.Sand
---material[1][1][2] = Enum.Material.Sand
---material[1][1][3] = Enum.Material.Grass
---material[1][1][4] = Enum.Material.Grass
-
---local occupancy = create3dTable(Vector3.new(1,1,4))
---occupancy[1][1][1] = .25
---occupancy[1][1][2] = .5
---occupancy[1][1][3] = .75
---occupancy[1][1][4] = 1
-
---game.Workspace.Terrain:WriteVoxels(region, 4, material, occupancy)
+remoteCode.addRemoteObjects()
 
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
@@ -39432,28 +39356,52 @@ end
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">FreezeCamera</string>
 					<string name="ScriptGuid">{1d53be50-37a9-4e21-8341-6202f735eb2b}</string>
-					<ProtectedString name="Source"><![CDATA[print("test 2")
+					<ProtectedString name="Source"><![CDATA[--print("Freeze Camera - local script")
 
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCamera1")
+--local ReplicatedStorage = game:GetService("ReplicatedStorage")
+--local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCamera1")
+--local Texts = require(ReplicatedStorage.Source.Texts.Texts)
 
-local function onNotifyPlayer(cameraPath1,cameraPath2,freeze)
-	local camera = workspace.CurrentCamera
-	if freeze then
-		local cameraOffset = Vector3.new(0, 0, 2)
 
-		if camera.CameraType ~= Enum.CameraType.Scriptable then
-			camera.CameraType = Enum.CameraType.Scriptable
-		end
+--local function onNotifyPlayer(cameraPath1,cameraPath2,freeze)
+	
 
-		camera.CFrame = CFrame.new(cameraPath1.Position + cameraOffset,
-			cameraPath2.Position)
-	else
-		camera.CameraType = Enum.CameraType.Custom
-	end
-end
+--	local test = Texts.renderTexts
+--	print("test" .. "-" .. test)	
+--	print("test" .. "-" .. test)	
+--	print("test" .. "-" .. test)	
+--	print("test" .. "-" .. test)	
+	
+	
+--	local player = game:GetService("Players").LocalPlayer
+--	print('player' .. ' - start');
+--	print(player);
+--	print('player' .. ' - end');
+	
+--	local playerGui = player.PlayerGui.SceneDialogGui
+	
 
-remoteEvent.OnClientEvent:Connect(onNotifyPlayer)]]></ProtectedString>
+--	print('playerGui.AbsoluteSize' .. ' - start');
+--	print(playerGui.AbsoluteSize);
+--	print('playerGui.AbsoluteSize' .. ' - end');
+	
+	
+--	local camera = workspace.CurrentCamera
+--	if freeze then
+--		local cameraOffset = Vector3.new(0, 0, 2)
+
+--		if camera.CameraType ~= Enum.CameraType.Scriptable then
+--			camera.CameraType = Enum.CameraType.Scriptable
+--		end
+
+--		camera.CFrame = CFrame.new(cameraPath1.Position + cameraOffset,
+--			cameraPath2.Position)
+--	else
+--		camera.CameraType = Enum.CameraType.Custom
+--	end
+--end
+
+--remoteEvent.OnClientEvent:Connect(onNotifyPlayer)]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
@@ -39547,6 +39495,7 @@ remoteEvent.OnClientEvent:Connect(onNotifyPlayer)]]></ProtectedString>
 					<string name="Name">StarterPlayerScripts</string>
 					<string name="ScriptGuid">{c2c76472-e814-4bdb-945d-75e23a4814cb}</string>
 					<ProtectedString name="Source"><![CDATA[---test
+-- zzzzz
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -39559,9 +39508,15 @@ remoteEvent.OnClientEvent:Connect(onNotifyPlayer)]]></ProtectedString>
 						<string name="ScriptGuid">{6d3c2bd9-e846-4734-a167-af64542dd2d2}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
-function module.func001()
-    -- 
-end
+print(
+    "--------------------------------------------------------StarterPlayerScripts")
+print(
+    "--------------------------------------------------------StarterPlayerScripts")
+print(
+    "--------------------------------------------------------StarterPlayerScripts")
+print(
+    "--------------------------------------------------------StarterPlayerScripts")
+function module.func001() end
 
 return module
 
@@ -40822,7 +40777,6 @@ return module
 						<ProtectedString name="Source"><![CDATA[local module = {}
 local Sss = game:GetService("ServerScriptService")
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
-local Theater = require(Sss.Source.Theater.Theater)
 
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Scenes = require(Sss.Source.Scenes.Scenes)
@@ -41419,7 +41373,7 @@ function setVisibility()
     Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
     Utils.setPropsByTag({
         tag = "BaseWallTransparent",
-        props = {Transparency = .9}
+        props = {Transparency = 1}
     })
 
 end
@@ -42911,17 +42865,23 @@ renderTexts = function(props)
     local sgui = props.sgui
 
     local viewPortSize = sgui.AbsoluteSize
-    print('viewPortSize' .. ' - start');
-    print(viewPortSize);
-    print('viewPortSize' .. ' - end');
+    print('viewPortSize' .. ' --------------------------- start');
+    print(viewPortSize.Y);
 
     local pixelsPerStud = 20
     local rowGap = pixelsPerStud / 2
     local paddingInPx = pixelsPerStud / 8
     local fontHeight = viewPortSize.Y / 40
+    print('fontHeight' .. ' - start');
+    print(fontHeight);
+    print('fontHeight' .. ' - end');
 
     local scrollingFrame =
         Utils.getFirstDescendantByName(sgui, "DialogScroller")
+
+    print('scrollingFrame.AbsoluteSize' .. ' - start');
+    print(scrollingFrame.AbsoluteSize);
+    print('scrollingFrame.AbsoluteSize' .. ' - end');
     local children = scrollingFrame:GetChildren()
     for i, item in pairs(children) do
         if item:IsA('TextLabel') then
@@ -42931,7 +42891,6 @@ renderTexts = function(props)
     end
 
     local parentWidth = viewPortSize.X * 0.4 - (2 * paddingInPx)
-
     local parentHeight = viewPortSize.Y / 2
 
     local dialogY = 0
@@ -42975,7 +42934,7 @@ renderTexts = function(props)
                 Font = font,
                 TextSize = fontHeight,
                 TextWrapped = true,
-                TextScaled = true,
+                -- TextScaled = true,
                 TextXAlignment = Enum.TextXAlignment.Left,
                 TextYAlignment = Enum.TextYAlignment.Top,
                 BorderColor3 = Color3.fromRGB(99, 46, 99),
@@ -44060,7 +44019,7 @@ module.characters = {
     hudson01 = {
         displayName = "Hudson",
         decalId = '5998961874',
-        backgroundColorIdx = 3
+        backgroundColorIdx = 4
     },
     trollKing01 = {
         displayName = "Troll King",
@@ -44457,7 +44416,6 @@ function module.addScenes(props)
                         thisPlayer = player
                         currentPlayer = player
                         local playerGui = player.PlayerGui.SceneDialogGui
-
                         playerGui.Enabled = true
 
                         pageNum = 1
@@ -44518,6 +44476,7 @@ function module.addScenes(props)
 
             if thisPlayer then
                 local sguiPlayer = thisPlayer.PlayerGui.SceneDialogGui
+
                 Texts.renderTexts({
                     dialogConfigs = frameConfig2.dialogs,
                     sgui = sguiPlayer
@@ -45448,58 +45407,561 @@ local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCamera1")
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="3">
+			<Item class="ModuleScript" referent="RBXf9154532993043c0ba88a819110c5b68">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">MyParts</string>
-					<string name="ScriptGuid">{a14f4dc6-fa20-4508-a12c-f5469459921e}</string>
+					<string name="Name">Texts</string>
+					<string name="ScriptGuid">{0a38b8ab-4626-484a-94d5-da7b22c9d5ff}</string>
 					<ProtectedString name="Source">---test</ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-			</Item>
-			<Item class="ModuleScript" referent="8">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">MyScripts</string>
-					<string name="ScriptGuid">{1107173b-0e28-40de-bd74-64f30faf988c}</string>
-					<ProtectedString name="Source">---test</ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-				<Item class="ModuleScript" referent="9">
+				<Item class="ModuleScript" referent="RBXb4db154ed4ad40dbb67759e3b33822a5">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">MyScripts</string>
-						<string name="ScriptGuid">{a139a056-b62f-437f-84e2-1d6ddc7dda5b}</string>
-						<ProtectedString name="Source"><![CDATA[local my_functions = {}
+						<string name="Name">Texts</string>
+						<string name="ScriptGuid">{bbb02a2d-92da-4983-8778-148407031021}</string>
+						<ProtectedString name="Source"><![CDATA[local TextService = game:GetService("TextService")
+local RS = game:GetService("ReplicatedStorage")
+local Utils = require(RS.Source.Utils.U001GeneralUtils)
+local Constants = require(RS.Source.Constants.Constants)
 
-function my_functions.bar()
-    -- 
+local dialogColors = Constants.dialogColors
+
+local module = {}
+
+renderTexts = function(props)
+    local dialogConfigs = props.dialogConfigs
+    local sgui = props.sgui
+
+    local viewPortSize = sgui.AbsoluteSize
+    print('viewPortSize' .. ' --------------------------- start');
+    print(viewPortSize.Y);
+
+    local pixelsPerStud = 20
+    local rowGap = pixelsPerStud / 2
+    local paddingInPx = pixelsPerStud / 8
+    local fontHeight = viewPortSize.Y / 40
+    print('fontHeight' .. ' - start');
+    print(fontHeight);
+    print('fontHeight' .. ' - end');
+
+    local scrollingFrame =
+        Utils.getFirstDescendantByName(sgui, "DialogScroller")
+
+    print('scrollingFrame.AbsoluteSize' .. ' - start');
+    print(scrollingFrame.AbsoluteSize);
+    print('scrollingFrame.AbsoluteSize' .. ' - end');
+    local children = scrollingFrame:GetChildren()
+    for i, item in pairs(children) do
+        if item:IsA('TextLabel') then
+            item:Destroy()
+            --
+        end
+    end
+
+    local parentWidth = viewPortSize.X * 0.4 - (2 * paddingInPx)
+    local parentHeight = viewPortSize.Y / 2
+
+    local dialogY = 0
+    for i, dialog in ipairs(dialogConfigs) do
+        local line = dialogConfigs[i]
+
+        local charName = line['char']
+        local dialogText = dialog['text']
+
+        local backgroundColor = dialogColors[4]
+        local charConfig = Constants.characters[charName]
+        local displayName = Utils.getDisplayNameFromName({name = charName})
+
+        if charConfig then
+            backgroundColor = dialogColors[charConfig.backgroundColorIdx]
+        end
+
+        if (dialogText ~= "blank") then
+            -- if (dialogText ~= "blank" and dialogText ~= "empty") then
+            local text = "<b>" .. displayName .. ": " .. "</b>" .. dialogText
+
+            local font = Enum.Font.Arial
+            local innerLabelWidth = parentWidth - (2 * paddingInPx)
+
+            local calcSize = TextService:GetTextSize(text, fontHeight, font,
+                                                     Vector2.new(
+                                                         innerLabelWidth,
+                                                         parentHeight))
+
+            local height = calcSize.Y
+
+            local outerLabel = Instance.new("TextLabel", scrollingFrame)
+
+            local outerLabelProps = {
+                Name = "Dialog-" .. i,
+                Position = UDim2.new(0, 0, 0, dialogY),
+                Size = UDim2.new(1, 0, 0, height + 2 * paddingInPx),
+                -- Size = UDim2.new(0, parentWidth, 0, height + 2 * paddingInPx),
+
+                Text = "",
+                Font = font,
+                TextSize = fontHeight,
+                TextWrapped = true,
+                -- TextScaled = true,
+                TextXAlignment = Enum.TextXAlignment.Left,
+                TextYAlignment = Enum.TextYAlignment.Top,
+                BorderColor3 = Color3.fromRGB(99, 46, 99),
+                BorderSizePixel = 2,
+                BackgroundColor3 = backgroundColor,
+                TextColor3 = Color3.new(0, 0, 0),
+                ZIndex = 1
+            }
+            Utils.mergeTables(outerLabel, outerLabelProps)
+
+            local innerLabel = outerLabel:Clone()
+
+            local innerLabelProps = {
+                Parent = outerLabel,
+                Name = "Dialog-" .. i,
+                Text = text,
+                ZIndex = 2,
+                Size = UDim2.new(1, 0, 0, height),
+                Position = UDim2.new(0, paddingInPx, 0, paddingInPx),
+                BackgroundTransparency = 1,
+                RichText = true
+            }
+            Utils.mergeTables(innerLabel, innerLabelProps)
+
+            local absoluteHeight = outerLabel.AbsoluteSize.Y
+            dialogY = dialogY + (absoluteHeight + rowGap)
+
+        end
+    end
+
 end
 
--- ModuleScripts must return exactly one value
-return my_functions
+module.renderTexts = renderTexts
+return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-			</Item>
-			<Item class="ModuleScript" referent="RBXb47f2953737a4b08940127f6b32b4c6d">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">-- Demos</string>
-					<string name="ScriptGuid">{f09464df-89d3-47ea-91cf-c59a0755609b}</string>
-					<ProtectedString name="Source"><![CDATA[---test
+				<Item class="ModuleScript" referent="RBXcbeb3decd3794dfe944c7c79a9e8c403">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">RSUtils</string>
+						<string name="ScriptGuid"></string>
+						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
+local Constants = require(Sss.Source.Constants.Constants)
+local module = {}
+local collectionService = game:GetService("CollectionService")
+-- 
+-- 
+
+function module.setPropsByTag(props)
+    local tag = props.tag
+    local theProps = props.props
+
+    local items = collectionService:GetTagged(tag)
+
+    for i, item in ipairs(items) do
+        mergeTables(item, theProps)
+        -- 
+    end
+
+end
+
+function getFirstDescendantByName(parent, name)
+    local model = parent:GetDescendants()
+    for i = 1, #model do
+        if model[i].Name == name then
+            return model[i]
+            -- 
+        end
+    end
+end
+
+function getDescendantsByName(parent, name)
+    local items = parent:GetDescendants()
+
+    local output = {}
+    for i, item in ipairs(items) do
+        if item.Name == name then
+            table.insert(output, item)
+            -- 
+        end
+    end
+    return output
+end
+
+function module.getDescendantsByType(parent, type)
+    local items = parent:GetDescendants()
+    local output = {}
+
+    for i, item in pairs(items) do
+        if item:IsA(type) then
+            table.insert(output, item)
+            -- 
+        end
+    end
+    return output
+end
+
+-- 
+-- 
+
+function hideItem(part, hide)
+    local transparency = hide and 1 or 0
+    local visible = not hide
+    local enabled = not hide
+
+    if part:IsA("BasePart") then part.Transparency = transparency end
+    if part:IsA("Decal") then part.Transparency = transparency end
+
+    if part:IsA("ScrollingFrame") then part.Visible = visible end
+    if part:IsA("TextLabel") then part.Visible = visible end
+    if part:IsA("TextButton") then part.Visible = visible end
+
+    if part:IsA("SurfaceGui") then part.Enabled = enabled end
+end
+
+function setChildrenProps(parent, props)
+    if parent:IsA("BasePart") then mergeTables(parent, props) end
+
+    local children = parent:GetDescendants()
+    for i, item in ipairs(children) do
+        if item:IsA("BasePart") then mergeTables(item, props) end
+    end
+end
+
+function hideItemAndChildren(props)
+    local parent = props.item
+    local hide = props.hide
+
+    hideItem(parent, hide)
+    local children = parent:GetDescendants()
+    for i, item in ipairs(children) do hideItem(item, hide) end
+end
+
+function sizeWalls(props)
+    local parent = props.item
+    local height = props.height
+
+    local children = parent:GetDescendants()
+    for i, item in ipairs(children) do
+        if item:isA("Part") then item.CanCollide = false end
+    end
+    for i, item in ipairs(children) do
+        if item:isA("Part") then
+            local posY = item.Position.Y - item.Size.Y / 2
+            local newPosY = posY + (height / 2)
+            item.Size = Vector3.new(item.Size.X, height, item.Size.Z)
+            item.Position = Vector3.new(item.Position.X, newPosY,
+                                        item.Position.Z)
+
+        end
+    end
+    for i, item in ipairs(children) do
+        if item:isA("Part") then
+
+            item.CanCollide = true
+            item.Anchored = true
+        end
+    end
+end
+
+function sizeWalls2(props)
+    local items = props.items
+    local height = props.height
+
+    -- local children = parent:GetDescendants()
+    for i, item in ipairs(items) do
+        if item:isA("Part") then item.CanCollide = false end
+    end
+    for i, item in ipairs(items) do
+        if item:isA("Part") then
+            local posY = item.Position.Y - item.Size.Y / 2
+            local newPosY = posY + (height / 2)
+            item.Size = Vector3.new(item.Size.X, height, item.Size.Z)
+            item.Position = Vector3.new(item.Position.X, newPosY,
+                                        item.Position.Z)
+
+        end
+    end
+    for i, item in ipairs(items) do
+        if item:isA("Part") then
+
+            item.CanCollide = true
+            item.Anchored = true
+        end
+    end
+end
+
+function module.hideItemAndChildrenByName(props)
+    local name = props.name
+    local hide = props.hide
+
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local item = getFirstDescendantByName(myStuff, name)
+    hideItemAndChildren({item = item, hide = hide})
+end
+
+function module.setWallHeightByList(props)
+    local items = props.items
+    local height = props.height
+
+    sizeWalls2({items = items, height = height})
+
+end
+
+function module.setWallHeightbyParentModelName(props)
+    local name = props.name
+    local height = props.height
+
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    -- local item = getFirstDescendantByName(myStuff, name)
+    local items = getDescendantsByName(myStuff, name)
+
+    for i, item in ipairs(items) do
+        sizeWalls({item = item, height = height})
+        -- 
+    end
+end
+
+function module.setItemAndChildrenPropsByName(myProps)
+    local name = myProps.name
+    local props = myProps.props
+
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local item = getFirstDescendantByName(myStuff, name)
+    setChildrenProps(item, props)
+end
+
+function module.setItemAndChildrenPropsByInst(myProps)
+    local item = myProps.item
+    local props = myProps.props
+
+    setChildrenProps(item, props)
+end
+
+function module.getOrCreateFolder(props)
+    local name = props.name
+    local parent = props.parent
+
+    local runtimeQuestsFolder = getFirstDescendantByName(parent, name)
+
+    if not runtimeQuestsFolder then
+        runtimeQuestsFolder = Instance.new("Folder", parent)
+        runtimeQuestsFolder.Name = name
+        runtimeQuestsFolder = getFirstDescendantByName(parent, name)
+    end
+
+    return runtimeQuestsFolder
+end
+
+function module.reportPlayerLocation()
+    local Players = game:GetService("Players")
+    Players.PlayerAdded:Connect(function(player)
+        player.CharacterAdded:Connect(function(character)
+            local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+            while humanoidRootPart do
+                local test2 = workspace.CurrentCamera.CFrame.Position
+                print(test2);
+                print(player.Name, "is at", tostring(humanoidRootPart.Position))
+                wait(4)
+            end
+        end)
+    end)
+end
+
+function module.getDecalIdFromName(props)
+    local name = props.name
+    if (Constants.characters[name] and Constants.characters[name]["decalId"]) then
+        return Constants.characters[name]["decalId"]
+    else
+
+        if (name ~= "blank" and name ~= "empty" and name ~= "") then
+            print("----------------- decalId not found: ------------" .. name)
+            -- print(tableToString({Constants.characters[name]}));
+        end
+        return '5999465084'
+    end
+end
+
+function module.getDisplayNameFromName(props)
+    local name = props.name
+    if (Constants.characters[name] and Constants.characters[name]["displayName"]) then
+        return Constants.characters[name]["displayName"]
+    else
+        print("---------------------- name not found: ------------" .. name)
+        -- print(tableToString({Constants.characters[name]}));
+        return name
+    end
+end
+
+function module.deleteChildrenByName(props)
+    local parent = props.parent
+    local childName = props.childName
+    local children = parent:GetDescendants()
+    for i, item in pairs(children) do
+        if item.Name == childName then
+            item:Destroy()
+            --
+        end
+    end
+end
+
+function getFromMyStuff(name)
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    return getFirstDescendantByName(myStuff, name)
+end
+
+function module.getFromTemplates(name)
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local myTemplates = myStuff:FindFirstChild("MyTemplates")
+    return getFirstDescendantByName(myTemplates, name)
+end
+
+function module.unAttachAllChildParts(parent)
+    local items = parent:GetDescendants()
+    local output = {}
+    for i = 1, #items do
+        if items[i]:IsA('Part') then
+            local item = items[i]
+            if item.Anchored == true then table.insert(output, item) end
+            --
+        end
+
+    end
+    return output
+end
+
+function module.getDescendantsByNameMatch(parent, name)
+    local descendants = parent:GetDescendants()
+    local output = {}
+    for i = 1, #descendants do
+        local child = descendants[i]
+        local match = string.match(child.Name, name)
+        if match then
+            table.insert(output, child)
+            -- 
+        end
+    end
+    return output
+end
+
+function addcfv3(a, b)
+    local x, y, z, m11, m12, m13, m21, m22, m23, m31, m32, m33 = a:components()
+    return CFrame.new(x + b.x, y + b.y, z + b.z, m11, m12, m13, m21, m22, m23,
+                      m31, m32, m33);
+end
+
+function cloneModel(props)
+    local model = props.model
+    local position = props.position
+    local suffix = props.suffix
+
+    local modelClone = model:Clone()
+    modelClone.Parent = model.Parent
+    modelClone.Name = model.Name .. (suffix or "-Clone")
+    if (position) then
+        modelClone:SetPrimaryPartCFrame(position)
+        -- 
+    end
+    return modelClone
+end
+
+local function getNames(tab, name, res, lev)
+    res = res or {[tab] = "ROOT"}
+    local pls = {}
+    lev = lev or 0
+    for k, v in pairs(tab) do
+        if type(v) == "table" and not res[v] then
+            local n = name .. "." .. tostring(k)
+            res[v] = n
+            pls[v] = n
+        end
+    end
+    for k, v in pairs(pls) do
+        getNames(k, v, res)
+        pls[k] = lev
+    end
+    return res, pls
+end
+
+function tableToString(tab, a, b, c, d)
+    a, b = a or 0, b or {[tab] = true}
+    local name = b[tab]
+    local white = ("\t"):rep(a + 1)
+    if not c then c, d = getNames(tab, "ROOT") end
+    local res = {"{"}
+    for k, v in pairs(tab) do
+        local value
+        if type(v) == "table" then
+            if d[v] == a and not b[v] then
+                b[v] = true
+                value = tableToString(v, a + 1, b, c, d)
+            else
+                value = c[v]
+            end
+        elseif type(v) == "string" then
+            value = '"' .. v:gsub("\n", "\\n"):gsub("\t", "\\t") .. '"'
+        else
+            value = tostring(v)
+        end
+        table.insert(res, white .. tostring(k) .. " = " .. value)
+    end
+    white = white:sub(2)
+    table.insert(res, white .. "}")
+    return table.concat(res, "\n")
+end
+
+local test = {
+    str = "Result:\n\t- Unknown",
+    number = 12345,
+    child = {a = "b"},
+    cyclic = {}
+}
+test.child.cyclic = test.cyclic
+test.another = test.child
+
+function mergeTables(t1, t2) for k, v in pairs(t2) do t1[k] = v end end
+
+addPadding = function(props)
+    local parent = props.parent
+    local paddingPct = props.paddingPct
+
+    local UIPadding = Instance.new("UIPadding", parent)
+
+    UIPadding.PaddingBottom = UDim.new(paddingPct, 0)
+    UIPadding.PaddingTop = UDim.new(paddingPct, 0)
+    UIPadding.PaddingLeft = UDim.new(paddingPct, 0)
+    UIPadding.PaddingRight = UDim.new(paddingPct, 0)
+end
+
+setMaterialPebble = function(part)
+    part.Material = Enum.Material.Pebble
+    part.BrickColor = BrickColor.new("Institutional white")
+end
+
+module.addcfv3 = addcfv3
+module.addPadding = addPadding
+module.cloneModel = cloneModel
+module.getFirstDescendantByName = getFirstDescendantByName
+module.getFromMyStuff = getFromMyStuff
+module.setMaterialPebble = setMaterialPebble
+module.tableToString = tableToString
+module.hideItemAndChildren = hideItemAndChildren
+module.mergeTables = mergeTables
+module.getDescendantsByName = getDescendantsByName
+
+return module
 ]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
 			</Item>
 		</Item>
 		<Item class="RemoteEvent" referent="RBX7e07d2f9935645a293cecc3bf5307a44">
