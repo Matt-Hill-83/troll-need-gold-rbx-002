@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>778.313599</X>
-					<Y>-27.5406017</Y>
-					<Z>-1044.47998</Z>
-					<R00>-0.682573617</R00>
-					<R01>0.230944142</R01>
-					<R02>-0.693367183</R02>
-					<R10>1.4901163e-08</R10>
-					<R11>0.948756456</R11>
-					<R12>0.31600821</R12>
-					<R20>0.730816841</R20>
-					<R21>0.215698853</R21>
-					<R22>-0.647596121</R22>
+					<X>789.593872</X>
+					<Y>-19.0649376</Y>
+					<Z>-1073.11743</Z>
+					<R00>-0.961974621</R00>
+					<R01>-0.078144446</R01>
+					<R02>0.26172179</R02>
+					<R10>-0</R10>
+					<R11>0.958200455</R11>
+					<R12>0.286097854</R12>
+					<R20>-0.273138881</R20>
+					<R21>0.275218874</R21>
+					<R22>-0.921764493</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -45167,40 +45167,27 @@ function module.addScenes(props)
                 local humanoid = seat.Occupant
                 if humanoid then
                     local character = humanoid.Parent
-                    -- character:WaitForChild("Humanoid").WalkSpeed = 0
 
                     local player = Players:GetPlayerFromCharacter(character)
                     local frameConfig = sceneConfig.frames[pageNum]
 
                     freezeCameraRE:FireClient(player, cameraPath1, cameraPath2,
                                               true, frameConfig.dialogs)
-                    renderDialogRE:FireClient(player, frameConfig.dialogs)
+                    -- renderDialogRE:FireClient(player, frameConfig.dialogs)
 
                     if player then
                         thisPlayer = player
                         currentPlayer = player
-                        -- local playerGui = player.PlayerGui.SceneDialogGui
-                        -- playerGui.Enabled = true
 
                         pageNum = 1
                         local charProps = {frameConfig = frameConfig}
-
-                        -- renderScreenDialog(charProps)    
-
-                        -- local charProps =
-                        --     {
-                        --         frameConfig = frameConfig,
-                        --         clonedScene = clonedScene,
-                        --         sceneFolder = sceneFolder
-                        --     }
-
+                        renderScreenDialog(charProps)
                         -- addCharactersToScene(charProps)
                         return
                     end
                 end
 
                 if currentPlayer then
-                    -- currentPlayer.PlayerGui.SceneDialogGui.Enabled = false
                     currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
                         Constants.walkSpeed
                     freezeCameraRE:FireClient(currentPlayer, cameraPath1,
@@ -45223,28 +45210,12 @@ function module.addScenes(props)
         })
 
         function renderScreenDialog(charProps)
-            local frameConfig2 = charProps.frameConfig
-            local sguiPlayer = thisPlayer.PlayerGui.SceneDialogGui
-
-            Texts.renderTexts({
-                dialogConfigs = frameConfig2.dialogs,
-                sgui = sguiPlayer
-            })
+            renderDialogRE:FireClient(thisPlayer, charProps.frameConfig.dialogs)
 
         end
 
         function addCharactersToScene(charProps)
             Characters.addCharactersToScene(charProps)
-            local frameConfig2 = charProps.frameConfig
-
-            if thisPlayer then
-                local sguiPlayer = thisPlayer.PlayerGui.SceneDialogGui
-
-                Texts.renderTexts({
-                    dialogConfigs = frameConfig2.dialogs,
-                    sgui = sguiPlayer
-                })
-            end
         end
 
         local frameConfig = sceneConfig.frames[pageNum]
@@ -45299,7 +45270,8 @@ function module.addScenes(props)
             numPages = numPages,
             sceneConfig = sceneConfig,
             sceneFolder = sceneFolder,
-            addCharactersToScene = addCharactersToScene
+            addCharactersToScene = addCharactersToScene,
+            renderScreenDialog = renderScreenDialog
         }
         Buttons.doFrameStuff(props2)
 
@@ -45452,9 +45424,9 @@ function module.doFrameStuff(props)
     local sceneConfig = props.sceneConfig
     local sceneFolder = props.sceneFolder
     local addCharactersToScene = props.addCharactersToScene
+    local renderScreenDialog = props.renderScreenDialog
 
     function updateFrameItems(props)
-
         local clonedScene2 = props.clonedScene
         local numPages2 = props.numPages
         local sceneConfig2 = props.sceneConfig
@@ -45476,6 +45448,7 @@ function module.doFrameStuff(props)
             }
 
             addCharactersToScene(newSceneProps)
+            renderScreenDialog(newSceneProps)
             buttonPressed = false
         end
     end

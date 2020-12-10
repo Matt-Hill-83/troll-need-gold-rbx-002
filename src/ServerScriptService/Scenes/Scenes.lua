@@ -147,7 +147,7 @@ function module.addScenes(props)
 
                     freezeCameraRE:FireClient(player, cameraPath1, cameraPath2,
                                               true, frameConfig.dialogs)
-                    renderDialogRE:FireClient(player, frameConfig.dialogs)
+                    -- renderDialogRE:FireClient(player, frameConfig.dialogs)
 
                     if player then
                         thisPlayer = player
@@ -155,16 +155,7 @@ function module.addScenes(props)
 
                         pageNum = 1
                         local charProps = {frameConfig = frameConfig}
-
-                        -- renderScreenDialog(charProps)    
-
-                        -- local charProps =
-                        --     {
-                        --         frameConfig = frameConfig,
-                        --         clonedScene = clonedScene,
-                        --         sceneFolder = sceneFolder
-                        --     }
-
+                        renderScreenDialog(charProps)
                         -- addCharactersToScene(charProps)
                         return
                     end
@@ -193,28 +184,12 @@ function module.addScenes(props)
         })
 
         function renderScreenDialog(charProps)
-            local frameConfig2 = charProps.frameConfig
-            local sguiPlayer = thisPlayer.PlayerGui.SceneDialogGui
-
-            Texts.renderTexts({
-                dialogConfigs = frameConfig2.dialogs,
-                sgui = sguiPlayer
-            })
+            renderDialogRE:FireClient(thisPlayer, charProps.frameConfig.dialogs)
 
         end
 
         function addCharactersToScene(charProps)
             Characters.addCharactersToScene(charProps)
-            local frameConfig2 = charProps.frameConfig
-
-            if thisPlayer then
-                local sguiPlayer = thisPlayer.PlayerGui.SceneDialogGui
-
-                Texts.renderTexts({
-                    dialogConfigs = frameConfig2.dialogs,
-                    sgui = sguiPlayer
-                })
-            end
         end
 
         local frameConfig = sceneConfig.frames[pageNum]
@@ -269,7 +244,8 @@ function module.addScenes(props)
             numPages = numPages,
             sceneConfig = sceneConfig,
             sceneFolder = sceneFolder,
-            addCharactersToScene = addCharactersToScene
+            addCharactersToScene = addCharactersToScene,
+            renderScreenDialog = renderScreenDialog
         }
         Buttons.doFrameStuff(props2)
 

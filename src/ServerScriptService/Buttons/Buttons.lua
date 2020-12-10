@@ -10,9 +10,9 @@ function module.doFrameStuff(props)
     local sceneConfig = props.sceneConfig
     local sceneFolder = props.sceneFolder
     local addCharactersToScene = props.addCharactersToScene
+    local renderScreenDialog = props.renderScreenDialog
 
     function updateFrameItems(props)
-
         local clonedScene2 = props.clonedScene
         local numPages2 = props.numPages
         local sceneConfig2 = props.sceneConfig
@@ -34,6 +34,7 @@ function module.doFrameStuff(props)
             }
 
             addCharactersToScene(newSceneProps)
+            renderScreenDialog(newSceneProps)
             buttonPressed = false
         end
     end
