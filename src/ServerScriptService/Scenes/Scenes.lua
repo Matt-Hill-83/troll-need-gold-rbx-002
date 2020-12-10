@@ -62,8 +62,8 @@ function module.addScenes(props)
     local wallTemplate =
         Utils.getFirstDescendantByName(questFolder, "SceneBase")
 
-    local startPosition = getStartPosition(
-                              {
+    local sceneStartPosition = getStartPosition(
+                                   {
             gridPadding = gridPadding,
             parent = parent,
             child = wallTemplate
@@ -76,7 +76,6 @@ function module.addScenes(props)
     skyBoxTeleporter.Name = thisTeleporter.Name .. "-home"
 
     for sceneIndex, sceneConfig in ipairs(sceneConfigs) do
-        local entered = {value = false}
         local entered2 = {value = false}
         local numPages = #sceneConfig.frames
         local pageNum = 1
@@ -90,7 +89,7 @@ function module.addScenes(props)
         local clonedScene = Utils.cloneModel(
                                 {
                 model = sceneTemplateModel,
-                position = CFrame.new(newPosition + startPosition),
+                position = CFrame.new(newPosition + sceneStartPosition),
                 suffix = "Clone" .. "-Q" .. questIndex .. "-S" .. sceneIndex
             })
 
@@ -121,80 +120,6 @@ function module.addScenes(props)
 
         })
 
-        local function hideWall(clonedScene)
-            local dialog = Utils.getFirstDescendantByName(clonedScene,
-                                                          "WallTemplate")
-
-            local items = dialog:GetDescendants()
-            for i, item in ipairs(items) do
-                Utils.hideItemAndChildren({item = item, hide = true})
-                if item:IsA("BasePart") then
-                    item.CanCollide = false
-                end
-            end
-
-        end
-
-        local function unHideWall(clonedScene)
-            local dialog = Utils.getFirstDescendantByName(clonedScene,
-                                                          "WallTemplate")
-            local items = dialog:GetDescendants()
-            for i, item in ipairs(items) do
-                Utils.hideItemAndChildren({item = item, hide = false})
-            end
-        end
-
-        -- local function regionEnter(plr, clonedScene, entered)
-        --     local buttonPressed = false
-        --     if not buttonPressed then
-        --         buttonPressed = true
-        --         if not entered.value then
-        --             unHideWall(clonedScene)
-        --             entered.value = true
-        --         end
-        --         buttonPressed = false
-        --     end
-        -- end
-
-        -- local function regionExit(plr, clonedScene, entered)
-        --     local buttonPressed = false
-        --     if not buttonPressed then
-        --         buttonPressed = true
-        --         if entered.value then
-        --             hideWall(clonedScene)
-        --             entered.value = false
-        --         end
-        --         buttonPressed = false
-        --     end
-        -- end
-
-        -- local part = Utils.getFirstDescendantByName(clonedScene,
-        --                                             "UserDetectionRegion")
-
-        -- local function onPartTouched(otherPart)
-        --     -- Get the other part's parent
-        --     local partParent = otherPart.Parent
-        --     -- Look for a humanoid in the parent
-        --     local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
-        --     if humanoid then
-        --         regionEnter(humanoid, clonedScene, entered)
-        --     end
-        -- end
-
-        -- part.Touched:Connect(onPartTouched)
-
-        -- local function onPartTouchEnded(otherPart)
-        --     local partParent = otherPart.Parent
-        --     if partParent then
-        --         local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
-        --         if humanoid then
-        --             regionExit(humanoid, clonedScene, entered)
-        --         end
-        --     end
-        -- end
-
-        -- part.TouchEnded:Connect(onPartTouchEnded)
-
         local seat = Utils.getFirstDescendantByName(clonedScene, "CouchSeat")
         local Players = game:GetService("Players")
         local currentPlayer = nil
@@ -212,7 +137,6 @@ function module.addScenes(props)
 
                 local humanoid = seat.Occupant
                 if humanoid then
-                    pageNum = 1
                     local character = humanoid.Parent
                     character:WaitForChild("Humanoid").WalkSpeed = 0
 
@@ -222,12 +146,12 @@ function module.addScenes(props)
 
                     if player then
                         thisPlayer = player
-                        unHideWall(clonedScene)
                         currentPlayer = player
                         local playerGui = player.PlayerGui.SceneDialogGui
 
                         playerGui.Enabled = true
 
+                        pageNum = 1
                         local frameConfig = sceneConfig.frames[pageNum]
                         local charProps =
                             {
@@ -238,14 +162,12 @@ function module.addScenes(props)
                             }
 
                         renderScreenDialog(charProps)
-
                         return
                     end
                 end
 
                 if currentPlayer then
                     currentPlayer.PlayerGui.SceneDialogGui.Enabled = false
-                    hideWall(clonedScene)
                     currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
                         Constants.walkSpeed
                     remoteEvent:FireClient(currentPlayer, cameraPath1,
@@ -289,17 +211,8 @@ function module.addScenes(props)
             local clonedScene2 = charProps.clonedScene
             local frameConfig2 = charProps.frameConfig
 
-            local sgui2 = Utils.getFirstDescendantByName(clonedScene2,
-                                                         "SurfaceGuiTemplate")
-
             local dialogTemplate = Utils.getFirstDescendantByName(clonedScene2,
                                                                   "DialogTemplate")
-
-            -- Dialog.renderDialog({
-            --     dialogConfigs = frameConfig2.dialogs,
-            --     dialogTemplate = dialogTemplate,
-            --     sgui = sgui2
-            -- })
 
             if thisPlayer then
                 local sguiPlayer = thisPlayer.PlayerGui.SceneDialogGui
@@ -367,10 +280,59 @@ function module.addScenes(props)
         }
         Buttons.doFrameStuff(props2)
 
-        hideWall(clonedScene)
-
     end
     sceneTemplateModel:Destroy()
 end
 
 return module
+
+-- local function regionEnter(plr, clonedScene, entered)
+--     local buttonPressed = false
+--     if not buttonPressed then
+--         buttonPressed = true
+--         if not entered.value then
+--             unHideWall(clonedScene)
+--             entered.value = true
+--         end
+--         buttonPressed = false
+--     end
+-- end
+
+-- local function regionExit(plr, clonedScene, entered)
+--     local buttonPressed = false
+--     if not buttonPressed then
+--         buttonPressed = true
+--         if entered.value then
+--             hideWall(clonedScene)
+--             entered.value = false
+--         end
+--         buttonPressed = false
+--     end
+-- end
+
+-- local part = Utils.getFirstDescendantByName(clonedScene,
+--                                             "UserDetectionRegion")
+
+-- local function onPartTouched(otherPart)
+--     -- Get the other part's parent
+--     local partParent = otherPart.Parent
+--     -- Look for a humanoid in the parent
+--     local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
+--     if humanoid then
+--         regionEnter(humanoid, clonedScene, entered)
+--     end
+-- end
+
+-- part.Touched:Connect(onPartTouched)
+
+-- local function onPartTouchEnded(otherPart)
+--     local partParent = otherPart.Parent
+--     if partParent then
+--         local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
+--         if humanoid then
+--             regionExit(humanoid, clonedScene, entered)
+--         end
+--     end
+-- end
+
+-- part.TouchEnded:Connect(onPartTouchEnded)

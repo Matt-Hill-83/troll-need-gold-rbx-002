@@ -17,10 +17,6 @@ renderTexts = function(props)
     print(viewPortSize);
     print('viewPortSize' .. ' - end');
 
-    local viewportSize = workspace.CurrentCamera.ViewportSize
-    print('viewportSize' .. ' - start');
-    print(viewportSize);
-    print('viewportSize' .. ' - end');
     local pixelsPerStud = 20
     local rowGap = pixelsPerStud / 2
     -- local pixelsPerStud = 45
@@ -41,7 +37,8 @@ renderTexts = function(props)
         end
     end
 
-    local parentWidth = viewPortSize.X / 2 - 100
+    local parentWidth = viewPortSize.X * 0.4 - (2 * paddingInPx)
+    -- local parentWidth = viewPortSize.X / 2 - (2 * paddingInPx)
     -- local parentWidth = parent.Size.X * pixelsPerStud
     -- local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
     -- local parentHeight = parent.Size.Y * pixelsPerStud
