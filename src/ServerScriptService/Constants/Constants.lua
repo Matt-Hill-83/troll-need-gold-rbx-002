@@ -227,7 +227,7 @@ module.characters = {
     hudson01 = {
         displayName = "Hudson",
         decalId = '5998961874',
-        backgroundColorIdx = 3
+        backgroundColorIdx = 4
     },
     trollKing01 = {
         displayName = "Troll King",

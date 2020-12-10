@@ -94,7 +94,7 @@ function setVisibility()
     Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
     Utils.setPropsByTag({
         tag = "BaseWallTransparent",
-        props = {Transparency = .9}
+        props = {Transparency = 1}
     })
 
 end
