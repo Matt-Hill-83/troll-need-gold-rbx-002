@@ -153,15 +153,18 @@ function module.addScenes(props)
 
                         pageNum = 1
                         local frameConfig = sceneConfig.frames[pageNum]
-                        local charProps =
-                            {
-                                frameConfig = frameConfig,
-                                clonedScene = clonedScene,
-                                player = player,
-                                sgui = playerGui
-                            }
+                        local charProps = {frameConfig = frameConfig}
 
                         renderScreenDialog(charProps)
+
+                        -- local charProps =
+                        --     {
+                        --         frameConfig = frameConfig,
+                        --         clonedScene = clonedScene,
+                        --         sceneFolder = sceneFolder
+                        --     }
+
+                        -- addCharactersToScene(charProps)
                         return
                     end
                 end
@@ -190,13 +193,8 @@ function module.addScenes(props)
         })
 
         function renderScreenDialog(charProps)
-            local clonedScene2 = charProps.clonedScene
             local frameConfig2 = charProps.frameConfig
-            local player = thisPlayer
-
-            local sguiPlayer = player.PlayerGui.SceneDialogGui
-            local dialogTemplate = Utils.getFirstDescendantByName(clonedScene2,
-                                                                  "DialogTemplate")
+            local sguiPlayer = thisPlayer.PlayerGui.SceneDialogGui
 
             Texts.renderTexts({
                 dialogConfigs = frameConfig2.dialogs,
@@ -207,17 +205,12 @@ function module.addScenes(props)
 
         function addCharactersToScene(charProps)
             Characters.addCharactersToScene(charProps)
-            local clonedScene2 = charProps.clonedScene
             local frameConfig2 = charProps.frameConfig
-
-            local dialogTemplate = Utils.getFirstDescendantByName(clonedScene2,
-                                                                  "DialogTemplate")
 
             if thisPlayer then
                 local sguiPlayer = thisPlayer.PlayerGui.SceneDialogGui
                 Texts.renderTexts({
                     dialogConfigs = frameConfig2.dialogs,
-                    dialogTemplate = dialogTemplate,
                     sgui = sguiPlayer
                 })
             end
