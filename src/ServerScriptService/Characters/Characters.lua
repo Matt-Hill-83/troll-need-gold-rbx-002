@@ -65,6 +65,24 @@ renderCharacters = function(props)
                     suffix = "Clone" .. i
                 })
 
+            -- 
+            -- 
+
+            -- point character at camera
+            newChar:SetPrimaryPartCFrame(
+                CFrame.new(newChar.PrimaryPart.Position, cameraPath1.Position))
+            -- Point along y axis only
+            local orientation = newChar.PrimaryPart.Orientation
+            local newOrientation = Vector3.new(0, orientation.Y, 0)
+
+            Utils.setItemAndChildrenPropsByInst(
+                {
+                    item = newChar.PrimaryPart,
+                    props = {Orientation = newOrientation}
+                })
+            -- 
+            -- 
+
             newChar.Parent = charFolder
 
             Utils.mergeTables(newChar, {
