@@ -12,36 +12,29 @@ renderTexts = function(props)
     local sgui = props.sgui
 
     local viewPortSize = sgui.AbsoluteSize
-    print('viewPortSize' .. ' --------------------------- start');
-    print(viewPortSize.Y);
 
-    local pixelsPerStud = 20
-    local rowGap = pixelsPerStud / 2
-    local paddingInPx = pixelsPerStud / 8
-    local fontHeight = viewPortSize.Y / 40
+    local rowGap = 10
+    local paddingInPx = 5
+    local fontHeight = viewPortSize.Y / 30
     fontHeight = math.floor(fontHeight)
     print('fontHeight' .. ' - start');
     print(fontHeight);
-    print('fontHeight' .. ' - end');
 
     local scrollingFrame =
         Utils.getFirstDescendantByName(sgui, "DialogScroller")
 
-    local scrollBarThickness = 4 * fontHeight
+    local scrollBarThickness = 3 * fontHeight
     scrollingFrame.ScrollBarThickness = scrollBarThickness
 
     print('scrollingFrame.AbsoluteSize' .. ' - start');
     print(scrollingFrame.AbsoluteSize);
-    print('scrollingFrame.AbsoluteSize' .. ' - end');
     local children = scrollingFrame:GetChildren()
     for i, item in pairs(children) do
-        if item:IsA('TextLabel') then
-            item:Destroy()
-            --
-        end
+        if item:IsA('TextLabel') then item:Destroy() end
     end
 
     local parentWidth = viewPortSize.X * 0.4 - (2 * paddingInPx)
+    -- parentHeight is only used for the initial calc to determine the box size
     local parentHeight = viewPortSize.Y / 2
 
     local dialogY = 0
@@ -63,7 +56,8 @@ renderTexts = function(props)
             local text = "<b>" .. displayName .. ": " .. "</b>" .. dialogText
 
             local font = Enum.Font.Arial
-            local innerLabelWidth = parentWidth - (2 * paddingInPx)
+            local innerLabelWidth = parentWidth - (2 * paddingInPx) -
+                                        scrollBarThickness
 
             local calcSize = TextService:GetTextSize(text, fontHeight, font,
                                                      Vector2.new(
