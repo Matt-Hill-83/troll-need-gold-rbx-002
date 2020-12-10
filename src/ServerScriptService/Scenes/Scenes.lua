@@ -8,8 +8,8 @@ local DropBox = require(Sss.Source.DropBox.DropBox)
 local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
-
-local Dialog = require(Sss.Source.AddDialog.Dialog)
+local Texts = require(Sss.Source.AddDialog.Texts)
+-- local Texts = require(Sss.Source.AddDialog.Texts)
 local module = {}
 
 getStartPosition = function(props)
@@ -198,9 +198,8 @@ function module.addScenes(props)
             local dialogTemplate = Utils.getFirstDescendantByName(clonedScene2,
                                                                   "DialogTemplate")
 
-            Dialog.renderDialog({
+            Texts.renderTexts({
                 dialogConfigs = frameConfig2.dialogs,
-                dialogTemplate = dialogTemplate,
                 sgui = sguiPlayer
             })
 
@@ -216,7 +215,7 @@ function module.addScenes(props)
 
             if thisPlayer then
                 local sguiPlayer = thisPlayer.PlayerGui.SceneDialogGui
-                Dialog.renderDialog({
+                Texts.renderTexts({
                     dialogConfigs = frameConfig2.dialogs,
                     dialogTemplate = dialogTemplate,
                     sgui = sguiPlayer

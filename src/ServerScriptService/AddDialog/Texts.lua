@@ -8,7 +8,6 @@ local dialogColors = Constants.dialogColors
 local module = {}
 
 renderTexts = function(props)
-    local parent = props.parent
     local dialogConfigs = props.dialogConfigs
     local sgui = props.sgui
 
@@ -19,13 +18,8 @@ renderTexts = function(props)
 
     local pixelsPerStud = 20
     local rowGap = pixelsPerStud / 2
-    -- local pixelsPerStud = 45
     local paddingInPx = pixelsPerStud / 8
-    -- local fontHeight = 20
     local fontHeight = viewPortSize.Y / 40
-    -- local fontHeight = pixelsPerStud * 41 / 45
-
-    -- sgui.SizingMode = "PixelsPerStud"
 
     local scrollingFrame =
         Utils.getFirstDescendantByName(sgui, "DialogScroller")
@@ -38,10 +32,7 @@ renderTexts = function(props)
     end
 
     local parentWidth = viewPortSize.X * 0.4 - (2 * paddingInPx)
-    -- local parentWidth = viewPortSize.X / 2 - (2 * paddingInPx)
-    -- local parentWidth = parent.Size.X * pixelsPerStud
-    -- local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
-    -- local parentHeight = parent.Size.Y * pixelsPerStud
+
     local parentHeight = viewPortSize.Y / 2
 
     local dialogY = 0

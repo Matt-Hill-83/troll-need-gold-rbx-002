@@ -5,14 +5,9 @@ local module = {}
 
 function module.renderDialog(props)
     local dialogConfigs = props.dialogConfigs
-    local dialogTemplate = props.dialogTemplate
     local sgui = props.sgui
 
-    local renderTextsProps = {
-        parent = dialogTemplate,
-        dialogConfigs = dialogConfigs,
-        sgui = sgui
-    }
+    local renderTextsProps = {dialogConfigs = dialogConfigs, sgui = sgui}
 
     Texts.renderTexts(renderTextsProps)
 
