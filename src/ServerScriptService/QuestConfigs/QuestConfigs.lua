@@ -24,7 +24,7 @@ module.questConfigs = {
                                 text = "And you and I can unlock the treasure chest..."
                             }, {char = "cow01", text = "Mooo."}, {
                                 char = "lucky",
-                                text = "But alas... I need just one more gold to afford the journey..."
+                                text = "But alas... I need just one more gold to pay for the journey..."
                             }
                         },
                         characters01 = {},
@@ -38,7 +38,7 @@ module.questConfigs = {
                             {char = "lucky", text = "Oh my poor Grand Mama..."},
                             {char = "cow01", text = "Baaaa."},
                             {
-                                char = "empty",
+                                char = "lucky",
                                 text = "My poor, sick Grand Mama..."
                             }
                         },
@@ -70,7 +70,7 @@ module.questConfigs = {
                             {
                                 char = "lucky",
                                 text = "Lady Luck has smiled upon us!"
-                            },
+                            }, {char = "cow01", text = "Moooo..."},
                             {
                                 char = "lucky",
                                 text = "and sent us a whole platter of fresh..."
@@ -83,10 +83,13 @@ module.questConfigs = {
                             {char = "luke01", text = "Where are we?"},
                             {char = "hudson01", text = "I have no idea."},
                             {
-                                char = "luke01",
+                                char = "hudson01",
                                 text = "Mom said this was a game..."
-                            }, {char = "lucky", text = "Mom lied."},
-                            {char = "lucky", text = "...fresh faces!"}
+                            }, {char = "luke01", text = "Nope..."},
+                            {
+                                char = "lucky",
+                                text = "a whole platter of fresh...  ...faces!"
+                            }
                         },
                         characters01 = {{name = "luke01"}, {name = "hudson01"}},
                         characters02 = {{name = "lucky"}, {name = "cow01"}}
@@ -104,7 +107,12 @@ module.questConfigs = {
                             {
                                 char = "lucky01",
                                 text = "What brightly colored tunics you wear."
-                            },
+                            }
+                        },
+                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
+                        characters02 = {{name = "lucky01"}, {name = "cow01"}}
+                    }, {
+                        dialogs = {
                             {
                                 char = "luke01",
                                 text = "Our mom bought them for us."
@@ -129,11 +137,13 @@ module.questConfigs = {
                     }, {
                         dialogs = {
                             {char = "hudson01", text = "You have a pea patch?"},
-                            {char = "cow01", text = "I've just been peeing..."},
-                            {
-                                char = "chick01",
-                                text = "Well, kind of everywhere..."
-                            },
+                            {char = "hudson01", text = "Wow.... and gross."},
+                            {char = "luke01", text = "Cool!"}
+                        },
+                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
+                        characters02 = {{name = "lucky01"}, {name = "cow01"}}
+                    }, {
+                        dialogs = {
                             {
                                 char = "lucky01",
                                 text = "Forgive my manners, let me introduce myself."
@@ -150,7 +160,12 @@ module.questConfigs = {
                                 char = "lucky01",
                                 text = "But alas, my Luck seems to have run out"
                             },
-                            {char = "luke01", text = "Can we play MineCraft?"},
+                            {char = "luke01", text = "Can we play MineCraft?"}
+                        },
+                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
+                        characters02 = {{name = "lucky01"}, {name = "cow01"}}
+                    }, {
+                        dialogs = {
                             {char = "lucky01", text = "Mine Craft?"},
                             {char = "lucky01", text = "Pish-Posh."},
                             {char = "lucky01", text = "Be off with you then."},
@@ -163,25 +178,35 @@ module.questConfigs = {
                             }, {
                                 char = "lucky01",
                                 text = "You would probably just laugh at me like all the rest..."
-                            }, {char = "luke01", text = "I like riddles!"},
-                            {char = "luke01", text = "Buried treasure?"}, {
+                            }
+                        },
+                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
+                        characters02 = {{name = "lucky01"}, {name = "cow01"}}
+                    }, {
+                        dialogs = {
+                            {char = "luke01", text = "I like riddles!"},
+                            {char = "hudson01", text = "Buried treasure?"}, {
                                 char = "lucky01",
-                                text = "Besides, I must be off now, if I am to get to the Rap Battle..."
-                            }, {char = "luke01", text = "Rap Battle?"},
+                                text = "Besides, I must be off now, I need to get to the Rap Battle..."
+                            }, {char = "luke01", text = "Rap Battle?"}
+                        },
+                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
+                        characters02 = {{name = "lucky01"}, {name = "cow01"}}
+                    }, {
+                        dialogs = {
                             {
                                 char = "luke01",
                                 text = "Tell us your riddle Lucky!"
-                            },
-                            {
-                                char = "lucky01",
-                                text = "Ah, I can see you are clever boys..."
-                            },
-                            {
-                                char = "lucky01",
-                                text = "Quickly then, and lean in close."
                             }, {
                                 char = "lucky01",
-                                text = "If one of the Trolls hears the riddle, then we may as well just dig up the treasure chest and hand it to them."
+                                text = "Ah, perhaps you boys are more clever than you look..."
+                            },
+                            {
+                                char = "lucky01",
+                                text = "Quickly then, and lean in close!"
+                            }, {
+                                char = "lucky01",
+                                text = "If one of the Trolls hears the riddle, they will dig it up themselves."
                             },
                             {
                                 char = "cow01",
@@ -421,7 +446,7 @@ module.questConfigs = {
                         characters02 = {{name = "britta01"}}
                     }
                 },
-                coordinates = {row = 0, col = 2},
+                coordinates = {col = 2, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,

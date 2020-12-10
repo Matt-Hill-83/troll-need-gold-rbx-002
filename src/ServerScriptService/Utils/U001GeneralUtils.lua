@@ -310,7 +310,7 @@ function cloneModel(props)
 
     local modelClone = model:Clone()
     modelClone.Parent = model.Parent
-    modelClone.Name = model.Name .. (suffix or "-clone")
+    modelClone.Name = model.Name .. (suffix or "-Clone")
     if (position) then
         modelClone:SetPrimaryPartCFrame(position)
         -- 

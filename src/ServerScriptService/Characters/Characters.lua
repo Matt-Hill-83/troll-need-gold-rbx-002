@@ -12,12 +12,14 @@ renderCharacters = function(props)
     local itemConfigs = props.itemConfigs
     local characterType = props.characterType
     local sceneFolder = props.sceneFolder
+    local clonedScene = props.clonedScene
     local type = props.type
 
     local charFolder = Utils.getOrCreateFolder(
                            {name = characterType, parent = sceneFolder})
 
     local xGap = 1
+    local zGap = 1
     local nameStub = 'CharacterClone'
 
     InstanceUtils.deleteInstanceByNameStub(
@@ -41,6 +43,9 @@ renderCharacters = function(props)
         -- 
     end
 
+    local cameraPath1 = Utils.getFirstDescendantByName(clonedScene,
+                                                       "ScreenCameraPath1")
+
     -- For each character
     for i, itemConfig in ipairs(itemConfigs) do
         local name = itemConfig.name
@@ -48,11 +53,15 @@ renderCharacters = function(props)
         if (name ~= "blank" and name ~= "empty" and name ~= "") then
             local x = (i - 1) * (charImageBlock.Size.X + xGap) *
                           (type == 2 and 1 or -1)
+
+            local z = (i - 1) * (charImageBlock.Size.Z + zGap)
+
             local newChar = Utils.cloneModel(
                                 {
                     model = characterTemplate,
                     position = characterTemplate.PrimaryPart.CFrame *
-                        CFrame.new(Vector3.new(-x, 0, 0)),
+                        CFrame.new(Vector3.new(-x, 0, z)),
+                    -- CFrame.new(Vector3.new(-x, 0, 0)),
                     suffix = "Clone" .. i
                 })
 
@@ -124,6 +133,7 @@ function module.addCharactersToScene(props)
         template = Utils.getFirstDescendantByName(clonedScene, characterType),
         itemConfigs = characterConfigs01,
         sceneFolder = sceneFolder,
+        clonedScene = clonedScene,
         characterType = characterType,
         type = 1
     })
@@ -134,6 +144,7 @@ function module.addCharactersToScene(props)
         template = Utils.getFirstDescendantByName(clonedScene, characterType2),
         itemConfigs = characterConfigs02,
         sceneFolder = sceneFolder,
+        clonedScene = clonedScene,
         characterType = characterType2,
         type = 2
     })
