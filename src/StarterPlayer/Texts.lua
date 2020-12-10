@@ -22,9 +22,18 @@ renderTexts = function(props)
 
     local scrollingFrame =
         Utils.getFirstDescendantByName(sgui, "DialogScroller")
+    local dialogScrollerPadding = Utils.getFirstDescendantByName(scrollingFrame,
+                                                                 "DialogScrollerPadding")
 
     local scrollBarThickness = 3 * fontHeight
     scrollingFrame.ScrollBarThickness = scrollBarThickness
+
+    local paddingPct = fontHeight
+    dialogScrollerPadding.PaddingBottom = UDim.new(0, paddingPct)
+    dialogScrollerPadding.PaddingTop = UDim.new(0, paddingPct)
+    dialogScrollerPadding.PaddingLeft = UDim.new(0, paddingPct)
+    dialogScrollerPadding.PaddingRight =
+        UDim.new(0, scrollBarThickness + fontHeight)
 
     print('scrollingFrame.AbsoluteSize' .. ' - start');
     print(scrollingFrame.AbsoluteSize);
