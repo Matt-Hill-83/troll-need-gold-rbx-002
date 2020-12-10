@@ -91,10 +91,10 @@ function setVisibility()
 
     local tagBaseWallTransparent = collectionService:GetTagged(
                                        "BaseWallTransparent")
-    Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 4})
+    Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
     Utils.setPropsByTag({
         tag = "BaseWallTransparent",
-        props = {Transparency = 1}
+        props = {Transparency = .9}
     })
 
 end
