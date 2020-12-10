@@ -148,7 +148,6 @@ function module.addScenes(props)
                         thisPlayer = player
                         currentPlayer = player
                         local playerGui = player.PlayerGui.SceneDialogGui
-
                         playerGui.Enabled = true
 
                         pageNum = 1
@@ -209,6 +208,7 @@ function module.addScenes(props)
 
             if thisPlayer then
                 local sguiPlayer = thisPlayer.PlayerGui.SceneDialogGui
+
                 Texts.renderTexts({
                     dialogConfigs = frameConfig2.dialogs,
                     sgui = sguiPlayer
