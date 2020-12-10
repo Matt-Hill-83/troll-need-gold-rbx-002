@@ -94,7 +94,6 @@ renderTexts = function(props)
                 Name = "Dialog-" .. i,
                 Text = text,
                 ZIndex = 2,
-                -- Size = UDim2.new(0, innerLabelWidth, 0, height),
                 Size = UDim2.new(1, 0, 0, height),
                 Position = UDim2.new(0, paddingInPx, 0, paddingInPx),
                 BackgroundTransparency = 1,
