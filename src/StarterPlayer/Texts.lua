@@ -1,16 +1,15 @@
 local TextService = game:GetService("TextService")
 local StarterPlayer = game:GetService("StarterPlayer")
 local Utils = require(StarterPlayer.Source.StarterPlayerScripts.RSUtils)
-
--- local RS = game:GetService("ReplicatedStorage")
--- local Utils = require(RS.Source.Utils.U001GeneralUtils)
--- local Constants = require(RS.Source.Constants.Constants)
+local Constants = require(StarterPlayer.Source.StarterPlayerScripts.RSConstants)
 
 local dialogColors = Constants.dialogColors
 
 local module = {}
 
 renderTexts = function(props)
+
+    print("new function ------------------------->>>>>")
     local dialogConfigs = props.dialogConfigs
     local sgui = props.sgui
 

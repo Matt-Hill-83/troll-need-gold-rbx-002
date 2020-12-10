@@ -8,8 +8,11 @@ local DropBox = require(Sss.Source.DropBox.DropBox)
 local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
-local Texts = require(Sss.Source.AddDialog.Texts)
 -- local Texts = require(Sss.Source.AddDialog.Texts)
+
+local StarterPlayer = game:GetService("StarterPlayer")
+local Texts = require(StarterPlayer.Source.Texts)
+
 local module = {}
 
 getStartPosition = function(props)
