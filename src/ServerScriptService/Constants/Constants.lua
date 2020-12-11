@@ -5,7 +5,8 @@ local module = {
     -- 
     entered = {value = false},
     baseWallHeight = 16,
-    walkSpeed = 16,
+    walkSpeed = 30,
+    -- walkSpeed = 16,
     questWallHeight = 24,
     sceneHeight = 50
     -- 

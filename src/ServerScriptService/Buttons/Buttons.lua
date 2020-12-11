@@ -43,6 +43,10 @@ function module.configButtons(props)
 
     local pn = {value = 1}
 
+    print('numPages' .. ' - start');
+    print(numPages);
+    print('numPages' .. ' - end');
+
     print('');
     print('');
     print('pn' .. ' - start');
@@ -87,10 +91,10 @@ function module.configButtons(props)
 
         local pn3 = props.pn
         if pn3.value < numPages1 then
-            pn.value = pn.value + 1
+            pn3.value = pn3.value + 1
             updateFrameItems({
                 clonedScene = clonedScene1,
-                pn = pn,
+                pn = pn3,
                 numPages = numPages1,
                 sceneConfig = sceneConfig1
             })

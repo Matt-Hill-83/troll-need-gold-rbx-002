@@ -108,12 +108,14 @@ function module.addScenes(props)
 
                 local humanoid = seat.Occupant
                 if humanoid then
+
+                    print('pageNum' ..
+                              ' - start--------------------------------->>>>');
+                    print(pageNum);
+                    print('pageNum' .. ' - end');
                     local character = humanoid.Parent
                     local player = Players:GetPlayerFromCharacter(character)
                     local frameConfig = sceneConfig.frames[pageNum]
-
-                    freezeCameraRE:FireClient(player, cameraPath1, cameraPath2,
-                                              true, frameConfig.dialogs)
 
                     if player then
                         thisPlayer = player
@@ -133,6 +135,9 @@ function module.addScenes(props)
                             openBridgeDoor = openBridgeDoor
                         }
                         Buttons.configButtons(props2)
+
+                        freezeCameraRE:FireClient(player, cameraPath1,
+                                                  cameraPath2, true)
                         return
                     end
                 end
@@ -152,6 +157,10 @@ function module.addScenes(props)
         })
 
         function renderScreenDialog(charProps)
+            print("renderScreenDialog")
+            print('charProps' .. ' - start');
+            print(charProps);
+            print('charProps' .. ' - end');
             renderDialogRE:FireClient(thisPlayer, charProps.frameConfig.dialogs)
 
         end

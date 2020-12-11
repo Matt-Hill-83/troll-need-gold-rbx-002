@@ -36706,6 +36706,45 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
+								<Item class="Weld" referent="RBX285c0f44090a40f9b186062a77f62ade">
+									<Properties>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<CoordinateFrame name="C0">
+											<X>0.00837624073</X>
+											<Y>0.928572655</Y>
+											<Z>-0.184735298</Z>
+											<R00>1</R00>
+											<R01>0</R01>
+											<R02>0</R02>
+											<R10>0</R10>
+											<R11>1</R11>
+											<R12>0</R12>
+											<R20>0</R20>
+											<R21>0</R21>
+											<R22>1</R22>
+										</CoordinateFrame>
+										<CoordinateFrame name="C1">
+											<X>0</X>
+											<Y>0.600000024</Y>
+											<Z>0</Z>
+											<R00>1</R00>
+											<R01>0</R01>
+											<R02>0</R02>
+											<R10>0</R10>
+											<R11>1</R11>
+											<R12>0</R12>
+											<R20>0</R20>
+											<R21>0</R21>
+											<R22>1</R22>
+										</CoordinateFrame>
+										<bool name="Enabled">true</bool>
+										<string name="Name">AccessoryWeld</string>
+										<Ref name="Part0">RBX6159fe7d30f94b228a4bf5bfe3ae8aab</Ref>
+										<Ref name="Part1">RBXe12812bc43ad4b4aa5dce145fe06c951</Ref>
+										<int64 name="SourceAssetId">-1</int64>
+										<BinaryString name="Tags"></BinaryString>
+									</Properties>
+								</Item>
 							</Item>
 						</Item>
 					</Item>
@@ -37190,7 +37229,7 @@ local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
 local StarterPlayer = game:GetService("StarterPlayer")
 local Texts = require(StarterPlayer.Source.Texts)
 
-local function onNotifyPlayer(cameraPath1, cameraPath2, freeze,dialogs)
+local function onNotifyPlayer(cameraPath1, cameraPath2, freeze)
 
 	local player = game:GetService("Players").LocalPlayer
 	local playerGui = player.PlayerGui.SceneDialogGui
@@ -37198,9 +37237,6 @@ local function onNotifyPlayer(cameraPath1, cameraPath2, freeze,dialogs)
 	local camera = workspace.CurrentCamera
 	if freeze then
 		playerGui.Enabled = true
-		
-		--player.Character:WaitForChild("Humanoid").WalkSpeed = 0
-		
 		local cameraOffset = Vector3.new(0, 0, 2)
 
 		if camera.CameraType ~= Enum.CameraType.Scriptable then
@@ -37231,7 +37267,6 @@ remoteEvent.OnClientEvent:Connect(onNotifyPlayer)
 					<string name="ScriptGuid">{43facf73-d8a2-4dc9-9bd7-1072559272dd}</string>
 					<ProtectedString name="Source"><![CDATA[print("RenderDialog - local script")
 
-
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("RenderDialogRE")
 
@@ -37240,10 +37275,7 @@ local Texts = require(StarterPlayer.Source.Texts)
 
 local function onNotifyPlayer(dialogs)
 	print("RenderDialog - local event")
-	print("RenderDialog - local event")
-	print("RenderDialog - local event")
-	print("RenderDialog - local event")
-	print("RenderDialog - local event")
+
 	local player = game:GetService("Players").LocalPlayer
 	local playerGui = player.PlayerGui.SceneDialogGui
 
@@ -38040,8 +38072,6 @@ renderTexts = function(props)
     local paddingInPx = 5
     local fontHeight = viewPortSize.Y / 30
     fontHeight = math.floor(fontHeight)
-    print('fontHeight' .. ' - start');
-    print(fontHeight);
 
     local scrollingFrame =
         Utils.getFirstDescendantByName(sgui, "DialogScroller")
@@ -38058,8 +38088,6 @@ renderTexts = function(props)
     dialogScrollerPadding.PaddingRight =
         UDim.new(0, scrollBarThickness + fontHeight)
 
-    print('scrollingFrame.AbsoluteSize' .. ' - start');
-    print(scrollingFrame.AbsoluteSize);
     local children = scrollingFrame:GetChildren()
     for i, item in pairs(children) do
         if item:IsA('TextLabel') then item:Destroy() end
@@ -38142,19 +38170,6 @@ end
 
 module.renderTexts = renderTexts
 return module
-]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
-			<Item class="LocalScript" referent="RBX0ee9e23db6154aa2bb0cdcdec9152c4d">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<bool name="Disabled">false</bool>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">FreezeCamera</string>
-					<string name="ScriptGuid">{5153cad7-ce02-4941-bec1-38e57c8d92e4}</string>
-					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -41546,9 +41561,20 @@ deleteInstanceByNameStub = function(props)
     local parent = props.parent
 
     local children = parent:GetChildren()
+    print('nameStub' .. ' - start');
+    print(nameStub);
+    print('nameStub' .. ' - end');
+
     for _, item in pairs(children) do
+        print('item.Name' .. ' - start');
+        print(item.Name);
+        print('item.Name' .. ' - end');
         local match = string.match(item.Name, nameStub)
-        if item:IsA('Part') and match then
+        print('match' .. ' - start');
+        print(match);
+        print('match' .. ' - end');
+
+        if item:IsA('Model') and match then
             item:Destroy()
             --
         end
@@ -42286,173 +42312,6 @@ module.questConfigs = {
                 isStartScene = false,
                 maxRow = 0,
                 maxCol = 1
-            }, {
-                name = "cap",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "britta01",
-                                text = "Wow.  Are those space shirts?"
-                            },
-                            {char = "hudson01", text = "Our mom bought them."},
-                            {char = "britta01", text = "Your mom is cool!"},
-                            {
-                                char = "luke01",
-                                text = "Are you Sid the Science Kid?"
-                            }, {char = "britta01", text = "No."}
-                        },
-                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
-                        characters02 = {{name = "britta01"}, {name = "raven05"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "hudson01",
-                                text = "How do we get out of here?"
-                            }, {char = "britta01", text = "Ha!"},
-                            {char = "britta01", text = "Good question."},
-                            {
-                                char = "britta01",
-                                text = "There is only one way out."
-                            }, {char = "hudson01", text = "We'll take it!"},
-                            {char = "luke01", text = "Are you Dora?"}
-                        },
-                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
-                        characters02 = {{name = "britta01"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "britta01",
-                                text = "You need to go through Mount Dracmore."
-                            }, {char = "hudson01", text = "ok..."},
-                            {
-                                char = "britta01",
-                                text = "But first, you need to bring the bun to the pan."
-                            },
-                            {
-                                char = "luke01",
-                                text = "What are you talking about?"
-                            }
-                        },
-                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
-                        characters02 = {{name = "britta01"}}
-                    }, {
-                        dialogs = {
-                            {char = "britta01", text = "Did you get the bun?"},
-                            {char = "luke01", text = "What?"},
-                            {char = "hudson01", text = "Are you talking to us?"},
-                            {
-                                char = "britta01",
-                                text = "Did you see this sign that said= \"You got the bun\"?"
-                            }, {char = "hudson01", text = "No."}
-                        },
-                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
-                        characters02 = {{name = "britta01"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "britta01",
-                                text = "Never mind.  It's not important."
-                            },
-                            {char = "britta01", text = "Just go to the pan."},
-                            {char = "britta01", text = "You will earn 5 gold."}
-                        },
-                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
-                        characters02 = {{name = "britta01"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "hudson01",
-                                text = "We can give one gold to the Leprechaun."
-                            }, {char = "britta01", text = "What? No, no no!"},
-                            {
-                                char = "britta01",
-                                text = "Never give the Leprechaun any gold, ever!"
-                            },
-                            {
-                                char = "hudson01",
-                                text = "But, his Grand Ma-Ma..."
-                            },
-                            {
-                                char = "britta01",
-                                text = "Don't even talk to him."
-                            }, {char = "luke01", text = "I like him..."}
-                        },
-                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
-                        characters02 = {{name = "britta01"}}
-                    }, {
-                        dialogs = {
-                            {char = "hudson01", text = "How do we get home?"},
-                            {
-                                char = "luke01",
-                                text = "Our mom said this was a game."
-                            },
-                            {
-                                char = "britta01",
-                                text = "Look, I am on a dress quest."
-                            },
-                            {
-                                char = "britta01",
-                                text = "I can help you.  Meet me at the pig in the wig."
-                            },
-                            {
-                                char = "britta01",
-                                text = "But you have to bring Hopps!"
-                            }
-                        },
-                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
-                        characters02 = {{name = "britta01"}}
-                    }
-                },
-                coordinates = {col = 2, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                isEndScene = false,
-                isStartScene = false,
-                maxRow = 0,
-                maxCol = 2
-            }, {
-                name = "pan",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "elf", text = "DO NOT GO IN THE CAVE!!!"},
-                            {
-                                char = "luke01",
-                                text = "Are you a licensed character?"
-                            },
-                            {
-                                char = "elf",
-                                text = "Huh? What?  Look, a giant monster!"
-                            }
-                        },
-                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
-                        characters02 = {{name = "elf"}}
-                    }, {
-                        dialogs = {
-                            {char = "elf", text = "DO NOT GO IN THE CAVE!!!"},
-                            {char = "luke01", text = "Let's go in the cave."},
-                            {char = "hudson01", text = "No way!"},
-                            {
-                                char = "luke01",
-                                text = "I'm going to the rap battle!"
-                            }
-                        },
-                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
-                        characters02 = {{name = "elf"}}
-                    }
-                },
-                coordinates = {col = 3, row = 0},
-                showBottomPath = true,
-                showRightPath = false,
-                showTopPath = true,
-                showLeftPath = true,
-                isEndScene = true,
-                isStartScene = false,
-                maxRow = 0,
-                maxCol = 3
             }
         },
         gridSize = {rows = 1, cols = 4}
@@ -42491,7 +42350,8 @@ return module
     -- 
     entered = {value = false},
     baseWallHeight = 16,
-    walkSpeed = 16,
+    walkSpeed = 30,
+    -- walkSpeed = 16,
     questWallHeight = 24,
     sceneHeight = 50
     -- 
@@ -42777,7 +42637,14 @@ renderCharacters = function(props)
     local type = props.type
 
     local charFolder = Utils.getOrCreateFolder(
-                           {name = characterType, parent = sceneFolder})
+                           {
+            name = characterType .. "-folder",
+            parent = sceneFolder
+        })
+
+    print('charFolder' .. ' - start');
+    print(charFolder);
+    print('charFolder' .. ' - end');
 
     local xGap = 1
     local zGap = 1
@@ -42822,12 +42689,8 @@ renderCharacters = function(props)
                     model = characterTemplate,
                     position = characterTemplate.PrimaryPart.CFrame *
                         CFrame.new(Vector3.new(-x, 0, z)),
-                    -- CFrame.new(Vector3.new(-x, 0, 0)),
                     suffix = "Clone" .. i
                 })
-
-            -- 
-            -- 
 
             -- point character at camera
             newChar:SetPrimaryPartCFrame(
@@ -42841,13 +42704,12 @@ renderCharacters = function(props)
                     item = newChar.PrimaryPart,
                     props = {Orientation = newOrientation}
                 })
-            -- 
-            -- 
 
-            newChar.Parent = charFolder
+            -- newChar.Parent = charFolder
 
             Utils.mergeTables(newChar, {
-                Parent = characterTemplate.Parent,
+                Parent = charFolder,
+                -- Parent = characterTemplate.Parent,
                 Name = nameStub .. i
             })
 
@@ -43064,12 +42926,14 @@ function module.addScenes(props)
 
                 local humanoid = seat.Occupant
                 if humanoid then
+
+                    print('pageNum' ..
+                              ' - start--------------------------------->>>>');
+                    print(pageNum);
+                    print('pageNum' .. ' - end');
                     local character = humanoid.Parent
                     local player = Players:GetPlayerFromCharacter(character)
                     local frameConfig = sceneConfig.frames[pageNum]
-
-                    freezeCameraRE:FireClient(player, cameraPath1, cameraPath2,
-                                              true, frameConfig.dialogs)
 
                     if player then
                         thisPlayer = player
@@ -43088,7 +42952,10 @@ function module.addScenes(props)
                             sgui = player.PlayerGui.SceneDialogGui,
                             openBridgeDoor = openBridgeDoor
                         }
-                        Buttons.doFrameStuff(props2)
+                        Buttons.configButtons(props2)
+
+                        freezeCameraRE:FireClient(player, cameraPath1,
+                                                  cameraPath2, true)
                         return
                     end
                 end
@@ -43108,6 +42975,10 @@ function module.addScenes(props)
         })
 
         function renderScreenDialog(charProps)
+            print("renderScreenDialog")
+            print('charProps' .. ' - start');
+            print(charProps);
+            print('charProps' .. ' - end');
             renderDialogRE:FireClient(thisPlayer, charProps.frameConfig.dialogs)
 
         end
@@ -43343,7 +43214,7 @@ function updateButtonActiveStatus(props)
 
 end
 
-function module.doFrameStuff(props)
+function module.configButtons(props)
     local clonedScene = props.clonedScene
     local numPages = props.numPages
     local sceneConfig = props.sceneConfig
@@ -43359,17 +43230,26 @@ function module.doFrameStuff(props)
 
     local pn = {value = 1}
 
+    print('numPages' .. ' - start');
+    print(numPages);
+    print('numPages' .. ' - end');
+
+    print('');
+    print('');
+    print('pn' .. ' - start');
+    print(pn);
+
     function updateFrameItems(props)
         local clonedScene2 = props.clonedScene
         local numPages2 = props.numPages
         local sceneConfig2 = props.sceneConfig
-        local pn = props.pn
+        local pn2 = props.pn
         local buttonPressed = false
 
         if not buttonPressed then
             buttonPressed = true
             updateButtonActiveStatus({
-                pageNum = pn.value,
+                pageNum = pn2.value,
                 numPages = numPages2,
                 nextButton = nextButton,
                 prevButton = prevButton,
@@ -43378,7 +43258,7 @@ function module.doFrameStuff(props)
                 clonedScene = clonedScene
             })
 
-            local newFrameConfig = sceneConfig2.frames[pn.value]
+            local newFrameConfig = sceneConfig2.frames[pn2.value]
             local newSceneProps = {
                 frameConfig = newFrameConfig,
                 clonedScene = clonedScene2,
@@ -43396,12 +43276,12 @@ function module.doFrameStuff(props)
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
 
-        local pn = props.pn
-        if pn.value < numPages1 then
-            pn.value = pn.value + 1
+        local pn3 = props.pn
+        if pn3.value < numPages1 then
+            pn3.value = pn3.value + 1
             updateFrameItems({
                 clonedScene = clonedScene1,
-                pn = pn,
+                pn = pn3,
                 numPages = numPages1,
                 sceneConfig = sceneConfig1
             })
@@ -43414,22 +43294,18 @@ function module.doFrameStuff(props)
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
 
-        local pn = props.pn
-        if pn.value > 1 then
-            pn.value = pn.value - 1
+        local pn4 = props.pn
+        if pn4.value > 1 then
+            pn4.value = pn4.value - 1
             updateFrameItems({
                 clonedScene = clonedScene1,
-                pn = pn,
+                pn = pn4,
                 numPages = numPages1,
                 sceneConfig = sceneConfig1
             })
         end
     end
 
-    print('');
-    print('');
-    print('pn' .. ' - start');
-    print(pn);
     local function onIncrementPage()
         incrementPage({
             pn = pn,

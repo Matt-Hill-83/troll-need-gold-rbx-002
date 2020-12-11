@@ -13,7 +13,14 @@ renderCharacters = function(props)
     local type = props.type
 
     local charFolder = Utils.getOrCreateFolder(
-                           {name = characterType, parent = sceneFolder})
+                           {
+            name = characterType .. "-folder",
+            parent = sceneFolder
+        })
+
+    print('charFolder' .. ' - start');
+    print(charFolder);
+    print('charFolder' .. ' - end');
 
     local xGap = 1
     local zGap = 1
@@ -58,12 +65,8 @@ renderCharacters = function(props)
                     model = characterTemplate,
                     position = characterTemplate.PrimaryPart.CFrame *
                         CFrame.new(Vector3.new(-x, 0, z)),
-                    -- CFrame.new(Vector3.new(-x, 0, 0)),
                     suffix = "Clone" .. i
                 })
-
-            -- 
-            -- 
 
             -- point character at camera
             newChar:SetPrimaryPartCFrame(
@@ -77,13 +80,12 @@ renderCharacters = function(props)
                     item = newChar.PrimaryPart,
                     props = {Orientation = newOrientation}
                 })
-            -- 
-            -- 
 
-            newChar.Parent = charFolder
+            -- newChar.Parent = charFolder
 
             Utils.mergeTables(newChar, {
-                Parent = characterTemplate.Parent,
+                Parent = charFolder,
+                -- Parent = characterTemplate.Parent,
                 Name = nameStub .. i
             })
 
