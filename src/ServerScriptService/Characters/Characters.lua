@@ -18,10 +18,6 @@ renderCharacters = function(props)
             parent = sceneFolder
         })
 
-    print('charFolder' .. ' - start');
-    print(charFolder);
-    print('charFolder' .. ' - end');
-
     local xGap = 1
     local zGap = 1
     local nameStub = 'CharacterClone'

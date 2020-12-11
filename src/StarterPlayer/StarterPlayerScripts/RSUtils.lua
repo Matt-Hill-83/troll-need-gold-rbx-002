@@ -399,5 +399,4 @@ module.tableToString = tableToString
 module.hideItemAndChildren = hideItemAndChildren
 module.mergeTables = mergeTables
 module.getDescendantsByName = getDescendantsByName
-
 return module

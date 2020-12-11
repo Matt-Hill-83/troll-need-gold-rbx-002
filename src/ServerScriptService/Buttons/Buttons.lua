@@ -2,7 +2,7 @@ local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Constants = require(Sss.Source.Constants.Constants)
 
-local module = {}
+local module = {nextButtonEvent = nil, prevButtonEvent = nil}
 
 function updateButtonActiveStatus(props)
     local pageNum = props.pageNum
@@ -27,7 +27,7 @@ function updateButtonActiveStatus(props)
 
 end
 
-function module.configButtons(props)
+function configButtons(props)
     local clonedScene = props.clonedScene
     local numPages = props.numPages
     local sceneConfig = props.sceneConfig
@@ -43,14 +43,16 @@ function module.configButtons(props)
 
     local pn = {value = 1}
 
+    if module.nextButtonEvent then module.nextButtonEvent:Disconnect() end
+    if module.prevButtonEvent then module.prevButtonEvent:Disconnect() end
+
+    print('------------------------------------------------------------');
+    print('------------------------------------------------------------');
+    print('pn' .. ' - start');
+    print(pn.value);
+
     print('numPages' .. ' - start');
     print(numPages);
-    print('numPages' .. ' - end');
-
-    print('');
-    print('');
-    print('pn' .. ' - start');
-    print(pn);
 
     function updateFrameItems(props)
         local clonedScene2 = props.clonedScene
@@ -85,11 +87,18 @@ function module.configButtons(props)
     end
 
     function incrementPage(props)
+
+        print("incrementPage------------------------------->>")
+        print("incrementPage------------------------------->>")
+        print("incrementPage------------------------------->>")
         local clonedScene1 = props.clonedScene
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
 
         local pn3 = props.pn
+        print('pn3.value' .. ' - start');
+        print(pn3.value);
+        print('pn3.value' .. ' - end');
         if pn3.value < numPages1 then
             pn3.value = pn3.value + 1
             updateFrameItems({
@@ -120,6 +129,10 @@ function module.configButtons(props)
     end
 
     local function onIncrementPage()
+        print("onIncrementPage")
+        print('pn.value' .. ' - start');
+        print(pn.value);
+        print('pn.value' .. ' - end');
         incrementPage({
             pn = pn,
             clonedScene = clonedScene,
@@ -137,7 +150,11 @@ function module.configButtons(props)
         })
     end
 
-    nextButton.MouseButton1Click:Connect(onIncrementPage)
-    prevButton.MouseButton1Click:Connect(onDecrementPage)
+    module.nextButtonEvent = nextButton.MouseButton1Click:Connect(
+                                 onIncrementPage)
+    module.prevButtonEvent = prevButton.MouseButton1Click:Connect(
+                                 onDecrementPage)
 end
+
+module.configButtons = configButtons
 return module

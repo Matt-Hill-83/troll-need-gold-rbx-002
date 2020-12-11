@@ -7,20 +7,10 @@ local module = {}
 deleteInstanceByNameStub = function(props)
     local nameStub = props.nameStub
     local parent = props.parent
-
     local children = parent:GetChildren()
-    print('nameStub' .. ' - start');
-    print(nameStub);
-    print('nameStub' .. ' - end');
 
     for _, item in pairs(children) do
-        print('item.Name' .. ' - start');
-        print(item.Name);
-        print('item.Name' .. ' - end');
         local match = string.match(item.Name, nameStub)
-        print('match' .. ' - start');
-        print(match);
-        print('match' .. ' - end');
 
         if item:IsA('Model') and match then
             item:Destroy()
