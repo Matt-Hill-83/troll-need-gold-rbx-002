@@ -130,7 +130,8 @@ function module.addScenes(props)
                             sceneFolder = sceneFolder,
                             addCharactersToScene = addCharactersToScene,
                             renderScreenDialog = renderScreenDialog,
-                            sgui = player.PlayerGui.SceneDialogGui
+                            sgui = player.PlayerGui.SceneDialogGui,
+                            openBridgeDoor = openBridgeDoor
                         }
                         Buttons.doFrameStuff(props2)
                         return
@@ -158,6 +159,11 @@ function module.addScenes(props)
 
         function addCharactersToScene(charProps)
             Characters.addCharactersToScene(charProps)
+        end
+
+        function openBridgeDoor(charProps)
+            local bridgeDoorRight = Utils.getFirstDescendantByName(clonedScene,
+                                                                   "BridgeDoorRight")
         end
 
         local frameConfig = sceneConfig.frames[pageNum]

@@ -5,21 +5,21 @@ local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 
 function updateButtonActiveStatus(props)
-    local pageNum2 = props.pageNum
+    local pageNum = props.pageNum
     local numPages2 = props.numPages
     local nextButton = props.nextButton
     local prevButton = props.prevButton
     local pageNumLabel = props.pageNumLabel
 
-    nextButton.Active = pageNum2 < numPages2
-    nextButton.Text = nextButton.Active and Constants.buttonLabels.NextPage or
-                          "---"
+    local lastPage = pageNum >= numPages2
+    nextButton.Active = not lastPage
+    nextButton.Text = not lastPage and Constants.buttonLabels.NextPage or "---"
 
-    prevButton.Active = pageNum2 > 1
+    prevButton.Active = pageNum > 1
     prevButton.Text = prevButton.Active and Constants.buttonLabels.PrevPage or
                           "---"
 
-    pageNumLabel.Text = "Page: " .. pageNum2 .. " of " .. numPages2
+    pageNumLabel.Text = "Page: " .. pageNum .. " of " .. numPages2
 
 end
 
