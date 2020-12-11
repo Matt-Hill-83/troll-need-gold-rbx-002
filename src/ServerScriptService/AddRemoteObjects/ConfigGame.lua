@@ -34,7 +34,7 @@ function setVisibility()
             })
     end
 
-    local itemsToHideAtRuntine = {'QuestsOrigin', 'TemplatesPedestal'}
+    local itemsToHideAtRuntine = {'QuestsOrigin', 'TerrainBase'}
     for i, item in ipairs(itemsToHideAtRuntine) do
         Utils.hideItemAndChildrenByName({name = item, hide = true})
     end
