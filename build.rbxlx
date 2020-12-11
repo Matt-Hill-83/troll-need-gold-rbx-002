@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>457.907806</X>
-					<Y>102.951874</Y>
-					<Z>-1146.06567</Z>
-					<R00>-0.999384284</R00>
-					<R01>0.0223626755</R01>
-					<R02>-0.0270384513</R02>
-					<R10>-0</R10>
-					<R11>0.770589948</R11>
-					<R12>0.637331307</R12>
-					<R20>0.0350879915</R20>
-					<R21>0.63693887</R21>
-					<R22>-0.770115376</R22>
+					<X>395.300201</X>
+					<Y>-36.799324</Y>
+					<Z>-1056.22229</Z>
+					<R00>-0.997537196</R00>
+					<R01>0.0554112904</R01>
+					<R02>-0.0430008173</R02>
+					<R10>-3.72528985e-09</R10>
+					<R11>0.613079846</R11>
+					<R12>0.790021002</R12>
+					<R20>0.0701390132</R20>
+					<R21>0.788075328</R21>
+					<R22>-0.611569941</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>463.869843</X>
-					<Y>-37.5810394</Y>
-					<Z>-976.253601</Z>
+					<X>395.515198</X>
+					<Y>-40.7492867</Y>
+					<Z>-1053.16455</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -20183,6 +20183,47 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<Z>5</Z>
 										</Vector3>
 									</Properties>
+									<Item class="ManualWeld" referent="RBX79dce7f567ea4547b37b8ad20e872268">
+										<Properties>
+											<BinaryString name="AttributesSerialize"></BinaryString>
+											<CoordinateFrame name="C0">
+												<X>0</X>
+												<Y>0</Y>
+												<Z>0</Z>
+												<R00>-1.97472968e-06</R00>
+												<R01>-9.29321686e-09</R01>
+												<R02>1</R02>
+												<R10>1.00316928e-08</R10>
+												<R11>1</R11>
+												<R12>9.2932364e-09</R12>
+												<R20>-1</R20>
+												<R21>1.00317115e-08</R21>
+												<R22>-1.97472968e-06</R22>
+											</CoordinateFrame>
+											<CoordinateFrame name="C1">
+												<X>0.0009765625</X>
+												<Y>-0.000129699707</Y>
+												<Z>-4.82745361</Z>
+												<R00>-3.39083749e-06</R00>
+												<R01>5.32408912e-15</R01>
+												<R02>1</R02>
+												<R10>-1.06583875e-14</R10>
+												<R11>1</R11>
+												<R12>-5.32412512e-15</R12>
+												<R20>-1</R20>
+												<R21>-1.06584053e-14</R21>
+												<R22>-3.39083749e-06</R22>
+											</CoordinateFrame>
+											<bool name="Enabled">true</bool>
+											<string name="Name">ManualWeld</string>
+											<Ref name="Part0">RBX04189b0c86354359b136c02b85eb745c</Ref>
+											<Ref name="Part1">RBX451ff72f680a415784f6bea1473665e8</Ref>
+											<int64 name="SourceAssetId">-1</int64>
+											<int name="Surface0">-1</int>
+											<int name="Surface1">-1</int>
+											<BinaryString name="Tags"></BinaryString>
+										</Properties>
+									</Item>
 								</Item>
 								<Item class="Part" referent="RBX451ff72f680a415784f6bea1473665e8">
 									<Properties>
@@ -20197,18 +20238,18 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<token name="BottomSurface">0</token>
 										<token name="BottomSurfaceInput">0</token>
 										<CoordinateFrame name="CFrame">
-											<X>395.515198</X>
+											<X>395.51535</X>
 											<Y>-40.7492867</Y>
 											<Z>-1053.16455</Z>
-											<R00>-3.39075905e-06</R00>
+											<R00>-3.39078497e-06</R00>
 											<R01>-1.0658141e-14</R01>
-											<R02>-0.999976873</R02>
-											<R10>5.32409505e-15</R10>
+											<R02>-0.999984503</R02>
+											<R10>5.32420177e-15</R10>
 											<R11>1</R11>
 											<R12>-8.8817842e-15</R12>
-											<R20>0.999980688</R20>
+											<R20>0.999988317</R20>
 											<R21>8.32192794e-14</R21>
-											<R22>-3.39074199e-06</R22>
+											<R22>-3.3907686e-06</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
