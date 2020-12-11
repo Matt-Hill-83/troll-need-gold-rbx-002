@@ -95,7 +95,7 @@ function configButtons(props)
         local clonedScene1 = props.clonedScene
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
-        local player = props.player
+        local player1 = props.player
 
         local pn3 = props.pn
         if pn3.value < numPages1 then
@@ -105,7 +105,7 @@ function configButtons(props)
                 pn = pn3,
                 numPages = numPages1,
                 sceneConfig = sceneConfig1,
-                player = player
+                player = player1
             })
         end
 
@@ -115,6 +115,7 @@ function configButtons(props)
         local clonedScene1 = props.clonedScene
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
+        local player2 = props.player
 
         local pn4 = props.pn
         if pn4.value > 1 then
@@ -123,7 +124,8 @@ function configButtons(props)
                 clonedScene = clonedScene1,
                 pn = pn4,
                 numPages = numPages1,
-                sceneConfig = sceneConfig1
+                sceneConfig = sceneConfig1,
+                player = player2
             })
         end
     end
@@ -143,7 +145,8 @@ function configButtons(props)
             pn = pn,
             clonedScene = clonedScene,
             numPages = numPages,
-            sceneConfig = sceneConfig
+            sceneConfig = sceneConfig,
+            player = player
         })
     end
 

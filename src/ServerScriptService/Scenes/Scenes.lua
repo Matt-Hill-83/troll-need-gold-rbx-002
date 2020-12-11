@@ -39,7 +39,6 @@ function module.addScenes(props)
 
     for sceneIndex, sceneConfig in ipairs(sceneConfigs) do
         local entered2 = {value = false}
-        -- local numPages = #sceneConfig.frames
         local pageNum = 1
 
         local newPosition = getNewPosition(
@@ -112,7 +111,6 @@ function module.addScenes(props)
             clonedScene = clonedScene,
             sceneConfig = sceneConfig,
             addCharactersToScene = addCharactersToScene,
-            -- numPages = numPages,
             sceneFolder = sceneFolder,
             openBridgeDoor = openBridgeDoor
         }
