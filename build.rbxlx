@@ -41976,9 +41976,9 @@ return module
 
 module.questConfigs = {
     {
-        questTitle = "--- The Boys from CT - part 01",
-        startSceneCoords = {row = 0, col = 0},
-        endSceneCoords = {col = 3, row = 0},
+        questTitle = "The Boys from Connecticut - part 01",
+        startSceneCoords = {col = 0, row = 0},
+        endSceneCoords = {row = 0, col = 3},
         sceneConfigs = {
             {
                 name = "mop",
@@ -42013,7 +42013,7 @@ module.questConfigs = {
                             {char = "cow01", text = "Baaaa."},
                             {
                                 char = "lucky",
-                                text = "My poor, sick Grand Mama..."
+                                text = "My poor, old Grand Mama..."
                             }
                         },
                         characters01 = {},
@@ -42190,7 +42190,7 @@ module.questConfigs = {
                         characters02 = {{name = "lucky01"}, {name = "cow01"}}
                     }
                 },
-                coordinates = {row = 0, col = 0},
+                coordinates = {col = 0, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -42292,7 +42292,7 @@ module.questConfigs = {
                         }
                     }
                 },
-                coordinates = {row = 0, col = 1},
+                coordinates = {col = 1, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -42301,6 +42301,173 @@ module.questConfigs = {
                 isStartScene = false,
                 maxRow = 0,
                 maxCol = 1
+            }, {
+                name = "cap",
+                frames = {
+                    {
+                        dialogs = {
+                            {
+                                char = "britta01",
+                                text = "Wow.  Are those space shirts?"
+                            },
+                            {char = "hudson01", text = "Our mom bought them."},
+                            {char = "britta01", text = "Your mom is cool!"},
+                            {
+                                char = "luke01",
+                                text = "Are you Sid the Science Kid?"
+                            }, {char = "britta01", text = "No."}
+                        },
+                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
+                        characters02 = {{name = "britta01"}, {name = "raven05"}}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "hudson01",
+                                text = "How do we get out of here?"
+                            }, {char = "britta01", text = "Ha!"},
+                            {char = "britta01", text = "Good question."},
+                            {
+                                char = "britta01",
+                                text = "There is only one way out."
+                            }, {char = "hudson01", text = "We'll take it!"},
+                            {char = "luke01", text = "Are you Dora?"}
+                        },
+                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
+                        characters02 = {{name = "britta01"}}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "britta01",
+                                text = "You need to go through Mount Dracmore."
+                            }, {char = "hudson01", text = "ok..."},
+                            {
+                                char = "britta01",
+                                text = "But first, you need to bring the bun to the pan."
+                            },
+                            {
+                                char = "luke01",
+                                text = "What are you talking about?"
+                            }
+                        },
+                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
+                        characters02 = {{name = "britta01"}}
+                    }, {
+                        dialogs = {
+                            {char = "britta01", text = "Did you get the bun?"},
+                            {char = "luke01", text = "What?"},
+                            {char = "hudson01", text = "Are you talking to us?"},
+                            {
+                                char = "britta01",
+                                text = "Did you see this sign that said= \"You got the bun\"?"
+                            }, {char = "hudson01", text = "No."}
+                        },
+                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
+                        characters02 = {{name = "britta01"}}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "britta01",
+                                text = "Never mind.  It's not important."
+                            },
+                            {char = "britta01", text = "Just go to the pan."},
+                            {char = "britta01", text = "You will earn 5 gold."}
+                        },
+                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
+                        characters02 = {{name = "britta01"}}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "hudson01",
+                                text = "We can give one gold to the Leprechaun."
+                            }, {char = "britta01", text = "What? No, no no!"},
+                            {
+                                char = "britta01",
+                                text = "Never give the Leprechaun any gold, ever!"
+                            },
+                            {
+                                char = "hudson01",
+                                text = "But, his Grand Ma-Ma..."
+                            },
+                            {
+                                char = "britta01",
+                                text = "Don't even talk to him."
+                            }, {char = "luke01", text = "I like him..."}
+                        },
+                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
+                        characters02 = {{name = "britta01"}}
+                    }, {
+                        dialogs = {
+                            {char = "hudson01", text = "How do we get home?"},
+                            {
+                                char = "luke01",
+                                text = "Our mom said this was a game."
+                            },
+                            {
+                                char = "britta01",
+                                text = "Look, I am on a dress quest."
+                            },
+                            {
+                                char = "britta01",
+                                text = "I can help you.  Meet me at the pig in the wig."
+                            },
+                            {
+                                char = "britta01",
+                                text = "But you have to bring Hopps!"
+                            }
+                        },
+                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
+                        characters02 = {{name = "britta01"}}
+                    }
+                },
+                coordinates = {col = 2, row = 0},
+                showBottomPath = false,
+                showRightPath = true,
+                showTopPath = false,
+                showLeftPath = true,
+                isEndScene = false,
+                isStartScene = false,
+                maxRow = 0,
+                maxCol = 2
+            }, {
+                name = "pan",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "elf", text = "DO NOT GO IN THE CAVE!!!"},
+                            {
+                                char = "luke01",
+                                text = "Are you a licensed character?"
+                            },
+                            {
+                                char = "elf",
+                                text = "Huh? What?  Look, a giant monster!"
+                            }
+                        },
+                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
+                        characters02 = {{name = "elf"}}
+                    }, {
+                        dialogs = {
+                            {char = "elf", text = "DO NOT GO IN THE CAVE!!!"},
+                            {char = "luke01", text = "Let's go in the cave."},
+                            {char = "hudson01", text = "No way!"},
+                            {
+                                char = "luke01",
+                                text = "I'm going to the rap battle!"
+                            }
+                        },
+                        characters01 = {{name = "luke01"}, {name = "hudson01"}},
+                        characters02 = {{name = "elf"}}
+                    }
+                },
+                coordinates = {row = 0, col = 3},
+                showBottomPath = false,
+                showRightPath = false,
+                showTopPath = false,
+                showLeftPath = true,
+                isEndScene = true,
+                isStartScene = false,
+                maxRow = 0,
+                maxCol = 3
             }
         },
         gridSize = {rows = 1, cols = 4}
@@ -42912,10 +43079,6 @@ function module.addScenes(props)
                 local humanoid = seat.Occupant
                 if humanoid then
 
-                    print('pageNum' ..
-                              ' - start--------------------------------->>>>');
-                    print(pageNum);
-                    print('pageNum' .. ' - end');
                     local character = humanoid.Parent
                     local player = Players:GetPlayerFromCharacter(character)
                     local frameConfig = sceneConfig.frames[pageNum]
@@ -42960,10 +43123,6 @@ function module.addScenes(props)
         })
 
         function renderScreenDialog(charProps)
-            print("renderScreenDialog")
-            print('charProps' .. ' - start');
-            print(charProps);
-            print('charProps' .. ' - end');
             renderDialogRE:FireClient(thisPlayer, charProps.frameConfig.dialogs)
 
         end
@@ -43228,14 +43387,6 @@ function configButtons(props)
         clonedScene = clonedScene
     })
 
-    print('------------------------------------------------------------');
-    print('------------------------------------------------------------');
-    print('pn' .. ' - start');
-    print(pn.value);
-
-    print('numPages' .. ' - start');
-    print(numPages);
-
     function updateFrameItems(props)
         local clonedScene2 = props.clonedScene
         local numPages2 = props.numPages
@@ -43269,17 +43420,11 @@ function configButtons(props)
     end
 
     function incrementPage(props)
-        print("incrementPage------------------------------->>")
-        print("incrementPage------------------------------->>")
-        print("incrementPage------------------------------->>")
         local clonedScene1 = props.clonedScene
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
 
         local pn3 = props.pn
-        print('pn3.value' .. ' - start');
-        print(pn3.value);
-        print('pn3.value' .. ' - end');
         if pn3.value < numPages1 then
             pn3.value = pn3.value + 1
             updateFrameItems({
@@ -43310,10 +43455,6 @@ function configButtons(props)
     end
 
     local function onIncrementPage()
-        print("onIncrementPage")
-        print('pn.value' .. ' - start');
-        print(pn.value);
-        print('pn.value' .. ' - end');
         incrementPage({
             pn = pn,
             clonedScene = clonedScene,
