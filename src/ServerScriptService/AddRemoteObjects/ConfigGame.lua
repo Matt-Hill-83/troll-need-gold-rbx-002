@@ -72,7 +72,7 @@ function setVisibility()
     })
 
     local skyBoxWalls = collectionService:GetTagged("SkyBoxWalls")
-    Utils.setWallHeightByList({items = skyBoxWalls, height = 20})
+    Utils.setWallHeightByList({items = skyBoxWalls, height = 30})
     Utils.setPropsByTag({
         tag = "SkyBoxWalls",
         props = {Transparency = .9}
