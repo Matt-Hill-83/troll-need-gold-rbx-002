@@ -2,9 +2,9 @@ local module = {}
 
 module.questConfigs = {
     {
-        questTitle = "The Boys from Connecticut - part 01",
-        startSceneCoords = {col = 0, row = 0},
-        endSceneCoords = {row = 0, col = 3},
+        questTitle = "--- The Boys from CT - part 01",
+        startSceneCoords = {row = 0, col = 0},
+        endSceneCoords = {col = 3, row = 0},
         sceneConfigs = {
             {
                 name = "mop",
@@ -39,7 +39,7 @@ module.questConfigs = {
                             {char = "cow01", text = "Baaaa."},
                             {
                                 char = "lucky",
-                                text = "My poor, old Grand Mama..."
+                                text = "My poor, sick Grand Mama..."
                             }
                         },
                         characters01 = {},
@@ -216,7 +216,7 @@ module.questConfigs = {
                         characters02 = {{name = "lucky01"}, {name = "cow01"}}
                     }
                 },
-                coordinates = {col = 0, row = 0},
+                coordinates = {row = 0, col = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -318,7 +318,7 @@ module.questConfigs = {
                         }
                     }
                 },
-                coordinates = {col = 1, row = 0},
+                coordinates = {row = 0, col = 1},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -485,10 +485,10 @@ module.questConfigs = {
                         characters02 = {{name = "elf"}}
                     }
                 },
-                coordinates = {row = 0, col = 3},
-                showBottomPath = false,
+                coordinates = {col = 3, row = 0},
+                showBottomPath = true,
                 showRightPath = false,
-                showTopPath = false,
+                showTopPath = true,
                 showLeftPath = true,
                 isEndScene = true,
                 isStartScene = false,

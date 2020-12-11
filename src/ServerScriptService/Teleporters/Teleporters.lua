@@ -14,9 +14,6 @@ function module.addTeleporters(props)
     local skyBoxTeleporter = props.skyBoxTeleporter
 
     local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
-        -- local teleporterBlocker = Utils.getFirstDescendantByName(localTP,
-        --                                                          "TeleporterBlocker")
-        -- teleporterBlocker:Destroy()
 
         localTP.PrimaryPart.Touched:Connect(
             function(touchPart)
