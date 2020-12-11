@@ -71,6 +71,14 @@ function setVisibility()
         -- props = {Transparency = 0.6}
     })
 
+    local skyBoxWalls = collectionService:GetTagged("SkyBoxWalls")
+    Utils.setWallHeightByList({items = skyBoxWalls, height = 20})
+    Utils.setPropsByTag({
+        tag = "SkyBoxWalls",
+        props = {Transparency = .9}
+        -- props = {Transparency = 0.6}
+    })
+
 end
 function module.configGame()
     setVisibility()

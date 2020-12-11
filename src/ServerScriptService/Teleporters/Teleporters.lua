@@ -26,7 +26,7 @@ function module.addTeleporters(props)
                         Utils.getFirstDescendantByName(remoteTP,
                                                        "QuestTeleporterReceiver")
                     local teleportLocation =
-                        questTeleporterReceiver.CFrame + Vector3.new(0, 12, 4)
+                        questTeleporterReceiver.CFrame + Vector3.new(0, 10, 0)
 
                     local ts = game:GetService("TweenService")
 
@@ -67,7 +67,12 @@ function module.addTeleporters(props)
     skyBoxTeleporter.PrimaryPart.CFrame =
         dummyHomeTP.CFrame *
             CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0)) *
-            CFrame.Angles(0, math.rad(90), 0)
+            CFrame.Angles(0, math.rad(0), 0)
+    -- skyBoxTeleporter.PrimaryPart.CFrame =
+    --     dummyHomeTP.CFrame *
+    --         CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0)) *
+    --         CFrame.Angles(0, math.rad(180), 0)
+
     skyBoxTeleporter.PrimaryPart.Anchored = true
     skyBoxTeleporter.Name = "teleporter" .. "-sky- " .. sceneIndex
     thisTeleporter.Name = "teleporter" .. "-local- " .. sceneIndex

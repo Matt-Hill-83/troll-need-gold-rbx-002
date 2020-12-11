@@ -6,101 +6,6 @@ local Constants = require(Sss.Source.Constants.Constants)
 
 local module = {}
 
-renderFrontWall = function(props)
-    local parent = props.parent
-    local wallSize = props.wallSize
-    local template = props.template
-
-    local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
-
-    local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, -1),
-        moveTowardZero = Vector3.new(-1, 1, 1),
-        alignToChildFarEdge = Vector3.new(-1, -1, -1)
-    }
-
-    local offsetProps = {
-        parent = parent,
-        childSize = childSize,
-        itemDuplicationConfig = itemDuplicationConfig
-    }
-
-    template.Size = childSize
-    template.Position =
-        RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
-end
-
-renderBackWall = function(props)
-    local parent = props.parent
-    local wallSize = props.wallSize
-    local template = props.template
-
-    local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
-
-    local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, 1),
-        moveTowardZero = Vector3.new(-1, 1, -1),
-        alignToChildFarEdge = Vector3.new(-1, -1, 1)
-    }
-
-    local offsetProps = {
-        parent = parent,
-        childSize = childSize,
-        itemDuplicationConfig = itemDuplicationConfig
-    }
-
-    template.Size = childSize
-    template.Position =
-        RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
-end
-
-renderLeftWall = function(props)
-    local parent = props.parent
-    local wallSize = props.wallSize
-    local template = props.template
-
-    local childSize = Vector3.new(wallSize.X, wallSize.Y, parent.Size.Z)
-
-    local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, -1),
-        moveTowardZero = Vector3.new(-1, 1, 1),
-        alignToChildFarEdge = Vector3.new(-1, -1, -1)
-    }
-
-    local offsetProps = {
-        parent = parent,
-        childSize = childSize,
-        itemDuplicationConfig = itemDuplicationConfig
-    }
-
-    template.Size = childSize
-    template.Position =
-        RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
-end
-
-renderRightWall = function(props)
-    local parent = props.parent
-    local wallSize = props.wallSize
-    local template = props.template
-    local childSize = Vector3.new(wallSize.X, wallSize.Y, parent.Size.Z)
-
-    local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(-1, 1, -1),
-        moveTowardZero = Vector3.new(1, 1, 1),
-        alignToChildFarEdge = Vector3.new(1, -1, -1)
-    }
-
-    local offsetProps = {
-        parent = parent,
-        childSize = childSize,
-        itemDuplicationConfig = itemDuplicationConfig
-    }
-
-    template.Size = childSize
-    template.Position =
-        RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
-end
-
 renderQuestBlock = function(props)
     local parent = props.parent
     local sibling = props.sibling
@@ -198,6 +103,101 @@ renderQuestBlock = function(props)
     dockPositioner:Destroy()
 
     return dockBase
+end
+
+renderFrontWall = function(props)
+    local parent = props.parent
+    local wallSize = props.wallSize
+    local template = props.template
+
+    local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
+
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        moveTowardZero = Vector3.new(-1, 1, 1),
+        alignToChildFarEdge = Vector3.new(-1, -1, -1)
+    }
+
+    local offsetProps = {
+        parent = parent,
+        childSize = childSize,
+        itemDuplicationConfig = itemDuplicationConfig
+    }
+
+    template.Size = childSize
+    template.Position =
+        RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
+end
+
+renderBackWall = function(props)
+    local parent = props.parent
+    local wallSize = props.wallSize
+    local template = props.template
+
+    local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
+
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(1, 1, 1),
+        moveTowardZero = Vector3.new(-1, 1, -1),
+        alignToChildFarEdge = Vector3.new(-1, -1, 1)
+    }
+
+    local offsetProps = {
+        parent = parent,
+        childSize = childSize,
+        itemDuplicationConfig = itemDuplicationConfig
+    }
+
+    template.Size = childSize
+    template.Position =
+        RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
+end
+
+renderLeftWall = function(props)
+    local parent = props.parent
+    local wallSize = props.wallSize
+    local template = props.template
+
+    local childSize = Vector3.new(wallSize.X, wallSize.Y, parent.Size.Z)
+
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        moveTowardZero = Vector3.new(-1, 1, 1),
+        alignToChildFarEdge = Vector3.new(-1, -1, -1)
+    }
+
+    local offsetProps = {
+        parent = parent,
+        childSize = childSize,
+        itemDuplicationConfig = itemDuplicationConfig
+    }
+
+    template.Size = childSize
+    template.Position =
+        RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
+end
+
+renderRightWall = function(props)
+    local parent = props.parent
+    local wallSize = props.wallSize
+    local template = props.template
+    local childSize = Vector3.new(wallSize.X, wallSize.Y, parent.Size.Z)
+
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(-1, 1, -1),
+        moveTowardZero = Vector3.new(1, 1, 1),
+        alignToChildFarEdge = Vector3.new(1, -1, -1)
+    }
+
+    local offsetProps = {
+        parent = parent,
+        childSize = childSize,
+        itemDuplicationConfig = itemDuplicationConfig
+    }
+
+    template.Size = childSize
+    template.Position =
+        RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 end
 
 module.renderQuestBlock = renderQuestBlock
