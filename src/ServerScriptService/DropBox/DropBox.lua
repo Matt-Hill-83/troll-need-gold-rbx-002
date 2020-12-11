@@ -43,8 +43,6 @@ function module.configDropBox(props)
         for i, label in ipairs(labels) do label.Text = item.name end
 
         dropBox.Name = scene.Name .. "-local- " .. sceneIndex
-
-        -- dropBox.PrimaryPart.Anchored = true
     else
         dropBox:Destroy()
     end

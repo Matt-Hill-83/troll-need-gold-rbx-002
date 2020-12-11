@@ -14,9 +14,8 @@ function module.addSeat(props)
     local clonedScene = props.clonedScene
     local sceneConfig = props.sceneConfig
     local addCharactersToScene = props.addCharactersToScene
-    -- local numPages = props.numPages
     local sceneFolder = props.sceneFolder
-    local openBridgeDoor = props.openBridgeDoor
+    -- local openBridgeDoor = props.openBridgeDoor
 
     local Players = game:GetService("Players")
     local currentPlayer = nil
@@ -28,6 +27,17 @@ function module.addSeat(props)
         local frameConfig = props.frameConfig
 
         renderDialogRE:FireClient(player, frameConfig.dialogs)
+    end
+
+    function openBridgeDoor(props)
+        local clonedScene2 = props.clonedScene
+        local bridgeDoorRight = Utils.getFirstDescendantByName(clonedScene2,
+                                                               "BridgeDoorRight")
+        local bridgeDoorLeft = Utils.getFirstDescendantByName(clonedScene2,
+                                                              "BridgeDoorLeft")
+
+        if bridgeDoorRight then bridgeDoorRight:Destroy() end
+        if bridgeDoorLeft then bridgeDoorLeft:Destroy() end
     end
 
     seat:GetPropertyChangedSignal("Occupant"):Connect(

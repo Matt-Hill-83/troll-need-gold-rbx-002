@@ -81,8 +81,6 @@ function module.addScenes(props)
 
         })
 
-        local seat = Utils.getFirstDescendantByName(clonedScene, "CouchSeat")
-
         local sceneFolder = Utils.getOrCreateFolder(
                                 {
                 name = clonedScene.Name .. sceneIndex,
@@ -95,24 +93,26 @@ function module.addScenes(props)
             Characters.addCharactersToScene(charProps)
         end
 
-        function openBridgeDoor(props)
-            local clonedScene2 = props.clonedScene
-            local bridgeDoorRight = Utils.getFirstDescendantByName(clonedScene2,
-                                                                   "BridgeDoorRight")
-            local bridgeDoorLeft = Utils.getFirstDescendantByName(clonedScene2,
-                                                                  "BridgeDoorLeft")
+        -- function openBridgeDoor(props)
+        --     local clonedScene2 = props.clonedScene
+        --     local bridgeDoorRight = Utils.getFirstDescendantByName(clonedScene2,
+        --                                                            "BridgeDoorRight")
+        --     local bridgeDoorLeft = Utils.getFirstDescendantByName(clonedScene2,
+        --                                                           "BridgeDoorLeft")
 
-            if bridgeDoorRight then bridgeDoorRight:Destroy() end
-            if bridgeDoorLeft then bridgeDoorLeft:Destroy() end
-        end
+        --     if bridgeDoorRight then bridgeDoorRight:Destroy() end
+        --     if bridgeDoorLeft then bridgeDoorLeft:Destroy() end
+        -- end
+
+        local seat = Utils.getFirstDescendantByName(clonedScene, "CouchSeat")
 
         local addSeatProps = {
             seat = seat,
             clonedScene = clonedScene,
             sceneConfig = sceneConfig,
             addCharactersToScene = addCharactersToScene,
-            sceneFolder = sceneFolder,
-            openBridgeDoor = openBridgeDoor
+            sceneFolder = sceneFolder
+            -- openBridgeDoor = openBridgeDoor
         }
 
         TheaterSeat.addSeat(addSeatProps)

@@ -44216,7 +44216,6 @@ function module.addScenes(props)
 
     for sceneIndex, sceneConfig in ipairs(sceneConfigs) do
         local entered2 = {value = false}
-        -- local numPages = #sceneConfig.frames
         local pageNum = 1
 
         local newPosition = getNewPosition(
@@ -44259,8 +44258,6 @@ function module.addScenes(props)
 
         })
 
-        local seat = Utils.getFirstDescendantByName(clonedScene, "CouchSeat")
-
         local sceneFolder = Utils.getOrCreateFolder(
                                 {
                 name = clonedScene.Name .. sceneIndex,
@@ -44273,25 +44270,26 @@ function module.addScenes(props)
             Characters.addCharactersToScene(charProps)
         end
 
-        function openBridgeDoor(props)
-            local clonedScene2 = props.clonedScene
-            local bridgeDoorRight = Utils.getFirstDescendantByName(clonedScene2,
-                                                                   "BridgeDoorRight")
-            local bridgeDoorLeft = Utils.getFirstDescendantByName(clonedScene2,
-                                                                  "BridgeDoorLeft")
+        -- function openBridgeDoor(props)
+        --     local clonedScene2 = props.clonedScene
+        --     local bridgeDoorRight = Utils.getFirstDescendantByName(clonedScene2,
+        --                                                            "BridgeDoorRight")
+        --     local bridgeDoorLeft = Utils.getFirstDescendantByName(clonedScene2,
+        --                                                           "BridgeDoorLeft")
 
-            if bridgeDoorRight then bridgeDoorRight:Destroy() end
-            if bridgeDoorLeft then bridgeDoorLeft:Destroy() end
-        end
+        --     if bridgeDoorRight then bridgeDoorRight:Destroy() end
+        --     if bridgeDoorLeft then bridgeDoorLeft:Destroy() end
+        -- end
+
+        local seat = Utils.getFirstDescendantByName(clonedScene, "CouchSeat")
 
         local addSeatProps = {
             seat = seat,
             clonedScene = clonedScene,
             sceneConfig = sceneConfig,
             addCharactersToScene = addCharactersToScene,
-            -- numPages = numPages,
-            sceneFolder = sceneFolder,
-            openBridgeDoor = openBridgeDoor
+            sceneFolder = sceneFolder
+            -- openBridgeDoor = openBridgeDoor
         }
 
         TheaterSeat.addSeat(addSeatProps)
@@ -44585,7 +44583,7 @@ function configButtons(props)
         local clonedScene1 = props.clonedScene
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
-        local player = props.player
+        local player1 = props.player
 
         local pn3 = props.pn
         if pn3.value < numPages1 then
@@ -44595,7 +44593,7 @@ function configButtons(props)
                 pn = pn3,
                 numPages = numPages1,
                 sceneConfig = sceneConfig1,
-                player = player
+                player = player1
             })
         end
 
@@ -44605,6 +44603,7 @@ function configButtons(props)
         local clonedScene1 = props.clonedScene
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
+        local player2 = props.player
 
         local pn4 = props.pn
         if pn4.value > 1 then
@@ -44613,7 +44612,8 @@ function configButtons(props)
                 clonedScene = clonedScene1,
                 pn = pn4,
                 numPages = numPages1,
-                sceneConfig = sceneConfig1
+                sceneConfig = sceneConfig1,
+                player = player2
             })
         end
     end
@@ -44633,7 +44633,8 @@ function configButtons(props)
             pn = pn,
             clonedScene = clonedScene,
             numPages = numPages,
-            sceneConfig = sceneConfig
+            sceneConfig = sceneConfig,
+            player = player
         })
     end
 
@@ -44898,8 +44899,6 @@ function module.configDropBox(props)
         for i, label in ipairs(labels) do label.Text = item.name end
 
         dropBox.Name = scene.Name .. "-local- " .. sceneIndex
-
-        -- dropBox.PrimaryPart.Anchored = true
     else
         dropBox:Destroy()
     end
@@ -44977,9 +44976,8 @@ function module.addSeat(props)
     local clonedScene = props.clonedScene
     local sceneConfig = props.sceneConfig
     local addCharactersToScene = props.addCharactersToScene
-    -- local numPages = props.numPages
     local sceneFolder = props.sceneFolder
-    local openBridgeDoor = props.openBridgeDoor
+    -- local openBridgeDoor = props.openBridgeDoor
 
     local Players = game:GetService("Players")
     local currentPlayer = nil
@@ -44991,6 +44989,17 @@ function module.addSeat(props)
         local frameConfig = props.frameConfig
 
         renderDialogRE:FireClient(player, frameConfig.dialogs)
+    end
+
+    function openBridgeDoor(props)
+        local clonedScene2 = props.clonedScene
+        local bridgeDoorRight = Utils.getFirstDescendantByName(clonedScene2,
+                                                               "BridgeDoorRight")
+        local bridgeDoorLeft = Utils.getFirstDescendantByName(clonedScene2,
+                                                              "BridgeDoorLeft")
+
+        if bridgeDoorRight then bridgeDoorRight:Destroy() end
+        if bridgeDoorLeft then bridgeDoorLeft:Destroy() end
     end
 
     seat:GetPropertyChangedSignal("Occupant"):Connect(
