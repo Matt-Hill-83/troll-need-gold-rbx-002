@@ -9,9 +9,6 @@ local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
 
-local StarterPlayer = game:GetService("StarterPlayer")
-local Texts = require(StarterPlayer.Source.Texts)
-
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local freezeCameraRE = ReplicatedStorage:WaitForChild("FreezeCameraRE")
 local renderDialogRE = ReplicatedStorage:WaitForChild("RenderDialogRE")
@@ -162,6 +159,14 @@ function module.addScenes(props)
                 end
 
                 if currentPlayer then
+
+                    print("leaving--------------")
+                    print("leaving--------------")
+                    print("leaving--------------")
+
+                    print('Constants.walkSpeed' .. ' - start');
+                    print(Constants.walkSpeed);
+                    print('Constants.walkSpeed' .. ' - end');
                     currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
                         Constants.walkSpeed
                     freezeCameraRE:FireClient(currentPlayer, cameraPath1,
