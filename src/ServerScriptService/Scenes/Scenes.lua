@@ -39,9 +39,8 @@ function module.addScenes(props)
 
     for sceneIndex, sceneConfig in ipairs(sceneConfigs) do
         local entered2 = {value = false}
-        local pageNum = 1
 
-        local newPosition = getNewPosition(
+        local newPosition = getNewScenePosition(
                                 {
                 coordinates = sceneConfig.coordinates,
                 template = sceneBase
@@ -93,38 +92,27 @@ function module.addScenes(props)
             Characters.addCharactersToScene(charProps)
         end
 
-        -- function openBridgeDoor(props)
-        --     local clonedScene2 = props.clonedScene
-        --     local bridgeDoorRight = Utils.getFirstDescendantByName(clonedScene2,
-        --                                                            "BridgeDoorRight")
-        --     local bridgeDoorLeft = Utils.getFirstDescendantByName(clonedScene2,
-        --                                                           "BridgeDoorLeft")
+        local seats = Utils.getDescendantsByName(clonedScene, "CouchSeat")
 
-        --     if bridgeDoorRight then bridgeDoorRight:Destroy() end
-        --     if bridgeDoorLeft then bridgeDoorLeft:Destroy() end
-        -- end
+        for i, seat in ipairs(seats) do
+            local addSeatProps = {
+                seat = seat,
+                clonedScene = clonedScene,
+                sceneConfig = sceneConfig,
+                addCharactersToScene = addCharactersToScene,
+                sceneFolder = sceneFolder
+            }
 
-        local seat = Utils.getFirstDescendantByName(clonedScene, "CouchSeat")
-
-        local addSeatProps = {
-            seat = seat,
-            clonedScene = clonedScene,
-            sceneConfig = sceneConfig,
-            addCharactersToScene = addCharactersToScene,
-            sceneFolder = sceneFolder
-            -- openBridgeDoor = openBridgeDoor
-        }
-
-        TheaterSeat.addSeat(addSeatProps)
+            TheaterSeat.addSeat(addSeatProps)
+        end
 
         Bridges.configBridges({
             sceneConfig = sceneConfig,
             clonedScene = clonedScene
         })
 
-        local frameConfig = sceneConfig.frames[pageNum]
         local charProps = {
-            frameConfig = frameConfig,
+            frameConfig = sceneConfig.frames[1],
             clonedScene = clonedScene,
             sceneFolder = sceneFolder
         }
@@ -167,7 +155,7 @@ getStartPosition = function(props)
     return RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 end
 
-function getNewPosition(props)
+function getNewScenePosition(props)
     local coordinates = props.coordinates
     local gapX = Constants.islandLength + Constants.bridgeLength
     local newX = -(gapX + Constants.buffer) * coordinates.col
