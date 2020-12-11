@@ -5,11 +5,11 @@ local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 
 function updateButtonActiveStatus(props)
-    local clonedScene2 = props.clonedScene
     local pageNum2 = props.pageNum
     local numPages2 = props.numPages
     local nextButton = props.nextButton
     local prevButton = props.prevButton
+    local pageNumLabel = props.pageNumLabel
 
     nextButton.Active = pageNum2 < numPages2
     nextButton.Text = nextButton.Active and Constants.buttonLabels.NextPage or
@@ -19,8 +19,6 @@ function updateButtonActiveStatus(props)
     prevButton.Text = prevButton.Active and Constants.buttonLabels.PrevPage or
                           "---"
 
-    local pageNumLabel = Utils.getFirstDescendantByName(clonedScene2,
-                                                        "PageNumLabel")
     pageNumLabel.Text = "<b>" .. "Page: " .. "</b>" .. pageNum2 .. " of " ..
                             numPages2
 
@@ -37,6 +35,7 @@ function module.doFrameStuff(props)
 
     local nextButton = Utils.getFirstDescendantByName(sgui, "NextPageButton")
     local prevButton = Utils.getFirstDescendantByName(sgui, "PrevPageButton")
+    local pageNumLabel = Utils.getFirstDescendantByName(sgui, "PageNumLabel")
 
     function updateFrameItems(props)
         local clonedScene2 = props.clonedScene
@@ -48,10 +47,10 @@ function module.doFrameStuff(props)
             buttonPressed = true
             updateButtonActiveStatus({
                 pageNum = pn.value,
-                clonedScene = clonedScene2,
                 numPages = numPages2,
                 nextButton = nextButton,
-                prevButton = prevButton
+                prevButton = prevButton,
+                pageNumLabel = pageNumLabel
             })
 
             local newFrameConfig = sceneConfig2.frames[pn.value]
