@@ -46,6 +46,16 @@ function configButtons(props)
     if module.nextButtonEvent then module.nextButtonEvent:Disconnect() end
     if module.prevButtonEvent then module.prevButtonEvent:Disconnect() end
 
+    updateButtonActiveStatus({
+        pageNum = 1,
+        numPages = numPages,
+        nextButton = nextButton,
+        prevButton = prevButton,
+        pageNumLabel = pageNumLabel,
+        openBridgeDoor = openBridgeDoor,
+        clonedScene = clonedScene
+    })
+
     print('------------------------------------------------------------');
     print('------------------------------------------------------------');
     print('pn' .. ' - start');
@@ -87,7 +97,6 @@ function configButtons(props)
     end
 
     function incrementPage(props)
-
         print("incrementPage------------------------------->>")
         print("incrementPage------------------------------->>")
         print("incrementPage------------------------------->>")
