@@ -17,8 +17,6 @@ renderTexts = function(props)
     local paddingInPx = 5
     local fontHeight = viewPortSize.Y / 30
     fontHeight = math.floor(fontHeight)
-    print('fontHeight' .. ' - start');
-    print(fontHeight);
 
     local scrollingFrame =
         Utils.getFirstDescendantByName(sgui, "DialogScroller")
@@ -35,8 +33,6 @@ renderTexts = function(props)
     dialogScrollerPadding.PaddingRight =
         UDim.new(0, scrollBarThickness + fontHeight)
 
-    print('scrollingFrame.AbsoluteSize' .. ' - start');
-    print(scrollingFrame.AbsoluteSize);
     local children = scrollingFrame:GetChildren()
     for i, item in pairs(children) do
         if item:IsA('TextLabel') then item:Destroy() end

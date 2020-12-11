@@ -101,7 +101,6 @@ function module.addScenes(props)
 
         seat:GetPropertyChangedSignal("Occupant"):Connect(
             function()
-
                 local cameraPath1 = Utils.getFirstDescendantByName(clonedScene,
                                                                    "ScreenCameraPath1")
                 local cameraPath2 = Utils.getFirstDescendantByName(clonedScene,
@@ -133,7 +132,7 @@ function module.addScenes(props)
                             sgui = player.PlayerGui.SceneDialogGui,
                             openBridgeDoor = openBridgeDoor
                         }
-                        Buttons.doFrameStuff(props2)
+                        Buttons.configButtons(props2)
                         return
                     end
                 end

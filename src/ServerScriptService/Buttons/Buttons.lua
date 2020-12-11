@@ -27,7 +27,7 @@ function updateButtonActiveStatus(props)
 
 end
 
-function module.doFrameStuff(props)
+function module.configButtons(props)
     local clonedScene = props.clonedScene
     local numPages = props.numPages
     local sceneConfig = props.sceneConfig
@@ -41,17 +41,24 @@ function module.doFrameStuff(props)
     local prevButton = Utils.getFirstDescendantByName(sgui, "PrevPageButton")
     local pageNumLabel = Utils.getFirstDescendantByName(sgui, "PageNumLabel")
 
+    local pn = {value = 1}
+
+    print('');
+    print('');
+    print('pn' .. ' - start');
+    print(pn);
+
     function updateFrameItems(props)
         local clonedScene2 = props.clonedScene
         local numPages2 = props.numPages
         local sceneConfig2 = props.sceneConfig
-        local pn = props.pn
+        local pn2 = props.pn
         local buttonPressed = false
 
         if not buttonPressed then
             buttonPressed = true
             updateButtonActiveStatus({
-                pageNum = pn.value,
+                pageNum = pn2.value,
                 numPages = numPages2,
                 nextButton = nextButton,
                 prevButton = prevButton,
@@ -60,7 +67,7 @@ function module.doFrameStuff(props)
                 clonedScene = clonedScene
             })
 
-            local newFrameConfig = sceneConfig2.frames[pn.value]
+            local newFrameConfig = sceneConfig2.frames[pn2.value]
             local newSceneProps = {
                 frameConfig = newFrameConfig,
                 clonedScene = clonedScene2,
@@ -78,8 +85,8 @@ function module.doFrameStuff(props)
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
 
-        local pn = props.pn
-        if pn.value < numPages1 then
+        local pn3 = props.pn
+        if pn3.value < numPages1 then
             pn.value = pn.value + 1
             updateFrameItems({
                 clonedScene = clonedScene1,
@@ -96,19 +103,17 @@ function module.doFrameStuff(props)
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
 
-        local pn = props.pn
-        if pn.value > 1 then
-            pn.value = pn.value - 1
+        local pn4 = props.pn
+        if pn4.value > 1 then
+            pn4.value = pn4.value - 1
             updateFrameItems({
                 clonedScene = clonedScene1,
-                pn = pn,
+                pn = pn4,
                 numPages = numPages1,
                 sceneConfig = sceneConfig1
             })
         end
     end
-
-    local pn = {value = 1}
 
     local function onIncrementPage()
         incrementPage({
