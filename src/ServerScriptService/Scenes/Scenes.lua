@@ -15,41 +15,6 @@ local renderDialogRE = ReplicatedStorage:WaitForChild("RenderDialogRE")
 
 local module = {}
 
-getStartPosition = function(props)
-    local parent = props.parent
-    local child = props.child
-    local gridPadding = props.gridPadding
-
-    local childSize = child.Size
-    local desiredOffsetFromParentEdge = Vector3.new(-gridPadding / 2, 0,
-                                                    -gridPadding / 2)
-
-    local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, 1),
-        moveTowardZero = Vector3.new(-1, 1, -1),
-        alignToChildFarEdge = Vector3.new(-1, 1, -1)
-    }
-
-    local offsetProps = {
-        parent = parent,
-        childSize = childSize,
-        itemDuplicationConfig = itemDuplicationConfig,
-        offset = desiredOffsetFromParentEdge
-    }
-
-    return RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
-end
-
-function getNewPosition(props)
-    local coordinates = props.coordinates
-    local gapX = Constants.islandLength + Constants.bridgeLength
-    local newX = -(gapX + Constants.buffer) * coordinates.col
-    local newZ = coordinates.row *
-                     (Constants.islandLength + Constants.bridgeLength +
-                         Constants.buffer)
-    return Vector3.new(newX, 0, -newZ)
-end
-
 function module.addScenes(props)
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
@@ -215,6 +180,40 @@ function module.addScenes(props)
     sceneTemplateModel:Destroy()
 end
 
+getStartPosition = function(props)
+    local parent = props.parent
+    local child = props.child
+    local gridPadding = props.gridPadding
+
+    local childSize = child.Size
+    local desiredOffsetFromParentEdge = Vector3.new(-gridPadding / 2, 0,
+                                                    -gridPadding / 2)
+
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(1, 1, 1),
+        moveTowardZero = Vector3.new(-1, 1, -1),
+        alignToChildFarEdge = Vector3.new(-1, 1, -1)
+    }
+
+    local offsetProps = {
+        parent = parent,
+        childSize = childSize,
+        itemDuplicationConfig = itemDuplicationConfig,
+        offset = desiredOffsetFromParentEdge
+    }
+
+    return RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
+end
+
+function getNewPosition(props)
+    local coordinates = props.coordinates
+    local gapX = Constants.islandLength + Constants.bridgeLength
+    local newX = -(gapX + Constants.buffer) * coordinates.col
+    local newZ = coordinates.row *
+                     (Constants.islandLength + Constants.bridgeLength +
+                         Constants.buffer)
+    return Vector3.new(newX, 0, -newZ)
+end
 return module
 
 -- local function regionEnter(plr, clonedScene, entered)
