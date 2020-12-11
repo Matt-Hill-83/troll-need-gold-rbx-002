@@ -43596,12 +43596,6 @@ function module.addTeleporters(props)
             function(touchPart)
                 if touchPart and touchPart.Parent and touchPart.Parent.Humanoid and
                     touchPart.Parent.currentlyTeleporting.Value == false then
-                    print('localTP' .. ' - start');
-                    print(localTP);
-                    print('localTP' .. ' - end');
-                    print('remoteTP' .. ' - start');
-                    print(remoteTP);
-                    print('remoteTP' .. ' - end');
 
                     local Character = touchPart.Parent
 
