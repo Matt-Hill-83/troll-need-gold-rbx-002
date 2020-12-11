@@ -109,10 +109,6 @@ function module.addScenes(props)
                 local humanoid = seat.Occupant
                 if humanoid then
 
-                    print('pageNum' ..
-                              ' - start--------------------------------->>>>');
-                    print(pageNum);
-                    print('pageNum' .. ' - end');
                     local character = humanoid.Parent
                     local player = Players:GetPlayerFromCharacter(character)
                     local frameConfig = sceneConfig.frames[pageNum]
@@ -157,10 +153,6 @@ function module.addScenes(props)
         })
 
         function renderScreenDialog(charProps)
-            print("renderScreenDialog")
-            print('charProps' .. ' - start');
-            print(charProps);
-            print('charProps' .. ' - end');
             renderDialogRE:FireClient(thisPlayer, charProps.frameConfig.dialogs)
 
         end

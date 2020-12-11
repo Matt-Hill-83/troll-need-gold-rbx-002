@@ -56,14 +56,6 @@ function configButtons(props)
         clonedScene = clonedScene
     })
 
-    print('------------------------------------------------------------');
-    print('------------------------------------------------------------');
-    print('pn' .. ' - start');
-    print(pn.value);
-
-    print('numPages' .. ' - start');
-    print(numPages);
-
     function updateFrameItems(props)
         local clonedScene2 = props.clonedScene
         local numPages2 = props.numPages
@@ -97,17 +89,11 @@ function configButtons(props)
     end
 
     function incrementPage(props)
-        print("incrementPage------------------------------->>")
-        print("incrementPage------------------------------->>")
-        print("incrementPage------------------------------->>")
         local clonedScene1 = props.clonedScene
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
 
         local pn3 = props.pn
-        print('pn3.value' .. ' - start');
-        print(pn3.value);
-        print('pn3.value' .. ' - end');
         if pn3.value < numPages1 then
             pn3.value = pn3.value + 1
             updateFrameItems({
@@ -138,10 +124,6 @@ function configButtons(props)
     end
 
     local function onIncrementPage()
-        print("onIncrementPage")
-        print('pn.value' .. ' - start');
-        print(pn.value);
-        print('pn.value' .. ' - end');
         incrementPage({
             pn = pn,
             clonedScene = clonedScene,
