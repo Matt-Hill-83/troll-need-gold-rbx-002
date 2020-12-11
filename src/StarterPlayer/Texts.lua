@@ -25,13 +25,13 @@ renderTexts = function(props)
     local dialogScrollerPadding = Utils.getFirstDescendantByName(scrollingFrame,
                                                                  "DialogScrollerPadding")
 
-    local scrollBarThickness = 3 * fontHeight
+    local scrollBarThickness = 2 * fontHeight
     scrollingFrame.ScrollBarThickness = scrollBarThickness
 
-    local paddingPct = fontHeight
-    dialogScrollerPadding.PaddingBottom = UDim.new(0, paddingPct)
-    dialogScrollerPadding.PaddingTop = UDim.new(0, paddingPct)
-    dialogScrollerPadding.PaddingLeft = UDim.new(0, paddingPct)
+    local padding = fontHeight / 2
+    dialogScrollerPadding.PaddingBottom = UDim.new(0, padding)
+    dialogScrollerPadding.PaddingTop = UDim.new(0, padding)
+    dialogScrollerPadding.PaddingLeft = UDim.new(0, padding)
     dialogScrollerPadding.PaddingRight =
         UDim.new(0, scrollBarThickness + fontHeight)
 

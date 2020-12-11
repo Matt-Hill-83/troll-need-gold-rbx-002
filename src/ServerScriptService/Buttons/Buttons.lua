@@ -19,8 +19,7 @@ function updateButtonActiveStatus(props)
     prevButton.Text = prevButton.Active and Constants.buttonLabels.PrevPage or
                           "---"
 
-    pageNumLabel.Text = "<b>" .. "Page: " .. "</b>" .. pageNum2 .. " of " ..
-                            numPages2
+    pageNumLabel.Text = "Page: " .. pageNum2 .. " of " .. numPages2
 
 end
 
