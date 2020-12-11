@@ -35,6 +35,7 @@ function configButtons(props)
     local addCharactersToScene = props.addCharactersToScene
     local renderScreenDialog = props.renderScreenDialog
     local sgui = props.sgui
+    local player = props.player
     local openBridgeDoor = props.openBridgeDoor
 
     local nextButton = Utils.getFirstDescendantByName(sgui, "NextPageButton")
@@ -61,6 +62,7 @@ function configButtons(props)
         local numPages2 = props.numPages
         local sceneConfig2 = props.sceneConfig
         local pn2 = props.pn
+        local player = props.player
         local buttonPressed = false
 
         if not buttonPressed then
@@ -72,7 +74,8 @@ function configButtons(props)
                 prevButton = prevButton,
                 pageNumLabel = pageNumLabel,
                 openBridgeDoor = openBridgeDoor,
-                clonedScene = clonedScene
+                clonedScene = clonedScene,
+                player = player
             })
 
             local newFrameConfig = sceneConfig2.frames[pn2.value]
@@ -83,7 +86,7 @@ function configButtons(props)
             }
 
             addCharactersToScene(newSceneProps)
-            renderScreenDialog(newSceneProps)
+            renderScreenDialog({frameConfig = newFrameConfig, player = player})
             buttonPressed = false
         end
     end
@@ -92,6 +95,7 @@ function configButtons(props)
         local clonedScene1 = props.clonedScene
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
+        local player = props.player
 
         local pn3 = props.pn
         if pn3.value < numPages1 then
@@ -100,7 +104,8 @@ function configButtons(props)
                 clonedScene = clonedScene1,
                 pn = pn3,
                 numPages = numPages1,
-                sceneConfig = sceneConfig1
+                sceneConfig = sceneConfig1,
+                player = player
             })
         end
 
@@ -128,7 +133,8 @@ function configButtons(props)
             pn = pn,
             clonedScene = clonedScene,
             numPages = numPages,
-            sceneConfig = sceneConfig
+            sceneConfig = sceneConfig,
+            player = player
         })
     end
 

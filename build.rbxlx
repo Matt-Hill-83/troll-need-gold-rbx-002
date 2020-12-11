@@ -25388,18 +25388,18 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<token name="BottomSurface">0</token>
 											<token name="BottomSurfaceInput">0</token>
 											<CoordinateFrame name="CFrame">
-												<X>388.38858</X>
-												<Y>-39.8758087</Y>
-												<Z>-1046.9198</Z>
-												<R00>-0.999998093</R00>
-												<R01>2.43645954e-05</R01>
-												<R02>-8.138048e-05</R02>
-												<R10>2.43658997e-05</R10>
+												<X>388.389008</X>
+												<Y>-39.8757286</Y>
+												<Z>-1041.9198</Z>
+												<R00>-0.999990463</R00>
+												<R01>2.43645518e-05</R01>
+												<R02>-8.13798542e-05</R02>
+												<R10>2.4365756e-05</R10>
 												<R11>1</R11>
-												<R12>-1.60930649e-05</R12>
-												<R20>8.13800871e-05</R20>
-												<R21>-1.61005773e-05</R21>
-												<R22>-0.999998093</R22>
+												<R12>-1.60874424e-05</R12>
+												<R20>8.13794759e-05</R20>
+												<R21>-1.61060761e-05</R21>
+												<R22>-0.999990463</R22>
 											</CoordinateFrame>
 											<bool name="CanCollide">true</bool>
 											<bool name="CastShadow">true</bool>
@@ -25447,41 +25447,41 @@ AYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<token name="formFactorRaw">1</token>
 											<token name="shape">1</token>
 											<Vector3 name="size">
-												<X>2.00000262</X>
+												<X>2</X>
 												<Y>0.249999985</Y>
-												<Z>1</Z>
+												<Z>11</Z>
 											</Vector3>
 										</Properties>
-										<Item class="Weld" referent="RBXd437dd6011d04b6590deb598d0250f18">
+										<Item class="Weld" referent="RBXd12a98b418e14358b751f315284fce88">
 											<Properties>
 												<BinaryString name="AttributesSerialize"></BinaryString>
 												<CoordinateFrame name="C0">
 													<X>0</X>
 													<Y>-0.125</Y>
 													<Z>0</Z>
-													<R00>1</R00>
+													<R00>0.999996185</R00>
 													<R01>0</R01>
-													<R02>-5.78878091e-13</R02>
-													<R10>-5.78878037e-13</R10>
+													<R02>-1.22502009e-12</R02>
+													<R10>4.1242787e-11</R10>
 													<R11>0</R11>
 													<R12>-1</R12>
 													<R20>0</R20>
-													<R21>1</R21>
-													<R22>0</R22>
+													<R21>0.999996185</R21>
+													<R22>-5.49880497e-09</R22>
 												</CoordinateFrame>
 												<CoordinateFrame name="C1">
-													<X>-0.000152587891</X>
+													<X>-0.000274658203</X>
 													<Y>0.500114441</Y>
-													<Z>-0.999633789</Z>
-													<R00>1</R00>
-													<R01>1.84377332e-05</R01>
-													<R02>1.70362863e-10</R02>
-													<R10>1.70349443e-10</R10>
-													<R11>7.27606864e-10</R11>
+													<Z>-5.99963379</Z>
+													<R00>0.999996185</R00>
+													<R01>1.84376622e-05</R01>
+													<R02>1.69397718e-10</R02>
+													<R10>2.12168505e-10</R10>
+													<R11>7.27595761e-10</R11>
 													<R12>-1</R12>
-													<R20>-1.84377332e-05</R20>
-													<R21>1</R21>
-													<R22>7.27603755e-10</R22>
+													<R20>-1.84376695e-05</R20>
+													<R21>0.999996185</R21>
+													<R22>-4.77120921e-09</R22>
 												</CoordinateFrame>
 												<bool name="Enabled">true</bool>
 												<string name="Name">Weld</string>
@@ -44179,16 +44179,12 @@ return module
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Bridges = require(Sss.Source.Bridges.Bridges)
 local Characters = require(Sss.Source.Characters.Characters)
-local Buttons = require(Sss.Source.Buttons.Buttons)
+local TheaterSeat = require(Sss.Source.TheaterSeat.TheaterSeat)
 local Teleporters = require(Sss.Source.Teleporters.Teleporters)
 local DropBox = require(Sss.Source.DropBox.DropBox)
 local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
-
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local freezeCameraRE = ReplicatedStorage:WaitForChild("FreezeCameraRE")
-local renderDialogRE = ReplicatedStorage:WaitForChild("RenderDialogRE")
 
 local module = {}
 
@@ -44200,7 +44196,6 @@ function module.addScenes(props)
     local questFolder = props.questFolder
     local questIndex = props.questIndex
 
-    local thisPlayer = nil
     local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
                                                               "SceneTemplate")
 
@@ -44221,7 +44216,7 @@ function module.addScenes(props)
 
     for sceneIndex, sceneConfig in ipairs(sceneConfigs) do
         local entered2 = {value = false}
-        local numPages = #sceneConfig.frames
+        -- local numPages = #sceneConfig.frames
         local pageNum = 1
 
         local newPosition = getNewPosition(
@@ -44265,8 +44260,6 @@ function module.addScenes(props)
         })
 
         local seat = Utils.getFirstDescendantByName(clonedScene, "CouchSeat")
-        local Players = game:GetService("Players")
-        local currentPlayer = nil
 
         local sceneFolder = Utils.getOrCreateFolder(
                                 {
@@ -44275,64 +44268,6 @@ function module.addScenes(props)
             })
 
         clonedScene.Parent = sceneFolder
-
-        seat:GetPropertyChangedSignal("Occupant"):Connect(
-            function()
-                local cameraPath1 = Utils.getFirstDescendantByName(clonedScene,
-                                                                   "ScreenCameraPath1")
-                local cameraPath2 = Utils.getFirstDescendantByName(clonedScene,
-                                                                   "ScreenCameraPath2")
-
-                local humanoid = seat.Occupant
-                if humanoid then
-
-                    local character = humanoid.Parent
-                    local player = Players:GetPlayerFromCharacter(character)
-                    local frameConfig = sceneConfig.frames[pageNum]
-
-                    if player then
-                        thisPlayer = player
-                        currentPlayer = player
-
-                        pageNum = 1
-                        renderScreenDialog({frameConfig = frameConfig})
-
-                        local props2 = {
-                            clonedScene = clonedScene,
-                            numPages = numPages,
-                            sceneConfig = sceneConfig,
-                            sceneFolder = sceneFolder,
-                            addCharactersToScene = addCharactersToScene,
-                            renderScreenDialog = renderScreenDialog,
-                            sgui = player.PlayerGui.SceneDialogGui,
-                            openBridgeDoor = openBridgeDoor
-                        }
-                        Buttons.configButtons(props2)
-
-                        freezeCameraRE:FireClient(player, cameraPath1,
-                                                  cameraPath2, true)
-                        return
-                    end
-                end
-
-                if currentPlayer then
-                    currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
-                        Constants.walkSpeed
-                    freezeCameraRE:FireClient(currentPlayer, cameraPath1,
-                                              cameraPath2, false)
-                    currentPlayer = nil
-                end
-            end)
-
-        Bridges.configBridges({
-            sceneConfig = sceneConfig,
-            clonedScene = clonedScene
-        })
-
-        function renderScreenDialog(charProps)
-            renderDialogRE:FireClient(thisPlayer, charProps.frameConfig.dialogs)
-
-        end
 
         function addCharactersToScene(charProps)
             Characters.addCharactersToScene(charProps)
@@ -44348,6 +44283,23 @@ function module.addScenes(props)
             if bridgeDoorRight then bridgeDoorRight:Destroy() end
             if bridgeDoorLeft then bridgeDoorLeft:Destroy() end
         end
+
+        local addSeatProps = {
+            seat = seat,
+            clonedScene = clonedScene,
+            sceneConfig = sceneConfig,
+            addCharactersToScene = addCharactersToScene,
+            -- numPages = numPages,
+            sceneFolder = sceneFolder,
+            openBridgeDoor = openBridgeDoor
+        }
+
+        TheaterSeat.addSeat(addSeatProps)
+
+        Bridges.configBridges({
+            sceneConfig = sceneConfig,
+            clonedScene = clonedScene
+        })
 
         local frameConfig = sceneConfig.frames[pageNum]
         local charProps = {
@@ -44573,6 +44525,7 @@ function configButtons(props)
     local addCharactersToScene = props.addCharactersToScene
     local renderScreenDialog = props.renderScreenDialog
     local sgui = props.sgui
+    local player = props.player
     local openBridgeDoor = props.openBridgeDoor
 
     local nextButton = Utils.getFirstDescendantByName(sgui, "NextPageButton")
@@ -44599,6 +44552,7 @@ function configButtons(props)
         local numPages2 = props.numPages
         local sceneConfig2 = props.sceneConfig
         local pn2 = props.pn
+        local player = props.player
         local buttonPressed = false
 
         if not buttonPressed then
@@ -44610,7 +44564,8 @@ function configButtons(props)
                 prevButton = prevButton,
                 pageNumLabel = pageNumLabel,
                 openBridgeDoor = openBridgeDoor,
-                clonedScene = clonedScene
+                clonedScene = clonedScene,
+                player = player
             })
 
             local newFrameConfig = sceneConfig2.frames[pn2.value]
@@ -44621,7 +44576,7 @@ function configButtons(props)
             }
 
             addCharactersToScene(newSceneProps)
-            renderScreenDialog(newSceneProps)
+            renderScreenDialog({frameConfig = newFrameConfig, player = player})
             buttonPressed = false
         end
     end
@@ -44630,6 +44585,7 @@ function configButtons(props)
         local clonedScene1 = props.clonedScene
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
+        local player = props.player
 
         local pn3 = props.pn
         if pn3.value < numPages1 then
@@ -44638,7 +44594,8 @@ function configButtons(props)
                 clonedScene = clonedScene1,
                 pn = pn3,
                 numPages = numPages1,
-                sceneConfig = sceneConfig1
+                sceneConfig = sceneConfig1,
+                player = player
             })
         end
 
@@ -44666,7 +44623,8 @@ function configButtons(props)
             pn = pn,
             clonedScene = clonedScene,
             numPages = numPages,
-            sceneConfig = sceneConfig
+            sceneConfig = sceneConfig,
+            player = player
         })
     end
 
@@ -44980,6 +44938,116 @@ local module = {}
 function module.addItems(props) end
 
 return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="ModuleScript" referent="RBX3f45e4a7bd3641639a4dec16a258d0da">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">TheaterSeat</string>
+					<string name="ScriptGuid">{15440dbc-9d15-4cb3-b356-f831e73a3888}</string>
+					<ProtectedString name="Source"><![CDATA[
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="ModuleScript" referent="RBX0b976579c46b49ca902b5285b2a35255">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">TheaterSeat</string>
+						<string name="ScriptGuid">{63311249-f5ca-4173-b480-abde6e2a3f62}</string>
+						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local Buttons = require(Sss.Source.Buttons.Buttons)
+local Constants = require(Sss.Source.Constants.Constants)
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local freezeCameraRE = ReplicatedStorage:WaitForChild("FreezeCameraRE")
+local renderDialogRE = ReplicatedStorage:WaitForChild("RenderDialogRE")
+
+local module = {}
+
+function module.addSeat(props)
+    local seat = props.seat
+    local clonedScene = props.clonedScene
+    local sceneConfig = props.sceneConfig
+    local addCharactersToScene = props.addCharactersToScene
+    -- local numPages = props.numPages
+    local sceneFolder = props.sceneFolder
+    local openBridgeDoor = props.openBridgeDoor
+
+    local Players = game:GetService("Players")
+    local currentPlayer = nil
+
+    local numPages = #sceneConfig.frames
+
+    function renderScreenDialog(props)
+        local player = props.player
+        local frameConfig = props.frameConfig
+
+        renderDialogRE:FireClient(player, frameConfig.dialogs)
+    end
+
+    seat:GetPropertyChangedSignal("Occupant"):Connect(
+        function()
+            local cameraPath1 = Utils.getFirstDescendantByName(clonedScene,
+                                                               "ScreenCameraPath1")
+            local cameraPath2 = Utils.getFirstDescendantByName(clonedScene,
+                                                               "ScreenCameraPath2")
+
+            local humanoid = seat.Occupant
+            if humanoid then
+                local pageNum = 1
+
+                local character = humanoid.Parent
+                local player = Players:GetPlayerFromCharacter(character)
+                local frameConfig = sceneConfig.frames[pageNum]
+
+                if player then
+                    currentPlayer = player
+
+                    renderScreenDialog({
+                        frameConfig = frameConfig,
+                        player = player
+                    })
+
+                    local props2 = {
+                        clonedScene = clonedScene,
+                        numPages = numPages,
+                        sceneConfig = sceneConfig,
+                        sceneFolder = sceneFolder,
+                        player = player,
+                        addCharactersToScene = addCharactersToScene,
+                        renderScreenDialog = renderScreenDialog,
+                        sgui = player.PlayerGui.SceneDialogGui,
+                        openBridgeDoor = openBridgeDoor
+                    }
+                    Buttons.configButtons(props2)
+
+                    freezeCameraRE:FireClient(player, cameraPath1, cameraPath2,
+                                              true)
+                    return
+                end
+            end
+
+            if currentPlayer then
+                currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
+                    Constants.walkSpeed
+                freezeCameraRE:FireClient(currentPlayer, cameraPath1,
+                                          cameraPath2, false)
+                currentPlayer = nil
+            end
+        end)
+
+end
+
+return module
+
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>

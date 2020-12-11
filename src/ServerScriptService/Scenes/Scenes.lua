@@ -2,16 +2,12 @@ local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Bridges = require(Sss.Source.Bridges.Bridges)
 local Characters = require(Sss.Source.Characters.Characters)
-local Buttons = require(Sss.Source.Buttons.Buttons)
+local TheaterSeat = require(Sss.Source.TheaterSeat.TheaterSeat)
 local Teleporters = require(Sss.Source.Teleporters.Teleporters)
 local DropBox = require(Sss.Source.DropBox.DropBox)
 local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Constants = require(Sss.Source.Constants.Constants)
-
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local freezeCameraRE = ReplicatedStorage:WaitForChild("FreezeCameraRE")
-local renderDialogRE = ReplicatedStorage:WaitForChild("RenderDialogRE")
 
 local module = {}
 
@@ -23,7 +19,6 @@ function module.addScenes(props)
     local questFolder = props.questFolder
     local questIndex = props.questIndex
 
-    local thisPlayer = nil
     local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
                                                               "SceneTemplate")
 
@@ -44,7 +39,7 @@ function module.addScenes(props)
 
     for sceneIndex, sceneConfig in ipairs(sceneConfigs) do
         local entered2 = {value = false}
-        local numPages = #sceneConfig.frames
+        -- local numPages = #sceneConfig.frames
         local pageNum = 1
 
         local newPosition = getNewPosition(
@@ -88,8 +83,6 @@ function module.addScenes(props)
         })
 
         local seat = Utils.getFirstDescendantByName(clonedScene, "CouchSeat")
-        local Players = game:GetService("Players")
-        local currentPlayer = nil
 
         local sceneFolder = Utils.getOrCreateFolder(
                                 {
@@ -98,64 +91,6 @@ function module.addScenes(props)
             })
 
         clonedScene.Parent = sceneFolder
-
-        seat:GetPropertyChangedSignal("Occupant"):Connect(
-            function()
-                local cameraPath1 = Utils.getFirstDescendantByName(clonedScene,
-                                                                   "ScreenCameraPath1")
-                local cameraPath2 = Utils.getFirstDescendantByName(clonedScene,
-                                                                   "ScreenCameraPath2")
-
-                local humanoid = seat.Occupant
-                if humanoid then
-
-                    local character = humanoid.Parent
-                    local player = Players:GetPlayerFromCharacter(character)
-                    local frameConfig = sceneConfig.frames[pageNum]
-
-                    if player then
-                        thisPlayer = player
-                        currentPlayer = player
-
-                        pageNum = 1
-                        renderScreenDialog({frameConfig = frameConfig})
-
-                        local props2 = {
-                            clonedScene = clonedScene,
-                            numPages = numPages,
-                            sceneConfig = sceneConfig,
-                            sceneFolder = sceneFolder,
-                            addCharactersToScene = addCharactersToScene,
-                            renderScreenDialog = renderScreenDialog,
-                            sgui = player.PlayerGui.SceneDialogGui,
-                            openBridgeDoor = openBridgeDoor
-                        }
-                        Buttons.configButtons(props2)
-
-                        freezeCameraRE:FireClient(player, cameraPath1,
-                                                  cameraPath2, true)
-                        return
-                    end
-                end
-
-                if currentPlayer then
-                    currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
-                        Constants.walkSpeed
-                    freezeCameraRE:FireClient(currentPlayer, cameraPath1,
-                                              cameraPath2, false)
-                    currentPlayer = nil
-                end
-            end)
-
-        Bridges.configBridges({
-            sceneConfig = sceneConfig,
-            clonedScene = clonedScene
-        })
-
-        function renderScreenDialog(charProps)
-            renderDialogRE:FireClient(thisPlayer, charProps.frameConfig.dialogs)
-
-        end
 
         function addCharactersToScene(charProps)
             Characters.addCharactersToScene(charProps)
@@ -171,6 +106,23 @@ function module.addScenes(props)
             if bridgeDoorRight then bridgeDoorRight:Destroy() end
             if bridgeDoorLeft then bridgeDoorLeft:Destroy() end
         end
+
+        local addSeatProps = {
+            seat = seat,
+            clonedScene = clonedScene,
+            sceneConfig = sceneConfig,
+            addCharactersToScene = addCharactersToScene,
+            -- numPages = numPages,
+            sceneFolder = sceneFolder,
+            openBridgeDoor = openBridgeDoor
+        }
+
+        TheaterSeat.addSeat(addSeatProps)
+
+        Bridges.configBridges({
+            sceneConfig = sceneConfig,
+            clonedScene = clonedScene
+        })
 
         local frameConfig = sceneConfig.frames[pageNum]
         local charProps = {
