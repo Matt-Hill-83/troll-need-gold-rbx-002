@@ -39,41 +39,15 @@ function setVisibility()
         Utils.hideItemAndChildrenByName({name = item, hide = true})
     end
 
-    local itemsToMakeTransparentAtRuntine = {"WallTemplate"}
-    for i, item in ipairs(itemsToMakeTransparentAtRuntine) do
-        Utils.setItemAndChildrenPropsByName(
-            {name = item, props = {Transparency = 1}})
-    end
-
     Utils.setItemAndChildrenPropsByName({
         name = "DockWalls",
         props = {Transparency = 1}
     })
 
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "SkyBox",
-    --     props = {Transparency = 0.5}
-    -- })
-
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "SkyBoxWalls",
-    --     props = {Transparency = 0.8}
-    -- })
-
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "Basement",
-    --     props = {Transparency = 1}
-    -- })
-
     Utils.setItemAndChildrenPropsByName({
         name = "DockBase",
         props = {Transparency = 1}
     })
-
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "SkyBoxBack",
-    --     props = {Transparency = 1}
-    -- })
 
     Utils.setWallHeightbyParentModelName({name = "BridgeWalls", height = 2})
     Utils.setItemAndChildrenPropsByName({
@@ -83,7 +57,6 @@ function setVisibility()
 
     Utils.setItemAndChildrenPropsByName({
         name = "BaseWalls",
-        -- props = {Transparency = 0.9, CanCollide = false, Anchored = true}
         props = {Transparency = 0.6, CanCollide = true, Anchored = true}
     })
 

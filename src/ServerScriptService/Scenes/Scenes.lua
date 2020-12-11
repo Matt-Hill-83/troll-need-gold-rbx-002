@@ -62,14 +62,13 @@ function module.addScenes(props)
     local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
                                                               "SceneTemplate")
 
-    local wallTemplate =
-        Utils.getFirstDescendantByName(questFolder, "SceneBase")
+    local sceneBase = Utils.getFirstDescendantByName(questFolder, "SceneBase")
 
     local sceneStartPosition = getStartPosition(
                                    {
             gridPadding = gridPadding,
             parent = parent,
-            child = wallTemplate
+            child = sceneBase
         })
 
     local thisTeleporter = Utils.getFirstDescendantByName(sceneTemplateModel,
@@ -86,7 +85,7 @@ function module.addScenes(props)
         local newPosition = getNewPosition(
                                 {
                 coordinates = sceneConfig.coordinates,
-                template = wallTemplate
+                template = sceneBase
             })
 
         local clonedScene = Utils.cloneModel(
