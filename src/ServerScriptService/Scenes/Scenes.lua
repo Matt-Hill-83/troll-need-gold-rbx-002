@@ -127,6 +127,14 @@ function module.addScenes(props)
         local Players = game:GetService("Players")
         local currentPlayer = nil
 
+        local sceneFolder = Utils.getOrCreateFolder(
+                                {
+                name = clonedScene.Name .. sceneIndex,
+                parent = questFolder
+            })
+
+        clonedScene.Parent = sceneFolder
+
         seat:GetPropertyChangedSignal("Occupant"):Connect(
             function()
 
@@ -138,35 +146,34 @@ function module.addScenes(props)
                 local humanoid = seat.Occupant
                 if humanoid then
                     local character = humanoid.Parent
-
                     local player = Players:GetPlayerFromCharacter(character)
                     local frameConfig = sceneConfig.frames[pageNum]
 
                     freezeCameraRE:FireClient(player, cameraPath1, cameraPath2,
                                               true, frameConfig.dialogs)
-                    -- renderDialogRE:FireClient(player, frameConfig.dialogs)
 
                     if player then
                         thisPlayer = player
                         currentPlayer = player
 
                         pageNum = 1
-                        local charProps = {frameConfig = frameConfig}
-                        renderScreenDialog(charProps)
-                        -- addCharactersToScene(charProps)
+                        renderScreenDialog({frameConfig = frameConfig})
+
+                        local props2 = {
+                            clonedScene = clonedScene,
+                            numPages = numPages,
+                            sceneConfig = sceneConfig,
+                            sceneFolder = sceneFolder,
+                            addCharactersToScene = addCharactersToScene,
+                            renderScreenDialog = renderScreenDialog,
+                            sgui = player.PlayerGui.SceneDialogGui
+                        }
+                        Buttons.doFrameStuff(props2)
                         return
                     end
                 end
 
                 if currentPlayer then
-
-                    print("leaving--------------")
-                    print("leaving--------------")
-                    print("leaving--------------")
-
-                    print('Constants.walkSpeed' .. ' - start');
-                    print(Constants.walkSpeed);
-                    print('Constants.walkSpeed' .. ' - end');
                     currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
                         Constants.walkSpeed
                     freezeCameraRE:FireClient(currentPlayer, cameraPath1,
@@ -174,14 +181,6 @@ function module.addScenes(props)
                     currentPlayer = nil
                 end
             end)
-
-        local sceneFolder = Utils.getOrCreateFolder(
-                                {
-                name = clonedScene.Name .. sceneIndex,
-                parent = questFolder
-            })
-
-        clonedScene.Parent = sceneFolder
 
         Bridges.configBridges({
             sceneConfig = sceneConfig,
@@ -212,47 +211,6 @@ function module.addScenes(props)
                                                               "GameTitleLabel")
         gameTitleLabel.Text = "Quest:   " ..
                                   (questConfig.questTitle or 'Game Title')
-
-        function updateButtonActiveStatus(props)
-            local clonedScene2 = props.clonedScene
-            local pageNum2 = props.pageNum
-            local numPages2 = props.numPages
-
-            local nextButton = Utils.getFirstDescendantByName(clonedScene2,
-                                                              "NextPageButton")
-            nextButton.Active = pageNum2 < numPages2
-            nextButton.Text = nextButton.Active and
-                                  Constants.buttonLabels.NextPage or "---"
-
-            local prevButton = Utils.getFirstDescendantByName(clonedScene2,
-                                                              "PrevPageButton")
-            prevButton.Active = pageNum2 > 1
-            prevButton.Text = prevButton.Active and
-                                  Constants.buttonLabels.PrevPage or "---"
-
-            local pageNumLabel = Utils.getFirstDescendantByName(clonedScene2,
-                                                                "PageNumLabel")
-            pageNumLabel.Text = "<b>" .. "Page: " .. "</b>" .. pageNum2 ..
-                                    " of " .. numPages2
-
-        end
-
-        updateButtonActiveStatus({
-            pageNum = pageNum,
-            clonedScene = clonedScene,
-            numPages = numPages
-        })
-
-        local props2 = {
-            updateButtonActiveStatus = updateButtonActiveStatus,
-            clonedScene = clonedScene,
-            numPages = numPages,
-            sceneConfig = sceneConfig,
-            sceneFolder = sceneFolder,
-            addCharactersToScene = addCharactersToScene,
-            renderScreenDialog = renderScreenDialog
-        }
-        Buttons.doFrameStuff(props2)
 
     end
     sceneTemplateModel:Destroy()

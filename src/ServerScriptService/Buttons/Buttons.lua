@@ -1,16 +1,42 @@
 local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local Constants = require(Sss.Source.Constants.Constants)
 
 local module = {}
 
+function updateButtonActiveStatus(props)
+    local clonedScene2 = props.clonedScene
+    local pageNum2 = props.pageNum
+    local numPages2 = props.numPages
+    local nextButton = props.nextButton
+    local prevButton = props.prevButton
+
+    nextButton.Active = pageNum2 < numPages2
+    nextButton.Text = nextButton.Active and Constants.buttonLabels.NextPage or
+                          "---"
+
+    prevButton.Active = pageNum2 > 1
+    prevButton.Text = prevButton.Active and Constants.buttonLabels.PrevPage or
+                          "---"
+
+    local pageNumLabel = Utils.getFirstDescendantByName(clonedScene2,
+                                                        "PageNumLabel")
+    pageNumLabel.Text = "<b>" .. "Page: " .. "</b>" .. pageNum2 .. " of " ..
+                            numPages2
+
+end
+
 function module.doFrameStuff(props)
-    local updateButtonActiveStatus = props.updateButtonActiveStatus
     local clonedScene = props.clonedScene
     local numPages = props.numPages
     local sceneConfig = props.sceneConfig
     local sceneFolder = props.sceneFolder
     local addCharactersToScene = props.addCharactersToScene
     local renderScreenDialog = props.renderScreenDialog
+    local sgui = props.sgui
+
+    local nextButton = Utils.getFirstDescendantByName(sgui, "NextPageButton")
+    local prevButton = Utils.getFirstDescendantByName(sgui, "PrevPageButton")
 
     function updateFrameItems(props)
         local clonedScene2 = props.clonedScene
@@ -23,7 +49,9 @@ function module.doFrameStuff(props)
             updateButtonActiveStatus({
                 pageNum = pn.value,
                 clonedScene = clonedScene2,
-                numPages = numPages2
+                numPages = numPages2,
+                nextButton = nextButton,
+                prevButton = prevButton
             })
 
             local newFrameConfig = sceneConfig2.frames[pn.value]
@@ -94,12 +122,7 @@ function module.doFrameStuff(props)
         })
     end
 
-    local nextButton = Utils.getFirstDescendantByName(clonedScene,
-                                                      "NextPageButton")
     nextButton.MouseButton1Click:Connect(onIncrementPage)
-
-    local prevButton = Utils.getFirstDescendantByName(clonedScene,
-                                                      "PrevPageButton")
     prevButton.MouseButton1Click:Connect(onDecrementPage)
 end
 return module
