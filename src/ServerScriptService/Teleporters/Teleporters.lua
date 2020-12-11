@@ -4,7 +4,6 @@ local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local module = {}
 
 function module.addTeleporters(props)
-
     local parent = props.parent
     local sceneIndex = props.sceneIndex
     local questIndex = props.questIndex
@@ -68,10 +67,6 @@ function module.addTeleporters(props)
         dummyHomeTP.CFrame *
             CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0)) *
             CFrame.Angles(0, math.rad(0), 0)
-    -- skyBoxTeleporter.PrimaryPart.CFrame =
-    --     dummyHomeTP.CFrame *
-    --         CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0)) *
-    --         CFrame.Angles(0, math.rad(180), 0)
 
     skyBoxTeleporter.PrimaryPart.Anchored = true
     skyBoxTeleporter.Name = "teleporter" .. "-sky- " .. sceneIndex
@@ -80,8 +75,10 @@ function module.addTeleporters(props)
     if (isStartScene or isEndScene) then
         if isStartScene then
             setLocalTPTargetToRemoteTP(skyBoxTeleporter, thisTeleporter)
+            setLocalTPTargetToRemoteTP(thisTeleporter, skyBoxTeleporter)
         end
         if isEndScene then
+            setLocalTPTargetToRemoteTP(skyBoxTeleporter, thisTeleporter)
             setLocalTPTargetToRemoteTP(thisTeleporter, skyBoxTeleporter)
         end
 
