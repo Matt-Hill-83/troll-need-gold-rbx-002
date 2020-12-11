@@ -10,6 +10,8 @@ function updateButtonActiveStatus(props)
     local nextButton = props.nextButton
     local prevButton = props.prevButton
     local pageNumLabel = props.pageNumLabel
+    local openBridgeDoor = props.openBridgeDoor
+    local clonedScene = props.clonedScene
 
     local lastPage = pageNum >= numPages2
     nextButton.Active = not lastPage
@@ -21,6 +23,8 @@ function updateButtonActiveStatus(props)
 
     pageNumLabel.Text = "Page: " .. pageNum .. " of " .. numPages2
 
+    if lastPage then openBridgeDoor({clonedScene = clonedScene}) end
+
 end
 
 function module.doFrameStuff(props)
@@ -31,6 +35,7 @@ function module.doFrameStuff(props)
     local addCharactersToScene = props.addCharactersToScene
     local renderScreenDialog = props.renderScreenDialog
     local sgui = props.sgui
+    local openBridgeDoor = props.openBridgeDoor
 
     local nextButton = Utils.getFirstDescendantByName(sgui, "NextPageButton")
     local prevButton = Utils.getFirstDescendantByName(sgui, "PrevPageButton")
@@ -42,6 +47,7 @@ function module.doFrameStuff(props)
         local sceneConfig2 = props.sceneConfig
         local pn = props.pn
         local buttonPressed = false
+
         if not buttonPressed then
             buttonPressed = true
             updateButtonActiveStatus({
@@ -49,7 +55,9 @@ function module.doFrameStuff(props)
                 numPages = numPages2,
                 nextButton = nextButton,
                 prevButton = prevButton,
-                pageNumLabel = pageNumLabel
+                pageNumLabel = pageNumLabel,
+                openBridgeDoor = openBridgeDoor,
+                clonedScene = clonedScene
             })
 
             local newFrameConfig = sceneConfig2.frames[pn.value]

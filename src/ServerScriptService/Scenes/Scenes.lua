@@ -161,9 +161,12 @@ function module.addScenes(props)
             Characters.addCharactersToScene(charProps)
         end
 
-        function openBridgeDoor(charProps)
-            local bridgeDoorRight = Utils.getFirstDescendantByName(clonedScene,
+        function openBridgeDoor(props)
+            local clonedScene2 = props.clonedScene
+            local bridgeDoorRight = Utils.getFirstDescendantByName(clonedScene2,
                                                                    "BridgeDoorRight")
+
+            bridgeDoorRight:Destroy()
         end
 
         local frameConfig = sceneConfig.frames[pageNum]
