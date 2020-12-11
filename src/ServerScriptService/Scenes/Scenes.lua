@@ -168,8 +168,8 @@ function module.addScenes(props)
             local bridgeDoorLeft = Utils.getFirstDescendantByName(clonedScene2,
                                                                   "BridgeDoorLeft")
 
-            bridgeDoorRight:Destroy()
-            bridgeDoorLeft:Destroy()
+            if bridgeDoorRight then bridgeDoorRight:Destroy() end
+            if bridgeDoorLeft then bridgeDoorLeft:Destroy() end
         end
 
         local frameConfig = sceneConfig.frames[pageNum]
