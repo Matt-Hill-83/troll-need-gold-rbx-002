@@ -287,10 +287,7 @@ function module.getDescendantsByNameMatch(parent, name)
     for i = 1, #descendants do
         local child = descendants[i]
         local match = string.match(child.Name, name)
-        if match then
-            table.insert(output, child)
-            -- 
-        end
+        if match then table.insert(output, child) end
     end
     return output
 end
