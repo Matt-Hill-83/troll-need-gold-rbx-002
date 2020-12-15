@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>363.389771</X>
-					<Y>16.9515667</Y>
-					<Z>-867.15979</Z>
-					<R00>0.999857843</R00>
-					<R01>-0.00596215855</R01>
-					<R02>0.0157788079</R02>
-					<R10>4.65661343e-10</R10>
-					<R11>0.935447216</R11>
-					<R12>0.35346669</R12>
-					<R20>-0.0168676656</R20>
-					<R21>-0.353416443</R21>
-					<R22>0.935314059</R22>
+					<X>429.607391</X>
+					<Y>-8.1936121</Y>
+					<Z>-815.235779</Z>
+					<R00>0.324557722</R00>
+					<R01>0.315519303</R01>
+					<R02>-0.89168942</R02>
+					<R10>7.45058149e-09</R10>
+					<R11>0.942722976</R11>
+					<R12>0.333577186</R12>
+					<R20>0.945865989</R20>
+					<R21>-0.108265057</R21>
+					<R22>0.305967957</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>363.358215</X>
-					<Y>16.244688</Y>
-					<Z>-869.030273</Z>
+					<X>431.390778</X>
+					<Y>-8.86076927</Y>
+					<Z>-815.847717</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -29670,11 +29670,7 @@ HkIfgB5CWoAeQimAHkIlgP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<Content name="LinkedSource"><null></null></Content>
 										<string name="Name">StartUpScript</string>
 										<string name="ScriptGuid">{587e5f32-ced3-411a-b04a-bdd76d76f09d}</string>
-										<ProtectedString name="Source"><![CDATA[print("Startup Script------------------------------------LetterFall")
-print("Startup Script------------------------------------LetterFall")
-print("Startup Script------------------------------------LetterFall")
-print("Startup Script------------------------------------LetterFall")
-print("Startup Script------------------------------------LetterFall")
+										<ProtectedString name="Source"><![CDATA[
 print("Startup Script------------------------------------LetterFall")
 local Sss = game:GetService("ServerScriptService")
 local remoteCode = require(Sss.Source.LetterFall_SSS.InitLetterFall)
@@ -40949,24 +40945,24 @@ remoteEvent.OnClientEvent:Connect(onNotifyPlayer)
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBX7e337b841ac74b8fa1610e8f9e875cd7">
+			<Item class="ModuleScript" referent="RBXe633e30b4e68497f8a147e7a109ea507">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">StarterPlayerScripts</string>
-					<string name="ScriptGuid">{367cb896-1cce-45be-9d5a-6db3e28f4eb4}</string>
+					<string name="ScriptGuid">{62d8b39f-91c6-4ff4-ac4e-b95611267877}</string>
 					<ProtectedString name="Source"><![CDATA[---test
 -- zzzzz
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBXf2e3e9c0b28c4426b6c9df3006643bf5">
+				<Item class="ModuleScript" referent="RBXcc09bdf07c904c49875f492c6d4e4b48">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">RSConstants</string>
-						<string name="ScriptGuid">{ba3aef4e-cdd1-4102-b3ea-7ac9c847122b}</string>
+						<string name="ScriptGuid">{6bf420ff-23aa-411b-8954-c0392fc1c4bb}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {
     buffer = 0,
     -- singleScene = true,
@@ -41230,12 +41226,12 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX0c7ecc08626d4e67b2826a273279852f">
+				<Item class="ModuleScript" referent="RBXb9860027cdef491e8fa9937545c83cc5">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">RSUtils</string>
-						<string name="ScriptGuid">{80390fec-48f7-4dd8-97be-506a9edd0e14}</string>
+						<string name="ScriptGuid">{4d552489-7579-448d-93b8-e4dff0f5863b}</string>
 						<ProtectedString name="Source"><![CDATA[local StarterPlayer = game:GetService("StarterPlayer")
 local Constants = require(StarterPlayer.Source.StarterPlayerScripts.RSConstants)
 local module = {}
@@ -41641,12 +41637,12 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBX19a2c155c14a4087b9d00aba2e60874b">
+			<Item class="ModuleScript" referent="RBX46c8988699db4a3fbe6d8e889023a50b">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Texts</string>
-					<string name="ScriptGuid">{415270a1-9e95-485f-843d-f5cbd6f1e250}</string>
+					<string name="ScriptGuid">{507fcf8b-536e-4129-a492-e3ede3c5c664}</string>
 					<ProtectedString name="Source"><![CDATA[local TextService = game:GetService("TextService")
 local StarterPlayer = game:GetService("StarterPlayer")
 local Utils = require(StarterPlayer.Source.StarterPlayerScripts.RSUtils)
@@ -41789,7 +41785,7 @@ return module
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBXd1b48fc662e34fcabd2490e8f4cc60c7">
+			<Item class="ModuleScript" referent="RBX45ca828715a64c3fbb6ef1ea0a2ff5ac">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
@@ -41800,7 +41796,7 @@ return module
 					<int64 name="SourceAssetId">6091761991</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="LocalScript" referent="RBX78feaa039b90454698e9956031ea52d9">
+				<Item class="LocalScript" referent="RBX580a2fc70ded43809ef3e06ae6d8d020">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<bool name="Disabled">false</bool>
@@ -41843,7 +41839,7 @@ UserInputService.InputBegan:Connect(onInputBegan)
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="PackageLink" referent="RBX293834264a5d42429ba217a6dcff9095">
+				<Item class="PackageLink" referent="RBX9873e66aad3a42dfb9a7aee92a2f4ac4">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<bool name="AutoUpdate">false</bool>
@@ -43273,30 +43269,30 @@ UserInputService.InputBegan:Connect(onInputBegan)
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBXa3372d99c3864c16914fa93dd6d6a439">
+			<Item class="ModuleScript" referent="RBXff27df69821a4086915d7f0f391b1663">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">-- Demos</string>
-					<string name="ScriptGuid">{b91327c5-2750-4735-9621-127a822ccbe8}</string>
+					<string name="ScriptGuid">{24bf3baa-b5ab-41bd-a4bb-6cb334c7dc23}</string>
 					<ProtectedString name="Source"></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="Folder" referent="RBX21de2595ed6d497584dd268146319b8e">
+			<Item class="Folder" referent="RBXe33eee5bb57a48a29216bc6c8183d1d6">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<string name="Name">AddDialog</string>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX8f5b36ab9d0140ae96ce8aeacc765d5a">
+				<Item class="ModuleScript" referent="RBX0d8cd31cb41944deab5f35d5c114701b">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">Dialog</string>
-						<string name="ScriptGuid">{09757da6-fca4-4e24-8ab8-ea88bd18d6ef}</string>
+						<string name="ScriptGuid">{1f044d73-5397-43dc-9690-9c9c840e203c}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Texts = require(Sss.Source.AddDialog.Texts)
 
@@ -43319,23 +43315,23 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBXe88014d00e194e6cbae6d064aedac9fa">
+			<Item class="ModuleScript" referent="RBX7f784be778dc4706b1307cdd4a557566">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">AddRemoteObjects</string>
-					<string name="ScriptGuid">{f9d2947d-2d86-4a4e-a9a3-c6f9e5342f80}</string>
+					<string name="ScriptGuid">{b1d9bc36-90a3-469f-9f11-f47851663f82}</string>
 					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX30c0d44606f6476686eabd4d3eae11d2">
+				<Item class="ModuleScript" referent="RBX52fb7b63820d4b50aeed32b4e47f5ace">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">AddToBase</string>
-						<string name="ScriptGuid">{1fce2d7f-7e1e-49e0-961a-4fb3ecffd66d}</string>
+						<string name="ScriptGuid">{b088ea58-c7cc-4fee-bbd2-a6eabd4062f0}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 local CS = game:GetService("CollectionService")
 local Sss = game:GetService("ServerScriptService")
@@ -43472,12 +43468,12 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBXbe7e5c4b339f4088a62eb25018c678ed">
+				<Item class="ModuleScript" referent="RBXae13553b4abc42a5876bb5ea18adf715">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">ConfigGame</string>
-						<string name="ScriptGuid">{3b9e355a-266a-40c6-8808-0efd9f8ed1f7}</string>
+						<string name="ScriptGuid">{0a37695b-e461-4dde-9ae1-ece1fff8f4cb}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 
@@ -43573,12 +43569,12 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX83068f5abd254e5181380ab2d9d0a042">
+				<Item class="ModuleScript" referent="RBXb95d48a669aa49d88a3b8d61efb627d1">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">Part</string>
-						<string name="ScriptGuid">{267eb8e9-4bc6-456c-b08e-dbf8281ddfa6}</string>
+						<string name="ScriptGuid">{89531e7f-171e-431e-8257-ba99bce39538}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
 function createPartWithVectors(props)
@@ -43613,12 +43609,12 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBXa76cc55cac19409092da876a90f3aec5">
+				<Item class="ModuleScript" referent="RBX901c5c74069b44adb1fa0d2674e5b7f6">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">QuestBlock</string>
-						<string name="ScriptGuid">{f553cf1c-8257-4e32-862b-c95f629ddbf2}</string>
+						<string name="ScriptGuid">{1421ac4e-91d2-4055-99ea-48e4c95ecc34}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Part = require(Sss.Source.AddRemoteObjects.Part)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
@@ -43829,12 +43825,12 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBXb23df0b3101545d4aa8ae976ef6f2e9c">
+				<Item class="ModuleScript" referent="RBXa04f02c47ba5410ca8f31f29ba641d9f">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">RowOfParts</string>
-						<string name="ScriptGuid">{ca1adca0-ba7e-4cff-a8d8-38434088aac1}</string>
+						<string name="ScriptGuid">{d1b57fdc-7380-4adc-ac8e-9bcb4c4f30ec}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Part = require(Sss.Source.AddRemoteObjects.Part)
 
@@ -43938,19 +43934,19 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Folder" referent="RBX303317b32cd74461ac22c6123958c5ce">
+			<Item class="Folder" referent="RBX29b79776430744fead144fc02867f8cc">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<string name="Name">Bridges</string>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX78538c878e1f4b91890a50ceb74abe64">
+				<Item class="ModuleScript" referent="RBXa4e2383d55a9411d8e19fa86b482b8c3">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">Bridges</string>
-						<string name="ScriptGuid">{158494db-f063-4fd6-bc6c-37e1636223fc}</string>
+						<string name="ScriptGuid">{3d13d18f-a37c-4d21-a4bb-19a87ea3b723}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 
@@ -44010,23 +44006,23 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBXd809dcc0c4ed4a3b972562e3e02ed987">
+			<Item class="ModuleScript" referent="RBX533c5939d7ab496493efb092929b76af">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Buttons</string>
-					<string name="ScriptGuid">{39113722-d067-4563-a272-00208d0e90d3}</string>
+					<string name="ScriptGuid">{c5496631-24e4-4c9e-a796-fa06121f44f2}</string>
 					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBXeb8ac0d574714607860c9485849ebb1a">
+				<Item class="ModuleScript" referent="RBX4b40f751f85b470cbb9e4772ec8e0330">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">Buttons</string>
-						<string name="ScriptGuid">{8f740c02-47d1-4265-ab12-adfe96bb2e8a}</string>
+						<string name="ScriptGuid">{f9cc806b-203c-470b-b764-b2e3933c67b5}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Constants = require(Sss.Source.Constants.Constants)
@@ -44193,23 +44189,23 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBXb7cd71bb5f2b4cb2b6513d9ddbe5e717">
+			<Item class="ModuleScript" referent="RBXf03c78086f2945d2a11c94bcadcd1dbe">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Characters</string>
-					<string name="ScriptGuid">{c27ed7a5-6d59-43a5-8118-4b8a960af162}</string>
+					<string name="ScriptGuid">{cadc3b57-00a4-45a2-8ebd-c62dfacd59a6}</string>
 					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX9a8d102990b7439d939f31f2e42341e5">
+				<Item class="ModuleScript" referent="RBX3a3c051f0e6e46f7a34c8815f1e2506f">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">Characters</string>
-						<string name="ScriptGuid">{e8dd4d6e-5813-4158-8344-ff16572cf57a}</string>
+						<string name="ScriptGuid">{85d3de34-29a5-401b-80e5-311329a9fa60}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local InstanceUtils = require(Sss.Source.Utils.U002InstanceUtils)
@@ -44383,23 +44379,23 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBXb0201658ecc8421a82d10d9d6a528a4d">
+			<Item class="ModuleScript" referent="RBX3a31281414d34e00af256f78355b07c9">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Constants</string>
-					<string name="ScriptGuid">{2b5c5472-2b20-4c4f-8210-4d8f480c7e7c}</string>
+					<string name="ScriptGuid">{1d315f31-a8e9-45da-a83f-38c2f3752013}</string>
 					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX5acab632204d471c83b601d1b8152d23">
+				<Item class="ModuleScript" referent="RBX3988bf30ec05464887aa1814019563ec">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">Constants</string>
-						<string name="ScriptGuid">{27cbe664-5644-48f3-9e84-00f65951a600}</string>
+						<string name="ScriptGuid">{96953b13-b3bc-4e4e-8b6d-ba829b95ce48}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {
     buffer = 0,
     singleScene = true,
@@ -44829,23 +44825,23 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBXc224e45be4f14b179e5e01fe628824e9">
+			<Item class="ModuleScript" referent="RBX0f883a102e5d473285c6eabb847fd31f">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">DropBox</string>
-					<string name="ScriptGuid">{7523968b-7760-4254-bccf-41bd632853ae}</string>
+					<string name="ScriptGuid">{066c1b6d-18b7-4f73-849a-534a23335ccc}</string>
 					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX77974827ebe240a384f2bab8c18721f5">
+				<Item class="ModuleScript" referent="RBX29fe6575a8f24c4e8ba38d9fff30e52e">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">DropBox</string>
-						<string name="ScriptGuid">{740fbeab-ca79-438c-8d0f-ab89d811f59b}</string>
+						<string name="ScriptGuid">{ccae382d-edb8-48c2-8fa3-6bafb4a3c512}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Constants = require(Sss.Source.Constants.Constants)
@@ -44904,23 +44900,23 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBXf090640df58745c2a3ffe464bd2ccf4d">
+			<Item class="ModuleScript" referent="RBX3538994358104617a0eb26631a7a2d5d">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Items</string>
-					<string name="ScriptGuid">{a3bd3466-2705-48a2-ba70-6369f9aeac8f}</string>
+					<string name="ScriptGuid">{39588558-00b5-413f-bcb9-0cd4f47b6a32}</string>
 					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX2977feb0f8f34c6ba99044da87b83159">
+				<Item class="ModuleScript" referent="RBX1f4d81c3df0e4bdc8133879409238454">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">Items</string>
-						<string name="ScriptGuid">{325e4851-9e05-43bd-9d68-8509e09f9f8c}</string>
+						<string name="ScriptGuid">{0764ba24-08e2-4a7d-a1fd-a71d18c439ca}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 
@@ -44935,23 +44931,23 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBX4200f5135b084392b06277064b7d66db">
+			<Item class="ModuleScript" referent="RBXc1a855f1c09a4bd59e65571b1f96f496">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Location</string>
-					<string name="ScriptGuid">{d09c2745-2e3f-4217-8861-16f283546bee}</string>
+					<string name="ScriptGuid">{6be27318-7c27-468b-b093-cea37c5c8d5b}</string>
 					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX854f8e261d6d4ec7bb9283529712398b">
+				<Item class="ModuleScript" referent="RBXeaf0d3fd12e74dd2a06d062375bd156c">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">Location</string>
-						<string name="ScriptGuid">{e30bbfd7-2a8a-4b86-b4a4-8b94c548c8e2}</string>
+						<string name="ScriptGuid">{93ba6729-8f8d-442f-95b6-9b0bea235005}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 
@@ -44993,23 +44989,23 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBXcf07bc5410a64be39cb4b798c0b342f2">
+			<Item class="ModuleScript" referent="RBX5f6973e6ba234e7fb68c04cf5b2da8d5">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">QuestConfigs</string>
-					<string name="ScriptGuid">{7a7a7474-4cfe-482b-bcbe-f406233fcc36}</string>
+					<string name="ScriptGuid">{7810aab3-09dc-4607-ad7f-958346ad01dc}</string>
 					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX2f7f95e307d44660a82e4d84a5462a48">
+				<Item class="ModuleScript" referent="RBXfe86c3f7fb8643d084691eca0a54347e">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">MissyMeow</string>
-						<string name="ScriptGuid">{ef9a663a-51de-4a89-8d41-b43d244086e8}</string>
+						<string name="ScriptGuid">{6ceb0970-d697-47ed-bb68-70e5495b220e}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
 module.quest = {
@@ -45248,12 +45244,12 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX5491df907c934f84bcdac1f321dd3c90">
+				<Item class="ModuleScript" referent="RBXc4b4c90cc5f34b16baf171ab70c67247">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">QuestConfigs</string>
-						<string name="ScriptGuid">{36dea9cb-e689-4674-b369-b756d90eeb3a}</string>
+						<string name="ScriptGuid">{170bc94f-0420-444b-a5a1-c740c944d3ed}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
 module.questConfigs = {
@@ -47577,12 +47573,12 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX7afcd84921354c58bc8cf98970f71096">
+				<Item class="ModuleScript" referent="RBX3a94d42064b54f199a32a78f207b523d">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">ScenesConfig</string>
-						<string name="ScriptGuid">{506720e5-1eda-402e-9135-7b09d571606a}</string>
+						<string name="ScriptGuid">{dc2d7fef-fda0-4e5e-b1d0-23a626c30a82}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local MissyMeow = require(Sss.Source.QuestConfigs.MissyMeow)
 local QuestConfigs = require(Sss.Source.QuestConfigs.QuestConfigs)
@@ -47604,23 +47600,23 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBXe76397573645492a9f83d129cb4ed764">
+			<Item class="ModuleScript" referent="RBXc54b12c34756400087e1dce48d80dd08">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Scenes</string>
-					<string name="ScriptGuid">{ad48c5e2-1dd7-4e92-a12e-1bda15927589}</string>
+					<string name="ScriptGuid">{c5a1ed2b-36ef-47d4-8a12-740cab191c52}</string>
 					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX7e6e45491f694c1eb7a5a0f024b349b2">
+				<Item class="ModuleScript" referent="RBX5d8da41bbfda40758e5455dc32c34ab7">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">Scenes</string>
-						<string name="ScriptGuid">{5cd0e805-e3eb-47f0-80d4-5ee0c26bcd3e}</string>
+						<string name="ScriptGuid">{0a9504f2-98a5-40d4-a553-fd40165e14ab}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Bridges = require(Sss.Source.Bridges.Bridges)
@@ -47794,23 +47790,23 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBXfcbc6048f6df494ba0ea2df262ea7043">
+			<Item class="ModuleScript" referent="RBXe64b3e8686274f3ca88268c76d95d272">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Teleporters</string>
-					<string name="ScriptGuid">{ee8a97d2-7483-4fb4-a99b-c79c280365a5}</string>
+					<string name="ScriptGuid">{48009dd7-8747-4435-9001-602e1a80a5a2}</string>
 					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBXa47beae80c2541a083b222243c15655e">
+				<Item class="ModuleScript" referent="RBXd548e65f9af04e02a89d8f66ae3abf81">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">Teleporters</string>
-						<string name="ScriptGuid">{951d183f-7b98-47f9-9338-5ad66075f430}</string>
+						<string name="ScriptGuid">{01a1e0d7-5af8-4990-84f0-373113004a10}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 
@@ -47909,19 +47905,19 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Folder" referent="RBX9ee1767ce78e40b9a372378df8ed70a0">
+			<Item class="Folder" referent="RBX5f8a10b1830440dbb555d11cdb86786a">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<string name="Name">TestStuff</string>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBXfc49d75f88124e0e891c93a0259e620b">
+				<Item class="ModuleScript" referent="RBXd55eb655a05c4371b1b2f72ed9adb4a1">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">ScrollArea</string>
-						<string name="ScriptGuid">{ccfbd0c6-f2c2-492b-8b92-33262453f5cd}</string>
+						<string name="ScriptGuid">{21bbe3c4-9f0a-4b5b-adc6-826743e09e15}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
 function hello()
@@ -47937,23 +47933,23 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBXac7f957804be48fbbf2abe32884e9c1d">
+			<Item class="ModuleScript" referent="RBX46d12b8085824aa581de79f1a18ba5c6">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">TheaterSeat</string>
-					<string name="ScriptGuid">{c750cadf-86ca-4d93-b559-5ae823d5b4eb}</string>
+					<string name="ScriptGuid">{30139789-faac-4e32-b1b7-8b9fc5cc9c3b}</string>
 					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX6f23919c7a7b4b88aef9a77c3357a89d">
+				<Item class="ModuleScript" referent="RBX1674ddcf689f465c8de02027f4ea455f">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">TheaterSeat</string>
-						<string name="ScriptGuid">{05fa78e8-911c-4499-9ed4-c2813063d492}</string>
+						<string name="ScriptGuid">{847127e7-e026-4fdc-9e57-1c3b1050fb71}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Buttons = require(Sss.Source.Buttons.Buttons)
@@ -48057,23 +48053,23 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBX8431b42d3bc243dba8a4a11b9df8c9f9">
+			<Item class="ModuleScript" referent="RBX0c7f73ee7b0e46fc96fc2b876864dae6">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Utils</string>
-					<string name="ScriptGuid">{17a32fa3-e011-49e2-a943-cca37ea97547}</string>
+					<string name="ScriptGuid">{c35014d5-d273-4471-b2d3-224f1ecd978b}</string>
 					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX1835282e88244540a85ce3e6e275b281">
+				<Item class="ModuleScript" referent="RBXcdd67b9c7bf24c37b0528fdcbaf77c43">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">DetectUser</string>
-						<string name="ScriptGuid">{ebb47567-fcd0-4ce8-b70b-199db3fe9946}</string>
+						<string name="ScriptGuid">{ab728cff-6211-4a6f-a6a7-9bd77a4c743c}</string>
 						<ProtectedString name="Source"><![CDATA[local regionEnter, regionExit
 local module = {Players = {}, Regions = {}}
 
@@ -48146,12 +48142,12 @@ end
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX3b008298e5214d4e84c61ec813666f47">
+				<Item class="ModuleScript" referent="RBX77e1db11e60c47dbb52fb8ae84b33d20">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">GarrysMods</string>
-						<string name="ScriptGuid">{b9d456cb-1d79-4f10-809d-1b66478cc309}</string>
+						<string name="ScriptGuid">{202e64de-1952-4139-9832-49c595b5ac0f}</string>
 						<ProtectedString name="Source"><![CDATA[-- --[[---------------------------------------------------------
 -- 	Name: Inherit( t, base )
 -- 	Desc: Copies any missing data from base to t
@@ -48665,12 +48661,12 @@ end
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX0cd4c7adabc04faeb2e418d56007fa9c">
+				<Item class="ModuleScript" referent="RBX5675fdca132f40b9ba14650cc769bce4">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">GarrysModsUtil</string>
-						<string name="ScriptGuid">{ceb30db7-1c18-4129-a082-7d7bebee78a0}</string>
+						<string name="ScriptGuid">{8823485c-787b-4bf6-8ed2-a4021e900044}</string>
 						<ProtectedString name="Source"><![CDATA[-- -- Return if there's nothing to add on to
 -- if ( !util ) then return end
 -- if ( CLIENT ) then
@@ -48937,12 +48933,12 @@ end
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX4412ab446b354aa3a158ce7ca0ce9812">
+				<Item class="ModuleScript" referent="RBX678bd38050ad4357a8bfd00e5b1a5dde">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">U001GeneralUtils</string>
-						<string name="ScriptGuid">{3db60c37-8b03-451c-a880-4cca632386d2}</string>
+						<string name="ScriptGuid">{b42daba4-d77a-4962-b0fd-6966be0b6b1e}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
@@ -49348,12 +49344,12 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX38f6f093405a4d6c9381db93347ed843">
+				<Item class="ModuleScript" referent="RBXac632105441c47e0aa1e84be32f2291e">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">U002InstanceUtils</string>
-						<string name="ScriptGuid">{672127c7-a54e-4c76-9dd4-132dd8d495df}</string>
+						<string name="ScriptGuid">{1c0fd1d9-f703-4b9f-a580-7db819f6b0f4}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Constants = require(Sss.Source.Constants.Constants)
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
@@ -49394,12 +49390,12 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX3b0bf20d7a6643279139913abdd78769">
+				<Item class="ModuleScript" referent="RBXbc31915e734c4bf885d73b22b3f5e18c">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">U003PartsUtils</string>
-						<string name="ScriptGuid">{295531b7-2567-4967-abfb-f28d325ce6a7}</string>
+						<string name="ScriptGuid">{f90aef5e-3852-4396-8162-8c3efc7aaed3}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
@@ -49427,12 +49423,12 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBX96cb5b22ec16431e9e4a6e82db05531f">
+			<Item class="ModuleScript" referent="RBX6c5803cca05e44648f2148dd81c01b17">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">test</string>
-					<string name="ScriptGuid">{eb1d2545-7750-47a3-96fa-191093f7982e}</string>
+					<string name="ScriptGuid">{784f59f5-80ad-4686-9660-816fb3132071}</string>
 					<ProtectedString name="Source"><![CDATA[local module = {}
 
 function module.func001()
@@ -49446,7 +49442,7 @@ return module
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="ModuleScript" referent="RBXf8c7efdeb0684c9db0ff0ce0042532fe">
+			<Item class="ModuleScript" referent="RBX04e8d372e78b4c01b1d8ce1ff2b28523">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
@@ -49457,7 +49453,7 @@ return module
 					<int64 name="SourceAssetId">6091760773</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX129c28bb0c6d447bbbb723376daab5fe">
+				<Item class="ModuleScript" referent="RBXf89a228057c14d9ab0c44e87e8b4f57b">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
@@ -49500,7 +49496,7 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX526884bebdef45b6b4fd36aa04981892">
+				<Item class="ModuleScript" referent="RBXda90ebf203fb4146a690b9c940344799">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
@@ -49569,7 +49565,7 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX9ed33aebe6eb40589b83b6d63e567e73">
+				<Item class="ModuleScript" referent="RBX11d1cebeabb04a7fbaf005746dc45cf0">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
@@ -49601,7 +49597,7 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX00ff4477209448d7a17c585381dc2092">
+				<Item class="ModuleScript" referent="RBXf3dd1bf138544926902f449dfc92e27c">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
@@ -49694,9 +49690,6 @@ function initLetterRack(props)
         return math.ceil(rand)
     end
 
-    -- local columnBaseTemplate = Utils.getFirstDescendantByName(letterFallFolder,
-    --                                                           "ColumnBase")
-
     local columnBaseTemplates = CS:GetTagged("ColumnBaseTemplate")
     local columnBaseTemplate = columnBaseTemplates[1]
 
@@ -49714,7 +49707,9 @@ function initLetterRack(props)
             newColumnBase.CFrame = letterPositioner[1].CFrame *
                                        CFrame.new(Vector3.new(-z, 0, 0))
         end
-
+        print('newColumnBase' .. ' - start');
+        print(newColumnBase);
+        print('newColumnBase' .. ' - end');
         local letterTemplate = Utils.getFirstDescendantByName(newColumnBase,
                                                               "LetterTemplate")
 
@@ -49729,7 +49724,7 @@ function initLetterRack(props)
             newLetter.Name = "newLetter-" .. char
             CS:AddTag(newLetter, module.tagNames.LetterBlock)
 
-            local y = newLetter.Size.Y * (rowIndex - 1) * spacingFactor
+            local y = newLetter.Size.Y * (rowIndex) * spacingFactor
             newLetter.CFrame = newLetter.CFrame *
                                    CFrame.new(Vector3.new(0, y, 0))
 
@@ -49752,7 +49747,7 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBXed9db0eb141b43cba84b841cb2824003">
+				<Item class="ModuleScript" referent="RBXdd6b57381137464a859583e54f2e3d4a">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
@@ -49785,6 +49780,12 @@ function initWord(props)
                                                             "LetterFallFolder")
     local wordFolder = getWordFolder()
     local word = LetterFall.words[LetterFall.lastWordIndex]
+
+    print('LetterFall.wordLetters' .. ' - start');
+    print(LetterFall.wordLetters);
+    print('LetterFall.wordLetters' .. ' - end');
+
+    -- TODO: need to delete these letters.
 
     for i, letter in ipairs(LetterFall.wordLetters) do
         if letter.instance then letter.instance:Destroy() end
@@ -49833,7 +49834,7 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX33f3c7c9495e4c8c9c51f6abe13f71e3">
+				<Item class="ModuleScript" referent="RBXfd234ef9a3964618b793e73980e604b7">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
@@ -50216,7 +50217,7 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="PackageLink" referent="RBXfa58aeb6c3434f1da5bda70e80d67616">
+				<Item class="PackageLink" referent="RBX5e7d298f18fc49aea572aaa34abfb675">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<bool name="AutoUpdate">false</bool>
@@ -50224,7 +50225,7 @@ return module
 						<Content name="PackageIdSerialize"><url>rbxassetid://6091760773</url></Content>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
-						<int64 name="VersionIdSerialize">4</int64>
+						<int64 name="VersionIdSerialize">10</int64>
 					</Properties>
 				</Item>
 			</Item>
@@ -50483,12 +50484,12 @@ local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBXd68e1add78664e038c58050aeb9e9f7e">
+			<Item class="ModuleScript" referent="RBXf89cfb8da7f24949af2fff37e3df4a05">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Texts</string>
-					<string name="ScriptGuid">{720f395f-7f5d-4b0e-bf22-e2ea8acb056f}</string>
+					<string name="ScriptGuid">{1a38859f-0a2a-4a31-a610-9da0da633a84}</string>
 					<ProtectedString name="Source">---test</ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
