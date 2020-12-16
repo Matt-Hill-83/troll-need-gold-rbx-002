@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>408.943542</X>
-					<Y>80.8201447</Y>
-					<Z>-1087.5426</Z>
-					<R00>-0.958988667</R00>
-					<R01>0.195024908</R01>
-					<R02>-0.205684572</R02>
+					<X>408.903656</X>
+					<Y>81.1209183</Y>
+					<Z>-1087.1427</Z>
+					<R00>-0.910226405</R00>
+					<R01>0.347235203</R01>
+					<R02>-0.225644916</R02>
 					<R10>-0</R10>
-					<R11>0.725660622</R11>
-					<R12>0.688052952</R12>
-					<R20>0.283444613</R20>
-					<R21>0.659834981</R21>
-					<R22>-0.695900202</R22>
+					<R11>0.544889927</R11>
+					<R12>0.838507533</R12>
+					<R20>0.414111018</R20>
+					<R21>0.763231695</R21>
+					<R22>-0.4959732</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -41087,6 +41087,45 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
+								<Item class="Weld" referent="RBX8a1de13c30a6494380514b065d4c6043">
+									<Properties>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<CoordinateFrame name="C0">
+											<X>0.00837624073</X>
+											<Y>0.928572655</Y>
+											<Z>-0.184735298</Z>
+											<R00>1</R00>
+											<R01>0</R01>
+											<R02>0</R02>
+											<R10>0</R10>
+											<R11>1</R11>
+											<R12>0</R12>
+											<R20>0</R20>
+											<R21>0</R21>
+											<R22>1</R22>
+										</CoordinateFrame>
+										<CoordinateFrame name="C1">
+											<X>0</X>
+											<Y>0.600000024</Y>
+											<Z>0</Z>
+											<R00>1</R00>
+											<R01>0</R01>
+											<R02>0</R02>
+											<R10>0</R10>
+											<R11>1</R11>
+											<R12>0</R12>
+											<R20>0</R20>
+											<R21>0</R21>
+											<R22>1</R22>
+										</CoordinateFrame>
+										<bool name="Enabled">true</bool>
+										<string name="Name">AccessoryWeld</string>
+										<Ref name="Part0">RBX6159fe7d30f94b228a4bf5bfe3ae8aab</Ref>
+										<Ref name="Part1">RBXe12812bc43ad4b4aa5dce145fe06c951</Ref>
+										<int64 name="SourceAssetId">-1</int64>
+										<BinaryString name="Tags"></BinaryString>
+									</Properties>
+								</Item>
 							</Item>
 						</Item>
 					</Item>
@@ -41106,18 +41145,18 @@ end
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>490.120911</X>
-						<Y>-45.3300323</Y>
-						<Z>-949.253296</Z>
-						<R00>-1.00000048</R00>
-						<R01>1.19114008e-22</R01>
-						<R02>1.04509695e-06</R02>
-						<R10>-1.19114008e-22</R10>
-						<R11>0.999995172</R11>
-						<R12>-2.1654203e-28</R12>
-						<R20>-1.16429487e-06</R20>
-						<R21>3.41576483e-28</R21>
-						<R22>-0.999995649</R22>
+						<X>480.719452</X>
+						<Y>-44.9410019</Y>
+						<Z>-948.693237</Z>
+						<R00>-1.00000083</R00>
+						<R01>2.38227461e-22</R01>
+						<R02>-1.1919235e-07</R02>
+						<R10>-2.38227461e-22</R10>
+						<R11>0.999990284</R11>
+						<R12>-4.33630253e-28</R12>
+						<R20>-1.1919235e-07</R20>
+						<R21>4.33630301e-28</R21>
+						<R22>-0.999991298</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
 					<bool name="CastShadow">true</bool>
@@ -41189,41 +41228,41 @@ end
 						<float name="Transparency">0</float>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBX1d8d1b406ec347bea25988ca79344d02">
+				<Item class="Weld" referent="RBX4108882f731644eda7a6aa53175081c8">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
 							<X>0</X>
 							<Y>-0.249996185</Y>
 							<Z>0</Z>
-							<R00>1.00000095</R00>
-							<R01>-1.13686838e-13</R01>
-							<R02>7.47593744e-35</R02>
-							<R10>-2.38227486e-22</R10>
-							<R11>0</R11>
-							<R12>-0.999995172</R12>
-							<R20>1.1919235e-07</R20>
-							<R21>0.999991298</R21>
-							<R22>4.05237375e-28</R22>
+							<R00>1</R00>
+							<R01>-2.38383379e-07</R01>
+							<R02>-4.76451994e-22</R02>
+							<R10>-4.76451994e-22</R10>
+							<R11>1.13578228e-28</R11>
+							<R12>-1</R12>
+							<R20>2.38383365e-07</R20>
+							<R21>1</R21>
+							<R22>0</R22>
 						</CoordinateFrame>
 						<CoordinateFrame name="C1">
-							<X>26.5012817</X>
-							<Y>0.5</Y>
-							<Z>10.5003052</Z>
+							<X>-0.400054932</X>
+							<Y>0.199996948</Y>
+							<Z>0.100036621</Z>
 							<R00>-1</R00>
-							<R01>-8.74031585e-08</R01>
-							<R02>1.19112809e-22</R02>
-							<R10>-1.19112809e-22</R10>
-							<R11>2.02891736e-28</R11>
+							<R01>-1.1325053e-06</R01>
+							<R02>2.38224962e-22</R02>
+							<R10>-2.38224962e-22</R10>
+							<R11>4.05235449e-28</R11>
 							<R12>-1</R12>
-							<R20>8.74031585e-08</R20>
+							<R20>1.1325053e-06</R20>
 							<R21>-1</R21>
-							<R22>-2.13302591e-28</R22>
+							<R22>-6.75026505e-28</R22>
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
 						<Ref name="Part0">RBX6f1e5550c2ec4ce993a20b3f569adca5</Ref>
-						<Ref name="Part1">RBX5d3c36d21ee2427d9b676ed57ad4b027</Ref>
+						<Ref name="Part1">RBXf2f567726c2443c2bb19ab37a6679ad4</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -48338,7 +48377,7 @@ function module.addScenes(props)
         gameTitleLabel.Text = "Quest:   " ..
                                   (questConfig.questTitle or 'Game Title')
     end
-    -- sceneTemplateModel:Destroy()
+    sceneTemplateModel:Destroy()
 end
 
 getStartPosition = function(props)
@@ -50225,8 +50264,10 @@ return module
 						<string name="Name">LetterFall</string>
 						<string name="ScriptGuid">{27a6236c-8796-4820-962e-0731535453a8}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Utils = require(script.Parent.Utils)
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+-- local Utils = require(script.Parent.Utils)
 local CS = game:GetService("CollectionService")
+local TargetWord = require(script.Parent.TargetWord)
 
 local module = {
     wordLetters = {},
@@ -50303,6 +50344,15 @@ function initGameToggle(letterFallFolder)
                 print('touched')
                 print('touched')
                 print('touched')
+                initLetterRack(letterFallFolder)
+                -- print('TargetWord' .. ' - start');
+                -- print(TargetWord);
+                -- print('TargetWord' .. ' - end');
+                print('Utils' .. ' - start');
+                print(Utils);
+                print('Utils' .. ' - end');
+                -- Utils.initWord(letterFallFolder)
+
             end
         end
 

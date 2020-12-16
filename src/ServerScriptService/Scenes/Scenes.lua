@@ -126,7 +126,7 @@ function module.addScenes(props)
         gameTitleLabel.Text = "Quest:   " ..
                                   (questConfig.questTitle or 'Game Title')
     end
-    -- sceneTemplateModel:Destroy()
+    sceneTemplateModel:Destroy()
 end
 
 getStartPosition = function(props)

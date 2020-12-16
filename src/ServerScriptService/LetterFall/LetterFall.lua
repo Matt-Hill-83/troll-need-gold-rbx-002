@@ -1,6 +1,10 @@
 local Sss = game:GetService("ServerScriptService")
-local Utils = require(script.Parent.Utils)
+-- local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+-- local Utils = require(script.Parent.Utils)
 local CS = game:GetService("CollectionService")
+-- local TargetWord = require(Sss.Source.LetterFall.TargetWord)
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+-- local TargetWord = require(script.Parent.TargetWord)
 
 local module = {
     wordLetters = {},
@@ -78,6 +82,14 @@ function initGameToggle(letterFallFolder)
                 print('touched')
                 print('touched')
                 initLetterRack(letterFallFolder)
+                -- print('TargetWord' .. ' - start');
+                -- print(TargetWord);
+                -- print('TargetWord' .. ' - end');
+                print('Utils' .. ' - start');
+                print(Utils);
+                print('Utils' .. ' - end');
+                -- Utils.initWord(letterFallFolder)
+
             end
         end
 
