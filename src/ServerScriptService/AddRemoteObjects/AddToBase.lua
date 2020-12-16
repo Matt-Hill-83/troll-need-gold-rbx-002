@@ -9,6 +9,42 @@ local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
 local Constants = require(Sss.Source.Constants.Constants)
 local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
 
+-- local assetId = 6091760773
+-- local InsertService = game:GetService("InsertService")
+-- local model = InsertService:LoadAsset(assetId)
+-- model.Parent = workspace
+-- local test = require(model.LetterFall_SSS.InitLetterFall)
+-- test.initLetterFall()
+-- local parts = CS:GetTagged("Test")
+-- print('parts' .. ' - start');
+-- print('parts' .. ' - start');
+-- print('parts' .. ' - start');
+-- print('parts' .. ' - start');
+-- print('parts' .. ' - start');
+-- print('parts' .. ' - start');
+-- print('parts' .. ' - start');
+-- print(parts);
+-- print('parts' .. ' - end');
+
+-- if parts[1] then
+--     local part = parts[1]
+--     print('part' .. ' - start');
+--     print(part);
+--     print('part' .. ' - end');
+
+--     function onPartTouched(otherPart)
+--         print('touched')
+--         print('touched')
+--         print('touched')
+--         print('touched')
+--         print('touched')
+--         -- 
+--     end
+
+--     part.Touched:Connect(onPartTouched)
+
+-- end
+
 function addRemoteObjects()
     ConfigGame.configGame()
 
@@ -27,8 +63,8 @@ function addRemoteObjects()
     local myStuff = workspace:FindFirstChild("MyStuff")
 
     local questsOrigin = Utils.getFirstDescendantByName(myStuff, "QuestsOrigin")
-    -- local letterTemplates = CS:GetTagged("TG-LetterTemplate")
-    -- local letterTemplate = letterTemplates[1]
+    local letterTemplates = CS:GetTagged("TG-LetterTemplate")
+    local letterTemplate = letterTemplates[1]
     -- local letterTemplate = Utils.getFirstDescendantByName(myStuff,
     --                                                       "LetterTemplate")
 
@@ -36,28 +72,28 @@ function addRemoteObjects()
     --     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
     --     'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
     -- }
-    -- local letters = {'C'}
+    local letters = {'C'}
 
-    -- for i, char in ipairs(letters) do
-    --     local newLetter = letterTemplate:Clone()
-    --     newLetter.Parent = letterTemplate.Parent
-    --     newLetter.Name = "letter-" .. char
+    for i, char in ipairs(letters) do
+        local newLetter = letterTemplate:Clone()
+        newLetter.Parent = letterTemplate.Parent
+        newLetter.Name = "letter-" .. char
 
-    --     local letterHandle = Utils.getFirstDescendantByName(newLetter, "Handle")
+        local letterHandle = Utils.getFirstDescendantByName(newLetter, "Handle")
 
-    --     letterHandle.CFrame = letterHandle.CFrame +
-    --                               Vector3.new(0, letterHandle.Size.Y * 1.5, 0)
+        letterHandle.CFrame = letterHandle.CFrame +
+                                  Vector3.new(0, letterHandle.Size.Y * 1.5, 0)
 
-    --     local textLabels = Utils.getDescendantsByName(letterHandle, "BlockChar")
-    --     for i, label in ipairs(textLabels) do label.Text = char end
+        local textLabels = Utils.getDescendantsByName(letterHandle, "BlockChar")
+        for i, label in ipairs(textLabels) do label.Text = char end
 
-    --     newLetter.Equipped:Connect(function()
-    --         print('equipped')
-    --         newLetter.Parent = workspace
-    --     end)
-    -- end
+        newLetter.Equipped:Connect(function()
+            print('equipped')
+            newLetter.Parent = workspace
+        end)
+    end
 
-    -- letterTemplate:Destroy()
+    letterTemplate:Destroy()
 
     local runtimeQuestsFolder = Utils.getOrCreateFolder(
                                     {name = "RunTimeQuests", parent = myStuff})

@@ -23,6 +23,10 @@ function module.configDropBox(props)
                                                     "DropBoxDetectionRegion")
 
         local function onPartTouched(otherPart)
+
+            print('DropBoxDetectionRegion')
+            print('DropBoxDetectionRegion')
+            print('DropBoxDetectionRegion')
             local partParent = otherPart.Parent
             local match = partParent.Name == item.name
 

@@ -16,6 +16,10 @@ function module.addTeleporters(props)
 
         localTP.PrimaryPart.Touched:Connect(
             function(touchPart)
+
+                -- print('touchPart' .. ' - start');
+                -- print(touchPart);
+                -- print('touchPart' .. ' - end');
                 if touchPart and touchPart.Parent and touchPart.Parent.Humanoid and
                     touchPart.Parent.currentlyTeleporting.Value == false then
 
