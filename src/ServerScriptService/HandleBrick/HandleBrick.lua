@@ -1,6 +1,6 @@
 local module = {}
 local Sss = game:GetService("ServerScriptService")
--- local LetterFall = require(Sss.Source.LetterFall.LetterFall)
+local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 -- local LetterFall = require(script.Parent.LetterFall)
 -- local TargetWord = require(script.Parent.TargetWord)
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
@@ -18,10 +18,7 @@ end
 
 function isWordComplete(wordLetters)
     for i, word in ipairs(wordLetters) do
-        if not word.found then
-            -- 
-            return false
-        end
+        if not word.found then return false end
     end
     return true
 end

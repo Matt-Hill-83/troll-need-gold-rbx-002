@@ -1,9 +1,10 @@
 local Sss = game:GetService("ServerScriptService")
 local CS = game:GetService("CollectionService")
--- local TargetWord = require(Sss.Source.LetterFall.TargetWord)
--- local HandleBrick3 = require(Sss.Source.LetterFall.HandleBrick3)
-
+-- local TargetWord = require(Sss.Source.module.TargetWord)
+-- local HandleBrick3 = require(Sss.Source.HandleBrick.HandleBrick)
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
 
 local module = {
     wordLetters = {},
@@ -64,11 +65,14 @@ function getLetterFallFolder()
     return Utils.getFirstDescendantByName(workspace, "LetterFallFolder")
 end
 
-function getWordFolder(letterFallFolder)
+function getWordFolder()
+    print('module.letterFallFolder' .. ' - start');
+    print(module.letterFallFolder);
+    print('module.letterFallFolder' .. ' - end');
     local runtimeFolder = Utils.getOrCreateFolder(
                               {
             name = "RuntimeFolder",
-            parent = letterFallFolder or module.letterFallFolder
+            parent = module.letterFallFolder
         })
 
     return (Utils.getOrCreateFolder({
@@ -138,7 +142,7 @@ function initGameToggle(letterFallFolder)
 
                 initLetterRack(letterFallFolder)
                 initWord(letterFallFolder)
-                -- HandleBrick3.initClickHandler(letterFallFolder)
+                initClickHandler(letterFallFolder)
 
             end
         end
@@ -221,6 +225,52 @@ function initLetterRack(props)
         -- letterTemplate:Destroy()
     end
     -- columnBaseTemplate:Destroy()
+end
+
+function isDesiredLetter(letter, clickedLetter)
+    local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
+                          .Text
+    return letter.found ~= true and letter.char == textLabel
+end
+
+function isWordComplete(wordLetters)
+    for i, word in ipairs(wordLetters) do
+        if not word.found then return false end
+    end
+    return true
+end
+
+function initClickHandler(player, clickedLetter)
+    remoteEvent.OnServerEvent:Connect(handleBrick)
+end
+
+function handleBrick(player, clickedLetter)
+    local wordLetters = module.wordLetters
+    print('wordLetters' .. ' - start');
+    print(wordLetters);
+    print('wordLetters' .. ' - end');
+
+    local part = CS:GetTagged("BallPitBottom")
+    if part[1] then part[1]:Destroy() end
+
+    for i, letter in ipairs(wordLetters) do
+        if isDesiredLetter(letter, clickedLetter) then
+            letter.found = true
+
+            module.colorLetterText({
+                letterBlock = letter.instance,
+                color = Color3.fromRGB(113, 17, 161)
+            })
+
+            clickedLetter:Destroy()
+            local wordComplete = isWordComplete(wordLetters)
+            if wordComplete then
+                module.lastWordIndex = module.lastWordIndex + 1
+                module.initWord(module.letterFallFolder)
+            end
+            break
+        end
+    end
 end
 
 module.colorLetterText = colorLetterText
