@@ -1,36 +1,28 @@
 local SP = game:GetService("StarterPlayer")
 local Sss = game:GetService("ServerScriptService")
 local CS = game:GetService("CollectionService")
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 
 local module = {touched = false}
 
 local ConfigGame = require(script.Parent.ConfigGame)
--- local ConfigGame = require(script.Parent.ConfigGame)
 local LetterFall = require(script.Parent.LetterFall)
 local TargetWord = require(script.Parent.TargetWord)
 local HandleBrick3 = require(script.Parent.HandleBrick3)
 
-function initLetterFall()
-    HandleBrick3.initClickHandler()
-    ConfigGame.configGame()
-    LetterFall.initGameToggle()
-    -- LetterFall.initLetterRack()
-    -- TargetWord.initWord()
-    -- LetterFall.createBalls()
+function initLetterFall(letterFallFolder)
+    HandleBrick3.initClickHandler(letterFallFolder)
+    ConfigGame.configGame(letterFallFolder)
+    LetterFall.initGameToggle(letterFallFolder)
+    -- LetterFall.initLetterRack(letterFallFolder)
+    -- TargetWord.initWord(letterFallFolder)
+    -- LetterFall.createBalls(letterFallFolder)
 
-    local parts = CS:GetTagged("Test")
-    print('parts' .. ' - start');
-    print('parts' .. ' - start');
-    print('parts' .. ' - start');
-    print('parts' .. ' - start');
-    print('parts' .. ' - start');
-    print('parts' .. ' - start');
-    print('parts' .. ' - start');
-    print(parts);
-    print('parts' .. ' - end');
+    local part =
+        Utils.getFirstDescendantByName(letterFallFolder, "LF-SpawnBase")
+    -- local part = Utils.getFirstDescendantByName(letterFallFolder, "TestPart")
 
-    if parts[1] then
-        local part = parts[1]
+    if part then
         print('part' .. ' - start');
         print(part);
         print('part' .. ' - end');
@@ -47,9 +39,7 @@ function initLetterFall()
         end
 
         part.Touched:Connect(onPartTouched)
-
     end
-
 end
 
 module.initLetterFall = initLetterFall

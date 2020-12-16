@@ -15,35 +15,6 @@ local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
 -- model.Parent = workspace
 -- local test = require(model.LetterFall_SSS.InitLetterFall)
 -- test.initLetterFall()
--- local parts = CS:GetTagged("Test")
--- print('parts' .. ' - start');
--- print('parts' .. ' - start');
--- print('parts' .. ' - start');
--- print('parts' .. ' - start');
--- print('parts' .. ' - start');
--- print('parts' .. ' - start');
--- print('parts' .. ' - start');
--- print(parts);
--- print('parts' .. ' - end');
-
--- if parts[1] then
---     local part = parts[1]
---     print('part' .. ' - start');
---     print(part);
---     print('part' .. ' - end');
-
---     function onPartTouched(otherPart)
---         print('touched')
---         print('touched')
---         print('touched')
---         print('touched')
---         print('touched')
---         -- 
---     end
-
---     part.Touched:Connect(onPartTouched)
-
--- end
 
 function addRemoteObjects()
     ConfigGame.configGame()

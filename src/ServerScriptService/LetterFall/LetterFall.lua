@@ -65,32 +65,9 @@ function initGameToggle()
     print('initGameToggle')
     print('initGameToggle')
     local letterFallFolder = getLetterFallFolder()
-    local spawnBaselocal = Utils.getFirstDescendantByName(letterFallFolder,
-                                                          "LF-SpawnBase")
+    -- local spawnBaselocal = Utils.getFirstDescendantByName(letterFallFolder,
+    --                                                       "LF-SpawnBase")
 
-    print('spawnBaselocal' .. ' - start');
-    print(spawnBaselocal);
-    print('spawnBaselocal' .. ' - end');
-
-    function onPartTouched(otherPart)
-        print('touched')
-        print('touched')
-        print('touched')
-        print('touched')
-        print('touched')
-        initLetterRack()
-        -- 
-    end
-
-    spawnBaselocal.Touched:Connect(function(touchPart)
-
-        print('touchPart' .. ' - start');
-        print(touchPart);
-        print('touchPart' .. ' - end');
-
-    end)
-
-    -- spawnBaselocal.Touched:Connect(onPartTouched)
 end
 
 function initLetterRack(props)

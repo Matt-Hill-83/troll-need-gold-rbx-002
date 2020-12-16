@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>405.861115</X>
-					<Y>20.0368385</Y>
-					<Z>-1032.67786</Z>
-					<R00>-0.97225064</R00>
-					<R01>-0.0915913433</R01>
-					<R02>0.215266481</R02>
-					<R10>-7.45057971e-09</R10>
-					<R11>0.920172274</R11>
-					<R12>0.391513854</R12>
-					<R20>-0.233941495</R20>
-					<R21>0.380649596</R21>
-					<R22>-0.894638121</R22>
+					<X>375.311737</X>
+					<Y>39.198452</Y>
+					<Z>-1026.44971</Z>
+					<R00>-0.918620288</R00>
+					<R01>0.102006495</R01>
+					<R02>-0.381747961</R02>
+					<R10>7.4505806e-09</R10>
+					<R11>0.966104507</R11>
+					<R12>0.25815177</R12>
+					<R20>0.395141542</R20>
+					<R21>0.237143457</R21>
+					<R22>-0.88748312</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>405.000122</X>
-					<Y>18.4709167</Y>
-					<Z>-1029.09961</Z>
+					<X>386.00061</X>
+					<Y>31.9702492</Y>
+					<Z>-1001.60034</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -18481,14 +18481,12 @@ HkIfgB5CWoAeQimAHkIlgP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<string name="ScriptGuid">{803a9bbf-fee8-4f4b-b197-f6414db8e7bf}</string>
 											<ProtectedString name="Source"><![CDATA[print("Startup Script------")
 
-
 local Sss = game:GetService("ServerScriptService")
 local init = require(Sss.Source.LetterFall.InitLetterFall)
 print(init)
 print(init)
 print(init)
---local init = require(game.ServerScriptService.Source.LetterFall.InitLetterFall)
-	init.initLetterFall()]]></ProtectedString>
+init.initLetterFall(script.Parent)]]></ProtectedString>
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
@@ -18866,6 +18864,83 @@ print(init)
 											</Properties>
 										</Item>
 									</Item>
+								</Item>
+								<Item class="Part" referent="RBXd8c6f6b13ebf42ba9cc73dfce21c3528">
+									<Properties>
+										<bool name="Anchored">true</bool>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<float name="BackParamA">-0.5</float>
+										<float name="BackParamB">0.5</float>
+										<token name="BackSurface">0</token>
+										<token name="BackSurfaceInput">0</token>
+										<float name="BottomParamA">-0.5</float>
+										<float name="BottomParamB">0.5</float>
+										<token name="BottomSurface">0</token>
+										<token name="BottomSurfaceInput">0</token>
+										<CoordinateFrame name="CFrame">
+											<X>405.000122</X>
+											<Y>19.4709129</Y>
+											<Z>-1029.09961</Z>
+											<R00>1.00000095</R00>
+											<R01>-1.67957038e-16</R01>
+											<R02>-9.09494702e-13</R02>
+											<R10>-1.67956059e-16</R10>
+											<R11>0.999995232</R11>
+											<R12>1.79518457e-23</R12>
+											<R20>1.19193203e-07</R20>
+											<R21>2.06795153e-24</R21>
+											<R22>0.999991417</R22>
+										</CoordinateFrame>
+										<bool name="CanCollide">true</bool>
+										<bool name="CastShadow">true</bool>
+										<int name="CollisionGroupId">0</int>
+										<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
+										<PhysicalProperties name="CustomPhysicalProperties">
+											<CustomPhysics>false</CustomPhysics>
+										</PhysicalProperties>
+										<float name="FrontParamA">-0.5</float>
+										<float name="FrontParamB">0.5</float>
+										<token name="FrontSurface">0</token>
+										<token name="FrontSurfaceInput">0</token>
+										<float name="LeftParamA">-0.5</float>
+										<float name="LeftParamB">0.5</float>
+										<token name="LeftSurface">0</token>
+										<token name="LeftSurfaceInput">0</token>
+										<bool name="Locked">false</bool>
+										<bool name="Massless">false</bool>
+										<token name="Material">256</token>
+										<string name="Name">TestPart</string>
+										<float name="Reflectance">0</float>
+										<float name="RightParamA">-0.5</float>
+										<float name="RightParamB">0.5</float>
+										<token name="RightSurface">0</token>
+										<token name="RightSurfaceInput">0</token>
+										<int name="RootPriority">0</int>
+										<Vector3 name="RotVelocity">
+											<X>0</X>
+											<Y>0</Y>
+											<Z>0</Z>
+										</Vector3>
+										<int64 name="SourceAssetId">-1</int64>
+										<BinaryString name="Tags">VGVzdA==</BinaryString>
+										<float name="TopParamA">-0.5</float>
+										<float name="TopParamB">0.5</float>
+										<token name="TopSurface">0</token>
+										<token name="TopSurfaceInput">0</token>
+										<float name="Transparency">0</float>
+										<Vector3 name="Velocity">
+											<X>0</X>
+											<Y>0</Y>
+											<Z>0</Z>
+										</Vector3>
+										<token name="formFactorRaw">1</token>
+										<token name="shape">1</token>
+										<Vector3 name="size">
+											<X>4</X>
+											<Y>1</Y>
+											<Z>2</Z>
+										</Vector3>
+									</Properties>
 								</Item>
 							</Item>
 							<Item class="Part" referent="RBX85e0bbd9a4a9407cb7c4a462a8c156ed">
@@ -41232,83 +41307,6 @@ end
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Part" referent="RBXd8c6f6b13ebf42ba9cc73dfce21c3528">
-			<Properties>
-				<bool name="Anchored">true</bool>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<float name="BackParamA">-0.5</float>
-				<float name="BackParamB">0.5</float>
-				<token name="BackSurface">0</token>
-				<token name="BackSurfaceInput">0</token>
-				<float name="BottomParamA">-0.5</float>
-				<float name="BottomParamB">0.5</float>
-				<token name="BottomSurface">0</token>
-				<token name="BottomSurfaceInput">0</token>
-				<CoordinateFrame name="CFrame">
-					<X>405.000122</X>
-					<Y>19.4709129</Y>
-					<Z>-1029.09961</Z>
-					<R00>1.00000095</R00>
-					<R01>-1.67957038e-16</R01>
-					<R02>-9.09494702e-13</R02>
-					<R10>-1.67956059e-16</R10>
-					<R11>0.999995232</R11>
-					<R12>1.79518457e-23</R12>
-					<R20>1.19193203e-07</R20>
-					<R21>2.06795153e-24</R21>
-					<R22>0.999991417</R22>
-				</CoordinateFrame>
-				<bool name="CanCollide">true</bool>
-				<bool name="CastShadow">true</bool>
-				<int name="CollisionGroupId">0</int>
-				<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
-				<PhysicalProperties name="CustomPhysicalProperties">
-					<CustomPhysics>false</CustomPhysics>
-				</PhysicalProperties>
-				<float name="FrontParamA">-0.5</float>
-				<float name="FrontParamB">0.5</float>
-				<token name="FrontSurface">0</token>
-				<token name="FrontSurfaceInput">0</token>
-				<float name="LeftParamA">-0.5</float>
-				<float name="LeftParamB">0.5</float>
-				<token name="LeftSurface">0</token>
-				<token name="LeftSurfaceInput">0</token>
-				<bool name="Locked">false</bool>
-				<bool name="Massless">false</bool>
-				<token name="Material">256</token>
-				<string name="Name">TestPart</string>
-				<float name="Reflectance">0</float>
-				<float name="RightParamA">-0.5</float>
-				<float name="RightParamB">0.5</float>
-				<token name="RightSurface">0</token>
-				<token name="RightSurfaceInput">0</token>
-				<int name="RootPriority">0</int>
-				<Vector3 name="RotVelocity">
-					<X>0</X>
-					<Y>0</Y>
-					<Z>0</Z>
-				</Vector3>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags">VGVzdA==</BinaryString>
-				<float name="TopParamA">-0.5</float>
-				<float name="TopParamB">0.5</float>
-				<token name="TopSurface">0</token>
-				<token name="TopSurfaceInput">0</token>
-				<float name="Transparency">0</float>
-				<Vector3 name="Velocity">
-					<X>0</X>
-					<Y>0</Y>
-					<Z>0</Z>
-				</Vector3>
-				<token name="formFactorRaw">1</token>
-				<token name="shape">1</token>
-				<Vector3 name="size">
-					<X>4</X>
-					<Y>1</Y>
-					<Z>2</Z>
-				</Vector3>
-			</Properties>
-		</Item>
 	</Item>
 	<Item class="SoundService" referent="RBX7845308c7ca3451eaa9eca1a685d0279">
 		<Properties>
@@ -50279,7 +50277,7 @@ return module
 local Sss = game:GetService("ServerScriptService")
 local CS = game:GetService("CollectionService")
 
-local module = {}
+local module = {touched = false}
 
 local ConfigGame = require(script.Parent.ConfigGame)
 -- local ConfigGame = require(script.Parent.ConfigGame)
@@ -50313,12 +50311,14 @@ function initLetterFall()
         print('part' .. ' - end');
 
         function onPartTouched(otherPart)
-            print('touched')
-            print('touched')
-            print('touched')
-            print('touched')
-            print('touched')
-            -- 
+            if not module.touched then
+                module.touched = true
+                print('touched')
+                print('touched')
+                print('touched')
+                print('touched')
+                print('touched')
+            end
         end
 
         part.Touched:Connect(onPartTouched)
@@ -50408,32 +50408,9 @@ function initGameToggle()
     print('initGameToggle')
     print('initGameToggle')
     local letterFallFolder = getLetterFallFolder()
-    local spawnBaselocal = Utils.getFirstDescendantByName(letterFallFolder,
-                                                          "LF-SpawnBase")
+    -- local spawnBaselocal = Utils.getFirstDescendantByName(letterFallFolder,
+    --                                                       "LF-SpawnBase")
 
-    print('spawnBaselocal' .. ' - start');
-    print(spawnBaselocal);
-    print('spawnBaselocal' .. ' - end');
-
-    function onPartTouched(otherPart)
-        print('touched')
-        print('touched')
-        print('touched')
-        print('touched')
-        print('touched')
-        initLetterRack()
-        -- 
-    end
-
-    spawnBaselocal.Touched:Connect(function(touchPart)
-
-        print('touchPart' .. ' - start');
-        print(touchPart);
-        print('touchPart' .. ' - end');
-
-    end)
-
-    -- spawnBaselocal.Touched:Connect(onPartTouched)
 end
 
 function initLetterRack(props)
