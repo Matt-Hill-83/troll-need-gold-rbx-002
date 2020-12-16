@@ -1,10 +1,9 @@
 local Sss = game:GetService("ServerScriptService")
--- local Utils = require(Sss.Source.Utils.U001GeneralUtils)
--- local Utils = require(script.Parent.Utils)
 local CS = game:GetService("CollectionService")
 -- local TargetWord = require(Sss.Source.LetterFall.TargetWord)
+-- local HandleBrick3 = require(Sss.Source.LetterFall.HandleBrick3)
+
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
--- local TargetWord = require(script.Parent.TargetWord)
 
 local module = {
     wordLetters = {},
@@ -13,7 +12,8 @@ local module = {
         {'P', 'A', 'T'}, {'R', 'A', 'T'}, {'S', 'A', 'T'}
     },
     lastWordIndex = 1,
-    tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
+    tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"},
+    letterFallFolder = nil
 }
 
 function colorLetterText(props)
@@ -64,31 +64,81 @@ function getLetterFallFolder()
     return Utils.getFirstDescendantByName(workspace, "LetterFallFolder")
 end
 
+function getWordFolder(letterFallFolder)
+    local runtimeFolder = Utils.getOrCreateFolder(
+                              {
+            name = "RuntimeFolder",
+            parent = letterFallFolder or module.letterFallFolder
+        })
+
+    return (Utils.getOrCreateFolder({
+        name = "WordFolder",
+        parent = runtimeFolder
+    }))
+end
+
+function initWord(letterFallFolder)
+    module.letterFallFolder = letterFallFolder
+    local wordFolder = getWordFolder(letterFallFolder)
+    local word = module.words[module.lastWordIndex]
+
+    print('module.wordLetters' .. ' - start');
+    print(module.wordLetters);
+    print('module.wordLetters' .. ' - end');
+
+    -- TODO: need to delete these letters.
+
+    for i, letter in ipairs(module.wordLetters) do
+        if letter.instance then letter.instance:Destroy() end
+        module.wordLetters[i] = nil
+    end
+    Utils.clearTable(module.wordLetters)
+
+    function genRandom(min, max) return min + math.random() * (max - min) end
+
+    local wordBox = Utils.getFirstDescendantByName(letterFallFolder, "WordBox")
+    local letterBlock = Utils.getFirstDescendantByName(wordBox,
+                                                       "LetterBlockTemplate")
+
+    local letterPositioner = Utils.getFirstDescendantByName(wordBox,
+                                                            "LetterPositioner")
+
+    local spacingFactor = 1.05
+
+    for letterIndex, letter in ipairs(word) do
+        local newLetter = letterBlock:Clone()
+        newLetter.Parent = wordFolder
+        newLetter.Name = "wordLetter-" .. letterIndex
+        local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
+        newLetter.CFrame = letterPositioner.CFrame *
+                               CFrame.new(Vector3.new(0, 0, z))
+
+        CS:AddTag(newLetter, module.tagNames.WordLetter)
+
+        module.applyLetterText({letterBlock = newLetter, char = letter})
+        module.colorLetterText({
+            letterBlock = newLetter,
+            color = Color3.new(255, 0, 191)
+        })
+
+        table.insert(module.wordLetters,
+                     {char = letter, found = false, instance = newLetter})
+    end
+end
+
 function initGameToggle(letterFallFolder)
     local part =
         Utils.getFirstDescendantByName(letterFallFolder, "LF-SpawnBase")
 
     if part then
-        print('part' .. ' - start');
-        print(part);
-        print('part' .. ' - end');
-
         function onPartTouched(otherPart)
             if not module.touched then
                 module.touched = true
                 print('touched')
-                print('touched')
-                print('touched')
-                print('touched')
-                print('touched')
+
                 initLetterRack(letterFallFolder)
-                -- print('TargetWord' .. ' - start');
-                -- print(TargetWord);
-                -- print('TargetWord' .. ' - end');
-                print('Utils' .. ' - start');
-                print(Utils);
-                print('Utils' .. ' - end');
-                -- Utils.initWord(letterFallFolder)
+                initWord(letterFallFolder)
+                -- HandleBrick3.initClickHandler(letterFallFolder)
 
             end
         end
@@ -178,5 +228,6 @@ module.initGameToggle = initGameToggle
 module.createBalls = createBalls
 module.initLetterRack = initLetterRack
 module.applyLetterText = applyLetterText
+module.initWord = initWord
 
 return module

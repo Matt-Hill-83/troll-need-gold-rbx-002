@@ -2,8 +2,8 @@ local Sss = game:GetService("ServerScriptService")
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 local collectionService = game:GetService("CollectionService")
--- 
--- 
+
+function module.clearTable(tbl) for key in pairs(tbl) do tbl[key] = nil end end
 
 function module.setPropsByTag(props)
     local tag = props.tag

@@ -1,13 +1,13 @@
 local Sss = game:GetService("ServerScriptService")
-local Utils = require(script.Parent.Utils)
 local CS = game:GetService("CollectionService")
-local LetterFall = require(script.Parent.LetterFall)
+local LetterFall = require(Sss.Source.LetterFall.LetterFall)
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 
 local module = {}
 
-function getWordFolder()
-    local letterFallFolder = Utils.getFirstDescendantByName(workspace,
-                                                            "LetterFallFolder")
+function getWordFolder(letterFallFolder)
+    -- local letterFallFolder = Utils.getFirstDescendantByName(workspace,
+    --                                                         "LetterFallFolder")
     local runtimeFolder = Utils.getOrCreateFolder(
                               {
             name = "RuntimeFolder",
@@ -20,9 +20,9 @@ function getWordFolder()
     }))
 end
 
-function initWord(props)
-    local letterFallFolder = Utils.getFirstDescendantByName(workspace,
-                                                            "LetterFallFolder")
+function initWord(letterFallFolder)
+    -- local letterFallFolder = Utils.getFirstDescendantByName(workspace,
+    --                                                         "LetterFallFolder")
     local wordFolder = getWordFolder()
     local word = LetterFall.words[LetterFall.lastWordIndex]
 
@@ -71,6 +71,5 @@ function initWord(props)
 end
 
 module.initWord = initWord
-module.getWordFolder = getWordFolder
 
 return module

@@ -1,8 +1,9 @@
 local module = {}
 local Sss = game:GetService("ServerScriptService")
+-- local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 local LetterFall = require(script.Parent.LetterFall)
-local TargetWord = require(script.Parent.TargetWord)
-local Utils = require(script.Parent.Utils)
+-- local TargetWord = require(script.Parent.TargetWord)
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 
 local CS = game:GetService("CollectionService")
 
@@ -31,6 +32,9 @@ end
 
 function handleBrick(player, clickedLetter)
     local wordLetters = LetterFall.wordLetters
+    print('wordLetters' .. ' - start');
+    print(wordLetters);
+    print('wordLetters' .. ' - end');
 
     local part = CS:GetTagged("BallPitBottom")
     if part[1] then part[1]:Destroy() end
@@ -48,7 +52,7 @@ function handleBrick(player, clickedLetter)
             local wordComplete = isWordComplete(wordLetters)
             if wordComplete then
                 LetterFall.lastWordIndex = LetterFall.lastWordIndex + 1
-                TargetWord.initWord()
+                LetterFall.initWord()
             end
             break
         end
