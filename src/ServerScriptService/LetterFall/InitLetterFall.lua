@@ -18,28 +18,27 @@ function initLetterFall(letterFallFolder)
     -- TargetWord.initWord(letterFallFolder)
     -- LetterFall.createBalls(letterFallFolder)
 
-    local part =
-        Utils.getFirstDescendantByName(letterFallFolder, "LF-SpawnBase")
-    -- local part = Utils.getFirstDescendantByName(letterFallFolder, "TestPart")
+    -- local part =
+    --     Utils.getFirstDescendantByName(letterFallFolder, "LF-SpawnBase")
 
-    if part then
-        print('part' .. ' - start');
-        print(part);
-        print('part' .. ' - end');
+    -- if part then
+    --     print('part' .. ' - start');
+    --     print(part);
+    --     print('part' .. ' - end');
 
-        function onPartTouched(otherPart)
-            if not module.touched then
-                module.touched = true
-                print('touched')
-                print('touched')
-                print('touched')
-                print('touched')
-                print('touched')
-            end
-        end
+    --     function onPartTouched(otherPart)
+    --         if not module.touched then
+    --             module.touched = true
+    --             print('touched')
+    --             print('touched')
+    --             print('touched')
+    --             print('touched')
+    --             print('touched')
+    --         end
+    --     end
 
-        part.Touched:Connect(onPartTouched)
-    end
+    --     part.Touched:Connect(onPartTouched)
+    -- end
 end
 
 module.initLetterFall = initLetterFall

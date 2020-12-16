@@ -60,13 +60,28 @@ function getLetterFallFolder()
     return Utils.getFirstDescendantByName(workspace, "LetterFallFolder")
 end
 
-function initGameToggle()
-    print('initGameToggle')
-    print('initGameToggle')
-    print('initGameToggle')
-    local letterFallFolder = getLetterFallFolder()
-    -- local spawnBaselocal = Utils.getFirstDescendantByName(letterFallFolder,
-    --                                                       "LF-SpawnBase")
+function initGameToggle(letterFallFolder)
+    local part =
+        Utils.getFirstDescendantByName(letterFallFolder, "LF-SpawnBase")
+
+    if part then
+        print('part' .. ' - start');
+        print(part);
+        print('part' .. ' - end');
+
+        function onPartTouched(otherPart)
+            if not module.touched then
+                module.touched = true
+                print('touched')
+                print('touched')
+                print('touched')
+                print('touched')
+                print('touched')
+            end
+        end
+
+        part.Touched:Connect(onPartTouched)
+    end
 
 end
 
