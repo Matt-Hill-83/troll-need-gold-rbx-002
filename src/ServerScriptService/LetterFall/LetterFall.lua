@@ -77,6 +77,7 @@ function initGameToggle(letterFallFolder)
                 print('touched')
                 print('touched')
                 print('touched')
+                initLetterRack(letterFallFolder)
             end
         end
 
