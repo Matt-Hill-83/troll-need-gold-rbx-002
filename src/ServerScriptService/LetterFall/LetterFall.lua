@@ -223,12 +223,6 @@ function initLetterRack(letterFallFolder)
 end
 
 function isDesiredLetter(letter, clickedLetter)
-    print('clickedLetter' .. ' - start');
-    print(clickedLetter);
-    print('clickedLetter' .. ' - end');
-    print('clickedLetter' .. ' - start');
-    print(Utils.tableToString({clickedLetter}));
-    print('clickedLetter' .. ' - end');
     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
                           .Text
     return letter.found ~= true and letter.char == textLabel
@@ -250,23 +244,22 @@ function initClickHandler(letterFallFolder)
 end
 
 function handleBrick(player, clickedLetter, letterFallFolder)
-    print('letterFallFolder' .. ' - start');
-    print(letterFallFolder);
-    print('letterFallFolder' .. ' - end');
     -- Gets arguments from EventHandler in StarterPack
     local wordLetters = module.wordLetters
-    local ballPitBottom = CS:GetTagged("BallPitBottom")
-    if ballPitBottom[1] then ballPitBottom[1]:Destroy() end
+    local ballPitBottom = Utils.getFirstDescendantByName(clickedLetter,
+                                                         "BallPitBottom")
+    if ballPitBottom then ballPitBottom:Destroy() end
 
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
+    print('isChild' .. ' - start');
+    print(isChild);
+    print('isChild' .. ' - end');
 
     if not isChild then return {} end
 
     for i, letter in ipairs(wordLetters) do
-
         if isDesiredLetter(letter, clickedLetter) then
             letter.found = true
-
             module.colorLetterText({
                 letterBlock = letter.instance,
                 color = Color3.fromRGB(113, 17, 161)

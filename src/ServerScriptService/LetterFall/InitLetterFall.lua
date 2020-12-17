@@ -6,6 +6,11 @@ local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 local module = {}
 
 function initLetterFall(letterFallFolder)
+    print('------------------------------------------->>>>>>');
+    print('------------------------------------------->>>>>>');
+    print("initLetterFall")
+    print('letterFallFolder' .. ' - start');
+    print(letterFallFolder);
     LetterFall.initGameToggle(letterFallFolder)
     LetterFall.createBalls(letterFallFolder)
 
