@@ -122,18 +122,18 @@ module.characters = {
     cub = {displayName = "Cub", decalId = '6073679553', backgroundColorIdx = 1},
     barkPhone01 = {
         displayName = "BarkPhone01",
-        decalId = 'xxx',
+        decalId = '6073682731',
         backgroundColorIdx = 1
     },
     scramper01 = {
-        displayName = "Scramper01",
-        decalId = 'xxx',
+        displayName = "Brandon",
+        decalId = '6073681552',
         backgroundColorIdx = 1
     },
 
     slicerDicer01 = {
         displayName = "Slicer Dicer",
-        decalId = '5991267736',
+        decalId = '6073681398',
         backgroundColorIdx = 1
     },
     drake = {

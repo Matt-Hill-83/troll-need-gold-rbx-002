@@ -282,6 +282,180 @@ module.questConfigs = {
                 isStartScene = false,
                 maxRow = 0,
                 maxCol = 1
+            }, {
+                name = "goose01",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "goblinKing02", text = "Ah ha ha ha ha ha!"},
+                            {
+                                char = "slicerDicer01",
+                                text = "What's so funny frog boy?"
+                            },
+                            {
+                                char = "goblinKing02",
+                                text = "It's your... it's that..."
+                            }
+                        },
+                        characters01 = {
+                            {name = "slicerDicer01"}, {name = "trollKing01"}
+                        },
+                        characters02 = {{name = "hopps01"}, {name = "drake"}}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "goblinKing02",
+                                text = "...oh my gosh I can't even say it, because I'm laughing so hard."
+                            }, {
+                                char = "goblinKing02",
+                                text = "...it's that puny... light... thingy you are waving at me"
+                            }, {char = "slicerDicer01", text = "Ha Ha..."},
+                            {
+                                char = "slicerDicer01",
+                                text = "Laugh it up Lizard Legs!"
+                            }, {
+                                char = "slicerDicer01",
+                                text = "I'm here for the bounty, not for your B roll antics"
+                            }
+                        },
+                        characters01 = {
+                            {name = "slicerDicer01"}, {name = "trollKing01"}
+                        },
+                        characters02 = {{name = "hopps01"}, {name = "drake"}}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "goblinKing02",
+                                text = "YOUR TOY IS NO MATCH FOR THE TROLL STICK!!!"
+                            },
+                            {
+                                char = "slicerDicer01",
+                                text = "Come at me you bog bunny!"
+                            },
+                            {char = "goblinKing02", text = "Oooooh, spicy..."}
+                        },
+                        characters01 = {
+                            {name = "slicerDicer01"}, {name = "trollKing01"}
+                        },
+                        characters02 = {{name = "hopps01"}, {name = "drake"}}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "hopps01",
+                                text = "And all my life, it's all I ever wanted to do..."
+                            }, {char = "empty", text = "To be a babysitter?"},
+                            {
+                                char = "empty",
+                                text = "Yeah...   it's like... it's my destiny."
+                            },
+                            {
+                                char = "empty",
+                                text = "Wow. Hey, wanna see me spin this green thing around?"
+                            }, {char = "empty", text = "Ok."}
+                        },
+                        characters01 = {
+                            {name = "slicerDicer01"}, {name = "trollKing01"}
+                        },
+                        characters02 = {{name = "hopps01"}, {name = "drake"}}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "empty",
+                                text = "I wrote a letter to my mom."
+                            }, {char = "empty", text = "Can I read it?"},
+                            {
+                                char = "empty",
+                                text = "Sure, here you go. I used my best guess spelling."
+                            }
+                        },
+                        characters01 = {
+                            {name = "slicerDicer01"}, {name = "trollKing01"}
+                        },
+                        characters02 = {{name = "hopps01"}, {name = "drake"}}
+                    }, {
+                        dialogs = {
+                            {char = "empty", text = "DeeR MoM"},
+                            {char = "empty", text = "Horse lollipop tuna fish?"},
+                            {
+                                char = "empty",
+                                text = "those are some umm... pretty creative guesses..."
+                            }
+                        },
+                        characters01 = {
+                            {name = "slicerDicer01"}, {name = "trollKing01"}
+                        },
+                        characters02 = {{name = "hopps01"}, {name = "drake"}}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "drake",
+                                text = "Thanks!  Do you think my mom will understand it?"
+                            },
+                            {char = "empty", text = "Not in a million years."},
+                            {char = "empty", text = "Oh rats..."}
+                        },
+                        characters01 = {
+                            {name = "slicerDicer01"}, {name = "trollKing01"}
+                        },
+                        characters02 = {{name = "hopps01"}, {name = "drake"}}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "goblinKing02",
+                                text = "You!  Strange grey boy!  Say that again!"
+                            }, {char = "drake", text = "Huh?"},
+                            {
+                                char = "goblinKing02",
+                                text = "That thing you said!  Say it again!"
+                            },
+                            {char = "drake", text = "Horse lollipop tuna fish?"}
+                        },
+                        characters01 = {
+                            {name = "slicerDicer01"}, {name = "empty"}
+                        },
+                        characters02 = {
+                            {name = "goblinKing02"}, {name = "hopps01"},
+                            {name = "drake"}
+                        }
+                    }, {
+                        dialogs = {
+                            {
+                                char = "empty",
+                                text = "That's it.  That's the secret code!"
+                            }, {char = "empty", text = "It is real!"}, {
+                                char = "empty",
+                                text = "When drake was writing his letter, the system saved his password in it's autocomplete index!"
+                            }, {
+                                char = "empty",
+                                text = "Now it just auto-completed the answer to Zorblat's riddle!"
+                            },
+                            {
+                                char = "slicerDicer01",
+                                text = "Now, we can finally open the portal!"
+                            },
+                            {
+                                char = "empty",
+                                text = "Hey guys!  Watch me spin this green thing around!"
+                            }
+                        },
+                        characters01 = {
+                            {name = "slicerDicer01"}, {name = "empty"}
+                        },
+                        characters02 = {
+                            {name = "goblinKing02"}, {name = "hopps01"},
+                            {name = "drake"}
+                        }
+                    }
+                },
+                coordinates = {row = 0, col = 2},
+                showBottomPath = false,
+                showRightPath = false,
+                showTopPath = false,
+                showLeftPath = true,
+                isEndScene = true,
+                isStartScene = false,
+                maxRow = 0,
+                maxCol = 2
             }
         },
         gridSize = {rows = 1, cols = 3}
