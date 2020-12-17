@@ -30,11 +30,56 @@ function module.configSkyboxTeleporter(props)
     return skyBoxTeleporter
 end
 
+local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
+    localTP.PrimaryPart.Touched:Connect(function(touchPart)
+        if touchPart and touchPart.Parent and touchPart.Parent.Humanoid and
+            touchPart.Parent.currentlyTeleporting.Value == false then
+
+            local Character = touchPart.Parent
+            local questTeleporterReceiver =
+                Utils.getFirstDescendantByName(remoteTP,
+                                               "QuestTeleporterReceiver")
+            local teleportLocation = questTeleporterReceiver.CFrame +
+                                         Vector3.new(0, 10, 0)
+
+            local ts = game:GetService("TweenService")
+            wait(2)
+            local tweenInfo = TweenInfo.new(2)
+            local t = ts:Create(Character.PrimaryPart, tweenInfo,
+                                {CFrame = teleportLocation})
+            Character.PrimaryPart.Anchored = true
+            -- Anchor the player's rootpart so physics doesn't mess things up.
+            t:Play()
+            t.Completed:Connect(function()
+                Character.PrimaryPart.Anchored = false
+            end)
+
+            local teleportingValue = Character.currentlyTeleporting
+            teleportingValue.Value = true
+            wait(5)
+            teleportingValue.Value = false
+        end
+    end)
+end
+
 function module.configLocalTeleporter(props)
     local questIndex = props.questIndex
     local questTitle = props.questTitle
-    local questFolder = props.questFolder
+    local sceneIndex = props.sceneIndex
+    local parent = props.parent
+    local localTPPositioner = props.localTPPositioner
 
+    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
+    local localTeleporter = teleporterTemplate:Clone()
+    localTeleporter.Parent = parent
+    localTeleporter.PrimaryPart.CFrame = localTPPositioner.CFrame
+
+    local labels =
+        Utils.getDescendantsByName(localTeleporter, "TeleporterLabel")
+    for i, label in ipairs(labels) do label.Text = questTitle end
+
+    localTeleporter.Name = "teleporter" .. "-local- " .. sceneIndex
+    return localTeleporter
 end
 
 function module.addTeleporters(props)
@@ -47,64 +92,28 @@ function module.addTeleporters(props)
     local skyBoxTeleporter = props.skyBoxTeleporter
     local localTPPositioner = props.localTPPositioner
 
-    local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
-        localTP.PrimaryPart.Touched:Connect(
-            function(touchPart)
-                if touchPart and touchPart.Parent and touchPart.Parent.Humanoid and
-                    touchPart.Parent.currentlyTeleporting.Value == false then
+    if (not isStartScene and not isEndScene) then return end
 
-                    local Character = touchPart.Parent
-                    local questTeleporterReceiver =
-                        Utils.getFirstDescendantByName(remoteTP,
-                                                       "QuestTeleporterReceiver")
-                    local teleportLocation =
-                        questTeleporterReceiver.CFrame + Vector3.new(0, 10, 0)
+    local props = {
+        parent = parent,
+        questTitle = questTitle,
+        sceneIndex = sceneIndex,
+        localTPPositioner = localTPPositioner
+    }
+    local localTeleporter = module.configLocalTeleporter(props)
 
-                    local ts = game:GetService("TweenService")
-                    wait(2)
-                    local tweenInfo = TweenInfo.new(2)
-                    local t = ts:Create(Character.PrimaryPart, tweenInfo,
-                                        {CFrame = teleportLocation})
-                    Character.PrimaryPart.Anchored = true
-                    -- Anchor the player's rootpart so physics doesn't mess things up.
-                    t:Play()
-                    t.Completed:Connect(function()
-                        Character.PrimaryPart.Anchored = false
-                    end)
-
-                    local teleportingValue = Character.currentlyTeleporting
-                    teleportingValue.Value = true
-                    wait(5)
-                    teleportingValue.Value = false
-                end
-            end)
+    if isStartScene then
+        setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
+        -- setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
     end
 
-    if (isStartScene or isEndScene) then
-
-        local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
-        local localTeleporter = teleporterTemplate:Clone()
-        localTeleporter.Parent = parent
-        localTeleporter.PrimaryPart.CFrame = localTPPositioner.CFrame
-
-        local labels = Utils.getDescendantsByName(localTeleporter,
-                                                  "TeleporterLabel")
-        for i, label in ipairs(labels) do label.Text = questTitle end
-
-        localTeleporter.Name = "teleporter" .. "-local- " .. sceneIndex
-
-        if isStartScene then
-            setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
-            setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
-        end
-        if isEndScene then
-            setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
-            setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
-        end
-
-        localTeleporter.PrimaryPart.Anchored = true
+    if isEndScene then
+        setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
+        setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
     end
 
+    localTeleporter.PrimaryPart.Anchored = true
+    localTPPositioner:Destroy()
 end
 
 return module

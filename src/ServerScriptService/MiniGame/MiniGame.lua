@@ -26,11 +26,6 @@ function module.addMiniGame(props)
     }
 
     if (isStartScene) then
-        print('----------------------------------------->>>');
-        print('----------------------------------------->>>');
-        print('letterFallTemplate' .. ' - start');
-        print(letterFallTemplate);
-
         local clonedLetterFallModel = letterFallTemplate:Clone()
         clonedLetterFallModel.Name = clonedLetterFallModel.Name .. "Clone" ..
                                          "-Q" .. questIndex .. "-S" ..

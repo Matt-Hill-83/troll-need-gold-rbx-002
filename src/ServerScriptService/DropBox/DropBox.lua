@@ -16,16 +16,12 @@ function module.configDropBox(props)
     local dropBox = props.dropBox
     local item = props.item
 
-    if (isStartScene) then
-        -- if (isEndScene) then
-
+    -- if (isStartScene) then
+    if (isEndScene) then
         local part = Utils.getFirstDescendantByName(scene,
                                                     "DropBoxDetectionRegion")
 
         local function onPartTouched(otherPart)
-
-            print('DropBoxDetectionRegion')
-            print('DropBoxDetectionRegion')
             print('DropBoxDetectionRegion')
             local partParent = otherPart.Parent
             local match = partParent.Name == item.name

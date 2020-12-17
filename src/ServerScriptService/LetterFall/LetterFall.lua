@@ -222,8 +222,6 @@ function isWordComplete(wordLetters)
 end
 
 function initClickHandler(miniGameState)
-    print('initClickHandler' .. ' - start');
-    print(initClickHandler);
     -- Gets arguments from EventHandler in StarterPack
     function brickClickHandler(player, clickedLetter)
         handleBrick(player, clickedLetter, miniGameState)
@@ -238,13 +236,9 @@ function handleBrick(player, clickedLetter, miniGameState)
     local ballPitBottom = Utils.getFirstDescendantByName(letterFallFolder,
                                                          "BallPitBottom")
 
-    print('ballPitBottom' .. ' - start');
-    print(ballPitBottom);
     if ballPitBottom then ballPitBottom:Destroy() end
 
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
-    print('isChild' .. ' - start');
-    print(isChild);
     if not isChild then return {} end
 
     for i, letter in ipairs(wordLetters) do

@@ -40,7 +40,6 @@ function addRemoteObjects()
         for i, label in ipairs(textLabels) do label.Text = char end
 
         newLetter.Equipped:Connect(function()
-            print('equipped')
             newLetter.Parent = workspace
         end)
     end
