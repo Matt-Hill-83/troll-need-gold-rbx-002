@@ -18,9 +18,7 @@ function initGameToggle(miniGameState)
             if not miniGameState.initCompleted then
                 initLetterRack(miniGameState)
                 initWord(miniGameState)
-                local letterFallFolder = miniGameState.letterFallFolder
                 initClickHandler(miniGameState)
-                local letterFallFolder = miniGameState.letterFallFolder
                 miniGameState.initCompleted = true
             end
         end
@@ -44,6 +42,8 @@ function initWord(miniGameState)
                                                          "WordBoxFolder")
     local letterBlockTemplate = Utils.getFirstDescendantByName(wordBoxFolder,
                                                                "LetterBlockTemplate")
+    local letterPositioner = Utils.getFirstDescendantByName(wordBoxFolder,
+                                                            "WordLetterBlockPositioner")
     letterBlockTemplate.Transparency = 1
     local spacingFactor = 1.05
 
@@ -55,7 +55,7 @@ function initWord(miniGameState)
         Utils.enableChildWelds({part = newLetter, enable = true})
 
         local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
-        local letterPositioner = CS:GetTagged("WordLetterBlockPositioner")[1]
+
         letterPositioner.Transparency = 1
 
         CS:AddTag(newLetter, module.tagNames.WordLetter)
@@ -75,14 +75,22 @@ function initWord(miniGameState)
 end
 
 function initLetterRack(miniGameState)
+    local runtimeletterfolder = getRunTimeLetterFolder(miniGameState)
+
     local letterFallFolder = miniGameState.letterFallFolder
-    local letterFolder = getRunTimeLetterFolder(miniGameState)
-    local letterFallFolder = miniGameState.letterFallFolder
+    local letterRackFolder = Utils.getFirstDescendantByName(letterFallFolder,
+                                                            "LetterRackFolder")
+    local columnBaseTemplate = Utils.getFirstDescendantByName(letterRackFolder,
+                                                              "ColumnBase")
+
+    local letterBlockTemplate = Utils.getFirstDescendantByName(
+                                    columnBaseTemplate, "LetterTemplate")
+    local letterPositioner = Utils.getFirstDescendantByName(letterRackFolder,
+                                                            "RackLetterBlockPositioner")
+
     local numRow = 10
     local numCol = 8
     local spacingFactor = 1.05
-
-    local columnBaseTemplate = CS:GetTagged("ColumnBaseTemplate")[1]
 
     local lettersFromWords = {}
     for wordIndex, word in ipairs(miniGameState.words) do
@@ -105,10 +113,10 @@ function initLetterRack(miniGameState)
         newColumnBase.Transparency = 1
 
         local x = newColumnBase.Size.X * (colIndex - 1) * spacingFactor
-        local letterPositioner = CS:GetTagged("RackLetterBlockPositioner")[1]
+
         newColumnBase.CFrame = letterPositioner.CFrame *
                                    CFrame.new(Vector3.new(-x, 0, 0))
-        newColumnBase.Parent = letterFolder
+        newColumnBase.Parent = runTimeLetterFolder
 
         local letterTemplate = Utils.getFirstDescendantByName(newColumnBase,
                                                               "LetterTemplate")
@@ -139,7 +147,7 @@ function initLetterRack(miniGameState)
     columnBaseTemplate:Destroy()
 
     -- createBalls(miniGameState)
-    local letterFallFolder = miniGameState.letterFallFolder
+    -- local letterFallFolder = miniGameState.letterFallFolder
 end
 
 function colorLetterText(props)
@@ -176,25 +184,26 @@ function getRunTimeLetterFolder(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local runtimeFolder = Utils.getOrCreateFolder(
                               {
-            name = "RuntimeFolder",
+            name = "RunTimeFolder",
             parent = letterFallFolder
         })
 
-    local letterFolder = Utils.getOrCreateFolder(
-                             {name = "LetterFolder", parent = runtimeFolder})
-    return letterFolder
+    return Utils.getOrCreateFolder({
+        name = "RunTimeLetterRackFolder",
+        parent = runtimeFolder
+    })
 end
 
 function getWordFolder(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local runtimeFolder = Utils.getOrCreateFolder(
                               {
-            name = "LF-RuntimeFolder",
+            name = "RunTimeFolder",
             parent = letterFallFolder
         })
 
     return (Utils.getOrCreateFolder({
-        name = "WordFolder",
+        name = "RunTimeWordBoxFolder",
         parent = runtimeFolder
     }))
 end

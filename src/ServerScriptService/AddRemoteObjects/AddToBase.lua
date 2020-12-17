@@ -81,7 +81,6 @@ function addRemoteObjects()
         local desiredPadding = 12
         local wallWidth = 1
         local wallHeight = Constants.questWallHeight
-
         local sceneHeight = Constants.sceneHeight
 
         local wallSize = Vector3.new(wallWidth, wallHeight, wallWidth)
@@ -130,9 +129,12 @@ function addRemoteObjects()
         sibling = questBlock
     end
     questBlockTemplate:Destroy()
+    local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
+    letterFallTemplate:Destroy()
 
     -- Do this last after everything has been created/deleted
     ConfigGame.configGame()
+
 end
 
 module.addRemoteObjects = addRemoteObjects

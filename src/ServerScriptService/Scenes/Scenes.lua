@@ -144,7 +144,6 @@ function module.addScenes(props)
                                   (questConfig.questTitle or 'Game Title')
     end
     sceneTemplateModel:Destroy()
-    letterFallTemplate:Destroy()
 end
 
 getStartPosition = function(props)

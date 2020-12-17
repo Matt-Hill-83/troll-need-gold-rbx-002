@@ -23,8 +23,10 @@ function setVisibility()
     -- local testLabBase = Utils.getFirstDescendantByName(workspace, "TestLabBase")
     -- testLabBase:Destroy()
 
-    local taggedPartsTransparent = CS:GetTagged("Transparent")
+    local taggedPartsDestroy = CS:GetTagged("Destroy")
+    for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
 
+    local taggedPartsTransparent = CS:GetTagged("Transparent")
     for i, item in ipairs(taggedPartsTransparent) do
         Utils.setItemPropsByInst({
             item = item,

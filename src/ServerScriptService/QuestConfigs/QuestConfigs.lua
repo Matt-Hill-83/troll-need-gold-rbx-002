@@ -190,99 +190,6 @@ module.questConfigs = {
                 maxRow = 0,
                 maxCol = 0
             }, {
-                name = "stump",
-                frames = {
-                    {
-                        dialogs = {
-                            {
-                                char = "looney01",
-                                text = "It was late one dark night"
-                            },
-                            {
-                                char = "looney01",
-                                text = "And I slept by the stump."
-                            },
-                            {
-                                char = "looney01",
-                                text = "Not a critter was creeping."
-                            },
-                            {
-                                char = "goblinKing01",
-                                text = "Not a WHAP, WIMP, or WHUMP?"
-                            }
-                        },
-                        characters01 = {{name = "empty"}, {name = "looney01"}},
-                        characters02 = {
-                            {name = "goblinKing01"}, {name = "empty"},
-                            {name = "empty"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "looney01",
-                                text = "When a WHOMP from the woods"
-                            },
-                            {
-                                char = "looney01",
-                                text = "Made me leap from my bed"
-                            },
-                            {
-                                char = "goblinKing01",
-                                text = "In the cave where you slept?"
-                            },
-                            {
-                                char = "looney01",
-                                text = "Where I rested my head."
-                            }
-                        },
-                        characters01 = {{name = "empty"}, {name = "looney01"}},
-                        characters02 = {
-                            {name = "goblinKing01"}, {name = "empty"},
-                            {name = "empty"}
-                        }
-                    }, {
-                        dialogs = {
-                            {
-                                char = "looney01",
-                                text = "Two yellow eyes peered in from the dark."
-                            },
-                            {
-                                char = "looney01",
-                                text = "\"Um hello... this is my cave!\""
-                            },
-                            {char = "looney01", text = "I said with some snark"}
-                        },
-                        characters01 = {{name = "empty"}, {name = "looney01"}},
-                        characters02 = {
-                            {name = "goblinKing01"}, {name = "empty"},
-                            {name = "empty"}
-                        }
-                    }, {
-                        dialogs = {
-                            {char = "empty", text = "And flipped on the light."},
-                            {char = "empty", text = "It was only a shark"},
-                            {
-                                char = "empty",
-                                text = "And alone in the dark with the shark"
-                            }, {char = "empty", text = "I remarked="}
-                        },
-                        characters01 = {{name = "empty"}, {name = "looney01"}},
-                        characters02 = {
-                            {name = "goblinKing01"}, {name = "empty"},
-                            {name = "empty"}
-                        }
-                    }
-                },
-                coordinates = {row = 0, col = 1},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                isEndScene = false,
-                isStartScene = false,
-                maxRow = 0,
-                maxCol = 1
-            }, {
                 name = "goose01",
                 frames = {
                     {
@@ -459,6 +366,94 @@ module.questConfigs = {
             }
         },
         gridSize = {rows = 1, cols = 3}
+    }, {
+        questTitle = "001 - Troll Need Pet",
+        startSceneCoords = {row = 0, col = 0},
+        endSceneCoords = {col = 2, row = 2},
+        sceneConfigs = {
+            {
+                name = "home",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "troll02", text = "GOLD! GOLD!"},
+                            {char = "babyTroll01", text = "Daddy! Daddy!"},
+                            {char = "troll02", text = "TROLL NEED GOLD!"},
+                            {
+                                char = "babyTroll01",
+                                text = "Baby Troll want pet!"
+                            },
+                            {char = "troll02", text = "BABY TROLL WANT PET?"},
+                            {char = "babyTroll01", text = "Me want pet!"}
+                        },
+                        characters01 = {
+                            {name = "troll02"}, {name = "babyTroll01"}
+                        },
+                        characters02 = {{name = "empty"}}
+                    }, {
+                        dialogs = {
+                            {char = "troll02", text = "BABY TROLL GET FROG."},
+                            {char = "babyTroll01", text = "Me want dog!"},
+                            {char = "troll02", text = "FROG GOOD PET."},
+                            {char = "troll02", text = "BABY TROLL GET FROG."}
+                        },
+                        characters01 = {
+                            {name = "troll02"}, {name = "babyTroll01"}
+                        },
+                        characters02 = {{name = "empty"}}
+                    }, {
+                        dialogs = {
+                            {
+                                char = "babyTroll01",
+                                text = "Waaaa!  Me want dog!"
+                            }, {char = "troll02", text = "FROG GOOD PET."},
+                            {char = "babyTroll01", text = "Me want dog!"},
+                            {char = "troll02", text = "BABY TROLL GO TO BOG."},
+                            {char = "troll02", text = "GET FROG IN BOG."},
+                            {char = "babyTroll01", text = "Uuuuugh.... Fine."}
+                        },
+                        characters01 = {
+                            {name = "troll02"}, {name = "babyTroll01"}
+                        },
+                        characters02 = {{name = "empty"}}
+                    }
+                },
+                coordinates = {row = 0, col = 0},
+                showBottomPath = false,
+                showRightPath = true,
+                showTopPath = false,
+                showLeftPath = false,
+                isEndScene = false,
+                isStartScene = true,
+                maxRow = 0,
+                maxCol = 0
+            }, {
+                name = "pond",
+                frames = {
+                    {
+                        dialogs = {
+                            {char = "babyTroll01", text = "I see a cub!"},
+                            {char = "cub", text = "I need my Mommy!"},
+                            {char = "babyTroll01", text = "Me need frog!"},
+                            {char = "cub", text = "Mommy!!!"},
+                            {char = "babyTroll01", text = "Froggy!!!"}
+                        },
+                        characters01 = {{name = "babyTroll01"}},
+                        characters02 = {{name = "cub"}}
+                    }
+                },
+                coordinates = {col = 3, row = 0},
+                showBottomPath = false,
+                showRightPath = false,
+                showTopPath = false,
+                showLeftPath = true,
+                isEndScene = false,
+                isStartScene = false,
+                maxRow = 0,
+                maxCol = 3
+            }
+        },
+        gridSize = {rows = 1, cols = 4}
     }
 }
 return module

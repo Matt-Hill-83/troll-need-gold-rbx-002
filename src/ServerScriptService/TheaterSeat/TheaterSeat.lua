@@ -19,7 +19,6 @@ function module.addSeat(props)
 
     local Players = game:GetService("Players")
     local currentPlayer = nil
-
     local numPages = #sceneConfig.frames
 
     function renderScreenDialog(props)
