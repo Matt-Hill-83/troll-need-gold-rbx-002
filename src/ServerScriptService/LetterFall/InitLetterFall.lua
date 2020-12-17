@@ -7,6 +7,7 @@ local module = {}
 
 function initLetterFall(letterFallFolder)
     LetterFall.initGameToggle(letterFallFolder)
+    LetterFall.createBalls(letterFallFolder)
 
     local taggedPartsTransparent = CS:GetTagged("Transparent")
 

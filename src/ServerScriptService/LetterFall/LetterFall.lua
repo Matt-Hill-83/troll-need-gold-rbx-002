@@ -35,12 +35,13 @@ function applyLetterText(props)
 end
 
 function createBalls(props)
-    local ball = CS:GetTagged("FluidBall")
-    if ball[1] then
+    local balls = CS:GetTagged("FluidBall")
+    local ball = balls[1]
+    if ball then
         for count = 1, 10 do
-            local newBall = ball[1]:Clone()
-            newBall.Parent = workspace
-            newBall.CFrame = newBall.CFrame + Vector3.new(0.1, 1, 0.1)
+            local newBall = ball:Clone()
+            newBall.CFrame = newBall.CFrame + Vector3.new(0.1, 0.1, 0.1)
+            newBall.Parent = ball.Parent
         end
     end
 end
@@ -91,15 +92,17 @@ function initWord(letterFallFolder)
                                                          "WordBoxFolder")
     local letterBlockTemplate = Utils.getFirstDescendantByName(wordBoxFolder,
                                                                "LetterBlockTemplate")
-    letterBlockTemplate.Transparency = 1
+    -- letterBlockTemplate.Transparency = 1
+    Utils.hideItemAndChildren({item = letterBlockTemplate, hide = true})
 
     local letterPositioners = CS:GetTagged("WordLetterBlockPositioner")
-    local spacingFactor = 1.05
+    local spacingFactor = 1.1
 
     for letterIndex, letter in ipairs(word) do
         local newLetter = letterBlockTemplate:Clone()
         newLetter.Name = "wordLetter-" .. letterIndex
         newLetter.Transparency = 0
+        Utils.hideItemAndChildren({item = newLetter, hide = false})
 
         if letterPositioners and letterPositioners[1] then
             local letterPositioner = letterPositioners[1]
@@ -149,7 +152,7 @@ end
 function initLetterRack(letterFallFolder)
     local letterFolder = getRunTimeLetterFolder(letterFallFolder)
 
-    local numRow = 18
+    local numRow = 10
     local numCol = 8
 
     local allLetters = {
