@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>399.799744</X>
-					<Y>72.6981812</Y>
-					<Z>-1023.20862</Z>
-					<R00>0.374168456</R00>
-					<R01>0.277151167</R01>
-					<R02>-0.88497752</R02>
-					<R10>-0</R10>
-					<R11>0.954297006</R11>
-					<R12>0.298860103</R12>
-					<R20>0.927360833</R20>
-					<R21>-0.111824021</R21>
-					<R22>0.357067794</R22>
+					<X>336.04245</X>
+					<Y>94.3445206</Y>
+					<Z>-997.764404</Z>
+					<R00>0.241452724</R00>
+					<R01>0.352349371</R01>
+					<R02>-0.904184997</R02>
+					<R10>-7.45058149e-09</R10>
+					<R11>0.931753278</R11>
+					<R12>0.363092303</R12>
+					<R20>0.970412672</R20>
+					<R21>-0.0876696184</R21>
+					<R22>0.224974319</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>417.499298</X>
-					<Y>66.7209778</Y>
-					<Z>-1030.34998</Z>
+					<X>337.85083</X>
+					<Y>93.6183319</Y>
+					<Z>-998.214355</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -49858,7 +49858,7 @@ function createBalls(props)
     if ball then
         for count = 1, 10 do
             local newBall = ball:Clone()
-            newBall.CFrame = newBall.CFrame + Vector3.new(0.1, 1, 0.1)
+            newBall.CFrame = newBall.CFrame + Vector3.new(0.1, 0.1, 0.1)
             newBall.Parent = ball.Parent
         end
     end
@@ -49910,7 +49910,8 @@ function initWord(letterFallFolder)
                                                          "WordBoxFolder")
     local letterBlockTemplate = Utils.getFirstDescendantByName(wordBoxFolder,
                                                                "LetterBlockTemplate")
-    letterBlockTemplate.Transparency = 1
+    -- letterBlockTemplate.Transparency = 1
+    Utils.hideItemAndChildren({item = letterBlockTemplate, hide = true})
 
     local letterPositioners = CS:GetTagged("WordLetterBlockPositioner")
     local spacingFactor = 1.1
@@ -49919,6 +49920,7 @@ function initWord(letterFallFolder)
         local newLetter = letterBlockTemplate:Clone()
         newLetter.Name = "wordLetter-" .. letterIndex
         newLetter.Transparency = 0
+        Utils.hideItemAndChildren({item = newLetter, hide = false})
 
         if letterPositioners and letterPositioners[1] then
             local letterPositioner = letterPositioners[1]
