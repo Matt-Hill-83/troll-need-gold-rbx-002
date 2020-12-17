@@ -123,13 +123,16 @@ function initGameToggle(letterFallFolder)
 
     if part then
         function onPartTouched(otherPart)
+
+            -- TODO: make this folder specific
+            -- TODO: make this folder specific
+            -- TODO: make this folder specific
             if not module.touched then
                 module.touched = true
 
                 initLetterRack(letterFallFolder)
                 initWord(letterFallFolder)
                 initClickHandler(letterFallFolder)
-
             end
         end
 
