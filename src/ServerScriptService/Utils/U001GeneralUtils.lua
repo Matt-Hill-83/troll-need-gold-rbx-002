@@ -127,6 +127,7 @@ function sizeWalls2(props)
     for i, item in ipairs(items) do
         if item:isA("Part") then item.CanCollide = false end
     end
+
     for i, item in ipairs(items) do
         if item:isA("Part") then
             local posY = item.Position.Y - item.Size.Y / 2
@@ -137,9 +138,9 @@ function sizeWalls2(props)
 
         end
     end
+
     for i, item in ipairs(items) do
         if item:isA("Part") then
-
             item.CanCollide = true
             item.Anchored = true
         end

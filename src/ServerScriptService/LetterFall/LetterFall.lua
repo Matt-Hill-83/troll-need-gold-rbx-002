@@ -40,7 +40,7 @@ function createBalls(props)
     if ball then
         for count = 1, 10 do
             local newBall = ball:Clone()
-            newBall.CFrame = newBall.CFrame + Vector3.new(0.1, 0.1, 0.1)
+            newBall.CFrame = newBall.CFrame + Vector3.new(0, 0, 0)
             newBall.Parent = ball.Parent
         end
     end
@@ -155,6 +155,12 @@ function initLetterRack(letterFallFolder)
     local numRow = 10
     local numCol = 8
 
+    local rackWalls = CS:GetTagged("LetterRackWall")
+    Utils.setWallHeightByList({items = rackWalls, height = 10})
+    --     for i,wall in ipairs(rackWalls) do
+    -- wall.Size = 
+    --     end
+
     local allLetters = {
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
         'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
@@ -179,6 +185,7 @@ function initLetterRack(letterFallFolder)
     for colIndex = 1, numCol do
         local newColumnBase = columnBaseTemplate:Clone()
         newColumnBase.Name = "columnBase-" .. colIndex
+        newColumnBase.Transparency = 1
 
         local letterPositioners = CS:GetTagged("RackLetterBlockPositioner")
         if letterPositioners and letterPositioners[1] then
@@ -204,7 +211,7 @@ function initLetterRack(letterFallFolder)
             newLetter.Name = "newLetter-" .. char
             CS:AddTag(newLetter, module.tagNames.LetterBlock)
 
-            local y = newLetter.Size.Y * (rowIndex) * spacingFactor
+            local y = newLetter.Size.Y * (rowIndex - 1) * spacingFactor
             newLetter.CFrame = newLetter.CFrame *
                                    CFrame.new(Vector3.new(0, y, 0))
 
