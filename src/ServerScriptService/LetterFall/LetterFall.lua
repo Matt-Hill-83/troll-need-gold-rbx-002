@@ -99,18 +99,17 @@ function initWord(letterFallFolder)
 
         local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
         local letterPositioner = CS:GetTagged("WordLetterBlockPositioner")[1]
-        newLetter.CFrame = letterPositioner.CFrame *
-                               CFrame.new(Vector3.new(0, 0, z))
         letterPositioner.Transparency = 1
 
         CS:AddTag(newLetter, module.tagNames.WordLetter)
-
         module.applyLetterText({letterBlock = newLetter, char = letter})
         module.colorLetterText({
             letterBlock = newLetter,
             color = Color3.new(255, 0, 191)
         })
 
+        newLetter.CFrame = letterPositioner.CFrame *
+                               CFrame.new(Vector3.new(0, 0, z))
         -- Do this last to avoid tweening
         newLetter.Parent = wordFolder
         table.insert(module.wordLetters,
@@ -192,30 +191,31 @@ function initLetterRack(letterFallFolder)
         newColumnBase.CFrame = letterPositioner.CFrame *
                                    CFrame.new(Vector3.new(-x, 0, 0))
         letterPositioner.Transparency = 1
+        newColumnBase.Parent = letterFolder
 
         local letterTemplate = Utils.getFirstDescendantByName(newColumnBase,
                                                               "LetterTemplate")
+        letterTemplate.Transparency = 1
 
         for rowIndex = 1, numRow do
             -- local char = letters[(colIndex % #letters) + 1]
             local test = Utils.genRandom(1, #lettersFromWords)
             local char = lettersFromWords[test]
-
             local newLetter = letterTemplate:Clone()
-            newLetter.Parent = newColumnBase
 
             newLetter.Name = "newLetter-" .. char
             CS:AddTag(newLetter, module.tagNames.LetterBlock)
 
             local y = newLetter.Size.Y * (rowIndex - 1) * spacingFactor
+            applyLetterText({letterBlock = newLetter, char = char})
             newLetter.CFrame = newLetter.CFrame *
                                    CFrame.new(Vector3.new(0, y, 0))
-
-            applyLetterText({letterBlock = newLetter, char = char})
             table.insert(newLetters, newLetter)
-
             -- do this last to avoid tweening
-            newColumnBase.Parent = letterFolder
+            newLetter.Parent = newColumnBase
+            newColumnBase.Transparency = 1
+            newLetter.Transparency = 0
+
         end
         letterTemplate:Destroy()
     end
