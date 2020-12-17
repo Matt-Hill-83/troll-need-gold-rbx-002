@@ -3,6 +3,18 @@ local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 local collectionService = game:GetService("CollectionService")
 
+function enableChildWelds(props)
+    local part = props.part
+    local enabled = props.enabled
+
+    local allWelds = module.getDescendantsByType(part, "Weld")
+    for i, weld in ipairs(allWelds) do
+        weld.Enabled = enabled
+        -- 
+    end
+
+end
+
 function genRandom(min, max)
     local rand = min + math.random() * (max - min)
     return math.ceil(rand)
@@ -406,5 +418,6 @@ module.mergeTables = mergeTables
 module.getDescendantsByName = getDescendantsByName
 module.hideItem = hideItem
 module.genRandom = genRandom
+module.enableChildWelds = enableChildWelds
 
 return module

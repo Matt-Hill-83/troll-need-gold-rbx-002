@@ -13,19 +13,8 @@ function initGameToggle(miniGameState)
     local startGameTrigger = Utils.getFirstDescendantByName(letterFallFolder,
                                                             "StartGameTrigger")
 
-    print('startGameTrigger' .. ' - start');
-    print('startGameTrigger' .. ' - start');
-    print('startGameTrigger' .. ' - start');
-    print('startGameTrigger' .. ' - start');
-    print('startGameTrigger' .. ' - start');
-    print(startGameTrigger);
     if startGameTrigger then
         function onPartTouched(otherPart)
-            print('onPartTouched')
-            print('onPartTouched')
-            print('onPartTouched')
-            print('onPartTouched')
-            print('onPartTouched')
             if not miniGameState.initCompleted then
                 initLetterRack(miniGameState)
                 initWord(miniGameState)
@@ -51,10 +40,6 @@ function initWord(miniGameState)
     end
     Utils.clearTable(miniGameState.wordLetters)
 
-    function Utils.genRandom(min, max)
-        return min + math.random() * (max - min)
-    end
-
     local wordBoxFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                          "WordBoxFolder")
     local letterBlockTemplate = Utils.getFirstDescendantByName(wordBoxFolder,
@@ -62,10 +47,12 @@ function initWord(miniGameState)
     letterBlockTemplate.Transparency = 1
     local spacingFactor = 1.05
 
+    Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
     for letterIndex, letter in ipairs(word) do
         local newLetter = letterBlockTemplate:Clone()
         newLetter.Name = "wordLetter-" .. letterIndex
         newLetter.Transparency = 0
+        Utils.enableChildWelds({part = newLetter, enable = true})
 
         local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
         local letterPositioner = CS:GetTagged("WordLetterBlockPositioner")[1]
@@ -121,12 +108,11 @@ function initLetterRack(miniGameState)
         local letterPositioner = CS:GetTagged("RackLetterBlockPositioner")[1]
         newColumnBase.CFrame = letterPositioner.CFrame *
                                    CFrame.new(Vector3.new(-x, 0, 0))
-        letterPositioner.Transparency = 1
         newColumnBase.Parent = letterFolder
 
         local letterTemplate = Utils.getFirstDescendantByName(newColumnBase,
                                                               "LetterTemplate")
-        letterTemplate.Transparency = 1
+        newColumnBase.Transparency = 1
 
         for rowIndex = 1, numRow do
             -- local char = letters[(colIndex % #letters) + 1]
