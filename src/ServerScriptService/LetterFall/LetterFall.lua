@@ -258,7 +258,12 @@ function handleBrick(player, clickedLetter, letterFallFolder)
     local ballPitBottom = CS:GetTagged("BallPitBottom")
     if ballPitBottom[1] then ballPitBottom[1]:Destroy() end
 
+    local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
+
+    if not isChild then return {} end
+
     for i, letter in ipairs(wordLetters) do
+
         if isDesiredLetter(letter, clickedLetter) then
             letter.found = true
 
