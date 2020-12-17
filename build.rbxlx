@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>408.903656</X>
-					<Y>81.1209183</Y>
-					<Z>-1087.1427</Z>
-					<R00>-0.910226405</R00>
-					<R01>0.347235203</R01>
-					<R02>-0.225644916</R02>
-					<R10>-0</R10>
-					<R11>0.544889927</R11>
-					<R12>0.838507533</R12>
-					<R20>0.414111018</R20>
-					<R21>0.763231695</R21>
-					<R22>-0.4959732</R22>
+					<X>411.225159</X>
+					<Y>-39.3987274</Y>
+					<Z>-976.184692</Z>
+					<R00>-0.70388484</R00>
+					<R01>-0.29240194</R01>
+					<R02>0.647338688</R02>
+					<R10>-1.49011612e-08</R10>
+					<R11>0.911341429</R11>
+					<R12>0.411651522</R12>
+					<R20>-0.710314214</R20>
+					<R21>0.289755255</R21>
+					<R22>-0.641479313</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>409.354889</X>
-					<Y>79.4441147</Y>
-					<Z>-1086.15088</Z>
+					<X>409.930481</X>
+					<Y>-40.2220306</Y>
+					<Z>-974.901733</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -41126,6 +41126,45 @@ end
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
+								<Item class="Weld" referent="RBX70fcc55b9de441219fa4e402d8df1f8d">
+									<Properties>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<CoordinateFrame name="C0">
+											<X>0.00837624073</X>
+											<Y>0.928572655</Y>
+											<Z>-0.184735298</Z>
+											<R00>1</R00>
+											<R01>0</R01>
+											<R02>0</R02>
+											<R10>0</R10>
+											<R11>1</R11>
+											<R12>0</R12>
+											<R20>0</R20>
+											<R21>0</R21>
+											<R22>1</R22>
+										</CoordinateFrame>
+										<CoordinateFrame name="C1">
+											<X>0</X>
+											<Y>0.600000024</Y>
+											<Z>0</Z>
+											<R00>1</R00>
+											<R01>0</R01>
+											<R02>0</R02>
+											<R10>0</R10>
+											<R11>1</R11>
+											<R12>0</R12>
+											<R20>0</R20>
+											<R21>0</R21>
+											<R22>1</R22>
+										</CoordinateFrame>
+										<bool name="Enabled">true</bool>
+										<string name="Name">AccessoryWeld</string>
+										<Ref name="Part0">RBX6159fe7d30f94b228a4bf5bfe3ae8aab</Ref>
+										<Ref name="Part1">RBXe12812bc43ad4b4aa5dce145fe06c951</Ref>
+										<int64 name="SourceAssetId">-1</int64>
+										<BinaryString name="Tags"></BinaryString>
+									</Properties>
+								</Item>
 							</Item>
 						</Item>
 					</Item>
@@ -49578,8 +49617,8 @@ end
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 local collectionService = game:GetService("CollectionService")
--- 
--- 
+
+function module.clearTable(tbl) for key in pairs(tbl) do tbl[key] = nil end end
 
 function module.setPropsByTag(props)
     local tag = props.tag
@@ -50088,165 +50127,20 @@ return module
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBXca33016cb3ed4ecb8cae6d8c4724a68f">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">ConfigGame</string>
-						<string name="ScriptGuid">{1f5c8e90-b38a-4f0c-8e03-079e21575abe}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Utils = require(script.Parent.Utils)
-
-local CS = game:GetService("CollectionService")
-
-local module = {}
-function configPlayers()
-    local Players = game:GetService("Players")
-    Players.RespawnTime = 0
-
-    local function onCharacterAdded(character)
-        character:WaitForChild("Humanoid").WalkSpeed = 30
-    end
-
-    local function onPlayerAdded(player)
-        player.CharacterAdded:Connect(onCharacterAdded)
-    end
-
-    Players.PlayerAdded:Connect(onPlayerAdded)
-
-end
-
-function setVisibility()
-    Utils.setPropsByTag({tag = "Transparent", props = {Transparency = 1}})
-end
-
-function module.configGame()
-    setVisibility()
-    configPlayers()
-end
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBXe5ef89c6e7ca40a5a282fd25c4d7d977">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">HandleBrick3</string>
-						<string name="ScriptGuid">{286c9412-7dff-4109-8506-1d5e223e4bb9}</string>
-						<ProtectedString name="Source"><![CDATA[local module = {}
-local Sss = game:GetService("ServerScriptService")
-local LetterFall = require(script.Parent.LetterFall)
-local TargetWord = require(script.Parent.TargetWord)
-local Utils = require(script.Parent.Utils)
-
-local CS = game:GetService("CollectionService")
-
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
-
-function isDesiredLetter(letter, clickedLetter)
-    local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
-                          .Text
-    return letter.found ~= true and letter.char == textLabel
-end
-
-function isWordComplete(wordLetters)
-    for i, word in ipairs(wordLetters) do
-        if not word.found then
-            -- 
-            return false
-        end
-    end
-    return true
-end
-
-function module.initClickHandler(player, clickedLetter)
-    remoteEvent.OnServerEvent:Connect(handleBrick)
-end
-
-function handleBrick(player, clickedLetter)
-    local wordLetters = LetterFall.wordLetters
-
-    local part = CS:GetTagged("BallPitBottom")
-    if part[1] then part[1]:Destroy() end
-
-    for i, letter in ipairs(wordLetters) do
-        if isDesiredLetter(letter, clickedLetter) then
-            letter.found = true
-
-            LetterFall.colorLetterText({
-                letterBlock = letter.instance,
-                color = Color3.fromRGB(113, 17, 161)
-            })
-
-            clickedLetter:Destroy()
-            local wordComplete = isWordComplete(wordLetters)
-            if wordComplete then
-                LetterFall.lastWordIndex = LetterFall.lastWordIndex + 1
-                TargetWord.initWord()
-            end
-            break
-        end
-    end
-end
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
 				<Item class="ModuleScript" referent="RBX1a90c4214fc5412083e013b41aec2853">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">InitLetterFall</string>
 						<string name="ScriptGuid">{659c523e-8c8e-4f5c-b03d-e312368dc736}</string>
-						<ProtectedString name="Source"><![CDATA[local SP = game:GetService("StarterPlayer")
-local Sss = game:GetService("ServerScriptService")
-local CS = game:GetService("CollectionService")
+						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 
-local module = {touched = false}
-
-local ConfigGame = require(script.Parent.ConfigGame)
-local LetterFall = require(script.Parent.LetterFall)
-local TargetWord = require(script.Parent.TargetWord)
-local HandleBrick3 = require(script.Parent.HandleBrick3)
+local module = {}
 
 function initLetterFall(letterFallFolder)
-    HandleBrick3.initClickHandler(letterFallFolder)
-    ConfigGame.configGame(letterFallFolder)
     LetterFall.initGameToggle(letterFallFolder)
-    -- LetterFall.initLetterRack(letterFallFolder)
-    -- TargetWord.initWord(letterFallFolder)
-    -- LetterFall.createBalls(letterFallFolder)
-
-    -- local part =
-    --     Utils.getFirstDescendantByName(letterFallFolder, "LF-SpawnBase")
-
-    -- if part then
-    --     print('part' .. ' - start');
-    --     print(part);
-    --     print('part' .. ' - end');
-
-    --     function onPartTouched(otherPart)
-    --         if not module.touched then
-    --             module.touched = true
-    --             print('touched')
-    --             print('touched')
-    --             print('touched')
-    --             print('touched')
-    --             print('touched')
-    --         end
-    --     end
-
-    --     part.Touched:Connect(onPartTouched)
-    -- end
 end
 
 module.initLetterFall = initLetterFall
@@ -50264,10 +50158,12 @@ return module
 						<string name="Name">LetterFall</string>
 						<string name="ScriptGuid">{27a6236c-8796-4820-962e-0731535453a8}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils.U001GeneralUtils)
--- local Utils = require(script.Parent.Utils)
 local CS = game:GetService("CollectionService")
-local TargetWord = require(script.Parent.TargetWord)
+-- local TargetWord = require(Sss.Source.module.TargetWord)
+-- local HandleBrick3 = require(Sss.Source.HandleBrick.HandleBrick)
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
 
 local module = {
     wordLetters = {},
@@ -50276,7 +50172,8 @@ local module = {
         {'P', 'A', 'T'}, {'R', 'A', 'T'}, {'S', 'A', 'T'}
     },
     lastWordIndex = 1,
-    tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
+    tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"},
+    letterFallFolder = nil
 }
 
 function colorLetterText(props)
@@ -50327,31 +50224,84 @@ function getLetterFallFolder()
     return Utils.getFirstDescendantByName(workspace, "LetterFallFolder")
 end
 
+function getWordFolder()
+    print('module.letterFallFolder' .. ' - start');
+    print(module.letterFallFolder);
+    print('module.letterFallFolder' .. ' - end');
+    local runtimeFolder = Utils.getOrCreateFolder(
+                              {
+            name = "RuntimeFolder",
+            parent = module.letterFallFolder
+        })
+
+    return (Utils.getOrCreateFolder({
+        name = "WordFolder",
+        parent = runtimeFolder
+    }))
+end
+
+function initWord(letterFallFolder)
+    module.letterFallFolder = letterFallFolder
+    local wordFolder = getWordFolder(letterFallFolder)
+    local word = module.words[module.lastWordIndex]
+
+    print('module.wordLetters' .. ' - start');
+    print(module.wordLetters);
+    print('module.wordLetters' .. ' - end');
+
+    -- TODO: need to delete these letters.
+
+    for i, letter in ipairs(module.wordLetters) do
+        if letter.instance then letter.instance:Destroy() end
+        module.wordLetters[i] = nil
+    end
+    Utils.clearTable(module.wordLetters)
+
+    function genRandom(min, max) return min + math.random() * (max - min) end
+
+    local wordBox = Utils.getFirstDescendantByName(letterFallFolder, "WordBox")
+    local letterBlock = Utils.getFirstDescendantByName(wordBox,
+                                                       "LetterBlockTemplate")
+
+    local letterPositioner = Utils.getFirstDescendantByName(wordBox,
+                                                            "LetterPositioner")
+
+    local spacingFactor = 1.05
+
+    for letterIndex, letter in ipairs(word) do
+        local newLetter = letterBlock:Clone()
+        newLetter.Parent = wordFolder
+        newLetter.Name = "wordLetter-" .. letterIndex
+        local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
+        newLetter.CFrame = letterPositioner.CFrame *
+                               CFrame.new(Vector3.new(0, 0, z))
+
+        CS:AddTag(newLetter, module.tagNames.WordLetter)
+
+        module.applyLetterText({letterBlock = newLetter, char = letter})
+        module.colorLetterText({
+            letterBlock = newLetter,
+            color = Color3.new(255, 0, 191)
+        })
+
+        table.insert(module.wordLetters,
+                     {char = letter, found = false, instance = newLetter})
+    end
+end
+
 function initGameToggle(letterFallFolder)
     local part =
         Utils.getFirstDescendantByName(letterFallFolder, "LF-SpawnBase")
 
     if part then
-        print('part' .. ' - start');
-        print(part);
-        print('part' .. ' - end');
-
         function onPartTouched(otherPart)
             if not module.touched then
                 module.touched = true
                 print('touched')
-                print('touched')
-                print('touched')
-                print('touched')
-                print('touched')
+
                 initLetterRack(letterFallFolder)
-                -- print('TargetWord' .. ' - start');
-                -- print(TargetWord);
-                -- print('TargetWord' .. ' - end');
-                print('Utils' .. ' - start');
-                print(Utils);
-                print('Utils' .. ' - end');
-                -- Utils.initWord(letterFallFolder)
+                initWord(letterFallFolder)
+                initClickHandler(letterFallFolder)
 
             end
         end
@@ -50436,481 +50386,58 @@ function initLetterRack(props)
     -- columnBaseTemplate:Destroy()
 end
 
+function isDesiredLetter(letter, clickedLetter)
+    local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
+                          .Text
+    return letter.found ~= true and letter.char == textLabel
+end
+
+function isWordComplete(wordLetters)
+    for i, word in ipairs(wordLetters) do
+        if not word.found then return false end
+    end
+    return true
+end
+
+function initClickHandler(player, clickedLetter)
+    remoteEvent.OnServerEvent:Connect(handleBrick)
+end
+
+function handleBrick(player, clickedLetter)
+    local wordLetters = module.wordLetters
+    print('wordLetters' .. ' - start');
+    print(wordLetters);
+    print('wordLetters' .. ' - end');
+
+    local part = CS:GetTagged("BallPitBottom")
+    if part[1] then part[1]:Destroy() end
+
+    for i, letter in ipairs(wordLetters) do
+        if isDesiredLetter(letter, clickedLetter) then
+            letter.found = true
+
+            module.colorLetterText({
+                letterBlock = letter.instance,
+                color = Color3.fromRGB(113, 17, 161)
+            })
+
+            clickedLetter:Destroy()
+            local wordComplete = isWordComplete(wordLetters)
+            if wordComplete then
+                module.lastWordIndex = module.lastWordIndex + 1
+                module.initWord(module.letterFallFolder)
+            end
+            break
+        end
+    end
+end
+
 module.colorLetterText = colorLetterText
 module.initGameToggle = initGameToggle
 module.createBalls = createBalls
 module.initLetterRack = initLetterRack
 module.applyLetterText = applyLetterText
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBXfa30df9245ca4f7ca34c4286ce9435be">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">TargetWord</string>
-						<string name="ScriptGuid">{b6192f22-cb55-4160-b174-7dc95c2095cc}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Utils = require(script.Parent.Utils)
-local CS = game:GetService("CollectionService")
-local LetterFall = require(script.Parent.LetterFall)
-
-local module = {}
-
-function getWordFolder()
-    local letterFallFolder = Utils.getFirstDescendantByName(workspace,
-                                                            "LetterFallFolder")
-    local runtimeFolder = Utils.getOrCreateFolder(
-                              {
-            name = "RuntimeFolder",
-            parent = letterFallFolder
-        })
-
-    return (Utils.getOrCreateFolder({
-        name = "WordFolder",
-        parent = runtimeFolder
-    }))
-end
-
-function initWord(props)
-    local letterFallFolder = Utils.getFirstDescendantByName(workspace,
-                                                            "LetterFallFolder")
-    local wordFolder = getWordFolder()
-    local word = LetterFall.words[LetterFall.lastWordIndex]
-
-    print('LetterFall.wordLetters' .. ' - start');
-    print(LetterFall.wordLetters);
-    print('LetterFall.wordLetters' .. ' - end');
-
-    -- TODO: need to delete these letters.
-
-    for i, letter in ipairs(LetterFall.wordLetters) do
-        if letter.instance then letter.instance:Destroy() end
-        LetterFall.wordLetters[i] = nil
-    end
-    Utils.clearTable(LetterFall.wordLetters)
-
-    function genRandom(min, max) return min + math.random() * (max - min) end
-
-    local wordBox = Utils.getFirstDescendantByName(letterFallFolder, "WordBox")
-    local letterBlock = Utils.getFirstDescendantByName(wordBox,
-                                                       "LetterBlockTemplate")
-
-    local letterPositioner = Utils.getFirstDescendantByName(wordBox,
-                                                            "LetterPositioner")
-
-    local spacingFactor = 1.05
-
-    for letterIndex, letter in ipairs(word) do
-        local newLetter = letterBlock:Clone()
-        newLetter.Parent = wordFolder
-        newLetter.Name = "wordLetter-" .. letterIndex
-        local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
-        newLetter.CFrame = letterPositioner.CFrame *
-                               CFrame.new(Vector3.new(0, 0, z))
-
-        CS:AddTag(newLetter, LetterFall.tagNames.WordLetter)
-
-        LetterFall.applyLetterText({letterBlock = newLetter, char = letter})
-        LetterFall.colorLetterText({
-            letterBlock = newLetter,
-            color = Color3.new(255, 0, 191)
-        })
-
-        table.insert(LetterFall.wordLetters,
-                     {char = letter, found = false, instance = newLetter})
-    end
-end
-
 module.initWord = initWord
-module.getWordFolder = getWordFolder
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBX7c2320981dd64bbfbcb4bd506c4534ad">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">Utils</string>
-						<string name="ScriptGuid">{b68e613e-b492-4354-8a8a-2d00dce2c354}</string>
-						<ProtectedString name="Source"><![CDATA[local module = {}
-local collectionService = game:GetService("CollectionService")
-
-function module.clearTable(tbl) for key in pairs(tbl) do tbl[key] = nil end end
-
-function module.setPropsByTag(props)
-    local tag = props.tag
-    local theProps = props.props
-
-    local items = collectionService:GetTagged(tag)
-
-    for i, item in ipairs(items) do
-        mergeTables(item, theProps)
-        -- 
-    end
-
-end
-
-function getFirstDescendantByName(parent, name)
-    local model = parent:GetDescendants()
-    for i = 1, #model do
-        if model[i].Name == name then
-            return model[i]
-            -- 
-        end
-    end
-end
-
-function getDescendantsByName(parent, name)
-    local items = parent:GetDescendants()
-
-    local output = {}
-    for i, item in ipairs(items) do
-        if item.Name == name then
-            table.insert(output, item)
-            -- 
-        end
-    end
-    return output
-end
-
-function module.getDescendantsByType(parent, type)
-    local items = parent:GetDescendants()
-    local output = {}
-
-    for i, item in pairs(items) do
-        if item:IsA(type) then
-            table.insert(output, item)
-            -- 
-        end
-    end
-    return output
-end
-
-function hideItem(part, hide)
-    local transparency = hide and 1 or 0
-    local visible = not hide
-    local enabled = not hide
-
-    if part:IsA("BasePart") then part.Transparency = transparency end
-    if part:IsA("Decal") then part.Transparency = transparency end
-
-    if part:IsA("ScrollingFrame") then part.Visible = visible end
-    if part:IsA("TextLabel") then part.Visible = visible end
-    if part:IsA("TextButton") then part.Visible = visible end
-
-    if part:IsA("SurfaceGui") then part.Enabled = enabled end
-end
-
-function setChildrenProps(parent, props)
-    if parent:IsA("BasePart") then mergeTables(parent, props) end
-
-    local children = parent:GetDescendants()
-    for i, item in ipairs(children) do
-        if item:IsA("BasePart") then mergeTables(item, props) end
-    end
-end
-
-function hideItemAndChildren(props)
-    local parent = props.item
-    local hide = props.hide
-
-    hideItem(parent, hide)
-    local children = parent:GetDescendants()
-    for i, item in ipairs(children) do hideItem(item, hide) end
-end
-
-function sizeWalls(props)
-    local parent = props.item
-    local height = props.height
-
-    local children = parent:GetDescendants()
-    for i, item in ipairs(children) do
-        if item:isA("Part") then item.CanCollide = false end
-    end
-    for i, item in ipairs(children) do
-        if item:isA("Part") then
-            local posY = item.Position.Y - item.Size.Y / 2
-            local newPosY = posY + (height / 2)
-            item.Size = Vector3.new(item.Size.X, height, item.Size.Z)
-            item.Position = Vector3.new(item.Position.X, newPosY,
-                                        item.Position.Z)
-
-        end
-    end
-    for i, item in ipairs(children) do
-        if item:isA("Part") then
-
-            item.CanCollide = true
-            item.Anchored = true
-        end
-    end
-end
-
-function sizeWalls2(props)
-    local items = props.items
-    local height = props.height
-
-    -- local children = parent:GetDescendants()
-    for i, item in ipairs(items) do
-        if item:isA("Part") then item.CanCollide = false end
-    end
-    for i, item in ipairs(items) do
-        if item:isA("Part") then
-            local posY = item.Position.Y - item.Size.Y / 2
-            local newPosY = posY + (height / 2)
-            item.Size = Vector3.new(item.Size.X, height, item.Size.Z)
-            item.Position = Vector3.new(item.Position.X, newPosY,
-                                        item.Position.Z)
-
-        end
-    end
-    for i, item in ipairs(items) do
-        if item:isA("Part") then
-
-            item.CanCollide = true
-            item.Anchored = true
-        end
-    end
-end
-
-function module.hideItemAndChildrenByName(props)
-    local name = props.name
-    local hide = props.hide
-
-    local myStuff = workspace:FindFirstChild("MyStuff")
-    local item = getFirstDescendantByName(myStuff, name)
-    hideItemAndChildren({item = item, hide = hide})
-end
-
-function module.setWallHeightByList(props)
-    local items = props.items
-    local height = props.height
-
-    sizeWalls2({items = items, height = height})
-
-end
-
-function module.setWallHeightbyParentModelName(props)
-    local name = props.name
-    local height = props.height
-
-    local myStuff = workspace:FindFirstChild("MyStuff")
-    -- local item = getFirstDescendantByName(myStuff, name)
-    local items = getDescendantsByName(myStuff, name)
-
-    for i, item in ipairs(items) do
-        sizeWalls({item = item, height = height})
-        -- 
-    end
-end
-
-function module.setItemAndChildrenPropsByName(myProps)
-    local name = myProps.name
-    local props = myProps.props
-
-    local myStuff = workspace:FindFirstChild("MyStuff")
-    local item = getFirstDescendantByName(myStuff, name)
-    setChildrenProps(item, props)
-end
-
-function module.setItemAndChildrenPropsByInst(myProps)
-    local item = myProps.item
-    local props = myProps.props
-
-    setChildrenProps(item, props)
-end
-
-function module.getOrCreateFolder(props)
-    local name = props.name
-    local parent = props.parent
-
-    local runtimeQuestsFolder = getFirstDescendantByName(parent, name)
-
-    if not runtimeQuestsFolder then
-        runtimeQuestsFolder = Instance.new("Folder", parent)
-        runtimeQuestsFolder.Name = name
-        runtimeQuestsFolder = getFirstDescendantByName(parent, name)
-    end
-
-    return runtimeQuestsFolder
-end
-
-function module.reportPlayerLocation()
-    local Players = game:GetService("Players")
-    Players.PlayerAdded:Connect(function(player)
-        player.CharacterAdded:Connect(function(character)
-            local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-            while humanoidRootPart do
-                local test2 = workspace.CurrentCamera.CFrame.Position
-                print(test2);
-                print(player.Name, "is at", tostring(humanoidRootPart.Position))
-                wait(4)
-            end
-        end)
-    end)
-end
-
-function module.deleteChildrenByName(props)
-    local parent = props.parent
-    local childName = props.childName
-    local children = parent:GetDescendants()
-    for i, item in pairs(children) do
-        if item.Name == childName then
-            item:Destroy()
-            --
-        end
-    end
-end
-
-function getFromMyStuff(name)
-    local myStuff = workspace:FindFirstChild("MyStuff")
-    return getFirstDescendantByName(myStuff, name)
-end
-
-function module.getFromTemplates(name)
-    local myStuff = workspace:FindFirstChild("MyStuff")
-    local myTemplates = myStuff:FindFirstChild("MyTemplates")
-    return getFirstDescendantByName(myTemplates, name)
-end
-
-function module.unAttachAllChildParts(parent)
-    local items = parent:GetDescendants()
-    local output = {}
-    for i = 1, #items do
-        if items[i]:IsA('Part') then
-            local item = items[i]
-            if item.Anchored == true then table.insert(output, item) end
-            --
-        end
-
-    end
-    return output
-end
-
-function module.getDescendantsByNameMatch(parent, name)
-    local descendants = parent:GetDescendants()
-    local output = {}
-    for i = 1, #descendants do
-        local child = descendants[i]
-        local match = string.match(child.Name, name)
-        if match then table.insert(output, child) end
-    end
-    return output
-end
-
-function addcfv3(a, b)
-    local x, y, z, m11, m12, m13, m21, m22, m23, m31, m32, m33 = a:components()
-    return CFrame.new(x + b.x, y + b.y, z + b.z, m11, m12, m13, m21, m22, m23,
-                      m31, m32, m33);
-end
-
-function cloneModel(props)
-    local model = props.model
-    local position = props.position
-    local suffix = props.suffix
-
-    local modelClone = model:Clone()
-    modelClone.Parent = model.Parent
-    modelClone.Name = model.Name .. (suffix or "-Clone")
-    if (position) then
-        modelClone:SetPrimaryPartCFrame(position)
-        -- 
-    end
-    return modelClone
-end
-
-local function getNames(tab, name, res, lev)
-    res = res or {[tab] = "ROOT"}
-    local pls = {}
-    lev = lev or 0
-    for k, v in pairs(tab) do
-        if type(v) == "table" and not res[v] then
-            local n = name .. "." .. tostring(k)
-            res[v] = n
-            pls[v] = n
-        end
-    end
-    for k, v in pairs(pls) do
-        getNames(k, v, res)
-        pls[k] = lev
-    end
-    return res, pls
-end
-
-function tableToString(tab, a, b, c, d)
-    a, b = a or 0, b or {[tab] = true}
-    local name = b[tab]
-    local white = ("\t"):rep(a + 1)
-    if not c then c, d = getNames(tab, "ROOT") end
-    local res = {"{"}
-    for k, v in pairs(tab) do
-        local value
-        if type(v) == "table" then
-            if d[v] == a and not b[v] then
-                b[v] = true
-                value = tableToString(v, a + 1, b, c, d)
-            else
-                value = c[v]
-            end
-        elseif type(v) == "string" then
-            value = '"' .. v:gsub("\n", "\\n"):gsub("\t", "\\t") .. '"'
-        else
-            value = tostring(v)
-        end
-        table.insert(res, white .. tostring(k) .. " = " .. value)
-    end
-    white = white:sub(2)
-    table.insert(res, white .. "}")
-    return table.concat(res, "\n")
-end
-
-local test = {
-    str = "Result:\n\t- Unknown",
-    number = 12345,
-    child = {a = "b"},
-    cyclic = {}
-}
-test.child.cyclic = test.cyclic
-test.another = test.child
-
-function mergeTables(t1, t2) for k, v in pairs(t2) do t1[k] = v end end
-
-addPadding = function(props)
-    local parent = props.parent
-    local paddingPct = props.paddingPct
-
-    local UIPadding = Instance.new("UIPadding", parent)
-
-    UIPadding.PaddingBottom = UDim.new(paddingPct, 0)
-    UIPadding.PaddingTop = UDim.new(paddingPct, 0)
-    UIPadding.PaddingLeft = UDim.new(paddingPct, 0)
-    UIPadding.PaddingRight = UDim.new(paddingPct, 0)
-end
-
-setMaterialPebble = function(part)
-    part.Material = Enum.Material.Pebble
-    part.BrickColor = BrickColor.new("Institutional white")
-end
-
-module.addcfv3 = addcfv3
-module.addPadding = addPadding
-module.cloneModel = cloneModel
-module.getFirstDescendantByName = getFirstDescendantByName
-module.getFromMyStuff = getFromMyStuff
-module.setMaterialPebble = setMaterialPebble
-module.tableToString = tableToString
-module.hideItemAndChildren = hideItemAndChildren
-module.mergeTables = mergeTables
-module.getDescendantsByName = getDescendantsByName
 
 return module
 ]]></ProtectedString>
