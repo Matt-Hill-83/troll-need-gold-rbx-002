@@ -1,7 +1,5 @@
-local Sss = game:GetService("ServerScriptService")
 local CS = game:GetService("CollectionService")
--- local TargetWord = require(Sss.Source.module.TargetWord)
--- local HandleBrick3 = require(Sss.Source.HandleBrick.HandleBrick)
+local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
@@ -47,9 +45,9 @@ function createBalls(props)
     end
 end
 
-function getRunTimeLetterFolder()
-    local letterFallFolder = Utils.getFirstDescendantByName(workspace,
-                                                            "LetterFallFolder")
+function getRunTimeLetterFolder(letterFallFolder)
+    -- local letterFallFolder = Utils.getFirstDescendantByName(workspace,
+    --                                                         "LetterFallFolder")
     local runtimeFolder = Utils.getOrCreateFolder(
                               {
             name = "RuntimeFolder",
@@ -59,10 +57,6 @@ function getRunTimeLetterFolder()
     local letterFolder = Utils.getOrCreateFolder(
                              {name = "LetterFolder", parent = runtimeFolder})
     return letterFolder
-end
-
-function getLetterFallFolder()
-    return Utils.getFirstDescendantByName(workspace, "LetterFallFolder")
 end
 
 function getWordFolder()
@@ -152,12 +146,12 @@ function initGameToggle(letterFallFolder)
 
 end
 
-function initLetterRack(props)
+function initLetterRack(letterFallFolder)
     print("initLetterRack")
     print("initLetterRack")
     print("initLetterRack")
     print("initLetterRack")
-    local letterFolder = getRunTimeLetterFolder()
+    local letterFolder = getRunTimeLetterFolder(letterFallFolder)
 
     local numRow = 18
     local numCol = 8
@@ -224,7 +218,7 @@ function initLetterRack(props)
         end
         -- letterTemplate:Destroy()
     end
-    -- columnBaseTemplate:Destroy()
+    columnBaseTemplate:Destroy()
 end
 
 function isDesiredLetter(letter, clickedLetter)

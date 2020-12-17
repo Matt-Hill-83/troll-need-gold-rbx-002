@@ -24,16 +24,15 @@ function setVisibility()
     -- local testLabBase = Utils.getFirstDescendantByName(workspace, "TestLabBase")
     -- testLabBase:Destroy()
 
-    -- local taggedPartsTransparent = collectionService:GetTagged("Transparent")
+    local taggedPartsTransparent = collectionService:GetTagged("Transparent")
 
-    -- for i, item in ipairs(taggedPartsTransparent) do
-    --     Utils.setItemAndChildrenPropsByInst(
-    --         {
-    --             item = item,
-    --             props = {Transparency = 1}
-    --             -- props = {Transparency = 1, CanCollide = false, Anchored = true}
-    --         })
-    -- end
+    for i, item in ipairs(taggedPartsTransparent) do
+        Utils.setItemPropsByInst({
+            item = item,
+            props = {Transparency = 1}
+            -- props = {Transparency = 1, CanCollide = false, Anchored = true}
+        })
+    end
 
     local itemsToHideAtRuntine = {'QuestsOrigin', 'TerrainBase'}
     for i, item in ipairs(itemsToHideAtRuntine) do
