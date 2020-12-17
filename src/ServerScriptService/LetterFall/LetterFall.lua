@@ -46,8 +46,6 @@ function createBalls(props)
 end
 
 function getRunTimeLetterFolder(letterFallFolder)
-    -- local letterFallFolder = Utils.getFirstDescendantByName(workspace,
-    --                                                         "LetterFallFolder")
     local runtimeFolder = Utils.getOrCreateFolder(
                               {
             name = "RuntimeFolder",
@@ -60,9 +58,6 @@ function getRunTimeLetterFolder(letterFallFolder)
 end
 
 function getWordFolder()
-    print('module.letterFallFolder' .. ' - start');
-    print(module.letterFallFolder);
-    print('module.letterFallFolder' .. ' - end');
     local runtimeFolder = Utils.getOrCreateFolder(
                               {
             name = "RuntimeFolder",
@@ -80,10 +75,6 @@ function initWord(letterFallFolder)
     local wordFolder = getWordFolder(letterFallFolder)
     local word = module.words[module.lastWordIndex]
 
-    print('module.wordLetters' .. ' - start');
-    print(module.wordLetters);
-    print('module.wordLetters' .. ' - end');
-
     -- TODO: need to delete these letters.
 
     for i, letter in ipairs(module.wordLetters) do
@@ -92,24 +83,32 @@ function initWord(letterFallFolder)
     end
     Utils.clearTable(module.wordLetters)
 
-    function genRandom(min, max) return min + math.random() * (max - min) end
+    function Utils.genRandom(min, max)
+        return min + math.random() * (max - min)
+    end
 
-    local wordBox = Utils.getFirstDescendantByName(letterFallFolder, "WordBox")
-    local letterBlock = Utils.getFirstDescendantByName(wordBox,
-                                                       "LetterBlockTemplate")
+    local wordBoxFolder = Utils.getFirstDescendantByName(letterFallFolder,
+                                                         "WordBoxFolder")
+    local letterBlockTemplate = Utils.getFirstDescendantByName(wordBoxFolder,
+                                                               "LetterBlockTemplate")
+    letterBlockTemplate.Transparency = 1
 
-    local letterPositioner = Utils.getFirstDescendantByName(wordBox,
-                                                            "LetterPositioner")
-
+    local letterPositioners = CS:GetTagged("WordLetterBlockPositioner")
     local spacingFactor = 1.05
 
     for letterIndex, letter in ipairs(word) do
-        local newLetter = letterBlock:Clone()
-        newLetter.Parent = wordFolder
+        local newLetter = letterBlockTemplate:Clone()
         newLetter.Name = "wordLetter-" .. letterIndex
-        local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
-        newLetter.CFrame = letterPositioner.CFrame *
-                               CFrame.new(Vector3.new(0, 0, z))
+        newLetter.Transparency = 0
+
+        if letterPositioners and letterPositioners[1] then
+            local letterPositioner = letterPositioners[1]
+
+            local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
+            newLetter.CFrame = letterPositioner.CFrame *
+                                   CFrame.new(Vector3.new(0, 0, z))
+            letterPositioner.Transparency = 1
+        end
 
         CS:AddTag(newLetter, module.tagNames.WordLetter)
 
@@ -119,6 +118,8 @@ function initWord(letterFallFolder)
             color = Color3.new(255, 0, 191)
         })
 
+        -- Do this last to avoid tweening
+        newLetter.Parent = wordFolder
         table.insert(module.wordLetters,
                      {char = letter, found = false, instance = newLetter})
     end
@@ -132,7 +133,6 @@ function initGameToggle(letterFallFolder)
         function onPartTouched(otherPart)
             if not module.touched then
                 module.touched = true
-                print('touched')
 
                 initLetterRack(letterFallFolder)
                 initWord(letterFallFolder)
@@ -147,10 +147,6 @@ function initGameToggle(letterFallFolder)
 end
 
 function initLetterRack(letterFallFolder)
-    print("initLetterRack")
-    print("initLetterRack")
-    print("initLetterRack")
-    print("initLetterRack")
     local letterFolder = getRunTimeLetterFolder(letterFallFolder)
 
     local numRow = 18
@@ -172,11 +168,6 @@ function initLetterRack(letterFallFolder)
         end
     end
 
-    function genRandom(min, max)
-        local rand = min + math.random() * (max - min)
-        return math.ceil(rand)
-    end
-
     local columnBaseTemplates = CS:GetTagged("ColumnBaseTemplate")
     local columnBaseTemplate = columnBaseTemplates[1]
 
@@ -184,15 +175,16 @@ function initLetterRack(letterFallFolder)
     local spacingFactor = 1.08
     for colIndex = 1, numCol do
         local newColumnBase = columnBaseTemplate:Clone()
-        newColumnBase.Parent = letterFolder
         newColumnBase.Name = "columnBase-" .. colIndex
 
-        local z = newColumnBase.Size.Z * (colIndex - 1) * spacingFactor
-        local letterPositioner = CS:GetTagged("RackLetterBlockPositioner")
+        local letterPositioners = CS:GetTagged("RackLetterBlockPositioner")
+        if letterPositioners and letterPositioners[1] then
+            local letterPositioner = letterPositioners[1]
 
-        if letterPositioner and letterPositioner[1] then
-            newColumnBase.CFrame = letterPositioner[1].CFrame *
+            local z = newColumnBase.Size.Z * (colIndex - 1) * spacingFactor
+            newColumnBase.CFrame = letterPositioner.CFrame *
                                        CFrame.new(Vector3.new(-z, 0, 0))
+            letterPositioner.Transparency = 1
         end
 
         local letterTemplate = Utils.getFirstDescendantByName(newColumnBase,
@@ -200,7 +192,7 @@ function initLetterRack(letterFallFolder)
 
         for rowIndex = 1, numRow do
             -- local char = letters[(colIndex % #letters) + 1]
-            local test = genRandom(1, #lettersFromWords)
+            local test = Utils.genRandom(1, #lettersFromWords)
             local char = lettersFromWords[test]
 
             local newLetter = letterTemplate:Clone()
@@ -215,8 +207,11 @@ function initLetterRack(letterFallFolder)
 
             applyLetterText({letterBlock = newLetter, char = char})
             table.insert(newLetters, newLetter)
+
+            -- do this last to avoid tweening
+            newColumnBase.Parent = letterFolder
         end
-        -- letterTemplate:Destroy()
+        letterTemplate:Destroy()
     end
     columnBaseTemplate:Destroy()
 end
@@ -240,9 +235,6 @@ end
 
 function handleBrick(player, clickedLetter)
     local wordLetters = module.wordLetters
-    print('wordLetters' .. ' - start');
-    print(wordLetters);
-    print('wordLetters' .. ' - end');
 
     local part = CS:GetTagged("BallPitBottom")
     if part[1] then part[1]:Destroy() end

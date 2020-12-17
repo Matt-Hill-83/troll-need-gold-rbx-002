@@ -3,6 +3,11 @@ local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 local collectionService = game:GetService("CollectionService")
 
+function genRandom(min, max)
+    local rand = min + math.random() * (max - min)
+    return math.ceil(rand)
+end
+
 function module.clearTable(tbl) for key in pairs(tbl) do tbl[key] = nil end end
 
 function module.setPropsByTag(props)
@@ -53,9 +58,6 @@ function module.getDescendantsByType(parent, type)
     end
     return output
 end
-
--- 
--- 
 
 function hideItem(part, hide)
     local transparency = hide and 1 or 0
@@ -401,5 +403,7 @@ module.tableToString = tableToString
 module.hideItemAndChildren = hideItemAndChildren
 module.mergeTables = mergeTables
 module.getDescendantsByName = getDescendantsByName
+module.hideItem = hideItem
+module.genRandom = genRandom
 
 return module

@@ -1,7 +1,6 @@
 local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
-
-local collectionService = game:GetService("CollectionService")
+local CS = game:GetService("CollectionService")
 
 local module = {}
 function configPlayers()
@@ -24,7 +23,7 @@ function setVisibility()
     -- local testLabBase = Utils.getFirstDescendantByName(workspace, "TestLabBase")
     -- testLabBase:Destroy()
 
-    local taggedPartsTransparent = collectionService:GetTagged("Transparent")
+    local taggedPartsTransparent = CS:GetTagged("Transparent")
 
     for i, item in ipairs(taggedPartsTransparent) do
         Utils.setItemPropsByInst({
@@ -62,8 +61,7 @@ function setVisibility()
 
     Utils.setWallHeightbyParentModelName({name = "BaseWalls", height = 2})
 
-    local tagBaseWallTransparent = collectionService:GetTagged(
-                                       "BaseWallTransparent")
+    local tagBaseWallTransparent = CS:GetTagged("BaseWallTransparent")
     Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
     Utils.setPropsByTag({
         tag = "BaseWallTransparent",
@@ -71,7 +69,7 @@ function setVisibility()
         -- props = {Transparency = 0.6}
     })
 
-    local skyBoxWalls = collectionService:GetTagged("SkyBoxWalls")
+    local skyBoxWalls = CS:GetTagged("SkyBoxWalls")
     Utils.setWallHeightByList({items = skyBoxWalls, height = 30})
     Utils.setPropsByTag({
         tag = "SkyBoxWalls",
