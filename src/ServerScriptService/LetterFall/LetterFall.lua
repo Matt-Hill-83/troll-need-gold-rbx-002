@@ -75,7 +75,7 @@ function initWord(miniGameState)
 end
 
 function initLetterRack(miniGameState)
-    local runtimeletterfolder = getRunTimeLetterFolder(miniGameState)
+    local runTimeLetterFolder = getRunTimeLetterFolder(miniGameState)
 
     local letterFallFolder = miniGameState.letterFallFolder
     local letterRackFolder = Utils.getFirstDescendantByName(letterFallFolder,
