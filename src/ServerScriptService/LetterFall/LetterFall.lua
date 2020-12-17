@@ -14,9 +14,18 @@ function initGameToggle(miniGameState)
                                                             "StartGameTrigger")
 
     print('startGameTrigger' .. ' - start');
+    print('startGameTrigger' .. ' - start');
+    print('startGameTrigger' .. ' - start');
+    print('startGameTrigger' .. ' - start');
+    print('startGameTrigger' .. ' - start');
     print(startGameTrigger);
     if startGameTrigger then
         function onPartTouched(otherPart)
+            print('onPartTouched')
+            print('onPartTouched')
+            print('onPartTouched')
+            print('onPartTouched')
+            print('onPartTouched')
             if not miniGameState.initCompleted then
                 initLetterRack(miniGameState)
                 initWord(miniGameState)
@@ -218,6 +227,8 @@ function isWordComplete(wordLetters)
 end
 
 function initClickHandler(miniGameState)
+    print('initClickHandler' .. ' - start');
+    print(initClickHandler);
     -- Gets arguments from EventHandler in StarterPack
     function brickClickHandler(player, clickedLetter)
         handleBrick(player, clickedLetter, miniGameState)
@@ -226,13 +237,16 @@ function initClickHandler(miniGameState)
 end
 
 function handleBrick(player, clickedLetter, miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
     local wordLetters = miniGameState.wordLetters
+
     local ballPitBottom = Utils.getFirstDescendantByName(clickedLetter,
                                                          "BallPitBottom")
     if ballPitBottom then ballPitBottom:Destroy() end
 
-    local isChild = clickedLetter:IsDescendantOf(miniGameState)
-    local letterFallFolder = miniGameState.letterFallFolder
+    local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
+    print('isChild' .. ' - start');
+    print(isChild);
     if not isChild then return {} end
 
     for i, letter in ipairs(wordLetters) do
@@ -248,7 +262,6 @@ function handleBrick(player, clickedLetter, miniGameState)
             if wordComplete then
                 miniGameState.lastWordIndex = miniGameState.lastWordIndex + 1
                 module.initWord(miniGameState)
-                local letterFallFolder = miniGameState.letterFallFolder
             end
             break
         end

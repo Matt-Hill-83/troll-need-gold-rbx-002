@@ -46602,7 +46602,7 @@ function module.addScenes(props)
     skyBoxTeleporter.Parent = questFolder
     skyBoxTeleporter.Name = thisTeleporter.Name .. "-home"
 
-    local letterFallModel = Utils.getFromTemplates("LetterFallTemplate")
+    local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
     for sceneIndex, sceneConfig in ipairs(sceneConfigs) do
         local entered2 = {value = false}
 
@@ -46630,12 +46630,18 @@ function module.addScenes(props)
             questTitle = questConfig.questTitle,
             skyBoxTeleporter = skyBoxTeleporter
         })
+
+        local words = {
+            {'C', 'A', 'T'}, {'B', 'A', 'T'}, {'H', 'A', 'T'}, {'M', 'A', 'T'},
+            {'P', 'A', 'T'}, {'R', 'A', 'T'}, {'S', 'A', 'T'}
+        }
+
         MiniGame.addMiniGame({
-            parent = clonedScene,
             clonedScene = clonedScene,
+            words = words,
             sceneIndex = sceneIndex,
             questIndex = questIndex,
-            letterFallModel = letterFallModel,
+            letterFallTemplate = letterFallTemplate,
             isStartScene = sceneConfig.isStartScene,
             questTitle = questConfig.questTitle
         })
@@ -46702,7 +46708,7 @@ function module.addScenes(props)
                                   (questConfig.questTitle or 'Game Title')
     end
     sceneTemplateModel:Destroy()
-    letterFallModel:Destroy()
+    letterFallTemplate:Destroy()
 end
 
 getStartPosition = function(props)
@@ -48471,9 +48477,18 @@ function initGameToggle(miniGameState)
                                                             "StartGameTrigger")
 
     print('startGameTrigger' .. ' - start');
+    print('startGameTrigger' .. ' - start');
+    print('startGameTrigger' .. ' - start');
+    print('startGameTrigger' .. ' - start');
+    print('startGameTrigger' .. ' - start');
     print(startGameTrigger);
     if startGameTrigger then
         function onPartTouched(otherPart)
+            print('onPartTouched')
+            print('onPartTouched')
+            print('onPartTouched')
+            print('onPartTouched')
+            print('onPartTouched')
             if not miniGameState.initCompleted then
                 initLetterRack(miniGameState)
                 initWord(miniGameState)
@@ -48675,6 +48690,8 @@ function isWordComplete(wordLetters)
 end
 
 function initClickHandler(miniGameState)
+    print('initClickHandler' .. ' - start');
+    print(initClickHandler);
     -- Gets arguments from EventHandler in StarterPack
     function brickClickHandler(player, clickedLetter)
         handleBrick(player, clickedLetter, miniGameState)
@@ -48683,13 +48700,16 @@ function initClickHandler(miniGameState)
 end
 
 function handleBrick(player, clickedLetter, miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
     local wordLetters = miniGameState.wordLetters
+
     local ballPitBottom = Utils.getFirstDescendantByName(clickedLetter,
                                                          "BallPitBottom")
     if ballPitBottom then ballPitBottom:Destroy() end
 
-    local isChild = clickedLetter:IsDescendantOf(miniGameState)
-    local letterFallFolder = miniGameState.letterFallFolder
+    local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
+    print('isChild' .. ' - start');
+    print(isChild);
     if not isChild then return {} end
 
     for i, letter in ipairs(wordLetters) do
@@ -48705,7 +48725,6 @@ function handleBrick(player, clickedLetter, miniGameState)
             if wordComplete then
                 miniGameState.lastWordIndex = miniGameState.lastWordIndex + 1
                 module.initWord(miniGameState)
-                local letterFallFolder = miniGameState.letterFallFolder
             end
             break
         end
@@ -49053,9 +49072,9 @@ function module.addMiniGame(props)
     local clonedScene = props.clonedScene
     local sceneIndex = props.sceneIndex
     local questIndex = props.questIndex
-    local questTitle = props.questTitle
     local isStartScene = props.isStartScene
-    local skyBoxTeleporter = props.skyBoxTeleporter
+    local letterFallTemplate = props.letterFallTemplate
+    local words = props.words
 
     local allLetters = {
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
@@ -49065,39 +49084,30 @@ function module.addMiniGame(props)
     local miniGameState = {
         allLetters = allLetters,
         wordLetters = {},
-        words = {
-            {'C', 'A', 'T'}, {'B', 'A', 'T'}, {'H', 'A', 'T'}, {'M', 'A', 'T'},
-            {'P', 'A', 'T'}, {'R', 'A', 'T'}, {'S', 'A', 'T'}
-        },
+        words = words,
         lastWordIndex = 1,
         initCompleted = false
     }
 
     if (isStartScene) then
-        local letterFallModel = Utils.getFromTemplates("LetterFallTemplate")
-        local letterFallFolder = Utils.getFirstDescendantByName(letterFallModel,
-                                                                "LetterFallFolder")
         print('----------------------------------------->>>');
         print('----------------------------------------->>>');
-        print('letterFallModel' .. ' - start');
-        print(letterFallModel);
+        print('letterFallTemplate' .. ' - start');
+        print(letterFallTemplate);
 
-        local newLetterFall = letterFallModel:Clone()
-        newLetterFall.Name =
-            newLetterFall.Name .. "Clone" .. "-Q" .. questIndex .. "-S" ..
-                sceneIndex
-        print('newLetterFall' .. ' - start');
-        print(newLetterFall);
-        newLetterFall.Parent = clonedScene
-        newLetterFall.PrimaryPart.CFrame =
+        local clonedLetterFallModel = letterFallTemplate:Clone()
+        clonedLetterFallModel.Name = clonedLetterFallModel.Name .. "Clone" ..
+                                         "-Q" .. questIndex .. "-S" ..
+                                         sceneIndex
+
+        local letterFallFolder = Utils.getFirstDescendantByName(
+                                     clonedLetterFallModel, "LetterFallFolder")
+        clonedLetterFallModel.Parent = clonedScene
+        clonedLetterFallModel.PrimaryPart.CFrame =
             clonedScene.PrimaryPart.CFrame + Vector3.new(0, 80, 0)
-        newLetterFall.PrimaryPart.Anchored = true
+        clonedLetterFallModel.PrimaryPart.Anchored = true
 
         miniGameState.letterFallFolder = letterFallFolder
-        -- local props = {
-        --     miniGameState = miniGameState,
-        --     letterFallFolder = letterFallFolder
-        -- }
         InitLetterFall.initLetterFall(miniGameState)
     end
 end
