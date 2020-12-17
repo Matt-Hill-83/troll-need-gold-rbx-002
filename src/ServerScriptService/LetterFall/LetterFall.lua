@@ -226,8 +226,11 @@ function handleBrick(player, clickedLetter, miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local wordLetters = miniGameState.wordLetters
 
-    local ballPitBottom = Utils.getFirstDescendantByName(clickedLetter,
+    local ballPitBottom = Utils.getFirstDescendantByName(letterFallFolder,
                                                          "BallPitBottom")
+
+    print('ballPitBottom' .. ' - start');
+    print(ballPitBottom);
     if ballPitBottom then ballPitBottom:Destroy() end
 
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)

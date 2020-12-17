@@ -40,7 +40,8 @@ function setVisibility()
 
     Utils.setItemAndChildrenPropsByName({
         name = "DockWalls",
-        props = {Transparency = 1}
+        props = {Transparency = .5}
+        -- props = {Transparency = 1}
     })
 
     Utils.setItemAndChildrenPropsByName({
