@@ -76,8 +76,6 @@ function initWord(letterFallFolder)
     local wordFolder = getWordFolder(letterFallFolder)
     local word = module.words[module.lastWordIndex]
 
-    -- TODO: need to delete these letters.
-
     for i, letter in ipairs(module.wordLetters) do
         if letter.instance then letter.instance:Destroy() end
         module.wordLetters[i] = nil
@@ -92,26 +90,19 @@ function initWord(letterFallFolder)
                                                          "WordBoxFolder")
     local letterBlockTemplate = Utils.getFirstDescendantByName(wordBoxFolder,
                                                                "LetterBlockTemplate")
-    -- letterBlockTemplate.Transparency = 1
-    Utils.hideItemAndChildren({item = letterBlockTemplate, hide = true})
-
-    local letterPositioners = CS:GetTagged("WordLetterBlockPositioner")
-    local spacingFactor = 1.1
+    letterBlockTemplate.Transparency = 1
+    local spacingFactor = 1.05
 
     for letterIndex, letter in ipairs(word) do
         local newLetter = letterBlockTemplate:Clone()
         newLetter.Name = "wordLetter-" .. letterIndex
         newLetter.Transparency = 0
-        Utils.hideItemAndChildren({item = newLetter, hide = false})
 
-        if letterPositioners and letterPositioners[1] then
-            local letterPositioner = letterPositioners[1]
-
-            local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
-            newLetter.CFrame = letterPositioner.CFrame *
-                                   CFrame.new(Vector3.new(0, 0, z))
-            letterPositioner.Transparency = 1
-        end
+        local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
+        local letterPositioner = CS:GetTagged("WordLetterBlockPositioner")[1]
+        newLetter.CFrame = letterPositioner.CFrame *
+                               CFrame.new(Vector3.new(0, 0, z))
+        letterPositioner.Transparency = 1
 
         CS:AddTag(newLetter, module.tagNames.WordLetter)
 
@@ -151,15 +142,26 @@ end
 
 function initLetterRack(letterFallFolder)
     local letterFolder = getRunTimeLetterFolder(letterFallFolder)
-
     local numRow = 10
     local numCol = 8
+    local spacingFactor = 1.05
 
     local rackWalls = CS:GetTagged("LetterRackWall")
-    Utils.setWallHeightByList({items = rackWalls, height = 10})
-    --     for i,wall in ipairs(rackWalls) do
-    -- wall.Size = 
-    --     end
+    local columnBaseTemplate = CS:GetTagged("ColumnBaseTemplate")[1]
+    local letterTemplateSizer = Utils.getFirstDescendantByName(
+                                    columnBaseTemplate, "LetterTemplate")
+
+    -- local wallHeight = letterTemplateSizer.Size.Y * (numRow + 6) * spacingFactor
+    -- local bPFH = letterTemplateSizer.Size.Y * (numRow + 3) * spacingFactor
+
+    -- Utils.setWallHeightByList({items = rackWalls, height = wallHeight})
+    -- local ballPitBottom = CS:GetTagged("BallPitBottom")[1]
+
+    -- local ballPitBottomY =
+    --     bPFH + rackWalls[1].Position.Y - rackWalls[1].Size.Y / 2
+    -- ballPitBottom.Position = Vector3.new(ballPitBottom.Position.X,
+    --                                      ballPitBottomY,
+    --                                      ballPitBottom.Position.Z)
 
     local allLetters = {
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
@@ -173,29 +175,24 @@ function initLetterRack(letterFallFolder)
             table.insert(lettersFromWords, letter)
             table.insert(lettersFromWords, letter)
             table.insert(lettersFromWords, letter)
+            table.insert(lettersFromWords, letter)
+            table.insert(lettersFromWords, letter)
             -- 
         end
     end
 
-    local columnBaseTemplates = CS:GetTagged("ColumnBaseTemplate")
-    local columnBaseTemplate = columnBaseTemplates[1]
-
     local newLetters = {}
-    local spacingFactor = 1.08
+
     for colIndex = 1, numCol do
         local newColumnBase = columnBaseTemplate:Clone()
         newColumnBase.Name = "columnBase-" .. colIndex
         newColumnBase.Transparency = 1
 
-        local letterPositioners = CS:GetTagged("RackLetterBlockPositioner")
-        if letterPositioners and letterPositioners[1] then
-            local letterPositioner = letterPositioners[1]
-
-            local z = newColumnBase.Size.Z * (colIndex - 1) * spacingFactor
-            newColumnBase.CFrame = letterPositioner.CFrame *
-                                       CFrame.new(Vector3.new(-z, 0, 0))
-            letterPositioner.Transparency = 1
-        end
+        local x = newColumnBase.Size.X * (colIndex - 1) * spacingFactor
+        local letterPositioner = CS:GetTagged("RackLetterBlockPositioner")[1]
+        newColumnBase.CFrame = letterPositioner.CFrame *
+                                   CFrame.new(Vector3.new(-x, 0, 0))
+        letterPositioner.Transparency = 1
 
         local letterTemplate = Utils.getFirstDescendantByName(newColumnBase,
                                                               "LetterTemplate")
@@ -245,9 +242,8 @@ end
 
 function handleBrick(player, clickedLetter)
     local wordLetters = module.wordLetters
-
-    local part = CS:GetTagged("BallPitBottom")
-    if part[1] then part[1]:Destroy() end
+    local ballPitBottom = CS:GetTagged("BallPitBottom")
+    if ballPitBottom[1] then ballPitBottom[1]:Destroy() end
 
     for i, letter in ipairs(wordLetters) do
         if isDesiredLetter(letter, clickedLetter) then
