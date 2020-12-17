@@ -58,11 +58,11 @@ function getRunTimeLetterFolder(letterFallFolder)
     return letterFolder
 end
 
-function getWordFolder()
+function getWordFolder(letterFallFolder)
     local runtimeFolder = Utils.getOrCreateFolder(
                               {
             name = "RuntimeFolder",
-            parent = module.letterFallFolder
+            parent = letterFallFolder
         })
 
     return (Utils.getOrCreateFolder({
@@ -72,7 +72,6 @@ function getWordFolder()
 end
 
 function initWord(letterFallFolder)
-    module.letterFallFolder = letterFallFolder
     local wordFolder = getWordFolder(letterFallFolder)
     local word = module.words[module.lastWordIndex]
 
@@ -98,7 +97,7 @@ function initWord(letterFallFolder)
         newLetter.Name = "wordLetter-" .. letterIndex
         newLetter.Transparency = 0
 
-        local z = newLetter.Size.Z * (letterIndex - 0) * spacingFactor
+        local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
         local letterPositioner = CS:GetTagged("WordLetterBlockPositioner")[1]
         newLetter.CFrame = letterPositioner.CFrame *
                                CFrame.new(Vector3.new(0, 0, z))
@@ -224,6 +223,12 @@ function initLetterRack(letterFallFolder)
 end
 
 function isDesiredLetter(letter, clickedLetter)
+    print('clickedLetter' .. ' - start');
+    print(clickedLetter);
+    print('clickedLetter' .. ' - end');
+    print('clickedLetter' .. ' - start');
+    print(Utils.tableToString({clickedLetter}));
+    print('clickedLetter' .. ' - end');
     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
                           .Text
     return letter.found ~= true and letter.char == textLabel
@@ -236,11 +241,19 @@ function isWordComplete(wordLetters)
     return true
 end
 
-function initClickHandler(player, clickedLetter)
-    remoteEvent.OnServerEvent:Connect(handleBrick)
+function initClickHandler(letterFallFolder)
+    function test(player, clickedLetter)
+        handleBrick(player, clickedLetter, letterFallFolder)
+        -- 
+    end
+    remoteEvent.OnServerEvent:Connect(test)
 end
 
-function handleBrick(player, clickedLetter)
+function handleBrick(player, clickedLetter, letterFallFolder)
+    print('letterFallFolder' .. ' - start');
+    print(letterFallFolder);
+    print('letterFallFolder' .. ' - end');
+    -- Gets arguments from EventHandler in StarterPack
     local wordLetters = module.wordLetters
     local ballPitBottom = CS:GetTagged("BallPitBottom")
     if ballPitBottom[1] then ballPitBottom[1]:Destroy() end
@@ -258,7 +271,7 @@ function handleBrick(player, clickedLetter)
             local wordComplete = isWordComplete(wordLetters)
             if wordComplete then
                 module.lastWordIndex = module.lastWordIndex + 1
-                module.initWord(module.letterFallFolder)
+                module.initWord(letterFallFolder)
             end
             break
         end
