@@ -11,8 +11,7 @@ local module = {
         {'P', 'A', 'T'}, {'R', 'A', 'T'}, {'S', 'A', 'T'}
     },
     lastWordIndex = 1,
-    tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"},
-    letterFallFolder = nil
+    tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
 }
 
 function colorLetterText(props)

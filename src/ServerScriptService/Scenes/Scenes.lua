@@ -68,6 +68,7 @@ function module.addScenes(props)
 
         MiniGame.addMiniGame({
             parent = clonedScene,
+            clonedScene = clonedScene,
             sceneIndex = sceneIndex,
             questIndex = questIndex,
             isStartScene = sceneConfig.isStartScene,
