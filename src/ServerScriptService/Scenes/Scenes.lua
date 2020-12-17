@@ -38,6 +38,7 @@ function module.addScenes(props)
     skyBoxTeleporter.Parent = questFolder
     skyBoxTeleporter.Name = thisTeleporter.Name .. "-home"
 
+    local letterFallModel = Utils.getFromTemplates("LetterFallTemplate")
     for sceneIndex, sceneConfig in ipairs(sceneConfigs) do
         local entered2 = {value = false}
 
@@ -65,12 +66,12 @@ function module.addScenes(props)
             questTitle = questConfig.questTitle,
             skyBoxTeleporter = skyBoxTeleporter
         })
-
         MiniGame.addMiniGame({
             parent = clonedScene,
             clonedScene = clonedScene,
             sceneIndex = sceneIndex,
             questIndex = questIndex,
+            letterFallModel = letterFallModel,
             isStartScene = sceneConfig.isStartScene,
             questTitle = questConfig.questTitle
         })
@@ -137,6 +138,7 @@ function module.addScenes(props)
                                   (questConfig.questTitle or 'Game Title')
     end
     sceneTemplateModel:Destroy()
+    letterFallModel:Destroy()
 end
 
 getStartPosition = function(props)

@@ -5,80 +5,42 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
 
 local module = {
-    wordLetters = {},
-    words = {
-        {'C', 'A', 'T'}, {'B', 'A', 'T'}, {'H', 'A', 'T'}, {'M', 'A', 'T'},
-        {'P', 'A', 'T'}, {'R', 'A', 'T'}, {'S', 'A', 'T'}
-    },
-    lastWordIndex = 1,
     tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
 }
 
-function colorLetterText(props)
-    local color = props.color
-    local letterBlock = props.letterBlock
+function initGameToggle(miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
+    local startGameTrigger = Utils.getFirstDescendantByName(letterFallFolder,
+                                                            "StartGameTrigger")
 
-    local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
-    for i, label in ipairs(textLabels) do
-        label.TextColor3 = color or Color3.new(255, 0, 191)
-
-    end
-end
-
-function applyLetterText(props)
-    local char = props.char
-    local letterBlock = props.letterBlock
-
-    local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
-    for i, label in ipairs(textLabels) do label.Text = char end
-end
-
-function createBalls(props)
-    local balls = CS:GetTagged("FluidBall")
-    local ball = balls[1]
-    if ball then
-        for count = 1, 10 do
-            local newBall = ball:Clone()
-            newBall.CFrame = newBall.CFrame + Vector3.new(0, 0, 0)
-            newBall.Parent = ball.Parent
+    print('startGameTrigger' .. ' - start');
+    print(startGameTrigger);
+    if startGameTrigger then
+        function onPartTouched(otherPart)
+            if not miniGameState.initCompleted then
+                initLetterRack(miniGameState)
+                initWord(miniGameState)
+                local letterFallFolder = miniGameState.letterFallFolder
+                initClickHandler(miniGameState)
+                local letterFallFolder = miniGameState.letterFallFolder
+                miniGameState.initCompleted = true
+            end
         end
+        startGameTrigger.Touched:Connect(onPartTouched)
     end
+
 end
 
-function getRunTimeLetterFolder(letterFallFolder)
-    local runtimeFolder = Utils.getOrCreateFolder(
-                              {
-            name = "RuntimeFolder",
-            parent = letterFallFolder
-        })
+function initWord(miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
+    local wordFolder = getWordFolder(miniGameState)
+    local word = miniGameState.words[miniGameState.lastWordIndex]
 
-    local letterFolder = Utils.getOrCreateFolder(
-                             {name = "LetterFolder", parent = runtimeFolder})
-    return letterFolder
-end
-
-function getWordFolder(letterFallFolder)
-    local runtimeFolder = Utils.getOrCreateFolder(
-                              {
-            name = "RuntimeFolder",
-            parent = letterFallFolder
-        })
-
-    return (Utils.getOrCreateFolder({
-        name = "WordFolder",
-        parent = runtimeFolder
-    }))
-end
-
-function initWord(letterFallFolder)
-    local wordFolder = getWordFolder(letterFallFolder)
-    local word = module.words[module.lastWordIndex]
-
-    for i, letter in ipairs(module.wordLetters) do
+    for i, letter in ipairs(miniGameState.wordLetters) do
         if letter.instance then letter.instance:Destroy() end
-        module.wordLetters[i] = nil
+        miniGameState.wordLetters[i] = nil
     end
-    Utils.clearTable(module.wordLetters)
+    Utils.clearTable(miniGameState.wordLetters)
 
     function Utils.genRandom(min, max)
         return min + math.random() * (max - min)
@@ -111,64 +73,23 @@ function initWord(letterFallFolder)
                                CFrame.new(Vector3.new(0, 0, z))
         -- Do this last to avoid tweening
         newLetter.Parent = wordFolder
-        table.insert(module.wordLetters,
+        table.insert(miniGameState.wordLetters,
                      {char = letter, found = false, instance = newLetter})
     end
 end
 
-function initGameToggle(letterFallFolder)
-    local part =
-        Utils.getFirstDescendantByName(letterFallFolder, "LF-SpawnBase")
-
-    if part then
-        function onPartTouched(otherPart)
-
-            -- TODO: make this folder specific
-            -- TODO: make this folder specific
-            -- TODO: make this folder specific
-            if not module.touched then
-                module.touched = true
-
-                initLetterRack(letterFallFolder)
-                initWord(letterFallFolder)
-                initClickHandler(letterFallFolder)
-            end
-        end
-
-        part.Touched:Connect(onPartTouched)
-    end
-
-end
-
-function initLetterRack(letterFallFolder)
-    local letterFolder = getRunTimeLetterFolder(letterFallFolder)
+function initLetterRack(miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
+    local letterFolder = getRunTimeLetterFolder(miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
     local numRow = 10
     local numCol = 8
     local spacingFactor = 1.05
 
-    local rackWalls = CS:GetTagged("LetterRackWall")
     local columnBaseTemplate = CS:GetTagged("ColumnBaseTemplate")[1]
-    local letterTemplateSizer = Utils.getFirstDescendantByName(
-                                    columnBaseTemplate, "LetterTemplate")
 
-    -- local wallHeight = letterTemplateSizer.Size.Y * (numRow + 6) * spacingFactor
-    -- local bPFH = letterTemplateSizer.Size.Y * (numRow + 3) * spacingFactor
-
-    -- Utils.setWallHeightByList({items = rackWalls, height = wallHeight})
-    -- local ballPitBottom = CS:GetTagged("BallPitBottom")[1]
-
-    -- local ballPitBottomY =
-    --     bPFH + rackWalls[1].Position.Y - rackWalls[1].Size.Y / 2
-    -- ballPitBottom.Position = Vector3.new(ballPitBottom.Position.X,
-    --                                      ballPitBottomY,
-    --                                      ballPitBottom.Position.Z)
-
-    local allLetters = {
-        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
-        'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-    }
     local lettersFromWords = {}
-    for wordIndex, word in ipairs(module.words) do
+    for wordIndex, word in ipairs(miniGameState.words) do
         for letterIndex, letter in ipairs(word) do
             table.insert(lettersFromWords, letter)
             table.insert(lettersFromWords, letter)
@@ -177,7 +98,6 @@ function initLetterRack(letterFallFolder)
             table.insert(lettersFromWords, letter)
             table.insert(lettersFromWords, letter)
             table.insert(lettersFromWords, letter)
-            -- 
         end
     end
 
@@ -222,6 +142,66 @@ function initLetterRack(letterFallFolder)
         letterTemplate:Destroy()
     end
     columnBaseTemplate:Destroy()
+
+    -- createBalls(miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
+end
+
+function colorLetterText(props)
+    local color = props.color
+    local letterBlock = props.letterBlock
+
+    local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
+    for i, label in ipairs(textLabels) do
+        label.TextColor3 = color or Color3.new(255, 0, 191)
+
+    end
+end
+
+function applyLetterText(props)
+    local char = props.char
+    local letterBlock = props.letterBlock
+
+    local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
+    for i, label in ipairs(textLabels) do label.Text = char end
+end
+
+function createBalls(miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
+    local ball = Utils.getFirstDescendantByName(letterFallFolder, "GemTemplate")
+
+    for count = 1, 10 do
+        local newBall = ball:Clone()
+        newBall.CFrame = newBall.CFrame + Vector3.new(-0.1, 0, 0)
+        newBall.Parent = ball.Parent
+    end
+end
+
+function getRunTimeLetterFolder(miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
+    local runtimeFolder = Utils.getOrCreateFolder(
+                              {
+            name = "RuntimeFolder",
+            parent = letterFallFolder
+        })
+
+    local letterFolder = Utils.getOrCreateFolder(
+                             {name = "LetterFolder", parent = runtimeFolder})
+    return letterFolder
+end
+
+function getWordFolder(miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
+    local runtimeFolder = Utils.getOrCreateFolder(
+                              {
+            name = "LF-RuntimeFolder",
+            parent = letterFallFolder
+        })
+
+    return (Utils.getOrCreateFolder({
+        name = "WordFolder",
+        parent = runtimeFolder
+    }))
 end
 
 function isDesiredLetter(letter, clickedLetter)
@@ -237,26 +217,22 @@ function isWordComplete(wordLetters)
     return true
 end
 
-function initClickHandler(letterFallFolder)
-    function test(player, clickedLetter)
-        handleBrick(player, clickedLetter, letterFallFolder)
-        -- 
+function initClickHandler(miniGameState)
+    -- Gets arguments from EventHandler in StarterPack
+    function brickClickHandler(player, clickedLetter)
+        handleBrick(player, clickedLetter, miniGameState)
     end
-    remoteEvent.OnServerEvent:Connect(test)
+    remoteEvent.OnServerEvent:Connect(brickClickHandler)
 end
 
-function handleBrick(player, clickedLetter, letterFallFolder)
-    -- Gets arguments from EventHandler in StarterPack
-    local wordLetters = module.wordLetters
+function handleBrick(player, clickedLetter, miniGameState)
+    local wordLetters = miniGameState.wordLetters
     local ballPitBottom = Utils.getFirstDescendantByName(clickedLetter,
                                                          "BallPitBottom")
     if ballPitBottom then ballPitBottom:Destroy() end
 
-    local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
-    print('isChild' .. ' - start');
-    print(isChild);
-    print('isChild' .. ' - end');
-
+    local isChild = clickedLetter:IsDescendantOf(miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
     if not isChild then return {} end
 
     for i, letter in ipairs(wordLetters) do
@@ -270,8 +246,9 @@ function handleBrick(player, clickedLetter, letterFallFolder)
             clickedLetter:Destroy()
             local wordComplete = isWordComplete(wordLetters)
             if wordComplete then
-                module.lastWordIndex = module.lastWordIndex + 1
-                module.initWord(letterFallFolder)
+                miniGameState.lastWordIndex = miniGameState.lastWordIndex + 1
+                module.initWord(miniGameState)
+                local letterFallFolder = miniGameState.letterFallFolder
             end
             break
         end

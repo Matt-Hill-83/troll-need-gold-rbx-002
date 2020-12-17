@@ -17,7 +17,7 @@ local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
 -- test.initLetterFall()
 
 function addRemoteObjects()
-    ConfigGame.configGame()
+    -- ConfigGame.configGame()
 
     -- Group quests into books that are separate islands
     local questConfigs = SceneConfig.getScenesConfig()
@@ -131,6 +131,8 @@ function addRemoteObjects()
     end
     questBlockTemplate:Destroy()
 
+    -- Do this last after everything has been created/deleted
+    ConfigGame.configGame()
 end
 
 module.addRemoteObjects = addRemoteObjects

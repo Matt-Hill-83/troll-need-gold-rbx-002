@@ -5,25 +5,9 @@ local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 
 local module = {}
 
-function initLetterFall(letterFallFolder)
-    print('------------------------------------------->>>>>>');
-    print('------------------------------------------->>>>>>');
-    print("initLetterFall")
-    print('letterFallFolder' .. ' - start');
-    print(letterFallFolder);
-    LetterFall.initGameToggle(letterFallFolder)
-    LetterFall.createBalls(letterFallFolder)
-
-    local taggedPartsTransparent = CS:GetTagged("Transparent")
-
-    for i, item in ipairs(taggedPartsTransparent) do
-        Utils.setItemPropsByInst({
-            item = item,
-            props = {Transparency = 1}
-            -- props = {Transparency = 1, CanCollide = false, Anchored = true}
-        })
-    end
-
+function initLetterFall(miniGameState)
+    LetterFall.initGameToggle(miniGameState)
+    LetterFall.createBalls(miniGameState)
 end
 
 module.initLetterFall = initLetterFall
