@@ -19,10 +19,10 @@ function module.addScenes(props)
     local gridPadding = props.gridPadding
     local questFolder = props.questFolder
     local questIndex = props.questIndex
+    local skyBoxTeleporter = props.skyBoxTeleporter
 
     local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
                                                               "SceneTemplate")
-
     local sceneBase = Utils.getFirstDescendantByName(questFolder, "SceneBase")
 
     local sceneStartPosition = getStartPosition(
@@ -31,12 +31,6 @@ function module.addScenes(props)
             parent = parent,
             child = sceneBase
         })
-
-    local thisTeleporter = Utils.getFirstDescendantByName(sceneTemplateModel,
-                                                          "QuestTeleporterModel")
-    local skyBoxTeleporter = thisTeleporter:Clone()
-    skyBoxTeleporter.Parent = questFolder
-    skyBoxTeleporter.Name = thisTeleporter.Name .. "-home"
 
     local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
     for sceneIndex, sceneConfig in ipairs(sceneConfigs) do
@@ -57,6 +51,8 @@ function module.addScenes(props)
 
         clonedScene.Name = clonedScene.Name .. sceneIndex
 
+        local localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
+                                                                 "LocalTeleporterPositioner")
         Teleporters.addTeleporters({
             parent = clonedScene,
             sceneIndex = sceneIndex,
@@ -64,7 +60,8 @@ function module.addScenes(props)
             isStartScene = sceneConfig.isStartScene,
             isEndScene = sceneConfig.isEndScene,
             questTitle = questConfig.questTitle,
-            skyBoxTeleporter = skyBoxTeleporter
+            skyBoxTeleporter = skyBoxTeleporter,
+            localTPPositioner = localTPPositioner
         })
 
         local words = {

@@ -8,18 +8,9 @@ local Scenes = require(Sss.Source.Scenes.Scenes)
 local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
 local Constants = require(Sss.Source.Constants.Constants)
 local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
-
--- local assetId = 6091760773
--- local InsertService = game:GetService("InsertService")
--- local model = InsertService:LoadAsset(assetId)
--- model.Parent = workspace
--- local test = require(model.LetterFall_SSS.InitLetterFall)
--- test.initLetterFall()
+local Teleporters = require(Sss.Source.Teleporters.Teleporters)
 
 function addRemoteObjects()
-    -- ConfigGame.configGame()
-
-    -- Group quests into books that are separate islands
     local questConfigs = SceneConfig.getScenesConfig()
 
     if (Constants.singleScene) then
@@ -27,22 +18,12 @@ function addRemoteObjects()
         questConfigs = {questConfigs[1]}
         local sceneConfigs = questConfigs[1].sceneConfigs
         questConfigs[1].sceneConfigs = {sceneConfigs[1]}
-        --  
-
     end
 
     local myStuff = workspace:FindFirstChild("MyStuff")
-
     local questsOrigin = Utils.getFirstDescendantByName(myStuff, "QuestsOrigin")
-    local letterTemplates = CS:GetTagged("TG-LetterTemplate")
-    local letterTemplate = letterTemplates[1]
-    -- local letterTemplate = Utils.getFirstDescendantByName(myStuff,
-    --                                                       "LetterTemplate")
+    local letterTemplate = CS:GetTagged("TG-LetterTemplate")[1]
 
-    -- local letters = {
-    --     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
-    --     'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-    -- }
     local letters = {'C'}
 
     for i, char in ipairs(letters) do
@@ -115,6 +96,13 @@ function addRemoteObjects()
         }
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
 
+        local skyBoxTeleporter = Teleporters.configSkyboxTeleporter(
+                                     {
+                questIndex = questIndex,
+                questTitle = questConfig.questTitle,
+                questFolder = questFolder
+            })
+
         -- questBlock.Transparency = 1
         local addScenesProps = {
             parent = questBlock,
@@ -122,7 +110,8 @@ function addRemoteObjects()
             questConfig = questConfig,
             gridPadding = gridPadding,
             questFolder = questFolder,
-            questIndex = questIndex
+            questIndex = questIndex,
+            skyBoxTeleporter = skyBoxTeleporter
         }
         Scenes.addScenes(addScenesProps)
 

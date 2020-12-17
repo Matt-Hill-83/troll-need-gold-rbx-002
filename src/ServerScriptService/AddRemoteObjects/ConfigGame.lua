@@ -42,7 +42,7 @@ function setVisibility()
 
     Utils.setItemAndChildrenPropsByName({
         name = "DockWalls",
-        props = {Transparency = .5}
+        props = {Transparency = 0.5}
         -- props = {Transparency = 1}
     })
 
@@ -65,7 +65,8 @@ function setVisibility()
     Utils.setWallHeightbyParentModelName({name = "BaseWalls", height = 2})
 
     local tagBaseWallTransparent = CS:GetTagged("BaseWallTransparent")
-    Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
+    Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 4})
+    -- Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
     Utils.setPropsByTag({
         tag = "BaseWallTransparent",
         -- props = {Transparency = 1}
@@ -76,7 +77,7 @@ function setVisibility()
     Utils.setWallHeightByList({items = skyBoxWalls, height = 30})
     Utils.setPropsByTag({
         tag = "SkyBoxWalls",
-        props = {Transparency = .9}
+        props = {Transparency = 0.9}
         -- props = {Transparency = 0.6}
     })
 
