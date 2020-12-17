@@ -99,16 +99,7 @@ function initWord(letterFallFolder)
         newLetter.Transparency = 0
 
         local z = newLetter.Size.Z * (letterIndex - 0) * spacingFactor
-
-        print('CS:GetTagged("WordLetterBlockPositioner")' .. ' - start');
-        print(CS:GetTagged("WordLetterBlockPositioner"));
-        print('CS:GetTagged("WordLetterBlockPositioner")' .. ' - end');
         local letterPositioner = CS:GetTagged("WordLetterBlockPositioner")[1]
-        print('letterPositioner.CFrame' .. ' - start');
-        print(letterPositioner.CFrame);
-        print('letterPositioner.CFrame' .. ' - end');
-        -- newLetter.Position = newLetter.Position + Vector3.new(0, 0, z)
-        -- newLetter.Position = letterPositioner.Position + Vector3.new(0, 0, z)
         newLetter.CFrame = letterPositioner.CFrame *
                                CFrame.new(Vector3.new(0, 0, z))
         letterPositioner.Transparency = 1
