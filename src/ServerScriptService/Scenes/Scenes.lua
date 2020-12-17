@@ -4,6 +4,7 @@ local Bridges = require(Sss.Source.Bridges.Bridges)
 local Characters = require(Sss.Source.Characters.Characters)
 local TheaterSeat = require(Sss.Source.TheaterSeat.TheaterSeat)
 local Teleporters = require(Sss.Source.Teleporters.Teleporters)
+local MiniGame = require(Sss.Source.MiniGame.MiniGame)
 local DropBox = require(Sss.Source.DropBox.DropBox)
 local Location = require(Sss.Source.Location.Location)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
@@ -63,6 +64,14 @@ function module.addScenes(props)
             isEndScene = sceneConfig.isEndScene,
             questTitle = questConfig.questTitle,
             skyBoxTeleporter = skyBoxTeleporter
+        })
+
+        MiniGame.addMiniGame({
+            parent = clonedScene,
+            sceneIndex = sceneIndex,
+            questIndex = questIndex,
+            isStartScene = sceneConfig.isStartScene,
+            questTitle = questConfig.questTitle
         })
 
         local dropBox = Utils.getFirstDescendantByName(clonedScene,
