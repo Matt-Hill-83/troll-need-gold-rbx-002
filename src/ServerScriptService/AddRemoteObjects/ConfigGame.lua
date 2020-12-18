@@ -27,14 +27,7 @@ function setVisibility()
     for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
 
     local taggedPartsTransparent = CS:GetTagged("Transparent")
-
-    print('taggedPartsTransparent' .. ' - start');
-    print(taggedPartsTransparent);
-    for i, item in ipairs(taggedPartsTransparent) do
-        item.Transparency = 1
-        print('item.Transparency' .. ' - start');
-        print(item.Transparency);
-    end
+    for i, item in ipairs(taggedPartsTransparent) do item.Transparency = 1 end
 
     local itemsToHideAtRuntine = {'QuestsOrigin', 'TerrainBase'}
     for i, item in ipairs(itemsToHideAtRuntine) do
