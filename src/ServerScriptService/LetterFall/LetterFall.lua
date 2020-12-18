@@ -175,7 +175,7 @@ function createBalls(miniGameState)
 
     for count = 1, 10 do
         local newBall = ball:Clone()
-        newBall.CFrame = newBall.CFrame + Vector3.new(-0.1, 0, 0)
+        newBall.Handle.CFrame = newBall.Handle.CFrame + Vector3.new(-0.1, 0, 0)
         newBall.Parent = ball.Parent
     end
 end
