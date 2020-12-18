@@ -119,6 +119,8 @@ function addRemoteObjects()
     questBlockTemplate:Destroy()
     local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
     letterFallTemplate:Destroy()
+    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
+    teleporterTemplate:Destroy()
 
     -- Do this last after everything has been created/deleted
     ConfigGame.configGame()

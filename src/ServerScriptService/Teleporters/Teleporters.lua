@@ -3,35 +3,12 @@ local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 
 local module = {}
 
-function module.configSkyboxTeleporter(props)
-    local questIndex = props.questIndex
-    local questTitle = props.questTitle
-    local questFolder = props.questFolder
-
-    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
-    local skyBoxTeleporter = teleporterTemplate:Clone()
-    skyBoxTeleporter.Parent = questFolder
-
-    local teleporterSpacing = 10
-    local labels2 = Utils.getDescendantsByName(skyBoxTeleporter,
-                                               "TeleporterLabel")
-    for i, label in ipairs(labels2) do label.Text = questTitle end
-
-    local teleporterPositioner = Utils.getFirstDescendantByName(workspace,
-                                                                "SkyBoxTeleporterPositioner")
-    skyBoxTeleporter.PrimaryPart.CFrame =
-        teleporterPositioner.CFrame *
-            CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0)) *
-            CFrame.Angles(0, math.rad(0), 0)
-
-    skyBoxTeleporter.PrimaryPart.Anchored = true
-    skyBoxTeleporter.Name = "teleporter" .. "-sky-Q- " .. questIndex
-
-    return skyBoxTeleporter
-end
-
 local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
     localTP.PrimaryPart.Touched:Connect(function(touchPart)
+
+        print('localTP touched')
+        print('localTP touched')
+        print('localTP touched')
         if touchPart and touchPart.Parent and touchPart.Parent.Humanoid and
             touchPart.Parent.currentlyTeleporting.Value == false then
 
@@ -62,6 +39,34 @@ local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
     end)
 end
 
+function module.configSkyboxTeleporter(props)
+    local questIndex = props.questIndex
+    local questTitle = props.questTitle
+    local questFolder = props.questFolder
+
+    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
+    local skyBoxTeleporter = teleporterTemplate:Clone()
+    skyBoxTeleporter.Parent = questFolder
+
+    local teleporterSpacing = 10
+    local labels2 = Utils.getDescendantsByName(skyBoxTeleporter,
+                                               "TeleporterLabel")
+    for i, label in ipairs(labels2) do label.Text = questTitle end
+
+    skyBoxTeleporter.PrimaryPart.Anchored = false
+    local teleporterPositioner = Utils.getFirstDescendantByName(workspace,
+                                                                "SkyBoxTeleporterPositioner")
+    skyBoxTeleporter.PrimaryPart.CFrame =
+        teleporterPositioner.CFrame *
+            CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0)) *
+            CFrame.Angles(0, math.rad(0), 0)
+
+    skyBoxTeleporter.PrimaryPart.Anchored = true
+    skyBoxTeleporter.Name = "teleporter" .. "-sky-Q- " .. questIndex
+
+    return skyBoxTeleporter
+end
+
 function module.configLocalTeleporter(props)
     local questIndex = props.questIndex
     local questTitle = props.questTitle
@@ -78,7 +83,8 @@ function module.configLocalTeleporter(props)
         Utils.getDescendantsByName(localTeleporter, "TeleporterLabel")
     for i, label in ipairs(labels) do label.Text = questTitle end
 
-    localTeleporter.Name = "teleporter" .. "-local- " .. sceneIndex
+    localTeleporter.Name = "teleporter" .. "-local-Q" .. questIndex .. "-S" ..
+                               sceneIndex
     return localTeleporter
 end
 
@@ -94,10 +100,18 @@ function module.addTeleporters(props)
 
     if (not isStartScene and not isEndScene) then return end
 
+    print('--------------------------');
+    print('--------------------------');
+    print('isStartScene' .. ' - start');
+    print(isStartScene);
+    print('isEndScene' .. ' - start');
+    print(isEndScene);
+
     local props = {
         parent = parent,
         questTitle = questTitle,
         sceneIndex = sceneIndex,
+        questIndex = questIndex,
         localTPPositioner = localTPPositioner
     }
     local localTeleporter = module.configLocalTeleporter(props)
@@ -108,7 +122,11 @@ function module.addTeleporters(props)
     end
 
     if isEndScene then
-        setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
+        print('isEndScene')
+        print('isEndScene')
+        print('isEndScene')
+        print('isEndScene')
+        -- setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
         setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
     end
 
