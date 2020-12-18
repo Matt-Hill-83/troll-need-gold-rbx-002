@@ -7,7 +7,7 @@ local module = {}
 
 function initLetterFall(miniGameState)
     LetterFall.initGameToggle(miniGameState)
-    LetterFall.createBalls(miniGameState)
+    -- LetterFall.createBalls(miniGameState)
 end
 
 module.initLetterFall = initLetterFall

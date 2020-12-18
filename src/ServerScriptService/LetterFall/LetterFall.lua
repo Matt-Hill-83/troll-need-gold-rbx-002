@@ -1,12 +1,14 @@
 local CS = game:GetService("CollectionService")
 local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
+
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local HandleClick = require(Sss.Source.LetterFall.HandleClick)
-local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
-local InitWord = require(Sss.Source.LetterFall.InitWord)
 local InitLetterRack = require(Sss.Source.LetterFall.InitLetterRack)
+local InitWord = require(Sss.Source.LetterFall.InitWord)
+local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
+
+local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
 
 local module = {
     tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
@@ -29,17 +31,6 @@ function initGameToggle(miniGameState)
         startGameTrigger.Touched:Connect(onPartTouched)
     end
 
-end
-
-function createBalls(miniGameState)
-    local letterFallFolder = miniGameState.letterFallFolder
-    local ball = Utils.getFirstDescendantByName(letterFallFolder, "GemTemplate")
-
-    for count = 1, 10 do
-        local newBall = ball:Clone()
-        newBall.Handle.CFrame = newBall.Handle.CFrame + Vector3.new(-0.1, 0, 0)
-        newBall.Parent = ball.Parent
-    end
 end
 
 function getRunTimeLetterFolder(miniGameState)

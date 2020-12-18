@@ -38,9 +38,20 @@ function isWordComplete(wordLetters)
     return true
 end
 
+function createBalls(miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
+    local ball = Utils.getFirstDescendantByName(letterFallFolder, "GemTemplate")
+
+    for count = 1, 10 do
+        local newBall = ball:Clone()
+        newBall.Handle.CFrame = newBall.Handle.CFrame + Vector3.new(-0.1, 0, 0)
+        newBall.Parent = ball.Parent
+    end
+end
+
 module.colorLetterText = colorLetterText
 module.applyLetterText = applyLetterText
 module.isDesiredLetter = isDesiredLetter
 module.isWordComplete = isWordComplete
-
+module.createBalls = createBalls
 return module

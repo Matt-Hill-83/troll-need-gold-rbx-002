@@ -32,6 +32,9 @@ end
 function handleBrick(player, clickedLetter, miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local wordLetters = miniGameState.wordLetters
+
+    LetterFallUtils.createBalls(miniGameState)
+
     local ballPitBottom = Utils.getFirstDescendantByName(letterFallFolder,
                                                          "BallPitBottom")
     if ballPitBottom then ballPitBottom:Destroy() end
