@@ -10,38 +10,6 @@ local module = {
     tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
 }
 
--- function isDesiredLetter(letter, clickedLetter)
---     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
---                           .Text
---     return letter.found ~= true and letter.char == textLabel
--- end
-
--- function isWordComplete(wordLetters)
---     for i, word in ipairs(wordLetters) do
---         if not word.found then return false end
---     end
---     return true
--- end
-
--- function colorLetterText(props)
---     local color = props.color
---     local letterBlock = props.letterBlock
-
---     local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
---     for i, label in ipairs(textLabels) do
---         label.TextColor3 = color or Color3.new(255, 0, 191)
-
---     end
--- end
-
--- function applyLetterText(props)
---     local char = props.char
---     local letterBlock = props.letterBlock
-
---     local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
---     for i, label in ipairs(textLabels) do label.Text = char end
--- end
-
 function initGameToggle(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local startGameTrigger = Utils.getFirstDescendantByName(letterFallFolder,
@@ -166,7 +134,7 @@ function initLetterRack(miniGameState)
             CS:AddTag(newLetter, module.tagNames.LetterBlock)
 
             local y = newLetter.Size.Y * (rowIndex - 1) * spacingFactor
-            applyLetterText({letterBlock = newLetter, char = char})
+            HandleClick.applyLetterText({letterBlock = newLetter, char = char})
             newLetter.CFrame = newLetter.CFrame *
                                    CFrame.new(Vector3.new(0, y, 0))
             table.insert(newLetters, newLetter)
@@ -223,45 +191,45 @@ function getWordFolder(miniGameState)
     }))
 end
 
-function initClickHandler(miniGameState)
-    -- Gets arguments from EventHandler in StarterPack
-    function brickClickHandler(player, clickedLetter)
-        handleBrick(player, clickedLetter, miniGameState)
-    end
-    remoteEvent.OnServerEvent:Connect(brickClickHandler)
-end
+-- function initClickHandler(miniGameState)
+--     -- Gets arguments from EventHandler in StarterPack
+--     function brickClickHandler(player, clickedLetter)
+--         handleBrick(player, clickedLetter, miniGameState)
+--     end
+--     remoteEvent.OnServerEvent:Connect(brickClickHandler)
+-- end
 
-function handleBrick(player, clickedLetter, miniGameState)
-    local letterFallFolder = miniGameState.letterFallFolder
-    local wordLetters = miniGameState.wordLetters
+-- function handleBrick(player, clickedLetter, miniGameState)
+--     local letterFallFolder = miniGameState.letterFallFolder
+--     local wordLetters = miniGameState.wordLetters
 
-    local ballPitBottom = Utils.getFirstDescendantByName(letterFallFolder,
-                                                         "BallPitBottom")
+--     local ballPitBottom = Utils.getFirstDescendantByName(letterFallFolder,
+--                                                          "BallPitBottom")
 
-    if ballPitBottom then ballPitBottom:Destroy() end
+--     if ballPitBottom then ballPitBottom:Destroy() end
 
-    local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
-    if not isChild then return {} end
+--     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
+--     if not isChild then return {} end
 
-    for i, letter in ipairs(wordLetters) do
-        if LetterFallUtils.isDesiredLetter(letter, clickedLetter) then
-            letter.found = true
-            LetterFallUtils.colorLetterText(
-                {
-                    letterBlock = letter.instance,
-                    color = Color3.fromRGB(113, 17, 161)
-                })
+--     for i, letter in ipairs(wordLetters) do
+--         if LetterFallUtils.isDesiredLetter(letter, clickedLetter) then
+--             letter.found = true
+--             LetterFallUtils.colorLetterText(
+--                 {
+--                     letterBlock = letter.instance,
+--                     color = Color3.fromRGB(113, 17, 161)
+--                 })
 
-            clickedLetter:Destroy()
-            local wordComplete = LetterFallUtils.isWordComplete(wordLetters)
-            if wordComplete then
-                miniGameState.lastWordIndex = miniGameState.lastWordIndex + 1
-                module.initWord(miniGameState)
-            end
-            break
-        end
-    end
-end
+--             clickedLetter:Destroy()
+--             local wordComplete = LetterFallUtils.isWordComplete(wordLetters)
+--             if wordComplete then
+--                 miniGameState.lastWordIndex = miniGameState.lastWordIndex + 1
+--                 module.initWord(miniGameState)
+--             end
+--             break
+--         end
+--     end
+-- end
 
 -- module.colorLetterText = colorLetterText
 module.initGameToggle = initGameToggle
