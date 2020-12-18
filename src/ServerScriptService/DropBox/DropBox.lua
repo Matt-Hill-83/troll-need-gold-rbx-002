@@ -17,9 +17,8 @@ function module.configDropBox(props)
     local item = props.item
 
     -- if (isStartScene) then
-    if (isEndScene) then
-        local part = Utils.getFirstDescendantByName(scene,
-                                                    "DropBoxDetectionRegion")
+    local part = Utils.getFirstDescendantByName(scene, "DropBoxDetectionRegion")
+    if (part) then
 
         local function onPartTouched(otherPart)
             print('DropBoxDetectionRegion')
@@ -43,8 +42,7 @@ function module.configDropBox(props)
         for i, label in ipairs(labels) do label.Text = item.name end
 
         dropBox.Name = scene.Name .. "-local- " .. sceneIndex
-    else
-        dropBox:Destroy()
+
     end
 
 end
