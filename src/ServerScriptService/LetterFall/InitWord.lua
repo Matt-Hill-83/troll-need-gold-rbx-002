@@ -69,7 +69,6 @@ function getWordFolder(miniGameState)
 end
 
 module.initGameToggle = initGameToggle
-module.createBalls = createBalls
 module.initLetterRack = initLetterRack
 module.initWord = initWord
 
