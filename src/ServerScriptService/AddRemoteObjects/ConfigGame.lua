@@ -20,13 +20,16 @@ function configPlayers()
 end
 
 function setVisibility()
-    -- local testLabBase = Utils.getFirstDescendantByName(workspace, "TestLabBase")
-    -- testLabBase:Destroy()
+    local testLabBase = Utils.getFirstDescendantByName(workspace, "TestLabBase")
+    testLabBase:Destroy()
 
     local taggedPartsDestroy = CS:GetTagged("Destroy")
     for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
 
     local taggedPartsTransparent = CS:GetTagged("Transparent")
+
+    print('taggedPartsTransparent' .. ' - start');
+    print(taggedPartsTransparent);
     for i, item in ipairs(taggedPartsTransparent) do
         Utils.setItemPropsByInst({
             item = item,
@@ -42,8 +45,8 @@ function setVisibility()
 
     Utils.setItemAndChildrenPropsByName({
         name = "DockWalls",
-        props = {Transparency = 0.5}
-        -- props = {Transparency = 1}
+        -- props = {Transparency = 0.5}
+        props = {Transparency = 1}
     })
 
     Utils.setItemAndChildrenPropsByName({
@@ -69,8 +72,8 @@ function setVisibility()
     -- Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
     Utils.setPropsByTag({
         tag = "BaseWallTransparent",
-        -- props = {Transparency = 1}
-        props = {Transparency = 0.6}
+        props = {Transparency = 1}
+        -- props = {Transparency = 0.6}
     })
 
     local skyBoxWalls = CS:GetTagged("SkyBoxWalls")

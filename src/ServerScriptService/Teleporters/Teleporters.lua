@@ -6,9 +6,6 @@ local module = {}
 local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
     localTP.PrimaryPart.Touched:Connect(function(touchPart)
 
-        print('localTP touched')
-        print('localTP touched')
-        print('localTP touched')
         if touchPart and touchPart.Parent and touchPart.Parent.Humanoid and
             touchPart.Parent.currentlyTeleporting.Value == false then
 
@@ -100,13 +97,6 @@ function module.addTeleporters(props)
 
     if (not isStartScene and not isEndScene) then return end
 
-    print('--------------------------');
-    print('--------------------------');
-    print('isStartScene' .. ' - start');
-    print(isStartScene);
-    print('isEndScene' .. ' - start');
-    print(isEndScene);
-
     local props = {
         parent = parent,
         questTitle = questTitle,
@@ -118,15 +108,11 @@ function module.addTeleporters(props)
 
     if isStartScene then
         setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
-        -- setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
+        setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
     end
 
     if isEndScene then
-        print('isEndScene')
-        print('isEndScene')
-        print('isEndScene')
-        print('isEndScene')
-        -- setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
+        setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
         setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
     end
 
