@@ -3,6 +3,7 @@ local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
+local LetterFall = require(Sss.Source.LetterFall.HandleClick)
 
 local module = {
     tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}

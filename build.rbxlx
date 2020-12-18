@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>481.691498</X>
-					<Y>1.83900452</Y>
-					<Z>-1011.77521</Z>
-					<R00>-0.361670911</R00>
-					<R01>0.660029948</R01>
-					<R02>-0.658448577</R02>
-					<R10>1.49011612e-08</R10>
-					<R11>0.706258118</R11>
-					<R12>0.707954347</R12>
-					<R20>0.932305813</R20>
-					<R21>0.256046504</R21>
-					<R22>-0.255433023</R22>
+					<X>476.7052</X>
+					<Y>-9.43447876</Y>
+					<Z>-1031.60083</Z>
+					<R00>-0.139335632</R00>
+					<R01>0.120175131</R01>
+					<R02>-0.98292613</R02>
+					<R10>1.86264493e-09</R10>
+					<R11>0.992608786</R11>
+					<R12>0.121358961</R12>
+					<R20>0.990245223</R20>
+					<R21>0.0169096254</R21>
+					<R22>-0.138305768</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>521.199219</X>
-					<Y>-40.639122</Y>
-					<Z>-996.448914</Z>
+					<X>478.671051</X>
+					<Y>-9.6771965</Y>
+					<Z>-1031.32422</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -44425,6 +44425,7 @@ local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
+local LetterFall = require(Sss.Source.LetterFall.HandleClick)
 
 local module = {
     tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
@@ -44702,6 +44703,118 @@ return module
 						<string name="Name">TargetWord</string>
 						<string name="ScriptGuid">{540cbbed-1a80-4768-b9ed-8b3d3120c219}</string>
 						<ProtectedString name="Source"><![CDATA[
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBXf0bf0cad248c42d2939450cbb96838f7">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">HandleClick</string>
+						<string name="ScriptGuid">{4548304d-4826-4a12-b5ad-4279763cc705}</string>
+						<ProtectedString name="Source"><![CDATA[local CS = game:GetService("CollectionService")
+local Sss = game:GetService("ServerScriptService")
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
+local module = {}
+
+function colorLetterText(props)
+    local color = props.color
+    local letterBlock = props.letterBlock
+    local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
+    for i, label in ipairs(textLabels) do
+        label.TextColor3 = color or Color3.new(255, 0, 191)
+    end
+end
+function applyLetterText(props)
+    local char = props.char
+    local letterBlock = props.letterBlock
+    local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
+    for i, label in ipairs(textLabels) do label.Text = char end
+end
+function createBalls(miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
+    local ball = Utils.getFirstDescendantByName(letterFallFolder, "GemTemplate")
+    for count = 1, 10 do
+        local newBall = ball:Clone()
+        newBall.Handle.CFrame = newBall.Handle.CFrame + Vector3.new(-0.1, 0, 0)
+        newBall.Parent = ball.Parent
+    end
+end
+function getRunTimeLetterFolder(miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
+    local runtimeFolder = Utils.getOrCreateFolder(
+                              {
+            name = "RunTimeFolder",
+            parent = letterFallFolder
+        })
+    return Utils.getOrCreateFolder({
+        name = "RunTimeLetterRackFolder",
+        parent = runtimeFolder
+    })
+end
+function getWordFolder(miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
+    local runtimeFolder = Utils.getOrCreateFolder(
+                              {
+            name = "RunTimeFolder",
+            parent = letterFallFolder
+        })
+    return (Utils.getOrCreateFolder({
+        name = "RunTimeWordBoxFolder",
+        parent = runtimeFolder
+    }))
+end
+function isDesiredLetter(letter, clickedLetter)
+    local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
+                          .Text
+    return letter.found ~= true and letter.char == textLabel
+end
+function isWordComplete(wordLetters)
+    for i, word in ipairs(wordLetters) do
+        if not word.found then return false end
+    end
+    return true
+end
+function initClickHandler(miniGameState)
+    -- Gets arguments from EventHandler in StarterPack
+    function brickClickHandler(player, clickedLetter)
+        handleBrick(player, clickedLetter, miniGameState)
+    end
+    remoteEvent.OnServerEvent:Connect(brickClickHandler)
+end
+function handleBrick(player, clickedLetter, miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
+    local wordLetters = miniGameState.wordLetters
+    local ballPitBottom = Utils.getFirstDescendantByName(letterFallFolder,
+                                                         "BallPitBottom")
+    if ballPitBottom then ballPitBottom:Destroy() end
+    local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
+    if not isChild then return {} end
+    for i, letter in ipairs(wordLetters) do
+        if isDesiredLetter(letter, clickedLetter) then
+            letter.found = true
+            module.colorLetterText({
+                letterBlock = letter.instance,
+                color = Color3.fromRGB(113, 17, 161)
+            })
+            clickedLetter:Destroy()
+            local wordComplete = isWordComplete(wordLetters)
+            if wordComplete then
+                miniGameState.lastWordIndex = miniGameState.lastWordIndex + 1
+                module.initWord(miniGameState)
+            end
+            break
+        end
+    end
+end
+module.colorLetterText = colorLetterText
+module.createBalls = createBalls
+module.applyLetterText = applyLetterText
+return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
