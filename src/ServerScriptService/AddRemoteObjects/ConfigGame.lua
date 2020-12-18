@@ -31,11 +31,9 @@ function setVisibility()
     print('taggedPartsTransparent' .. ' - start');
     print(taggedPartsTransparent);
     for i, item in ipairs(taggedPartsTransparent) do
-        Utils.setItemPropsByInst({
-            item = item,
-            props = {Transparency = 1}
-            -- props = {Transparency = 1, CanCollide = false, Anchored = true}
-        })
+        item.Transparency = 1
+        print('item.Transparency' .. ' - start');
+        print(item.Transparency);
     end
 
     local itemsToHideAtRuntine = {'QuestsOrigin', 'TerrainBase'}

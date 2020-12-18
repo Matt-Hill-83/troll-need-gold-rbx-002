@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>420.828827</X>
-					<Y>3.8985405</Y>
-					<Z>-984.811646</Z>
-					<R00>-0.512861192</R00>
-					<R01>0.493162692</R01>
-					<R02>-0.702683449</R02>
-					<R10>-1.4901163e-08</R10>
-					<R11>0.818528533</R11>
-					<R12>0.57446593</R12>
-					<R20>0.858471632</R20>
-					<R21>0.294621289</R21>
-					<R22>-0.41979146</R22>
+					<X>420.576019</X>
+					<Y>-0.992767334</Y>
+					<Z>-990.326904</Z>
+					<R00>-0.565696001</R00>
+					<R01>0.426702857</R01>
+					<R02>-0.705629349</R02>
+					<R10>-0</R10>
+					<R11>0.855708838</R11>
+					<R12>0.517457724</R12>
+					<R20>0.824613929</R20>
+					<R21>0.292723775</R21>
+					<R22>-0.484071016</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -38390,19 +38390,20 @@ function configPlayers()
 end
 
 function setVisibility()
-    -- local testLabBase = Utils.getFirstDescendantByName(workspace, "TestLabBase")
-    -- testLabBase:Destroy()
+    local testLabBase = Utils.getFirstDescendantByName(workspace, "TestLabBase")
+    testLabBase:Destroy()
 
     local taggedPartsDestroy = CS:GetTagged("Destroy")
     for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
 
     local taggedPartsTransparent = CS:GetTagged("Transparent")
+
+    print('taggedPartsTransparent' .. ' - start');
+    print(taggedPartsTransparent);
     for i, item in ipairs(taggedPartsTransparent) do
-        Utils.setItemPropsByInst({
-            item = item,
-            props = {Transparency = 1}
-            -- props = {Transparency = 1, CanCollide = false, Anchored = true}
-        })
+        item.Transparency = 1
+        print('item.Transparency' .. ' - start');
+        print(item.Transparency);
     end
 
     local itemsToHideAtRuntine = {'QuestsOrigin', 'TerrainBase'}
@@ -38412,8 +38413,8 @@ function setVisibility()
 
     Utils.setItemAndChildrenPropsByName({
         name = "DockWalls",
-        props = {Transparency = 0.5}
-        -- props = {Transparency = 1}
+        -- props = {Transparency = 0.5}
+        props = {Transparency = 1}
     })
 
     Utils.setItemAndChildrenPropsByName({
@@ -38439,8 +38440,8 @@ function setVisibility()
     -- Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
     Utils.setPropsByTag({
         tag = "BaseWallTransparent",
-        -- props = {Transparency = 1}
-        props = {Transparency = 0.6}
+        props = {Transparency = 1}
+        -- props = {Transparency = 0.6}
     })
 
     local skyBoxWalls = CS:GetTagged("SkyBoxWalls")
@@ -40870,9 +40871,6 @@ local module = {}
 local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
     localTP.PrimaryPart.Touched:Connect(function(touchPart)
 
-        print('localTP touched')
-        print('localTP touched')
-        print('localTP touched')
         if touchPart and touchPart.Parent and touchPart.Parent.Humanoid and
             touchPart.Parent.currentlyTeleporting.Value == false then
 
@@ -40964,13 +40962,6 @@ function module.addTeleporters(props)
 
     if (not isStartScene and not isEndScene) then return end
 
-    print('--------------------------');
-    print('--------------------------');
-    print('isStartScene' .. ' - start');
-    print(isStartScene);
-    print('isEndScene' .. ' - start');
-    print(isEndScene);
-
     local props = {
         parent = parent,
         questTitle = questTitle,
@@ -40982,15 +40973,11 @@ function module.addTeleporters(props)
 
     if isStartScene then
         setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
-        -- setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
+        setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
     end
 
     if isEndScene then
-        print('isEndScene')
-        print('isEndScene')
-        print('isEndScene')
-        print('isEndScene')
-        -- setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
+        setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
         setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
     end
 
