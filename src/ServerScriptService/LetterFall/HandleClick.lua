@@ -97,5 +97,6 @@ function handleBrick(player, clickedLetter, miniGameState)
 end
 module.colorLetterText = colorLetterText
 module.createBalls = createBalls
+module.initClickHandler = initClickHandler
 module.applyLetterText = applyLetterText
 return module
