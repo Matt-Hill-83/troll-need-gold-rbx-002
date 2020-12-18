@@ -3,9 +3,7 @@ local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 
-local module = {
-    tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
-}
+local module = {}
 
 function initWord(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
@@ -38,7 +36,7 @@ function initWord(miniGameState)
 
         letterPositioner.Transparency = 1
 
-        CS:AddTag(newLetter, module.tagNames.WordLetter)
+        CS:AddTag(newLetter, LetterFallUtils.tagNames.WordLetter)
         LetterFallUtils.applyLetterText({letterBlock = newLetter, char = letter})
         LetterFallUtils.colorLetterText({
             letterBlock = newLetter,

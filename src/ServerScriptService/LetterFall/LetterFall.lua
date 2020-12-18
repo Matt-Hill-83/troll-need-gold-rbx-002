@@ -10,9 +10,7 @@ local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 
 local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
 
-local module = {
-    tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
-}
+local module = {}
 
 function initGameToggle(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder

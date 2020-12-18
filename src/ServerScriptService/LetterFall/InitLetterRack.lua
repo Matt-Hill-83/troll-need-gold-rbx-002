@@ -7,9 +7,7 @@ local HandleClick = require(Sss.Source.LetterFall.HandleClick)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 local InitWord = require(Sss.Source.LetterFall.InitWord)
 
-local module = {
-    tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
-}
+local module = {}
 
 function initLetterRack(miniGameState)
     local runTimeLetterFolder = getRunTimeLetterFolder(miniGameState)
@@ -66,7 +64,7 @@ function initLetterRack(miniGameState)
             local newLetter = letterTemplate:Clone()
 
             newLetter.Name = "newLetter-" .. char
-            CS:AddTag(newLetter, module.tagNames.LetterBlock)
+            CS:AddTag(newLetter, LetterFallUtils.tagNames.LetterBlock)
 
             local y = newLetter.Size.Y * (rowIndex - 1) * spacingFactor
             LetterFallUtils.applyLetterText(
