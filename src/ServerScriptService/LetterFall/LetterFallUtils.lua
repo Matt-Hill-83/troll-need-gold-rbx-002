@@ -48,7 +48,10 @@ function createBalls(miniGameState)
         local newBall = ball:Clone()
         newBall.Handle.CFrame = newBall.Handle.CFrame + Vector3.new(-0.1, 0, 0)
         newBall.Parent = ball.Parent
+        Utils.enableChildWelds({part = newBall, enabled = false})
     end
+
+    ball:Destroy()
 end
 
 module.colorLetterText = colorLetterText

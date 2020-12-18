@@ -25,7 +25,7 @@ function module.addScenes(props)
                                                               "SceneTemplate")
     local sceneBase = Utils.getFirstDescendantByName(questFolder, "SceneBase")
 
-    local sceneStartPosition = getStartPosition(
+    local sceneStartPosition = getInitialScenePosition(
                                    {
             gridPadding = gridPadding,
             parent = parent,
@@ -50,19 +50,6 @@ function module.addScenes(props)
             })
 
         clonedScene.Name = clonedScene.Name .. sceneIndex
-
-        -- local localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
-        --                                                          "LocalTeleporterPositioner")
-        -- Teleporters.addTeleporters({
-        --     parent = clonedScene,
-        --     sceneIndex = sceneIndex,
-        --     questIndex = questIndex,
-        --     isStartScene = sceneConfig.isStartScene,
-        --     isEndScene = sceneConfig.isEndScene,
-        --     questTitle = questConfig.questTitle,
-        --     skyBoxTeleporter = skyBoxTeleporter,
-        --     localTPPositioner = localTPPositioner
-        -- })
 
         local words = {
             {'C', 'A', 'T'}, {'B', 'A', 'T'}, {'H', 'A', 'T'}, {'M', 'A', 'T'},
@@ -168,7 +155,7 @@ function module.addScenes(props)
     sceneTemplateModel:Destroy()
 end
 
-getStartPosition = function(props)
+getInitialScenePosition = function(props)
     local parent = props.parent
     local child = props.child
     local gridPadding = props.gridPadding
