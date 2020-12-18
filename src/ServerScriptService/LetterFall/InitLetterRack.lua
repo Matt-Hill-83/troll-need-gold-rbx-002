@@ -69,7 +69,8 @@ function initLetterRack(miniGameState)
             CS:AddTag(newLetter, module.tagNames.LetterBlock)
 
             local y = newLetter.Size.Y * (rowIndex - 1) * spacingFactor
-            HandleClick.applyLetterText({letterBlock = newLetter, char = char})
+            LetterFallUtils.applyLetterText(
+                {letterBlock = newLetter, char = char})
             newLetter.CFrame = newLetter.CFrame *
                                    CFrame.new(Vector3.new(0, y, 0))
             table.insert(newLetters, newLetter)
