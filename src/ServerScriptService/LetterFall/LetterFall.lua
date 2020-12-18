@@ -5,6 +5,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
 local HandleClick = require(Sss.Source.LetterFall.HandleClick)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
+local InitWord = require(Sss.Source.LetterFall.InitWord)
 
 local module = {
     tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
@@ -19,7 +20,7 @@ function initGameToggle(miniGameState)
         function onPartTouched(otherPart)
             if not miniGameState.initCompleted then
                 initLetterRack(miniGameState)
-                initWord(miniGameState)
+                InitWord.initWord(miniGameState)
                 HandleClick.initClickHandler(miniGameState)
                 miniGameState.initCompleted = true
             end
@@ -29,52 +30,52 @@ function initGameToggle(miniGameState)
 
 end
 
-function initWord(miniGameState)
-    local letterFallFolder = miniGameState.letterFallFolder
-    local wordFolder = getWordFolder(miniGameState)
-    local word = miniGameState.words[miniGameState.lastWordIndex]
+-- function initWord(miniGameState)
+--     local letterFallFolder = miniGameState.letterFallFolder
+--     local wordFolder = getWordFolder(miniGameState)
+--     local word = miniGameState.words[miniGameState.lastWordIndex]
 
-    for i, letter in ipairs(miniGameState.wordLetters) do
-        if letter.instance then letter.instance:Destroy() end
-        miniGameState.wordLetters[i] = nil
-    end
-    Utils.clearTable(miniGameState.wordLetters)
+--     for i, letter in ipairs(miniGameState.wordLetters) do
+--         if letter.instance then letter.instance:Destroy() end
+--         miniGameState.wordLetters[i] = nil
+--     end
+--     Utils.clearTable(miniGameState.wordLetters)
 
-    local wordBoxFolder = Utils.getFirstDescendantByName(letterFallFolder,
-                                                         "WordBoxFolder")
-    local letterBlockTemplate = Utils.getFirstDescendantByName(wordBoxFolder,
-                                                               "LetterBlockTemplate")
-    local letterPositioner = Utils.getFirstDescendantByName(wordBoxFolder,
-                                                            "WordLetterBlockPositioner")
-    letterBlockTemplate.Transparency = 1
-    local spacingFactor = 1.05
+--     local wordBoxFolder = Utils.getFirstDescendantByName(letterFallFolder,
+--                                                          "WordBoxFolder")
+--     local letterBlockTemplate = Utils.getFirstDescendantByName(wordBoxFolder,
+--                                                                "LetterBlockTemplate")
+--     local letterPositioner = Utils.getFirstDescendantByName(wordBoxFolder,
+--                                                             "WordLetterBlockPositioner")
+--     letterBlockTemplate.Transparency = 1
+--     local spacingFactor = 1.05
 
-    Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
-    for letterIndex, letter in ipairs(word) do
-        local newLetter = letterBlockTemplate:Clone()
-        newLetter.Name = "wordLetter-" .. letterIndex
-        newLetter.Transparency = 0
-        Utils.enableChildWelds({part = newLetter, enable = true})
+--     Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
+--     for letterIndex, letter in ipairs(word) do
+--         local newLetter = letterBlockTemplate:Clone()
+--         newLetter.Name = "wordLetter-" .. letterIndex
+--         newLetter.Transparency = 0
+--         Utils.enableChildWelds({part = newLetter, enable = true})
 
-        local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
+--         local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
 
-        letterPositioner.Transparency = 1
+--         letterPositioner.Transparency = 1
 
-        CS:AddTag(newLetter, module.tagNames.WordLetter)
-        LetterFallUtils.applyLetterText({letterBlock = newLetter, char = letter})
-        LetterFallUtils.colorLetterText({
-            letterBlock = newLetter,
-            color = Color3.new(255, 0, 191)
-        })
+--         CS:AddTag(newLetter, module.tagNames.WordLetter)
+--         LetterFallUtils.applyLetterText({letterBlock = newLetter, char = letter})
+--         LetterFallUtils.colorLetterText({
+--             letterBlock = newLetter,
+--             color = Color3.new(255, 0, 191)
+--         })
 
-        newLetter.CFrame = letterPositioner.CFrame *
-                               CFrame.new(Vector3.new(0, 0, z))
-        -- Do this last to avoid tweening
-        newLetter.Parent = wordFolder
-        table.insert(miniGameState.wordLetters,
-                     {char = letter, found = false, instance = newLetter})
-    end
-end
+--         newLetter.CFrame = letterPositioner.CFrame *
+--                                CFrame.new(Vector3.new(0, 0, z))
+--         -- Do this last to avoid tweening
+--         newLetter.Parent = wordFolder
+--         table.insert(miniGameState.wordLetters,
+--                      {char = letter, found = false, instance = newLetter})
+--     end
+-- end
 
 function initLetterRack(miniGameState)
     local runTimeLetterFolder = getRunTimeLetterFolder(miniGameState)
@@ -191,51 +192,9 @@ function getWordFolder(miniGameState)
     }))
 end
 
--- function initClickHandler(miniGameState)
---     -- Gets arguments from EventHandler in StarterPack
---     function brickClickHandler(player, clickedLetter)
---         handleBrick(player, clickedLetter, miniGameState)
---     end
---     remoteEvent.OnServerEvent:Connect(brickClickHandler)
--- end
-
--- function handleBrick(player, clickedLetter, miniGameState)
---     local letterFallFolder = miniGameState.letterFallFolder
---     local wordLetters = miniGameState.wordLetters
-
---     local ballPitBottom = Utils.getFirstDescendantByName(letterFallFolder,
---                                                          "BallPitBottom")
-
---     if ballPitBottom then ballPitBottom:Destroy() end
-
---     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
---     if not isChild then return {} end
-
---     for i, letter in ipairs(wordLetters) do
---         if LetterFallUtils.isDesiredLetter(letter, clickedLetter) then
---             letter.found = true
---             LetterFallUtils.colorLetterText(
---                 {
---                     letterBlock = letter.instance,
---                     color = Color3.fromRGB(113, 17, 161)
---                 })
-
---             clickedLetter:Destroy()
---             local wordComplete = LetterFallUtils.isWordComplete(wordLetters)
---             if wordComplete then
---                 miniGameState.lastWordIndex = miniGameState.lastWordIndex + 1
---                 module.initWord(miniGameState)
---             end
---             break
---         end
---     end
--- end
-
--- module.colorLetterText = colorLetterText
 module.initGameToggle = initGameToggle
 module.createBalls = createBalls
 module.initLetterRack = initLetterRack
--- module.applyLetterText = applyLetterText
-module.initWord = initWord
+-- module.initWord = initWord
 
 return module
