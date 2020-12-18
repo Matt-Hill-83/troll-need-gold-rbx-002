@@ -63,8 +63,8 @@ function setVisibility()
     -- Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
     Utils.setPropsByTag({
         tag = "BaseWallTransparent",
-        props = {Transparency = 1}
-        -- props = {Transparency = 0.6}
+        -- props = {Transparency = 1}
+        props = {Transparency = 0.6}
     })
 
     local skyBoxWalls = CS:GetTagged("SkyBoxWalls")

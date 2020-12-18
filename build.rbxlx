@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>388.498077</X>
-					<Y>31.2032681</Y>
-					<Z>-1056.16309</Z>
-					<R00>-0.565693736</R00>
-					<R01>0.426704228</R01>
-					<R02>-0.705630362</R02>
-					<R10>1.49011612e-08</R10>
-					<R11>0.85570848</R11>
-					<R12>0.517458439</R12>
-					<R20>0.824615479</R20>
-					<R21>0.292723</R21>
-					<R22>-0.484068871</R22>
+					<X>493.118927</X>
+					<Y>59.6876373</Y>
+					<Z>-1062.50378</Z>
+					<R00>-0.49286595</R00>
+					<R01>-0.52208358</R01>
+					<R02>0.696068943</R02>
+					<R10>1.4901163e-08</R10>
+					<R11>0.799982488</R11>
+					<R12>0.600023448</R12>
+					<R20>-0.870105326</R20>
+					<R21>0.295731127</R21>
+					<R22>-0.39428407</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>449.041565</X>
-					<Y>-13.1949635</Y>
-					<Z>-1014.6297</Z>
+					<X>433.395752</X>
+					<Y>8.20522881</Y>
+					<Z>-1028.67395</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -21784,7 +21784,7 @@ HkIfgB5CWoAeQimAHkIlgP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<Z>0</Z>
 										</Vector3>
 										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
+										<BinaryString name="Tags">VHJhbnNwYXJlbnQ=</BinaryString>
 										<float name="TopParamA">-0.5</float>
 										<float name="TopParamB">0.5</float>
 										<token name="TopSurface">0</token>
@@ -22293,7 +22293,7 @@ HkIfgB5CWoAeQimAHkIlgP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<Z>0</Z>
 										</Vector3>
 										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
+										<BinaryString name="Tags">VHJhbnNwYXJlbnQ=</BinaryString>
 										<float name="TopParamA">-0.5</float>
 										<float name="TopParamB">0.5</float>
 										<token name="TopSurface">0</token>
@@ -38269,8 +38269,8 @@ function setVisibility()
     -- Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
     Utils.setPropsByTag({
         tag = "BaseWallTransparent",
-        props = {Transparency = 1}
-        -- props = {Transparency = 0.6}
+        -- props = {Transparency = 1}
+        props = {Transparency = 0.6}
     })
 
     local skyBoxWalls = CS:GetTagged("SkyBoxWalls")
@@ -42765,7 +42765,7 @@ function module.addMiniGame(props)
                                      clonedLetterFallModel, "LetterFallFolder")
         clonedLetterFallModel.Parent = clonedScene
         clonedLetterFallModel.PrimaryPart.CFrame =
-            clonedScene.PrimaryPart.CFrame + Vector3.new(60, 40, 0)
+            clonedScene.PrimaryPart.CFrame + Vector3.new(50, 10, 0)
         clonedLetterFallModel.PrimaryPart.Anchored = true
 
         miniGameState.letterFallFolder = letterFallFolder
