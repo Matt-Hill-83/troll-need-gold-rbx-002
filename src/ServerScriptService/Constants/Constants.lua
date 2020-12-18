@@ -4,10 +4,10 @@ local module = {
     singleScene = false,
     -- 
     entered = {value = false},
-    baseWallHeight = 16,
+    -- baseWallHeight = 6,
     walkSpeed = 30,
     -- walkSpeed = 16,
-    questWallHeight = 24,
+    questWallHeight = 4,
     sceneHeight = 50
     -- 
 }

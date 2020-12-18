@@ -51,18 +51,18 @@ function module.addScenes(props)
 
         clonedScene.Name = clonedScene.Name .. sceneIndex
 
-        local localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
-                                                                 "LocalTeleporterPositioner")
-        Teleporters.addTeleporters({
-            parent = clonedScene,
-            sceneIndex = sceneIndex,
-            questIndex = questIndex,
-            isStartScene = sceneConfig.isStartScene,
-            isEndScene = sceneConfig.isEndScene,
-            questTitle = questConfig.questTitle,
-            skyBoxTeleporter = skyBoxTeleporter,
-            localTPPositioner = localTPPositioner
-        })
+        -- local localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
+        --                                                          "LocalTeleporterPositioner")
+        -- Teleporters.addTeleporters({
+        --     parent = clonedScene,
+        --     sceneIndex = sceneIndex,
+        --     questIndex = questIndex,
+        --     isStartScene = sceneConfig.isStartScene,
+        --     isEndScene = sceneConfig.isEndScene,
+        --     questTitle = questConfig.questTitle,
+        --     skyBoxTeleporter = skyBoxTeleporter,
+        --     localTPPositioner = localTPPositioner
+        -- })
 
         local words = {
             {'C', 'A', 'T'}, {'B', 'A', 'T'}, {'H', 'A', 'T'}, {'M', 'A', 'T'},
@@ -77,6 +77,31 @@ function module.addScenes(props)
             letterFallTemplate = letterFallTemplate,
             isStartScene = sceneConfig.isStartScene,
             questTitle = questConfig.questTitle
+        })
+
+        -- Add teleporters after MinGame is added, because they could be located
+        --  in mini game
+
+        local localTPPositioner = nil
+        if sceneConfig.isStartScene then
+            localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
+                                                               "MiniGameTeleporterPositioner")
+
+        else
+            localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
+                                                               "LocalTeleporterPositioner")
+
+        end
+
+        Teleporters.addTeleporters({
+            parent = clonedScene,
+            sceneIndex = sceneIndex,
+            questIndex = questIndex,
+            isStartScene = sceneConfig.isStartScene,
+            isEndScene = sceneConfig.isEndScene,
+            questTitle = questConfig.questTitle,
+            skyBoxTeleporter = skyBoxTeleporter,
+            localTPPositioner = localTPPositioner
         })
 
         local dropBox = Utils.getFirstDescendantByName(clonedScene,

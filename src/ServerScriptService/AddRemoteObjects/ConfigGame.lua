@@ -77,7 +77,7 @@ function setVisibility()
 
 end
 function module.configGame()
-    setVisibility()
+    -- setVisibility()
     configPlayers()
     -- Utils.reportPlayerLocation()
 end
