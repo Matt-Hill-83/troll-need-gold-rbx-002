@@ -1,7 +1,7 @@
 local Sss = game:GetService("ServerScriptService")
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
-local collectionService = game:GetService("CollectionService")
+local CS = game:GetService("CollectionService")
 
 function enableChildWelds(props)
     local part = props.part
@@ -26,7 +26,7 @@ function module.setPropsByTag(props)
     local tag = props.tag
     local theProps = props.props
 
-    local items = collectionService:GetTagged(tag)
+    local items = CS:GetTagged(tag)
 
     for i, item in ipairs(items) do
         mergeTables(item, theProps)

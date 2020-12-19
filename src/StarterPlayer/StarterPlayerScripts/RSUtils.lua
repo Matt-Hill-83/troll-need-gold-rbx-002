@@ -1,15 +1,34 @@
 local StarterPlayer = game:GetService("StarterPlayer")
 local Constants = require(StarterPlayer.Source.StarterPlayerScripts.RSConstants)
 local module = {}
-local collectionService = game:GetService("CollectionService")
+local CS = game:GetService("CollectionService")
 -- 
 -- 
+
+function enableChildWelds(props)
+    local part = props.part
+    local enabled = props.enabled
+
+    local allWelds = module.getDescendantsByType(part, "Weld")
+    for i, weld in ipairs(allWelds) do
+        weld.Enabled = enabled
+        -- 
+    end
+
+end
+
+function genRandom(min, max)
+    local rand = min + math.random() * (max - min)
+    return math.ceil(rand)
+end
+
+function module.clearTable(tbl) for key in pairs(tbl) do tbl[key] = nil end end
 
 function module.setPropsByTag(props)
     local tag = props.tag
     local theProps = props.props
 
-    local items = collectionService:GetTagged(tag)
+    local items = CS:GetTagged(tag)
 
     for i, item in ipairs(items) do
         mergeTables(item, theProps)
@@ -53,9 +72,6 @@ function module.getDescendantsByType(parent, type)
     end
     return output
 end
-
--- 
--- 
 
 function hideItem(part, hide)
     local transparency = hide and 1 or 0
@@ -125,6 +141,7 @@ function sizeWalls2(props)
     for i, item in ipairs(items) do
         if item:isA("Part") then item.CanCollide = false end
     end
+
     for i, item in ipairs(items) do
         if item:isA("Part") then
             local posY = item.Position.Y - item.Size.Y / 2
@@ -135,9 +152,9 @@ function sizeWalls2(props)
 
         end
     end
+
     for i, item in ipairs(items) do
         if item:isA("Part") then
-
             item.CanCollide = true
             item.Anchored = true
         end
@@ -191,6 +208,11 @@ function module.setItemAndChildrenPropsByInst(myProps)
     setChildrenProps(item, props)
 end
 
+function module.setItemPropsByInst(myProps)
+    local item = myProps.item
+    local props = myProps.props
+end
+
 function module.getOrCreateFolder(props)
     local name = props.name
     local parent = props.parent
@@ -234,12 +256,20 @@ function module.getDecalIdFromName(props)
     end
 end
 
+-- TODO
+-- TODO
+-- TODO
+-- TODO
+-- TODO
+-- TODO
 function module.getDisplayNameFromName(props)
     local name = props.name
     if (Constants.characters[name] and Constants.characters[name]["displayName"]) then
         return Constants.characters[name]["displayName"]
     else
         print("---------------------- name not found: ------------" .. name)
+        print('Constants.characters[name]' .. ' - start');
+        print(Constants.characters[name]);
         return name
     end
 end
@@ -396,4 +426,8 @@ module.tableToString = tableToString
 module.hideItemAndChildren = hideItemAndChildren
 module.mergeTables = mergeTables
 module.getDescendantsByName = getDescendantsByName
+module.hideItem = hideItem
+module.genRandom = genRandom
+module.enableChildWelds = enableChildWelds
+
 return module

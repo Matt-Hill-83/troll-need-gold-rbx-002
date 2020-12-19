@@ -335,6 +335,11 @@ module.characters = {
         decalId = '5991275787',
         backgroundColorIdx = 1
     },
+    tree = {
+        displayName = "Tree",
+        decalId = '6108772241',
+        backgroundColorIdx = 1
+    },
 
     smallGoose01 = {
         displayName = "Small Goose",
@@ -344,6 +349,11 @@ module.characters = {
     sillyGoose01 = {
         displayName = "Silly Goose",
         decalId = '5977953221',
+        backgroundColorIdx = 1
+    },
+    magenta01 = {
+        displayName = "Magenta",
+        decalId = '6108778279',
         backgroundColorIdx = 1
     },
     littleGoose = {

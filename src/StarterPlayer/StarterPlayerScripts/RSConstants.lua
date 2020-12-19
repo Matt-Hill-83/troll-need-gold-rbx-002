@@ -4,9 +4,10 @@ local module = {
     singleScene = false,
     -- 
     entered = {value = false},
-    baseWallHeight = 16,
-    walkSpeed = 16,
-    questWallHeight = 24,
+    -- baseWallHeight = 6,
+    walkSpeed = 30,
+    -- walkSpeed = 16,
+    questWallHeight = 4,
     sceneHeight = 50
     -- 
 }
@@ -18,10 +19,7 @@ module.dialogColors = {
 }
 
 local islandLength = 36
--- local bridgeLength = 31.1
--- local bridgeLength = 34
-local bridgeBaseLength = 30
--- local bridgeBaseLength = 96
+local bridgeBaseLength = 64
 local bridgeOverlap = 2
 local bridgeLength = bridgeBaseLength - 2 * bridgeOverlap
 
@@ -31,11 +29,15 @@ module.totalIslandLength = islandLength + bridgeLength
 
 module.buttonLabels = {PrevPage = "Prev Page", NextPage = "Next Page"}
 
+-- 
+-- 
+-- 
 local raven = {
     displayName = "Raven",
     decalId = '5897424121',
     backgroundColorIdx = 1
 }
+
 local britta = {
     displayName = "Britta",
     decalId = '5897433108',
@@ -58,10 +60,322 @@ module.characters = {
 
     raven05 = raven,
     raven04 = raven,
+    raven001 = raven,
+    raven002 = raven,
+    raven003 = raven,
+    raven004 = raven,
+
     raven = raven,
     britta = britta,
     britta01 = britta,
     britta04 = britta,
+
+    katBody = {
+        displayName = "Kat (Body)",
+        decalId = '6107346290',
+        backgroundColorIdx = 1
+    },
+    katCringing = {
+        displayName = "Kat (Cringing)",
+        decalId = '6107344629',
+        backgroundColorIdx = 1
+    },
+    katDismayed = {
+        displayName = "Kat (Dismayed)",
+        decalId = '6107344149',
+        backgroundColorIdx = 1
+    },
+    katFunny = {
+        displayName = "Kat (Funny)",
+        decalId = '6107344301',
+        backgroundColorIdx = 1
+    },
+    katHappy = {
+        displayName = "Kat (Happy)",
+        decalId = '6107344864',
+        backgroundColorIdx = 1
+    },
+    katHurt = {
+        displayName = "Kat (Hurt)",
+        decalId = '6107344515',
+        backgroundColorIdx = 1
+    },
+    katLoud = {
+        displayName = "Kat (Loud)",
+        decalId = '6107345138',
+        backgroundColorIdx = 1
+    },
+    katMad = {
+        displayName = "Kat (Mad)",
+        decalId = '6107344045',
+        backgroundColorIdx = 1
+    },
+    katNormal = {
+        displayName = "Kat (Normal)",
+        decalId = '6107344810',
+        backgroundColorIdx = 1
+    },
+    katOptimistic = {
+        displayName = "Kat (Optimistic)",
+        decalId = '6107344576',
+        backgroundColorIdx = 1
+    },
+    katSad = {
+        displayName = "Kat (Sad)",
+        decalId = '6107344919',
+        backgroundColorIdx = 1
+    },
+    katScared = {
+        displayName = "Kat (Scared)",
+        decalId = '6107344234',
+        backgroundColorIdx = 1
+    },
+    katSilly = {
+        displayName = "Kat (Silly)",
+        decalId = '6107344689',
+        backgroundColorIdx = 1
+    },
+    katSinister = {
+        displayName = "Kat (Sinister)",
+        decalId = '6107344453',
+        backgroundColorIdx = 1
+    },
+    katSmiling = {
+        displayName = "Kat (Smiling)",
+        decalId = '6107344370',
+        backgroundColorIdx = 1
+    },
+    katSurprised = {
+        displayName = "Kat (Surprised)",
+        decalId = '6107344753',
+        backgroundColorIdx = 1
+    },
+    katUnsure = {
+        displayName = "Kat (Unsure)",
+        decalId = '6107343928',
+        backgroundColorIdx = 1
+    },
+    katWinking = {
+        displayName = "Kat (Winking)",
+        decalId = '6107344098',
+        backgroundColorIdx = 1
+    },
+    -- 
+    -- 
+    -- 
+    lizBold = {
+        displayName = "Liz (Bold)",
+        decalId = '6107345791',
+        backgroundColorIdx = 1
+    },
+    lizCringing = {
+        displayName = "Liz (Cringing)",
+        decalId = '6107346106',
+        backgroundColorIdx = 1
+    },
+    lizDismayed = {
+        displayName = "Liz (Dismayed)",
+        decalId = '6107346232',
+        backgroundColorIdx = 1
+    },
+    lizFunny = {
+        displayName = "Liz (Funny)",
+        decalId = '6107345390',
+        backgroundColorIdx = 1
+    },
+    lizHappy = {
+        displayName = "Liz (Happy)",
+        decalId = '6107345687',
+        backgroundColorIdx = 1
+    },
+    lizHurt = {
+        displayName = "Liz (Hurt)",
+        decalId = '6107345736',
+        backgroundColorIdx = 1
+    },
+    lizLoud = {
+        displayName = "Liz (Loud)",
+        decalId = '6107343990',
+        backgroundColorIdx = 1
+    },
+    lizMad = {
+        displayName = "Liz (Mad)",
+        decalId = '6107346171',
+        backgroundColorIdx = 1
+    },
+    lizNormal = {
+        displayName = "Liz (Normal)",
+        decalId = '6107345949',
+        backgroundColorIdx = 1
+    },
+    lizOptimistic = {
+        displayName = "Liz (Optimistic)",
+        decalId = '6107345048',
+        backgroundColorIdx = 1
+    },
+    lizSad = {
+        displayName = "Liz (Sad)",
+        decalId = '6107345487',
+        backgroundColorIdx = 1
+    },
+    lizScared = {
+        displayName = "Liz (Scared)",
+        decalId = '6107345622',
+        backgroundColorIdx = 1
+    },
+    lizSilly = {
+        displayName = "Liz (Silly)",
+        decalId = '6107345862',
+        backgroundColorIdx = 1
+    },
+    lizSinister = {
+        displayName = "Liz (Sinister)",
+        decalId = '6107345559',
+        backgroundColorIdx = 1
+    },
+    lizSmiling = {
+        displayName = "Liz (Smiling)",
+        decalId = '6107345242',
+        backgroundColorIdx = 1
+    },
+    lizSurprised = {
+        displayName = "Liz (Surprised)",
+        decalId = '6107346038',
+        backgroundColorIdx = 1
+    },
+    lizUnsure = {
+        displayName = "Liz (Unsure)",
+        decalId = '6107344981',
+        backgroundColorIdx = 1
+    },
+    lizWinking = {
+        displayName = "Liz (Winking)",
+        decalId = '6107345314',
+        backgroundColorIdx = 1
+    },
+
+    oliveRori01cu = {
+        displayName = "Fire Star",
+        decalId = '5991273160',
+        backgroundColorIdx = 1
+    },
+    lucy07 = {
+        displayName = "lucinda",
+        decalId = '6073755292',
+        backgroundColorIdx = 1
+    },
+    lucy07small = {
+        displayName = "lucinda",
+        decalId = '6073755292',
+        backgroundColorIdx = 1
+    },
+    well01 = {
+        displayName = "Well01",
+        decalId = '6073681880',
+        backgroundColorIdx = 1
+    },
+
+    saki = {
+        displayName = "Saki",
+        decalId = '6073681717',
+        backgroundColorIdx = 1
+    },
+    barn = {
+        displayName = "Barn",
+        decalId = '5991343849',
+        backgroundColorIdx = 1
+    },
+    drip = {
+        displayName = "Drip",
+        decalId = '5991342417',
+        backgroundColorIdx = 1
+    },
+    cub = {displayName = "Cub", decalId = '6073679553', backgroundColorIdx = 1},
+    barkPhone01 = {
+        displayName = "BarkPhone01",
+        decalId = '6073682731',
+        backgroundColorIdx = 1
+    },
+    scramper01 = {
+        displayName = "Brandon",
+        decalId = '6073681552',
+        backgroundColorIdx = 1
+    },
+
+    slicerDicer01 = {
+        displayName = "Slicer Dicer",
+        decalId = '6073681398',
+        backgroundColorIdx = 1
+    },
+    drake = {
+        displayName = "Drake",
+        decalId = '5991267736',
+        backgroundColorIdx = 1
+    },
+    hopps01 = {
+        displayName = "Hops",
+        decalId = '5977953968',
+        backgroundColorIdx = 1
+    },
+
+    goose01 = {
+        displayName = "Goose",
+        decalId = '5991275787',
+        backgroundColorIdx = 1
+    },
+    angus01 = {
+        displayName = "Angus",
+        decalId = '5991277363',
+        backgroundColorIdx = 1
+    },
+    bug = {displayName = "Bug", decalId = '5898504138', backgroundColorIdx = 1},
+
+    queenGoose01 = {
+        displayName = "Queen Goose",
+        decalId = '5991275787',
+        backgroundColorIdx = 1
+    },
+    tree = {
+        displayName = "Tree",
+        decalId = '6108772241',
+        backgroundColorIdx = 1
+    },
+
+    smallGoose01 = {
+        displayName = "Small Goose",
+        decalId = '5991272287',
+        backgroundColorIdx = 1
+    },
+    sillyGoose01 = {
+        displayName = "Silly Goose",
+        decalId = '5977953221',
+        backgroundColorIdx = 1
+    },
+    magenta01 = {
+        displayName = "Magenta",
+        decalId = '6108778279',
+        backgroundColorIdx = 1
+    },
+    littleGoose = {
+        displayName = "Little Goose",
+        decalId = '5991275498',
+        backgroundColorIdx = 1
+    },
+    babyTroll01 = {
+        displayName = "Baby Troll",
+        decalId = '6073033076',
+        backgroundColorIdx = 1
+    },
+    babyTroll02 = {
+        displayName = "Baby Troll",
+        decalId = '6073033076',
+        backgroundColorIdx = 1
+    },
+    will01 = {
+        displayName = "Baby Troll",
+        decalId = '6073033076',
+        backgroundColorIdx = 1
+    },
 
     fancyDudeFromFrance01 = {
         displayName = "fancyDudeFromFrance01",
@@ -74,6 +388,16 @@ module.characters = {
         backgroundColorIdx = 1
     },
     robby01 = {
+        displayName = "Robby",
+        decalId = '5991273473',
+        backgroundColorIdx = 1
+    },
+    vesper01 = {
+        displayName = "Robby",
+        decalId = '5991273473',
+        backgroundColorIdx = 1
+    },
+    snurtch01 = {
         displayName = "Robby",
         decalId = '5991273473',
         backgroundColorIdx = 1
@@ -155,6 +479,16 @@ module.characters = {
         decalId = '5977954909',
         backgroundColorIdx = 3
     },
+    looney01cu = {
+        displayName = "Lucky",
+        decalId = '5977954909',
+        backgroundColorIdx = 3
+    },
+    looney01 = {
+        displayName = "Lucky",
+        decalId = '5977954909',
+        backgroundColorIdx = 3
+    },
     mat = {displayName = "Mat", decalId = '5991341059', backgroundColorIdx = 1},
     mop = {displayName = "Mop", decalId = '5991340991', backgroundColorIdx = 1},
     pan = {displayName = "Pan", decalId = '5991340855', backgroundColorIdx = 1},
@@ -216,9 +550,6 @@ module.characters = {
     vulcan = vulcan,
     vulcan01 = vulcan,
 
-    -- 
-    -- 
-    -- 
     luke01 = {
         displayName = "Luke",
         decalId = '5998961085',
@@ -239,7 +570,22 @@ module.characters = {
         decalId = '5897428591',
         backgroundColorIdx = 3
     },
+    goblinKing02 = {
+        displayName = "Troll King",
+        decalId = '5897428591',
+        backgroundColorIdx = 3
+    },
+    goblinKing01 = {
+        displayName = "Troll King",
+        decalId = '5897428591',
+        backgroundColorIdx = 3
+    },
     freckle = {
+        displayName = "Freckle",
+        decalId = '5897430768',
+        backgroundColorIdx = 3
+    },
+    freckle01 = {
         displayName = "Freckle",
         decalId = '5897430768',
         backgroundColorIdx = 3
