@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>476.367493</X>
-					<Y>16.2547283</Y>
-					<Z>-1044.81921</Z>
-					<R00>0.0221270025</R00>
-					<R01>0.0536563769</R01>
-					<R02>-0.998314321</R02>
-					<R10>-1.16415322e-10</R10>
-					<R11>0.998558819</R11>
-					<R12>0.053669516</R12>
-					<R20>0.999755204</R20>
-					<R21>-0.00118754536</R21>
-					<R22>0.022095114</R22>
+					<X>587.197449</X>
+					<Y>64.7739182</Y>
+					<Z>-1113.1416</Z>
+					<R00>-0.913481653</R00>
+					<R01>-0.239078775</R01>
+					<R02>0.329230458</R02>
+					<R10>-0</R10>
+					<R11>0.809158564</R11>
+					<R12>0.587590337</R12>
+					<R20>-0.406880021</R20>
+					<R21>0.536752999</R21>
+					<R22>-0.739151478</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -34580,8 +34580,8 @@ remoteCode.addRemoteObjects()
 			<bool name="EnableScriptCollabOnLoad">false</bool>
 			<string name="Name">StudioData</string>
 			<int64 name="SourceAssetId">-1</int64>
-			<int64 name="SrcPlaceId">6060287119</int64>
-			<int64 name="SrcUniverseId">2197038649</int64>
+			<int64 name="SrcPlaceId">6107338425</int64>
+			<int64 name="SrcUniverseId">2221903699</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
 	</Item>
@@ -38207,6 +38207,190 @@ module.totalIslandLength = islandLength + bridgeLength
 
 module.buttonLabels = {PrevPage = "Prev Page", NextPage = "Next Page"}
 
+local katBody = {
+    displayName = "Kat (Body)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katCringing = {
+    displayName = "Kat (Cringing)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katDismayed = {
+    displayName = "Kat (Dismayed)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katFunny = {
+    displayName = "Kat (Funny)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katHappy = {
+    displayName = "Kat (Happy)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katHurt = {
+    displayName = "Kat (Hurt)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katLoud = {
+    displayName = "Kat (Loud)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katMad = {
+    displayName = "Kat (Mad)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katNormal = {
+    displayName = "Kat (Normal)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katOptimistic = {
+    displayName = "Kat (Optimistic)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katSad = {
+    displayName = "Kat (Sad)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katScared = {
+    displayName = "Kat (Scared)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katSilly = {
+    displayName = "Kat (Silly)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katSinister = {
+    displayName = "Kat (Sinister)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katSmiling = {
+    displayName = "Kat (Smiling)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katSurprised = {
+    displayName = "Kat (Surprised)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katUnsure = {
+    displayName = "Kat (Unsure)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local katWinking = {
+    displayName = "Kat (Winking)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizBold = {
+    displayName = "Kiz (Bold)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizCringing = {
+    displayName = "Kiz (Cringing)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizDismayed = {
+    displayName = "Kiz (Dismayed)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizFunny = {
+    displayName = "Kiz (Funny)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizHappy = {
+    displayName = "Kiz (Happy)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizHurt = {
+    displayName = "Kiz (Hurt)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizLoud = {
+    displayName = "Kiz (Loud)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizMad = {
+    displayName = "Kiz (Mad)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizNormal = {
+    displayName = "Kiz (Normal)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizOptimistic = {
+    displayName = "Kiz (Optimistic)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizSad = {
+    displayName = "Kiz (Sad)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizScared = {
+    displayName = "Kiz (Scared)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizSilly = {
+    displayName = "Kiz (Silly)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizSinister = {
+    displayName = "Kiz (Sinister)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizSmiling = {
+    displayName = "Kiz (Smiling)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizSurprised = {
+    displayName = "Kiz (Surprised)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizUnsure = {
+    displayName = "Kiz (Unsure)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+local lizWinking = {
+    displayName = "Kiz (Winking)",
+    decalId = 'zzz',
+    backgroundColorIdx = 1
+}
+
+-- 
+-- 
+-- 
 local raven = {
     displayName = "Raven",
     decalId = '5897424121',
@@ -41422,7 +41606,7 @@ function module.addScenes(props)
                                                               "SceneTemplate")
     local sceneBase = Utils.getFirstDescendantByName(questFolder, "SceneBase")
 
-    local sceneStartPosition = getStartPosition(
+    local sceneStartPosition = getInitialScenePosition(
                                    {
             gridPadding = gridPadding,
             parent = parent,
@@ -41448,23 +41632,11 @@ function module.addScenes(props)
 
         clonedScene.Name = clonedScene.Name .. sceneIndex
 
-        -- local localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
-        --                                                          "LocalTeleporterPositioner")
-        -- Teleporters.addTeleporters({
-        --     parent = clonedScene,
-        --     sceneIndex = sceneIndex,
-        --     questIndex = questIndex,
-        --     isStartScene = sceneConfig.isStartScene,
-        --     isEndScene = sceneConfig.isEndScene,
-        --     questTitle = questConfig.questTitle,
-        --     skyBoxTeleporter = skyBoxTeleporter,
-        --     localTPPositioner = localTPPositioner
-        -- })
-
-        local words = {
-            {'C', 'A', 'T'}, {'B', 'A', 'T'}, {'H', 'A', 'T'}, {'M', 'A', 'T'},
-            {'P', 'A', 'T'}, {'R', 'A', 'T'}, {'S', 'A', 'T'}
-        }
+        local words = {'CAT', 'BAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT'}
+        -- local words = {
+        --     {'C', 'A', 'T'}, {'B', 'A', 'T'}, {'H', 'A', 'T'}, {'M', 'A', 'T'},
+        --     {'P', 'A', 'T'}, {'R', 'A', 'T'}, {'S', 'A', 'T'}
+        -- }
 
         MiniGame.addMiniGame({
             clonedScene = clonedScene,
@@ -41565,7 +41737,7 @@ function module.addScenes(props)
     sceneTemplateModel:Destroy()
 end
 
-getStartPosition = function(props)
+getInitialScenePosition = function(props)
     local parent = props.parent
     local child = props.child
     local gridPadding = props.gridPadding
@@ -43335,10 +43507,7 @@ local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 
 local module = {}
 
-function initLetterFall(miniGameState)
-    LetterFall.initGameToggle(miniGameState)
-    -- LetterFall.createBalls(miniGameState)
-end
+function initLetterFall(miniGameState) LetterFall.initGameToggle(miniGameState) end
 
 module.initLetterFall = initLetterFall
 return module
@@ -43385,20 +43554,6 @@ function initGameToggle(miniGameState)
         startGameTrigger.Touched:Connect(onPartTouched)
     end
 
-end
-
-function getRunTimeLetterFolder(miniGameState)
-    local letterFallFolder = miniGameState.letterFallFolder
-    local runtimeFolder = Utils.getOrCreateFolder(
-                              {
-            name = "RunTimeFolder",
-            parent = letterFallFolder
-        })
-
-    return Utils.getOrCreateFolder({
-        name = "RunTimeLetterRackFolder",
-        parent = runtimeFolder
-    })
 end
 
 module.initGameToggle = initGameToggle
@@ -43454,6 +43609,7 @@ end
 function initClickHandler(miniGameState)
     -- Gets arguments from EventHandler in StarterPack
     function brickClickHandler(player, clickedLetter)
+
         handleBrick(player, clickedLetter, miniGameState)
     end
     remoteEvent.OnServerEvent:Connect(brickClickHandler)
@@ -43689,8 +43845,10 @@ function initLetterRack(miniGameState)
     local spacingFactor = 1.05
 
     local lettersFromWords = {}
-    for wordIndex, word in ipairs(miniGameState.words) do
-        for letterIndex, letter in ipairs(word) do
+    for wordIndex, word in miniGameState.words do
+        for letterIndex = 1, #word do
+            -- for letterIndex, letter in ipairs(word) do
+            local letter = word.sub(letterIndex, letterIndex + 1)
             table.insert(lettersFromWords, letter)
             table.insert(lettersFromWords, letter)
             table.insert(lettersFromWords, letter)

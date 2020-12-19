@@ -51,10 +51,11 @@ function module.addScenes(props)
 
         clonedScene.Name = clonedScene.Name .. sceneIndex
 
-        local words = {
-            {'C', 'A', 'T'}, {'B', 'A', 'T'}, {'H', 'A', 'T'}, {'M', 'A', 'T'},
-            {'P', 'A', 'T'}, {'R', 'A', 'T'}, {'S', 'A', 'T'}
-        }
+        local words = {'CAT', 'BAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT'}
+        -- local words = {
+        --     {'C', 'A', 'T'}, {'B', 'A', 'T'}, {'H', 'A', 'T'}, {'M', 'A', 'T'},
+        --     {'P', 'A', 'T'}, {'R', 'A', 'T'}, {'S', 'A', 'T'}
+        -- }
 
         MiniGame.addMiniGame({
             clonedScene = clonedScene,

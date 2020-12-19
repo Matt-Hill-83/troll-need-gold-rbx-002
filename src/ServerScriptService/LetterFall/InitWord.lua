@@ -26,7 +26,10 @@ function initWord(miniGameState)
     local spacingFactor = 1.05
 
     Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
-    for letterIndex, letter in ipairs(word) do
+
+    -- for letterIndex, letter in ipairs(word) do
+    for letterIndex = 1, #word do
+        local letter = word.sub(letterIndex, letterIndex + 1)
         local newLetter = letterBlockTemplate:Clone()
         newLetter.Name = "wordLetter-" .. letterIndex
         newLetter.Transparency = 0

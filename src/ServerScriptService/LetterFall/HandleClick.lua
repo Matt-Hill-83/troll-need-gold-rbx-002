@@ -24,6 +24,7 @@ end
 function initClickHandler(miniGameState)
     -- Gets arguments from EventHandler in StarterPack
     function brickClickHandler(player, clickedLetter)
+
         handleBrick(player, clickedLetter, miniGameState)
     end
     remoteEvent.OnServerEvent:Connect(brickClickHandler)

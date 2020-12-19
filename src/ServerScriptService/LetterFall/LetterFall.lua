@@ -31,20 +31,6 @@ function initGameToggle(miniGameState)
 
 end
 
-function getRunTimeLetterFolder(miniGameState)
-    local letterFallFolder = miniGameState.letterFallFolder
-    local runtimeFolder = Utils.getOrCreateFolder(
-                              {
-            name = "RunTimeFolder",
-            parent = letterFallFolder
-        })
-
-    return Utils.getOrCreateFolder({
-        name = "RunTimeLetterRackFolder",
-        parent = runtimeFolder
-    })
-end
-
 module.initGameToggle = initGameToggle
 module.createBalls = createBalls
 
