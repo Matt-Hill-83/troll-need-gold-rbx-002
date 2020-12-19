@@ -29,7 +29,8 @@ function initWord(miniGameState)
 
     -- for letterIndex, letter in ipairs(word) do
     for letterIndex = 1, #word do
-        local letter = word.sub(letterIndex, letterIndex + 1)
+        -- local letter = word.sub(letterIndex, letterIndex + 1)
+        local letter = string.sub(word, letterIndex, letterIndex + 0)
         local newLetter = letterBlockTemplate:Clone()
         newLetter.Name = "wordLetter-" .. letterIndex
         newLetter.Transparency = 0
