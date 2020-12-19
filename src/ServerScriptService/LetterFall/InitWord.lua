@@ -29,8 +29,8 @@ function initWord(miniGameState)
 
         local baseWeld = Utils.getFirstDescendantByName(newWordBoxFolder,
                                                         "BaseWeld")
+        if baseWeld then baseWeld.Enabled = false end
 
-        baseWeld.Enabled = false
         local newWordBox = Utils.getFirstDescendantByName(newWordBoxFolder,
                                                           "WordBox")
 
