@@ -37,7 +37,7 @@ function handleBrick(player, clickedLetter, miniGameState)
     if not module.gemsStarted then
 
         LetterFallUtils.createBalls(miniGameState)
-        module.gemsStarted = false
+        module.gemsStarted = true
     end
 
     local ballPitBottom = Utils.getFirstDescendantByName(letterFallFolder,

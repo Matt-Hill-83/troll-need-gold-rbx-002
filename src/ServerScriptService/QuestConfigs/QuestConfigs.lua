@@ -4,7 +4,7 @@ module.questConfigs = {
     {
         questTitle = "--- RBX-100 - A Bee in a Tree",
         startSceneCoords = {row = 0, col = 0},
-        endSceneCoords = {col = 1, row = 2},
+        endSceneCoords = {row = 0, col = 0},
         sceneConfigs = {
             {
                 name = "tree",
@@ -65,10 +65,10 @@ module.questConfigs = {
                 },
                 coordinates = {row = 0, col = 0},
                 showBottomPath = false,
-                showRightPath = true,
+                showRightPath = false,
                 showTopPath = false,
                 showLeftPath = false,
-                isEndScene = false,
+                isEndScene = true,
                 isStartScene = true,
                 maxRow = 0,
                 maxCol = 0
