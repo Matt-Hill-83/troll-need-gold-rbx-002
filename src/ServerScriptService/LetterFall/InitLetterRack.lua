@@ -28,10 +28,8 @@ function initLetterRack(miniGameState)
     local spacingFactor = 1.05
 
     local lettersFromWords = {}
-    -- for wordIndex, word in miniGameState.words do
     for wordIndex, word in ipairs(miniGameState.words) do
         for letterIndex = 1, #word do
-            -- for letterIndex, letter in ipairs(word) do
             local letter = string.sub(word, letterIndex, letterIndex + 0)
             table.insert(lettersFromWords, letter)
             table.insert(lettersFromWords, letter)
@@ -62,8 +60,10 @@ function initLetterRack(miniGameState)
 
         for rowIndex = 1, numRow do
             -- local char = letters[(colIndex % #letters) + 1]
-            local test = Utils.genRandom(1, #lettersFromWords)
-            local char = lettersFromWords[test]
+            local rand = Utils.genRandom(1, #lettersFromWords)
+
+            local char = lettersFromWords[rand]
+            Utils.removeFirstMatchFromArray(lettersFromWords, char)
             local newLetter = letterTemplate:Clone()
 
             newLetter.Name = "newLetter-" .. char

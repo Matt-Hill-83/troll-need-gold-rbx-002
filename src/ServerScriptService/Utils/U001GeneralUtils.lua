@@ -3,6 +3,15 @@ local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 local CS = game:GetService("CollectionService")
 
+local function removeFirstMatchFromArray(array, value)
+    for i = #array, 1, -1 do
+        if array[i] == value then
+            table.remove(array, i)
+            break
+        end
+    end
+end
+
 function enableChildWelds(props)
     local part = props.part
     local enabled = props.enabled
@@ -27,7 +36,6 @@ function module.setPropsByTag(props)
     local theProps = props.props
 
     local items = CS:GetTagged(tag)
-
     for i, item in ipairs(items) do
         mergeTables(item, theProps)
         -- 
@@ -427,5 +435,6 @@ module.getDescendantsByName = getDescendantsByName
 module.hideItem = hideItem
 module.genRandom = genRandom
 module.enableChildWelds = enableChildWelds
+module.removeFirstMatchFromArray = removeFirstMatchFromArray
 
 return module
