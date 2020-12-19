@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>565.737366</X>
-					<Y>-30.40765</Y>
-					<Z>-1010.36713</Z>
-					<R00>0.215460584</R00>
-					<R01>0.127194226</R01>
-					<R02>-0.968193352</R02>
-					<R10>-0</R10>
-					<R11>0.991480768</R11>
-					<R12>0.130253553</R12>
-					<R20>0.976512551</R20>
-					<R21>-0.0280645061</R21>
-					<R22>0.213625014</R22>
+					<X>566.154602</X>
+					<Y>-29.442503</Y>
+					<Z>-1010.35657</Z>
+					<R00>0.2769126</R00>
+					<R01>0.588684678</R01>
+					<R02>-0.759453535</R02>
+					<R10>-1.4901163e-08</R10>
+					<R11>0.79036051</R11>
+					<R12>0.612641931</R12>
+					<R20>0.960895181</R20>
+					<R21>-0.16964826</R21>
+					<R22>0.21886076</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -24301,17 +24301,17 @@ HkIfgB5CWoAeQimAHkIlgP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<token name="BottomSurfaceInput">0</token>
 										<CoordinateFrame name="CFrame">
 											<X>592.871094</X>
-											<Y>-44.4350166</Y>
+											<Y>-44.4349213</Y>
 											<Z>-1019.05219</Z>
 											<R00>1</R00>
-											<R01>5.56680061e-05</R01>
-											<R02>6.24366221e-05</R02>
-											<R10>-5.64481015e-05</R10>
-											<R11>0.999999881</R11>
-											<R12>-0.000573009253</R12>
-											<R20>-6.24688691e-05</R20>
-											<R21>0.000592043798</R21>
-											<R22>1.00000072</R22>
+											<R01>5.60519475e-05</R01>
+											<R02>6.243604e-05</R02>
+											<R10>-5.60635999e-05</R10>
+											<R11>0.999999821</R11>
+											<R12>-0.00058196811</R12>
+											<R20>-6.24686727e-05</R20>
+											<R21>0.000583084417</R21>
+											<R22>0.999999881</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
@@ -36916,8 +36916,8 @@ function configPlayers()
 end
 
 function setVisibility()
-    -- local testLabBase = Utils.getFirstDescendantByName(workspace, "TestLabBase")
-    -- testLabBase:Destroy()
+    local testLabBase = Utils.getFirstDescendantByName(workspace, "TestLabBase")
+    testLabBase:Destroy()
 
     local taggedPartsDestroy = CS:GetTagged("Destroy")
     for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
