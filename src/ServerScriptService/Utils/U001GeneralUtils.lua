@@ -254,12 +254,20 @@ function module.getDecalIdFromName(props)
     end
 end
 
+-- TODO
+-- TODO
+-- TODO
+-- TODO
+-- TODO
+-- TODO
 function module.getDisplayNameFromName(props)
     local name = props.name
     if (Constants.characters[name] and Constants.characters[name]["displayName"]) then
         return Constants.characters[name]["displayName"]
     else
         print("---------------------- name not found: ------------" .. name)
+        print('Constants.characters[name]' .. ' - start');
+        print(Constants.characters[name]);
         return name
     end
 end

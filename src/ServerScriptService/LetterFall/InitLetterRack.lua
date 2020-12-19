@@ -30,8 +30,6 @@ function initLetterRack(miniGameState)
     local lettersFromWords = {}
     -- for wordIndex, word in miniGameState.words do
     for wordIndex, word in ipairs(miniGameState.words) do
-        print('word' .. ' - start');
-        print(word);
         for letterIndex = 1, #word do
             -- for letterIndex, letter in ipairs(word) do
             local letter = string.sub(word, letterIndex, letterIndex + 0)

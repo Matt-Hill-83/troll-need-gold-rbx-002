@@ -29,187 +29,6 @@ module.totalIslandLength = islandLength + bridgeLength
 
 module.buttonLabels = {PrevPage = "Prev Page", NextPage = "Next Page"}
 
-local katBody = {
-    displayName = "Kat (Body)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katCringing = {
-    displayName = "Kat (Cringing)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katDismayed = {
-    displayName = "Kat (Dismayed)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katFunny = {
-    displayName = "Kat (Funny)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katHappy = {
-    displayName = "Kat (Happy)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katHurt = {
-    displayName = "Kat (Hurt)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katLoud = {
-    displayName = "Kat (Loud)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katMad = {
-    displayName = "Kat (Mad)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katNormal = {
-    displayName = "Kat (Normal)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katOptimistic = {
-    displayName = "Kat (Optimistic)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katSad = {
-    displayName = "Kat (Sad)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katScared = {
-    displayName = "Kat (Scared)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katSilly = {
-    displayName = "Kat (Silly)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katSinister = {
-    displayName = "Kat (Sinister)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katSmiling = {
-    displayName = "Kat (Smiling)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katSurprised = {
-    displayName = "Kat (Surprised)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katUnsure = {
-    displayName = "Kat (Unsure)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local katWinking = {
-    displayName = "Kat (Winking)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizBold = {
-    displayName = "Kiz (Bold)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizCringing = {
-    displayName = "Kiz (Cringing)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizDismayed = {
-    displayName = "Kiz (Dismayed)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizFunny = {
-    displayName = "Kiz (Funny)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizHappy = {
-    displayName = "Kiz (Happy)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizHurt = {
-    displayName = "Kiz (Hurt)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizLoud = {
-    displayName = "Kiz (Loud)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizMad = {
-    displayName = "Kiz (Mad)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizNormal = {
-    displayName = "Kiz (Normal)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizOptimistic = {
-    displayName = "Kiz (Optimistic)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizSad = {
-    displayName = "Kiz (Sad)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizScared = {
-    displayName = "Kiz (Scared)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizSilly = {
-    displayName = "Kiz (Silly)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizSinister = {
-    displayName = "Kiz (Sinister)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizSmiling = {
-    displayName = "Kiz (Smiling)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizSurprised = {
-    displayName = "Kiz (Surprised)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizUnsure = {
-    displayName = "Kiz (Unsure)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-local lizWinking = {
-    displayName = "Kiz (Winking)",
-    decalId = 'zzz',
-    backgroundColorIdx = 1
-}
-
 -- 
 -- 
 -- 
@@ -251,22 +70,190 @@ module.characters = {
     britta01 = britta,
     britta04 = britta,
 
+    katBody = {
+        displayName = "Kat (Body)",
+        decalId = '6107346290',
+        backgroundColorIdx = 1
+    },
+    katCringing = {
+        displayName = "Kat (Cringing)",
+        decalId = '6107344629',
+        backgroundColorIdx = 1
+    },
+    katDismayed = {
+        displayName = "Kat (Dismayed)",
+        decalId = '6107344149',
+        backgroundColorIdx = 1
+    },
+    katFunny = {
+        displayName = "Kat (Funny)",
+        decalId = '6107344301',
+        backgroundColorIdx = 1
+    },
+    katHappy = {
+        displayName = "Kat (Happy)",
+        decalId = '6107344864',
+        backgroundColorIdx = 1
+    },
+    katHurt = {
+        displayName = "Kat (Hurt)",
+        decalId = '6107344515',
+        backgroundColorIdx = 1
+    },
+    katLoud = {
+        displayName = "Kat (Loud)",
+        decalId = '6107345138',
+        backgroundColorIdx = 1
+    },
+    katMad = {
+        displayName = "Kat (Mad)",
+        decalId = '6107344045',
+        backgroundColorIdx = 1
+    },
+    katNormal = {
+        displayName = "Kat (Normal)",
+        decalId = '6107344810',
+        backgroundColorIdx = 1
+    },
+    katOptimistic = {
+        displayName = "Kat (Optimistic)",
+        decalId = '6107344576',
+        backgroundColorIdx = 1
+    },
+    katSad = {
+        displayName = "Kat (Sad)",
+        decalId = '6107344919',
+        backgroundColorIdx = 1
+    },
+    katScared = {
+        displayName = "Kat (Scared)",
+        decalId = '6107344234',
+        backgroundColorIdx = 1
+    },
+    katSilly = {
+        displayName = "Kat (Silly)",
+        decalId = '6107344689',
+        backgroundColorIdx = 1
+    },
+    katSinister = {
+        displayName = "Kat (Sinister)",
+        decalId = '6107344453',
+        backgroundColorIdx = 1
+    },
+    katSmiling = {
+        displayName = "Kat (Smiling)",
+        decalId = '6107344370',
+        backgroundColorIdx = 1
+    },
+    katSurprised = {
+        displayName = "Kat (Surprised)",
+        decalId = '6107344753',
+        backgroundColorIdx = 1
+    },
+    katUnsure = {
+        displayName = "Kat (Unsure)",
+        decalId = '6107343928',
+        backgroundColorIdx = 1
+    },
+    katWinking = {
+        displayName = "Kat (Winking)",
+        decalId = '6107344098',
+        backgroundColorIdx = 1
+    },
     -- 
-    -- dress06
-    -- lucy07
-    -- lucy07small
-    -- oliveRori01cu
-    -- scribbleDragon01
-    -- skink01
-    -- whammer01
+    -- 
+    -- 
+    lizBold = {
+        displayName = "Liz (Bold)",
+        decalId = '6107345791',
+        backgroundColorIdx = 1
+    },
+    lizCringing = {
+        displayName = "Liz (Cringing)",
+        decalId = '6107346106',
+        backgroundColorIdx = 1
+    },
+    lizDismayed = {
+        displayName = "Liz (Dismayed)",
+        decalId = '6107346232',
+        backgroundColorIdx = 1
+    },
+    lizFunny = {
+        displayName = "Liz (Funny)",
+        decalId = '6107345390',
+        backgroundColorIdx = 1
+    },
+    lizHappy = {
+        displayName = "Liz (Happy)",
+        decalId = '6107345687',
+        backgroundColorIdx = 1
+    },
+    lizHurt = {
+        displayName = "Liz (Hurt)",
+        decalId = '6107345736',
+        backgroundColorIdx = 1
+    },
+    lizLoud = {
+        displayName = "Liz (Loud)",
+        decalId = '6107343990',
+        backgroundColorIdx = 1
+    },
+    lizMad = {
+        displayName = "Liz (Mad)",
+        decalId = '6107346171',
+        backgroundColorIdx = 1
+    },
+    lizNormal = {
+        displayName = "Liz (Normal)",
+        decalId = '6107345949',
+        backgroundColorIdx = 1
+    },
+    lizOptimistic = {
+        displayName = "Liz (Optimistic)",
+        decalId = '6107345048',
+        backgroundColorIdx = 1
+    },
+    lizSad = {
+        displayName = "Liz (Sad)",
+        decalId = '6107345487',
+        backgroundColorIdx = 1
+    },
+    lizScared = {
+        displayName = "Liz (Scared)",
+        decalId = '6107345622',
+        backgroundColorIdx = 1
+    },
+    lizSilly = {
+        displayName = "Liz (Silly)",
+        decalId = '6107345862',
+        backgroundColorIdx = 1
+    },
+    lizSinister = {
+        displayName = "Liz (Sinister)",
+        decalId = '6107345559',
+        backgroundColorIdx = 1
+    },
+    lizSmiling = {
+        displayName = "Liz (Smiling)",
+        decalId = '6107345242',
+        backgroundColorIdx = 1
+    },
+    lizSurprised = {
+        displayName = "Liz (Surprised)",
+        decalId = '6107346038',
+        backgroundColorIdx = 1
+    },
+    lizUnsure = {
+        displayName = "Liz (Unsure)",
+        decalId = '6107344981',
+        backgroundColorIdx = 1
+    },
+    lizWinking = {
+        displayName = "Liz (Winking)",
+        decalId = '6107345314',
+        backgroundColorIdx = 1
+    },
 
-    -- saki
-    -- barn
-    -- drip
-    -- well01
-    -- cub
-    -- barkPhone01
-    -- scramper01
     oliveRori01cu = {
         displayName = "Fire Star",
         decalId = '5991273160',
