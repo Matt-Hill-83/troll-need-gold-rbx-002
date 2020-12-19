@@ -9,7 +9,6 @@ function initWord(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local wordFolder = getWordFolder(miniGameState)
 
-    local words2 = {miniGameState.words[1], miniGameState.words[2]}
     local wordBoxFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                          "WordBoxFolder")
 
@@ -19,7 +18,6 @@ function initWord(miniGameState)
     end
     Utils.clearTable(miniGameState.wordLetters)
 
-    -- for wordIndex, word in ipairs(words2) do
     for wordIndex, word in ipairs(miniGameState.words) do
         local newWordBoxFolder = wordBoxFolder:Clone()
         newWordBoxFolder.Parent = wordBoxFolder.Parent
@@ -77,7 +75,6 @@ function initWord(miniGameState)
                          {char = letter, found = false, instance = newLetter})
 
         end
-        -- baseWeld.Enabled = true
         newWordBox.PrimaryPart.Anchored = true
     end
     wordBoxFolder:Destroy()
