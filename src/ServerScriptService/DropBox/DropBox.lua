@@ -21,19 +21,35 @@ function module.configDropBox(props)
     if (part) then
 
         local function onPartTouched(otherPart)
-            print('DropBoxDetectionRegion')
             local partParent = otherPart.Parent
             local match = partParent.Name == item.name
+            print('---------------------------------->>>>>>>>>>>>>>>>>>');
+            print('---------------------------------->>>>>>>>>>>>>>>>>>');
+            print('item.name' .. ' - start');
+            print(item.name);
 
+            print('otherPart.Parent' .. ' - start');
+            print(partParent.Name);
+            print('match' .. ' - start');
+            print(match);
+
+            print(otherPart.Parent);
             if match then
+                print('match' .. ' - start');
+                print('match' .. ' - start');
+                print('match' .. ' - start');
+                print('match' .. ' - start');
+                print('match' .. ' - start');
+                print('match' .. ' - start');
+                print('match' .. ' - start');
                 partParent.Parent = workspace
                 -- 
             end
 
-            local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
-            if humanoid and false then
-                -- 
-            end
+            -- local humanoid = partParent:FindFirstChildWhichIsA("Humanoid")
+            -- if humanoid and false then
+            --     -- 
+            -- end
         end
 
         part.Touched:Connect(onPartTouched)

@@ -8,5 +8,6 @@ local module = {}
 function initLetterFall(miniGameState) LetterFall.initGameToggle(miniGameState) end
 
 module.initLetterFall = initLetterFall
+
 return module
 
