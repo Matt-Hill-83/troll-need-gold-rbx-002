@@ -77,6 +77,5 @@ module.questConfigs = {
         gridSize = {rows = 1, cols = 1}
     }
 }
-
 return module
 
