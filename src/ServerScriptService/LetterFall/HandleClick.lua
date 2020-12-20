@@ -40,9 +40,9 @@ function handleBrick(player, clickedLetter, miniGameState)
         module.gemsStarted = true
     end
 
-    local ballPitBottom = Utils.getFirstDescendantByName(letterFallFolder,
-                                                         "BallPitBottom")
-    if ballPitBottom then ballPitBottom:Destroy() end
+    -- local ballPitBottom = Utils.getFirstDescendantByName(letterFallFolder,
+    --                                                      "BallPitBottom")
+    -- if ballPitBottom then ballPitBottom:Destroy() end
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
     if not isChild then return {} end
     for i, letter in ipairs(wordLetters) do
