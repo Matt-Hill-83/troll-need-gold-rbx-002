@@ -6,6 +6,11 @@ local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 local module = {}
 
 function initWord(miniGameState)
+
+    -- O-WeldPlate need to have a weld to the base called "BaseWeld"
+    -- O-WeldPlate need to have a weld to the base called "BaseWeld"
+    -- O-WeldPlate need to have a weld to the base called "BaseWeld"
+    -- O-WeldPlate need to have a weld to the base called "BaseWeld"
     local letterFallFolder = miniGameState.letterFallFolder
     local wordFolder = getWordFolder(miniGameState)
 
@@ -44,6 +49,7 @@ function initWord(miniGameState)
                                                             wordIndex, 0)
 
         newWordBox.Name = newWordBox.Name .. "zzz" .. wordIndex
+        newWordBox.PrimaryPart.Anchored = true
 
         local letterPositioner = Utils.getFirstDescendantByName(
                                      newWordBoxFolder,
@@ -78,7 +84,7 @@ function initWord(miniGameState)
                          {char = letter, found = false, instance = newLetter})
 
         end
-        newWordBox.PrimaryPart.Anchored = true
+        -- newWordBox.PrimaryPart.Anchored = true
     end
     wordBoxFolder:Destroy()
 end
