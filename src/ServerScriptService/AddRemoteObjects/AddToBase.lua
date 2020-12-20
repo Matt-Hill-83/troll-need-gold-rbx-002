@@ -71,6 +71,12 @@ function addRemoteObjects()
         local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
                       Constants.bridgeLength
 
+        --   Stabilize these parts before the cloning begins
+        Utils.setPropsByTag({
+            tag = "EnableWeldAtRunTime",
+            props = {Enabled = true}
+        })
+
         local questBlockTemplateClone = Utils.cloneModel(
                                             {
                 model = questBlockTemplate,
