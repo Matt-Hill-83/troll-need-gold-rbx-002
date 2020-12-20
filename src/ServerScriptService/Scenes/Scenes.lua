@@ -53,7 +53,8 @@ function module.addScenes(props)
 
         -- local words = {'CAT', 'BAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT'}
         local words = {
-            'DO', 'NOT', 'GO', 'IN', 'THE', 'CAVE', 'NOPE', 'NO', "BAD", "IDEA"
+            'DO', 'NOT', 'GO', 'IN', 'THE', 'CAVE', 'NOPE', 'NO', "BAD", "IDEA",
+            'CAT', 'BAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT'
         }
 
         MiniGame.addMiniGame({

@@ -26,7 +26,7 @@ function initWord(miniGameState)
 
         Utils.hideItemAndChildren({item = letterBlockTemplate, hide = true})
 
-        local spacingFactor = 1.05
+        local spacingFactor = 1.25
         local wordSpacingY = letterBlockTemplate.Size.Y * spacingFactor
 
         local weldPlate = Utils.getFirstDescendantByName(newWordBoxFolder,
