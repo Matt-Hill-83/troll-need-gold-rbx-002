@@ -29,8 +29,6 @@ function setVisibility()
     local taggedPartsTransparent = CS:GetTagged("Transparent")
     for i, item in ipairs(taggedPartsTransparent) do item.Transparency = 1 end
 
-    -- local skyBoxWalls = CS:GetTagged("EnableWeldAtRunTime")
-
     Utils.setPropsByTag({tag = "EnableWeldAtRunTime", props = {Enabled = true}})
 
     -- local itemsToHideAtRuntine = {'QuestsOrigin', 'TerrainBase'}
