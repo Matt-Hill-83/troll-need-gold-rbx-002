@@ -23,12 +23,15 @@ function initWord(miniGameState)
         newWordBoxFolder.Parent = wordBoxFolder.Parent
         local letterBlockTemplate = Utils.getFirstDescendantByName(
                                         newWordBoxFolder, "LetterBlockTemplate")
-        local wordSpacingY = letterBlockTemplate.Size.Y * 1.1
+
+        Utils.hideItemAndChildren({item = letterBlockTemplate, hide = true})
+
+        local spacingFactor = 1.05
+        local wordSpacingY = letterBlockTemplate.Size.Y * spacingFactor
 
         local weldPlate = Utils.getFirstDescendantByName(newWordBoxFolder,
                                                          "O-WeldPlate")
 
-        -- Utils.enableChildWelds({part = weldPlate, enabled = false})
         local baseWeld = Utils.getFirstDescendantByName(newWordBoxFolder,
                                                         "BaseWeld")
         if baseWeld then baseWeld.Enabled = false end
@@ -39,8 +42,6 @@ function initWord(miniGameState)
         newWordBox.PrimaryPart.CFrame = newWordBox.PrimaryPart.CFrame +
                                             Vector3.new(0, wordSpacingY *
                                                             wordIndex, 0)
-
-        -- Utils.enableChildWelds({part = weldPlate, enabled = true})
 
         newWordBox.Name = newWordBox.Name .. "zzz" .. wordIndex
 
@@ -53,14 +54,12 @@ function initWord(miniGameState)
         letterBlockTemplate.Transparency = 1
         local spacingFactor = 1.05
 
-        -- Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
-
         for letterIndex = 1, #word do
             local letter = string.sub(word, letterIndex, letterIndex + 0)
             local newLetter = letterBlockTemplate:Clone()
+            Utils.hideItemAndChildren({item = newLetter, hide = false})
             newLetter.Name = "wordLetter-" .. letterIndex
             newLetter.Transparency = 0
-            -- Utils.enableChildWelds({part = newLetter, enabled = true})
 
             local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
             letterPositioner.Transparency = 1

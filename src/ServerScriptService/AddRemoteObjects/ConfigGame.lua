@@ -27,7 +27,7 @@ function setVisibility()
     for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
 
     local taggedPartsTransparent = CS:GetTagged("Transparent")
-    -- for i, item in ipairs(taggedPartsTransparent) do item.Transparency = 1 end
+    for i, item in ipairs(taggedPartsTransparent) do item.Transparency = 1 end
 
     -- Utils.setPropsByTag({tag = "EnableWeldAtRunTime", props = {Enabled = true}})
 
