@@ -11,6 +11,7 @@ function module.configDropBox(props)
     local isStartScene = props.isStartScene
     local dropBox = props.dropBox
     local item = props.item
+    local onCorrectItemDropped = props.onCorrectItemDropped
 
     local part = Utils.getFirstDescendantByName(scene, "DropBoxDetectionRegion")
     if (part) then
@@ -22,6 +23,8 @@ function module.configDropBox(props)
                 print('match' .. ' - start');
                 print('match' .. ' - start');
                 partParent.Parent = workspace
+                onCorrectItemDropped()
+
             end
         end
         part.Touched:Connect(onPartTouched)

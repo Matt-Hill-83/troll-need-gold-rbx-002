@@ -34,8 +34,6 @@ function module.addScenes(props)
 
     local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
     for sceneIndex, sceneConfig in ipairs(sceneConfigs) do
-        local entered2 = {value = false}
-
         local newPosition = getNewScenePosition(
                                 {
                 coordinates = sceneConfig.coordinates,
@@ -77,7 +75,6 @@ function module.addScenes(props)
         else
             localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
                                                                "LocalTeleporterPositioner")
-
         end
 
         Teleporters.addTeleporters({
@@ -91,6 +88,13 @@ function module.addScenes(props)
             localTPPositioner = localTPPositioner
         })
 
+        function onCorrectItemDropped()
+            print("yay")
+            print("yay")
+            print("yay")
+            print("yay")
+        end
+
         local dropBox = Utils.getFirstDescendantByName(clonedScene,
                                                        "DropBoxModel")
         local dropBoxItem = sceneConfig.item or {name = "GemTemplate"}
@@ -101,7 +105,7 @@ function module.addScenes(props)
             isStartScene = sceneConfig.isStartScene,
             isEndScene = sceneConfig.isEndScene,
             dropBox = dropBox,
-            entered2 = entered2,
+            onCorrectItemDropped = onCorrectItemDropped,
             item = dropBoxItem
 
         })
