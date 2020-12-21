@@ -35,7 +35,7 @@ function module.addMiniGame(props)
                                      clonedLetterFallModel, "LetterFallFolder")
         clonedLetterFallModel.Parent = clonedScene
         clonedLetterFallModel.PrimaryPart.CFrame =
-            clonedScene.PrimaryPart.CFrame + Vector3.new(30, 20, 60)
+            clonedScene.PrimaryPart.CFrame + Vector3.new(30, 50, 60)
         clonedLetterFallModel.PrimaryPart.Anchored = true
 
         miniGameState.letterFallFolder = letterFallFolder
