@@ -14,7 +14,6 @@ function enableChildWelds(props)
         weld.Enabled = enabled
         -- 
     end
-
 end
 
 function genRandom(min, max)

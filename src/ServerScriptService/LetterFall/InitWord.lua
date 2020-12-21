@@ -17,6 +17,12 @@ function initWord(miniGameState)
     local wordBoxFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                          "WordBoxFolder")
 
+    local putItemsToBeClonedHere = Utils.getFirstDescendantByName(
+                                       letterFallFolder,
+                                       "PutItemsToBeClonedHere")
+
+    Utils.enableChildWelds({part = putItemsToBeClonedHere, enabled = false})
+
     for i, letter in ipairs(miniGameState.wordLetters) do
         if letter.instance then letter.instance:Destroy() end
         miniGameState.wordLetters[i] = nil
@@ -34,12 +40,9 @@ function initWord(miniGameState)
         local spacingFactor = 1.25
         local wordSpacingY = letterBlockTemplate.Size.Y * spacingFactor
 
-        local weldPlate = Utils.getFirstDescendantByName(newWordBoxFolder,
-                                                         "O-WeldPlate")
-
-        local baseWeld = Utils.getFirstDescendantByName(newWordBoxFolder,
-                                                        "BaseWeld")
-        if baseWeld then baseWeld.Enabled = false end
+        -- local baseWeld = Utils.getFirstDescendantByName(newWordBoxFolder,
+        --                                                 "BaseWeld")
+        -- if baseWeld then baseWeld.Enabled = false end
 
         local newWordBox = Utils.getFirstDescendantByName(newWordBoxFolder,
                                                           "WordBox")
@@ -50,6 +53,7 @@ function initWord(miniGameState)
 
         newWordBox.Name = newWordBox.Name .. "zzz" .. wordIndex
         newWordBox.PrimaryPart.Anchored = true
+        -- Utils.enableChildWelds({part = putItemsToBeClonedHere, enabled = true})
 
         local letterPositioner = Utils.getFirstDescendantByName(
                                      newWordBoxFolder,

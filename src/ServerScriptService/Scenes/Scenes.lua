@@ -89,10 +89,17 @@ function module.addScenes(props)
         })
 
         function onCorrectItemDropped()
-            print("yay")
-            print("yay")
-            print("yay")
-            print("yay")
+
+            local manHoleCover = Utils.getFirstDescendantByName(clonedScene,
+                                                                "ManHoleCover")
+            if manHoleCover then
+
+                manHoleCover:Destroy()
+                print("yay")
+                print("yay")
+                print("yay")
+                print("yay")
+            end
         end
 
         local dropBox = Utils.getFirstDescendantByName(clonedScene,
