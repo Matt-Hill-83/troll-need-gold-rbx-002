@@ -69,7 +69,6 @@ function module.addScenes(props)
 
         -- Add teleporters after MinGame is added, because they could be located
         --  in mini game
-
         local localTPPositioner = nil
         if sceneConfig.isStartScene then
             localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
