@@ -17,25 +17,26 @@ function initGameToggle(miniGameState)
     local startGameTrigger = Utils.getFirstDescendantByName(letterFallFolder,
                                                             "StartGameTrigger")
 
-    if startGameTrigger then
-        function onPartTouched(otherPart)
-            if not miniGameState.initCompleted then
-                InitLetterRack.initLetterRack(miniGameState)
-                InitWord.initWord(miniGameState)
-                HandleClick.initClickHandler(miniGameState)
-                miniGameState.initCompleted = true
-
-                local taggedPartsDestroy = CS:GetTagged("Destroy")
-                print('taggedPartsDestroy' .. ' - start');
-                print(taggedPartsDestroy);
-                for i, item in ipairs(taggedPartsDestroy) do
-                    item:Destroy()
-                end
-
-            end
-        end
-        startGameTrigger.Touched:Connect(onPartTouched)
+    if not miniGameState.initCompleted then
+        InitLetterRack.initLetterRack(miniGameState)
+        InitWord.initWord(miniGameState)
     end
+
+    function onPartTouched(otherPart)
+        print('onPartTouched')
+        if not miniGameState.initCompleted then
+            HandleClick.initClickHandler(miniGameState)
+
+            local taggedPartsDestroy = CS:GetTagged("Destroy")
+            print('taggedPartsDestroy' .. ' - start');
+            print(taggedPartsDestroy);
+            for i, item in ipairs(taggedPartsDestroy) do
+                item:Destroy()
+            end
+            miniGameState.initCompleted = true
+        end
+    end
+    startGameTrigger.Touched:Connect(onPartTouched)
 
 end
 
