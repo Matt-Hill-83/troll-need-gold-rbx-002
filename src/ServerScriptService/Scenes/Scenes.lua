@@ -94,7 +94,8 @@ function module.addScenes(props)
 
         local dropBox = Utils.getFirstDescendantByName(clonedScene,
                                                        "DropBoxModel")
-        local dropBoxItem = sceneConfig.item or {name = "TestLetter-zzz"}
+        -- local dropBoxItem = sceneConfig.item or {name = "TestLetter-zzz"}
+        local dropBoxItem = sceneConfig.item or {name = "GemTemplate"}
         -- local dropBoxItem = sceneConfig.item or {name = "letter-C"}
         DropBox.configDropBox({
             scene = clonedScene,
