@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>488.093475</X>
-					<Y>22.0675812</Y>
-					<Z>-1019.16925</Z>
-					<R00>-0.888974071</R00>
-					<R01>0.330055445</R01>
-					<R02>-0.317472249</R02>
-					<R10>-1.4901163e-08</R10>
-					<R11>0.69323498</R11>
-					<R12>0.720711648</R12>
-					<R20>0.457957685</R20>
-					<R21>0.640693963</R21>
-					<R22>-0.61626786</R22>
+					<X>525.496704</X>
+					<Y>30.0972881</Y>
+					<Z>-1128.66394</Z>
+					<R00>-0.998106837</R00>
+					<R01>-0.0129963625</R01>
+					<R02>0.0601147972</R02>
+					<R10>9.31322464e-10</R10>
+					<R11>0.977418959</R11>
+					<R12>0.21131058</R12>
+					<R20>-0.0615036078</R20>
+					<R21>0.210910529</R21>
+					<R22>-0.975568593</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>488.728424</X>
-					<Y>20.6261482</Y>
-					<Z>-1017.93671</Z>
+					<X>525.376465</X>
+					<Y>29.674633</Y>
+					<Z>-1126.71265</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -35485,6 +35485,7 @@ function initGameToggle(miniGameState)
         end
     end
     startGameTrigger.Touched:Connect(onPartTouched)
+    LetterFallUtils.createBalls(miniGameState)
 end
 
 module.initGameToggle = initGameToggle
@@ -35548,7 +35549,7 @@ function handleBrick(player, clickedLetter, miniGameState)
     local wordLetters = miniGameState.wordLetters
 
     if not miniGameState.gemsStarted then
-        LetterFallUtils.createBalls(miniGameState)
+        -- LetterFallUtils.createBalls(miniGameState)
         miniGameState.gemsStarted = true
     end
 

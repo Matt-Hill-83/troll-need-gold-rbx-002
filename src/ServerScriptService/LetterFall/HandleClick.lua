@@ -34,7 +34,7 @@ function handleBrick(player, clickedLetter, miniGameState)
     local wordLetters = miniGameState.wordLetters
 
     if not miniGameState.gemsStarted then
-        LetterFallUtils.createBalls(miniGameState)
+        -- LetterFallUtils.createBalls(miniGameState)
         miniGameState.gemsStarted = true
     end
 
