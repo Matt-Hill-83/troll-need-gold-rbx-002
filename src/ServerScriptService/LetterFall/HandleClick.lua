@@ -36,8 +36,8 @@ function handleBrick(player, clickedLetter, miniGameState)
     -- local wordLetters = miniGameState.wordLetters
 
     if not miniGameState.gemsStarted then
-        -- LetterFallUtils.createBalls(miniGameState)
         miniGameState.gemsStarted = true
+        -- 
     end
 
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
@@ -45,10 +45,12 @@ function handleBrick(player, clickedLetter, miniGameState)
 
     local activeWord =
         miniGameState.renderedWords[miniGameState.activeWordIndex]
-    print('activeWord' .. ' - start');
-    print(activeWord);
-
     local letters = activeWord.letters
+
+    local completedWordPositioner = Utils.getFirstDescendantByName(
+                                        letterFallFolder,
+                                        "CompletedWordPositioner")
+    local currentActiveWord = activeWord.word.PrimaryPart
 
     for i, letter in ipairs(letters) do
         -- for i, letter in ipairs(wordLetters) do
@@ -62,11 +64,23 @@ function handleBrick(player, clickedLetter, miniGameState)
             clickedLetter:Destroy()
             local wordComplete = isWordComplete(letters)
             if wordComplete then
-                miniGameState.lastWordIndex = miniGameState.lastWordIndex + 1
-                print("complete")
-                print("complete")
-                print("complete")
-                -- InitWord.initWord(miniGameState)
+                local activeWordPositioner =
+                    Utils.getFirstDescendantByName(letterFallFolder,
+                                                   "ActiveWordPositioner")
+
+                currentActiveWord.CFrame = completedWordPositioner.CFrame
+                miniGameState.activeWordIndex =
+                    miniGameState.activeWordIndex + 1
+
+                local newActiveWord =
+                    miniGameState.renderedWords[miniGameState.activeWordIndex]
+                newActiveWord.CFrame = activeWordPositioner.CFrame
+
+                LetterFallUtils.colorLetterText(
+                    {
+                        letterBlock = letter.instance,
+                        color = Color3.fromRGB(21, 255, 0)
+                    })
             end
             break
         end
