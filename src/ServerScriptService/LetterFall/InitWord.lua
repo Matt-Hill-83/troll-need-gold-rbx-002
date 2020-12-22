@@ -6,11 +6,6 @@ local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 local module = {}
 
 function initWord(miniGameState)
-
-    -- O-WeldPlate need to have a weld to the base called "BaseWeld"
-    -- O-WeldPlate need to have a weld to the base called "BaseWeld"
-    -- O-WeldPlate need to have a weld to the base called "BaseWeld"
-    -- O-WeldPlate need to have a weld to the base called "BaseWeld"
     local letterFallFolder = miniGameState.letterFallFolder
     local wordFolder = getWordFolder(miniGameState)
 
@@ -29,10 +24,13 @@ function initWord(miniGameState)
     end
     Utils.clearTable(miniGameState.wordLetters)
 
-    -- for wordIndex = 1, 2 do
     for wordIndex, word in ipairs(miniGameState.words) do
-        local newWordBoxFolder = wordBoxFolder:Clone()
-        newWordBoxFolder.Parent = wordBoxFolder.Parent
+        local newWordBoxFolder = wordBoxFolder
+        local wordBox = Utils.getFirstDescendantByName(newWordBoxFolder,
+                                                       "WordBox")
+
+        local newWord = wordBox:Clone()
+        newWord.Parent = wordBox.Parent
 
         local letterBlockTemplate =
             Utils.getFromTemplates("LetterBlockTemplate")
@@ -42,20 +40,16 @@ function initWord(miniGameState)
         local spacingFactor = 1.25
         local wordSpacingY = letterBlockTemplate.Size.Y * spacingFactor
 
-        local newWordBox = Utils.getFirstDescendantByName(newWordBoxFolder,
-                                                          "WordBox")
-        local wordBench = Utils.getFirstDescendantByName(newWordBoxFolder,
-                                                         "WordBench")
+        local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
 
         wordBench.CFrame = wordBench.CFrame +
                                Vector3.new(0, wordSpacingY * wordIndex, 0)
 
-        newWordBox.Name = newWordBox.Name .. "zzz" .. wordIndex
+        newWord.Name = newWord.Name .. "zzz" .. wordIndex
         wordBench.Anchored = true
 
-        local letterPositioner = Utils.getFirstDescendantByName(
-                                     newWordBoxFolder,
-                                     "WordLetterBlockPositioner")
+        local letterPositioner = Utils.getFirstDescendantByName(newWord,
+                                                                "WordLetterBlockPositioner")
 
         letterPositioner.Name = letterPositioner.Name .. "-" .. wordIndex
 
@@ -89,7 +83,7 @@ function initWord(miniGameState)
         end
         wordBench:Destroy()
     end
-    wordBoxFolder:Destroy()
+    -- wordBoxFolder:Destroy()
 end
 
 function getWordFolder(miniGameState)
