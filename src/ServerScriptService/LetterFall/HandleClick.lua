@@ -9,6 +9,9 @@ local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 local module = {}
 
 function isDesiredLetter(letter, clickedLetter)
+    print('isDesiredLetter')
+    print('clickedLetter' .. ' - start');
+    print(clickedLetter);
     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
                           .Text
     return letter.found ~= true and letter.char == textLabel
@@ -32,6 +35,9 @@ end
 function handleBrick(player, clickedLetter, miniGameState)
     print('handleBrick' .. ' - start');
     print(handleBrick);
+
+    print('clickedLetter' .. ' - start');
+    print(clickedLetter);
     local letterFallFolder = miniGameState.letterFallFolder
     -- local wordLetters = miniGameState.wordLetters
 
@@ -52,6 +58,7 @@ function handleBrick(player, clickedLetter, miniGameState)
                                         "CompletedWordPositioner")
     local currentActiveWord = activeWord.word.PrimaryPart
 
+    -- 
     for i, letter in ipairs(letters) do
         -- for i, letter in ipairs(wordLetters) do
         if isDesiredLetter(letter, clickedLetter) then
@@ -62,25 +69,29 @@ function handleBrick(player, clickedLetter, miniGameState)
                     color = Color3.fromRGB(113, 17, 161)
                 })
             clickedLetter:Destroy()
+
             local wordComplete = isWordComplete(letters)
             if wordComplete then
+                currentActiveWord.CFrame = completedWordPositioner.CFrame
+
                 local activeWordPositioner =
                     Utils.getFirstDescendantByName(letterFallFolder,
                                                    "ActiveWordPositioner")
 
-                currentActiveWord.CFrame = completedWordPositioner.CFrame
+                local newActiveWord =
+                    miniGameState.renderedWords[miniGameState.activeWordIndex +
+                        1]
+                newActiveWord.CFrame = activeWordPositioner.CFrame
                 miniGameState.activeWordIndex =
                     miniGameState.activeWordIndex + 1
 
-                local newActiveWord =
-                    miniGameState.renderedWords[miniGameState.activeWordIndex]
-                newActiveWord.CFrame = activeWordPositioner.CFrame
-
-                LetterFallUtils.colorLetterText(
-                    {
-                        letterBlock = letter.instance,
-                        color = Color3.fromRGB(21, 255, 0)
-                    })
+                for i, letter in ipairs(letters) do
+                    LetterFallUtils.colorLetterText(
+                        {
+                            letterBlock = letter.instance,
+                            color = Color3.fromRGB(21, 255, 0)
+                        })
+                end
             end
             break
         end
