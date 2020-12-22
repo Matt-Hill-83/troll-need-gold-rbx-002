@@ -37,6 +37,7 @@ function initWord(miniGameState)
         local letterPositioner = Utils.getFirstDescendantByName(newWord,
                                                                 "WordLetterBlockPositioner")
 
+        -- newWord.Parent = wordBox.Parent
         newWord.Parent = wordBox.Parent
 
         Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
@@ -52,7 +53,6 @@ function initWord(miniGameState)
         wordBench.Anchored = true
 
         letterPositioner.Name = letterPositioner.Name .. wordNameStub
-
         letterBlockTemplate.Transparency = 1
 
         for letterIndex = 1, #word do
@@ -63,10 +63,9 @@ function initWord(miniGameState)
             Utils.hideItemAndChildren({item = newLetter, hide = false})
 
             newLetter.Name = "wordLetter-" .. letterNameStub
-            -- newLetter.Transparency = 0
 
-            local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
-            -- letterPositioner.Transparency = 1
+            local letterPositionZ = newLetter.Size.Z * (letterIndex - 1) *
+                                        spacingFactor
 
             CS:AddTag(newLetter, LetterFallUtils.tagNames.WordLetter)
             LetterFallUtils.applyLetterText(
@@ -75,7 +74,7 @@ function initWord(miniGameState)
                 {letterBlock = newLetter, color = Color3.new(255, 0, 191)})
 
             newLetter.CFrame = letterPositioner.CFrame *
-                                   CFrame.new(Vector3.new(0, 0, z))
+                                   CFrame.new(Vector3.new(0, 0, letterPositionZ))
             local weld = Instance.new("WeldConstraint")
             weld.Name = "WeldConstraint" .. letterNameStub
             weld.Parent = wordBench.Parent
@@ -83,9 +82,11 @@ function initWord(miniGameState)
             weld.Part1 = newLetter
 
             -- Do this last to avoid tweening
-            newLetter.Parent = wordFolder
+            newLetter.Parent = newWord
+            -- newLetter.Parent = wordFolder
             table.insert(miniGameState.wordLetters,
                          {char = letter, found = false, instance = newLetter})
+            table.insert(miniGameState.renderedWords, {word = newWord})
         end
     end
 end

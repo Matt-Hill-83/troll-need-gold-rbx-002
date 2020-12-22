@@ -52,7 +52,10 @@ function handleBrick(player, clickedLetter, miniGameState)
             local wordComplete = isWordComplete(wordLetters)
             if wordComplete then
                 miniGameState.lastWordIndex = miniGameState.lastWordIndex + 1
-                InitWord.initWord(miniGameState)
+                print("complete")
+                print("complete")
+                print("complete")
+                -- InitWord.initWord(miniGameState)
             end
             break
         end
