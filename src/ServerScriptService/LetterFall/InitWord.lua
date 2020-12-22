@@ -37,7 +37,6 @@ function initWord(miniGameState)
         local letterPositioner = Utils.getFirstDescendantByName(newWord,
                                                                 "WordLetterBlockPositioner")
 
-        -- newWord.Parent = wordBox.Parent
         newWord.Parent = wordBox.Parent
 
         Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
@@ -55,6 +54,7 @@ function initWord(miniGameState)
         letterPositioner.Name = letterPositioner.Name .. wordNameStub
         letterBlockTemplate.Transparency = 1
 
+        local lettersInWord = {}
         for letterIndex = 1, #word do
             local letterNameStub = wordNameStub .. "-L" .. letterIndex
             local letter = string.sub(word, letterIndex, letterIndex)
@@ -86,8 +86,11 @@ function initWord(miniGameState)
             -- newLetter.Parent = wordFolder
             table.insert(miniGameState.wordLetters,
                          {char = letter, found = false, instance = newLetter})
-            table.insert(miniGameState.renderedWords, {word = newWord})
+            table.insert(lettersInWord,
+                         {char = letter, found = false, instance = newLetter})
         end
+        table.insert(miniGameState.renderedWords,
+                     {word = newWord, letters = lettersInWord})
     end
 end
 

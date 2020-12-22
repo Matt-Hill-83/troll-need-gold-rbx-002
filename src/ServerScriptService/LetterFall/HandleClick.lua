@@ -30,8 +30,10 @@ function initClickHandler(miniGameState)
 end
 
 function handleBrick(player, clickedLetter, miniGameState)
+    print('handleBrick' .. ' - start');
+    print(handleBrick);
     local letterFallFolder = miniGameState.letterFallFolder
-    local wordLetters = miniGameState.wordLetters
+    -- local wordLetters = miniGameState.wordLetters
 
     if not miniGameState.gemsStarted then
         -- LetterFallUtils.createBalls(miniGameState)
@@ -40,7 +42,16 @@ function handleBrick(player, clickedLetter, miniGameState)
 
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
     if not isChild then return {} end
-    for i, letter in ipairs(wordLetters) do
+
+    local activeWord =
+        miniGameState.renderedWords[miniGameState.activeWordIndex]
+    print('activeWord' .. ' - start');
+    print(activeWord);
+
+    local letters = activeWord.letters
+
+    for i, letter in ipairs(letters) do
+        -- for i, letter in ipairs(wordLetters) do
         if isDesiredLetter(letter, clickedLetter) then
             letter.found = true
             LetterFallUtils.colorLetterText(
@@ -49,7 +60,7 @@ function handleBrick(player, clickedLetter, miniGameState)
                     color = Color3.fromRGB(113, 17, 161)
                 })
             clickedLetter:Destroy()
-            local wordComplete = isWordComplete(wordLetters)
+            local wordComplete = isWordComplete(letters)
             if wordComplete then
                 miniGameState.lastWordIndex = miniGameState.lastWordIndex + 1
                 print("complete")
