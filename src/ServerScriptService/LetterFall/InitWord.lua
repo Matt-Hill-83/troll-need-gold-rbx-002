@@ -29,13 +29,20 @@ function initWord(miniGameState)
     end
     Utils.clearTable(miniGameState.wordLetters)
 
+    -- for wordIndex = 1, 2 do
     for wordIndex, word in ipairs(miniGameState.words) do
         local newWordBoxFolder = wordBoxFolder:Clone()
         newWordBoxFolder.Parent = wordBoxFolder.Parent
-        local letterBlockTemplate = Utils.getFirstDescendantByName(
-                                        newWordBoxFolder, "LetterBlockTemplate")
+        -- local letterBlockTemplate = Utils.getFirstDescendantByName(
+        --                                 newWordBoxFolder, "LetterBlockTemplate")
 
-        Utils.hideItemAndChildren({item = letterBlockTemplate, hide = true})
+        local letterBlockTemplate =
+            Utils.getFromTemplates("LetterBlockTemplate")
+        -- local letterBlockTemplate = Utils.getFirstDescendantByName(
+        --                                 newWordBoxFolder, "LetterBlockTemplate")
+
+        -- Utils.hideItemAndChildren({item = letterBlockTemplate, hide = true})
+        Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
 
         local spacingFactor = 1.25
         local wordSpacingY = letterBlockTemplate.Size.Y * spacingFactor
