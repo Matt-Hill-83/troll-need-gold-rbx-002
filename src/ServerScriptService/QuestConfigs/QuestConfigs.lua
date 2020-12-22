@@ -2,83 +2,9 @@ local module = {}
 
 module.questConfigs = {
     {
-        questTitle = "--- RBX-100 - A Bee in a Tree",
+        questTitle = "News From Seuss Ville",
         startSceneCoords = {row = 0, col = 0},
-        endSceneCoords = {row = 0, col = 0},
-        sceneConfigs = {
-            {
-                name = "tree",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "katSmiling", text = "A bee.  A bee."},
-                            {char = "lizHappy", text = "I see a bee."},
-                            {char = "katSmiling", text = "Do you see a bee?"},
-                            {
-                                char = "lizHappy",
-                                text = "I see a bee... in a tree..."
-                            },
-                            {
-                                char = "katSmiling",
-                                text = "We see a bee in a tree!"
-                            }, {char = "lizHappy", text = "Tee hee hee!"}
-                        },
-                        characters01 = {
-                            {name = "katSmiling"}, {name = "lizHappy"}
-                        },
-                        characters02 = {{name = "magenta01"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizHappy", text = "I see a dog..."},
-                            {char = "elf", text = "DO NOT GO IN THE CAVE!!!"},
-                            {char = "katScared", text = "Um.... Liz..."},
-                            {
-                                char = "lizHappy",
-                                text = "I see a dog. .. on a log!"
-                            },
-                            {
-                                char = "katScared",
-                                text = "Liz, that is not a dog..."
-                            }
-                        },
-                        characters01 = {
-                            {name = "katScared"}, {name = "lizHappy"}
-                        },
-                        characters02 = {{name = "elf"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizHappy", text = "Good doggy!"},
-                            {char = "elf", text = "DO NOT GO IN THE CAVE!!!"},
-                            {char = "katDismayed", text = "Liz...."},
-                            {char = "elf", text = "DO NOT GO IN THE CAVE!!!"},
-                            {
-                                char = "katDismayed",
-                                text = "Liz... We need to go now!"
-                            },
-                            {char = "lizHappy", text = "We can go in the cave!"}
-                        },
-                        characters01 = {
-                            {name = "katDismayed"}, {name = "lizHappy"}
-                        },
-                        characters02 = {{name = "elf"}}
-                    }
-                },
-                coordinates = {row = 0, col = 0},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = false,
-                isEndScene = true,
-                isStartScene = true,
-                maxRow = 0,
-                maxCol = 0
-            }
-        },
-        gridSize = {rows = 1, cols = 1}
-    }, {
-        questTitle = "News From Suesse Ville",
-        startSceneCoords = {row = 0, col = 0},
-        endSceneCoords = {row = 0, col = 2},
+        endSceneCoords = {col = 2, row = 0},
         sceneConfigs = {
             {
                 name = "cap",
@@ -521,7 +447,7 @@ module.questConfigs = {
                         }
                     }
                 },
-                coordinates = {row = 0, col = 2},
+                coordinates = {col = 2, row = 0},
                 showBottomPath = false,
                 showRightPath = false,
                 showTopPath = false,
@@ -536,7 +462,7 @@ module.questConfigs = {
     }, {
         questTitle = "001 - Troll Need Pet",
         startSceneCoords = {row = 0, col = 0},
-        endSceneCoords = {col = 2, row = 2},
+        endSceneCoords = {row = 2, col = 2},
         sceneConfigs = {
             {
                 name = "home",
@@ -656,7 +582,7 @@ module.questConfigs = {
                         characters02 = {{name = "cub"}}
                     }
                 },
-                coordinates = {col = 3, row = 0},
+                coordinates = {row = 0, col = 3},
                 showBottomPath = false,
                 showRightPath = false,
                 showTopPath = false,
@@ -670,7 +596,7 @@ module.questConfigs = {
         gridSize = {rows = 1, cols = 4}
     }, {
         questTitle = "100 - Lucky the Leperchaun",
-        startSceneCoords = {row = 0, col = 0},
+        startSceneCoords = {col = 0, row = 0},
         sceneConfigs = {
             {
                 name = "drip",
@@ -979,7 +905,7 @@ module.questConfigs = {
                         characters02 = {{name = "looney01cu"}}
                     }
                 },
-                coordinates = {row = 0, col = 0},
+                coordinates = {col = 0, row = 0},
                 showBottomPath = false,
                 showRightPath = false,
                 showTopPath = false,
@@ -993,7 +919,7 @@ module.questConfigs = {
         gridSize = {rows = 1, cols = 1}
     }, {
         questTitle = "105 - Hey look! Grass!",
-        startSceneCoords = {col = 0, row = 0},
+        startSceneCoords = {row = 0, col = 0},
         endSceneCoords = {col = 3, row = 0},
         sceneConfigs = {
             {
@@ -1087,7 +1013,7 @@ module.questConfigs = {
                         }
                     }
                 },
-                coordinates = {col = 0, row = 0},
+                coordinates = {row = 0, col = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -1216,7 +1142,7 @@ module.questConfigs = {
                         characters02 = {{name = "empty"}}
                     }
                 },
-                coordinates = {row = 0, col = 1},
+                coordinates = {col = 1, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -1809,7 +1735,7 @@ module.questConfigs = {
         gridSize = {rows = 1, cols = 4}
     }, {
         questTitle = "The Bad Baby Sitter",
-        startSceneCoords = {row = 0, col = 0},
+        startSceneCoords = {col = 0, row = 0},
         sceneConfigs = {
             {
                 name = "home",
@@ -2056,7 +1982,7 @@ module.questConfigs = {
                         }
                     }
                 },
-                coordinates = {row = 0, col = 0},
+                coordinates = {col = 0, row = 0},
                 showBottomPath = false,
                 showRightPath = false,
                 showTopPath = false,
@@ -2069,9 +1995,9 @@ module.questConfigs = {
         },
         gridSize = {rows = 1, cols = 1}
     }, {
-        questTitle = "------- Gilbert Gossington is Gone!",
-        startSceneCoords = {row = 0, col = 0},
-        endSceneCoords = {col = 1, row = 1},
+        questTitle = "Gilbert Gossington is Gone!",
+        startSceneCoords = {col = 0, row = 0},
+        endSceneCoords = {row = 1, col = 2},
         sceneConfigs = {
             {
                 name = "barn",
@@ -2093,7 +2019,7 @@ module.questConfigs = {
                         characters02 = {{name = "chick01"}, {name = "goat01"}}
                     }
                 },
-                coordinates = {row = 0, col = 0},
+                coordinates = {col = 0, row = 0},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = false,
@@ -2263,7 +2189,7 @@ module.questConfigs = {
                         }
                     }
                 },
-                coordinates = {row = 0, col = 1},
+                coordinates = {col = 1, row = 0},
                 showBottomPath = true,
                 showRightPath = false,
                 showTopPath = false,
@@ -2326,12 +2252,12 @@ module.questConfigs = {
                         }
                     }
                 },
-                coordinates = {col = 1, row = 1},
+                coordinates = {row = 1, col = 1},
                 showBottomPath = false,
                 showRightPath = true,
                 showTopPath = true,
                 showLeftPath = false,
-                isEndScene = true,
+                isEndScene = false,
                 isStartScene = false,
                 maxRow = 1,
                 maxCol = 1

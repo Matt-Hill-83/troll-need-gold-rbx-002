@@ -1,5 +1,6 @@
 local Sss = game:GetService("ServerScriptService")
 local Part = require(Sss.Source.AddRemoteObjects.Part)
+local Utils3 = require(Sss.Source.Utils.U003PartsUtils)
 
 local module = {}
 
@@ -38,7 +39,7 @@ function getCenterPosFromDesiredEdgeOffset(props)
         alignToParentFarEdge = alignToParentFarEdge
     }
 
-    local parentEdge = getPartFarEdge(edgeProps)
+    local parentEdge = Utils3.getPartFarEdge(edgeProps)
 
     local parentOffsetPoint = parentEdge + desiredOffset + (childSize / 2) *
                                   moveTowardZero

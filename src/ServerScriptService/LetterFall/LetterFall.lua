@@ -37,10 +37,7 @@ function initGameToggle(miniGameState)
         end
     end
     startGameTrigger.Touched:Connect(onPartTouched)
-
 end
 
 module.initGameToggle = initGameToggle
-module.createBalls = createBalls
-
 return module

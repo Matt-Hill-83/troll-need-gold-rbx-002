@@ -6,7 +6,7 @@ local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
 local InitWord = require(Sss.Source.LetterFall.InitWord)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 
-local module = {gemsStarted = false}
+local module = {}
 
 function isDesiredLetter(letter, clickedLetter)
     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
@@ -24,7 +24,6 @@ end
 function initClickHandler(miniGameState)
     -- Gets arguments from EventHandler in StarterPack
     function brickClickHandler(player, clickedLetter)
-
         handleBrick(player, clickedLetter, miniGameState)
     end
     remoteEvent.OnServerEvent:Connect(brickClickHandler)
@@ -34,15 +33,11 @@ function handleBrick(player, clickedLetter, miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local wordLetters = miniGameState.wordLetters
 
-    if not module.gemsStarted then
-
+    if not miniGameState.gemsStarted then
         LetterFallUtils.createBalls(miniGameState)
-        module.gemsStarted = true
+        miniGameState.gemsStarted = true
     end
 
-    -- local ballPitBottom = Utils.getFirstDescendantByName(letterFallFolder,
-    --                                                      "BallPitBottom")
-    -- if ballPitBottom then ballPitBottom:Destroy() end
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
     if not isChild then return {} end
     for i, letter in ipairs(wordLetters) do

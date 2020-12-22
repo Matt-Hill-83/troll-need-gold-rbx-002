@@ -18,4 +18,10 @@ function module.getCenterPositionForRightFront(props)
     return Vector3.new(child.Position.X, child.Position.Y, newVal)
 end
 
+function getPartFarEdge(props)
+    local part = props.part
+    return part.Position + (part.Size / 2) * props.alignToParentFarEdge
+end
+
+module.getPartFarEdge = getPartFarEdge
 return module
