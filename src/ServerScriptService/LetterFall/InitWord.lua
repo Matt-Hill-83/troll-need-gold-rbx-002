@@ -32,8 +32,11 @@ function initWord(miniGameState)
         local newWord = wordBox:Clone()
         newWord.Parent = wordBox.Parent
 
-        local letterBlockTemplate =
-            Utils.getFromTemplates("LetterBlockTemplate")
+        -- local letterBlockTemplate =
+        --     Utils.getFromTemplates("LetterBlockTemplate")
+
+        local letterBlockTemplate = Utils.getFirstDescendantByName(
+                                        letterFallFolder, "LetterBlockTemplate")
 
         Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
 
