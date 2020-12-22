@@ -33,34 +33,25 @@ function initWord(miniGameState)
     for wordIndex, word in ipairs(miniGameState.words) do
         local newWordBoxFolder = wordBoxFolder:Clone()
         newWordBoxFolder.Parent = wordBoxFolder.Parent
-        -- local letterBlockTemplate = Utils.getFirstDescendantByName(
-        --                                 newWordBoxFolder, "LetterBlockTemplate")
 
         local letterBlockTemplate =
             Utils.getFromTemplates("LetterBlockTemplate")
-        -- local letterBlockTemplate = Utils.getFirstDescendantByName(
-        --                                 newWordBoxFolder, "LetterBlockTemplate")
 
-        -- Utils.hideItemAndChildren({item = letterBlockTemplate, hide = true})
         Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
 
         local spacingFactor = 1.25
         local wordSpacingY = letterBlockTemplate.Size.Y * spacingFactor
 
-        -- local baseWeld = Utils.getFirstDescendantByName(newWordBoxFolder,
-        --                                                 "BaseWeld")
-        -- if baseWeld then baseWeld.Enabled = false end
-
         local newWordBox = Utils.getFirstDescendantByName(newWordBoxFolder,
                                                           "WordBox")
+        local wordBench = Utils.getFirstDescendantByName(newWordBoxFolder,
+                                                         "WordBench")
 
-        newWordBox.PrimaryPart.CFrame = newWordBox.PrimaryPart.CFrame +
-                                            Vector3.new(0, wordSpacingY *
-                                                            wordIndex, 0)
+        wordBench.CFrame = wordBench.CFrame +
+                               Vector3.new(0, wordSpacingY * wordIndex, 0)
 
         newWordBox.Name = newWordBox.Name .. "zzz" .. wordIndex
-        newWordBox.PrimaryPart.Anchored = true
-        -- Utils.enableChildWelds({part = putItemsToBeClonedHere, enabled = true})
+        wordBench.Anchored = true
 
         local letterPositioner = Utils.getFirstDescendantByName(
                                      newWordBoxFolder,
@@ -89,13 +80,14 @@ function initWord(miniGameState)
 
             newLetter.CFrame = letterPositioner.CFrame *
                                    CFrame.new(Vector3.new(0, 0, z))
+            newLetter.Anchored = true
+
             -- Do this last to avoid tweening
             newLetter.Parent = wordFolder
             table.insert(miniGameState.wordLetters,
                          {char = letter, found = false, instance = newLetter})
-
         end
-        -- newWordBox.PrimaryPart.Anchored = true
+        wordBench:Destroy()
     end
     wordBoxFolder:Destroy()
 end

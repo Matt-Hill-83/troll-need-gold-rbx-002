@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>598.401672</X>
-					<Y>185.854584</Y>
-					<Z>-1235.09424</Z>
-					<R00>-0.704233825</R00>
-					<R01>0.614747465</R01>
-					<R02>-0.355162501</R02>
-					<R10>-0</R10>
-					<R11>0.500251353</R11>
-					<R12>0.865880311</R12>
-					<R20>0.709968209</R20>
-					<R21>0.609782219</R21>
-					<R22>-0.352293879</R22>
+					<X>563.238586</X>
+					<Y>7.58330631</Y>
+					<Z>-1152.67053</Z>
+					<R00>-0.999383688</R00>
+					<R01>0.0106503963</R01>
+					<R02>-0.0334496833</R02>
+					<R10>9.31322575e-10</R10>
+					<R11>0.952865541</R11>
+					<R12>0.303392857</R12>
+					<R20>0.0351043046</R20>
+					<R21>0.303205878</R21>
+					<R22>-0.952278256</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>599.112</X>
-					<Y>184.122818</Y>
-					<Z>-1234.38965</Z>
+					<X>563.305481</X>
+					<Y>6.97656441</Y>
+					<Z>-1150.76611</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -13972,7 +13972,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 										<bool name="Locked">false</bool>
 										<bool name="Massless">false</bool>
 										<token name="Material">784</token>
-										<string name="Name">O</string>
+										<string name="Name">WordBench</string>
 										<float name="Reflectance">0</float>
 										<float name="RightParamA">-0.5</float>
 										<float name="RightParamB">0.5</float>
@@ -21480,8 +21480,8 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 								<token name="BottomSurface">0</token>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
-									<X>559.523315</X>
-									<Y>-68.1127014</Y>
+									<X>559.523499</X>
+									<Y>-65.1127014</Y>
 									<Z>-1079.20569</Z>
 									<R00>1</R00>
 									<R01>5.70858974e-05</R01>
@@ -35282,34 +35282,25 @@ function initWord(miniGameState)
     for wordIndex, word in ipairs(miniGameState.words) do
         local newWordBoxFolder = wordBoxFolder:Clone()
         newWordBoxFolder.Parent = wordBoxFolder.Parent
-        -- local letterBlockTemplate = Utils.getFirstDescendantByName(
-        --                                 newWordBoxFolder, "LetterBlockTemplate")
 
         local letterBlockTemplate =
             Utils.getFromTemplates("LetterBlockTemplate")
-        -- local letterBlockTemplate = Utils.getFirstDescendantByName(
-        --                                 newWordBoxFolder, "LetterBlockTemplate")
 
-        -- Utils.hideItemAndChildren({item = letterBlockTemplate, hide = true})
         Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
 
         local spacingFactor = 1.25
         local wordSpacingY = letterBlockTemplate.Size.Y * spacingFactor
 
-        -- local baseWeld = Utils.getFirstDescendantByName(newWordBoxFolder,
-        --                                                 "BaseWeld")
-        -- if baseWeld then baseWeld.Enabled = false end
-
         local newWordBox = Utils.getFirstDescendantByName(newWordBoxFolder,
                                                           "WordBox")
+        local wordBench = Utils.getFirstDescendantByName(newWordBoxFolder,
+                                                         "WordBench")
 
-        newWordBox.PrimaryPart.CFrame = newWordBox.PrimaryPart.CFrame +
-                                            Vector3.new(0, wordSpacingY *
-                                                            wordIndex, 0)
+        wordBench.CFrame = wordBench.CFrame +
+                               Vector3.new(0, wordSpacingY * wordIndex, 0)
 
         newWordBox.Name = newWordBox.Name .. "zzz" .. wordIndex
-        newWordBox.PrimaryPart.Anchored = true
-        -- Utils.enableChildWelds({part = putItemsToBeClonedHere, enabled = true})
+        wordBench.Anchored = true
 
         local letterPositioner = Utils.getFirstDescendantByName(
                                      newWordBoxFolder,
@@ -35338,13 +35329,14 @@ function initWord(miniGameState)
 
             newLetter.CFrame = letterPositioner.CFrame *
                                    CFrame.new(Vector3.new(0, 0, z))
+            newLetter.Anchored = true
+
             -- Do this last to avoid tweening
             newLetter.Parent = wordFolder
             table.insert(miniGameState.wordLetters,
                          {char = letter, found = false, instance = newLetter})
-
         end
-        -- newWordBox.PrimaryPart.Anchored = true
+        wordBench:Destroy()
     end
     wordBoxFolder:Destroy()
 end
