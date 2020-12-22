@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>525.496704</X>
-					<Y>30.0972881</Y>
-					<Z>-1128.66394</Z>
-					<R00>-0.998106837</R00>
-					<R01>-0.0129963625</R01>
-					<R02>0.0601147972</R02>
-					<R10>9.31322464e-10</R10>
-					<R11>0.977418959</R11>
-					<R12>0.21131058</R12>
-					<R20>-0.0615036078</R20>
-					<R21>0.210910529</R21>
-					<R22>-0.975568593</R22>
+					<X>561.707031</X>
+					<Y>-3.45956969</Y>
+					<Z>-1086.10327</Z>
+					<R00>-0.994654059</R00>
+					<R01>-0.0228386112</R01>
+					<R02>0.100707032</R02>
+					<R10>-0</R10>
+					<R11>0.975236177</R11>
+					<R12>0.221166626</R12>
+					<R20>-0.103264272</R20>
+					<R21>0.219984278</R21>
+					<R22>-0.97002238</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>525.376465</X>
-					<Y>29.674633</Y>
-					<Z>-1126.71265</Z>
+					<X>561.505615</X>
+					<Y>-3.90190721</Y>
+					<Z>-1084.16321</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -29526,24 +29526,6 @@ local Utils3 = require(Sss.Source.Utils.U003PartsUtils)
 
 local module = {}
 
-function getParentFarEdge(props)
-    local parent = props.parent
-    local childSizeLength = props.childLength
-    local axis = props.axis or 'X'
-
-    local parentPosition = parent.CFrame
-    local parentSize = parent.Size
-    local parentFarEdge = parentPosition[axis] + parentSize[axis] / 2
-    local alignedValue = parentFarEdge - childSizeLength / 2
-    return alignedValue
-end
-
-function getPartFarEdge(props)
-    local part = props.part
-    return part.Position + (part.Size / 2) * props.alignToParentFarEdge
-
-end
-
 function getCenterPosFromDesiredEdgeOffset(props)
     local parent = props.parent
     local childSize = props.childSize
@@ -35378,6 +35360,18 @@ function getPartFarEdge(props)
     return part.Position + (part.Size / 2) * props.alignToParentFarEdge
 end
 
+function getParentFarEdge(props)
+    local parent = props.parent
+    local childSizeLength = props.childLength
+    local axis = props.axis or 'X'
+
+    local parentPosition = parent.CFrame
+    local parentSize = parent.Size
+    local parentFarEdge = parentPosition[axis] + parentSize[axis] / 2
+    local alignedValue = parentFarEdge - childSizeLength / 2
+    return alignedValue
+end
+
 module.getPartFarEdge = getPartFarEdge
 return module
 ]]></ProtectedString>
@@ -35691,19 +35685,20 @@ function initWord(miniGameState)
         local newWordBoxFolder = wordBoxFolder
         local wordBox = Utils.getFirstDescendantByName(newWordBoxFolder,
                                                        "WordBox")
-
-        local newWord = wordBox:Clone()
-        newWord.Parent = wordBox.Parent
-
         local letterBlockTemplate = Utils.getFirstDescendantByName(
                                         letterFallFolder, "LetterBlockTemplate")
 
+        local newWord = wordBox:Clone()
+        local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
+        local letterPositioner = Utils.getFirstDescendantByName(newWord,
+                                                                "WordLetterBlockPositioner")
+
+        newWord.Parent = wordBox.Parent
+
         Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
 
-        local spacingFactor = 1.25
+        local spacingFactor = 1.05
         local wordSpacingY = letterBlockTemplate.Size.Y * spacingFactor
-
-        local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
 
         wordBench.CFrame = wordBench.CFrame +
                                Vector3.new(0, wordSpacingY * wordIndex, 0)
@@ -35712,25 +35707,22 @@ function initWord(miniGameState)
         newWord.Name = newWord.Name .. "zzz" .. wordNameStub
         wordBench.Anchored = true
 
-        local letterPositioner = Utils.getFirstDescendantByName(newWord,
-                                                                "WordLetterBlockPositioner")
-
         letterPositioner.Name = letterPositioner.Name .. wordNameStub
 
         letterBlockTemplate.Transparency = 1
-        local spacingFactor = 1.05
 
         for letterIndex = 1, #word do
-            local letter = string.sub(word, letterIndex, letterIndex + 0)
+            local letterNameStub = wordNameStub .. "-L" .. letterIndex
+            local letter = string.sub(word, letterIndex, letterIndex)
+
             local newLetter = letterBlockTemplate:Clone()
             Utils.hideItemAndChildren({item = newLetter, hide = false})
 
-            local letterNameStub = wordNameStub .. "-L" .. letterIndex
-            newLetter.Name = "wordLetter-"
-            newLetter.Transparency = 0
+            newLetter.Name = "wordLetter-" .. letterNameStub
+            -- newLetter.Transparency = 0
 
             local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
-            letterPositioner.Transparency = 1
+            -- letterPositioner.Transparency = 1
 
             CS:AddTag(newLetter, LetterFallUtils.tagNames.WordLetter)
             LetterFallUtils.applyLetterText(
@@ -35740,7 +35732,6 @@ function initWord(miniGameState)
 
             newLetter.CFrame = letterPositioner.CFrame *
                                    CFrame.new(Vector3.new(0, 0, z))
-            -- newLetter.Anchored = true
             local weld = Instance.new("WeldConstraint")
             weld.Name = "WeldConstraint" .. letterNameStub
             weld.Parent = wordBench.Parent
@@ -35752,9 +35743,7 @@ function initWord(miniGameState)
             table.insert(miniGameState.wordLetters,
                          {char = letter, found = false, instance = newLetter})
         end
-        -- wordBench:Destroy()
     end
-    -- wordBoxFolder:Destroy()
 end
 
 function getWordFolder(miniGameState)
@@ -35938,6 +35927,7 @@ function module.addMiniGame(props)
     local miniGameState = {
         allLetters = allLetters,
         wordLetters = {},
+        renderedWords = {},
         words = words,
         lastWordIndex = 1,
         initCompleted = false

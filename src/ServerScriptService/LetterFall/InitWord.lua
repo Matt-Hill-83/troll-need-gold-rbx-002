@@ -29,19 +29,20 @@ function initWord(miniGameState)
         local newWordBoxFolder = wordBoxFolder
         local wordBox = Utils.getFirstDescendantByName(newWordBoxFolder,
                                                        "WordBox")
-
-        local newWord = wordBox:Clone()
-        newWord.Parent = wordBox.Parent
-
         local letterBlockTemplate = Utils.getFirstDescendantByName(
                                         letterFallFolder, "LetterBlockTemplate")
 
+        local newWord = wordBox:Clone()
+        local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
+        local letterPositioner = Utils.getFirstDescendantByName(newWord,
+                                                                "WordLetterBlockPositioner")
+
+        newWord.Parent = wordBox.Parent
+
         Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
 
-        local spacingFactor = 1.25
+        local spacingFactor = 1.05
         local wordSpacingY = letterBlockTemplate.Size.Y * spacingFactor
-
-        local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
 
         wordBench.CFrame = wordBench.CFrame +
                                Vector3.new(0, wordSpacingY * wordIndex, 0)
@@ -50,25 +51,22 @@ function initWord(miniGameState)
         newWord.Name = newWord.Name .. "zzz" .. wordNameStub
         wordBench.Anchored = true
 
-        local letterPositioner = Utils.getFirstDescendantByName(newWord,
-                                                                "WordLetterBlockPositioner")
-
         letterPositioner.Name = letterPositioner.Name .. wordNameStub
 
         letterBlockTemplate.Transparency = 1
-        local spacingFactor = 1.05
 
         for letterIndex = 1, #word do
-            local letter = string.sub(word, letterIndex, letterIndex + 0)
+            local letterNameStub = wordNameStub .. "-L" .. letterIndex
+            local letter = string.sub(word, letterIndex, letterIndex)
+
             local newLetter = letterBlockTemplate:Clone()
             Utils.hideItemAndChildren({item = newLetter, hide = false})
 
-            local letterNameStub = wordNameStub .. "-L" .. letterIndex
-            newLetter.Name = "wordLetter-"
-            newLetter.Transparency = 0
+            newLetter.Name = "wordLetter-" .. letterNameStub
+            -- newLetter.Transparency = 0
 
             local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
-            letterPositioner.Transparency = 1
+            -- letterPositioner.Transparency = 1
 
             CS:AddTag(newLetter, LetterFallUtils.tagNames.WordLetter)
             LetterFallUtils.applyLetterText(
@@ -78,7 +76,6 @@ function initWord(miniGameState)
 
             newLetter.CFrame = letterPositioner.CFrame *
                                    CFrame.new(Vector3.new(0, 0, z))
-            -- newLetter.Anchored = true
             local weld = Instance.new("WeldConstraint")
             weld.Name = "WeldConstraint" .. letterNameStub
             weld.Parent = wordBench.Parent
@@ -90,9 +87,7 @@ function initWord(miniGameState)
             table.insert(miniGameState.wordLetters,
                          {char = letter, found = false, instance = newLetter})
         end
-        -- wordBench:Destroy()
     end
-    -- wordBoxFolder:Destroy()
 end
 
 function getWordFolder(miniGameState)

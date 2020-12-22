@@ -20,6 +20,7 @@ function module.addMiniGame(props)
     local miniGameState = {
         allLetters = allLetters,
         wordLetters = {},
+        renderedWords = {},
         words = words,
         lastWordIndex = 1,
         initCompleted = false

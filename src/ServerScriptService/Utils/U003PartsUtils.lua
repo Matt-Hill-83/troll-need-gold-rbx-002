@@ -23,5 +23,17 @@ function getPartFarEdge(props)
     return part.Position + (part.Size / 2) * props.alignToParentFarEdge
 end
 
+function getParentFarEdge(props)
+    local parent = props.parent
+    local childSizeLength = props.childLength
+    local axis = props.axis or 'X'
+
+    local parentPosition = parent.CFrame
+    local parentSize = parent.Size
+    local parentFarEdge = parentPosition[axis] + parentSize[axis] / 2
+    local alignedValue = parentFarEdge - childSizeLength / 2
+    return alignedValue
+end
+
 module.getPartFarEdge = getPartFarEdge
 return module
