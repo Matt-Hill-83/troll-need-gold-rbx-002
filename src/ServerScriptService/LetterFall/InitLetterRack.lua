@@ -8,7 +8,6 @@ local InitWord = require(Sss.Source.LetterFall.InitWord)
 
 local module = {}
 
--- TODO: create dead letters
 function isDeadLetter(props)
     local rowIndex = props.rowIndex
     local colIndex = props.colIndex
@@ -108,7 +107,6 @@ function initLetterRack(miniGameState)
 
             newColumnBase.Transparency = 1
             newLetter.Transparency = 0
-            -- newLetter.Anchored = true
 
             -- do this last to avoid tweening
             newLetter.Parent = newColumnBase
@@ -116,8 +114,6 @@ function initLetterRack(miniGameState)
         letterTemplate:Destroy()
     end
     columnBaseTemplate:Destroy()
-
-    -- LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
 end
 
 function getRunTimeLetterFolder(miniGameState)
