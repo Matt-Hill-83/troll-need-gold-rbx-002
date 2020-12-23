@@ -113,24 +113,37 @@ function initLetterRack(miniGameState)
                 {letterBlock = newLetter, char = char})
             newLetter.CFrame = newLetter.CFrame *
                                    CFrame.new(Vector3.new(0, y, 0))
-            -- table.insert(newLetters, newLetter)
-            -- do this last to avoid tweening
-            newLetter.Parent = newColumnBase
+
             newColumnBase.Transparency = 1
             newLetter.Transparency = 0
-            newLetter.Anchored = true
+            -- newLetter.Anchored = true
+
+            -- do this last to avoid tweening
+            newLetter.Parent = newColumnBase
         end
         letterTemplate:Destroy()
     end
     columnBaseTemplate:Destroy()
 
-    local renderedDeadLetters = Utils.getByTagInParent(
-                                    {
-            parent = runTimeLetterFolder,
+    configDeadLetters({
+        deadLetters = deadLetters,
+        parentFolder = runTimeLetterFolder
+    })
+end
+
+function configDeadLetters(props)
+    local deadLetters = props.deadLetters
+    local parentFolder = props.parentFolder
+
+    local deadLetters = Utils.getByTagInParent(
+                            {
+            parent = parentFolder,
             tag = LetterFallUtils.tagNames.DeadLetter
         })
 
-    for i, item in ipairs(renderedDeadLetters) do
+    for i, item in ipairs(deadLetters) do
+        item.Anchored = true
+
         LetterFallUtils.colorLetterText({
             letterBlock = item,
             color = Color3.fromRGB(58, 0, 87)
@@ -140,9 +153,6 @@ function initLetterRack(miniGameState)
             color = Color3.fromRGB(0, 255, 34)
         })
     end
-
-    print('renderedDeadLetters' .. ' - start');
-    print(renderedDeadLetters);
 end
 
 function getRunTimeLetterFolder(miniGameState)
