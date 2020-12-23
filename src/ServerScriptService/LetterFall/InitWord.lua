@@ -64,7 +64,7 @@ function initWord(miniGameState)
 
             newLetter.Name = "wordLetter-" .. letterNameStub
 
-            local letterPositionZ = newLetter.Size.Z * (letterIndex - 1) *
+            local letterPositionZ = newLetter.Size.Z * (letterIndex - 2) *
                                         spacingFactor
 
             CS:AddTag(newLetter, LetterFallUtils.tagNames.WordLetter)
@@ -96,9 +96,11 @@ function initWord(miniGameState)
         local wordBenchSizeX = #word * letterBlockTemplate.Size.X *
                                    spacingFactor
 
-        local wordBenchPosX = 4
+        local wordBenchPosX = wordBench.Position.X
         wordBench.Size = Vector3.new(wordBenchSizeX, wordBench.Size.Y,
                                      wordBench.Size.Z)
+        wordBench.Position = Vector3.new(wordBenchPosX, wordBench.Position.Y,
+                                         wordBench.Position.Z)
     end
 end
 
