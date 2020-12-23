@@ -67,7 +67,6 @@ function createBalls(miniGameState)
 end
 
 function configDeadLetters(props)
-    local deadLetters = props.deadLetters
     local parentFolder = props.parentFolder
 
     local deadLetters = Utils.getByTagInParent(

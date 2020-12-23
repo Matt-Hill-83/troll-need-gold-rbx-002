@@ -42,6 +42,7 @@ function handleBrick(player, clickedLetter, miniGameState)
     -- local wordLetters = miniGameState.wordLetters
 
     if not miniGameState.gemsStarted then
+        LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
         miniGameState.gemsStarted = true
         -- 
     end

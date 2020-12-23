@@ -57,7 +57,8 @@ function initLetterRack(miniGameState)
 
     local deadLetters = {
         {row = 2, col = 3}, {row = 3, col = 4}, {row = 4, col = 5},
-        {row = 5, col = 6}
+        {row = 5, col = 6}, {row = 6, col = 6}, {row = 8, col = 6},
+        {row = 5, col = 6}, {row = 5, col = 7}
     }
 
     for colIndex = 1, numCol do
@@ -125,10 +126,7 @@ function initLetterRack(miniGameState)
     end
     columnBaseTemplate:Destroy()
 
-    LetterFallUtils.configDeadLetters({
-        deadLetters = deadLetters,
-        parentFolder = runTimeLetterFolder
-    })
+    -- LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
 end
 
 function getRunTimeLetterFolder(miniGameState)
