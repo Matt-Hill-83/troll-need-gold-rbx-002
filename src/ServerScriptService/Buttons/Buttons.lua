@@ -62,7 +62,7 @@ function configButtons(props)
         local numPages2 = props.numPages
         local sceneConfig2 = props.sceneConfig
         local pn2 = props.pn
-        local player = props.player
+        -- local player = props.player
         local buttonPressed = false
 
         if not buttonPressed then
@@ -74,8 +74,8 @@ function configButtons(props)
                 prevButton = prevButton,
                 pageNumLabel = pageNumLabel,
                 openBridgeDoor = openBridgeDoor,
-                clonedScene = clonedScene,
-                player = player
+                clonedScene = clonedScene
+                -- player = player
             })
 
             local newFrameConfig = sceneConfig2.frames[pn2.value]
@@ -86,7 +86,10 @@ function configButtons(props)
             }
 
             addCharactersToScene(newSceneProps)
-            renderScreenDialog({frameConfig = newFrameConfig, player = player})
+            renderScreenDialog({
+                frameConfig = newFrameConfig
+                -- , player = player
+            })
             buttonPressed = false
         end
     end
@@ -95,7 +98,7 @@ function configButtons(props)
         local clonedScene1 = props.clonedScene
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
-        local player1 = props.player
+        -- local player1 = props.player
 
         local pn3 = props.pn
         if pn3.value < numPages1 then
@@ -104,8 +107,8 @@ function configButtons(props)
                 clonedScene = clonedScene1,
                 pn = pn3,
                 numPages = numPages1,
-                sceneConfig = sceneConfig1,
-                player = player1
+                sceneConfig = sceneConfig1
+                -- player = player1
             })
         end
 
@@ -115,7 +118,7 @@ function configButtons(props)
         local clonedScene1 = props.clonedScene
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
-        local player2 = props.player
+        -- local player2 = props.player
 
         local pn4 = props.pn
         if pn4.value > 1 then
@@ -124,8 +127,8 @@ function configButtons(props)
                 clonedScene = clonedScene1,
                 pn = pn4,
                 numPages = numPages1,
-                sceneConfig = sceneConfig1,
-                player = player2
+                sceneConfig = sceneConfig1
+                -- player = player2
             })
         end
     end

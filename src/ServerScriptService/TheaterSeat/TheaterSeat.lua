@@ -22,7 +22,7 @@ function module.addSeat(props)
     local numPages = #sceneConfig.frames
 
     function renderScreenDialog(props)
-        local player = props.player
+        -- local player = props.player
         local frameConfig = props.frameConfig
 
         renderDialogRE:FireAllClients(frameConfig.dialogs)
@@ -58,8 +58,8 @@ function module.addSeat(props)
                     currentPlayer = player
 
                     renderScreenDialog({
-                        frameConfig = frameConfig,
-                        player = player
+                        frameConfig = frameConfig
+                        -- player = player
                     })
 
                     local props2 = {
@@ -67,7 +67,7 @@ function module.addSeat(props)
                         numPages = numPages,
                         sceneConfig = sceneConfig,
                         sceneFolder = sceneFolder,
-                        player = player,
+                        -- player = player,
                         addCharactersToScene = addCharactersToScene,
                         renderScreenDialog = renderScreenDialog,
                         sgui = player.PlayerGui.SceneDialogGui,
