@@ -25,7 +25,7 @@ function module.addSeat(props)
         local player = props.player
         local frameConfig = props.frameConfig
 
-        renderDialogRE:FireClient(player, frameConfig.dialogs)
+        renderDialogRE:FireAllClients(frameConfig.dialogs)
     end
 
     function openBridgeDoor(props)

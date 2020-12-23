@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>640.448303</X>
-					<Y>78.9882202</Y>
-					<Z>-1088.81848</Z>
-					<R00>0.142606676</R00>
-					<R01>-0.95192343</R01>
-					<R02>0.271117955</R02>
-					<R10>-3.72528985e-09</R10>
-					<R11>0.273917526</R11>
-					<R12>0.96175313</R12>
-					<R20>-0.989779413</R20>
-					<R21>-0.137152418</R21>
-					<R22>0.0390624702</R22>
+					<X>562.931763</X>
+					<Y>2.43370509</Y>
+					<Z>-1086.00513</Z>
+					<R00>-0.91506803</R00>
+					<R01>0.219807908</R01>
+					<R02>-0.338134766</R02>
+					<R10>-0</R10>
+					<R11>0.838420749</R11>
+					<R12>0.545023739</R12>
+					<R20>0.403299689</R20>
+					<R21>0.498733789</R21>
+					<R22>-0.767211914</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>639.906067</X>
-					<Y>77.0647125</Y>
-					<Z>-1088.89661</Z>
+					<X>563.608032</X>
+					<Y>1.34365761</Y>
+					<Z>-1084.4707</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -26988,14 +26988,7 @@ remoteEvent.OnClientEvent:Connect(onNotifyPlayer)
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("RenderDialogRE")
-
 local StarterPlayer = game:GetService("StarterPlayer")
-local ServerScriptService = game:GetService("ServerScriptService")
-
-local test = require(ServerScriptService.Source.LetterFall)
-test.initGameToggle()
-
-print(ServerScriptService)
 local Texts = require(StarterPlayer.Source.Texts)
 
 
@@ -34693,6 +34686,7 @@ function module.addSeat(props)
         local player = props.player
         local frameConfig = props.frameConfig
 
+        -- renderDialogRE:FireAllClients(player, frameConfig.dialogs)
         renderDialogRE:FireClient(player, frameConfig.dialogs)
     end
 
