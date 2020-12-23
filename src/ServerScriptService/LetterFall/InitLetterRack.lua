@@ -125,34 +125,10 @@ function initLetterRack(miniGameState)
     end
     columnBaseTemplate:Destroy()
 
-    configDeadLetters({
+    LetterFallUtils.configDeadLetters({
         deadLetters = deadLetters,
         parentFolder = runTimeLetterFolder
     })
-end
-
-function configDeadLetters(props)
-    local deadLetters = props.deadLetters
-    local parentFolder = props.parentFolder
-
-    local deadLetters = Utils.getByTagInParent(
-                            {
-            parent = parentFolder,
-            tag = LetterFallUtils.tagNames.DeadLetter
-        })
-
-    for i, item in ipairs(deadLetters) do
-        item.Anchored = true
-
-        LetterFallUtils.colorLetterText({
-            letterBlock = item,
-            color = Color3.fromRGB(58, 0, 87)
-        })
-        LetterFallUtils.colorLetterBG({
-            letterBlock = item,
-            color = Color3.fromRGB(0, 255, 34)
-        })
-    end
 end
 
 function getRunTimeLetterFolder(miniGameState)

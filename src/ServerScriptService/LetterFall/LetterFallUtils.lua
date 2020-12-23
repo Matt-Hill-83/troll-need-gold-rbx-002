@@ -66,10 +66,35 @@ function createBalls(miniGameState)
     ball:Destroy()
 end
 
+function configDeadLetters(props)
+    local deadLetters = props.deadLetters
+    local parentFolder = props.parentFolder
+
+    local deadLetters = Utils.getByTagInParent(
+                            {
+            parent = parentFolder,
+            tag = module.tagNames.DeadLetter
+        })
+
+    for i, item in ipairs(deadLetters) do
+        item.Anchored = true
+
+        module.colorLetterText({
+            letterBlock = item,
+            color = Color3.fromRGB(58, 0, 87)
+        })
+        module.colorLetterBG({
+            letterBlock = item,
+            color = Color3.fromRGB(0, 255, 34)
+        })
+    end
+end
+
 module.colorLetterText = colorLetterText
 module.applyLetterText = applyLetterText
 module.isDesiredLetter = isDesiredLetter
 module.isWordComplete = isWordComplete
 module.createBalls = createBalls
 module.colorLetterBG = colorLetterBG
+module.configDeadLetters = configDeadLetters
 return module
