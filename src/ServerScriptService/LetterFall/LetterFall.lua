@@ -9,7 +9,6 @@ local InitWord = require(Sss.Source.LetterFall.InitWord)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 
 local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
-
 local module = {}
 
 function initGameToggle(miniGameState)
@@ -31,6 +30,11 @@ function initGameToggle(miniGameState)
     end
     startGameTrigger.Touched:Connect(onPartTouched)
     LetterFallUtils.createBalls(miniGameState)
+
+    -- LetterFallUtils.configDeadLetters({
+    --     parentFolder = miniGameState.runTimeLetterFolder
+    -- })
+
 end
 
 module.initGameToggle = initGameToggle

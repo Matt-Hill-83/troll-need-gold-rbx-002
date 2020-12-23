@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>582.886719</X>
-					<Y>46.8018265</Y>
-					<Z>-1111.15869</Z>
-					<R00>-0.986784577</R00>
-					<R01>-0.0816645399</R01>
-					<R02>0.139954105</R02>
-					<R10>7.45057971e-09</R10>
-					<R11>0.863712668</R11>
-					<R12>0.503984511</R12>
-					<R20>-0.162037805</R20>
-					<R21>0.497324139</R21>
-					<R22>-0.852298319</R22>
+					<X>519.9953</X>
+					<Y>-99.5673447</Y>
+					<Z>-1154.47559</Z>
+					<R00>-0.975983024</R00>
+					<R01>0.0937230363</R01>
+					<R02>-0.196654975</R02>
+					<R10>-7.4505806e-09</R10>
+					<R11>0.902721822</R11>
+					<R12>0.430224717</R12>
+					<R20>0.217846721</R20>
+					<R21>0.419892013</R21>
+					<R22>-0.88104111</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>557.694458</X>
-					<Y>-43.9172592</Y>
-					<Z>-957.741821</Z>
+					<X>520.388611</X>
+					<Y>-100.427795</Y>
+					<Z>-1152.7135</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -28363,7 +28363,8 @@ local mouse = player:GetMouse()
 local MAX_RAY_LENGTH = 5000
 
 local function onInputBegan(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+    
         local raycastParams = RaycastParams.new()
         raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
         raycastParams.FilterDescendantsInstances = CS:GetTagged("IgnoreClick")
@@ -36324,7 +36325,6 @@ local InitWord = require(Sss.Source.LetterFall.InitWord)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 
 local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
-
 local module = {}
 
 function initGameToggle(miniGameState)
@@ -36342,14 +36342,15 @@ function initGameToggle(miniGameState)
             miniGameState.initCompleted = true
             HandleClick.initClickHandler(miniGameState)
 
-            -- local taggedPartsDestroy = CS:GetTagged("Destroy")
-            -- for i, item in ipairs(taggedPartsDestroy) do
-            --     item:Destroy()
-            -- end
         end
     end
     startGameTrigger.Touched:Connect(onPartTouched)
     LetterFallUtils.createBalls(miniGameState)
+
+    -- LetterFallUtils.configDeadLetters({
+    --     parentFolder = miniGameState.runTimeLetterFolder
+    -- })
+
 end
 
 module.initGameToggle = initGameToggle
@@ -36739,7 +36740,6 @@ local InitWord = require(Sss.Source.LetterFall.InitWord)
 
 local module = {}
 
--- TODO: create dead letters
 function isDeadLetter(props)
     local rowIndex = props.rowIndex
     local colIndex = props.colIndex
@@ -36839,7 +36839,6 @@ function initLetterRack(miniGameState)
 
             newColumnBase.Transparency = 1
             newLetter.Transparency = 0
-            -- newLetter.Anchored = true
 
             -- do this last to avoid tweening
             newLetter.Parent = newColumnBase
@@ -36847,8 +36846,6 @@ function initLetterRack(miniGameState)
         letterTemplate:Destroy()
     end
     columnBaseTemplate:Destroy()
-
-    -- LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
 end
 
 function getRunTimeLetterFolder(miniGameState)
