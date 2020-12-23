@@ -23,7 +23,6 @@ function module.addMiniGame(props)
         renderedWords = {},
         activeWordIndex = 1,
         words = words,
-        -- lastWordIndex = 1,
         initCompleted = false
     }
 

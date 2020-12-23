@@ -95,15 +95,6 @@ function initLetterRack(miniGameState)
                 })
 
             if isDeadLetter then
-                print('isDeadLetter' .. ' - start');
-                print('isDeadLetter' .. ' - start');
-                print('isDeadLetter' .. ' - start');
-                print('isDeadLetter' .. ' - start');
-                print('isDeadLetter' .. ' - start');
-                print('isDeadLetter' .. ' - start');
-                print(isDeadLetter);
-            end
-            if isDeadLetter then
                 CS:AddTag(newLetter, LetterFallUtils.tagNames.DeadLetter)
             end
 

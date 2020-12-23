@@ -2,8 +2,15 @@ local StarterPlayer = game:GetService("StarterPlayer")
 local Constants = require(StarterPlayer.Source.StarterPlayerScripts.RSConstants)
 local module = {}
 local CS = game:GetService("CollectionService")
--- 
--- 
+
+local function removeFirstMatchFromArray(array, value)
+    for i = #array, 1, -1 do
+        if array[i] == value then
+            table.remove(array, i)
+            break
+        end
+    end
+end
 
 function enableChildWelds(props)
     local part = props.part
@@ -14,6 +21,12 @@ function enableChildWelds(props)
         weld.Enabled = enabled
         -- 
     end
+    local allWelds = module.getDescendantsByType(part, "WeldConstraint")
+    for i, weld in ipairs(allWelds) do
+        weld.Enabled = enabled
+        -- 
+    end
+
 end
 
 function genRandom(min, max)
@@ -28,12 +41,30 @@ function module.setPropsByTag(props)
     local theProps = props.props
 
     local items = CS:GetTagged(tag)
-
     for i, item in ipairs(items) do
         mergeTables(item, theProps)
         -- 
     end
+end
 
+function module.getByTagInParent(props)
+    local tag = props.tag
+    local parent = props.parent
+    print('tag' .. ' - start');
+    print(tag);
+    local items = CS:GetTagged(tag)
+    print('items' .. ' - start');
+    print(items);
+    local output = {}
+    for i, item in ipairs(items) do
+        print('i' .. ' - start');
+        print(i);
+        if item:IsDescendantOf(parent) then
+            table.insert(output, item)
+            -- 
+        end
+    end
+    return output
 end
 
 function getFirstDescendantByName(parent, name)
@@ -136,7 +167,6 @@ function sizeWalls2(props)
     local items = props.items
     local height = props.height
 
-    -- local children = parent:GetDescendants()
     for i, item in ipairs(items) do
         if item:isA("Part") then item.CanCollide = false end
     end
@@ -428,5 +458,6 @@ module.getDescendantsByName = getDescendantsByName
 module.hideItem = hideItem
 module.genRandom = genRandom
 module.enableChildWelds = enableChildWelds
+module.removeFirstMatchFromArray = removeFirstMatchFromArray
 
 return module

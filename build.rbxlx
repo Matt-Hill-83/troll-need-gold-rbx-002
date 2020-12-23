@@ -20120,17 +20120,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<token name="BottomSurface">0</token>
 									<token name="BottomSurfaceInput">0</token>
 									<CoordinateFrame name="CFrame">
-										<X>570.385559</X>
-										<Y>-31.2085209</Y>
-										<Z>-1015.18463</Z>
+										<X>569.38562</X>
+										<Y>-31.2079105</Y>
+										<Z>-1015.18457</Z>
 										<R00>-1</R00>
-										<R01>0.0001387511</R01>
-										<R02>-6.25282628e-05</R02>
-										<R10>0.000147189887</R10>
+										<R01>0.00015561757</R01>
+										<R02>-6.25280809e-05</R02>
+										<R10>0.000164055862</R10>
 										<R11>1</R11>
-										<R12>-9.6808144e-05</R12>
-										<R20>6.25145331e-05</R20>
-										<R21>-9.2791779e-05</R21>
+										<R12>-8.87580682e-05</R12>
+										<R20>6.2514031e-05</R20>
+										<R21>-8.47427582e-05</R21>
 										<R22>-1</R22>
 									</CoordinateFrame>
 									<bool name="CanCollide">true</bool>
@@ -20183,36 +20183,36 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 										<Z>2</Z>
 									</Vector3>
 								</Properties>
-								<Item class="Weld" referent="RBX405ceee77f6b49f89cf1b3c66d102429">
+								<Item class="Weld" referent="RBX17ea23ff055740babcb888402cebe0aa">
 									<Properties>
 										<BinaryString name="AttributesSerialize"></BinaryString>
 										<CoordinateFrame name="C0">
-											<X>-6.10351562e-05</X>
+											<X>0</X>
 											<Y>-1.82324409</Y>
 											<Z>0</Z>
 											<R00>1</R00>
-											<R01>0</R01>
-											<R02>4.04432043e-12</R02>
-											<R10>-4.04432043e-12</R10>
+											<R01>7.27595761e-12</R01>
+											<R02>4.97424324e-12</R02>
+											<R10>8.4329904e-06</R10>
 											<R11>0</R11>
 											<R12>-1</R12>
-											<R20>0</R20>
+											<R20>-5.23868948e-10</R20>
 											<R21>1</R21>
-											<R22>0</R22>
+											<R22>4.02503792e-06</R22>
 										</CoordinateFrame>
 										<CoordinateFrame name="C1">
-											<X>-13.2611694</X>
-											<Y>2.00223923</Y>
+											<X>-14.2611694</X>
+											<Y>2.00279999</Y>
 											<Z>27.9918213</Z>
 											<R00>-1</R00>
-											<R01>-7.13679356e-08</R01>
-											<R02>-9.81580306e-05</R02>
-											<R10>9.81580379e-05</R10>
-											<R11>-9.68616077e-05</R11>
+											<R01>-7.14644557e-08</R01>
+											<R02>-0.000106591033</R02>
+											<R10>0.00011502402</R10>
+											<R11>-9.28365698e-05</R11>
 											<R12>-1</R12>
-											<R20>6.18601916e-08</R20>
+											<R20>6.12999429e-08</R20>
 											<R21>-1</R21>
-											<R22>9.6861615e-05</R22>
+											<R22>8.88115392e-05</R22>
 										</CoordinateFrame>
 										<bool name="Enabled">true</bool>
 										<string name="Name">Weld</string>
@@ -20236,17 +20236,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<token name="BottomSurface">0</token>
 									<token name="BottomSurfaceInput">0</token>
 									<CoordinateFrame name="CFrame">
-										<X>570.385376</X>
-										<Y>-28.8851109</Y>
-										<Z>-1015.18506</Z>
+										<X>569.385498</X>
+										<Y>-28.8845005</Y>
+										<Z>-1015.18494</Z>
 										<R00>-1</R00>
-										<R01>0.0001064639</R01>
-										<R02>-6.25251487e-05</R02>
-										<R10>0.000114902687</R10>
+										<R01>0.000123330363</R01>
+										<R02>-6.25249668e-05</R02>
+										<R10>0.000131768669</R10>
 										<R11>1</R11>
-										<R12>-9.68081367e-05</R12>
-										<R20>6.25144239e-05</R20>
-										<R21>-9.27897563e-05</R21>
+										<R12>-8.87580609e-05</R12>
+										<R20>6.25136599e-05</R20>
+										<R21>-8.47407355e-05</R21>
 										<R22>-1</R22>
 									</CoordinateFrame>
 									<bool name="CanCollide">true</bool>
@@ -27732,8 +27732,15 @@ return module
 local Constants = require(StarterPlayer.Source.StarterPlayerScripts.RSConstants)
 local module = {}
 local CS = game:GetService("CollectionService")
--- 
--- 
+
+local function removeFirstMatchFromArray(array, value)
+    for i = #array, 1, -1 do
+        if array[i] == value then
+            table.remove(array, i)
+            break
+        end
+    end
+end
 
 function enableChildWelds(props)
     local part = props.part
@@ -27744,6 +27751,12 @@ function enableChildWelds(props)
         weld.Enabled = enabled
         -- 
     end
+    local allWelds = module.getDescendantsByType(part, "WeldConstraint")
+    for i, weld in ipairs(allWelds) do
+        weld.Enabled = enabled
+        -- 
+    end
+
 end
 
 function genRandom(min, max)
@@ -27758,12 +27771,30 @@ function module.setPropsByTag(props)
     local theProps = props.props
 
     local items = CS:GetTagged(tag)
-
     for i, item in ipairs(items) do
         mergeTables(item, theProps)
         -- 
     end
+end
 
+function module.getByTagInParent(props)
+    local tag = props.tag
+    local parent = props.parent
+    print('tag' .. ' - start');
+    print(tag);
+    local items = CS:GetTagged(tag)
+    print('items' .. ' - start');
+    print(items);
+    local output = {}
+    for i, item in ipairs(items) do
+        print('i' .. ' - start');
+        print(i);
+        if item:IsDescendantOf(parent) then
+            table.insert(output, item)
+            -- 
+        end
+    end
+    return output
 end
 
 function getFirstDescendantByName(parent, name)
@@ -27866,7 +27897,6 @@ function sizeWalls2(props)
     local items = props.items
     local height = props.height
 
-    -- local children = parent:GetDescendants()
     for i, item in ipairs(items) do
         if item:isA("Part") then item.CanCollide = false end
     end
@@ -28158,6 +28188,7 @@ module.getDescendantsByName = getDescendantsByName
 module.hideItem = hideItem
 module.genRandom = genRandom
 module.enableChildWelds = enableChildWelds
+module.removeFirstMatchFromArray = removeFirstMatchFromArray
 
 return module
 ]]></ProtectedString>
@@ -30015,8 +30046,8 @@ function setVisibility()
     local taggedPartsDestroy = CS:GetTagged("Destroy")
     for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
 
-    -- local taggedPartsTransparent = CS:GetTagged("Transparent")
-    -- for i, item in ipairs(taggedPartsTransparent) do item.Transparency = 1 end
+    local taggedPartsTransparent = CS:GetTagged("Transparent")
+    for i, item in ipairs(taggedPartsTransparent) do item.Transparency = 1 end
 
     local canCollideOff = CS:GetTagged("CanCollideOff")
     for i, item in ipairs(canCollideOff) do item.CanCollide = false end
@@ -36262,7 +36293,10 @@ local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 
 local module = {}
 
-function initLetterFall(miniGameState) LetterFall.initGameToggle(miniGameState) end
+function initLetterFall(miniGameState)
+    LetterFall.initGameToggle(miniGameState)
+    --  
+end
 
 module.initLetterFall = initLetterFall
 
@@ -36304,18 +36338,14 @@ function initGameToggle(miniGameState)
     end
 
     function onPartTouched(otherPart)
-        print('onPartTouched')
-        -- miniGameState.initializing = true
         if not miniGameState.initCompleted then
             miniGameState.initCompleted = true
             HandleClick.initClickHandler(miniGameState)
 
-            local taggedPartsDestroy = CS:GetTagged("Destroy")
-            print('taggedPartsDestroy' .. ' - start');
-            print(taggedPartsDestroy);
-            for i, item in ipairs(taggedPartsDestroy) do
-                item:Destroy()
-            end
+            -- local taggedPartsDestroy = CS:GetTagged("Destroy")
+            -- for i, item in ipairs(taggedPartsDestroy) do
+            --     item:Destroy()
+            -- end
         end
     end
     startGameTrigger.Touched:Connect(onPartTouched)
@@ -36358,9 +36388,6 @@ local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 local module = {}
 
 function isDesiredLetter(letter, clickedLetter)
-    print('isDesiredLetter')
-    print('clickedLetter' .. ' - start');
-    print(clickedLetter);
     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
                           .Text
     return letter.found ~= true and letter.char == textLabel
@@ -36382,18 +36409,11 @@ function initClickHandler(miniGameState)
 end
 
 function handleBrick(player, clickedLetter, miniGameState)
-    print('handleBrick' .. ' - start');
-    print(handleBrick);
-
-    print('clickedLetter' .. ' - start');
-    print(clickedLetter);
     local letterFallFolder = miniGameState.letterFallFolder
-    -- local wordLetters = miniGameState.wordLetters
 
     if not miniGameState.gemsStarted then
         LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
         miniGameState.gemsStarted = true
-        -- 
     end
 
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
@@ -36403,14 +36423,9 @@ function handleBrick(player, clickedLetter, miniGameState)
         miniGameState.renderedWords[miniGameState.activeWordIndex]
     local letters = activeWord.letters
 
-    local completedWordPositioner = Utils.getFirstDescendantByName(
-                                        letterFallFolder,
-                                        "CompletedWordPositioner")
     local currentActiveWord = activeWord.word.PrimaryPart
 
-    -- 
     for i, letter in ipairs(letters) do
-        -- for i, letter in ipairs(wordLetters) do
         if isDesiredLetter(letter, clickedLetter) then
             letter.found = true
             LetterFallUtils.colorLetterText(
@@ -36422,8 +36437,10 @@ function handleBrick(player, clickedLetter, miniGameState)
 
             local wordComplete = isWordComplete(letters)
             if wordComplete then
+                local completedWordPositioner =
+                    Utils.getFirstDescendantByName(letterFallFolder,
+                                                   "CompletedWordPositioner")
                 currentActiveWord.CFrame = completedWordPositioner.CFrame
-                currentActiveWord.Name = "xxx1"
 
                 local activeWordPositioner =
                     Utils.getFirstDescendantByName(letterFallFolder,
@@ -36434,11 +36451,8 @@ function handleBrick(player, clickedLetter, miniGameState)
                         1]
 
                 local myActiveWord = newActiveWord.word.PrimaryPart
-                myActiveWord.Name = "xxx2"
                 myActiveWord.CFrame = activeWordPositioner.CFrame
 
-                print('myActiveWord' .. ' - start');
-                print(myActiveWord);
                 miniGameState.activeWordIndex =
                     miniGameState.activeWordIndex + 1
 
@@ -36812,15 +36826,6 @@ function initLetterRack(miniGameState)
                 })
 
             if isDeadLetter then
-                print('isDeadLetter' .. ' - start');
-                print('isDeadLetter' .. ' - start');
-                print('isDeadLetter' .. ' - start');
-                print('isDeadLetter' .. ' - start');
-                print('isDeadLetter' .. ' - start');
-                print('isDeadLetter' .. ' - start');
-                print(isDeadLetter);
-            end
-            if isDeadLetter then
                 CS:AddTag(newLetter, LetterFallUtils.tagNames.DeadLetter)
             end
 
@@ -36911,7 +36916,6 @@ function module.addMiniGame(props)
         renderedWords = {},
         activeWordIndex = 1,
         words = words,
-        -- lastWordIndex = 1,
         initCompleted = false
     }
 

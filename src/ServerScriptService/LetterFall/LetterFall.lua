@@ -23,18 +23,10 @@ function initGameToggle(miniGameState)
     end
 
     function onPartTouched(otherPart)
-        print('onPartTouched')
-        -- miniGameState.initializing = true
         if not miniGameState.initCompleted then
             miniGameState.initCompleted = true
             HandleClick.initClickHandler(miniGameState)
 
-            local taggedPartsDestroy = CS:GetTagged("Destroy")
-            print('taggedPartsDestroy' .. ' - start');
-            print(taggedPartsDestroy);
-            for i, item in ipairs(taggedPartsDestroy) do
-                item:Destroy()
-            end
         end
     end
     startGameTrigger.Touched:Connect(onPartTouched)

@@ -9,9 +9,6 @@ local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 local module = {}
 
 function isDesiredLetter(letter, clickedLetter)
-    print('isDesiredLetter')
-    print('clickedLetter' .. ' - start');
-    print(clickedLetter);
     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
                           .Text
     return letter.found ~= true and letter.char == textLabel
@@ -33,18 +30,11 @@ function initClickHandler(miniGameState)
 end
 
 function handleBrick(player, clickedLetter, miniGameState)
-    print('handleBrick' .. ' - start');
-    print(handleBrick);
-
-    print('clickedLetter' .. ' - start');
-    print(clickedLetter);
     local letterFallFolder = miniGameState.letterFallFolder
-    -- local wordLetters = miniGameState.wordLetters
 
     if not miniGameState.gemsStarted then
         LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
         miniGameState.gemsStarted = true
-        -- 
     end
 
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
@@ -54,14 +44,9 @@ function handleBrick(player, clickedLetter, miniGameState)
         miniGameState.renderedWords[miniGameState.activeWordIndex]
     local letters = activeWord.letters
 
-    local completedWordPositioner = Utils.getFirstDescendantByName(
-                                        letterFallFolder,
-                                        "CompletedWordPositioner")
     local currentActiveWord = activeWord.word.PrimaryPart
 
-    -- 
     for i, letter in ipairs(letters) do
-        -- for i, letter in ipairs(wordLetters) do
         if isDesiredLetter(letter, clickedLetter) then
             letter.found = true
             LetterFallUtils.colorLetterText(
@@ -73,8 +58,10 @@ function handleBrick(player, clickedLetter, miniGameState)
 
             local wordComplete = isWordComplete(letters)
             if wordComplete then
+                local completedWordPositioner =
+                    Utils.getFirstDescendantByName(letterFallFolder,
+                                                   "CompletedWordPositioner")
                 currentActiveWord.CFrame = completedWordPositioner.CFrame
-                currentActiveWord.Name = "xxx1"
 
                 local activeWordPositioner =
                     Utils.getFirstDescendantByName(letterFallFolder,
@@ -85,11 +72,8 @@ function handleBrick(player, clickedLetter, miniGameState)
                         1]
 
                 local myActiveWord = newActiveWord.word.PrimaryPart
-                myActiveWord.Name = "xxx2"
                 myActiveWord.CFrame = activeWordPositioner.CFrame
 
-                print('myActiveWord' .. ' - start');
-                print(myActiveWord);
                 miniGameState.activeWordIndex =
                     miniGameState.activeWordIndex + 1
 

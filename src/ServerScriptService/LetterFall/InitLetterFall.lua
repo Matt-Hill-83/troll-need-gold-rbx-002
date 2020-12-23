@@ -5,7 +5,10 @@ local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 
 local module = {}
 
-function initLetterFall(miniGameState) LetterFall.initGameToggle(miniGameState) end
+function initLetterFall(miniGameState)
+    LetterFall.initGameToggle(miniGameState)
+    --  
+end
 
 module.initLetterFall = initLetterFall
 
