@@ -84,8 +84,7 @@ function initWord(miniGameState)
 
             -- Do this last to avoid tweening
             newLetter.Parent = newWord
-            newLetter.Anchored = true
-            -- newLetter.Parent = wordFolder
+
             table.insert(miniGameState.wordLetters,
                          {char = letter, found = false, instance = newLetter})
             table.insert(lettersInWord,

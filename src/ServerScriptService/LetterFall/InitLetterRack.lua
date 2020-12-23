@@ -103,12 +103,6 @@ function initLetterRack(miniGameState)
                 print(isDeadLetter);
             end
             if isDeadLetter then
-                -- if colIndex == 4 and rowIndex == 4 then
-                print('tag')
-                print('tag')
-                print('tag')
-                print('tag')
-                print('tag')
                 CS:AddTag(newLetter, LetterFallUtils.tagNames.DeadLetter)
             end
 
@@ -124,6 +118,7 @@ function initLetterRack(miniGameState)
             newLetter.Parent = newColumnBase
             newColumnBase.Transparency = 1
             newLetter.Transparency = 0
+            newLetter.Anchored = true
         end
         letterTemplate:Destroy()
     end

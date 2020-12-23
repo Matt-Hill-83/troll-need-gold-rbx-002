@@ -21,6 +21,11 @@ function enableChildWelds(props)
         weld.Enabled = enabled
         -- 
     end
+    local allWelds = module.getDescendantsByType(part, "WeldConstraint")
+    for i, weld in ipairs(allWelds) do
+        weld.Enabled = enabled
+        -- 
+    end
 
 end
 
