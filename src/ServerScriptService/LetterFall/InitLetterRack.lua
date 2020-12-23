@@ -9,6 +9,21 @@ local InitWord = require(Sss.Source.LetterFall.InitWord)
 local module = {}
 
 -- TODO: create dead letters
+function isDeadLetter(props)
+    local rowIndex = props.rowIndex
+    local colIndex = props.colIndex
+    local deadLetters = props.deadLetters
+
+    local isDead = false
+    for i, deadLetter in ipairs(deadLetters) do
+        if deadLetter.row == rowIndex and deadLetter.col == colIndex then
+            isDead = true
+            break
+        end
+    end
+    return isDead
+end
+
 function initLetterRack(miniGameState)
     local runTimeLetterFolder = getRunTimeLetterFolder(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
@@ -40,9 +55,11 @@ function initLetterRack(miniGameState)
         end
     end
 
-    -- local newLetters = {}
+    local deadLetters = {
+        {row = 2, col = 3}, {row = 3, col = 4}, {row = 4, col = 5},
+        {row = 5, col = 6}
+    }
 
-    local deadLetters = {{row = 2, col = 2}}
     for colIndex = 1, numCol do
         local newColumnBase = columnBaseTemplate:Clone()
         newColumnBase.Name = "columnBase-" .. colIndex
@@ -67,7 +84,26 @@ function initLetterRack(miniGameState)
             local newLetter = letterTemplate:Clone()
 
             newLetter.Name = "newLetter-" .. char
-            if colIndex == 4 and rowIndex == 4 then
+
+            local isDeadLetter = isDeadLetter(
+                                     {
+                    rowIndex = rowIndex,
+                    colIndex = colIndex,
+                    deadLetters = deadLetters
+
+                })
+
+            if isDeadLetter then
+                print('isDeadLetter' .. ' - start');
+                print('isDeadLetter' .. ' - start');
+                print('isDeadLetter' .. ' - start');
+                print('isDeadLetter' .. ' - start');
+                print('isDeadLetter' .. ' - start');
+                print('isDeadLetter' .. ' - start');
+                print(isDeadLetter);
+            end
+            if isDeadLetter then
+                -- if colIndex == 4 and rowIndex == 4 then
                 print('tag')
                 print('tag')
                 print('tag')

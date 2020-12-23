@@ -19,7 +19,6 @@ function colorLetterText(props)
     local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
     for i, label in ipairs(textLabels) do
         label.TextColor3 = color or Color3.new(255, 0, 191)
-
     end
 end
 
@@ -29,12 +28,7 @@ function colorLetterBG(props)
 
     local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
     for i, label in ipairs(textLabels) do
-
-        print('i' .. ' - start');
-        print(i);
         label.BackgroundColor3 = Color3.fromRGB(72, 90, 230)
-        -- label.BackGroundColor3 = color or Color3.new(255, 0, 191)
-
     end
 end
 
@@ -69,7 +63,6 @@ function createBalls(miniGameState)
         newBall.Parent = ball.Parent
         Utils.enableChildWelds({part = newBall, enabled = false})
     end
-
     ball:Destroy()
 end
 
