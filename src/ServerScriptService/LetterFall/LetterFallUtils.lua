@@ -5,7 +5,11 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
 
 local module = {
-    tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
+    tagNames = {
+        WordLetter = "WordLetter",
+        LetterBlock = "LetterBlock",
+        DeadLetter = "DeadLetter"
+    }
 }
 
 function colorLetterText(props)
@@ -15,6 +19,21 @@ function colorLetterText(props)
     local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
     for i, label in ipairs(textLabels) do
         label.TextColor3 = color or Color3.new(255, 0, 191)
+
+    end
+end
+
+function colorLetterBG(props)
+    local color = props.color
+    local letterBlock = props.letterBlock
+
+    local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
+    for i, label in ipairs(textLabels) do
+
+        print('i' .. ' - start');
+        print(i);
+        label.BackgroundColor3 = Color3.fromRGB(72, 90, 230)
+        -- label.BackGroundColor3 = color or Color3.new(255, 0, 191)
 
     end
 end
@@ -59,4 +78,5 @@ module.applyLetterText = applyLetterText
 module.isDesiredLetter = isDesiredLetter
 module.isWordComplete = isWordComplete
 module.createBalls = createBalls
+module.colorLetterBG = colorLetterBG
 return module

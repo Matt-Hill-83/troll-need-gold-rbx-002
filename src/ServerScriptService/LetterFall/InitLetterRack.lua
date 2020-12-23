@@ -8,9 +8,9 @@ local InitWord = require(Sss.Source.LetterFall.InitWord)
 
 local module = {}
 
+-- TODO: create dead letters
 function initLetterRack(miniGameState)
     local runTimeLetterFolder = getRunTimeLetterFolder(miniGameState)
-
     local letterFallFolder = miniGameState.letterFallFolder
     local letterRackFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                             "LetterRackFolder")
@@ -40,8 +40,9 @@ function initLetterRack(miniGameState)
         end
     end
 
-    local newLetters = {}
+    -- local newLetters = {}
 
+    local deadLetters = {{row = 2, col = 2}}
     for colIndex = 1, numCol do
         local newColumnBase = columnBaseTemplate:Clone()
         newColumnBase.Name = "columnBase-" .. colIndex
@@ -66,6 +67,15 @@ function initLetterRack(miniGameState)
             local newLetter = letterTemplate:Clone()
 
             newLetter.Name = "newLetter-" .. char
+            if colIndex == 4 and rowIndex == 4 then
+                print('tag')
+                print('tag')
+                print('tag')
+                print('tag')
+                print('tag')
+                CS:AddTag(newLetter, LetterFallUtils.tagNames.DeadLetter)
+            end
+
             CS:AddTag(newLetter, LetterFallUtils.tagNames.LetterBlock)
 
             local y = newLetter.Size.Y * (rowIndex - 1) * spacingFactor
@@ -73,17 +83,35 @@ function initLetterRack(miniGameState)
                 {letterBlock = newLetter, char = char})
             newLetter.CFrame = newLetter.CFrame *
                                    CFrame.new(Vector3.new(0, y, 0))
-            table.insert(newLetters, newLetter)
+            -- table.insert(newLetters, newLetter)
             -- do this last to avoid tweening
             newLetter.Parent = newColumnBase
             newColumnBase.Transparency = 1
             newLetter.Transparency = 0
-
         end
         letterTemplate:Destroy()
     end
     columnBaseTemplate:Destroy()
 
+    local renderedDeadLetters = Utils.getByTagInParent(
+                                    {
+            parent = runTimeLetterFolder,
+            tag = LetterFallUtils.tagNames.DeadLetter
+        })
+
+    for i, item in ipairs(renderedDeadLetters) do
+        LetterFallUtils.colorLetterText({
+            letterBlock = item,
+            color = Color3.fromRGB(58, 0, 87)
+        })
+        LetterFallUtils.colorLetterBG({
+            letterBlock = item,
+            color = Color3.fromRGB(0, 255, 34)
+        })
+    end
+
+    print('renderedDeadLetters' .. ' - start');
+    print(renderedDeadLetters);
 end
 
 function getRunTimeLetterFolder(miniGameState)

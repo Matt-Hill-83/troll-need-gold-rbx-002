@@ -40,7 +40,26 @@ function module.setPropsByTag(props)
         mergeTables(item, theProps)
         -- 
     end
+end
 
+function module.getByTagInParent(props)
+    local tag = props.tag
+    local parent = props.parent
+    print('tag' .. ' - start');
+    print(tag);
+    local items = CS:GetTagged(tag)
+    print('items' .. ' - start');
+    print(items);
+    local output = {}
+    for i, item in ipairs(items) do
+        print('i' .. ' - start');
+        print(i);
+        if item:IsDescendantOf(parent) then
+            table.insert(output, item)
+            -- 
+        end
+    end
+    return output
 end
 
 function getFirstDescendantByName(parent, name)
@@ -143,7 +162,6 @@ function sizeWalls2(props)
     local items = props.items
     local height = props.height
 
-    -- local children = parent:GetDescendants()
     for i, item in ipairs(items) do
         if item:isA("Part") then item.CanCollide = false end
     end

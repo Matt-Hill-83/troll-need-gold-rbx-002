@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>588.859192</X>
-					<Y>-18.9299164</Y>
-					<Z>-1073.44983</Z>
-					<R00>-0.997584581</R00>
-					<R01>0.0413880236</R01>
-					<R02>-0.0557861477</R02>
-					<R10>-0</R10>
-					<R11>0.803109765</R11>
-					<R12>0.595831156</R12>
-					<R20>0.0694626719</R20>
-					<R21>0.594392002</R21>
-					<R22>-0.801169872</R22>
+					<X>627.140137</X>
+					<Y>-0.877586365</Y>
+					<Z>-1099.95483</Z>
+					<R00>-0.864984989</R00>
+					<R01>-0.264431715</R01>
+					<R02>0.42647028</R02>
+					<R10>-1.49011612e-08</R10>
+					<R11>0.849884748</R11>
+					<R12>0.526968658</R12>
+					<R20>-0.501797795</R20>
+					<R21>0.455819964</R21>
+					<R22>-0.735137522</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -12959,7 +12959,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 													<G>1</G>
 													<B>1</B>
 												</Color3>
-												<float name="BackgroundTransparency">0.5</float>
+												<float name="BackgroundTransparency">0</float>
 												<Color3 name="BorderColor3">
 													<R>0.525490224</R>
 													<G>0</G>
@@ -13062,7 +13062,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 													<G>1</G>
 													<B>1</B>
 												</Color3>
-												<float name="BackgroundTransparency">0.5</float>
+												<float name="BackgroundTransparency">0</float>
 												<Color3 name="BorderColor3">
 													<R>0.525490224</R>
 													<G>0</G>
@@ -13165,7 +13165,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 													<G>1</G>
 													<B>1</B>
 												</Color3>
-												<float name="BackgroundTransparency">0.5</float>
+												<float name="BackgroundTransparency">0</float>
 												<Color3 name="BorderColor3">
 													<R>0.525490224</R>
 													<G>0</G>
@@ -13268,7 +13268,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 													<G>1</G>
 													<B>1</B>
 												</Color3>
-												<float name="BackgroundTransparency">0.5</float>
+												<float name="BackgroundTransparency">0</float>
 												<Color3 name="BorderColor3">
 													<R>0.898039281</R>
 													<G>0.149019614</G>
@@ -13371,7 +13371,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 													<G>1</G>
 													<B>1</B>
 												</Color3>
-												<float name="BackgroundTransparency">0.5</float>
+												<float name="BackgroundTransparency">0</float>
 												<Color3 name="BorderColor3">
 													<R>0.525490224</R>
 													<G>0</G>
@@ -13474,7 +13474,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 													<G>1</G>
 													<B>1</B>
 												</Color3>
-												<float name="BackgroundTransparency">0.5</float>
+												<float name="BackgroundTransparency">0</float>
 												<Color3 name="BorderColor3">
 													<R>0.227450997</R>
 													<G>1</G>
@@ -35040,7 +35040,26 @@ function module.setPropsByTag(props)
         mergeTables(item, theProps)
         -- 
     end
+end
 
+function module.getByTagInParent(props)
+    local tag = props.tag
+    local parent = props.parent
+    print('tag' .. ' - start');
+    print(tag);
+    local items = CS:GetTagged(tag)
+    print('items' .. ' - start');
+    print(items);
+    local output = {}
+    for i, item in ipairs(items) do
+        print('i' .. ' - start');
+        print(i);
+        if item:IsDescendantOf(parent) then
+            table.insert(output, item)
+            -- 
+        end
+    end
+    return output
 end
 
 function getFirstDescendantByName(parent, name)
@@ -35143,7 +35162,6 @@ function sizeWalls2(props)
     local items = props.items
     local height = props.height
 
-    -- local children = parent:GetDescendants()
     for i, item in ipairs(items) do
         if item:isA("Part") then item.CanCollide = false end
     end
@@ -35795,7 +35813,11 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
 
 local module = {
-    tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
+    tagNames = {
+        WordLetter = "WordLetter",
+        LetterBlock = "LetterBlock",
+        DeadLetter = "DeadLetter"
+    }
 }
 
 function colorLetterText(props)
@@ -35805,6 +35827,21 @@ function colorLetterText(props)
     local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
     for i, label in ipairs(textLabels) do
         label.TextColor3 = color or Color3.new(255, 0, 191)
+
+    end
+end
+
+function colorLetterBG(props)
+    local color = props.color
+    local letterBlock = props.letterBlock
+
+    local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
+    for i, label in ipairs(textLabels) do
+
+        print('i' .. ' - start');
+        print(i);
+        label.BackgroundColor3 = Color3.fromRGB(72, 90, 230)
+        -- label.BackGroundColor3 = color or Color3.new(255, 0, 191)
 
     end
 end
@@ -35849,6 +35886,7 @@ module.applyLetterText = applyLetterText
 module.isDesiredLetter = isDesiredLetter
 module.isWordComplete = isWordComplete
 module.createBalls = createBalls
+module.colorLetterBG = colorLetterBG
 return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
@@ -35997,9 +36035,9 @@ local InitWord = require(Sss.Source.LetterFall.InitWord)
 
 local module = {}
 
+-- TODO: create dead letters
 function initLetterRack(miniGameState)
     local runTimeLetterFolder = getRunTimeLetterFolder(miniGameState)
-
     local letterFallFolder = miniGameState.letterFallFolder
     local letterRackFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                             "LetterRackFolder")
@@ -36029,8 +36067,9 @@ function initLetterRack(miniGameState)
         end
     end
 
-    local newLetters = {}
+    -- local newLetters = {}
 
+    local deadLetters = {{row = 2, col = 2}}
     for colIndex = 1, numCol do
         local newColumnBase = columnBaseTemplate:Clone()
         newColumnBase.Name = "columnBase-" .. colIndex
@@ -36055,6 +36094,15 @@ function initLetterRack(miniGameState)
             local newLetter = letterTemplate:Clone()
 
             newLetter.Name = "newLetter-" .. char
+            if colIndex == 4 and rowIndex == 4 then
+                print('tag')
+                print('tag')
+                print('tag')
+                print('tag')
+                print('tag')
+                CS:AddTag(newLetter, LetterFallUtils.tagNames.DeadLetter)
+            end
+
             CS:AddTag(newLetter, LetterFallUtils.tagNames.LetterBlock)
 
             local y = newLetter.Size.Y * (rowIndex - 1) * spacingFactor
@@ -36062,17 +36110,35 @@ function initLetterRack(miniGameState)
                 {letterBlock = newLetter, char = char})
             newLetter.CFrame = newLetter.CFrame *
                                    CFrame.new(Vector3.new(0, y, 0))
-            table.insert(newLetters, newLetter)
+            -- table.insert(newLetters, newLetter)
             -- do this last to avoid tweening
             newLetter.Parent = newColumnBase
             newColumnBase.Transparency = 1
             newLetter.Transparency = 0
-
         end
         letterTemplate:Destroy()
     end
     columnBaseTemplate:Destroy()
 
+    local renderedDeadLetters = Utils.getByTagInParent(
+                                    {
+            parent = runTimeLetterFolder,
+            tag = LetterFallUtils.tagNames.DeadLetter
+        })
+
+    for i, item in ipairs(renderedDeadLetters) do
+        LetterFallUtils.colorLetterText({
+            letterBlock = item,
+            color = Color3.fromRGB(58, 0, 87)
+        })
+        LetterFallUtils.colorLetterBG({
+            letterBlock = item,
+            color = Color3.fromRGB(0, 255, 34)
+        })
+    end
+
+    print('renderedDeadLetters' .. ' - start');
+    print(renderedDeadLetters);
 end
 
 function getRunTimeLetterFolder(miniGameState)
