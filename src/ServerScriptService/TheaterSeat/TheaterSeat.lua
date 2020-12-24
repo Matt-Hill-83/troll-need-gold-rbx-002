@@ -151,8 +151,7 @@ function module.addSeat(props)
                 theaterState.numUsersSeated = theaterState.numUsersSeated - 1
                 currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
                     Constants.walkSpeed
-                freezeCameraRE:FireClient(currentPlayer, cameraPath1,
-                                          cameraPath2, false)
+                freezeCameraRE:FireAllClients(cameraPath1, cameraPath2, false)
                 currentPlayer = nil
             end
         end)

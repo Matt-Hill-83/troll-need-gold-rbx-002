@@ -49,7 +49,10 @@ function module.addScenes(props)
 
         clonedScene.Name = clonedScene.Name .. sceneIndex
 
-        local words = {'CAT', 'BAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT'}
+        local words = {
+            'CAT', 'BAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', 'CAT', 'BAT',
+            'HAT', 'MAT', 'PAT', 'RAT', 'SAT'
+        }
         -- local words = {
         --     'DO', 'NOT', 'GO', 'IN', 'THE', 'CAVE', 'NOPE', 'NO', "BAD", "IDEA",
         --     'CAT', 'BAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT'
