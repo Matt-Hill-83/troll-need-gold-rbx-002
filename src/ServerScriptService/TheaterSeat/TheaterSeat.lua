@@ -6,6 +6,8 @@ local Constants = require(Sss.Source.Constants.Constants)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local freezeCameraRE = ReplicatedStorage:WaitForChild("FreezeCameraRE")
 local renderDialogRE = ReplicatedStorage:WaitForChild("RenderDialogRE")
+local nextPageButtonClickRE = ReplicatedStorage:WaitForChild(
+                                  "NextPageButtonClickRE")
 
 local module = {}
 
@@ -20,6 +22,54 @@ function module.addSeat(props)
     local Players = game:GetService("Players")
     local currentPlayer = nil
     local numPages = #sceneConfig.frames
+
+    local theaterState = {pageNumber = 1, updating = false, numUsersSeated = 0}
+
+    function getFrameConfig()
+        return sceneConfig.frames[theaterState.pageNumber]
+    end
+
+    function updatePageStuff()
+        -- Closed over variables
+        local frameConfig = getFrameConfig(sceneConfig)
+
+        function closure()
+            if theaterState.updating == true then return end
+            if theaterState.numUsersSeated == 0 then return end
+
+            theaterState.updating = true
+            print('updatePageStuff' .. ' - start');
+
+            if theaterState.pageNumber < numPages then
+                theaterState.pageNumber = theaterState.pageNumber + 1
+
+                local newSceneProps = {
+                    frameConfig = frameConfig,
+                    clonedScene = clonedScene,
+                    sceneFolder = sceneFolder
+                }
+
+                addCharactersToScene(newSceneProps)
+
+                local Players = game:GetService("Players")
+                for i, player in pairs(Players:GetPlayers()) do
+                    print(player.Name)
+                    local sgui = player.PlayerGui.SceneDialogGui
+
+                    Buttons.updateButtonActiveStatus2(
+                        {
+                            pageNum = theaterState.pageNumber,
+                            numPages = numPages,
+                            sgui = sgui
+                        })
+                end
+            end
+            theaterState.updating = false
+        end
+        return closure
+    end
+
+    nextPageButtonClickRE.OnServerEvent:Connect(updatePageStuff())
 
     function renderScreenDialog(props)
         -- local player = props.player
@@ -47,6 +97,9 @@ function module.addSeat(props)
                                                                "ScreenCameraPath2")
 
             local humanoid = seat.Occupant
+
+            local thisSeatState = {}
+
             if humanoid then
                 local pageNum = 1
 
@@ -55,6 +108,9 @@ function module.addSeat(props)
                 local frameConfig = sceneConfig.frames[pageNum]
 
                 if player then
+
+                    theaterState.numUsersSeated =
+                        theaterState.numUsersSeated + 1
                     currentPlayer = player
 
                     renderScreenDialog({
@@ -73,7 +129,15 @@ function module.addSeat(props)
                         sgui = player.PlayerGui.SceneDialogGui,
                         openBridgeDoor = openBridgeDoor
                     }
-                    Buttons.configButtons(props2)
+                    -- Buttons.configButtons(props2)
+
+                    -- if thisSeatState.nextButtonEvent then
+                    --     thisSeatState.nextButtonEvent:Disconnect()
+                    -- end
+
+                    -- thisSeatState.nextButtonEvent =
+                    --     nextPageButtonClickRE.OnServerEvent:Connect(
+                    --         updatePageStuff())
 
                     freezeCameraRE:FireAllClients(cameraPath1, cameraPath2, true)
                     -- freezeCameraRE:FireClient(player, cameraPath1, cameraPath2,
@@ -83,6 +147,7 @@ function module.addSeat(props)
             end
 
             if currentPlayer then
+                theaterState.numUsersSeated = theaterState.numUsersSeated - 1
                 currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
                     Constants.walkSpeed
                 freezeCameraRE:FireClient(currentPlayer, cameraPath1,

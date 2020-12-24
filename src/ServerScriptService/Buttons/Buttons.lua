@@ -26,6 +26,26 @@ function updateButtonActiveStatus(props)
     if lastPage then openBridgeDoor({clonedScene = clonedScene}) end
 end
 
+function updateButtonActiveStatus2(props)
+    local pageNum = props.pageNum
+    local numPages2 = props.numPages
+    local sgui = props.sgui
+
+    local nextButton = Utils.getFirstDescendantByName(sgui, "NextPageButton")
+    local prevButton = Utils.getFirstDescendantByName(sgui, "PrevPageButton")
+    local pageNumLabel = Utils.getFirstDescendantByName(sgui, "PageNumLabel")
+
+    local lastPage = pageNum >= numPages2
+    nextButton.Active = not lastPage
+    nextButton.Text = not lastPage and Constants.buttonLabels.NextPage or "---"
+
+    prevButton.Active = pageNum > 1
+    prevButton.Text = prevButton.Active and Constants.buttonLabels.PrevPage or
+                          "---"
+
+    pageNumLabel.Text = "Page: " .. pageNum .. " of " .. numPages2
+end
+
 function configButtons(props)
     -- This config happends for each player each time they sit down.
     -- It links their buttons to their own page number, scoped to the specific
@@ -161,8 +181,8 @@ function configButtons(props)
         })
     end
 
-    pn.nextButtonEvent = nextButton.MouseButton1Click:Connect(onIncrementPage)
-    pn.prevButtonEvent = prevButton.MouseButton1Click:Connect(onDecrementPage)
+    -- pn.nextButtonEvent = nextButton.MouseButton1Click:Connect(onIncrementPage)
+    -- pn.prevButtonEvent = prevButton.MouseButton1Click:Connect(onDecrementPage)
 
     -- module.nextButtonEvent = nextButton.MouseButton1Click:Connect(
     --                              onIncrementPage)
@@ -170,5 +190,11 @@ function configButtons(props)
     --                              onDecrementPage)
 end
 
+-- TODO: fix these closures to make them return a function
+-- function Closure() return true end
+-- RemoteEvent:FireServer(Closure())
+
 module.configButtons = configButtons
+module.updateButtonActiveStatus = updateButtonActiveStatus
+module.updateButtonActiveStatus2 = updateButtonActiveStatus2
 return module
