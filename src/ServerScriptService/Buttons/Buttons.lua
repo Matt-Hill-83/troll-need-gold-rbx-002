@@ -24,10 +24,12 @@ function updateButtonActiveStatus(props)
     pageNumLabel.Text = "Page: " .. pageNum .. " of " .. numPages2
 
     if lastPage then openBridgeDoor({clonedScene = clonedScene}) end
-
 end
 
 function configButtons(props)
+    -- This config happends for each player each time they sit down.
+    -- It links their buttons to their own page number, scoped to the specific
+    -- sitting event
     local clonedScene = props.clonedScene
     local numPages = props.numPages
     local sceneConfig = props.sceneConfig
@@ -44,8 +46,10 @@ function configButtons(props)
 
     local pn = {value = 1}
 
-    if module.nextButtonEvent then module.nextButtonEvent:Disconnect() end
-    if module.prevButtonEvent then module.prevButtonEvent:Disconnect() end
+    if pn.nextButtonEvent then pn.nextButtonEvent:Disconnect() end
+    if pn.prevButtonEvent then pn.prevButtonEvent:Disconnect() end
+    -- if module.nextButtonEvent then module.nextButtonEvent:Disconnect() end
+    -- if module.prevButtonEvent then module.prevButtonEvent:Disconnect() end
 
     updateButtonActiveStatus({
         pageNum = 1,
@@ -157,10 +161,13 @@ function configButtons(props)
         })
     end
 
-    module.nextButtonEvent = nextButton.MouseButton1Click:Connect(
-                                 onIncrementPage)
-    module.prevButtonEvent = prevButton.MouseButton1Click:Connect(
-                                 onDecrementPage)
+    pn.nextButtonEvent = nextButton.MouseButton1Click:Connect(onIncrementPage)
+    pn.prevButtonEvent = prevButton.MouseButton1Click:Connect(onDecrementPage)
+
+    -- module.nextButtonEvent = nextButton.MouseButton1Click:Connect(
+    --                              onIncrementPage)
+    -- module.prevButtonEvent = prevButton.MouseButton1Click:Connect(
+    --                              onDecrementPage)
 end
 
 module.configButtons = configButtons
