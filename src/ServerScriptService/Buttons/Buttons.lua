@@ -35,7 +35,7 @@ function configButtons(props)
     local addCharactersToScene = props.addCharactersToScene
     local renderScreenDialog = props.renderScreenDialog
     local sgui = props.sgui
-    local player = props.player
+    -- local player = props.player
     local openBridgeDoor = props.openBridgeDoor
 
     local nextButton = Utils.getFirstDescendantByName(sgui, "NextPageButton")
@@ -95,6 +95,8 @@ function configButtons(props)
     end
 
     function incrementPage(props)
+        print("incrementPage")
+        print("incrementPage")
         local clonedScene1 = props.clonedScene
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
@@ -134,12 +136,14 @@ function configButtons(props)
     end
 
     local function onIncrementPage()
+        print("onIncrementPage")
+        print("onIncrementPage")
         incrementPage({
             pn = pn,
             clonedScene = clonedScene,
             numPages = numPages,
-            sceneConfig = sceneConfig,
-            player = player
+            sceneConfig = sceneConfig
+            -- player = player
         })
     end
 
@@ -148,8 +152,8 @@ function configButtons(props)
             pn = pn,
             clonedScene = clonedScene,
             numPages = numPages,
-            sceneConfig = sceneConfig,
-            player = player
+            sceneConfig = sceneConfig
+            -- player = player
         })
     end
 

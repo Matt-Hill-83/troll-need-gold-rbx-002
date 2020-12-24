@@ -75,8 +75,9 @@ function module.addSeat(props)
                     }
                     Buttons.configButtons(props2)
 
-                    freezeCameraRE:FireClient(player, cameraPath1, cameraPath2,
-                                              true)
+                    freezeCameraRE:FireAllClients(cameraPath1, cameraPath2, true)
+                    -- freezeCameraRE:FireClient(player, cameraPath1, cameraPath2,
+                    --                           true)
                     return
                 end
             end

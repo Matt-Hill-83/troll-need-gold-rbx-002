@@ -8,6 +8,10 @@ local dialogColors = Constants.dialogColors
 local module = {}
 
 renderTexts = function(props)
+    print('renderTexts' .. ' - start');
+    print('props' .. ' - start');
+    print(props);
+
     local dialogConfigs = props.dialogConfigs
     local sgui = props.sgui
 
