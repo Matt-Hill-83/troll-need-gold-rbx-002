@@ -1,4 +1,4 @@
-print("Freeze Camera3 - local script")
+print("Freeze Camera - local script")
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
@@ -7,7 +7,6 @@ local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
 -- local Texts = require(StarterPlayer.Source.Texts)
 
 local function onNotifyPlayer(cameraPath1, cameraPath2, freeze)
-
     local player = game:GetService("Players").LocalPlayer
     local playerGui = player.PlayerGui.SceneDialogGui
 

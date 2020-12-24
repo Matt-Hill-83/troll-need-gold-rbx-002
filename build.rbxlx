@@ -28821,50 +28821,6 @@ return module
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="LocalScript" referent="RBX6aa00dceccac44d9b196ba7b6390e910">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<bool name="Disabled">false</bool>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">FreezeCamera2</string>
-					<string name="ScriptGuid">{8f1edbfe-a11b-424e-ab39-79d695c434ce}</string>
-					<ProtectedString name="Source"><![CDATA[print("Freeze Camera3 - local script")
-
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
-
--- local StarterPlayer = game:GetService("StarterPlayer")
--- local Texts = require(StarterPlayer.Source.Texts)
-
-local function onNotifyPlayer(cameraPath1, cameraPath2, freeze)
-
-    local player = game:GetService("Players").LocalPlayer
-    local playerGui = player.PlayerGui.SceneDialogGui
-
-    local camera = workspace.CurrentCamera
-    if freeze then
-        playerGui.Enabled = true
-        local cameraOffset = Vector3.new(0, 0, 2)
-
-        if camera.CameraType ~= Enum.CameraType.Scriptable then
-            camera.CameraType = Enum.CameraType.Scriptable
-        end
-
-        camera.CFrame = CFrame.new(cameraPath1.Position + cameraOffset,
-                                   cameraPath2.Position)
-    else
-        playerGui.Enabled = false
-        camera.CameraType = Enum.CameraType.Custom
-
-    end
-end
-
-remoteEvent.OnClientEvent:Connect(onNotifyPlayer)
-]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
 			<Item class="LocalScript" referent="RBX2ddde4a3f1c245b7885339bfeb419c24">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -28894,50 +28850,96 @@ remoteEvent.OnClientEvent:Connect(onNotifyPlayer)
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-		</Item>
-		<Item class="LocalScript" referent="RBX433e49b0a99a4e0fb58c941faa054f6a">
-			<Properties>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<bool name="Disabled">false</bool>
-				<Content name="LinkedSource"><null></null></Content>
-				<string name="Name">LFCaptureClick</string>
-				<string name="ScriptGuid">{46eeb199-8b9d-4602-b084-6fbcc2f239e9}</string>
-				<ProtectedString name="Source"><![CDATA[--local UserInputService = game:GetService("UserInputService")
---local CS = game:GetService("CollectionService")
---local RS = game:GetService("ReplicatedStorage")
---local remoteEvent2 = RS:WaitForChild("ClickBlockRE")
+			<Item class="LocalScript" referent="RBXb61849e8624c4301a128478dc3989bc0">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="Disabled">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">ClickThroughInvisibleParts</string>
+					<string name="ScriptGuid">{97e3339f-c10a-4741-bbd3-f123e1e323c2}</string>
+					<ProtectedString name="Source"><![CDATA[print("ClickThroughInvisibleParts.client")
 
---local player = game.Players.LocalPlayer
---local mouse = player:GetMouse()
---local MAX_RAY_LENGTH = 5000
+local UserInputService = game:GetService("UserInputService")
+local CS = game:GetService("CollectionService")
+local RS = game:GetService("ReplicatedStorage")
+local remoteEvent = RS:WaitForChild("ClickBlockRE")
 
---local function onInputBegan(input)
---	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-    
---        local raycastParams = RaycastParams.new()
---        raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
---        raycastParams.FilterDescendantsInstances = CS:GetTagged("IgnoreClick")
---        raycastParams.IgnoreWater = true
---        local raycastResult = workspace:Raycast(mouse.UnitRay.Origin,
---                                                mouse.UnitRay.Direction *
---                                                    MAX_RAY_LENGTH,
---                                                raycastParams)
---        if raycastResult then
---            local hitObject = raycastResult.Instance
---            if CS:HasTag(hitObject, "LetterBlockInRack") then
---                print("--------------------------->>" .. hitObject.Name)
---                remoteEvent2:FireServer(hitObject)
---            end
---        else
---            print("Nothing was hit!")
---        end
---    end
---end
---UserInputService.InputBegan:Connect(onInputBegan)
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+local MAX_RAY_LENGTH = 5000
+
+local function onInputBegan(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or
+        input.UserInputType == Enum.UserInputType.Touch then
+
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
+        raycastParams.FilterDescendantsInstances = CS:GetTagged("IgnoreClick")
+        raycastParams.IgnoreWater = true
+        local raycastResult = workspace:Raycast(mouse.UnitRay.Origin,
+                                                mouse.UnitRay.Direction *
+                                                    MAX_RAY_LENGTH,
+                                                raycastParams)
+        if raycastResult then
+            local hitObject = raycastResult.Instance
+            if CS:HasTag(hitObject, "LetterBlockInRack") then
+                print("--------------------------->>" .. hitObject.Name)
+                remoteEvent:FireServer(hitObject)
+            end
+        else
+            print("Nothing was hit!")
+        end
+    end
+end
+UserInputService.InputBegan:Connect(onInputBegan)
 ]]></ProtectedString>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-			</Properties>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+			<Item class="LocalScript" referent="RBX7b7151dee6e749428f39d9fb04c401ab">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="Disabled">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">FreezeCamera</string>
+					<string name="ScriptGuid"></string>
+					<ProtectedString name="Source"><![CDATA[print("Freeze Camera - local script")
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
+
+-- local StarterPlayer = game:GetService("StarterPlayer")
+-- local Texts = require(StarterPlayer.Source.Texts)
+
+local function onNotifyPlayer(cameraPath1, cameraPath2, freeze)
+    local player = game:GetService("Players").LocalPlayer
+    local playerGui = player.PlayerGui.SceneDialogGui
+
+    local camera = workspace.CurrentCamera
+    if freeze then
+        playerGui.Enabled = true
+        local cameraOffset = Vector3.new(0, 0, 2)
+
+        if camera.CameraType ~= Enum.CameraType.Scriptable then
+            camera.CameraType = Enum.CameraType.Scriptable
+        end
+
+        camera.CFrame = CFrame.new(cameraPath1.Position + cameraOffset,
+                                   cameraPath2.Position)
+    else
+        playerGui.Enabled = false
+        camera.CameraType = Enum.CameraType.Custom
+
+    end
+end
+
+remoteEvent.OnClientEvent:Connect(onNotifyPlayer)
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
 		</Item>
 	</Item>
 	<Item class="StarterGui" referent="RBXfad8e8a50fb044e28e00a92ffb65f759">
@@ -30184,21 +30186,6 @@ remoteEvent.OnClientEvent:Connect(onNotifyPlayer)
 					</Properties>
 				</Item>
 			</Item>
-		</Item>
-		<Item class="ScreenGui" referent="RBXca182206804a447597a0819ad1d8b773">
-			<Properties>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<bool name="AutoLocalize">true</bool>
-				<int name="DisplayOrder">0</int>
-				<bool name="Enabled">false</bool>
-				<bool name="IgnoreGuiInset">false</bool>
-				<string name="Name">ScreenGui</string>
-				<bool name="ResetOnSpawn">true</bool>
-				<Ref name="RootLocalizationTable">null</Ref>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-				<token name="ZIndexBehavior">0</token>
-			</Properties>
 		</Item>
 	</Item>
 	<Item class="LocalizationService" referent="RBX2c56f90e4d07415d811a5c47ec349a70">
@@ -37942,25 +37929,6 @@ return module
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBXf89cfb8da7f24949af2fff37e3df4a05">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">Texts</string>
-					<string name="ScriptGuid">{1a38859f-0a2a-4a31-a610-9da0da633a84}</string>
-					<ProtectedString name="Source">---test</ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
-		</Item>
-		<Item class="RemoteEvent" referent="RBX7e07d2f9935645a293cecc3bf5307a44">
-			<Properties>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<string name="Name">buttonEvent</string>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-			</Properties>
 		</Item>
 		<Item class="RemoteEvent" referent="RBXd8a27200040e4ea4aa5592423b03a386">
 			<Properties>
@@ -37982,6 +37950,14 @@ return module
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<string name="Name">ClickBlockRE</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+		</Item>
+		<Item class="RemoteEvent" referent="RBXac178dd17b994e7ebca346d4a975481f">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="Name">NextPageButtonClickRE</string>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
