@@ -1,8 +1,8 @@
 local CS = game:GetService("CollectionService")
 local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
+local RS = game:GetService("ReplicatedStorage")
+local clickBlockEvent = RS:WaitForChild("ClickBlockRE")
 local InitWord = require(Sss.Source.LetterFall.InitWord)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 
@@ -26,7 +26,7 @@ function initClickHandler(miniGameState)
     function brickClickHandler(player, clickedLetter)
         handleBrick(player, clickedLetter, miniGameState)
     end
-    remoteEvent.OnServerEvent:Connect(brickClickHandler)
+    clickBlockEvent.OnServerEvent:Connect(brickClickHandler)
 end
 
 function handleBrick(player, clickedLetter, miniGameState)

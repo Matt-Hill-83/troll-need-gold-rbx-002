@@ -1,7 +1,16 @@
 local Sss = game:GetService("ServerScriptService")
+local CS = game:GetService("CollectionService")
+local RS = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
-local CS = game:GetService("CollectionService")
+
+local function getPlayerFromHumanoid(humanoid)
+    local character = humanoid.Parent
+    local player = Players:GetPlayerFromCharacter(character)
+    return player
+end
 
 local function removeFirstMatchFromArray(array, value)
     for i = #array, 1, -1 do
@@ -459,5 +468,6 @@ module.hideItem = hideItem
 module.genRandom = genRandom
 module.enableChildWelds = enableChildWelds
 module.removeFirstMatchFromArray = removeFirstMatchFromArray
+module.getPlayerFromHumanoid = getPlayerFromHumanoid
 
 return module

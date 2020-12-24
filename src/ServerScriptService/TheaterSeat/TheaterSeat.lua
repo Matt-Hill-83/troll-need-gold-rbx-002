@@ -1,15 +1,15 @@
 local Sss = game:GetService("ServerScriptService")
+local Players = game:GetService("Players")
+local RS = game:GetService("ReplicatedStorage")
+
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Buttons = require(Sss.Source.Buttons.Buttons)
 local Constants = require(Sss.Source.Constants.Constants)
 
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local freezeCameraRE = ReplicatedStorage:WaitForChild("FreezeCameraRE")
-local renderDialogRE = ReplicatedStorage:WaitForChild("RenderDialogRE")
-local nextPageButtonClickRE = ReplicatedStorage:WaitForChild(
-                                  "NextPageButtonClickRE")
-local prevPageButtonClickRE = ReplicatedStorage:WaitForChild(
-                                  "PrevPageButtonClickRE")
+local freezeCameraRE = RS:WaitForChild("FreezeCameraRE")
+local renderDialogRE = RS:WaitForChild("RenderDialogRE")
+local nextPageButtonClickRE = RS:WaitForChild("NextPageButtonClickRE")
+local prevPageButtonClickRE = RS:WaitForChild("PrevPageButtonClickRE")
 
 local module = {}
 
@@ -20,7 +20,6 @@ function module.addSeat(props)
     local addCharactersToScene = props.addCharactersToScene
     local sceneFolder = props.sceneFolder
 
-    local Players = game:GetService("Players")
     local currentPlayer = nil
     local numPages = #sceneConfig.frames
 
@@ -117,9 +116,6 @@ function module.addSeat(props)
                                                                "ScreenCameraPath2")
 
             local humanoid = seat.Occupant
-
-            local thisSeatState = {}
-
             if humanoid then
                 local pageNum = 1
 
@@ -151,6 +147,7 @@ function module.addSeat(props)
                 end
             end
 
+            -- player leaves seat
             if currentPlayer then
                 theaterState.numUsersSeated = theaterState.numUsersSeated - 1
                 currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
