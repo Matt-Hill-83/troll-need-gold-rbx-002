@@ -12,6 +12,20 @@ local module = {
     }
 }
 
+function positionActiveWord(props)
+    local letterFallFolder = props.letterFallFolder
+    local miniGameState = props.miniGameState
+
+    local activeWordPositioner = Utils.getFirstDescendantByName(
+                                     letterFallFolder, "ActiveWordPositioner")
+
+    local newActiveWord =
+        miniGameState.renderedWords[miniGameState.activeWordIndex + 1]
+
+    local myActiveWord = newActiveWord.word.PrimaryPart
+    myActiveWord.CFrame = activeWordPositioner.CFrame
+end
+
 function colorLetterText(props)
     local color = props.color
     local letterBlock = props.letterBlock
@@ -96,4 +110,5 @@ module.isWordComplete = isWordComplete
 module.createBalls = createBalls
 module.colorLetterBG = colorLetterBG
 module.configDeadLetters = configDeadLetters
+module.positionActiveWord = positionActiveWord
 return module

@@ -46,22 +46,6 @@ function handleBrick(player, clickedLetter, miniGameState)
 
     local currentActiveWord = activeWord.word.PrimaryPart
 
-    function positionActiveWord(props)
-        local letterFallFolder = props.letterFallFolder
-        local miniGameState = props.miniGameState
-
-        local activeWordPositioner = Utils.getFirstDescendantByName(
-                                         letterFallFolder,
-                                         "ActiveWordPositioner")
-
-        local newActiveWord =
-            miniGameState.renderedWords[miniGameState.activeWordIndex + 1]
-
-        local myActiveWord = newActiveWord.word.PrimaryPart
-        myActiveWord.CFrame = activeWordPositioner.CFrame
-
-    end
-
     for i, letter in ipairs(letters) do
         if isDesiredLetter(letter, clickedLetter) then
             letter.found = true
@@ -79,20 +63,11 @@ function handleBrick(player, clickedLetter, miniGameState)
                                                    "CompletedWordPositioner")
                 currentActiveWord.CFrame = completedWordPositioner.CFrame
 
-                positionActiveWord({
-                    letterFallFolder = letterFallFolder,
-                    miniGameState = miniGameState
-                })
-                -- local activeWordPositioner =
-                --     Utils.getFirstDescendantByName(letterFallFolder,
-                --                                    "ActiveWordPositioner")
-
-                -- local newActiveWord =
-                --     miniGameState.renderedWords[miniGameState.activeWordIndex +
-                --         1]
-
-                -- local myActiveWord = newActiveWord.word.PrimaryPart
-                -- myActiveWord.CFrame = activeWordPositioner.CFrame
+                LetterFallUtils.positionActiveWord(
+                    {
+                        letterFallFolder = letterFallFolder,
+                        miniGameState = miniGameState
+                    })
 
                 miniGameState.activeWordIndex =
                     miniGameState.activeWordIndex + 1
