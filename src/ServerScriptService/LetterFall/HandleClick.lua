@@ -14,6 +14,11 @@ function isDesiredLetter(letter, clickedLetter)
     return letter.found ~= true and letter.char == textLabel
 end
 
+function isDeadLetter(clickedLetter)
+    local tag = LetterFallUtils.tagNames.DeadLetter
+    return CS:HasTag(clickedLetter, tag)
+end
+
 function isWordComplete(wordLetters)
     for i, word in ipairs(wordLetters) do
         if not word.found then return false end
@@ -31,6 +36,8 @@ end
 
 function handleBrick(player, clickedLetter, miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
+
+    if isDeadLetter(clickedLetter) then return end
 
     if not miniGameState.gemsStarted then
         LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
