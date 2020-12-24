@@ -27533,14 +27533,14 @@ remoteCode.addRemoteObjects()
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
 
-local StarterPlayer = game:GetService("StarterPlayer")
-local Texts = require(StarterPlayer.Source.Texts)
+--local StarterPlayer = game:GetService("StarterPlayer")
+--local Texts = require(StarterPlayer.Source.Texts)
 
 local function onNotifyPlayer(cameraPath1, cameraPath2, freeze)
 
 	local player = game:GetService("Players").LocalPlayer
 	local playerGui = player.PlayerGui.SceneDialogGui
-	
+		
 	local camera = workspace.CurrentCamera
 	if freeze then
 		playerGui.Enabled = true
@@ -28950,7 +28950,7 @@ UserInputService.InputBegan:Connect(onInputBegan)
 			<string name="Name">StarterGui</string>
 			<bool name="ResetPlayerGuiOnSpawn">true</bool>
 			<token name="ScreenOrientation">2</token>
-			<bool name="ShowDevelopmentGui">false</bool>
+			<bool name="ShowDevelopmentGui">true</bool>
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
@@ -29966,6 +29966,19 @@ UserInputService.InputBegan:Connect(onInputBegan)
 							<S>0</S>
 							<O>0</O>
 						</UDim>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="LocalScript" referent="RBX319d8ced08b54ec3a43a7a64696159ba">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<bool name="Disabled">false</bool>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">LocalScript</string>
+						<string name="ScriptGuid">{65d3bb49-3708-47c9-a7d4-701ba964e356}</string>
+						<ProtectedString name="Source"><![CDATA[print("Hello world!")
+]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -37523,12 +37536,12 @@ return module
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">BindFreezeCamera1</string>
 				<string name="ScriptGuid">{afe0d0c8-c6cb-4e5a-98c7-920b22808587}</string>
-				<ProtectedString name="Source"><![CDATA[print("--------------------------------BindFreezeCameraRE")
+				<ProtectedString name="Source"><![CDATA[--print("--------------------------------BindFreezeCameraRE")
 
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Players = game:GetService("Players")
+--local ReplicatedStorage = game:GetService("ReplicatedStorage")
+--local Players = game:GetService("Players")
 
-local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
+--local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
 
 ]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
