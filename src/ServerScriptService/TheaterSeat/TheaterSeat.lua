@@ -40,8 +40,6 @@ function module.addSeat(props)
             theaterState.updating = true
 
             if theaterState.numUsersSeated == 0 then return end
-            print('sceneConfig' .. ' - start');
-            print(sceneConfig.name);
 
             if theaterState.pageNumber < numPages then
                 theaterState.pageNumber = theaterState.pageNumber + 1
