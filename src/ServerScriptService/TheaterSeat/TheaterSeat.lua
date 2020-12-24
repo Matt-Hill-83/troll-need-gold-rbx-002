@@ -35,7 +35,7 @@ function module.addSeat(props)
         for i, player in pairs(Players:GetPlayers()) do
             local sgui = player.PlayerGui.SceneDialogGui
 
-            Buttons.updateButtonActiveStatus2(
+            Buttons.updateButtonActiveStatus(
                 {pageNum = pageNumber, numPages = numPages, sgui = sgui})
         end
         renderDialogRE:FireAllClients(frameConfig.dialogs)
@@ -119,8 +119,7 @@ function module.addSeat(props)
             if humanoid then
                 local pageNum = 1
 
-                local character = humanoid.Parent
-                local player = Players:GetPlayerFromCharacter(character)
+                local player = Utils.getPlayerFromHumanoid(humanoid)
 
                 if player then
                     theaterState.pageNumber = 1

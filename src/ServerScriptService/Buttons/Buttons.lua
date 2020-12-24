@@ -2,18 +2,18 @@ local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Constants = require(Sss.Source.Constants.Constants)
 
-local module = {nextButtonEvent = nil, prevButtonEvent = nil}
+local module = {}
 
-function updateButtonActiveStatus2(props)
+function updateButtonActiveStatus(props)
     local pageNum = props.pageNum
-    local numPages2 = props.numPages
+    local numPages = props.numPages
     local sgui = props.sgui
 
     local nextButton = Utils.getFirstDescendantByName(sgui, "NextPageButton")
     local prevButton = Utils.getFirstDescendantByName(sgui, "PrevPageButton")
     local pageNumLabel = Utils.getFirstDescendantByName(sgui, "PageNumLabel")
 
-    local lastPage = pageNum >= numPages2
+    local lastPage = pageNum >= numPages
     nextButton.Active = not lastPage
     nextButton.Text = not lastPage and Constants.buttonLabels.NextPage or "---"
 
@@ -21,8 +21,8 @@ function updateButtonActiveStatus2(props)
     prevButton.Text = prevButton.Active and Constants.buttonLabels.PrevPage or
                           "---"
 
-    pageNumLabel.Text = "Page: " .. pageNum .. " of " .. numPages2
+    pageNumLabel.Text = "Page: " .. pageNum .. " of " .. numPages
 end
 
-module.updateButtonActiveStatus2 = updateButtonActiveStatus2
+module.updateButtonActiveStatus = updateButtonActiveStatus
 return module

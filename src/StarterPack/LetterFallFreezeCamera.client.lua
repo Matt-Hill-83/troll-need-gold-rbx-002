@@ -9,19 +9,12 @@ local function onClientEvent(cameraPath1, cameraPath2, freeze)
 
     local camera = workspace.CurrentCamera
     if freeze then
-        playerGui.Enabled = true
-        local cameraOffset = Vector3.new(0, 0, 2)
-
-        if camera.CameraType ~= Enum.CameraType.Scriptable then
-            camera.CameraType = Enum.CameraType.Scriptable
-        end
-
+        local cameraOffset = Vector3.new(0, 0, 0)
+        camera.CameraType = Enum.CameraType.Scriptable
         camera.CFrame = CFrame.new(cameraPath1.Position + cameraOffset,
                                    cameraPath2.Position)
     else
-        playerGui.Enabled = false
         camera.CameraType = Enum.CameraType.Custom
-
     end
 end
 

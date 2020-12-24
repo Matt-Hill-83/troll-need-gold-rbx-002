@@ -30794,7 +30794,7 @@ local function onClientEvent(cameraPath1, cameraPath2, freeze)
     local camera = workspace.CurrentCamera
     if freeze then
         playerGui.Enabled = true
-        local cameraOffset = Vector3.new(0, 0, 2)
+        local cameraOffset = Vector3.new(0, 0, 0)
 
         if camera.CameraType ~= Enum.CameraType.Scriptable then
             camera.CameraType = Enum.CameraType.Scriptable
@@ -37162,6 +37162,7 @@ function module.addSeat(props)
                 end
             end
 
+            -- player leaves seat
             if currentPlayer then
                 theaterState.numUsersSeated = theaterState.numUsersSeated - 1
                 currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
@@ -38707,26 +38708,20 @@ function initLetterFall(miniGameState)
 
             local humanoid = seat.Occupant
             if humanoid then
-                local pageNum = 1
-
-                -- local character = humanoid.Parent
-                -- local player = Players:GetPlayerFromCharacter(character)
-
                 local player = Utils.getPlayerFromHumanoid(humanoid)
 
                 if player then
                     currentPlayer = player
-                    letterFallFreezeCameraRE:FireAllClients(cameraPath1,
-                                                            cameraPath2, true)
+                    letterFallFreezeCameraRE:FireClient(player, cameraPath1,
+                                                        cameraPath2, true)
                     return
                 end
             end
 
+            -- player leaves seat
             if currentPlayer then
-                currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
-                    Constants.walkSpeed
-                freezeCameraRE:FireClient(currentPlayer, cameraPath1,
-                                          cameraPath2, false)
+                letterFallFreezeCameraRE:FireClient(currentPlayer, cameraPath1,
+                                                    cameraPath2, false)
                 currentPlayer = nil
             end
         end)
