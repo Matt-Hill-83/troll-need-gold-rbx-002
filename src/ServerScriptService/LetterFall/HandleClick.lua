@@ -63,14 +63,11 @@ function handleBrick(player, clickedLetter, miniGameState)
                                                    "CompletedWordPositioner")
                 currentActiveWord.CFrame = completedWordPositioner.CFrame
 
-                LetterFallUtils.positionActiveWord(
-                    {
-                        letterFallFolder = letterFallFolder,
-                        miniGameState = miniGameState
-                    })
-
                 miniGameState.activeWordIndex =
                     miniGameState.activeWordIndex + 1
+
+                LetterFallUtils.positionActiveWord(
+                    {miniGameState = miniGameState})
 
                 for i, letter in ipairs(letters) do
                     LetterFallUtils.colorLetterText(
