@@ -29,59 +29,59 @@ function module.addSeat(props)
         return sceneConfig.frames[theaterState.pageNumber]
     end
 
-    function updatePageStuff()
-        -- Closed over variables
+    function updateFrameItems(newSceneProps, frameConfig, numPages, pageNumber)
+        addCharactersToScene(newSceneProps)
 
+        for i, player in pairs(Players:GetPlayers()) do
+            print(player.Name)
+            local sgui = player.PlayerGui.SceneDialogGui
+
+            Buttons.updateButtonActiveStatus2(
+                {
+                    pageNum = pageNumber,
+                    -- pageNum = theaterState.pageNumber,
+                    numPages = numPages,
+                    sgui = sgui
+                })
+        end
+        renderDialogRE:FireAllClients(frameConfig.dialogs)
+    end
+
+    function onNextPageClick()
         function closure()
+            print('onNextPageClick' .. ' - start');
             local sceneConfig = sceneConfig
             local frameConfig = sceneConfig.frames[theaterState.pageNumber]
-
+            print('theaterState.updating' .. ' - start');
+            print(theaterState.updating);
             if theaterState.updating == true then return end
             theaterState.updating = true
-
+            print('theaterState.numUsersSeated' .. ' - start');
+            print(theaterState.numUsersSeated);
             if theaterState.numUsersSeated == 0 then return end
-
+            print("valid")
+            print("valid")
+            print("valid")
+            print("valids")
             if theaterState.pageNumber < numPages then
                 theaterState.pageNumber = theaterState.pageNumber + 1
+
+                local frameConfig = sceneConfig.frames[theaterState.pageNumber]
 
                 local newSceneProps = {
                     frameConfig = frameConfig,
                     clonedScene = clonedScene,
                     sceneFolder = sceneFolder
                 }
-
-                addCharactersToScene(newSceneProps)
-
-                local Players = game:GetService("Players")
-                for i, player in pairs(Players:GetPlayers()) do
-                    print(player.Name)
-                    local sgui = player.PlayerGui.SceneDialogGui
-
-                    Buttons.updateButtonActiveStatus2(
-                        {
-                            pageNum = theaterState.pageNumber,
-                            numPages = numPages,
-                            sgui = sgui
-                        })
-
-                    local frameConfig =
-                        sceneConfig.frames[theaterState.pageNumber]
-                    renderScreenDialog({frameConfig = frameConfig})
-                end
+                updateFrameItems(newSceneProps, frameConfig, numPages,
+                                 theaterState.pageNumber)
             end
             theaterState.updating = false
         end
         return closure
     end
 
-    nextPageButtonClickRE.OnServerEvent:Connect(updatePageStuff())
-
-    function renderScreenDialog(props)
-        -- local player = props.player
-        local frameConfig = props.frameConfig
-
-        renderDialogRE:FireAllClients(frameConfig.dialogs)
-    end
+    nextPageButtonClickRE.OnServerEvent:Connect(onNextPageClick())
 
     function openBridgeDoor(props)
         local clonedScene2 = props.clonedScene
@@ -110,18 +110,28 @@ function module.addSeat(props)
 
                 local character = humanoid.Parent
                 local player = Players:GetPlayerFromCharacter(character)
-                local frameConfig = sceneConfig.frames[pageNum]
 
                 if player then
-
+                    theaterState.pageNumber = 1
                     theaterState.numUsersSeated =
                         theaterState.numUsersSeated + 1
+                    theaterState.updating = false
+
                     currentPlayer = player
 
-                    renderScreenDialog({frameConfig = frameConfig})
+                    local frameConfig =
+                        sceneConfig.frames[theaterState.pageNumber]
+
+                    local newSceneProps =
+                        {
+                            frameConfig = frameConfig,
+                            clonedScene = clonedScene,
+                            sceneFolder = sceneFolder
+                        }
+                    updateFrameItems(newSceneProps, frameConfig, numPages,
+                                     theaterState.pageNumber)
 
                     freezeCameraRE:FireAllClients(cameraPath1, cameraPath2, true)
-
                     return
                 end
             end

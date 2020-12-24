@@ -110,10 +110,7 @@ function configButtons(props)
             }
 
             addCharactersToScene(newSceneProps)
-            renderScreenDialog({
-                frameConfig = newFrameConfig
-                -- , player = player
-            })
+            renderScreenDialog({frameConfig = newFrameConfig})
             buttonPressed = false
         end
     end
@@ -124,7 +121,6 @@ function configButtons(props)
         local clonedScene1 = props.clonedScene
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
-        -- local player1 = props.player
 
         local pn3 = props.pn
         if pn3.value < numPages1 then
@@ -134,7 +130,6 @@ function configButtons(props)
                 pn = pn3,
                 numPages = numPages1,
                 sceneConfig = sceneConfig1
-                -- player = player1
             })
         end
 
@@ -144,7 +139,6 @@ function configButtons(props)
         local clonedScene1 = props.clonedScene
         local numPages1 = props.numPages
         local sceneConfig1 = props.sceneConfig
-        -- local player2 = props.player
 
         local pn4 = props.pn
         if pn4.value > 1 then
@@ -154,7 +148,6 @@ function configButtons(props)
                 pn = pn4,
                 numPages = numPages1,
                 sceneConfig = sceneConfig1
-                -- player = player2
             })
         end
     end
