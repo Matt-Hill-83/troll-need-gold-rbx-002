@@ -30,11 +30,6 @@ function initGameToggle(miniGameState)
     end
     startGameTrigger.Touched:Connect(onPartTouched)
     LetterFallUtils.createBalls(miniGameState)
-
-    -- LetterFallUtils.configDeadLetters({
-    --     parentFolder = miniGameState.runTimeLetterFolder
-    -- })
-
 end
 
 module.initGameToggle = initGameToggle

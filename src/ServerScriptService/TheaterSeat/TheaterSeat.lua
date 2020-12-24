@@ -25,20 +25,23 @@ function module.addSeat(props)
 
     local theaterState = {pageNumber = 1, updating = false, numUsersSeated = 0}
 
-    function getFrameConfig()
+    function getFrameConfig(sceneConfig)
         return sceneConfig.frames[theaterState.pageNumber]
     end
 
     function updatePageStuff()
         -- Closed over variables
-        local frameConfig = getFrameConfig(sceneConfig)
 
         function closure()
-            if theaterState.updating == true then return end
-            if theaterState.numUsersSeated == 0 then return end
+            local sceneConfig = sceneConfig
+            local frameConfig = sceneConfig.frames[theaterState.pageNumber]
 
+            if theaterState.updating == true then return end
             theaterState.updating = true
-            print('updatePageStuff' .. ' - start');
+
+            if theaterState.numUsersSeated == 0 then return end
+            print('sceneConfig' .. ' - start');
+            print(sceneConfig.name);
 
             if theaterState.pageNumber < numPages then
                 theaterState.pageNumber = theaterState.pageNumber + 1
@@ -62,6 +65,10 @@ function module.addSeat(props)
                             numPages = numPages,
                             sgui = sgui
                         })
+
+                    local frameConfig =
+                        sceneConfig.frames[theaterState.pageNumber]
+                    renderScreenDialog({frameConfig = frameConfig})
                 end
             end
             theaterState.updating = false
@@ -113,35 +120,10 @@ function module.addSeat(props)
                         theaterState.numUsersSeated + 1
                     currentPlayer = player
 
-                    renderScreenDialog({
-                        frameConfig = frameConfig
-                        -- player = player
-                    })
-
-                    local props2 = {
-                        clonedScene = clonedScene,
-                        numPages = numPages,
-                        sceneConfig = sceneConfig,
-                        sceneFolder = sceneFolder,
-                        -- player = player,
-                        addCharactersToScene = addCharactersToScene,
-                        renderScreenDialog = renderScreenDialog,
-                        sgui = player.PlayerGui.SceneDialogGui,
-                        openBridgeDoor = openBridgeDoor
-                    }
-                    -- Buttons.configButtons(props2)
-
-                    -- if thisSeatState.nextButtonEvent then
-                    --     thisSeatState.nextButtonEvent:Disconnect()
-                    -- end
-
-                    -- thisSeatState.nextButtonEvent =
-                    --     nextPageButtonClickRE.OnServerEvent:Connect(
-                    --         updatePageStuff())
+                    renderScreenDialog({frameConfig = frameConfig})
 
                     freezeCameraRE:FireAllClients(cameraPath1, cameraPath2, true)
-                    -- freezeCameraRE:FireClient(player, cameraPath1, cameraPath2,
-                    --                           true)
+
                     return
                 end
             end
