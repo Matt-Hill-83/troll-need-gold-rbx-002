@@ -8,6 +8,8 @@ local freezeCameraRE = ReplicatedStorage:WaitForChild("FreezeCameraRE")
 local renderDialogRE = ReplicatedStorage:WaitForChild("RenderDialogRE")
 local nextPageButtonClickRE = ReplicatedStorage:WaitForChild(
                                   "NextPageButtonClickRE")
+local prevPageButtonClickRE = ReplicatedStorage:WaitForChild(
+                                  "PrevPageButtonClickRE")
 
 local module = {}
 
@@ -17,7 +19,6 @@ function module.addSeat(props)
     local sceneConfig = props.sceneConfig
     local addCharactersToScene = props.addCharactersToScene
     local sceneFolder = props.sceneFolder
-    -- local openBridgeDoor = props.openBridgeDoor
 
     local Players = game:GetService("Players")
     local currentPlayer = nil
@@ -33,36 +34,22 @@ function module.addSeat(props)
         addCharactersToScene(newSceneProps)
 
         for i, player in pairs(Players:GetPlayers()) do
-            print(player.Name)
             local sgui = player.PlayerGui.SceneDialogGui
 
             Buttons.updateButtonActiveStatus2(
-                {
-                    pageNum = pageNumber,
-                    -- pageNum = theaterState.pageNumber,
-                    numPages = numPages,
-                    sgui = sgui
-                })
+                {pageNum = pageNumber, numPages = numPages, sgui = sgui})
         end
         renderDialogRE:FireAllClients(frameConfig.dialogs)
     end
 
     function onNextPageClick()
         function closure()
-            print('onNextPageClick' .. ' - start');
             local sceneConfig = sceneConfig
             local frameConfig = sceneConfig.frames[theaterState.pageNumber]
-            print('theaterState.updating' .. ' - start');
-            print(theaterState.updating);
             if theaterState.updating == true then return end
             theaterState.updating = true
-            print('theaterState.numUsersSeated' .. ' - start');
-            print(theaterState.numUsersSeated);
             if theaterState.numUsersSeated == 0 then return end
-            print("valid")
-            print("valid")
-            print("valid")
-            print("valids")
+
             if theaterState.pageNumber < numPages then
                 theaterState.pageNumber = theaterState.pageNumber + 1
 
@@ -82,6 +69,34 @@ function module.addSeat(props)
     end
 
     nextPageButtonClickRE.OnServerEvent:Connect(onNextPageClick())
+
+    function onPrevPageClick()
+        function closure()
+            local sceneConfig = sceneConfig
+            local frameConfig = sceneConfig.frames[theaterState.pageNumber]
+            if theaterState.updating == true then return end
+            theaterState.updating = true
+            if theaterState.numUsersSeated == 0 then return end
+
+            if theaterState.pageNumber > 1 then
+                theaterState.pageNumber = theaterState.pageNumber - 1
+
+                local frameConfig = sceneConfig.frames[theaterState.pageNumber]
+
+                local newSceneProps = {
+                    frameConfig = frameConfig,
+                    clonedScene = clonedScene,
+                    sceneFolder = sceneFolder
+                }
+                updateFrameItems(newSceneProps, frameConfig, numPages,
+                                 theaterState.pageNumber)
+            end
+            theaterState.updating = false
+        end
+        return closure
+    end
+
+    prevPageButtonClickRE.OnServerEvent:Connect(onPrevPageClick())
 
     function openBridgeDoor(props)
         local clonedScene2 = props.clonedScene

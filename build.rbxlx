@@ -30104,7 +30104,20 @@ end
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">PrevPageButtonScript</string>
 						<string name="ScriptGuid">{78726abf-63fc-4ed3-bff7-364427b1b723}</string>
-						<ProtectedString name="Source"></ProtectedString>
+						<ProtectedString name="Source"><![CDATA[print("Prev Page button script")
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local prevPageButtonClickRE = ReplicatedStorage:WaitForChild(
+	"PrevPageButtonClickRE")
+
+
+local button=script.Parent
+function onIncrementPage()
+	prevPageButtonClickRE:FireServer(button)
+end
+
+script.Parent.MouseButton1Click:Connect(onIncrementPage)
+]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -35308,6 +35321,8 @@ local freezeCameraRE = ReplicatedStorage:WaitForChild("FreezeCameraRE")
 local renderDialogRE = ReplicatedStorage:WaitForChild("RenderDialogRE")
 local nextPageButtonClickRE = ReplicatedStorage:WaitForChild(
                                   "NextPageButtonClickRE")
+local prevPageButtonClickRE = ReplicatedStorage:WaitForChild(
+                                  "PrevPageButtonClickRE")
 
 local module = {}
 
@@ -35329,7 +35344,7 @@ function module.addSeat(props)
         return sceneConfig.frames[theaterState.pageNumber]
     end
 
-    function updateFrameItems(newSceneProps, frameConfig, numPages)
+    function updateFrameItems(newSceneProps, frameConfig, numPages, pageNumber)
         addCharactersToScene(newSceneProps)
 
         for i, player in pairs(Players:GetPlayers()) do
@@ -35338,7 +35353,8 @@ function module.addSeat(props)
 
             Buttons.updateButtonActiveStatus2(
                 {
-                    pageNum = theaterState.pageNumber,
+                    pageNum = pageNumber,
+                    -- pageNum = theaterState.pageNumber,
                     numPages = numPages,
                     sgui = sgui
                 })
@@ -35348,13 +35364,17 @@ function module.addSeat(props)
 
     function onNextPageClick()
         function closure()
+            print('onNextPageClick' .. ' - start');
             local sceneConfig = sceneConfig
             local frameConfig = sceneConfig.frames[theaterState.pageNumber]
-
+            print('theaterState.updating' .. ' - start');
+            print(theaterState.updating);
             if theaterState.updating == true then return end
             theaterState.updating = true
-
+            print('theaterState.numUsersSeated' .. ' - start');
+            print(theaterState.numUsersSeated);
             if theaterState.numUsersSeated == 0 then return end
+            print("valid")
 
             if theaterState.pageNumber < numPages then
                 theaterState.pageNumber = theaterState.pageNumber + 1
@@ -35366,7 +35386,8 @@ function module.addSeat(props)
                     clonedScene = clonedScene,
                     sceneFolder = sceneFolder
                 }
-                updateFrameItems(newSceneProps, frameConfig, numPages)
+                updateFrameItems(newSceneProps, frameConfig, numPages,
+                                 theaterState.pageNumber)
             end
             theaterState.updating = false
         end
@@ -35375,10 +35396,39 @@ function module.addSeat(props)
 
     nextPageButtonClickRE.OnServerEvent:Connect(onNextPageClick())
 
-    function renderScreenDialog(props)
-        local frameConfig = props.frameConfig
-        renderDialogRE:FireAllClients(frameConfig.dialogs)
+    function onPrevPageClick()
+        function closure()
+            print('onPrevPageClick' .. ' - start');
+            local sceneConfig = sceneConfig
+            local frameConfig = sceneConfig.frames[theaterState.pageNumber]
+            print('theaterState.updating' .. ' - start');
+            print(theaterState.updating);
+            if theaterState.updating == true then return end
+            theaterState.updating = true
+            print('theaterState.numUsersSeated' .. ' - start');
+            print(theaterState.numUsersSeated);
+            if theaterState.numUsersSeated == 0 then return end
+            print("valid")
+
+            if theaterState.pageNumber < numPages then
+                theaterState.pageNumber = theaterState.pageNumber + 1
+
+                local frameConfig = sceneConfig.frames[theaterState.pageNumber]
+
+                local newSceneProps = {
+                    frameConfig = frameConfig,
+                    clonedScene = clonedScene,
+                    sceneFolder = sceneFolder
+                }
+                updateFrameItems(newSceneProps, frameConfig, numPages,
+                                 theaterState.pageNumber)
+            end
+            theaterState.updating = false
+        end
+        return closure
     end
+
+    prevPageButtonClickRE.OnServerEvent:Connect(onPrevPageClick())
 
     function openBridgeDoor(props)
         local clonedScene2 = props.clonedScene
@@ -35407,12 +35457,13 @@ function module.addSeat(props)
 
                 local character = humanoid.Parent
                 local player = Players:GetPlayerFromCharacter(character)
-                -- local frameConfig = sceneConfig.frames[pageNum]
 
                 if player then
                     theaterState.pageNumber = 1
                     theaterState.numUsersSeated =
                         theaterState.numUsersSeated + 1
+                    theaterState.updating = false
+
                     currentPlayer = player
 
                     local frameConfig =
@@ -35424,9 +35475,9 @@ function module.addSeat(props)
                             clonedScene = clonedScene,
                             sceneFolder = sceneFolder
                         }
-                    updateFrameItems(newSceneProps, frameConfig, numPages)
+                    updateFrameItems(newSceneProps, frameConfig, numPages,
+                                     theaterState.pageNumber)
 
-                    -- renderScreenDialog({frameConfig = frameConfig})
                     freezeCameraRE:FireAllClients(cameraPath1, cameraPath2, true)
                     return
                 end
@@ -38047,6 +38098,14 @@ return module
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<string name="Name">NextPageButtonClickRE</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+		</Item>
+		<Item class="RemoteEvent" referent="RBX510ac75eb4c64a57bdab2ea939f4d2d3">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="Name">PrevPageButtonClickRE</string>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
