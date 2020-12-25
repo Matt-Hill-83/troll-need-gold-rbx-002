@@ -59,15 +59,10 @@ end
 function module.getByTagInParent(props)
     local tag = props.tag
     local parent = props.parent
-    print('tag' .. ' - start');
-    print(tag);
     local items = CS:GetTagged(tag)
-    print('items' .. ' - start');
-    print(items);
+
     local output = {}
     for i, item in ipairs(items) do
-        print('i' .. ' - start');
-        print(i);
         if item:IsDescendantOf(parent) then
             table.insert(output, item)
             -- 

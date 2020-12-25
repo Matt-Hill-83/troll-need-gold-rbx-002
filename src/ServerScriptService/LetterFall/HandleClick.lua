@@ -40,7 +40,12 @@ function handleBrick(player, clickedLetter, miniGameState)
     if isDeadLetter(clickedLetter) then return end
 
     if not miniGameState.gemsStarted then
-        LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
+        LetterFallUtils.anchorLetters({
+            parentFolder = runTimeLetterFolder,
+            anchor = false
+        })
+
+        -- LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
         miniGameState.gemsStarted = true
     end
 

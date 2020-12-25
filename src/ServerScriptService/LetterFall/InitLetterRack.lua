@@ -104,11 +104,6 @@ function initLetterRack(miniGameState)
             CS:AddTag(newLetter, LetterFallUtils.tagNames.LetterBlockInRack)
             if isDeadLetter then
                 CS:AddTag(newLetter, LetterFallUtils.tagNames.DeadLetter)
-                LetterFallUtils.colorLetterText(
-                    {
-                        letterBlock = newLetter,
-                        color = Color3.fromRGB(255, 255, 255)
-                    })
 
             end
 
@@ -125,11 +120,16 @@ function initLetterRack(miniGameState)
                                    CFrame.new(
                                        Vector3.new(letterPosX, letterPosY, 0))
 
-            -- do this last to avoid tweening
             newLetter.Parent = runTimeLetterFolder
-            -- newLetter.Anchored = truedw
+            newLetter.Anchored = true
         end
     end
+
+    -- LetterFallUtils.anchorLetters({
+    --     parentFolder = runTimeLetterFolder,
+    --     anchor = false
+    -- })
+    LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
 end
 
 function getRunTimeLetterFolder(miniGameState)

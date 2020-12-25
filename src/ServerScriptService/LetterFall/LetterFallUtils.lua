@@ -101,7 +101,25 @@ function configDeadLetters(props)
             letterBlock = item,
             color = Color3.fromRGB(0, 255, 34)
         })
+        module.applyLetterText({letterBlock = item, char = ""})
     end
+end
+
+function anchorLetters(props)
+    local parentFolder = props.parentFolder
+    local anchor = props.anchor
+
+    local letters = Utils.getByTagInParent(
+                        {
+            parent = parentFolder,
+            tag = module.tagNames.LetterBlockInRack
+        })
+
+    for i, item in ipairs(letters) do
+        item.Anchored = anchor
+        -- 
+    end
+
 end
 
 module.colorLetterText = colorLetterText
@@ -112,4 +130,5 @@ module.createBalls = createBalls
 module.colorLetterBG = colorLetterBG
 module.configDeadLetters = configDeadLetters
 module.positionActiveWord = positionActiveWord
+module.anchorLetters = anchorLetters
 return module

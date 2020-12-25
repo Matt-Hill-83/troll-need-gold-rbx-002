@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>577.906616</X>
-					<Y>-0.306763053</Y>
-					<Z>-1151.81055</Z>
-					<R00>-0.997519076</R00>
-					<R01>0.00187162869</R01>
-					<R02>-0.0703716874</R02>
-					<R10>-0</R10>
+					<X>553.420532</X>
+					<Y>-40.3151093</Y>
+					<Z>-968.224976</Z>
+					<R00>-0.997518957</R00>
+					<R01>0.00187167095</R01>
+					<R02>-0.0703734234</R02>
+					<R10>1.16415308e-10</R10>
 					<R11>0.999646485</R11>
-					<R12>0.0265869293</R12>
-					<R20>0.0703965724</R20>
-					<R21>0.0265209693</R21>
-					<R22>-0.997166455</R22>
+					<R12>0.0265868716</R12>
+					<R20>0.0703983083</R20>
+					<R21>0.0265209079</R21>
+					<R22>-0.997166336</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>582.867859</X>
-					<Y>-2.18115616</Y>
-					<Z>-1081.50977</Z>
+					<X>554.124268</X>
+					<Y>-40.5809784</Y>
+					<Z>-958.253296</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -24875,12 +24875,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<int name="CollisionGroupId">0</int>
 									<Color3uint8 name="Color3uint8">4293442248</Color3uint8>
 									<PhysicalProperties name="CustomPhysicalProperties">
-										<CustomPhysics>true</CustomPhysics>
-										<Density>10</Density>
-										<Friction>0</Friction>
-										<Elasticity>0.200000003</Elasticity>
-										<FrictionWeight>1</FrictionWeight>
-										<ElasticityWeight>1</ElasticityWeight>
+										<CustomPhysics>false</CustomPhysics>
 									</PhysicalProperties>
 									<float name="FrontParamA">-0.5</float>
 									<float name="FrontParamB">0.5</float>
@@ -24891,7 +24886,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<token name="LeftSurface">0</token>
 									<token name="LeftSurfaceInput">0</token>
 									<bool name="Locked">false</bool>
-									<bool name="Massless">true</bool>
+									<bool name="Massless">false</bool>
 									<token name="Material">256</token>
 									<string name="Name">LBRack</string>
 									<float name="Reflectance">0</float>
@@ -38532,15 +38527,10 @@ end
 function module.getByTagInParent(props)
     local tag = props.tag
     local parent = props.parent
-    print('tag' .. ' - start');
-    print(tag);
     local items = CS:GetTagged(tag)
-    print('items' .. ' - start');
-    print(items);
+
     local output = {}
     for i, item in ipairs(items) do
-        print('i' .. ' - start');
-        print(i);
         if item:IsDescendantOf(parent) then
             table.insert(output, item)
             -- 
@@ -39246,7 +39236,12 @@ function handleBrick(player, clickedLetter, miniGameState)
     if isDeadLetter(clickedLetter) then return end
 
     if not miniGameState.gemsStarted then
-        LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
+        LetterFallUtils.anchorLetters({
+            parentFolder = runTimeLetterFolder,
+            anchor = false
+        })
+
+        -- LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
         miniGameState.gemsStarted = true
     end
 
@@ -39411,7 +39406,25 @@ function configDeadLetters(props)
             letterBlock = item,
             color = Color3.fromRGB(0, 255, 34)
         })
+        module.applyLetterText({letterBlock = item, char = ""})
     end
+end
+
+function anchorLetters(props)
+    local parentFolder = props.parentFolder
+    local anchor = props.anchor
+
+    local letters = Utils.getByTagInParent(
+                        {
+            parent = parentFolder,
+            tag = module.tagNames.LetterBlockInRack
+        })
+
+    for i, item in ipairs(letters) do
+        item.Anchored = anchor
+        -- 
+    end
+
 end
 
 module.colorLetterText = colorLetterText
@@ -39422,6 +39435,7 @@ module.createBalls = createBalls
 module.colorLetterBG = colorLetterBG
 module.configDeadLetters = configDeadLetters
 module.positionActiveWord = positionActiveWord
+module.anchorLetters = anchorLetters
 return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
@@ -39675,11 +39689,6 @@ function initLetterRack(miniGameState)
             CS:AddTag(newLetter, LetterFallUtils.tagNames.LetterBlockInRack)
             if isDeadLetter then
                 CS:AddTag(newLetter, LetterFallUtils.tagNames.DeadLetter)
-                LetterFallUtils.colorLetterText(
-                    {
-                        letterBlock = newLetter,
-                        color = Color3.fromRGB(255, 255, 255)
-                    })
 
             end
 
@@ -39696,11 +39705,16 @@ function initLetterRack(miniGameState)
                                    CFrame.new(
                                        Vector3.new(letterPosX, letterPosY, 0))
 
-            -- do this last to avoid tweening
             newLetter.Parent = runTimeLetterFolder
-            -- newLetter.Anchored = truedw
+            newLetter.Anchored = true
         end
     end
+
+    -- LetterFallUtils.anchorLetters({
+    --     parentFolder = runTimeLetterFolder,
+    --     anchor = false
+    -- })
+    LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
 end
 
 function getRunTimeLetterFolder(miniGameState)
