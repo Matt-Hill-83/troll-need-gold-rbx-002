@@ -9,7 +9,8 @@ local module = {
         WordLetter = "WordLetter",
         LetterBlock = "LetterBlock",
         LetterBlockInRack = "LetterBlockInRack",
-        DeadLetter = "DeadLetter"
+        DeadLetter = "DeadLetter",
+        NotDeadLetter = "NotDeadLetter"
     }
 }
 
@@ -112,7 +113,7 @@ function anchorLetters(props)
     local letters = Utils.getByTagInParent(
                         {
             parent = parentFolder,
-            tag = module.tagNames.LetterBlockInRack
+            tag = module.tagNames.NotDeadLetter
         })
 
     for i, item in ipairs(letters) do

@@ -39314,7 +39314,8 @@ local module = {
         WordLetter = "WordLetter",
         LetterBlock = "LetterBlock",
         LetterBlockInRack = "LetterBlockInRack",
-        DeadLetter = "DeadLetter"
+        DeadLetter = "DeadLetter",
+        NotDeadLetter = "NotDeadLetter"
     }
 }
 
@@ -39417,7 +39418,7 @@ function anchorLetters(props)
     local letters = Utils.getByTagInParent(
                         {
             parent = parentFolder,
-            tag = module.tagNames.LetterBlockInRack
+            tag = module.tagNames.NotDeadLetter
         })
 
     for i, item in ipairs(letters) do
@@ -39689,7 +39690,8 @@ function initLetterRack(miniGameState)
             CS:AddTag(newLetter, LetterFallUtils.tagNames.LetterBlockInRack)
             if isDeadLetter then
                 CS:AddTag(newLetter, LetterFallUtils.tagNames.DeadLetter)
-
+            else
+                CS:AddTag(newLetter, LetterFallUtils.tagNames.NotDeadLetter)
             end
 
             LetterFallUtils.applyLetterText(
