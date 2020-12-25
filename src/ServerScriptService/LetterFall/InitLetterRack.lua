@@ -58,7 +58,8 @@ function initLetterRack(miniGameState)
 
     local numRow = 10
     local numCol = 16
-    local spacingFactor = 1.05
+    local spacingFactorX = 1.01
+    local spacingFactorY = 1.01
 
     local lettersFromWords = {}
     for wordIndex, word in ipairs(miniGameState.words) do
@@ -111,12 +112,12 @@ function initLetterRack(miniGameState)
             LetterFallUtils.applyLetterText(
                 {letterBlock = newLetter, char = char})
 
-            local offsetY = (newLetter.Size.Y + letterPositioner.Size.Y) / 2
+            local offsetY = (newLetter.Size.Y - letterPositioner.Size.Y) / 2
 
             local letterPosX = -newLetter.Size.X * (colIndex - 1) *
-                                   spacingFactor
-            local letterPosY =
-                newLetter.Size.Y * (rowIndex - 1) * spacingFactor + offsetY
+                                   spacingFactorX
+            local letterPosY = newLetter.Size.Y * (rowIndex - 1) *
+                                   spacingFactorY + offsetY
             newLetter.CFrame = letterPositioner.CFrame *
                                    CFrame.new(
                                        Vector3.new(letterPosX, letterPosY, 0))
