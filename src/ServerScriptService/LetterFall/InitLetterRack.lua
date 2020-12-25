@@ -37,7 +37,7 @@ function initLetterRack(miniGameState)
                                                             "RackLetterBlockPositioner")
 
     local numRow = 10
-    local numCol = 8
+    local numCol = 16
     local spacingFactor = 1.05
 
     local lettersFromWords = {}
