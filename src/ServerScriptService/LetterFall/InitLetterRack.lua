@@ -23,6 +23,21 @@ function isDeadLetter(props)
     return isDead
 end
 
+function generateDeadLetters(props)
+    local numCol = props.numCol
+    local numRow = props.numRow
+    local lettersPerCol = props.lettersPerCol
+
+    local output = {}
+    for colIndex = 2, numCol do
+        for letterIndex = 1, lettersPerCol do
+            local rowIndex = Utils.genRandom(1, numRow)
+            table.insert(output, {row = rowIndex, col = colIndex})
+        end
+    end
+    return output
+end
+
 function initLetterRack(miniGameState)
     local runTimeLetterFolder = getRunTimeLetterFolder(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
@@ -54,11 +69,12 @@ function initLetterRack(miniGameState)
         end
     end
 
-    local deadLetters = {
-        {row = 2, col = 3}, {row = 3, col = 4}, {row = 4, col = 5},
-        {row = 5, col = 6}, {row = 6, col = 6}, {row = 8, col = 6},
-        {row = 5, col = 6}, {row = 5, col = 7}
-    }
+    local deadLetters = generateDeadLetters(
+                            {
+            numCol = numCol,
+            numRow = numRow,
+            lettersPerCol = 2
+        })
 
     for colIndex = 1, numCol do
         local newColumnBase = columnBaseTemplate:Clone()
