@@ -101,7 +101,7 @@ function initLetterRack(miniGameState)
 
                 })
 
-            CS:AddTag(newLetter, LetterFallUtils.tagNames.LetterBlock)
+            CS:AddTag(newLetter, LetterFallUtils.tagNames.LetterBlockInRack)
             if isDeadLetter then
                 CS:AddTag(newLetter, LetterFallUtils.tagNames.DeadLetter)
                 LetterFallUtils.colorLetterText(
@@ -127,7 +127,7 @@ function initLetterRack(miniGameState)
 
             -- do this last to avoid tweening
             newLetter.Parent = runTimeLetterFolder
-            newLetter.Anchored = true
+            -- newLetter.Anchored = truedw
         end
     end
 end

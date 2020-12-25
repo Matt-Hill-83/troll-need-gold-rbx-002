@@ -8,6 +8,7 @@ local module = {
     tagNames = {
         WordLetter = "WordLetter",
         LetterBlock = "LetterBlock",
+        LetterBlockInRack = "LetterBlockInRack",
         DeadLetter = "DeadLetter"
     }
 }
