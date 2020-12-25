@@ -41,13 +41,18 @@ end
 function initLetterRack(miniGameState)
     local runTimeLetterFolder = getRunTimeLetterFolder(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
+
     local letterRackFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                             "LetterRackFolder")
     local columnBaseTemplate = Utils.getFirstDescendantByName(letterRackFolder,
                                                               "ColumnBase")
 
+    local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
+                                                             "LetterBlockTemplates")
+
     local letterBlockTemplate = Utils.getFirstDescendantByName(
-                                    columnBaseTemplate, "LetterTemplate")
+                                    letterBlockFolder, "LBRack")
+
     local letterPositioner = Utils.getFirstDescendantByName(letterRackFolder,
                                                             "RackLetterBlockPositioner")
 
@@ -77,27 +82,14 @@ function initLetterRack(miniGameState)
         })
 
     for colIndex = 1, numCol do
-        local newColumnBase = columnBaseTemplate:Clone()
-        newColumnBase.Name = "columnBase-" .. colIndex
-        newColumnBase.Transparency = 1
-
-        local x = newColumnBase.Size.X * (colIndex - 1) * spacingFactor
-
-        newColumnBase.CFrame = letterPositioner.CFrame *
-                                   CFrame.new(Vector3.new(-x, 0, 0))
-        newColumnBase.Parent = runTimeLetterFolder
-
-        local letterTemplate = Utils.getFirstDescendantByName(newColumnBase,
-                                                              "LetterTemplate")
-        newColumnBase.Transparency = 1
-
         for rowIndex = 1, numRow do
             -- local char = letters[(colIndex % #letters) + 1]
             local rand = Utils.genRandom(1, #lettersFromWords)
 
             local char = lettersFromWords[rand]
             Utils.removeFirstMatchFromArray(lettersFromWords, char)
-            local newLetter = letterTemplate:Clone()
+            local newLetter = letterBlockTemplate:Clone()
+            -- local newLetter = letterTemplate:Clone()
 
             newLetter.Name = "newLetter-" .. char
 
@@ -109,27 +101,35 @@ function initLetterRack(miniGameState)
 
                 })
 
+            CS:AddTag(newLetter, LetterFallUtils.tagNames.LetterBlock)
             if isDeadLetter then
                 CS:AddTag(newLetter, LetterFallUtils.tagNames.DeadLetter)
+                LetterFallUtils.colorLetterText(
+                    {
+                        letterBlock = newLetter,
+                        color = Color3.fromRGB(255, 255, 255)
+                    })
+
             end
 
-            CS:AddTag(newLetter, LetterFallUtils.tagNames.LetterBlock)
-
-            local y = newLetter.Size.Y * (rowIndex - 1) * spacingFactor
             LetterFallUtils.applyLetterText(
                 {letterBlock = newLetter, char = char})
-            newLetter.CFrame = newLetter.CFrame *
-                                   CFrame.new(Vector3.new(0, y, 0))
 
-            newColumnBase.Transparency = 1
-            newLetter.Transparency = 0
+            local offsetY = (newLetter.Size.Y + letterPositioner.Size.Y) / 2
+
+            local letterPosX = -newLetter.Size.X * (colIndex - 1) *
+                                   spacingFactor
+            local letterPosY =
+                newLetter.Size.Y * (rowIndex - 1) * spacingFactor + offsetY
+            newLetter.CFrame = letterPositioner.CFrame *
+                                   CFrame.new(
+                                       Vector3.new(letterPosX, letterPosY, 0))
 
             -- do this last to avoid tweening
-            newLetter.Parent = newColumnBase
+            newLetter.Parent = runTimeLetterFolder
+            newLetter.Anchored = true
         end
-        letterTemplate:Destroy()
     end
-    columnBaseTemplate:Destroy()
 end
 
 function getRunTimeLetterFolder(miniGameState)
