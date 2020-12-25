@@ -59,7 +59,7 @@ function initLetterRack(miniGameState)
     local numRow = 10
     local numCol = 16
     local spacingFactorX = 1.01
-    local spacingFactorY = 1.01
+    local spacingFactorY = 1.0
 
     local lettersFromWords = {}
     for wordIndex, word in ipairs(miniGameState.words) do
