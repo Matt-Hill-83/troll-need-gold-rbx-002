@@ -39,6 +39,7 @@ end
 
 function handleBrick(clickedLetter, miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
+    local words = miniGameState.words
 
     if isDeadLetter(clickedLetter) then return end
 
@@ -54,11 +55,9 @@ function handleBrick(clickedLetter, miniGameState)
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
     if not isChild then return {} end
 
-    -- ------------------------------------------------------------------------
-
     local availLetters = LetterFallUtils.getAvailLettersDict(
                              {
-            words = miniGameState.words,
+            words = words,
             currentLetterIndex = miniGameState.currentLetterIndex
         })
 
@@ -68,9 +67,14 @@ function handleBrick(clickedLetter, miniGameState)
     if isDesiredLetter(availLetters, clickedLetter) then
         miniGameState.currentLetterIndex = miniGameState.currentLetterIndex + 1
 
+        -- local positionX = newWordBase.Size.X / 2 + clickedLetter.Size.X
+        local positionX = -newWordBase.Size.X / 2 + clickedLetter.Size.X *
+                              #miniGameState.foundLetters
+
+        local endPosition = newWordBase.Position + Vector3.new(-positionX, 0, 0)
         Utils3.tween({
             part = clickedLetter,
-            endPosition = newWordBase.Position,
+            endPosition = endPosition,
             time = 0.2,
             anchor = true
         })
@@ -78,7 +82,16 @@ function handleBrick(clickedLetter, miniGameState)
         CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
         LetterFallUtils.styleLetterBlocks(miniGameState)
         LetterFallUtils.setStyleToFound(clickedLetter)
-        -- miniGame.let
+        table.insert(miniGameState.foundLetters,
+                     LetterFallUtils.getCharFromLetterBlock(clickedLetter))
+
+        local currentWord = table.concat(miniGameState.foundLetters, "")
+        local found = table.find(words, currentWord)
+        if (found) then
+            miniGameState.foundLetters = {}
+            miniGameState.currentLetterIndex = 1
+        end
+
     end
 end
 

@@ -16,15 +16,20 @@ local module = {
     }
 }
 
+function styleLetterBlock(letterBlock, labelProps)
+    local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
+    for i, label in ipairs(textLabels) do
+        Utils.mergeTables(label, labelProps)
+    end
+end
+
 function setStyleToFound(letterBlock)
-    module.colorLetterText({
-        letterBlock = letterBlock,
-        color = Color3.fromRGB(255, 0, 247)
-    })
-    module.colorLetterBorder({
-        letterBlock = letterBlock,
-        color = Color3.fromRGB(255, 0, 200)
-    })
+    local labelProps = {
+        TextColor3 = Color3.new(255, 0, 191),
+        BorderColor3 = Color3.new(255, 0, 191),
+        BackgroundColor3 = Color3.fromRGB(242, 193, 165)
+    }
+    styleLetterBlock(letterBlock, labelProps)
 end
 
 function setStyleToAvailable(letterBlock)
@@ -34,8 +39,9 @@ function setStyleToAvailable(letterBlock)
     })
     module.colorLetterBorder({
         letterBlock = letterBlock,
-        color = Color3.fromRGB(18, 74, 15)
+        color = Color3.fromRGB(78, 242, 86)
     })
+
 end
 
 function setStyleToNotAvailable(letterBlock)
@@ -57,8 +63,6 @@ function styleLetterBlocks(miniGameState)
         })
 
     local allLetters = module.getAllLettersInRack()
-    print('allLetters' .. ' - start');
-    print(allLetters);
 
     for i, letterBlock in ipairs(allLetters) do
         if CS:HasTag(letterBlock, module.tagNames.Found) then

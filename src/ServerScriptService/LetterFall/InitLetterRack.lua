@@ -4,7 +4,6 @@ local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
-local InitWord = require(Sss.Source.LetterFall.InitWord)
 
 local module = {}
 
@@ -88,9 +87,8 @@ function initLetterRack(miniGameState)
             local rand = Utils.genRandom(1, #lettersFromWords)
 
             local char = lettersFromWords[rand]
-            Utils.removeFirstMatchFromArray(lettersFromWords, char)
+            -- Utils.removeFirstMatchFromArray(lettersFromWords, char)
             local newLetter = letterBlockTemplate:Clone()
-            -- local newLetter = letterTemplate:Clone()
 
             newLetter.Name = "newLetter-" .. char
 

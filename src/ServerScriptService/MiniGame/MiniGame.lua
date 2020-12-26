@@ -25,7 +25,7 @@ function module.addMiniGame(props)
         words = words,
         initCompleted = false,
         availLetters = {},
-        selectedLetters = {},
+        foundLetters = {},
         currentLetterIndex = 1
     }
 
