@@ -83,8 +83,7 @@ function handleBrick(clickedLetter, miniGameState)
         clickedLetter.CanCollide = false
 
         CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
-        LetterFallUtils.styleLetterBlocks(miniGameState)
-        LetterFallUtils.setStyleToFound(clickedLetter)
+        -- LetterFallUtils.setStyleToFound(clickedLetter)
         table.insert(miniGameState.foundLetters,
                      LetterFallUtils.getCharFromLetterBlock(clickedLetter))
 
@@ -95,6 +94,7 @@ function handleBrick(clickedLetter, miniGameState)
             miniGameState.foundLetters = {}
             miniGameState.currentLetterIndex = 1
         end
+        LetterFallUtils.styleLetterBlocks(miniGameState)
 
     end
 end
