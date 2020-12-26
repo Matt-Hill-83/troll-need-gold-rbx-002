@@ -48,7 +48,7 @@ function module.addMiniGame(props)
         -- attDropTubeBottom.CFrame = attMiniGamePositioner.CFrame +
         --                                Vector3.new(0, 50, 0)
         clonedLetterFallModel.PrimaryPart.CFrame =
-            clonedScene.PrimaryPart.CFrame + Vector3.new(30, 50, 60)
+            clonedScene.PrimaryPart.CFrame + Vector3.new(25, 50, 50)
         clonedLetterFallModel.PrimaryPart.Anchored = true
 
         miniGameState.letterFallFolder = letterFallFolder

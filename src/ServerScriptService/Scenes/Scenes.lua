@@ -51,6 +51,7 @@ function module.addScenes(props)
 
         local words = {
             'CAT', 'BAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', 'CAT', 'BAT',
+            'CAT', 'BAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', 'CAT', 'BAT',
             'HAT', 'MAT', 'PAT', 'RAT', 'SAT'
         }
         -- local words = {

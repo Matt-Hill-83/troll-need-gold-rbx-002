@@ -39,8 +39,8 @@ function enableChildWelds(props)
 end
 
 function genRandom(min, max)
-    local rand = min + math.random() * (max - min)
-    return math.ceil(rand)
+    local rand = min + math.random() * (max - min + 1)
+    return math.floor(rand)
 end
 
 function module.clearTable(tbl) for key in pairs(tbl) do tbl[key] = nil end end

@@ -25,18 +25,11 @@ function setVisibility()
     local taggedPartsDestroy = CS:GetTagged("Destroy")
     for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
 
-    -- local taggedPartsTransparent = CS:GetTagged("Transparent")
-    -- for i, item in ipairs(taggedPartsTransparent) do item.Transparency = 1 end
+    local taggedPartsTransparent = CS:GetTagged("Transparent")
+    for i, item in ipairs(taggedPartsTransparent) do item.Transparency = 1 end
 
     local canCollideOff = CS:GetTagged("CanCollideOff")
     for i, item in ipairs(canCollideOff) do item.CanCollide = false end
-
-    -- Utils.setPropsByTag({tag = "EnableWeldAtRunTime", props = {Enabled = true}})
-
-    -- local itemsToHideAtRuntine = {'QuestsOrigin', 'TerrainBase'}
-    -- for i, item in ipairs(itemsToHideAtRuntine) do
-    --     Utils.hideItemAndChildrenByName({name = item, hide = true})
-    -- end
 
     -- Utils.setItemAndChildrenPropsByName({
     --     name = "DockWalls",
@@ -49,27 +42,27 @@ function setVisibility()
     --     props = {Transparency = 1}
     -- })
 
-    -- Utils.setWallHeightbyParentModelName({name = "BridgeWalls", height = 2})
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "BridgeWalls",
-    --     props = {Transparency = 0.6, CanCollide = true, Anchored = true}
-    -- })
+    Utils.setWallHeightbyParentModelName({name = "BridgeWalls", height = 2})
+    Utils.setItemAndChildrenPropsByName({
+        name = "BridgeWalls",
+        props = {Transparency = 0.6, CanCollide = true, Anchored = true}
+    })
 
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "BaseWalls",
-    --     props = {Transparency = 0.6, CanCollide = true, Anchored = true}
-    -- })
+    Utils.setItemAndChildrenPropsByName({
+        name = "BaseWalls",
+        props = {Transparency = 0.6, CanCollide = true, Anchored = true}
+    })
 
-    -- Utils.setWallHeightbyParentModelName({name = "BaseWalls", height = 2})
+    Utils.setWallHeightbyParentModelName({name = "BaseWalls", height = 2})
 
-    -- local tagBaseWallTransparent = CS:GetTagged("BaseWallTransparent")
-    -- Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 4})
-    -- -- Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
-    -- Utils.setPropsByTag({
-    --     tag = "BaseWallTransparent",
-    --     -- props = {Transparency = 1}
-    --     props = {Transparency = 0.6}
-    -- })
+    local tagBaseWallTransparent = CS:GetTagged("BaseWallTransparent")
+    Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 4})
+    -- Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
+    Utils.setPropsByTag({
+        tag = "BaseWallTransparent",
+        -- props = {Transparency = 1}
+        props = {Transparency = 0.6}
+    })
 
     -- local skyBoxWalls = CS:GetTagged("SkyBoxWalls")
     -- Utils.setWallHeightByList({items = skyBoxWalls, height = 30})
