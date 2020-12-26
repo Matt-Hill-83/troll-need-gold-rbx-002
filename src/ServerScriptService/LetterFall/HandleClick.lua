@@ -67,17 +67,20 @@ function handleBrick(clickedLetter, miniGameState)
     if isDesiredLetter(availLetters, clickedLetter) then
         miniGameState.currentLetterIndex = miniGameState.currentLetterIndex + 1
 
-        -- local positionX = newWordBase.Size.X / 2 + clickedLetter.Size.X
         local positionX = -newWordBase.Size.X / 2 + clickedLetter.Size.X *
                               #miniGameState.foundLetters
+        local positionY = -clickedLetter.Size.Y * #miniGameState.foundWords *
+                              1.1
 
-        local endPosition = newWordBase.Position + Vector3.new(-positionX, 0, 0)
+        local endPosition = newWordBase.Position +
+                                Vector3.new(-positionX, positionY, 0)
         Utils3.tween({
             part = clickedLetter,
             endPosition = endPosition,
-            time = 0.2,
+            time = 0.3,
             anchor = true
         })
+        clickedLetter.CanCollide = false
 
         CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
         LetterFallUtils.styleLetterBlocks(miniGameState)
@@ -88,6 +91,7 @@ function handleBrick(clickedLetter, miniGameState)
         local currentWord = table.concat(miniGameState.foundLetters, "")
         local found = table.find(words, currentWord)
         if (found) then
+            table.insert(miniGameState.foundWords, currentWord)
             miniGameState.foundLetters = {}
             miniGameState.currentLetterIndex = 1
         end
