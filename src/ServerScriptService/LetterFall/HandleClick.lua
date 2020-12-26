@@ -16,6 +16,13 @@ function isDesiredLetter(letter, clickedLetter)
     return letter.found ~= true and letter.char == textLabel
 end
 
+function isDesiredLetter2(availLetters, clickedLetter)
+    local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
+                          .Text
+    local char = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
+    return availLetters[char]
+end
+
 function isDeadLetter(clickedLetter)
     local tag = LetterFallUtils.tagNames.DeadLetter
     return CS:HasTag(clickedLetter, tag)
@@ -93,7 +100,8 @@ function handleBrick(clickedLetter, miniGameState)
                                                        "NewWordBase")
 
     for i, letter in ipairs(letters) do
-        if isDesiredLetter(letter, clickedLetter) then
+        if isDesiredLetter2(availLetters, clickedLetter) then
+            -- if isDesiredLetter(letter, clickedLetter) then
             letter.found = true
             LetterFallUtils.colorLetterText(
                 {
