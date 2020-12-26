@@ -127,10 +127,6 @@ function initLetterRack(miniGameState)
         end
     end
 
-    -- LetterFallUtils.anchorLetters({
-    --     parentFolder = runTimeLetterFolder,
-    --     anchor = false
-    -- })
     LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
 end
 

@@ -31,12 +31,12 @@ end
 function initClickHandler(miniGameState)
     -- Gets arguments from EventHandler in StarterPack
     function brickClickHandler(player, clickedLetter)
-        handleBrick(player, clickedLetter, miniGameState)
+        handleBrick(clickedLetter, miniGameState)
     end
     clickBlockEvent.OnServerEvent:Connect(brickClickHandler)
 end
 
-function handleBrick(player, clickedLetter, miniGameState)
+function handleBrick(clickedLetter, miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
 
     if isDeadLetter(clickedLetter) then return end
@@ -50,6 +50,36 @@ function handleBrick(player, clickedLetter, miniGameState)
         miniGameState.gemsStarted = true
     end
 
+    -- 
+    -- 
+    -- 
+
+    local allLetters = LetterFallUtils.getAllLettersInRack()
+    print('allLetters' .. ' - start');
+    print(allLetters);
+
+    local availLetters = LetterFallUtils.getAvailLettersDict(
+                             {
+            words = miniGameState.words,
+            currentLetterIndex = miniGameState.currentLetterIndex
+        })
+
+    print('availLetters' .. ' - start');
+    print(availLetters);
+
+    for i, letter in ipairs(allLetters) do
+        local char = LetterFallUtils.getCharFromLetterBlock(letter)
+        if availLetters[char] then
+            LetterFallUtils.colorLetterText(
+                {letterBlock = letter, color = Color3.fromRGB(0, 0, 0)})
+            LetterFallUtils.colorLetterBorder(
+                {letterBlock = letter, color = Color3.fromRGB(0, 0, 0)})
+        end
+    end
+
+    -- 
+    -- 
+    -- 
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
     if not isChild then return {} end
 
@@ -100,14 +130,6 @@ function handleBrick(player, clickedLetter, miniGameState)
                         })
                 end
 
-                local availLetters = LetterFallUtils.getAvailLetters(
-                                         {
-                        words = miniGameState.words,
-                        currentLetterIndex = miniGameState.currentLetterIndex
-                    })
-
-                print('availLetters' .. ' - start');
-                print(availLetters);
             end
             break
         end

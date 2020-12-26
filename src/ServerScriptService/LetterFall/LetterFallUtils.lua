@@ -39,6 +39,20 @@ function colorLetterText(props)
     end
 end
 
+function colorLetterBorder(props)
+    local color = props.color
+    local letterBlock = props.letterBlock
+
+    local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
+    for i, label in ipairs(textLabels) do
+        label.BorderColor3 = color or Color3.new(255, 0, 191)
+    end
+end
+
+function getCharFromLetterBlock(letterBlock)
+    return Utils.getFirstDescendantByName(letterBlock, "BlockChar").Text
+end
+
 function colorLetterBG(props)
     local color = props.color
     local letterBlock = props.letterBlock
@@ -121,6 +135,18 @@ function getAvailLetters(props)
     return Utils.getKeysFromDict(availLettersDict)
 end
 
+function getAvailLettersDict(props)
+    local words = props.words
+    local currentLetterIndex = props.currentLetterIndex
+
+    local availLettersDict = {}
+    for i, word in ipairs(words) do
+        local letter = string.sub(word, currentLetterIndex, currentLetterIndex)
+        availLettersDict[letter] = true
+    end
+    return availLettersDict
+end
+
 function configAvailLetters(props)
     local parentFolder = props.parentFolder
 
@@ -159,14 +185,28 @@ function anchorLetters(props)
 
 end
 
-module.colorLetterText = colorLetterText
+function getAllLettersInRack(props)
+    local letters = Utils.getByTagInParent(
+                        {
+            parent = parentFolder,
+            tag = module.tagNames.NotDeadLetter
+        })
+
+    return letters
+end
+
+module.anchorLetters = anchorLetters
 module.applyLetterText = applyLetterText
+module.colorLetterBG = colorLetterBG
+module.colorLetterText = colorLetterText
+module.configDeadLetters = configDeadLetters
+module.createBalls = createBalls
+module.getAllLettersInRack = getAllLettersInRack
+module.getAvailLetters = getAvailLetters
+module.getCharFromLetterBlock = getCharFromLetterBlock
 module.isDesiredLetter = isDesiredLetter
 module.isWordComplete = isWordComplete
-module.createBalls = createBalls
-module.colorLetterBG = colorLetterBG
-module.configDeadLetters = configDeadLetters
 module.positionActiveWord = positionActiveWord
-module.anchorLetters = anchorLetters
-module.getAvailLetters = getAvailLetters
+module.getAvailLettersDict = getAvailLettersDict
+module.colorLetterBorder = colorLetterBorder
 return module
