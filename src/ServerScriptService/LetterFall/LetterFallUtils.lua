@@ -11,9 +11,21 @@ local module = {
         LetterBlockInRack = "LetterBlockInRack",
         DeadLetter = "DeadLetter",
         AvailLetter = "AvailLetter",
+        Found = "Found",
         NotDeadLetter = "NotDeadLetter"
     }
 }
+
+function setStyleToFound(letterBlock)
+    module.colorLetterText({
+        letterBlock = letterBlock,
+        color = Color3.fromRGB(255, 0, 247)
+    })
+    module.colorLetterBorder({
+        letterBlock = letterBlock,
+        color = Color3.fromRGB(255, 0, 200)
+    })
+end
 
 function setStyleToAvailable(letterBlock)
     module.colorLetterText({
@@ -48,15 +60,18 @@ function styleLetterBlocks(miniGameState)
     print('allLetters' .. ' - start');
     print(allLetters);
 
-    for i, letter in ipairs(allLetters) do
-        local char = module.getCharFromLetterBlock(letter)
-        if availLetters[char] then
-            setStyleToAvailable(letter)
+    for i, letterBlock in ipairs(allLetters) do
+        if CS:HasTag(letterBlock, module.tagNames.Found) then
+            setStyleToFound(letterBlock)
         else
-            setStyleToNotAvailable(letter)
+            local char = module.getCharFromLetterBlock(letterBlock)
+            if availLetters[char] then
+                setStyleToAvailable(letterBlock)
+            else
+                setStyleToNotAvailable(letterBlock)
+            end
         end
     end
-
 end
 
 function positionActiveWord(props)
@@ -254,4 +269,5 @@ module.positionActiveWord = positionActiveWord
 module.getAvailLettersDict = getAvailLettersDict
 module.colorLetterBorder = colorLetterBorder
 module.styleLetterBlocks = styleLetterBlocks
+module.setStyleToFound = setStyleToFound
 return module

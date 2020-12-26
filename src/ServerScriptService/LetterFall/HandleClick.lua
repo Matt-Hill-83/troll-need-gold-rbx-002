@@ -10,13 +10,7 @@ local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 
 local module = {}
 
-function isDesiredLetter(letter, clickedLetter)
-    local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
-                          .Text
-    return letter.found ~= true and letter.char == textLabel
-end
-
-function isDesiredLetter2(availLetters, clickedLetter)
+function isDesiredLetter(availLetters, clickedLetter)
     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
                           .Text
     local char = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
@@ -71,7 +65,7 @@ function handleBrick(clickedLetter, miniGameState)
     local newWordBase = Utils.getFirstDescendantByName(letterFallFolder,
                                                        "NewWordBase")
 
-    if isDesiredLetter2(availLetters, clickedLetter) then
+    if isDesiredLetter(availLetters, clickedLetter) then
         miniGameState.currentLetterIndex = miniGameState.currentLetterIndex + 1
 
         Utils3.tween({
@@ -81,8 +75,10 @@ function handleBrick(clickedLetter, miniGameState)
             anchor = true
         })
 
+        CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
         LetterFallUtils.styleLetterBlocks(miniGameState)
-
+        LetterFallUtils.setStyleToFound(clickedLetter)
+        -- miniGame.let
     end
 end
 
