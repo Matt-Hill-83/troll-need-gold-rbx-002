@@ -22,11 +22,13 @@ function module.addMiniGame(props)
         wordLetters = {},
         renderedWords = {},
         activeWordIndex = 1,
+        activeWord = nil,
         words = words,
         initCompleted = false,
         availLetters = {},
         foundLetters = {},
         foundWords = {},
+        availWords = {},
         currentLetterIndex = 1
     }
 

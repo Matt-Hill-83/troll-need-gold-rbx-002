@@ -12,7 +12,7 @@ local module = {}
 
 function initLetterFall(miniGameState)
     LetterFall.initGameToggle(miniGameState)
-    LetterFallUtils.positionActiveWord({miniGameState = miniGameState})
+    -- LetterFallUtils.positionActiveWord({miniGameState = miniGameState})
 
     local letterFallFolder = miniGameState.letterFallFolder
     local seat = Utils.getFirstDescendantByName(letterFallFolder, "LFCouchSeat")

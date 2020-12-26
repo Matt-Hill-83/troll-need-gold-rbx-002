@@ -22,12 +22,12 @@ function isDeadLetter(clickedLetter)
     return CS:HasTag(clickedLetter, tag)
 end
 
-function isWordComplete(wordLetters)
-    for i, word in ipairs(wordLetters) do
-        if not word.found then return false end
-    end
-    return true
-end
+-- function isWordComplete(wordLetters)
+--     for i, word in ipairs(wordLetters) do
+--         if not word.found then return false end
+--     end
+--     return true
+-- end
 
 function initClickHandler(miniGameState)
     -- Gets arguments from EventHandler in StarterPack
@@ -72,8 +72,32 @@ function handleBrick(clickedLetter, miniGameState)
         local positionY = -clickedLetter.Size.Y * #miniGameState.foundWords *
                               1.1
 
-        local endPosition = newWordBase.Position +
-                                Vector3.new(-positionX, positionY, 0)
+        local foundChar = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
+        local foundWord = nil
+        local foundLetter = nil
+
+        for wordIndex, word in ipairs(miniGameState.renderedWords) do
+            if foundWord then break end
+            for letterIndex, letter in ipairs(word.letters) do
+                if foundWord then break end
+                if foundChar == letter.char then
+                    foundWord = word
+                    foundLetter = letter
+                    print('word' .. ' - start');
+                    print(word);
+
+                end
+            end
+
+        end
+        print('foundWord' .. ' - start');
+        print(foundWord);
+
+        print('foundLetter' .. ' - start');
+        print(foundLetter);
+        local endPosition = foundLetter.instance.Position
+        -- local endPosition = newWordBase.Position +
+        --                         Vector3.new(-positionX, positionY, 0)
         Utils3.tween({
             part = clickedLetter,
             endPosition = endPosition,
