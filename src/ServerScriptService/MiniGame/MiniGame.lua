@@ -23,7 +23,9 @@ function module.addMiniGame(props)
         renderedWords = {},
         activeWordIndex = 1,
         words = words,
-        initCompleted = false
+        initCompleted = false,
+        availLetters = {},
+        currentLetterIndex = 1
     }
 
     if (isStartScene) then

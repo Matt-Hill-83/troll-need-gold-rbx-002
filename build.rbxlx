@@ -38650,6 +38650,15 @@ local function getPlayerFromHumanoid(humanoid)
     return player
 end
 
+local function getKeysFromDict(dict)
+    local keyset = {}
+    for k, v in pairs(dict) do
+        keyset[#keyset + 1] = k
+        -- 
+    end
+    return keyset
+end
+
 local function removeFirstMatchFromArray(array, value)
     for i = #array, 1, -1 do
         if array[i] == value then
@@ -39102,6 +39111,7 @@ module.genRandom = genRandom
 module.enableChildWelds = enableChildWelds
 module.removeFirstMatchFromArray = removeFirstMatchFromArray
 module.getPlayerFromHumanoid = getPlayerFromHumanoid
+module.getKeysFromDict = getKeysFromDict
 
 return module
 ]]></ProtectedString>
@@ -39167,7 +39177,7 @@ local Sss = game:GetService("ServerScriptService")
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 
-function module.tween(props)
+function tween(props)
     local part = props.part
     local time = props.time
     local repeatCount = props.repeatCount or 0
@@ -39175,22 +39185,16 @@ function module.tween(props)
     local endPosition = props.endPosition
     local reverses = props.reverses or false
     local easingStyle = props.easingStyle or Enum.EasingStyle.Linear
-    local easingDirection = props.easingDirection or Enum.EasingDirection.Linear
+    local easingDirection = props.easingDirection or Enum.EasingDirection.Out
     local anchor = props.anchor or false
 
-    local tweenInfo = TweenInfo.new(2, -- Time
-    Enum.EasingStyle.Linear, -- EasingStyle
-    Enum.EasingDirection.Out, -- EasingDirection
-    0, -- RepeatCount (when less than zero the tween will loop indefinitely)
-    false, -- Reverses (tween will reverse once reaching it's goal)
-    0 -- DelayTime
-    )
+    local tweenInfo = TweenInfo.new(time, easingStyle, easingDirection,
+                                    repeatCount, reverses, delayTime)
 
-    local tween = TweenService:Create(part, tweenInfo,
-                                      {Position = newWordBase.Position})
+    local tween = TweenService:Create(part, tweenInfo, {Position = endPosition})
 
     tween:Play()
-    part.Anchored = true
+    part.Anchored = anchor
 end
 
 function module.getCenterPositionForRightOffset(props)
@@ -39465,29 +39469,13 @@ function handleBrick(player, clickedLetter, miniGameState)
                     letterBlock = letter.instance,
                     color = Color3.fromRGB(113, 17, 161)
                 })
-            -- 
-            -- 
-            local TweenService = game:GetService("TweenService")
-            Utils3.tween({part = clickedLetter, time = 1})
 
-            -- local part = clickedLetter
-
-            -- local tweenInfo = TweenInfo.new(2, -- Time
-            -- Enum.EasingStyle.Linear, -- EasingStyle
-            -- Enum.EasingDirection.Out, -- EasingDirection
-            -- 0, -- RepeatCount (when less than zero the tween will loop indefinitely)
-            --                                 false, -- Reverses (tween will reverse once reaching it's goal)
-            --                                 0 -- DelayTime
-            -- )
-
-            -- local tween = TweenService:Create(part, tweenInfo,
-            --                                   {Position = newWordBase.Position})
-
-            -- tween:Play()
-            -- part.Anchored = true
-            -- 
-            -- 
-            -- clickedLetter:Destroy()
+            Utils3.tween({
+                part = clickedLetter,
+                endPosition = newWordBase.Position,
+                time = 0.2,
+                anchor = true
+            })
 
             local wordComplete = isWordComplete(letters)
             if wordComplete then
@@ -39495,8 +39483,6 @@ function handleBrick(player, clickedLetter, miniGameState)
                     Utils.getFirstDescendantByName(letterFallFolder,
                                                    "CompletedWordPositioner")
 
-                print('newWordBase' .. ' - start');
-                print(newWordBase);
                 currentActiveWord.CFrame = completedWordPositioner.CFrame
 
                 miniGameState.activeWordIndex =
@@ -39512,6 +39498,15 @@ function handleBrick(player, clickedLetter, miniGameState)
                             color = Color3.fromRGB(21, 255, 0)
                         })
                 end
+
+                local availLetters = LetterFallUtils.getAvailLetters(
+                                         {
+                        words = miniGameState.words,
+                        currentLetterIndex = miniGameState.currentLetterIndex
+                    })
+
+                print('availLetters' .. ' - start');
+                print(availLetters);
             end
             break
         end
@@ -39543,6 +39538,7 @@ local module = {
         LetterBlock = "LetterBlock",
         LetterBlockInRack = "LetterBlockInRack",
         DeadLetter = "DeadLetter",
+        AvailLetter = "AvailLetter",
         NotDeadLetter = "NotDeadLetter"
     }
 }
@@ -39639,6 +39635,42 @@ function configDeadLetters(props)
     end
 end
 
+-- 
+-- 
+function getAvailLetters(props)
+    local words = props.words
+    local currentLetterIndex = props.currentLetterIndex
+
+    local availLettersDict = {}
+    for i, word in ipairs(words) do
+        local letter = string.sub(word, currentLetterIndex, currentLetterIndex)
+        availLettersDict[letter] = true
+    end
+    local availLetters = Utils.getKeysFromDict(availLettersDict)
+    return availLetters
+end
+
+function configAvailLetters(props)
+    local parentFolder = props.parentFolder
+
+    local availLetters = Utils.getByTagInParent(
+                             {
+            parent = parentFolder,
+            tag = module.tagNames.AvailLetter
+        })
+
+    for i, item in ipairs(availLetters) do
+        module.colorLetterText({
+            letterBlock = item,
+            color = Color3.fromRGB(255, 0, 238)
+        })
+        module.colorLetterBG({
+            letterBlock = item,
+            color = Color3.fromRGB(0, 255, 34)
+        })
+    end
+end
+
 function anchorLetters(props)
     local parentFolder = props.parentFolder
     local anchor = props.anchor
@@ -39665,6 +39697,7 @@ module.colorLetterBG = colorLetterBG
 module.configDeadLetters = configDeadLetters
 module.positionActiveWord = positionActiveWord
 module.anchorLetters = anchorLetters
+module.getAvailLetters = getAvailLetters
 return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
@@ -40013,7 +40046,9 @@ function module.addMiniGame(props)
         renderedWords = {},
         activeWordIndex = 1,
         words = words,
-        initCompleted = false
+        initCompleted = false,
+        availLetters = {},
+        currentLetterIndex = 1
     }
 
     if (isStartScene) then

@@ -10,6 +10,7 @@ local module = {
         LetterBlock = "LetterBlock",
         LetterBlockInRack = "LetterBlockInRack",
         DeadLetter = "DeadLetter",
+        AvailLetter = "AvailLetter",
         NotDeadLetter = "NotDeadLetter"
     }
 }
@@ -106,6 +107,42 @@ function configDeadLetters(props)
     end
 end
 
+-- 
+-- 
+function getAvailLetters(props)
+    local words = props.words
+    local currentLetterIndex = props.currentLetterIndex
+
+    local availLettersDict = {}
+    for i, word in ipairs(words) do
+        local letter = string.sub(word, currentLetterIndex, currentLetterIndex)
+        availLettersDict[letter] = true
+    end
+    local availLetters = Utils.getKeysFromDict(availLettersDict)
+    return availLetters
+end
+
+function configAvailLetters(props)
+    local parentFolder = props.parentFolder
+
+    local availLetters = Utils.getByTagInParent(
+                             {
+            parent = parentFolder,
+            tag = module.tagNames.AvailLetter
+        })
+
+    for i, item in ipairs(availLetters) do
+        module.colorLetterText({
+            letterBlock = item,
+            color = Color3.fromRGB(255, 0, 238)
+        })
+        module.colorLetterBG({
+            letterBlock = item,
+            color = Color3.fromRGB(0, 255, 34)
+        })
+    end
+end
+
 function anchorLetters(props)
     local parentFolder = props.parentFolder
     local anchor = props.anchor
@@ -132,4 +169,5 @@ module.colorLetterBG = colorLetterBG
 module.configDeadLetters = configDeadLetters
 module.positionActiveWord = positionActiveWord
 module.anchorLetters = anchorLetters
+module.getAvailLetters = getAvailLetters
 return module

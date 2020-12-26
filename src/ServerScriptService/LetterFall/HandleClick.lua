@@ -70,12 +70,12 @@ function handleBrick(player, clickedLetter, miniGameState)
                     letterBlock = letter.instance,
                     color = Color3.fromRGB(113, 17, 161)
                 })
-            -- 
-            -- 
+
             Utils3.tween({
                 part = clickedLetter,
-                time = 1,
-                endPosition = newWordBase.Position
+                endPosition = newWordBase.Position,
+                time = 0.2,
+                anchor = true
             })
 
             local wordComplete = isWordComplete(letters)
@@ -84,8 +84,6 @@ function handleBrick(player, clickedLetter, miniGameState)
                     Utils.getFirstDescendantByName(letterFallFolder,
                                                    "CompletedWordPositioner")
 
-                print('newWordBase' .. ' - start');
-                print(newWordBase);
                 currentActiveWord.CFrame = completedWordPositioner.CFrame
 
                 miniGameState.activeWordIndex =
@@ -101,6 +99,15 @@ function handleBrick(player, clickedLetter, miniGameState)
                             color = Color3.fromRGB(21, 255, 0)
                         })
                 end
+
+                local availLetters = LetterFallUtils.getAvailLetters(
+                                         {
+                        words = miniGameState.words,
+                        currentLetterIndex = miniGameState.currentLetterIndex
+                    })
+
+                print('availLetters' .. ' - start');
+                print(availLetters);
             end
             break
         end

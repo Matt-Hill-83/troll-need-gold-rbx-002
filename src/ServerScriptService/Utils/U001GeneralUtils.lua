@@ -12,6 +12,15 @@ local function getPlayerFromHumanoid(humanoid)
     return player
 end
 
+local function getKeysFromDict(dict)
+    local keyset = {}
+    for k, v in pairs(dict) do
+        keyset[#keyset + 1] = k
+        -- 
+    end
+    return keyset
+end
+
 local function removeFirstMatchFromArray(array, value)
     for i = #array, 1, -1 do
         if array[i] == value then
@@ -464,5 +473,6 @@ module.genRandom = genRandom
 module.enableChildWelds = enableChildWelds
 module.removeFirstMatchFromArray = removeFirstMatchFromArray
 module.getPlayerFromHumanoid = getPlayerFromHumanoid
+module.getKeysFromDict = getKeysFromDict
 
 return module

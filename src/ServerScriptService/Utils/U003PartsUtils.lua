@@ -15,18 +15,13 @@ function tween(props)
     local easingDirection = props.easingDirection or Enum.EasingDirection.Out
     local anchor = props.anchor or false
 
-    local tweenInfo = TweenInfo.new(2, -- Time
-    Enum.EasingStyle.Linear, -- EasingStyle
-    Enum.EasingDirection.Out, -- EasingDirection
-    0, -- RepeatCount (when less than zero the tween will loop indefinitely)
-    false, -- Reverses (tween will reverse once reaching it's goal)
-    0 -- DelayTime
-    )
+    local tweenInfo = TweenInfo.new(time, easingStyle, easingDirection,
+                                    repeatCount, reverses, delayTime)
 
     local tween = TweenService:Create(part, tweenInfo, {Position = endPosition})
 
     tween:Play()
-    part.Anchored = true
+    part.Anchored = anchor
 end
 
 function module.getCenterPositionForRightOffset(props)
