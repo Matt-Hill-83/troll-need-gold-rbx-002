@@ -1,6 +1,33 @@
+local TweenService = game:GetService("TweenService")
 local Sss = game:GetService("ServerScriptService")
+
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
+
+function tween(props)
+    local part = props.part
+    local time = props.time
+    local repeatCount = props.repeatCount or 0
+    local delayTime = props.delayTime or 0
+    local endPosition = props.endPosition
+    local reverses = props.reverses or false
+    local easingStyle = props.easingStyle or Enum.EasingStyle.Linear
+    local easingDirection = props.easingDirection or Enum.EasingDirection.Out
+    local anchor = props.anchor or false
+
+    local tweenInfo = TweenInfo.new(2, -- Time
+    Enum.EasingStyle.Linear, -- EasingStyle
+    Enum.EasingDirection.Out, -- EasingDirection
+    0, -- RepeatCount (when less than zero the tween will loop indefinitely)
+    false, -- Reverses (tween will reverse once reaching it's goal)
+    0 -- DelayTime
+    )
+
+    local tween = TweenService:Create(part, tweenInfo, {Position = endPosition})
+
+    tween:Play()
+    part.Anchored = true
+end
 
 function module.getCenterPositionForRightOffset(props)
     local parent = props.parent
@@ -36,4 +63,5 @@ function getParentFarEdge(props)
 end
 
 module.getPartFarEdge = getPartFarEdge
+module.tween = tween
 return module

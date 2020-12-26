@@ -1,7 +1,9 @@
 local CS = game:GetService("CollectionService")
 local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local RS = game:GetService("ReplicatedStorage")
+
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local Utils3 = require(Sss.Source.Utils.U003PartsUtils)
 local clickBlockEvent = RS:WaitForChild("ClickBlockRE")
 local InitWord = require(Sss.Source.LetterFall.InitWord)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
@@ -45,7 +47,6 @@ function handleBrick(player, clickedLetter, miniGameState)
             anchor = false
         })
 
-        -- LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
         miniGameState.gemsStarted = true
     end
 
@@ -58,6 +59,9 @@ function handleBrick(player, clickedLetter, miniGameState)
 
     local currentActiveWord = activeWord.word.PrimaryPart
 
+    local newWordBase = Utils.getFirstDescendantByName(letterFallFolder,
+                                                       "NewWordBase")
+
     for i, letter in ipairs(letters) do
         if isDesiredLetter(letter, clickedLetter) then
             letter.found = true
@@ -66,13 +70,22 @@ function handleBrick(player, clickedLetter, miniGameState)
                     letterBlock = letter.instance,
                     color = Color3.fromRGB(113, 17, 161)
                 })
-            clickedLetter:Destroy()
+            -- 
+            -- 
+            Utils3.tween({
+                part = clickedLetter,
+                time = 1,
+                endPosition = newWordBase.Position
+            })
 
             local wordComplete = isWordComplete(letters)
             if wordComplete then
                 local completedWordPositioner =
                     Utils.getFirstDescendantByName(letterFallFolder,
                                                    "CompletedWordPositioner")
+
+                print('newWordBase' .. ' - start');
+                print(newWordBase);
                 currentActiveWord.CFrame = completedWordPositioner.CFrame
 
                 miniGameState.activeWordIndex =

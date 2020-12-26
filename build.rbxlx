@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>558.451965</X>
-					<Y>41.2881546</Y>
-					<Z>-1107.36511</Z>
-					<R00>-0.963118076</R00>
-					<R01>0.231613338</R01>
-					<R02>-0.136963353</R02>
+					<X>520.476562</X>
+					<Y>11.8044014</Y>
+					<Z>-1014.70758</Z>
+					<R00>-0.99980402</R00>
+					<R01>0.00561924418</R01>
+					<R02>-0.0189819373</R02>
 					<R10>-0</R10>
-					<R11>0.509007335</R11>
-					<R12>0.860762179</R12>
-					<R20>0.269079357</R20>
-					<R21>0.829015613</R21>
-					<R22>-0.490234107</R22>
+					<R11>0.958867311</R11>
+					<R12>0.283854544</R12>
+					<R20>0.0197962094</R20>
+					<R21>0.283798903</R21>
+					<R22>-0.958679438</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>565.368652</X>
-					<Y>-2.1805706</Y>
-					<Z>-1082.60815</Z>
+					<X>520.514526</X>
+					<Y>11.2366924</Y>
+					<Z>-1012.79022</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -19166,17 +19166,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<token name="BottomSurface">0</token>
 									<token name="BottomSurfaceInput">0</token>
 									<CoordinateFrame name="CFrame">
-										<X>583.484863</X>
-										<Y>-13.6376514</Y>
+										<X>583.484436</X>
+										<Y>-13.6377096</Y>
 										<Z>-1088.18201</Z>
 										<R00>-0.99999994</R00>
-										<R01>0.00047753338</R01>
-										<R02>-6.24924287e-05</R02>
-										<R10>0.000487251964</R10>
+										<R01>0.000506702403</R01>
+										<R02>-6.24874883e-05</R02>
+										<R10>0.00051642023</R10>
 										<R11>0.99999994</R11>
-										<R12>6.27400586e-05</R12>
-										<R20>6.25233151e-05</R20>
-										<R21>6.6679524e-05</R21>
+										<R12>7.46479927e-05</R12>
+										<R20>6.25263492e-05</R20>
+										<R21>7.85856391e-05</R21>
 										<R22>-1</R22>
 									</CoordinateFrame>
 									<bool name="CanCollide">true</bool>
@@ -19252,6 +19252,148 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 										<Ref name="Part1Internal">RBX55863269c2d1455eb957676fa87f4613</Ref>
 										<int64 name="SourceAssetId">-1</int64>
 										<int name="State">1</int>
+										<BinaryString name="Tags"></BinaryString>
+									</Properties>
+								</Item>
+							</Item>
+							<Item class="Part" referent="RBXf7a5840613e24151a903a17b00690af2">
+								<Properties>
+									<bool name="Anchored">false</bool>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<float name="BackParamA">-0.5</float>
+									<float name="BackParamB">0.5</float>
+									<token name="BackSurface">0</token>
+									<token name="BackSurfaceInput">0</token>
+									<float name="BottomParamA">-0.5</float>
+									<float name="BottomParamB">0.5</float>
+									<token name="BottomSurface">0</token>
+									<token name="BottomSurfaceInput">0</token>
+									<CoordinateFrame name="CFrame">
+										<X>577.234314</X>
+										<Y>-13.1342945</Y>
+										<Z>-1088.18164</Z>
+										<R00>-0.99999994</R00>
+										<R01>0.000516425353</R01>
+										<R02>-6.24857639e-05</R02>
+										<R10>0.000526142947</R10>
+										<R11>0.99999994</R11>
+										<R12>7.86173041e-05</R12>
+										<R20>6.25274406e-05</R20>
+										<R21>8.25543393e-05</R21>
+										<R22>-1</R22>
+									</CoordinateFrame>
+									<bool name="CanCollide">true</bool>
+									<bool name="CastShadow">true</bool>
+									<int name="CollisionGroupId">0</int>
+									<Color3uint8 name="Color3uint8">4290019583</Color3uint8>
+									<PhysicalProperties name="CustomPhysicalProperties">
+										<CustomPhysics>false</CustomPhysics>
+									</PhysicalProperties>
+									<float name="FrontParamA">-0.5</float>
+									<float name="FrontParamB">0.5</float>
+									<token name="FrontSurface">0</token>
+									<token name="FrontSurfaceInput">0</token>
+									<float name="LeftParamA">-0.5</float>
+									<float name="LeftParamB">0.5</float>
+									<token name="LeftSurface">0</token>
+									<token name="LeftSurfaceInput">0</token>
+									<bool name="Locked">false</bool>
+									<bool name="Massless">false</bool>
+									<token name="Material">256</token>
+									<string name="Name">NewWordBase</string>
+									<float name="Reflectance">0</float>
+									<float name="RightParamA">-0.5</float>
+									<float name="RightParamB">0.5</float>
+									<token name="RightSurface">0</token>
+									<token name="RightSurfaceInput">0</token>
+									<int name="RootPriority">0</int>
+									<Vector3 name="RotVelocity">
+										<X>0</X>
+										<Y>0</Y>
+										<Z>0</Z>
+									</Vector3>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<float name="TopParamA">-0.5</float>
+									<float name="TopParamB">0.5</float>
+									<token name="TopSurface">0</token>
+									<token name="TopSurfaceInput">0</token>
+									<float name="Transparency">0</float>
+									<Vector3 name="Velocity">
+										<X>0</X>
+										<Y>0</Y>
+										<Z>0</Z>
+									</Vector3>
+									<token name="formFactorRaw">1</token>
+									<token name="shape">1</token>
+									<Vector3 name="size">
+										<X>14.5</X>
+										<Y>0.49986887</Y>
+										<Z>2</Z>
+									</Vector3>
+								</Properties>
+								<Item class="WeldConstraint" referent="RBXcb34b1edfba54b2abe039eb091860466">
+									<Properties>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<CoordinateFrame name="CFrame0">
+											<X>-6.25811768</X>
+											<Y>-19.5732346</Y>
+											<Z>0.00109863281</Z>
+											<R00>1</R00>
+											<R01>0.000145305137</R01>
+											<R02>-1.03632498e-08</R02>
+											<R10>-0.000145305137</R10>
+											<R11>1</R11>
+											<R12>-7.57270827e-05</R12>
+											<R20>-6.40284215e-10</R20>
+											<R21>7.57270827e-05</R21>
+											<R22>1</R22>
+										</CoordinateFrame>
+										<bool name="Enabled">true</bool>
+										<string name="Name">WeldConstraint</string>
+										<Ref name="Part0Internal">RBXf7a5840613e24151a903a17b00690af2</Ref>
+										<Ref name="Part1Internal">RBX55863269c2d1455eb957676fa87f4613</Ref>
+										<int64 name="SourceAssetId">-1</int64>
+										<int name="State">1</int>
+										<BinaryString name="Tags"></BinaryString>
+									</Properties>
+								</Item>
+								<Item class="Weld" referent="RBXe0d275df72574690961c4ccfd229fb6a">
+									<Properties>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<CoordinateFrame name="C0">
+											<X>0</X>
+											<Y>-0.249934196</Y>
+											<Z>0</Z>
+											<R00>1.00000012</R00>
+											<R01>-7.27595761e-12</R01>
+											<R02>-8.7951868e-12</R02>
+											<R10>9.72278394e-06</R10>
+											<R11>0</R11>
+											<R12>-1.00000012</R12>
+											<R20>-3.20142135e-10</R20>
+											<R21>1.00000012</R21>
+											<R22>3.96931136e-06</R22>
+										</CoordinateFrame>
+										<CoordinateFrame name="C1">
+											<X>6.25036621</X>
+											<Y>0.250252724</Y>
+											<Z>0.000122070312</Z>
+											<R00>1.00000012</R00>
+											<R01>5.31144906e-10</R01>
+											<R02>1.94454824e-05</R02>
+											<R10>2.91682154e-05</R10>
+											<R11>7.93862273e-06</R11>
+											<R12>-1.00000012</R12>
+											<R20>-1.09139364e-09</R20>
+											<R21>1.00000012</R21>
+											<R22>1.19079341e-05</R22>
+										</CoordinateFrame>
+										<bool name="Enabled">true</bool>
+										<string name="Name">Weld</string>
+										<Ref name="Part0">RBXf7a5840613e24151a903a17b00690af2</Ref>
+										<Ref name="Part1">RBX551eeb9e2ccd4c23a41fd12e5c0765f3</Ref>
+										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
@@ -29373,18 +29515,18 @@ remoteCode.addRemoteObjects()
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>493.250916</X>
-						<Y>-45.3300323</Y>
-						<Z>-948.753235</Z>
-						<R00>-0.999999523</R00>
-						<R01>-5.53432038e-39</R01>
-						<R02>1.10469807e-06</R02>
-						<R10>5.53432038e-39</R10>
-						<R11>0.999999106</R11>
-						<R12>2.80259693e-45</R12>
-						<R20>-1.10469716e-06</R20>
-						<R21>-8.40779079e-45</R21>
-						<R22>-0.999999464</R22>
+						<X>481.219482</X>
+						<Y>-44.9410019</Y>
+						<Z>-948.893311</Z>
+						<R00>-0.999998987</R00>
+						<R01>-1.10686324e-38</R01>
+						<R02>1.02318154e-12</R02>
+						<R10>1.10686324e-38</R10>
+						<R11>0.999998152</R11>
+						<R12>5.60519386e-45</R12>
+						<R20>9.09494702e-13</R20>
+						<R21>-5.60519386e-45</R21>
+						<R22>-0.999998927</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
 					<bool name="CastShadow">true</bool>
@@ -29456,41 +29598,41 @@ remoteCode.addRemoteObjects()
 						<float name="Transparency">0</float>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBX6d366accb5b647b987c57785a29f3187">
+				<Item class="Weld" referent="RBX7bd79ab87ac54995a825e71e30e18655">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
 							<X>0</X>
 							<Y>-0.25</Y>
 							<Z>0</Z>
-							<R00>0.999999046</R00>
-							<R01>1.13686838e-13</R01>
-							<R02>1.40129846e-45</R02>
-							<R10>1.10686324e-38</R10>
+							<R00>0.999997973</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>2.21372325e-38</R10>
 							<R11>0</R11>
-							<R12>-0.999999106</R12>
-							<R20>-9.09494702e-13</R20>
-							<R21>0.999998093</R21>
-							<R22>-5.60519386e-45</R22>
+							<R12>-0.999998152</R12>
+							<R20>-1.93267407e-12</R20>
+							<R21>0.999996066</R21>
+							<R22>-1.12103877e-44</R22>
 						</CoordinateFrame>
 						<CoordinateFrame name="C1">
-							<X>29.6313171</X>
-							<Y>0.5</Y>
-							<Z>11.0003662</Z>
-							<R00>-1.00000906</R00>
-							<R01>-1.47000947e-07</R01>
-							<R02>-5.53437784e-39</R02>
-							<R10>5.53432038e-39</R10>
-							<R11>-2.80259693e-45</R11>
+							<X>0.0999755859</X>
+							<Y>0.199996948</Y>
+							<Z>-0.100036621</Z>
+							<R00>-1.00000846</R00>
+							<R01>-1.25170664e-06</R01>
+							<R02>-1.10687487e-38</R02>
+							<R10>1.10686324e-38</R10>
+							<R11>-5.60519386e-45</R11>
 							<R12>-0.99999994</R12>
-							<R20>1.47001174e-07</R20>
-							<R21>-1.00000811</R21>
-							<R22>4.20389539e-45</R22>
+							<R20>1.25170914e-06</R20>
+							<R21>-1.00000668</R21>
+							<R22>1.96181785e-44</R22>
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
 						<Ref name="Part0">RBX6f1e5550c2ec4ce993a20b3f569adca5</Ref>
-						<Ref name="Part1">RBX5d3c36d21ee2427d9b676ed57ad4b027</Ref>
+						<Ref name="Part1">RBXf2f567726c2443c2bb19ab37a6679ad4</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -32899,8 +33041,8 @@ function setVisibility()
     local taggedPartsDestroy = CS:GetTagged("Destroy")
     for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
 
-    -- local taggedPartsTransparent = CS:GetTagged("Transparent")
-    -- for i, item in ipairs(taggedPartsTransparent) do item.Transparency = 1 end
+    local taggedPartsTransparent = CS:GetTagged("Transparent")
+    for i, item in ipairs(taggedPartsTransparent) do item.Transparency = 1 end
 
     local canCollideOff = CS:GetTagged("CanCollideOff")
     for i, item in ipairs(canCollideOff) do item.CanCollide = false end
@@ -33631,8 +33773,8 @@ return module
 						<string name="ScriptGuid">{96953b13-b3bc-4e4e-8b6d-ba829b95ce48}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {
     buffer = 0,
-    -- singleScene = true,
-    singleScene = false,
+    singleScene = true,
+    -- singleScene = false,
     -- 
     entered = {value = false},
     -- baseWallHeight = 6,
@@ -39019,9 +39161,37 @@ return module
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">U003PartsUtils</string>
 						<string name="ScriptGuid">{f90aef5e-3852-4396-8162-8c3efc7aaed3}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
+						<ProtectedString name="Source"><![CDATA[local TweenService = game:GetService("TweenService")
+local Sss = game:GetService("ServerScriptService")
+
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
+
+function module.tween(props)
+    local part = props.part
+    local time = props.time
+    local repeatCount = props.repeatCount or 0
+    local delayTime = props.delayTime or 0
+    local endPosition = props.endPosition
+    local reverses = props.reverses or false
+    local easingStyle = props.easingStyle or Enum.EasingStyle.Linear
+    local easingDirection = props.easingDirection or Enum.EasingDirection.Linear
+    local anchor = props.anchor or false
+
+    local tweenInfo = TweenInfo.new(2, -- Time
+    Enum.EasingStyle.Linear, -- EasingStyle
+    Enum.EasingDirection.Out, -- EasingDirection
+    0, -- RepeatCount (when less than zero the tween will loop indefinitely)
+    false, -- Reverses (tween will reverse once reaching it's goal)
+    0 -- DelayTime
+    )
+
+    local tween = TweenService:Create(part, tweenInfo,
+                                      {Position = newWordBase.Position})
+
+    tween:Play()
+    part.Anchored = true
+end
 
 function module.getCenterPositionForRightOffset(props)
     local parent = props.parent
@@ -39057,6 +39227,7 @@ function getParentFarEdge(props)
 end
 
 module.getPartFarEdge = getPartFarEdge
+module.tween = tween
 return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
@@ -39224,8 +39395,10 @@ return module
 						<string name="ScriptGuid">{4548304d-4826-4a12-b5ad-4279763cc705}</string>
 						<ProtectedString name="Source"><![CDATA[local CS = game:GetService("CollectionService")
 local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local RS = game:GetService("ReplicatedStorage")
+
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local Utils3 = require(Sss.Source.Utils.U003PartsUtils)
 local clickBlockEvent = RS:WaitForChild("ClickBlockRE")
 local InitWord = require(Sss.Source.LetterFall.InitWord)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
@@ -39269,7 +39442,6 @@ function handleBrick(player, clickedLetter, miniGameState)
             anchor = false
         })
 
-        -- LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
         miniGameState.gemsStarted = true
     end
 
@@ -39282,6 +39454,9 @@ function handleBrick(player, clickedLetter, miniGameState)
 
     local currentActiveWord = activeWord.word.PrimaryPart
 
+    local newWordBase = Utils.getFirstDescendantByName(letterFallFolder,
+                                                       "NewWordBase")
+
     for i, letter in ipairs(letters) do
         if isDesiredLetter(letter, clickedLetter) then
             letter.found = true
@@ -39290,13 +39465,38 @@ function handleBrick(player, clickedLetter, miniGameState)
                     letterBlock = letter.instance,
                     color = Color3.fromRGB(113, 17, 161)
                 })
-            clickedLetter:Destroy()
+            -- 
+            -- 
+            local TweenService = game:GetService("TweenService")
+            Utils3.tween({part = clickedLetter, time = 1})
+
+            -- local part = clickedLetter
+
+            -- local tweenInfo = TweenInfo.new(2, -- Time
+            -- Enum.EasingStyle.Linear, -- EasingStyle
+            -- Enum.EasingDirection.Out, -- EasingDirection
+            -- 0, -- RepeatCount (when less than zero the tween will loop indefinitely)
+            --                                 false, -- Reverses (tween will reverse once reaching it's goal)
+            --                                 0 -- DelayTime
+            -- )
+
+            -- local tween = TweenService:Create(part, tweenInfo,
+            --                                   {Position = newWordBase.Position})
+
+            -- tween:Play()
+            -- part.Anchored = true
+            -- 
+            -- 
+            -- clickedLetter:Destroy()
 
             local wordComplete = isWordComplete(letters)
             if wordComplete then
                 local completedWordPositioner =
                     Utils.getFirstDescendantByName(letterFallFolder,
                                                    "CompletedWordPositioner")
+
+                print('newWordBase' .. ' - start');
+                print(newWordBase);
                 currentActiveWord.CFrame = completedWordPositioner.CFrame
 
                 miniGameState.activeWordIndex =
