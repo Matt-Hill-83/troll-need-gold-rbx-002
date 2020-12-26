@@ -15,6 +15,50 @@ local module = {
     }
 }
 
+function setStyleToAvailable(letterBlock)
+    module.colorLetterText({
+        letterBlock = letterBlock,
+        color = Color3.fromRGB(78, 242, 86)
+    })
+    module.colorLetterBorder({
+        letterBlock = letterBlock,
+        color = Color3.fromRGB(18, 74, 15)
+    })
+end
+
+function setStyleToNotAvailable(letterBlock)
+    module.colorLetterText({
+        letterBlock = letterBlock,
+        color = Color3.fromRGB(113, 95, 95)
+    })
+    module.colorLetterBorder({
+        letterBlock = letterBlock,
+        color = Color3.fromRGB(167, 139, 139)
+    })
+end
+
+function styleLetterBlocks(miniGameState)
+    local availLetters = module.getAvailLettersDict(
+                             {
+            words = miniGameState.words,
+            currentLetterIndex = miniGameState.currentLetterIndex
+        })
+
+    local allLetters = module.getAllLettersInRack()
+    print('allLetters' .. ' - start');
+    print(allLetters);
+
+    for i, letter in ipairs(allLetters) do
+        local char = module.getCharFromLetterBlock(letter)
+        if availLetters[char] then
+            setStyleToAvailable(letter)
+        else
+            setStyleToNotAvailable(letter)
+        end
+    end
+
+end
+
 function positionActiveWord(props)
     local miniGameState = props.miniGameState
     local letterFallFolder = miniGameState.letterFallFolder
@@ -209,4 +253,5 @@ module.isWordComplete = isWordComplete
 module.positionActiveWord = positionActiveWord
 module.getAvailLettersDict = getAvailLettersDict
 module.colorLetterBorder = colorLetterBorder
+module.styleLetterBlocks = styleLetterBlocks
 return module

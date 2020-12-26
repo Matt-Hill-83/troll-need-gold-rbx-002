@@ -44,6 +44,8 @@ function initLetterFall(miniGameState)
             end
         end)
 
+    LetterFallUtils.styleLetterBlocks(miniGameState)
+
 end
 
 module.initLetterFall = initLetterFall
