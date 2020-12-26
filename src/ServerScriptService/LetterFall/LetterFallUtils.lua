@@ -118,8 +118,7 @@ function getAvailLetters(props)
         local letter = string.sub(word, currentLetterIndex, currentLetterIndex)
         availLettersDict[letter] = true
     end
-    local availLetters = Utils.getKeysFromDict(availLettersDict)
-    return availLetters
+    return Utils.getKeysFromDict(availLettersDict)
 end
 
 function configAvailLetters(props)
