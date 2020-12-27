@@ -29576,161 +29576,6 @@ OQ==]]></BinaryString>
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
-							<Item class="Part" referent="RBX805fe30e49764f75aadd692705fda4d2">
-								<Properties>
-									<bool name="Anchored">false</bool>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<float name="BackParamA">-0.5</float>
-									<float name="BackParamB">0.5</float>
-									<token name="BackSurface">0</token>
-									<token name="BackSurfaceInput">0</token>
-									<float name="BottomParamA">-0.5</float>
-									<float name="BottomParamB">0.5</float>
-									<token name="BottomSurface">0</token>
-									<token name="BottomSurfaceInput">0</token>
-									<CoordinateFrame name="CFrame">
-										<X>587.795166</X>
-										<Y>-32.9878159</Y>
-										<Z>-1121.71521</Z>
-										<R00>1</R00>
-										<R01>0.00022356493</R01>
-										<R02>6.23760061e-05</R02>
-										<R10>-0.000223944036</R10>
-										<R11>1</R11>
-										<R12>-0.000380982732</R12>
-										<R20>-6.24611348e-05</R20>
-										<R21>0.000380951271</R21>
-										<R22>1</R22>
-									</CoordinateFrame>
-									<bool name="CanCollide">true</bool>
-									<bool name="CastShadow">true</bool>
-									<int name="CollisionGroupId">0</int>
-									<Color3uint8 name="Color3uint8">4283595950</Color3uint8>
-									<PhysicalProperties name="CustomPhysicalProperties">
-										<CustomPhysics>false</CustomPhysics>
-									</PhysicalProperties>
-									<float name="FrontParamA">-0.5</float>
-									<float name="FrontParamB">0.5</float>
-									<token name="FrontSurface">0</token>
-									<token name="FrontSurfaceInput">0</token>
-									<float name="LeftParamA">-0.5</float>
-									<float name="LeftParamB">0.5</float>
-									<token name="LeftSurface">0</token>
-									<token name="LeftSurfaceInput">0</token>
-									<bool name="Locked">false</bool>
-									<bool name="Massless">false</bool>
-									<token name="Material">256</token>
-									<string name="Name">StartGameTrigger</string>
-									<float name="Reflectance">0</float>
-									<float name="RightParamA">-0.5</float>
-									<float name="RightParamB">0.5</float>
-									<token name="RightSurface">0</token>
-									<token name="RightSurfaceInput">0</token>
-									<int name="RootPriority">0</int>
-									<Vector3 name="RotVelocity">
-										<X>0</X>
-										<Y>0</Y>
-										<Z>0</Z>
-									</Vector3>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-									<float name="TopParamA">-0.5</float>
-									<float name="TopParamB">0.5</float>
-									<token name="TopSurface">0</token>
-									<token name="TopSurfaceInput">0</token>
-									<float name="Transparency">0.5</float>
-									<Vector3 name="Velocity">
-										<X>0</X>
-										<Y>0</Y>
-										<Z>0</Z>
-									</Vector3>
-									<token name="formFactorRaw">1</token>
-									<token name="shape">1</token>
-									<Vector3 name="size">
-										<X>26.5999985</X>
-										<Y>0.099999994</Y>
-										<Z>20.9999962</Z>
-									</Vector3>
-								</Properties>
-								<Item class="Weld" referent="RBXd55c14b121cc49efbf5aac8bf524b4cd">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<CoordinateFrame name="C0">
-											<X>0</X>
-											<Y>-0.0499992371</Y>
-											<Z>0</Z>
-											<R00>1</R00>
-											<R01>7.27595761e-12</R01>
-											<R02>2.18847163e-12</R02>
-											<R10>-9.19302875e-06</R10>
-											<R11>-2.91038305e-11</R11>
-											<R12>-1.00000012</R12>
-											<R20>3.5361154e-09</R20>
-											<R21>1.00000012</R21>
-											<R22>-3.99234705e-06</R22>
-										</CoordinateFrame>
-										<CoordinateFrame name="C1">
-											<X>-2.40014648</X>
-											<Y>0.464187622</Y>
-											<Z>-4.95874023</Z>
-											<R00>-1</R00>
-											<R01>5.47179184e-07</R01>
-											<R02>0.000180907751</R02>
-											<R10>-0.000180907926</R10>
-											<R11>-0.000381105318</R11>
-											<R12>-1</R12>
-											<R20>-4.78234142e-07</R20>
-											<R21>-1</R21>
-											<R22>0.000381105405</R22>
-										</CoordinateFrame>
-										<bool name="Enabled">true</bool>
-										<string name="Name">Weld</string>
-										<Ref name="Part0">RBX805fe30e49764f75aadd692705fda4d2</Ref>
-										<Ref name="Part1">RBX9329b56c172541feb2ef8754db8ae198</Ref>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-									</Properties>
-								</Item>
-								<Item class="Weld" referent="RBXa13f5011a5064b118677addf35b83460">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<CoordinateFrame name="C0">
-											<X>0</X>
-											<Y>-0.0499992371</Y>
-											<Z>0</Z>
-											<R00>1</R00>
-											<R01>7.27595761e-12</R01>
-											<R02>2.18847163e-12</R02>
-											<R10>-9.19302875e-06</R10>
-											<R11>-2.91038305e-11</R11>
-											<R12>-1.00000012</R12>
-											<R20>3.5361154e-09</R20>
-											<R21>1.00000012</R21>
-											<R22>-3.99234705e-06</R22>
-										</CoordinateFrame>
-										<CoordinateFrame name="C1">
-											<X>4.14978027</X>
-											<Y>16.7475243</Y>
-											<Z>-10.5375977</Z>
-											<R00>1</R00>
-											<R01>-5.30271791e-08</R01>
-											<R02>-0.000164671364</R02>
-											<R10>-0.000173864391</R10>
-											<R11>-0.000372939772</R11>
-											<R12>-1</R12>
-											<R20>-8.27276381e-09</R20>
-											<R21>1</R21>
-											<R22>-0.000376932119</R22>
-										</CoordinateFrame>
-										<bool name="Enabled">true</bool>
-										<string name="Name">Weld</string>
-										<Ref name="Part0">RBX805fe30e49764f75aadd692705fda4d2</Ref>
-										<Ref name="Part1">RBXeefd83e73c1840acb0d06ed008017a1b</Ref>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-									</Properties>
-								</Item>
-							</Item>
 						</Item>
 						<Item class="Folder" referent="RBX331e07ad769b44d890378ae99192c962">
 							<Properties>
@@ -30107,17 +29952,17 @@ OQ==]]></BinaryString>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
 									<X>595.195862</X>
-									<Y>-31.7417965</Y>
+									<Y>-31.8350677</Y>
 									<Z>-1115.56494</Z>
-									<R00>0.999999404</R00>
-									<R01>0.00022320397</R01>
-									<R02>6.41049701e-05</R02>
-									<R10>-0.000223897921</R10>
-									<R11>1.00000012</R11>
-									<R12>-0.000381055026</R12>
-									<R20>-6.43133462e-05</R20>
-									<R21>0.000380856305</R21>
-									<R22>1</R22>
+									<R00>0.999998271</R00>
+									<R01>0.000222801042</R01>
+									<R02>6.41051083e-05</R02>
+									<R10>-0.000224300544</R10>
+									<R11>1</R11>
+									<R12>-0.000381072285</R12>
+									<R20>-6.43132298e-05</R20>
+									<R21>0.000380838814</R21>
+									<R22>0.999999344</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
 								<bool name="CastShadow">true</bool>
@@ -30272,41 +30117,41 @@ OQ==]]></BinaryString>
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="Weld" referent="RBX0ed8c6d8fd724327b28363b797023fd3">
+							<Item class="Weld" referent="RBXe0cf609326f84f4385d27e3a067348b3">
 								<Properties>
 									<BinaryString name="AttributesSerialize"></BinaryString>
 									<CoordinateFrame name="C0">
-										<X>6.10351562e-05</X>
-										<Y>-1.19999313</Y>
-										<Z>-0.000122070312</Z>
-										<R00>0.999999583</R00>
-										<R01>7.27595761e-12</R01>
-										<R02>1.8966162e-11</R02>
-										<R10>8.72343193e-08</R10>
-										<R11>0</R11>
-										<R12>-1</R12>
-										<R20>-1.23487553e-07</R20>
-										<R21>1.00000012</R21>
-										<R22>1.49448169e-07</R22>
+										<X>0</X>
+										<Y>-1.19999695</Y>
+										<Z>0</Z>
+										<R00>0.999998868</R00>
+										<R01>0</R01>
+										<R02>-1.12905241e-11</R02>
+										<R10>-7.18605975e-07</R10>
+										<R11>2.91038305e-11</R11>
+										<R12>-1.00000012</R12>
+										<R20>-1.23094651e-07</R20>
+										<R21>0.999999762</R21>
+										<R22>1.84489181e-07</R22>
 									</CoordinateFrame>
 									<CoordinateFrame name="C1">
-										<X>7.40008545</X>
-										<Y>0.0500259399</Y>
-										<Z>6.15014648</Z>
-										<R00>0.999999821</R00>
-										<R01>1.85246608e-06</R01>
-										<R02>4.48225506e-07</R02>
-										<R10>4.53052635e-08</R10>
-										<R11>7.75326043e-08</R11>
-										<R12>-1.00000012</R12>
-										<R20>-1.85226963e-06</R20>
-										<R21>0.999999881</R21>
-										<R22>9.50531103e-08</R22>
+										<X>11.5498047</X>
+										<Y>16.7506676</Y>
+										<Z>-4.38720703</Z>
+										<R00>0.999999404</R00>
+										<R01>1.79500785e-06</R01>
+										<R02>-0.000173819106</R02>
+										<R10>-0.000174221219</R10>
+										<R11>-0.000376837183</R11>
+										<R12>-0.99999994</R12>
+										<R20>-1.86046964e-06</R20>
+										<R21>0.999999583</R21>
+										<R22>-0.000376819487</R22>
 									</CoordinateFrame>
 									<bool name="Enabled">true</bool>
 									<string name="Name">Weld</string>
 									<Ref name="Part0">RBX0b1e37560e9e4c55bfcfea31a14adfa7</Ref>
-									<Ref name="Part1">RBX805fe30e49764f75aadd692705fda4d2</Ref>
+									<Ref name="Part1">RBXeefd83e73c1840acb0d06ed008017a1b</Ref>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
@@ -38601,16 +38446,16 @@ OQ==]]></BinaryString>
 									<token name="BottomSurfaceInput">0</token>
 									<CoordinateFrame name="CFrame">
 										<X>585.394653</X>
-										<Y>-33.5018768</Y>
-										<Z>-1126.67383</Z>
+										<Y>-33.5018387</Y>
+										<Z>-1126.67407</Z>
 										<R00>-1</R00>
-										<R01>4.263351e-05</R01>
-										<R02>-6.29394563e-05</R02>
-										<R10>5.22290902e-05</R10>
-										<R11>1.00000024</R11>
-										<R12>-1.22527126e-07</R12>
-										<R20>6.29386341e-05</R20>
-										<R21>3.84959276e-06</R21>
+										<R01>4.26358165e-05</R01>
+										<R02>-6.29412752e-05</R02>
+										<R10>5.19784298e-05</R10>
+										<R11>1</R11>
+										<R12>-8.10841084e-06</R12>
+										<R20>6.29401475e-05</R20>
+										<R21>-4.12529744e-06</R21>
 										<R22>-1.00000024</R22>
 									</CoordinateFrame>
 									<bool name="CanCollide">true</bool>
@@ -48130,7 +47975,6 @@ local function onInputBegan(input)
         if raycastResult then
             local hitObject = raycastResult.Instance
             if CS:HasTag(hitObject, "LetterBlockInRack") then
-                print("--------------------------->>" .. hitObject.Name)
                 remoteEvent:FireServer(hitObject)
             end
         else
@@ -56134,6 +55978,9 @@ local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
+local HandleClick = require(Sss.Source.LetterFall.HandleClick)
+local InitLetterRack = require(Sss.Source.LetterFall.InitLetterRack)
+local InitWord = require(Sss.Source.LetterFall.InitWord)
 
 local letterFallFreezeCameraRE = RS:WaitForChild("LetterFallFreezeCameraRE")
 
@@ -56173,9 +56020,13 @@ function configCouchTrigger(miniGameState)
 end
 
 function initLetterFall(miniGameState)
-    LetterFall.initGameToggle(miniGameState)
+    -- LetterFall.initGameToggle(miniGameState)
+    InitLetterRack.initLetterRack(miniGameState)
+    InitWord.initWord(miniGameState)
     configCouchTrigger(miniGameState)
     LetterFallUtils.styleLetterBlocks(miniGameState)
+    LetterFallUtils.createBalls(miniGameState)
+    HandleClick.initClickHandler(miniGameState)
 end
 
 module.initLetterFall = initLetterFall
@@ -56212,19 +56063,19 @@ function initGameToggle(miniGameState)
                                                             "StartGameTrigger")
 
     if not miniGameState.initCompleted then
-        InitLetterRack.initLetterRack(miniGameState)
-        InitWord.initWord(miniGameState)
+        -- InitLetterRack.initLetterRack(miniGameState)
+        -- InitWord.initWord(miniGameState)
     end
 
     function onPartTouched(otherPart)
         if not miniGameState.initCompleted then
             miniGameState.initCompleted = true
-            HandleClick.initClickHandler(miniGameState)
+            -- HandleClick.initClickHandler(miniGameState)
 
         end
     end
     startGameTrigger.Touched:Connect(onPartTouched)
-    LetterFallUtils.createBalls(miniGameState)
+    -- LetterFallUtils.createBalls(miniGameState)
 end
 
 module.initGameToggle = initGameToggle
@@ -56302,7 +56153,6 @@ function handleBrick(clickedLetter, miniGameState)
             parentFolder = runTimeLetterFolder,
             anchor = false
         })
-
         miniGameState.gemsStarted = true
     end
 
@@ -56315,16 +56165,9 @@ function handleBrick(clickedLetter, miniGameState)
             currentLetterIndex = miniGameState.currentLetterIndex
         })
 
-    local newWordBase = Utils.getFirstDescendantByName(letterFallFolder,
-                                                       "NewWordBase")
-
     if isDesiredLetter(availLetters, clickedLetter) then
         miniGameState.currentLetterIndex = miniGameState.currentLetterIndex + 1
-
-        local positionX = -newWordBase.Size.X / 2 + clickedLetter.Size.X *
-                              #miniGameState.foundLetters
-        local positionY = -clickedLetter.Size.Y * #miniGameState.foundWords *
-                              1.1
+        CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
 
         local foundChar = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
         local foundWord = nil
@@ -56337,31 +56180,18 @@ function handleBrick(clickedLetter, miniGameState)
                 if foundChar == letter.char then
                     foundWord = word
                     foundLetter = letter
-                    print('word' .. ' - start');
-                    print(word);
-
                 end
             end
-
         end
-        print('foundWord' .. ' - start');
-        print(foundWord);
 
-        print('foundLetter' .. ' - start');
-        print(foundLetter);
-        local endPosition = foundLetter.instance.Position
-        -- local endPosition = newWordBase.Position +
-        --                         Vector3.new(-positionX, positionY, 0)
         Utils3.tween({
             part = clickedLetter,
-            endPosition = endPosition,
-            time = 0.3,
+            endPosition = foundLetter.instance.Position,
+            time = 0.5,
             anchor = true
         })
         clickedLetter.CanCollide = false
 
-        CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
-        -- LetterFallUtils.setStyleToFound(clickedLetter)
         table.insert(miniGameState.foundLetters,
                      LetterFallUtils.getCharFromLetterBlock(clickedLetter))
 
@@ -56373,7 +56203,6 @@ function handleBrick(clickedLetter, miniGameState)
             miniGameState.currentLetterIndex = 1
         end
         LetterFallUtils.styleLetterBlocks(miniGameState)
-
     end
 end
 

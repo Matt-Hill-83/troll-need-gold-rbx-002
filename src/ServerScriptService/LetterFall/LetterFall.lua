@@ -17,14 +17,14 @@ function initGameToggle(miniGameState)
                                                             "StartGameTrigger")
 
     if not miniGameState.initCompleted then
-        InitLetterRack.initLetterRack(miniGameState)
-        InitWord.initWord(miniGameState)
+        -- InitLetterRack.initLetterRack(miniGameState)
+        -- InitWord.initWord(miniGameState)
     end
 
     function onPartTouched(otherPart)
         if not miniGameState.initCompleted then
             miniGameState.initCompleted = true
-            HandleClick.initClickHandler(miniGameState)
+            -- HandleClick.initClickHandler(miniGameState)
 
         end
     end

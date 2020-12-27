@@ -5,6 +5,9 @@ local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
+local HandleClick = require(Sss.Source.LetterFall.HandleClick)
+local InitLetterRack = require(Sss.Source.LetterFall.InitLetterRack)
+local InitWord = require(Sss.Source.LetterFall.InitWord)
 
 local letterFallFreezeCameraRE = RS:WaitForChild("LetterFallFreezeCameraRE")
 
@@ -44,10 +47,13 @@ function configCouchTrigger(miniGameState)
 end
 
 function initLetterFall(miniGameState)
-    LetterFall.initGameToggle(miniGameState)
+    -- LetterFall.initGameToggle(miniGameState)
+    InitLetterRack.initLetterRack(miniGameState)
+    InitWord.initWord(miniGameState)
     configCouchTrigger(miniGameState)
     LetterFallUtils.styleLetterBlocks(miniGameState)
     LetterFallUtils.createBalls(miniGameState)
+    HandleClick.initClickHandler(miniGameState)
 end
 
 module.initLetterFall = initLetterFall
