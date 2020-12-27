@@ -79,12 +79,15 @@ function handleBrick(clickedLetter, miniGameState)
             end
         end
 
+        local targetLetterBlock = foundLetter.instance
+
         Utils3.tween({
             part = clickedLetter,
             endPosition = foundLetter.instance.Position,
             time = 0.9,
             anchor = true
         })
+        clickedLetter.CFrame = targetLetterBlock.CFrame
         clickedLetter.CanCollide = false
         print('foundLetter.instance' .. ' - start');
         print(foundLetter.instance);
