@@ -34,10 +34,7 @@ function initWord(miniGameState)
                                       letterFallFolder, "LetterBlockTemplates")
 
         local letterBlockTemplate = Utils.getFirstDescendantByName(
-                                        letterBlockFolder, "LBWordLetter")
-
-        -- local letterBlockTemplate = Utils.getFirstDescendantByName(
-        --                                 letterFallFolder, "LetterBlockTemplate")
+                                        letterBlockFolder, "LBPurpleLight")
 
         local newWord = wordBox:Clone()
         local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
@@ -67,11 +64,7 @@ function initWord(miniGameState)
             local letter = string.sub(word, letterIndex, letterIndex)
 
             local newLetter = letterBlockTemplate:Clone()
-            -- -- 
-            -- -- 
-            -- LetterFallUtils.setStyleToFound(newLetter)
-            -- -- 
-            -- -- 
+
             newLetter.Name = "wordLetter-" .. letterNameStub
 
             local letterPositionZ = newLetter.Size.Z * (letterIndex - 2) *

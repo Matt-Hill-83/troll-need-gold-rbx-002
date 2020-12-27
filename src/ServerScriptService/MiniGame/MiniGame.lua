@@ -18,18 +18,19 @@ function module.addMiniGame(props)
     }
 
     local miniGameState = {
-        allLetters = allLetters,
-        wordLetters = {},
-        renderedWords = {},
-        activeWordIndex = 1,
         activeWord = nil,
-        words = words,
-        initCompleted = false,
+        activeWordIndex = 1,
+        allLetters = allLetters,
         availLetters = {},
+        availWords = {},
+        currentLetterIndex = 1,
         foundLetters = {},
         foundWords = {},
-        availWords = {},
-        currentLetterIndex = 1
+        initCompleted = false,
+        letterBlockTemplateFolder = nil,
+        renderedWords = {},
+        wordLetters = {},
+        words = words
     }
 
     if (isStartScene) then
@@ -40,6 +41,10 @@ function module.addMiniGame(props)
 
         local letterFallFolder = Utils.getFirstDescendantByName(
                                      clonedLetterFallModel, "LetterFallFolder")
+        local letterBlockTemplateFolder =
+            Utils.getFirstDescendantByName(letterFallFolder,
+                                           "LetterBlockTemplates")
+        miniGameState.letterBlockTemplateFolder = letterBlockTemplateFolder
         clonedLetterFallModel.Parent = clonedScene
 
         -- local attMiniGamePositioner = Utils.getFirstDescendantByName(

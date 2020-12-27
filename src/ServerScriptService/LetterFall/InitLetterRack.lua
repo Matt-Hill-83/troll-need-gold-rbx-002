@@ -43,8 +43,6 @@ function initLetterRack(miniGameState)
 
     local letterRackFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                             "LetterRackFolder")
-    -- local columnBaseTemplate = Utils.getFirstDescendantByName(letterRackFolder,
-    --                                                           "ColumnBase")
 
     local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                              "LetterBlockTemplates")
@@ -87,16 +85,16 @@ function initLetterRack(miniGameState)
             local rand = Utils.genRandom(1, #lettersFromWords)
 
             local char = lettersFromWords[rand]
-            -- Utils.removeFirstMatchFromArray(lettersFromWords, char)
             local newLetter = letterBlockTemplate:Clone()
 
-            -- 
-            -- 
-            LetterFallUtils.setStyleToFound(newLetter)
-            -- 
-            -- 
+            LetterFallUtils.applyStyleFromTemplate(
+                {
+                    targetLetterBlock = newLetter,
+                    templateName = "LBPurpleLight",
+                    -- templateName = "LBWordLetter",
+                    miniGameState = miniGameState
+                })
 
-            LetterFallUtils.setStyleToFound(newLetter)
             newLetter.Name = "newLetter-" .. char
 
             local isDeadLetter = isDeadLetter(

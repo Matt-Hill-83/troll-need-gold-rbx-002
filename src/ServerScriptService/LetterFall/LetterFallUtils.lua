@@ -23,27 +23,16 @@ function styleLetterBlock(letterBlock, labelProps)
     end
 end
 
-function setStyleToFound(letterBlock)
-    local labelProps = {
-        TextColor3 = Color3.new(255, 0, 191),
-        BorderColor3 = Color3.new(255, 0, 191),
-        BackgroundColor3 = Color3.fromRGB(242, 193, 165)
-    }
-    styleLetterBlock(letterBlock, labelProps)
-end
-
 function applyStyleFromTemplate(props)
-
     local targetLetterBlock = props.targetLetterBlock
     local templateName = props.templateName
-    local templateFolder = props.templateFolder
+    local miniGameState = props.miniGameState
 
-    local template =
-        Utils.getFirstDescendantByName(templateFolder, templateName)
+    local letterBlockTemplateFolder = miniGameState.letterBlockTemplateFolder
+
+    local template = Utils.getFirstDescendantByName(letterBlockTemplateFolder,
+                                                    templateName)
     local label = Utils.getFirstDescendantByName(template, "BlockChar")
-
-    print('label' .. ' - start');
-    print(label);
 
     local labelProps = {
         TextColor3 = label.TextColor3,
@@ -64,18 +53,12 @@ end
 --     styleLetterBlock(letterBlock, labelProps)
 -- end
 
-function setStyleToAvailable(letterBlock)
-    -- 
-    -- 
-    -- 
-    if true then return end
-    module.colorLetterText({
-        letterBlock = letterBlock,
-        color = Color3.fromRGB(78, 242, 86)
-    })
-    module.colorLetterBorder({
-        letterBlock = letterBlock,
-        color = Color3.fromRGB(78, 242, 86)
+function setStyleToAvailable(letterBlock, miniGameState)
+    module.applyStyleFromTemplate({
+        targetLetterBlock = letterBlock,
+        templateName = "LBPurpleOrange",
+        -- templateName = "LBWordLetter",
+        miniGameState = miniGameState
     })
 
 end
@@ -84,7 +67,7 @@ function setStyleToNotAvailable(letterBlock)
     -- 
     -- 
     -- 
-    if true then return end
+    -- if true then return end
 
     module.colorLetterText({
         letterBlock = letterBlock,
@@ -104,6 +87,7 @@ end
 -- figure out style from template
 function styleLetterBlocks(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
+    local letterBlockTemplateFolder = miniGameState.letterBlockTemplateFolder
     local availLetters = module.getAvailLettersDict(
                              {
             words = miniGameState.words,
@@ -112,26 +96,24 @@ function styleLetterBlocks(miniGameState)
 
     local allLetters = module.getAllLettersInRack()
 
+    -- local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
+    --                                                          "LetterBlockTemplates")
     for i, letterBlock in ipairs(allLetters) do
-        local letterBlockFolder = Utils.getFirstDescendantByName(
-                                      letterFallFolder, "LetterBlockTemplates")
 
         if CS:HasTag(letterBlock, module.tagNames.Found) then
-
             module.applyStyleFromTemplate(
                 {
                     targetLetterBlock = letterBlock,
                     templateName = "LBDarkPurple",
                     -- templateName = "LBWordLetter",
-                    templateFolder = letterBlockFolder
+                    miniGameState = miniGameState
                 })
-
         else
             local char = module.getCharFromLetterBlock(letterBlock)
             if availLetters[char] then
-                setStyleToAvailable(letterBlock)
+                setStyleToAvailable(letterBlock, miniGameState)
             else
-                setStyleToNotAvailable(letterBlock)
+                setStyleToNotAvailable(letterBlock, miniGameState)
             end
         end
     end
@@ -330,7 +312,6 @@ module.positionActiveWord = positionActiveWord
 module.getAvailLettersDict = getAvailLettersDict
 module.colorLetterBorder = colorLetterBorder
 module.styleLetterBlocks = styleLetterBlocks
-module.setStyleToFound = setStyleToFound
 module.applyStyleFromTemplate = applyStyleFromTemplate
 -- module.setStyleToWordLetter = setStyleToWordLetter
 return module
