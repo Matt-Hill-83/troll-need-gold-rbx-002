@@ -32,16 +32,25 @@ function setStyleToFound(letterBlock)
     styleLetterBlock(letterBlock, labelProps)
 end
 
-function applyStyleFromTemplate(target, template)
+function applyStyleFromTemplate(props)
+
+    local targetLetterBlock = props.targetLetterBlock
+    local templateName = props.templateName
+    local templateFolder = props.templateFolder
+
+    local template =
+        Utils.getFirstDescendantByName(templateFolder, templateName)
     local label = Utils.getFirstDescendantByName(template, "BlockChar")
+
     print('label' .. ' - start');
     print(label);
+
     local labelProps = {
         TextColor3 = label.TextColor3,
         BorderColor3 = label.BorderColor3,
         BackgroundColor3 = label.BackgroundColor3
     }
-    styleLetterBlock(target, labelProps)
+    styleLetterBlock(targetLetterBlock, labelProps)
 end
 
 -- function setStyleToWordLetter(letterBlock)
@@ -104,20 +113,19 @@ function styleLetterBlocks(miniGameState)
     local allLetters = module.getAllLettersInRack()
 
     for i, letterBlock in ipairs(allLetters) do
-        if CS:HasTag(letterBlock, module.tagNames.Found) then
-            -- setStyleToFound(letterBlock)
-            -- 
-            -- 
-            local letterBlockFolder = Utils.getFirstDescendantByName(
-                                          letterFallFolder,
-                                          "LetterBlockTemplates")
+        local letterBlockFolder = Utils.getFirstDescendantByName(
+                                      letterFallFolder, "LetterBlockTemplates")
 
-            local letterBlockTemplate = Utils.getFirstDescendantByName(
-                                            letterBlockFolder, "LBWordLetter")
-            module.applyStyleFromTemplate(letterBlock, letterBlockTemplate)
-            -- 
-            -- 
-            -- 
+        if CS:HasTag(letterBlock, module.tagNames.Found) then
+
+            module.applyStyleFromTemplate(
+                {
+                    targetLetterBlock = letterBlock,
+                    templateName = "LBDarkPurple",
+                    -- templateName = "LBWordLetter",
+                    templateFolder = letterBlockFolder
+                })
+
         else
             local char = module.getCharFromLetterBlock(letterBlock)
             if availLetters[char] then
