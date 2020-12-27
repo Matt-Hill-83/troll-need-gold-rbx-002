@@ -48,7 +48,6 @@ function handleBrick(clickedLetter, miniGameState)
             parentFolder = runTimeLetterFolder,
             anchor = false
         })
-
         miniGameState.gemsStarted = true
     end
 
@@ -61,16 +60,9 @@ function handleBrick(clickedLetter, miniGameState)
             currentLetterIndex = miniGameState.currentLetterIndex
         })
 
-    local newWordBase = Utils.getFirstDescendantByName(letterFallFolder,
-                                                       "NewWordBase")
-
     if isDesiredLetter(availLetters, clickedLetter) then
         miniGameState.currentLetterIndex = miniGameState.currentLetterIndex + 1
-
-        local positionX = -newWordBase.Size.X / 2 + clickedLetter.Size.X *
-                              #miniGameState.foundLetters
-        local positionY = -clickedLetter.Size.Y * #miniGameState.foundWords *
-                              1.1
+        CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
 
         local foundChar = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
         local foundWord = nil
@@ -83,31 +75,18 @@ function handleBrick(clickedLetter, miniGameState)
                 if foundChar == letter.char then
                     foundWord = word
                     foundLetter = letter
-                    print('word' .. ' - start');
-                    print(word);
-
                 end
             end
-
         end
-        print('foundWord' .. ' - start');
-        print(foundWord);
 
-        print('foundLetter' .. ' - start');
-        print(foundLetter);
-        local endPosition = foundLetter.instance.Position
-        -- local endPosition = newWordBase.Position +
-        --                         Vector3.new(-positionX, positionY, 0)
         Utils3.tween({
             part = clickedLetter,
-            endPosition = endPosition,
-            time = 0.3,
+            endPosition = foundLetter.instance.Position,
+            time = 0.5,
             anchor = true
         })
         clickedLetter.CanCollide = false
 
-        CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
-        -- LetterFallUtils.setStyleToFound(clickedLetter)
         table.insert(miniGameState.foundLetters,
                      LetterFallUtils.getCharFromLetterBlock(clickedLetter))
 
@@ -119,7 +98,6 @@ function handleBrick(clickedLetter, miniGameState)
             miniGameState.currentLetterIndex = 1
         end
         LetterFallUtils.styleLetterBlocks(miniGameState)
-
     end
 end
 

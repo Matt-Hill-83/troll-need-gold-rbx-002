@@ -24,7 +24,6 @@ local function onInputBegan(input)
         if raycastResult then
             local hitObject = raycastResult.Instance
             if CS:HasTag(hitObject, "LetterBlockInRack") then
-                print("--------------------------->>" .. hitObject.Name)
                 remoteEvent:FireServer(hitObject)
             end
         else
