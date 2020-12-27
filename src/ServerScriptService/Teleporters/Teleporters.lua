@@ -20,6 +20,7 @@ local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
             wait(0.5)
             Character.PrimaryPart.Position = teleportLocation
 
+            -- Tweening doesn't work well for some reason
             -- local tweenInfo = TweenInfo.new(4)
             -- local t = TS:Create(Character.PrimaryPart, tweenInfo,
             --                     {Position = teleportLocation})
