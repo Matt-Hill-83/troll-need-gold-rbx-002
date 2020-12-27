@@ -81,16 +81,13 @@ function handleBrick(clickedLetter, miniGameState)
 
         local targetLetterBlock = foundLetter.instance
 
-        Utils3.tween({
+        local tween = Utils3.tween({
             part = clickedLetter,
             endPosition = foundLetter.instance.Position,
-            time = 0.9,
+            time = 0.4,
             anchor = true
         })
-        clickedLetter.CFrame = targetLetterBlock.CFrame
-        clickedLetter.CanCollide = false
-        print('foundLetter.instance' .. ' - start');
-        print(foundLetter.instance);
+
         Utils.hideItemAndChildren({item = foundLetter.instance, hide = true})
 
         table.insert(miniGameState.foundLetters,
@@ -104,6 +101,8 @@ function handleBrick(clickedLetter, miniGameState)
             miniGameState.currentLetterIndex = 1
         end
         LetterFallUtils.styleLetterBlocks(miniGameState)
+
+        clickedLetter.CFrame = targetLetterBlock.CFrame
     end
 end
 

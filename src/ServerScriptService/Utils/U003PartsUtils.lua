@@ -22,6 +22,9 @@ function tween(props)
 
     tween:Play()
     part.Anchored = anchor
+    part.CanCollide = false
+    tween.Completed:Wait()
+    return tween
 end
 
 function module.getCenterPositionForRightOffset(props)
