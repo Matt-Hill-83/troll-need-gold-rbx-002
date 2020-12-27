@@ -53131,6 +53131,15 @@ module.totalIslandLength = islandLength + bridgeLength
 
 module.buttonLabels = {PrevPage = "Prev Page", NextPage = "Next Page"}
 
+module.soundIds = {
+    SAT = "6145993194",
+    CAT = "6145990934",
+    BAT = "6145991240",
+    HAT = "6145991587",
+    MAT = "6145991865",
+    PAT = "6145992548",
+    RAT = "6145992816"
+}
 -- 
 -- 
 -- 
@@ -58738,9 +58747,11 @@ local RS = game:GetService("ReplicatedStorage")
 
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Utils3 = require(Sss.Source.Utils.U003PartsUtils)
-local clickBlockEvent = RS:WaitForChild("ClickBlockRE")
+local Constants = require(Sss.Source.Constants.Constants)
 local InitWord = require(Sss.Source.LetterFall.InitWord)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
+
+local clickBlockEvent = RS:WaitForChild("ClickBlockRE")
 
 local module = {}
 
@@ -58773,6 +58784,9 @@ end
 
 function handleBrick(clickedLetter, miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
+    local activeWord = miniGameState.activeWord
+    local currentLetterIndex = miniGameState.currentLetterIndex
+
     local words = miniGameState.words
 
     if isDeadLetter(clickedLetter) then return end
@@ -58788,74 +58802,73 @@ function handleBrick(clickedLetter, miniGameState)
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
     if not isChild then return {} end
 
-    local availLetters = LetterFallUtils.getAvailLettersDict(
-                             {
-            words = words,
-            currentLetterIndex = miniGameState.currentLetterIndex
-        })
+    local destinationLetter = nill
+    local foundChar = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
 
-    if isDesiredLetter(availLetters, clickedLetter) then
-        miniGameState.currentLetterIndex = miniGameState.currentLetterIndex + 1
-        CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
+    if activeWord then
+        local nextLetterInWord = activeWord.letters[currentLetterIndex].char
+        local found = foundChar == nextLetterInWord
+        if found then
+            destinationLetter = activeWord.letters[currentLetterIndex].instance
+        end
+    else
+        local availLetters = LetterFallUtils.getAvailLettersDict(
+                                 {
+                words = words,
+                currentLetterIndex = currentLetterIndex
+            })
 
-        local foundChar = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
-        local foundWord = nil
-        local foundLetter = nil
-
-        for wordIndex, word in ipairs(miniGameState.renderedWords) do
-            if foundWord then break end
-            for letterIndex, letter in ipairs(word.letters) do
-                if foundWord then break end
-                if foundChar == letter.char then
-                    foundWord = word
-                    foundLetter = letter
+        if isDesiredLetter(availLetters, clickedLetter) then
+            local wordFound = false
+            for wordIndex, word in ipairs(miniGameState.renderedWords) do
+                if wordFound then break end
+                for letterIndex, letter in ipairs(word.letters) do
+                    if wordFound then break end
+                    if foundChar == letter.char then
+                        wordFound = true
+                        miniGameState.activeWord = word
+                        destinationLetter = letter.instance
+                    end
                 end
             end
         end
+    end
 
-        local targetLetterBlock = foundLetter.instance
+    if destinationLetter then
+        miniGameState.currentLetterIndex = miniGameState.currentLetterIndex + 1
+        CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
+
+        local targetLetterBlock = destinationLetter
 
         local tween = Utils3.tween({
             part = clickedLetter,
-            endPosition = foundLetter.instance.Position,
+            endPosition = targetLetterBlock.Position,
             time = 0.4,
             anchor = true
         })
 
-        Utils.hideItemAndChildren({item = foundLetter.instance, hide = true})
+        Utils.hideItemAndChildren({item = targetLetterBlock, hide = true})
 
         table.insert(miniGameState.foundLetters,
                      LetterFallUtils.getCharFromLetterBlock(clickedLetter))
 
         local currentWord = table.concat(miniGameState.foundLetters, "")
-        print('currentWord' .. ' - start');
-        print(currentWord);
         local found = table.find(words, currentWord)
 
-        local sounds = {
-            SAT = "6145993194",
-            CAT = "6145990934",
-            BAT = "6145991240",
-            HAT = "6145991587",
-            MAT = "6145991865",
-            PAT = "6145992548",
-            RAT = "6145992816"
-        }
         if (found) then
-            local soundId = sounds[currentWord]
-            if (soundId) then
+            local soundId = Constants.soundIds[currentWord]
+            if (false and soundId) then
                 local sound = Instance.new("Sound", workspace)
                 sound.SoundId = "rbxassetid://" .. soundId
                 sound.EmitterSize = 5
                 sound.Looped = false
-                -- sound.Volume = 10
-
                 if not sound.IsPlaying then sound:Play() end
             end
 
             table.insert(miniGameState.foundWords, currentWord)
             miniGameState.foundLetters = {}
             miniGameState.currentLetterIndex = 1
+            miniGameState.activeWord = nil
         end
         LetterFallUtils.styleLetterBlocks(miniGameState)
 
@@ -58881,7 +58894,7 @@ local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
-
+local Constants = require(Sss.Source.Constants.Constants)
 local module = {
     tagNames = {
         WordLetter = "WordLetter",

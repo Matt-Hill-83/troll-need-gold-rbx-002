@@ -60,9 +60,6 @@ function handleBrick(clickedLetter, miniGameState)
     if not isChild then return {} end
 
     local destinationLetter = nill
-    local availWords = nill
-    -- local foundLetter = nil
-
     local foundChar = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
 
     if activeWord then
@@ -72,22 +69,14 @@ function handleBrick(clickedLetter, miniGameState)
             destinationLetter = activeWord.letters[currentLetterIndex].instance
         end
     else
-        availWords = words
-
         local availLetters = LetterFallUtils.getAvailLettersDict(
                                  {
-                words = availWords,
+                words = words,
                 currentLetterIndex = currentLetterIndex
             })
-        print('availLetters' .. ' - start');
-        print(availLetters);
 
         if isDesiredLetter(availLetters, clickedLetter) then
-            -- miniGameState.currentLetterIndex =
-            --     miniGameState.currentLetterIndex + 1
-            -- CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
             local wordFound = false
-
             for wordIndex, word in ipairs(miniGameState.renderedWords) do
                 if wordFound then break end
                 for letterIndex, letter in ipairs(word.letters) do
@@ -96,7 +85,6 @@ function handleBrick(clickedLetter, miniGameState)
                         wordFound = true
                         miniGameState.activeWord = word
                         destinationLetter = letter.instance
-                        -- foundLetter = letter
                     end
                 end
             end
@@ -108,9 +96,6 @@ function handleBrick(clickedLetter, miniGameState)
         CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
 
         local targetLetterBlock = destinationLetter
-        print('targetLetterBlock' .. ' - start');
-        print(targetLetterBlock);
-        -- local targetLetterBlock = foundLetter.instance
 
         local tween = Utils3.tween({
             part = clickedLetter,
