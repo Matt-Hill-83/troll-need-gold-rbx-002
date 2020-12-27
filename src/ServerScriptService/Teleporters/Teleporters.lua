@@ -1,5 +1,6 @@
 local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local TS = game:GetService("TweenService")
 
 local module = {}
 
@@ -13,20 +14,21 @@ local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
             local questTeleporterReceiver =
                 Utils.getFirstDescendantByName(remoteTP,
                                                "QuestTeleporterReceiver")
-            local teleportLocation = questTeleporterReceiver.CFrame +
-                                         Vector3.new(0, 10, 0)
+            local teleportLocation = questTeleporterReceiver.Position +
+                                         Vector3.new(0, 20, 0)
 
-            local ts = game:GetService("TweenService")
-            wait(2)
-            local tweenInfo = TweenInfo.new(2)
-            local t = ts:Create(Character.PrimaryPart, tweenInfo,
-                                {CFrame = teleportLocation})
-            Character.PrimaryPart.Anchored = true
-            -- Anchor the player's rootpart so physics doesn't mess things up.
-            t:Play()
-            t.Completed:Connect(function()
-                Character.PrimaryPart.Anchored = false
-            end)
+            wait(0.5)
+            Character.PrimaryPart.Position = teleportLocation
+
+            -- local tweenInfo = TweenInfo.new(4)
+            -- local t = TS:Create(Character.PrimaryPart, tweenInfo,
+            --                     {Position = teleportLocation})
+            -- Character.PrimaryPart.Anchored = true
+            -- -- Anchor the player's rootpart so physics doesn't mess things up.
+            -- t:Play()
+            -- t.Completed:Connect(function()
+            --     Character.PrimaryPart.Anchored = false
+            -- end)
 
             local teleportingValue = Character.currentlyTeleporting
             teleportingValue.Value = true

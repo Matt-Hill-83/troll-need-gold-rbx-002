@@ -15,35 +15,47 @@ local module = {}
 
 function configCouchTrigger(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
-    local seat = Utils.getFirstDescendantByName(letterFallFolder, "LFCouchSeat")
 
-    seat:GetPropertyChangedSignal("Occupant"):Connect(
-        function(miniGameState)
-            local cameraPath1 = Utils.getFirstDescendantByName(letterFallFolder,
-                                                               "ScreenCameraPath1")
-            local cameraPath2 = Utils.getFirstDescendantByName(letterFallFolder,
-                                                               "ScreenCameraPath2")
+    local seats = Utils.getDescendantsByName(letterFallFolder, "LFCouchSeat")
 
-            local humanoid = seat.Occupant
-            if humanoid then
-                local player = Utils.getPlayerFromHumanoid(humanoid)
+    for i, seat in ipairs(seats) do
+        local addSeatProps = {
+            seat = seat,
+            clonedScene = clonedScene,
+            sceneConfig = sceneConfig,
+            addCharactersToScene = addCharactersToScene,
+            sceneFolder = sceneFolder
+        }
 
-                if player then
-                    currentPlayer = player
-                    letterFallFreezeCameraRE:FireClient(player, cameraPath1,
-                                                        cameraPath2, true)
-                    return
+        seat:GetPropertyChangedSignal("Occupant"):Connect(
+            function(miniGameState)
+                local cameraPath1 = Utils.getFirstDescendantByName(
+                                        letterFallFolder, "ScreenCameraPath1")
+                local cameraPath2 = Utils.getFirstDescendantByName(
+                                        letterFallFolder, "ScreenCameraPath2")
+
+                local humanoid = seat.Occupant
+                if humanoid then
+                    local player = Utils.getPlayerFromHumanoid(humanoid)
+
+                    if player then
+                        currentPlayer = player
+                        letterFallFreezeCameraRE:FireClient(player, cameraPath1,
+                                                            cameraPath2, true)
+                        return
+                    end
                 end
-            end
 
-            -- player leaves seat
-            if currentPlayer then
-                letterFallFreezeCameraRE:FireClient(currentPlayer, cameraPath1,
-                                                    cameraPath2, false)
-                currentPlayer = nil
-            end
-        end)
+                -- player leaves seat
+                if currentPlayer then
+                    letterFallFreezeCameraRE:FireClient(currentPlayer,
+                                                        cameraPath1,
+                                                        cameraPath2, false)
+                    currentPlayer = nil
+                end
+            end)
 
+    end
 end
 
 function initGameToggle(miniGameState)

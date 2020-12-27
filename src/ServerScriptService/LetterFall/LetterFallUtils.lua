@@ -28,7 +28,6 @@ module.letterBlockStyleNames = {
 module.letterBlockStyleDefs = {
     rack = {
         Available = module.letterBlockStyleNames.LBPurpleLight2,
-        -- Available = module.letterBlockStyleNames.LBPinkPurple,
         NotAvailable = module.letterBlockStyleNames.LBPurpleLight,
         Found = module.letterBlockStyleNames.LBPurpleOrange,
         DeadLetter = module.letterBlockStyleNames.LBDeadLetter
@@ -56,29 +55,15 @@ function applyStyleFromTemplate(props)
     local template = Utils.getFirstDescendantByName(letterBlockTemplateFolder,
                                                     templateName)
     local label = Utils.getFirstDescendantByName(template, "BlockChar")
-    -- local sgui = Utils.getFirstDescendantByName(template, "SurfaceGui")
 
     local labelProps = {
         TextColor3 = label.TextColor3,
         BorderColor3 = label.BorderColor3,
         BackgroundColor3 = label.BackgroundColor3
     }
-    -- local surfaceLight = Instance.new("SurfaceLight", sgui)
-    -- surfaceLight.Name = "xxxx"
 
     styleLetterBlock(targetLetterBlock, labelProps)
 end
-
--- function setStyleToWordLetter(letterBlock)
---     local labelProps = {
---         TextColor3 = Color3.new(255, 0, 191),
---         BorderColor3 = Color3.new(255, 0, 191),
---         BackgroundColor3 = Color3.fromRGB(242, 193, 165)
---     }
-
---     letterBlock.Transparency = 1
---     styleLetterBlock(letterBlock, labelProps)
--- end
 
 function setStyleToAvailable(letterBlock, miniGameState)
     module.applyStyleFromTemplate({
@@ -133,20 +118,6 @@ function styleLetterBlocks(miniGameState)
             end
         end
     end
-end
-
-function positionActiveWord(props)
-    local miniGameState = props.miniGameState
-    local letterFallFolder = miniGameState.letterFallFolder
-
-    local activeWordPositioner = Utils.getFirstDescendantByName(
-                                     letterFallFolder, "ActiveWordPositioner")
-
-    local newActiveWord =
-        miniGameState.renderedWords[miniGameState.activeWordIndex + 0]
-
-    local part = newActiveWord.word.PrimaryPart
-    part.CFrame = activeWordPositioner.CFrame
 end
 
 function colorLetterText(props)
@@ -320,10 +291,8 @@ module.getAvailLetters = getAvailLetters
 module.getCharFromLetterBlock = getCharFromLetterBlock
 module.isDesiredLetter = isDesiredLetter
 module.isWordComplete = isWordComplete
-module.positionActiveWord = positionActiveWord
 module.getAvailLettersDict = getAvailLettersDict
 module.colorLetterBorder = colorLetterBorder
 module.styleLetterBlocks = styleLetterBlocks
 module.applyStyleFromTemplate = applyStyleFromTemplate
--- module.setStyleToWordLetter = setStyleToWordLetter
 return module
