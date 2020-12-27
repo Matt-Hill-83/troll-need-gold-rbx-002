@@ -90,6 +90,13 @@ function initLetterRack(miniGameState)
             -- Utils.removeFirstMatchFromArray(lettersFromWords, char)
             local newLetter = letterBlockTemplate:Clone()
 
+            -- 
+            -- 
+            LetterFallUtils.setStyleToFound(newLetter)
+            -- 
+            -- 
+
+            LetterFallUtils.setStyleToFound(newLetter)
             newLetter.Name = "newLetter-" .. char
 
             local isDeadLetter = isDeadLetter(

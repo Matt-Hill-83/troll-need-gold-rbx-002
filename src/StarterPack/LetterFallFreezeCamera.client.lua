@@ -13,8 +13,10 @@ local function onClientEvent(cameraPath1, cameraPath2, freeze)
         camera.CameraType = Enum.CameraType.Scriptable
         camera.CFrame = CFrame.new(cameraPath1.Position + cameraOffset,
                                    cameraPath2.Position)
+        camera.FieldOfView = 40
     else
         camera.CameraType = Enum.CameraType.Custom
+        camera.FieldOfView = 70
     end
 end
 

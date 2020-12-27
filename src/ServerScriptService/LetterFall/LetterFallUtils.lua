@@ -32,6 +32,18 @@ function setStyleToFound(letterBlock)
     styleLetterBlock(letterBlock, labelProps)
 end
 
+function applyStyleFromTemplate(target, template)
+    local label = Utils.getFirstDescendantByName(template, "BlockChar")
+    print('label' .. ' - start');
+    print(label);
+    local labelProps = {
+        TextColor3 = label.TextColor3,
+        BorderColor3 = label.BorderColor3,
+        BackgroundColor3 = label.BackgroundColor3
+    }
+    styleLetterBlock(target, labelProps)
+end
+
 -- function setStyleToWordLetter(letterBlock)
 --     local labelProps = {
 --         TextColor3 = Color3.new(255, 0, 191),
@@ -44,6 +56,10 @@ end
 -- end
 
 function setStyleToAvailable(letterBlock)
+    -- 
+    -- 
+    -- 
+    if true then return end
     module.colorLetterText({
         letterBlock = letterBlock,
         color = Color3.fromRGB(78, 242, 86)
@@ -56,19 +72,29 @@ function setStyleToAvailable(letterBlock)
 end
 
 function setStyleToNotAvailable(letterBlock)
+    -- 
+    -- 
+    -- 
+    if true then return end
+
     module.colorLetterText({
         letterBlock = letterBlock,
-        -- color = Color3.fromRGB(148, 9, 9)
-        color = Color3.fromRGB(113, 95, 95)
+        color = Color3.fromRGB(148, 9, 9)
+        -- color = Color3.fromRGB(113, 95, 95)
     })
     module.colorLetterBorder({
         letterBlock = letterBlock,
-        -- color = Color3.fromRGB(0, 0, 255)
-        color = Color3.fromRGB(167, 139, 139)
+        color = Color3.fromRGB(0, 0, 255)
+        -- color = Color3.fromRGB(167, 139, 139)
     })
 end
 
+-- figure out style from template
+-- figure out style from template
+-- figure out style from template
+-- figure out style from template
 function styleLetterBlocks(miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
     local availLetters = module.getAvailLettersDict(
                              {
             words = miniGameState.words,
@@ -79,7 +105,19 @@ function styleLetterBlocks(miniGameState)
 
     for i, letterBlock in ipairs(allLetters) do
         if CS:HasTag(letterBlock, module.tagNames.Found) then
-            setStyleToFound(letterBlock)
+            -- setStyleToFound(letterBlock)
+            -- 
+            -- 
+            local letterBlockFolder = Utils.getFirstDescendantByName(
+                                          letterFallFolder,
+                                          "LetterBlockTemplates")
+
+            local letterBlockTemplate = Utils.getFirstDescendantByName(
+                                            letterBlockFolder, "LBWordLetter")
+            module.applyStyleFromTemplate(letterBlock, letterBlockTemplate)
+            -- 
+            -- 
+            -- 
         else
             local char = module.getCharFromLetterBlock(letterBlock)
             if availLetters[char] then
@@ -110,9 +148,7 @@ function colorLetterText(props)
     local letterBlock = props.letterBlock
 
     local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
-    for i, label in ipairs(textLabels) do
-        label.TextColor3 = color or Color3.new(255, 0, 191)
-    end
+    for i, label in ipairs(textLabels) do label.TextColor3 = color end
 end
 
 function colorLetterBorder(props)
@@ -287,5 +323,6 @@ module.getAvailLettersDict = getAvailLettersDict
 module.colorLetterBorder = colorLetterBorder
 module.styleLetterBlocks = styleLetterBlocks
 module.setStyleToFound = setStyleToFound
+module.applyStyleFromTemplate = applyStyleFromTemplate
 -- module.setStyleToWordLetter = setStyleToWordLetter
 return module
