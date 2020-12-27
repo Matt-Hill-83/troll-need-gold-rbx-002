@@ -29,7 +29,7 @@ function initGameToggle(miniGameState)
         end
     end
     startGameTrigger.Touched:Connect(onPartTouched)
-    LetterFallUtils.createBalls(miniGameState)
+    -- LetterFallUtils.createBalls(miniGameState)
 end
 
 module.initGameToggle = initGameToggle

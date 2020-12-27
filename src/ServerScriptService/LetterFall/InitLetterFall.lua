@@ -10,15 +10,12 @@ local letterFallFreezeCameraRE = RS:WaitForChild("LetterFallFreezeCameraRE")
 
 local module = {}
 
-function initLetterFall(miniGameState)
-    LetterFall.initGameToggle(miniGameState)
-    -- LetterFallUtils.positionActiveWord({miniGameState = miniGameState})
-
+function configCouchTrigger(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local seat = Utils.getFirstDescendantByName(letterFallFolder, "LFCouchSeat")
 
     seat:GetPropertyChangedSignal("Occupant"):Connect(
-        function()
+        function(miniGameState)
             local cameraPath1 = Utils.getFirstDescendantByName(letterFallFolder,
                                                                "ScreenCameraPath1")
             local cameraPath2 = Utils.getFirstDescendantByName(letterFallFolder,
@@ -44,7 +41,13 @@ function initLetterFall(miniGameState)
             end
         end)
 
+end
+
+function initLetterFall(miniGameState)
+    LetterFall.initGameToggle(miniGameState)
+    configCouchTrigger(miniGameState)
     LetterFallUtils.styleLetterBlocks(miniGameState)
+    LetterFallUtils.createBalls(miniGameState)
 end
 
 module.initLetterFall = initLetterFall
