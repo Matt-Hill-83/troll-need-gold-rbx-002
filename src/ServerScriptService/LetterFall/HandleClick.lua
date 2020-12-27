@@ -41,6 +41,9 @@ end
 
 function handleBrick(clickedLetter, miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
+    local activeWord = miniGameState.activeWord
+    local currentLetterIndex = miniGameState.currentLetterIndex
+
     local words = miniGameState.words
 
     if isDeadLetter(clickedLetter) then return end
@@ -56,41 +59,67 @@ function handleBrick(clickedLetter, miniGameState)
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
     if not isChild then return {} end
 
-    local availLetters = LetterFallUtils.getAvailLettersDict(
-                             {
-            words = words,
-            currentLetterIndex = miniGameState.currentLetterIndex
-        })
+    local destinationLetter = nill
+    local availWords = nill
+    -- local foundLetter = nil
 
-    if isDesiredLetter(availLetters, clickedLetter) then
-        miniGameState.currentLetterIndex = miniGameState.currentLetterIndex + 1
-        CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
+    local foundChar = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
 
-        local foundChar = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
-        local foundWord = nil
-        local foundLetter = nil
+    if activeWord then
+        local nextLetterInWord = activeWord.letters[currentLetterIndex].char
+        local found = foundChar == nextLetterInWord
+        if found then
+            destinationLetter = activeWord.letters[currentLetterIndex].instance
+        end
+    else
+        availWords = words
 
-        for wordIndex, word in ipairs(miniGameState.renderedWords) do
-            if foundWord then break end
-            for letterIndex, letter in ipairs(word.letters) do
-                if foundWord then break end
-                if foundChar == letter.char then
-                    foundWord = word
-                    foundLetter = letter
+        local availLetters = LetterFallUtils.getAvailLettersDict(
+                                 {
+                words = availWords,
+                currentLetterIndex = currentLetterIndex
+            })
+        print('availLetters' .. ' - start');
+        print(availLetters);
+
+        if isDesiredLetter(availLetters, clickedLetter) then
+            -- miniGameState.currentLetterIndex =
+            --     miniGameState.currentLetterIndex + 1
+            -- CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
+            local wordFound = false
+
+            for wordIndex, word in ipairs(miniGameState.renderedWords) do
+                if wordFound then break end
+                for letterIndex, letter in ipairs(word.letters) do
+                    if wordFound then break end
+                    if foundChar == letter.char then
+                        wordFound = true
+                        miniGameState.activeWord = word
+                        destinationLetter = letter.instance
+                        -- foundLetter = letter
+                    end
                 end
             end
         end
+    end
 
-        local targetLetterBlock = foundLetter.instance
+    if destinationLetter then
+        miniGameState.currentLetterIndex = miniGameState.currentLetterIndex + 1
+        CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
+
+        local targetLetterBlock = destinationLetter
+        print('targetLetterBlock' .. ' - start');
+        print(targetLetterBlock);
+        -- local targetLetterBlock = foundLetter.instance
 
         local tween = Utils3.tween({
             part = clickedLetter,
-            endPosition = foundLetter.instance.Position,
+            endPosition = targetLetterBlock.Position,
             time = 0.4,
             anchor = true
         })
 
-        Utils.hideItemAndChildren({item = foundLetter.instance, hide = true})
+        Utils.hideItemAndChildren({item = targetLetterBlock, hide = true})
 
         table.insert(miniGameState.foundLetters,
                      LetterFallUtils.getCharFromLetterBlock(clickedLetter))
@@ -111,6 +140,7 @@ function handleBrick(clickedLetter, miniGameState)
             table.insert(miniGameState.foundWords, currentWord)
             miniGameState.foundLetters = {}
             miniGameState.currentLetterIndex = 1
+            miniGameState.activeWord = nil
         end
         LetterFallUtils.styleLetterBlocks(miniGameState)
 
