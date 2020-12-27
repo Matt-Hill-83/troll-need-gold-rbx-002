@@ -79,7 +79,11 @@ function module.configLocalTeleporter(props)
     local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
     local localTeleporter = teleporterTemplate:Clone()
     localTeleporter.Parent = parent
-    localTeleporter.PrimaryPart.CFrame = localTPPositioner.CFrame
+
+    local offsetY = (localTeleporter.PrimaryPart.Size.Y +
+                        localTPPositioner.Size.Y) / 2
+    localTeleporter.PrimaryPart.CFrame =
+        localTPPositioner.CFrame * CFrame.new(Vector3.new(0, offsetY, 0))
 
     local labels =
         Utils.getDescendantsByName(localTeleporter, "TeleporterLabel")
@@ -122,7 +126,7 @@ function module.addTeleporters(props)
     end
 
     localTeleporter.PrimaryPart.Anchored = true
-    localTPPositioner:Destroy()
+    -- localTPPositioner:Destroy()
 end
 
 return module

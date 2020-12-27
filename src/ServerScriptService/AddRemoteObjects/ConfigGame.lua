@@ -19,9 +19,6 @@ function configPlayers()
 end
 
 function setVisibility()
-    -- local testLabBase = Utils.getFirstDescendantByName(workspace, "TestLabBase")
-    -- testLabBase:Destroy()
-
     local taggedPartsDestroy = CS:GetTagged("Destroy")
     for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
 
