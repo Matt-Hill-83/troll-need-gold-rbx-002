@@ -48,7 +48,7 @@ function module.configSkyboxTeleporter(props)
     local skyBoxTeleporter = teleporterTemplate:Clone()
     skyBoxTeleporter.Parent = questFolder
 
-    local teleporterSpacing = 10
+    local teleporterSpacing = 15
     local labels2 = Utils.getDescendantsByName(skyBoxTeleporter,
                                                "TeleporterLabel")
     for i, label in ipairs(labels2) do label.Text = questTitle end
@@ -58,8 +58,10 @@ function module.configSkyboxTeleporter(props)
                                                                 "SkyBoxTeleporterPositioner")
     skyBoxTeleporter.PrimaryPart.CFrame =
         teleporterPositioner.CFrame *
-            CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0)) *
-            CFrame.Angles(0, math.rad(0), 0)
+            CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0))
+    -- teleporterPositioner.CFrame *
+    --     CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0)) *
+    --     CFrame.Angles(0, math.rad(0), 0)
 
     skyBoxTeleporter.PrimaryPart.Anchored = true
     skyBoxTeleporter.Name = "teleporter" .. "-sky-Q- " .. questIndex
