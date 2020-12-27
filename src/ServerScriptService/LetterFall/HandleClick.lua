@@ -98,23 +98,13 @@ function handleBrick(clickedLetter, miniGameState)
         local currentWord = table.concat(miniGameState.foundLetters, "")
         local found = table.find(words, currentWord)
 
-        -- local soundIds = {
-        --     SAT = "6145993194",
-        --     CAT = "6145990934",
-        --     BAT = "6145991240",
-        --     HAT = "6145991587",
-        --     MAT = "6145991865",
-        --     PAT = "6145992548",
-        --     RAT = "6145992816"
-        -- }
         if (found) then
             local soundId = Constants.soundIds[currentWord]
-            if (soundId) then
+            if (false and soundId) then
                 local sound = Instance.new("Sound", workspace)
                 sound.SoundId = "rbxassetid://" .. soundId
                 sound.EmitterSize = 5
                 sound.Looped = false
-
                 if not sound.IsPlaying then sound:Play() end
             end
 
