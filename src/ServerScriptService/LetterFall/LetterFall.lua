@@ -51,11 +51,6 @@ function initGameToggle(miniGameState)
     local startGameTrigger = Utils.getFirstDescendantByName(letterFallFolder,
                                                             "StartGameTrigger")
 
-    if not miniGameState.initCompleted then
-        -- InitLetterRack.initLetterRack(miniGameState)
-        -- InitWord.initWord(miniGameState)
-    end
-
     function onPartTouched(otherPart)
         if not miniGameState.initCompleted then
             miniGameState.initCompleted = true
