@@ -1,6 +1,6 @@
 local CS = game:GetService("CollectionService")
 local Sss = game:GetService("ServerScriptService")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RS = game:GetService("ReplicatedStorage")
 
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local HandleClick = require(Sss.Source.LetterFall.HandleClick)
@@ -8,7 +8,9 @@ local InitLetterRack = require(Sss.Source.LetterFall.InitLetterRack)
 local InitWord = require(Sss.Source.LetterFall.InitWord)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 
-local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
+local remoteEvent = RS:WaitForChild("ClickBlockRE")
+local letterFallFreezeCameraRE = RS:WaitForChild("LetterFallFreezeCameraRE")
+
 local module = {}
 
 function configCouchTrigger(miniGameState)
