@@ -4,9 +4,11 @@ local RS = game:GetService("ReplicatedStorage")
 
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Utils3 = require(Sss.Source.Utils.U003PartsUtils)
-local clickBlockEvent = RS:WaitForChild("ClickBlockRE")
+local Constants = require(Sss.Source.Constants.Constants)
 local InitWord = require(Sss.Source.LetterFall.InitWord)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
+
+local clickBlockEvent = RS:WaitForChild("ClickBlockRE")
 
 local module = {}
 
@@ -94,27 +96,24 @@ function handleBrick(clickedLetter, miniGameState)
                      LetterFallUtils.getCharFromLetterBlock(clickedLetter))
 
         local currentWord = table.concat(miniGameState.foundLetters, "")
-        print('currentWord' .. ' - start');
-        print(currentWord);
         local found = table.find(words, currentWord)
 
-        local sounds = {
-            SAT = "6145993194",
-            CAT = "6145990934",
-            BAT = "6145991240",
-            HAT = "6145991587",
-            MAT = "6145991865",
-            PAT = "6145992548",
-            RAT = "6145992816"
-        }
+        -- local soundIds = {
+        --     SAT = "6145993194",
+        --     CAT = "6145990934",
+        --     BAT = "6145991240",
+        --     HAT = "6145991587",
+        --     MAT = "6145991865",
+        --     PAT = "6145992548",
+        --     RAT = "6145992816"
+        -- }
         if (found) then
-            local soundId = sounds[currentWord]
+            local soundId = Constants.soundIds[currentWord]
             if (soundId) then
                 local sound = Instance.new("Sound", workspace)
                 sound.SoundId = "rbxassetid://" .. soundId
                 sound.EmitterSize = 5
                 sound.Looped = false
-                -- sound.Volume = 10
 
                 if not sound.IsPlaying then sound:Play() end
             end

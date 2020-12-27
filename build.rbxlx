@@ -49049,6 +49049,25 @@ remoteCode.addRemoteObjects()
 				</Item>
 			</Item>
 		</Item>
+		<Item class="Sound" referent="RBX131b602b446849cfb8bc2c63b5eeb81d">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<float name="EmitterSize">10</float>
+				<bool name="Looped">false</bool>
+				<string name="Name">Sound</string>
+				<bool name="PlayOnRemove">false</bool>
+				<float name="PlaybackSpeed">1</float>
+				<bool name="Playing">false</bool>
+				<token name="RollOffMode">0</token>
+				<Ref name="SoundGroup">null</Ref>
+				<Content name="SoundId"><null></null></Content>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<double name="TimePosition">0</double>
+				<float name="Volume">0.5</float>
+				<float name="xmlRead_MaxDistance_3">10000</float>
+			</Properties>
+		</Item>
 	</Item>
 	<Item class="SoundService" referent="RBX7845308c7ca3451eaa9eca1a685d0279">
 		<Properties>
@@ -58809,8 +58828,31 @@ function handleBrick(clickedLetter, miniGameState)
                      LetterFallUtils.getCharFromLetterBlock(clickedLetter))
 
         local currentWord = table.concat(miniGameState.foundLetters, "")
+        print('currentWord' .. ' - start');
+        print(currentWord);
         local found = table.find(words, currentWord)
+
+        local sounds = {
+            SAT = "6145993194",
+            CAT = "6145990934",
+            BAT = "6145991240",
+            HAT = "6145991587",
+            MAT = "6145991865",
+            PAT = "6145992548",
+            RAT = "6145992816"
+        }
         if (found) then
+            local soundId = sounds[currentWord]
+            if (soundId) then
+                local sound = Instance.new("Sound", workspace)
+                sound.SoundId = "rbxassetid://" .. soundId
+                sound.EmitterSize = 5
+                sound.Looped = false
+                -- sound.Volume = 10
+
+                if not sound.IsPlaying then sound:Play() end
+            end
+
             table.insert(miniGameState.foundWords, currentWord)
             miniGameState.foundLetters = {}
             miniGameState.currentLetterIndex = 1
