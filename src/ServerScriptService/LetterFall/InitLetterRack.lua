@@ -43,8 +43,8 @@ function initLetterRack(miniGameState)
 
     local letterRackFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                             "LetterRackFolder")
-    local columnBaseTemplate = Utils.getFirstDescendantByName(letterRackFolder,
-                                                              "ColumnBase")
+    -- local columnBaseTemplate = Utils.getFirstDescendantByName(letterRackFolder,
+    --                                                           "ColumnBase")
 
     local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                              "LetterBlockTemplates")

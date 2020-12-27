@@ -29,8 +29,15 @@ function initWord(miniGameState)
         local newWordBoxFolder = wordBoxFolder
         local wordBox = Utils.getFirstDescendantByName(newWordBoxFolder,
                                                        "WordBox")
+
+        local letterBlockFolder = Utils.getFirstDescendantByName(
+                                      letterFallFolder, "LetterBlockTemplates")
+
         local letterBlockTemplate = Utils.getFirstDescendantByName(
-                                        letterFallFolder, "LetterBlockTemplate")
+                                        letterBlockFolder, "LBWordLetter")
+
+        -- local letterBlockTemplate = Utils.getFirstDescendantByName(
+        --                                 letterFallFolder, "LetterBlockTemplate")
 
         local newWord = wordBox:Clone()
         local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
@@ -53,7 +60,6 @@ function initWord(miniGameState)
         wordBench.Anchored = true
 
         letterPositioner.Name = letterPositioner.Name .. wordNameStub
-        letterBlockTemplate.Transparency = 1
 
         local lettersInWord = {}
         for letterIndex = 1, #word do
@@ -71,8 +77,8 @@ function initWord(miniGameState)
             CS:AddTag(newLetter, LetterFallUtils.tagNames.WordLetter)
             LetterFallUtils.applyLetterText(
                 {letterBlock = newLetter, char = letter})
-            LetterFallUtils.colorLetterText(
-                {letterBlock = newLetter, color = Color3.new(255, 0, 191)})
+            -- LetterFallUtils.colorLetterText(
+            --     {letterBlock = newLetter, color = Color3.new(255, 0, 191)})
 
             newLetter.CFrame = letterPositioner.CFrame *
                                    CFrame.new(Vector3.new(0, 0, letterPositionZ))

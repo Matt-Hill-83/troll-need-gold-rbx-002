@@ -22,29 +22,6 @@ function addRemoteObjects()
 
     local myStuff = workspace:FindFirstChild("MyStuff")
     local questsOrigin = Utils.getFirstDescendantByName(myStuff, "QuestsOrigin")
-    local letterTemplate = CS:GetTagged("TG-LetterTemplate")[1]
-
-    local letters = {'C'}
-
-    for i, char in ipairs(letters) do
-        local newLetter = letterTemplate:Clone()
-        newLetter.Parent = letterTemplate.Parent
-        newLetter.Name = "letter-" .. char
-
-        local letterHandle = Utils.getFirstDescendantByName(newLetter, "Handle")
-
-        letterHandle.CFrame = letterHandle.CFrame +
-                                  Vector3.new(0, letterHandle.Size.Y * 1.5, 0)
-
-        local textLabels = Utils.getDescendantsByName(letterHandle, "BlockChar")
-        for i, label in ipairs(textLabels) do label.Text = char end
-
-        newLetter.Equipped:Connect(function()
-            newLetter.Parent = workspace
-        end)
-    end
-
-    letterTemplate:Destroy()
 
     local runtimeQuestsFolder = Utils.getOrCreateFolder(
                                     {name = "RunTimeQuests", parent = myStuff})
@@ -55,8 +32,6 @@ function addRemoteObjects()
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
         local gridSize = questConfig.gridSize
-        -- local startSceneCoords = questConfig.startSceneCoords
-        -- local endSceneCoords = questConfig.ebdSceneCoords
 
         local desiredPadding = 12
         local wallWidth = 1

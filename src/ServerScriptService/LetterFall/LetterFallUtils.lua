@@ -32,16 +32,16 @@ function setStyleToFound(letterBlock)
     styleLetterBlock(letterBlock, labelProps)
 end
 
-function setStyleToWordLetter(letterBlock)
-    local labelProps = {
-        TextColor3 = Color3.new(255, 0, 191),
-        BorderColor3 = Color3.new(255, 0, 191),
-        BackgroundColor3 = Color3.fromRGB(242, 193, 165)
-    }
+-- function setStyleToWordLetter(letterBlock)
+--     local labelProps = {
+--         TextColor3 = Color3.new(255, 0, 191),
+--         BorderColor3 = Color3.new(255, 0, 191),
+--         BackgroundColor3 = Color3.fromRGB(242, 193, 165)
+--     }
 
-    letterBlock.Transparency = 1
-    styleLetterBlock(letterBlock, labelProps)
-end
+--     letterBlock.Transparency = 1
+--     styleLetterBlock(letterBlock, labelProps)
+-- end
 
 function setStyleToAvailable(letterBlock)
     module.colorLetterText({
@@ -58,10 +58,12 @@ end
 function setStyleToNotAvailable(letterBlock)
     module.colorLetterText({
         letterBlock = letterBlock,
+        -- color = Color3.fromRGB(148, 9, 9)
         color = Color3.fromRGB(113, 95, 95)
     })
     module.colorLetterBorder({
         letterBlock = letterBlock,
+        -- color = Color3.fromRGB(0, 0, 255)
         color = Color3.fromRGB(167, 139, 139)
     })
 end
@@ -285,5 +287,5 @@ module.getAvailLettersDict = getAvailLettersDict
 module.colorLetterBorder = colorLetterBorder
 module.styleLetterBlocks = styleLetterBlocks
 module.setStyleToFound = setStyleToFound
-module.setStyleToWordLetter = setStyleToWordLetter
+-- module.setStyleToWordLetter = setStyleToWordLetter
 return module
