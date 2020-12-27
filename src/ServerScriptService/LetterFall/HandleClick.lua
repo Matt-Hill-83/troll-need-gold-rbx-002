@@ -59,14 +59,14 @@ function handleBrick(clickedLetter, miniGameState)
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
     if not isChild then return {} end
 
-    local destinationLetter = nill
+    local targetLetterBlock = nill
     local foundChar = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
 
     if activeWord then
         local nextLetterInWord = activeWord.letters[currentLetterIndex].char
         local found = foundChar == nextLetterInWord
         if found then
-            destinationLetter = activeWord.letters[currentLetterIndex].instance
+            targetLetterBlock = activeWord.letters[currentLetterIndex].instance
         end
     else
         local availLetters = LetterFallUtils.getAvailLettersDict(
@@ -84,18 +84,16 @@ function handleBrick(clickedLetter, miniGameState)
                     if foundChar == letter.char then
                         wordFound = true
                         miniGameState.activeWord = word
-                        destinationLetter = letter.instance
+                        targetLetterBlock = letter.instance
                     end
                 end
             end
         end
     end
 
-    if destinationLetter then
+    if targetLetterBlock then
         miniGameState.currentLetterIndex = miniGameState.currentLetterIndex + 1
         CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
-
-        local targetLetterBlock = destinationLetter
 
         local tween = Utils3.tween({
             part = clickedLetter,
