@@ -16,6 +16,29 @@ local module = {
     }
 }
 
+module.letterBlockStyleNames = {
+    LBPinkPurple = "LBPinkPurple",
+    LBPurpleOrange = "LBPurpleOrange",
+    LBPurpleLight = "LBPurpleLight",
+    LBPurpleLight2 = "LBPurpleLight2",
+    LBDarkPurple = "LBDarkPurple",
+    LBDeadLetter = "LBDeadLetter"
+}
+
+module.letterBlockStyleDefs = {
+    rack = {
+        Available = module.letterBlockStyleNames.LBPurpleLight2,
+        -- Available = module.letterBlockStyleNames.LBPinkPurple,
+        NotAvailable = module.letterBlockStyleNames.LBPurpleLight,
+        Found = module.letterBlockStyleNames.LBPurpleOrange,
+        DeadLetter = module.letterBlockStyleNames.LBDeadLetter
+    },
+    word = {
+        Placeholder = module.letterBlockStyleNames.LBPurpleLight,
+        Found = module.letterBlockStyleNames.LBPurpleOrange
+    }
+}
+
 function styleLetterBlock(letterBlock, labelProps)
     local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
     for i, label in ipairs(textLabels) do
@@ -33,12 +56,16 @@ function applyStyleFromTemplate(props)
     local template = Utils.getFirstDescendantByName(letterBlockTemplateFolder,
                                                     templateName)
     local label = Utils.getFirstDescendantByName(template, "BlockChar")
+    -- local sgui = Utils.getFirstDescendantByName(template, "SurfaceGui")
 
     local labelProps = {
         TextColor3 = label.TextColor3,
         BorderColor3 = label.BorderColor3,
         BackgroundColor3 = label.BackgroundColor3
     }
+    -- local surfaceLight = Instance.new("SurfaceLight", sgui)
+    -- surfaceLight.Name = "xxxx"
+
     styleLetterBlock(targetLetterBlock, labelProps)
 end
 
@@ -56,35 +83,27 @@ end
 function setStyleToAvailable(letterBlock, miniGameState)
     module.applyStyleFromTemplate({
         targetLetterBlock = letterBlock,
-        templateName = "LBPurpleOrange",
-        -- templateName = "LBWordLetter",
+        templateName = module.letterBlockStyleDefs.rack.Available,
         miniGameState = miniGameState
     })
-
 end
 
-function setStyleToNotAvailable(letterBlock)
-    -- 
-    -- 
-    -- 
-    -- if true then return end
-
-    module.colorLetterText({
-        letterBlock = letterBlock,
-        color = Color3.fromRGB(148, 9, 9)
-        -- color = Color3.fromRGB(113, 95, 95)
-    })
-    module.colorLetterBorder({
-        letterBlock = letterBlock,
-        color = Color3.fromRGB(0, 0, 255)
-        -- color = Color3.fromRGB(167, 139, 139)
+function setStyleToNotAvailable(letterBlock, miniGameState)
+    module.applyStyleFromTemplate({
+        targetLetterBlock = letterBlock,
+        templateName = module.letterBlockStyleDefs.rack.NotAvailable,
+        miniGameState = miniGameState
     })
 end
 
--- figure out style from template
--- figure out style from template
--- figure out style from template
--- figure out style from template
+function setStyleToDeadLetter(letterBlock, miniGameState)
+    module.applyStyleFromTemplate({
+        targetLetterBlock = letterBlock,
+        templateName = module.letterBlockStyleDefs.rack.DeadLetter,
+        miniGameState = miniGameState
+    })
+end
+
 function styleLetterBlocks(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local letterBlockTemplateFolder = miniGameState.letterBlockTemplateFolder
@@ -96,16 +115,13 @@ function styleLetterBlocks(miniGameState)
 
     local allLetters = module.getAllLettersInRack()
 
-    -- local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
-    --                                                          "LetterBlockTemplates")
     for i, letterBlock in ipairs(allLetters) do
-
         if CS:HasTag(letterBlock, module.tagNames.Found) then
             module.applyStyleFromTemplate(
                 {
                     targetLetterBlock = letterBlock,
-                    templateName = "LBDarkPurple",
-                    -- templateName = "LBWordLetter",
+                    -- templateName = "LBDarkPurple",
+                    templateName = module.letterBlockStyleDefs.rack.Found,
                     miniGameState = miniGameState
                 })
         else
@@ -201,6 +217,7 @@ end
 
 function configDeadLetters(props)
     local parentFolder = props.parentFolder
+    local miniGameState = props.miniGameState
 
     local deadLetters = Utils.getByTagInParent(
                             {
@@ -211,20 +228,15 @@ function configDeadLetters(props)
     for i, item in ipairs(deadLetters) do
         item.Anchored = true
 
-        module.colorLetterText({
-            letterBlock = item,
-            color = Color3.fromRGB(58, 0, 87)
-        })
-        module.colorLetterBG({
-            letterBlock = item,
-            color = Color3.fromRGB(0, 255, 34)
+        module.applyStyleFromTemplate({
+            targetLetterBlock = item,
+            templateName = module.letterBlockStyleDefs.rack.DeadLetter,
+            miniGameState = miniGameState
         })
         module.applyLetterText({letterBlock = item, char = ""})
     end
 end
 
--- 
--- 
 function getAvailLetters(props)
     local words = props.words
     local currentLetterIndex = props.currentLetterIndex

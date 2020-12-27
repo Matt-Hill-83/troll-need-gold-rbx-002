@@ -130,7 +130,10 @@ function initLetterRack(miniGameState)
         end
     end
 
-    LetterFallUtils.configDeadLetters({parentFolder = runTimeLetterFolder})
+    LetterFallUtils.configDeadLetters({
+        parentFolder = runTimeLetterFolder,
+        miniGameState = miniGameState
+    })
 end
 
 function getRunTimeLetterFolder(miniGameState)
