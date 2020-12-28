@@ -1,7 +1,7 @@
 local module = {
     buffer = 0,
-    singleScene = true,
-    -- singleScene = false,
+    -- singleScene = true,
+    singleScene = false,
     -- 
     entered = {value = false},
     -- baseWallHeight = 6,
@@ -81,186 +81,187 @@ module.characters = {
     britta01 = britta,
     britta04 = britta,
 
+    rat = {displayName = "Rat", decalId = '6152126688', backgroundColorIdx = 1},
     katBody = {
-        displayName = "Kat (Body)",
+        displayName = "Kat",
         decalId = '6107346290',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katCringing = {
-        displayName = "Kat (Cringing)",
+        displayName = "Kat",
         decalId = '6107344629',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katDismayed = {
-        displayName = "Kat (Dismayed)",
+        displayName = "Kat",
         decalId = '6107344149',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katFunny = {
-        displayName = "Kat (Funny)",
+        displayName = "Kat",
         decalId = '6107344301',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katHappy = {
-        displayName = "Kat (Happy)",
+        displayName = "Kat",
         decalId = '6107344864',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katHurt = {
-        displayName = "Kat (Hurt)",
+        displayName = "Kat",
         decalId = '6107344515',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katLoud = {
-        displayName = "Kat (Loud)",
+        displayName = "Kat",
         decalId = '6107345138',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katMad = {
-        displayName = "Kat (Mad)",
+        displayName = "Kat",
         decalId = '6107344045',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katNormal = {
-        displayName = "Kat (Normal)",
+        displayName = "Kat",
         decalId = '6107344810',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katOptimistic = {
-        displayName = "Kat (Optimistic)",
+        displayName = "Kat",
         decalId = '6107344576',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katSad = {
-        displayName = "Kat (Sad)",
+        displayName = "Kat",
         decalId = '6107344919',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katScared = {
-        displayName = "Kat (Scared)",
+        displayName = "Kat",
         decalId = '6107344234',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katSilly = {
-        displayName = "Kat (Silly)",
+        displayName = "Kat",
         decalId = '6107344689',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katSinister = {
-        displayName = "Kat (Sinister)",
+        displayName = "Kat",
         decalId = '6107344453',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katSmiling = {
-        displayName = "Kat (Smiling)",
+        displayName = "Kat",
         decalId = '6107344370',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katSurprised = {
-        displayName = "Kat (Surprised)",
+        displayName = "Kat",
         decalId = '6107344753',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katUnsure = {
-        displayName = "Kat (Unsure)",
+        displayName = "Kat",
         decalId = '6107343928',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     katWinking = {
-        displayName = "Kat (Winking)",
+        displayName = "Kat",
         decalId = '6107344098',
-        backgroundColorIdx = 1
+        backgroundColorIdx = 2
     },
     -- 
     -- 
     -- 
     lizBold = {
-        displayName = "Liz (Bold)",
+        displayName = "Liz",
         decalId = '6107345791',
         backgroundColorIdx = 1
     },
     lizCringing = {
-        displayName = "Liz (Cringing)",
+        displayName = "Liz",
         decalId = '6107346106',
         backgroundColorIdx = 1
     },
     lizDismayed = {
-        displayName = "Liz (Dismayed)",
+        displayName = "Liz",
         decalId = '6107346232',
         backgroundColorIdx = 1
     },
     lizFunny = {
-        displayName = "Liz (Funny)",
+        displayName = "Liz",
         decalId = '6107345390',
         backgroundColorIdx = 1
     },
     lizHappy = {
-        displayName = "Liz (Happy)",
+        displayName = "Liz",
         decalId = '6107345687',
         backgroundColorIdx = 1
     },
     lizHurt = {
-        displayName = "Liz (Hurt)",
+        displayName = "Liz",
         decalId = '6107345736',
         backgroundColorIdx = 1
     },
     lizLoud = {
-        displayName = "Liz (Loud)",
+        displayName = "Liz",
         decalId = '6107343990',
         backgroundColorIdx = 1
     },
     lizMad = {
-        displayName = "Liz (Mad)",
+        displayName = "Liz",
         decalId = '6107346171',
         backgroundColorIdx = 1
     },
     lizNormal = {
-        displayName = "Liz (Normal)",
+        displayName = "Liz",
         decalId = '6107345949',
         backgroundColorIdx = 1
     },
     lizOptimistic = {
-        displayName = "Liz (Optimistic)",
+        displayName = "Liz",
         decalId = '6107345048',
         backgroundColorIdx = 1
     },
     lizSad = {
-        displayName = "Liz (Sad)",
+        displayName = "Liz",
         decalId = '6107345487',
         backgroundColorIdx = 1
     },
     lizScared = {
-        displayName = "Liz (Scared)",
+        displayName = "Liz",
         decalId = '6107345622',
         backgroundColorIdx = 1
     },
     lizSilly = {
-        displayName = "Liz (Silly)",
+        displayName = "Liz",
         decalId = '6107345862',
         backgroundColorIdx = 1
     },
     lizSinister = {
-        displayName = "Liz (Sinister)",
+        displayName = "Liz",
         decalId = '6107345559',
         backgroundColorIdx = 1
     },
     lizSmiling = {
-        displayName = "Liz (Smiling)",
+        displayName = "Liz",
         decalId = '6107345242',
         backgroundColorIdx = 1
     },
     lizSurprised = {
-        displayName = "Liz (Surprised)",
+        displayName = "Liz",
         decalId = '6107346038',
         backgroundColorIdx = 1
     },
     lizUnsure = {
-        displayName = "Liz (Unsure)",
+        displayName = "Liz",
         decalId = '6107344981',
         backgroundColorIdx = 1
     },
     lizWinking = {
-        displayName = "Liz (Winking)",
+        displayName = "Liz",
         decalId = '6107345314',
         backgroundColorIdx = 1
     },
