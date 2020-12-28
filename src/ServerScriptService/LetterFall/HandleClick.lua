@@ -24,13 +24,6 @@ function isDeadLetter(clickedLetter)
     return CS:HasTag(clickedLetter, tag)
 end
 
--- function isWordComplete(wordLetters)
---     for i, word in ipairs(wordLetters) do
---         if not word.found then return false end
---     end
---     return true
--- end
-
 function initClickHandler(miniGameState)
     -- Gets arguments from EventHandler in StarterPack
     function brickClickHandler(player, clickedLetter)
@@ -75,10 +68,17 @@ function handleBrick(clickedLetter, miniGameState)
     local currentLetterIndex = miniGameState.currentLetterIndex
     local words = miniGameState.words
 
-    local allLetters = Utils.getByTagInParent(
-                           {
+    local rackLetters = Utils.getByTagInParent(
+                            {
             parent = runTimeLetterFolder,
-            tag = LetterFallUtils.tagNames.NotDeadLetter
+            tag = LetterFallUtils.tagNames.RackLetter
+        })
+
+    local notDeadLetters = LetterFallUtils.filterItemsByTag(
+                               {
+            items = rackLetters,
+            tag = LetterFallUtils.tagNames.RackLetter,
+            include = true
         })
 
     LetterFallUtils.anchorLetters({
@@ -90,9 +90,10 @@ function handleBrick(clickedLetter, miniGameState)
         LetterFallUtils.getCoordsFromLetterName(clickedLetter.Name).col
     LetterFallUtils.anchorColumn({
         col = activeCol,
-        allLetters = allLetters,
+        letters = notDeadLetters,
         anchor = false
     })
+    clickedLetter.Anchored = true
 
     if not miniGameState.gemsStarted then
         --   
@@ -124,6 +125,7 @@ function handleBrick(clickedLetter, miniGameState)
     if targetLetterBlock then
         miniGameState.currentLetterIndex = miniGameState.currentLetterIndex + 1
         CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
+        CS:RemoveTag(clickedLetter, LetterFallUtils.tagNames.RackLetter)
 
         local tween = Utils3.tween({
             part = clickedLetter,

@@ -104,7 +104,7 @@ function initLetterRack(miniGameState)
 
                 })
 
-            CS:AddTag(newLetter, LetterFallUtils.tagNames.LetterBlockInRack)
+            CS:AddTag(newLetter, LetterFallUtils.tagNames.RackLetter)
             if isDeadLetter then
                 CS:AddTag(newLetter, LetterFallUtils.tagNames.DeadLetter)
             else

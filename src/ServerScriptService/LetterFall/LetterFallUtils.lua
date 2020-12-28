@@ -8,7 +8,7 @@ local module = {
     tagNames = {
         WordLetter = "WordLetter",
         LetterBlock = "LetterBlock",
-        LetterBlockInRack = "LetterBlockInRack",
+        RackLetter = "RackLetter",
         DeadLetter = "DeadLetter",
         AvailLetter = "AvailLetter",
         Found = "Found",
@@ -38,6 +38,27 @@ module.letterBlockStyleDefs = {
     }
 }
 
+function filterItemsByTag(props)
+    local items = props.items
+    local tag = props.tag
+    local include = props.include
+
+    local output = {}
+    for i, item in ipairs(items) do
+
+        if include then
+            if CS:hasTag(item, tag) then table.insert(output, item) end
+        end
+
+        if not include then
+            if not CS:hasTag(item, tag) then
+                table.insert(output, item)
+            end
+        end
+    end
+    return output
+end
+
 function getCoordsFromLetterName(name)
     local pattern = "ID%-%-R(%d+)C(%d+)"
     local row, col = string.match(name, pattern)
@@ -47,9 +68,9 @@ end
 function anchorColumn(props)
     local anchor = props.anchor
     local col = props.col
-    local allLetters = props.allLetters
+    local letters = props.letters
 
-    for i, letter in ipairs(allLetters) do
+    for i, letter in ipairs(letters) do
         local coords = module.getCoordsFromLetterName(letter.Name)
 
         if tonumber(coords.col) == tonumber(col) then
@@ -317,4 +338,5 @@ module.styleLetterBlocks = styleLetterBlocks
 module.applyStyleFromTemplate = applyStyleFromTemplate
 module.anchorColumn = anchorColumn
 module.getCoordsFromLetterName = getCoordsFromLetterName
+module.filterItemsByTag = filterItemsByTag
 return module
