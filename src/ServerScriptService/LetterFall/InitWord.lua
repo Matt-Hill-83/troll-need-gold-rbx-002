@@ -94,7 +94,7 @@ function initWord(miniGameState)
         table.insert(miniGameState.renderedWords, {
             word = newWord,
             letters = lettersInWord,
-            wordLetters = wordLetters
+            wordChars = word
         })
         local wordBenchSizeX = #word * letterBlockTemplate.Size.X *
                                    spacingFactorZ

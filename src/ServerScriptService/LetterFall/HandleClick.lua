@@ -48,6 +48,18 @@ function findFirstMatchingLetterBlock(foundChar, miniGameState)
     return matchingLetter
 end
 
+function getAvailWords(miniGameState)
+    local availWords = {}
+    local activeWord = miniGameState.activeWord
+
+    if activeWord then
+        availWords = {activeWord.wordChars}
+    else
+        availWords = miniGameState.words
+    end
+    return availWords
+end
+
 function handleBrick(clickedLetter, miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
 
@@ -105,13 +117,14 @@ function handleBrick(clickedLetter, miniGameState)
     local availWords = {}
 
     if activeWord then
-        availWords = activeWord.wordLetters
+        availWords = {activeWord.wordChars}
         local nextLetterInWord = activeWord.letters[currentLetterIndex].char
         local found = foundChar == nextLetterInWord
         if found then
             targetLetterBlock = activeWord.letters[currentLetterIndex].instance
         end
     else
+        availWords = words
         local availLetters = LetterFallUtils.getAvailLettersDict(
                                  {
                 words = words,
@@ -125,7 +138,6 @@ function handleBrick(clickedLetter, miniGameState)
     end
 
     if targetLetterBlock then
-        availWords = words
         miniGameState.currentLetterIndex = miniGameState.currentLetterIndex + 1
         CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
         CS:RemoveTag(clickedLetter, LetterFallUtils.tagNames.RackLetter)
@@ -143,9 +155,9 @@ function handleBrick(clickedLetter, miniGameState)
                      LetterFallUtils.getCharFromLetterBlock(clickedLetter))
 
         local currentWord = table.concat(miniGameState.foundLetters, "")
-        local found = table.find(words, currentWord)
+        local wordComplete = table.find(words, currentWord)
 
-        if (found) then
+        if (wordComplete) then
             local soundId = Constants.soundIds[currentWord]
             if (soundId) then
                 -- if (false and soundId) then
@@ -163,7 +175,10 @@ function handleBrick(clickedLetter, miniGameState)
         end
 
         LetterFallUtils.styleLetterBlocks(
-            {miniGameState = miniGameState, availWords = availWords})
+            {
+                miniGameState = miniGameState,
+                availWords = getAvailWords(miniGameState)
+            })
         -- {miniGameState = miniGameState, availWords = miniGameState.words})
 
         clickedLetter.CFrame = targetLetterBlock.CFrame

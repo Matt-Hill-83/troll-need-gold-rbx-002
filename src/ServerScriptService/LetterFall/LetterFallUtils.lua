@@ -142,7 +142,8 @@ function styleLetterBlocks(props)
             words = availWords,
             currentLetterIndex = miniGameState.currentLetterIndex
         })
-
+    print('availLetters' .. ' - start');
+    print(availLetters);
     local allLetters = module.getAllLettersInRack()
 
     for i, letterBlock in ipairs(allLetters) do
@@ -150,7 +151,6 @@ function styleLetterBlocks(props)
             module.applyStyleFromTemplate(
                 {
                     targetLetterBlock = letterBlock,
-                    -- templateName = "LBDarkPurple",
                     templateName = module.letterBlockStyleDefs.rack.Found,
                     miniGameState = miniGameState
                 })
