@@ -102,8 +102,10 @@ function handleBrick(clickedLetter, miniGameState)
 
     local foundChar = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
     local targetLetterBlock = nill
+    local availWords = {}
 
     if activeWord then
+        availWords = activeWord.wordLetters
         local nextLetterInWord = activeWord.letters[currentLetterIndex].char
         local found = foundChar == nextLetterInWord
         if found then
@@ -123,6 +125,7 @@ function handleBrick(clickedLetter, miniGameState)
     end
 
     if targetLetterBlock then
+        availWords = words
         miniGameState.currentLetterIndex = miniGameState.currentLetterIndex + 1
         CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
         CS:RemoveTag(clickedLetter, LetterFallUtils.tagNames.RackLetter)
@@ -158,7 +161,9 @@ function handleBrick(clickedLetter, miniGameState)
             miniGameState.currentLetterIndex = 1
             miniGameState.activeWord = nil
         end
-        LetterFallUtils.styleLetterBlocks(miniGameState)
+        LetterFallUtils.styleLetterBlocks(
+            {miniGameState = miniGameState, availWords = miniGameState.words})
+        -- {miniGameState = miniGameState, availWords = availWords})
 
         clickedLetter.CFrame = targetLetterBlock.CFrame
     end

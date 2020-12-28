@@ -130,12 +130,15 @@ function setStyleToDeadLetter(letterBlock, miniGameState)
     })
 end
 
-function styleLetterBlocks(miniGameState)
+function styleLetterBlocks(props)
+    local miniGameState = props.miniGameState
+    local availWords = props.availWords
+
     local letterFallFolder = miniGameState.letterFallFolder
     local letterBlockTemplateFolder = miniGameState.letterBlockTemplateFolder
     local availLetters = module.getAvailLettersDict(
                              {
-            words = miniGameState.words,
+            words = availWords,
             currentLetterIndex = miniGameState.currentLetterIndex
         })
 

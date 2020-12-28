@@ -7,6 +7,7 @@ local module = {}
 
 function initWord(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
+    local wordLetters = miniGameState.wordLetters
     local wordFolder = getWordFolder(miniGameState)
 
     local wordBoxFolder = Utils.getFirstDescendantByName(letterFallFolder,
@@ -19,11 +20,11 @@ function initWord(miniGameState)
     Utils.enableChildWelds({part = putItemsToBeClonedHere, enabled = false})
     putItemsToBeClonedHere:Destroy()
 
-    for i, letter in ipairs(miniGameState.wordLetters) do
+    for i, letter in ipairs(wordLetters) do
         if letter.instance then letter.instance:Destroy() end
-        miniGameState.wordLetters[i] = nil
+        wordLetters[i] = nil
     end
-    Utils.clearTable(miniGameState.wordLetters)
+    Utils.clearTable(wordLetters)
 
     for wordIndex, word in ipairs(miniGameState.words) do
         local newWordBoxFolder = wordBoxFolder
@@ -85,13 +86,16 @@ function initWord(miniGameState)
             -- Do this last to avoid tweening
             newLetter.Parent = newWord
 
-            table.insert(miniGameState.wordLetters,
+            table.insert(wordLetters,
                          {char = letter, found = false, instance = newLetter})
             table.insert(lettersInWord,
                          {char = letter, found = false, instance = newLetter})
         end
-        table.insert(miniGameState.renderedWords,
-                     {word = newWord, letters = lettersInWord})
+        table.insert(miniGameState.renderedWords, {
+            word = newWord,
+            letters = lettersInWord,
+            wordLetters = wordLetters
+        })
         local wordBenchSizeX = #word * letterBlockTemplate.Size.X *
                                    spacingFactorZ
 
