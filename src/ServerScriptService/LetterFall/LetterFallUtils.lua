@@ -38,6 +38,26 @@ module.letterBlockStyleDefs = {
     }
 }
 
+function getCoordsFromLetterName(name)
+    local pattern = "ID%-%-R(%d+)C(%d+)"
+    local row, col = string.match(name, pattern)
+    return {row = tonumber(row), col = tonumber(col)}
+end
+
+function anchorColumn(props)
+    local anchor = props.anchor
+    local col = props.col
+    local allLetters = props.allLetters
+
+    for i, letter in ipairs(allLetters) do
+        local coords = module.getCoordsFromLetterName(letter.Name)
+
+        if tonumber(coords.col) == tonumber(col) then
+            letter.Anchored = false
+        end
+    end
+end
+
 function styleLetterBlock(letterBlock, labelProps)
     local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
     for i, label in ipairs(textLabels) do
@@ -295,4 +315,6 @@ module.getAvailLettersDict = getAvailLettersDict
 module.colorLetterBorder = colorLetterBorder
 module.styleLetterBlocks = styleLetterBlocks
 module.applyStyleFromTemplate = applyStyleFromTemplate
+module.anchorColumn = anchorColumn
+module.getCoordsFromLetterName = getCoordsFromLetterName
 return module

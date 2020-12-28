@@ -19,12 +19,8 @@ function module.configDropBox(props)
             local partParent = otherPart.Parent
             local match = partParent.Name == item.name
             if match then
-                print('match' .. ' - start');
-                print('match' .. ' - start');
-                print('match' .. ' - start');
                 partParent.Parent = workspace
                 onCorrectItemDropped()
-
             end
         end
         part.Touched:Connect(onPartTouched)

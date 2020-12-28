@@ -81,7 +81,6 @@ function initLetterRack(miniGameState)
 
     for colIndex = 1, numCol do
         for rowIndex = 1, numRow do
-            -- local char = letters[(colIndex % #letters) + 1]
             local rand = Utils.genRandom(1, #lettersFromWords)
 
             local char = lettersFromWords[rand]
@@ -91,11 +90,11 @@ function initLetterRack(miniGameState)
                 {
                     targetLetterBlock = newLetter,
                     templateName = "LBPurpleLight",
-                    -- templateName = "LBWordLetter",
                     miniGameState = miniGameState
                 })
-
-            newLetter.Name = "newLetter-" .. char
+            local letterId = "ID--R" .. rowIndex .. "C" .. colIndex
+            local name = "rackLetter-" .. char .. "-" .. letterId
+            newLetter.Name = name
 
             local isDeadLetter = isDeadLetter(
                                      {

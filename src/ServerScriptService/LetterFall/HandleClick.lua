@@ -56,9 +56,9 @@ function findFirstMatchingLetterBlock(foundChar, miniGameState)
 end
 
 function handleBrick(clickedLetter, miniGameState)
+    print('clickedLetter' .. ' - start');
+    print(clickedLetter);
     local letterFallFolder = miniGameState.letterFallFolder
-    local activeWord = miniGameState.activeWord
-    local currentLetterIndex = miniGameState.currentLetterIndex
 
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
     if not isChild then
@@ -69,21 +69,50 @@ function handleBrick(clickedLetter, miniGameState)
         })
         return {}
     end
-
-    local words = miniGameState.words
-
     if isDeadLetter(clickedLetter) then return end
 
-    if not miniGameState.gemsStarted then
-        LetterFallUtils.anchorLetters({
-            parentFolder = runTimeLetterFolder,
-            anchor = false
+    -- 
+    -- 
+    local activeWord = miniGameState.activeWord
+    local currentLetterIndex = miniGameState.currentLetterIndex
+    local words = miniGameState.words
+
+    local allLetters = Utils.getByTagInParent(
+                           {
+            parent = runTimeLetterFolder,
+            tag = LetterFallUtils.tagNames.NotDeadLetter
         })
+
+    -- Utils.setPropsByTag({
+    --     tag = LetterFallUtils.tagNames.NotDeadLetter,
+    --     props = {Anchored = false}
+    -- })
+
+    LetterFallUtils.anchorLetters({
+        parentFolder = runTimeLetterFolder,
+        anchor = true
+    })
+
+    local activeCol =
+        LetterFallUtils.getCoordsFromLetterName(clickedLetter.Name).col
+    print('activeCol' .. ' - start');
+    print(activeCol);
+    LetterFallUtils.anchorColumn({
+        col = activeCol,
+        allLetters = allLetters,
+        anchor = false
+    })
+
+    if not miniGameState.gemsStarted then
+        -- LetterFallUtils.anchorLetters({
+        --     parentFolder = runTimeLetterFolder,
+        --     anchor = false
+        -- })
         miniGameState.gemsStarted = true
     end
 
-    local targetLetterBlock = nill
     local foundChar = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
+    local targetLetterBlock = nill
 
     if activeWord then
         print('activeWord' .. ' - start');
