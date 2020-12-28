@@ -56,8 +56,6 @@ function findFirstMatchingLetterBlock(foundChar, miniGameState)
 end
 
 function handleBrick(clickedLetter, miniGameState)
-    print('clickedLetter' .. ' - start');
-    print(clickedLetter);
     local letterFallFolder = miniGameState.letterFallFolder
 
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
@@ -83,11 +81,6 @@ function handleBrick(clickedLetter, miniGameState)
             tag = LetterFallUtils.tagNames.NotDeadLetter
         })
 
-    -- Utils.setPropsByTag({
-    --     tag = LetterFallUtils.tagNames.NotDeadLetter,
-    --     props = {Anchored = false}
-    -- })
-
     LetterFallUtils.anchorLetters({
         parentFolder = runTimeLetterFolder,
         anchor = true
@@ -95,8 +88,6 @@ function handleBrick(clickedLetter, miniGameState)
 
     local activeCol =
         LetterFallUtils.getCoordsFromLetterName(clickedLetter.Name).col
-    print('activeCol' .. ' - start');
-    print(activeCol);
     LetterFallUtils.anchorColumn({
         col = activeCol,
         allLetters = allLetters,
@@ -104,10 +95,7 @@ function handleBrick(clickedLetter, miniGameState)
     })
 
     if not miniGameState.gemsStarted then
-        -- LetterFallUtils.anchorLetters({
-        --     parentFolder = runTimeLetterFolder,
-        --     anchor = false
-        -- })
+        --   
         miniGameState.gemsStarted = true
     end
 
@@ -115,8 +103,6 @@ function handleBrick(clickedLetter, miniGameState)
     local targetLetterBlock = nill
 
     if activeWord then
-        print('activeWord' .. ' - start');
-        print(activeWord.word);
         local nextLetterInWord = activeWord.letters[currentLetterIndex].char
         local found = foundChar == nextLetterInWord
         if found then
