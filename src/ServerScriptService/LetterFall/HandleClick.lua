@@ -77,8 +77,8 @@ function handleBrick(clickedLetter, miniGameState)
     local notDeadLetters = LetterFallUtils.filterItemsByTag(
                                {
             items = rackLetters,
-            tag = LetterFallUtils.tagNames.RackLetter,
-            include = true
+            tag = LetterFallUtils.tagNames.DeadLetter,
+            include = false
         })
 
     LetterFallUtils.anchorLetters({
@@ -161,9 +161,10 @@ function handleBrick(clickedLetter, miniGameState)
             miniGameState.currentLetterIndex = 1
             miniGameState.activeWord = nil
         end
+
         LetterFallUtils.styleLetterBlocks(
-            {miniGameState = miniGameState, availWords = miniGameState.words})
-        -- {miniGameState = miniGameState, availWords = availWords})
+            {miniGameState = miniGameState, availWords = availWords})
+        -- {miniGameState = miniGameState, availWords = miniGameState.words})
 
         clickedLetter.CFrame = targetLetterBlock.CFrame
     end

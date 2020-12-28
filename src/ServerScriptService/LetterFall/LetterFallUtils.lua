@@ -133,7 +133,8 @@ end
 function styleLetterBlocks(props)
     local miniGameState = props.miniGameState
     local availWords = props.availWords
-
+    print('availWords' .. ' - start');
+    print(availWords);
     local letterFallFolder = miniGameState.letterFallFolder
     local letterBlockTemplateFolder = miniGameState.letterBlockTemplateFolder
     local availLetters = module.getAvailLettersDict(
