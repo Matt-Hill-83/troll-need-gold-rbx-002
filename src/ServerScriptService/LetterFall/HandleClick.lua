@@ -60,6 +60,16 @@ function handleBrick(clickedLetter, miniGameState)
     local activeWord = miniGameState.activeWord
     local currentLetterIndex = miniGameState.currentLetterIndex
 
+    local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
+    if not isChild then
+        -- Anchor letters if letter is clicked is a different game instance
+        LetterFallUtils.anchorLetters({
+            parentFolder = runTimeLetterFolder,
+            anchor = true
+        })
+        return {}
+    end
+
     local words = miniGameState.words
 
     if isDeadLetter(clickedLetter) then return end
@@ -72,15 +82,12 @@ function handleBrick(clickedLetter, miniGameState)
         miniGameState.gemsStarted = true
     end
 
-    local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
-    if not isChild then return {} end
-
     local targetLetterBlock = nill
     local foundChar = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
 
     if activeWord then
         print('activeWord' .. ' - start');
-        print(activeWord);
+        print(activeWord.word);
         local nextLetterInWord = activeWord.letters[currentLetterIndex].char
         local found = foundChar == nextLetterInWord
         if found then
@@ -96,7 +103,6 @@ function handleBrick(clickedLetter, miniGameState)
         if isDesiredLetter(availLetters, clickedLetter) then
             targetLetterBlock = findFirstMatchingLetterBlock(foundChar,
                                                              miniGameState)
-
         end
     end
 
