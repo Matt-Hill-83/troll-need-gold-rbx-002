@@ -20,17 +20,6 @@ local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
             wait(0.5)
             Character.PrimaryPart.Position = teleportLocation
 
-            -- Tweening doesn't work well for some reason
-            -- local tweenInfo = TweenInfo.new(4)
-            -- local t = TS:Create(Character.PrimaryPart, tweenInfo,
-            --                     {Position = teleportLocation})
-            -- Character.PrimaryPart.Anchored = true
-            -- -- Anchor the player's rootpart so physics doesn't mess things up.
-            -- t:Play()
-            -- t.Completed:Connect(function()
-            --     Character.PrimaryPart.Anchored = false
-            -- end)
-
             local teleportingValue = Character.currentlyTeleporting
             teleportingValue.Value = true
             wait(5)
@@ -59,9 +48,6 @@ function module.configSkyboxTeleporter(props)
     skyBoxTeleporter.PrimaryPart.CFrame =
         teleporterPositioner.CFrame *
             CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0))
-    -- teleporterPositioner.CFrame *
-    --     CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0)) *
-    --     CFrame.Angles(0, math.rad(0), 0)
 
     skyBoxTeleporter.PrimaryPart.Anchored = true
     skyBoxTeleporter.Name = "teleporter" .. "-sky-Q- " .. questIndex
