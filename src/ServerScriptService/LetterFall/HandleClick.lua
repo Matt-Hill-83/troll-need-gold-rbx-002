@@ -39,6 +39,22 @@ function initClickHandler(miniGameState)
     clickBlockEvent.OnServerEvent:Connect(brickClickHandler)
 end
 
+function findFirstMatchingLetterBlock(foundChar, miniGameState)
+    local matchingLetter = nil
+
+    for wordIndex, word in ipairs(miniGameState.renderedWords) do
+        if matchingLetter then break end
+        for letterIndex, letter in ipairs(word.letters) do
+            if matchingLetter then break end
+            if foundChar == letter.char then
+                miniGameState.activeWord = word
+                matchingLetter = letter.instance
+            end
+        end
+    end
+    return matchingLetter
+end
+
 function handleBrick(clickedLetter, miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local activeWord = miniGameState.activeWord
@@ -63,6 +79,8 @@ function handleBrick(clickedLetter, miniGameState)
     local foundChar = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
 
     if activeWord then
+        print('activeWord' .. ' - start');
+        print(activeWord);
         local nextLetterInWord = activeWord.letters[currentLetterIndex].char
         local found = foundChar == nextLetterInWord
         if found then
@@ -76,18 +94,9 @@ function handleBrick(clickedLetter, miniGameState)
             })
 
         if isDesiredLetter(availLetters, clickedLetter) then
-            local wordFound = false
-            for wordIndex, word in ipairs(miniGameState.renderedWords) do
-                if wordFound then break end
-                for letterIndex, letter in ipairs(word.letters) do
-                    if wordFound then break end
-                    if foundChar == letter.char then
-                        wordFound = true
-                        miniGameState.activeWord = word
-                        targetLetterBlock = letter.instance
-                    end
-                end
-            end
+            targetLetterBlock = findFirstMatchingLetterBlock(foundChar,
+                                                             miniGameState)
+
         end
     end
 
@@ -112,7 +121,8 @@ function handleBrick(clickedLetter, miniGameState)
 
         if (found) then
             local soundId = Constants.soundIds[currentWord]
-            if (false and soundId) then
+            if (soundId) then
+                -- if (false and soundId) then
                 local sound = Instance.new("Sound", workspace)
                 sound.SoundId = "rbxassetid://" .. soundId
                 sound.EmitterSize = 5

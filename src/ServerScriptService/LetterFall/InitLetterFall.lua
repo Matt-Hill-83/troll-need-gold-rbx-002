@@ -9,8 +9,6 @@ local HandleClick = require(Sss.Source.LetterFall.HandleClick)
 local InitLetterRack = require(Sss.Source.LetterFall.InitLetterRack)
 local InitWord = require(Sss.Source.LetterFall.InitWord)
 
-local letterFallFreezeCameraRE = RS:WaitForChild("LetterFallFreezeCameraRE")
-
 local module = {}
 
 function initLetterFall(miniGameState)
