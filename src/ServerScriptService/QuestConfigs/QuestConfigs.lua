@@ -101,8 +101,8 @@ module.questConfigs = {
     }, {
         questTitle = "RX-002 - A Bee in a Tree",
         words = "ME,WE,SEE,BEE,HEE,WEE,PEE,HEE,FEE,TEE",
-        startSceneCoords = {col = 0, row = 0},
-        endSceneCoords = {col = 0, row = 0},
+        startSceneCoords = {row = 0, col = 0},
+        endSceneCoords = {row = 0, col = 0},
         sceneConfigs = {
             {
                 name = "bee01",
@@ -186,7 +186,7 @@ module.questConfigs = {
                         characters02 = {{name = "rat"}, {name = "rat"}}
                     }
                 },
-                coordinates = {col = 0, row = 0},
+                coordinates = {row = 0, col = 0},
                 showBottomPath = false,
                 showRightPath = false,
                 showTopPath = false,
