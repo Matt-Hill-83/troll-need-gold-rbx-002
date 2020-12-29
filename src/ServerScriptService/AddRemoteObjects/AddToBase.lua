@@ -38,7 +38,7 @@ function addRemoteObjects()
         local newWords = {}
         if words then
             local output
-            local words = "CAT,DAT,GAT"
+            -- local words = "CAT,DAT,GAT"
             words = words .. ','
             for w in words:gmatch("(.-),") do
                 table.insert(newWords, w)
