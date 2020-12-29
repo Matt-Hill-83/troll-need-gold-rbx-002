@@ -3,8 +3,8 @@ local module = {}
 module.questConfigs = {
     {
         questTitle = "RX-001 - A Cat on a Hat",
-        startSceneCoords = {row = 0, col = 0},
-        endSceneCoords = {row = 0, col = 0},
+        startSceneCoords = {col = 0, row = 0},
+        endSceneCoords = {col = 0, row = 0},
         sceneConfigs = {
             {
                 name = "tree01",
@@ -86,7 +86,7 @@ module.questConfigs = {
                         characters02 = {{name = "rat"}, {name = "rat"}}
                     }
                 },
-                coordinates = {row = 0, col = 0},
+                coordinates = {col = 0, row = 0},
                 showBottomPath = false,
                 showRightPath = false,
                 showTopPath = false,
@@ -100,7 +100,7 @@ module.questConfigs = {
         gridSize = {rows = 1, cols = 1}
     }, {
         questTitle = "RX-002 - A Bee in a Tree",
-        words = "CAT,DAT,GAT",
+        words = "ME,WE,SEE,BEE,HEE,WEE,PEE,HEE,FEE,TEE",
         startSceneCoords = {col = 0, row = 0},
         endSceneCoords = {col = 0, row = 0},
         sceneConfigs = {
