@@ -19,10 +19,15 @@ function addRemoteObjects()
         questConfigs = {questConfigs[1]}
         local sceneConfigs = questConfigs[1].sceneConfigs
         questConfigs[1].sceneConfigs = {sceneConfigs[1]}
+    else
+        -- slice out the first 6 quests, for the hexagon
+        questConfigs = {unpack(questConfigs, 1, 6)}
     end
 
     local myStuff = workspace:FindFirstChild("MyStuff")
     local questsOrigin = Utils.getFirstDescendantByName(myStuff, "QuestsOrigin")
+    local hexMount = Utils.getFirstDescendantByName(myStuff, "HexStand")
+    local mountPlates = Utils.getDescendantsByName(hexMount, "MountPlate")
 
     local runtimeQuestsFolder = Utils.getOrCreateFolder(
                                     {name = "RunTimeQuests", parent = myStuff})
@@ -32,13 +37,16 @@ function addRemoteObjects()
 
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
+
+        local mountPlate = mountPlates[questIndex]
+        print('mountPlate' .. ' - start');
+        print(mountPlate);
         local gridSize = questConfig.gridSize
 
         local words = questConfig.words
         local newWords = {}
         if words then
             local output
-            -- local words = "CAT,DAT,GAT"
             words = words .. ','
             for w in words:gmatch("(.-),") do
                 table.insert(newWords, w)
