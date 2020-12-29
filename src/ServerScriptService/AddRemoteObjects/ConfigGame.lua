@@ -41,11 +41,11 @@ function setVisibility()
     --     props = {Transparency = 1}
     -- })
 
-    Utils.setWallHeightbyParentModelName({name = "BridgeWalls", height = 2})
-    Utils.setItemAndChildrenPropsByName({
-        name = "BridgeWalls",
-        props = {Transparency = 0.6, CanCollide = true, Anchored = true}
-    })
+    -- Utils.setWallHeightbyParentModelName({name = "BridgeWalls", height = 2})
+    -- Utils.setItemAndChildrenPropsByName({
+    --     name = "BridgeWalls",
+    --     props = {Transparency = 0.6, CanCollide = true, Anchored = true}
+    -- })
 
     Utils.setItemAndChildrenPropsByName({
         name = "BaseWalls",

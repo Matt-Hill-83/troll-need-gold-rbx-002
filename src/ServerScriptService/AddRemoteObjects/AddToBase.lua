@@ -2,6 +2,7 @@ local module = {}
 local CS = game:GetService("CollectionService")
 local Sss = game:GetService("ServerScriptService")
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
+local HttpService = game:GetService("HttpService")
 
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Scenes = require(Sss.Source.Scenes.Scenes)
@@ -32,6 +33,18 @@ function addRemoteObjects()
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
         local gridSize = questConfig.gridSize
+
+        local words = questConfig.words
+        local newWords = {}
+        if words then
+            local output
+            local words = "CAT,DAT,GAT"
+            words = words .. ','
+            for w in words:gmatch("(.-),") do
+                table.insert(newWords, w)
+            end
+        end
+        questConfig.words2 = newWords
 
         local desiredPadding = 12
         local wallWidth = 1
