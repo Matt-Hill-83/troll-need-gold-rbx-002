@@ -2,6 +2,8 @@ local module = {
     buffer = 0,
     -- singleScene = true,
     singleScene = false,
+    -- isDev = false,
+    isDev = true,
     -- 
     entered = {value = false},
     -- baseWallHeight = 6,

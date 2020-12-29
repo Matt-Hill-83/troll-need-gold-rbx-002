@@ -49,7 +49,7 @@ function module.addScenes(props)
 
         clonedScene.Name = clonedScene.Name .. sceneIndex
 
-        local words = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
+        local words = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT", "THAT"}
         -- local words = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "AT", "CHAT"}
         -- local words = {'CAT', 'BAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "BOG"}
         -- local words = {
@@ -73,22 +73,31 @@ function module.addScenes(props)
         if sceneConfig.isStartScene then
             localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
                                                                "MiniGameTeleporterPositioner")
-
-        else
+            Teleporters.addTeleporters({
+                parent = clonedScene,
+                sceneIndex = sceneIndex,
+                questIndex = questIndex,
+                isStartScene = sceneConfig.isStartScene,
+                isEndScene = sceneConfig.isEndScene,
+                questTitle = questConfig.questTitle,
+                skyBoxTeleporter = skyBoxTeleporter,
+                localTPPositioner = localTPPositioner
+            })
+        end
+        if sceneConfig.isEndScene then
             localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
                                                                "LocalTeleporterPositioner")
+            Teleporters.addTeleporters({
+                parent = clonedScene,
+                sceneIndex = sceneIndex,
+                questIndex = questIndex,
+                isStartScene = sceneConfig.isStartScene,
+                isEndScene = sceneConfig.isEndScene,
+                questTitle = questConfig.questTitle,
+                skyBoxTeleporter = skyBoxTeleporter,
+                localTPPositioner = localTPPositioner
+            })
         end
-
-        Teleporters.addTeleporters({
-            parent = clonedScene,
-            sceneIndex = sceneIndex,
-            questIndex = questIndex,
-            isStartScene = sceneConfig.isStartScene,
-            isEndScene = sceneConfig.isEndScene,
-            questTitle = questConfig.questTitle,
-            skyBoxTeleporter = skyBoxTeleporter,
-            localTPPositioner = localTPPositioner
-        })
 
         function onCorrectItemDropped()
 

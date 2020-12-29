@@ -1,6 +1,8 @@
 local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local CS = game:GetService("CollectionService")
+
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local Constants = require(Sss.Source.Constants.Constants)
 
 local module = {}
 function configPlayers()
@@ -74,6 +76,11 @@ function module.configGame()
     setVisibility()
     configPlayers()
     -- Utils.reportPlayerLocation()
+
+    if (Constants.isDev) then
+        local taggedPartsDestroy = CS:GetTagged("DestroyDev")
+        for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
+    end
 end
 
 return module
