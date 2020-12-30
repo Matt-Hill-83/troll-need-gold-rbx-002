@@ -39,7 +39,8 @@ renderQuestBlock = function(props)
         }
     }
 
-    local newCFrame = Utils3.setCFrameFromDesiredOffset(translateCFrameProps)
+    local newCFrame =
+        Utils3.setCFrameFromDesiredEdgeOffset(translateCFrameProps)
     dockPositioner.CFrame = newCFrame
 
     dockBase.Size = dockPositioner.Size

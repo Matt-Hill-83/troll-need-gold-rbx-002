@@ -32,7 +32,7 @@ function getPartFarEdge(props)
     return part.Position + (part.Size / 2) * props.alignToParentFarEdge
 end
 
-function setCFrameFromDesiredOffset(props)
+function setCFrameFromDesiredEdgeOffset(props)
     local parent = props.parent
     local child = props.child
     local offsetConfig = props.offsetConfig
@@ -49,13 +49,10 @@ function setCFrameFromDesiredOffset(props)
                        offsetConfig.useChildNearEdge * child.Size) / 2 +
                        offsetConfig.offsetAdder
 
-    local offsetCFrame = CFrame.new(offset)
-    parent.CFrame:ToWorldSpace(offsetCFrame)
-    return parent.CFrame:ToWorldSpace(offsetCFrame)
-    -- child.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
+    return parent.CFrame:ToWorldSpace(CFrame.new(offset))
 end
 
 module.getPartFarEdge = getPartFarEdge
-module.setCFrameFromDesiredOffset = setCFrameFromDesiredOffset
+module.setCFrameFromDesiredEdgeOffset = setCFrameFromDesiredEdgeOffset
 module.tween = tween
 return module
