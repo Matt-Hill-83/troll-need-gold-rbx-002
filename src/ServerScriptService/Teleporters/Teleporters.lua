@@ -7,10 +7,11 @@ local module = {}
 local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
     localTP.PrimaryPart.Touched:Connect(function(touchPart)
 
-        if touchPart and touchPart.Parent and touchPart.Parent.Humanoid and
-            touchPart.Parent.currentlyTeleporting.Value == false then
+        local character = touchPart.Parent
+        local humanoid = character:FindFirstChildWhichIsA("Humanoid")
 
-            local Character = touchPart.Parent
+        if humanoid and character.currentlyTeleporting.Value == false then
+            local Character = character
             local questTeleporterReceiver =
                 Utils.getFirstDescendantByName(remoteTP,
                                                "QuestTeleporterReceiver")
