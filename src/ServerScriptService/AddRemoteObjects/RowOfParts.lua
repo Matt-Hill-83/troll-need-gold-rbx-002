@@ -29,52 +29,6 @@ function getCenterPosFromDesiredEdgeOffset(props)
     return parentOffsetPoint
 end
 
-function createRowOfParts(props)
-    local rowProps = props.rowProps
-    local itemConfigs = props.itemConfigs
-    local itemProps = props.itemProps
-
-    local parent = rowProps.parent
-    local itemDuplicationConfig = rowProps.itemDuplicationConfig
-    local gapBetweenRowItems = rowProps.gapBetweenRowItems
-
-    local rowOfParts = {}
-    local desiredOffsetFromParentEdge = rowProps.offset
-
-    for i, itemConfig in ipairs(itemConfigs) do
-        local offsetProps = {
-            parent = parent,
-            childSize = itemProps.size,
-            itemDuplicationConfig = itemDuplicationConfig,
-            offset = desiredOffsetFromParentEdge
-        }
-
-        local position = getCenterPosFromDesiredEdgeOffset(offsetProps)
-
-        local newPartProps = {
-            decalId = itemConfig.decalId,
-            size = itemProps.size,
-            name = itemProps.partName .. "-" .. i,
-            position = position,
-            parent = parent
-        }
-
-        rowOfParts[i] = Part.createPartWithVectors(newPartProps)
-
-        local positionIncrement = Vector3.new(itemProps.size.X, 0, 0) +
-                                      gapBetweenRowItems
-
-        desiredOffsetFromParentEdge = desiredOffsetFromParentEdge +
-                                          positionIncrement *
-                                          rowProps.itemDuplicationConfig
-                                              .alignToChildFarEdge
-
-    end
-
-    return rowOfParts
-end
-
-module.createRowOfParts = createRowOfParts
 module.getCenterPosFromDesiredEdgeOffset = getCenterPosFromDesiredEdgeOffset
 
 return module

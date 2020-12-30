@@ -11,15 +11,9 @@ function createPartWithVectors(props)
 
     newPart.Size = size
     newPart.Position = position
-    newPart.Anchored = true
+    -- newPart.Anchored = true
     newPart.BrickColor = props.color or BrickColor.new("Light blue")
     newPart.Name = name
-
-    if decalId then
-        local newDecal = Instance.new("Decal", newPart)
-        newDecal.Texture = 'rbxassetid://' .. decalId
-        newDecal.Face = 'Front'
-    end
 
     return newPart
 

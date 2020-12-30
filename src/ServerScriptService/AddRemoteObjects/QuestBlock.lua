@@ -8,13 +8,9 @@ local module = {}
 
 renderQuestBlock = function(props)
     local parent = props.parent
-    local sibling = props.sibling
     local size = props.size
     local wallSize = props.wallSize
-    local sceneHeight = props.sceneHeight
     local dockModel = props.questBlockTemplate
-    local index = props.index
-    local isFirst = index == 1
 
     local dockBase = Utils.getFirstDescendantByName(dockModel, "DockBase")
 
@@ -27,52 +23,20 @@ renderQuestBlock = function(props)
     local dockWallLeft = Utils.getFirstDescendantByName(dockModel,
                                                         "DockWallLeft")
 
+    local dockPositioner = Instance.new("Part", parent)
+    dockPositioner.Size = size
+    -- local dockPositioner = Part.createPartWithVectors(blockProps)
+
+    local parentFarEdge = -1
+    local childFarEdge = -1
+
     local offsetX = 0
-    local offsetY = -sceneHeight
-    local offsetZ = 0
+    local offsetY = (childFarEdge * dockPositioner.Size.Y + parentFarEdge *
+                        parent.Size.Y) / 2 - 20
+    local offsetZ = (childFarEdge * dockPositioner.Size.Z + parentFarEdge *
+                        parent.Size.Z) / 2 - 10
 
-    -- if (isFirst) then
-    --     offsetX = 0
-    --     offsetY = 0
-    --     offsetZ = 0
-    -- end
-
-    local desiredOffsetFromParentEdge = nil
-    local itemDuplicationConfig = nil
-
-    desiredOffsetFromParentEdge = Vector3.new(offsetX, offsetY, offsetZ)
-    itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(-1, -1, -1),
-        moveTowardZero = Vector3.new(-1, 1, 1),
-        alignToChildFarEdge = Vector3.new(1, -1, 1)
-    }
-
-    local offsetProps = {
-        parent = sibling,
-        childSize = size,
-        itemDuplicationConfig = itemDuplicationConfig,
-        offset = desiredOffsetFromParentEdge
-    }
-
-    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
-
-    local blockProps = {
-        name = 'QuestContainer',
-        parent = parent,
-
-        material = Enum.Material.DiamondPlate,
-        color = BrickColor.new("Bright red"),
-        size = size,
-        position = childPos
-    }
-
-    local dockPositioner = Part.createPartWithVectors(blockProps)
-
-    local offsetX = -dockPositioner.Size.X / 2
-    local offsetY = -dockPositioner.Size.Y / 2
-    local offsetZ = -dockPositioner.Size.Z / 2
-
-    local offsetCFrame = CFrame.new(offsetX, -100, offsetZ)
+    local offsetCFrame = CFrame.new(offsetX, offsetY, offsetZ)
     dockPositioner.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
 
     dockBase.CFrame = dockPositioner.CFrame
