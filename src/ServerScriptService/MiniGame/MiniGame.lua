@@ -5,7 +5,7 @@ local InitLetterFall = require(Sss.Source.LetterFall.InitLetterFall)
 local module = {}
 
 function module.addMiniGame(props)
-    local clonedScene = props.clonedScene
+    local parent = props.parent
     local sceneIndex = props.sceneIndex
     local questIndex = props.questIndex
     local isStartScene = props.isStartScene
@@ -45,10 +45,10 @@ function module.addMiniGame(props)
             Utils.getFirstDescendantByName(letterFallFolder,
                                            "LetterBlockTemplates")
         miniGameState.letterBlockTemplateFolder = letterBlockTemplateFolder
-        clonedLetterFallModel.Parent = clonedScene
+        clonedLetterFallModel.Parent = parent
 
         clonedLetterFallModel.PrimaryPart.CFrame =
-            clonedScene.PrimaryPart.CFrame + Vector3.new(25, 50, 50)
+            parent.CFrame + Vector3.new(25, 50, 50)
         clonedLetterFallModel.PrimaryPart.Anchored = true
 
         miniGameState.letterFallFolder = letterFallFolder

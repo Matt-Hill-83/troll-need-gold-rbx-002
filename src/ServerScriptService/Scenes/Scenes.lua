@@ -54,7 +54,7 @@ function module.addScenes(props)
         if #questConfig.words2 > 0 then words = questConfig.words2 end
 
         MiniGame.addMiniGame({
-            clonedScene = clonedScene,
+            parent = clonedScene.PrimaryPart,
             words = words,
             sceneIndex = sceneIndex,
             questIndex = questIndex,
