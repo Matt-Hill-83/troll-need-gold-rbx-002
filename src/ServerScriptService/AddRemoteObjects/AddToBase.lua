@@ -84,36 +84,12 @@ function addRemoteObjects()
             })
         questBlockTemplateClone.Parent = questFolder
 
-        -- local questBlockProps = {
-        --     parent = questsOrigin,
-        --     size = Vector3.new(x, 2, z),
-        --     sibling = sibling,
-        --     wallSize = wallSize,
-        --     sceneHeight = sceneHeight,
-        --     questBlockTemplate = questBlockTemplateClone,
-        --     index = questIndex
-        -- }
-        -- local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
-
         local skyBoxTeleporter = Teleporters.configSkyboxTeleporter(
                                      {
                 questIndex = questIndex,
                 questTitle = questConfig.questTitle,
                 questFolder = questFolder
             })
-
-        -- local addScenesProps = {
-        --     parent = questBlock,
-        --     sceneConfigs = questConfig.sceneConfigs,
-        --     questConfig = questConfig,
-        --     gridPadding = gridPadding,
-        --     questFolder = questFolder,
-        --     questIndex = questIndex,
-        --     skyBoxTeleporter = skyBoxTeleporter
-        -- }
-        -- Scenes.addScenes(addScenesProps)
-
-        -- sibling = questBlock
 
         local defaultWords = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
         local words3 = defaultWords
@@ -145,23 +121,14 @@ function addRemoteObjects()
         -- 
         local questBlockProps = {
             parent = miniGame.PrimaryPart,
-            -- parent = questsOrigin,
             size = Vector3.new(x, 2, z),
             sibling = miniGame.PrimaryPart,
-            -- sibling = sibling,
             wallSize = wallSize,
             sceneHeight = sceneHeight,
             questBlockTemplate = questBlockTemplateClone,
             index = questIndex
         }
         local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
-
-        -- local skyBoxTeleporter = Teleporters.configSkyboxTeleporter(
-        --                              {
-        --         questIndex = questIndex,
-        --         questTitle = questConfig.questTitle,
-        --         questFolder = questFolder
-        --     })
 
         local addScenesProps = {
             parent = questBlock,
