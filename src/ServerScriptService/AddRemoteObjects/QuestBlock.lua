@@ -6,72 +6,30 @@ local Constants = require(Sss.Source.Constants.Constants)
 
 local module = {}
 
-function getCFrameFromDesiredOffset(props)
+function setCFrameFromDesiredOffset(props)
     local parent = props.parent
     local child = props.child
 
     local defaultOffsetConfig = {
-        useParentNearEdge = {true, true, true},
-        useParentNearEdge = {true, true, true},
+        useParentNearEdge = Vector3.new(0, 1, -1),
+        useParentNearEdge = Vector3.new(0, -1, 1),
         offsetAdder = Vector3.new(0, 0, -10)
     }
 
     offsetConfig = offsetConfig or defaultOffsetConfig
 
-    -- local parentFarEdge = -1
-    -- local childFarEdge = -1
-    local useParentFarEdge = Vector3.new(0, 1, -1)
-    local useChildFarEdge = Vector3.new(0, -1, 1)
-
-    -- local offsetX = 0
-    -- local offsetY =
-    --     (childFarEdge * child.Size.Y + parentFarEdge * parent.Size.Y) / 2 - 20
-    -- local offsetZ =
-    --     (childFarEdge * child.Size.Z + parentFarEdge * parent.Size.Z) / 2 - 10
-
-    local offset = (useParentFarEdge * parent.Size - useChildFarEdge *
-                       child.Size) / 2 + offsetConfig.offsetAdder
+    local offset = (offsetConfig.useParentNearEdge * parent.Size -
+                       offsetConfig.useChildNearEdge * child.Size) / 2 +
+                       offsetConfig.offsetAdder
 
     local offsetCFrame = CFrame.new(offset)
-    -- local offsetCFrame = CFrame.new(offsetConfig.offsetAdder)
-    -- local offsetCFrame = CFrame.new(offsetX, offsetY, offsetZ)
 
     local offsetConfig = {
-        parentFarEdge = {x = true, y = true, z = true},
-        childFarEdge = {x = true, y = true, z = true}
+        parentNearEdge = {x = true, y = true, z = true},
+        childNearEdge = {x = true, y = true, z = true}
     }
 
     child.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
-    --  
-    --  
-    --  
-    -- local offsetConfig = props.offsetConfig
-
-    -- local childSize = child.Size
-    -- local childPosition = child.Position
-
-    -- local defaultOffsetConfig = {
-    --     useParentNearEdge = {true, true, true},
-    --     useParentNearEdge = {true, true, true}
-
-    -- }
-
-    -- offsetConfig = offsetConfig or defaultOffsetConfig
-
-    -- local parentFarEdge = -1
-    -- local childFarEdge = -1
-
-    -- local offsetX = 0
-    -- local offsetY = (childFarEdge * dockPositioner.Size.Y + parentFarEdge *
-    --                     parent.Size.Y) / 2 - 20
-    -- local offsetZ = (childFarEdge * dockPositioner.Size.Z + parentFarEdge *
-    --                     parent.Size.Z) / 2 - 10
-
-    -- local offsetCFrame = CFrame.new(offsetX, offsetY, offsetZ)
-
-    -- local output = parent.CFrame:ToWorldSpace(offsetCFrame)
-    -- return output
-
 end
 
 renderQuestBlock = function(props)
@@ -95,24 +53,10 @@ renderQuestBlock = function(props)
     local dockPositioner = Instance.new("Part", parent)
     dockPositioner.Size = size
 
-    -- -- 
-    -- -- 
-    -- -- 
-    -- local parentFarEdge = -1
-    -- local childFarEdge = -1
-
-    -- local offsetX = 0
-    -- local offsetY = (childFarEdge * dockPositioner.Size.Y + parentFarEdge *
-    --                     parent.Size.Y) / 2 - 20
-    -- local offsetZ = (childFarEdge * dockPositioner.Size.Z + parentFarEdge *
-    --                     parent.Size.Z) / 2 - 10
-
-    -- local offsetCFrame = CFrame.new(offsetX, offsetY, offsetZ)
-
     local offsetConfig = {
-        parentFarEdge = {x = true, y = true, z = true},
-        childFarEdge = {x = true, y = true, z = true},
-        offsetAdder = Vector3.new(0, 0, 0)
+        useParentNearEdge = Vector3.new(0, 1, -1),
+        useParentNearEdge = Vector3.new(0, -1, 1),
+        offsetAdder = Vector3.new(0, 0, -10)
     }
 
     local translateCFrameProps = {
@@ -122,7 +66,7 @@ renderQuestBlock = function(props)
     }
 
     -- dockPositioner.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
-    local newCFrame = getCFrameFromDesiredOffset(translateCFrameProps)
+    local newCFrame = setCFrameFromDesiredOffset(translateCFrameProps)
     -- dockPositioner.CFrame = newCFrame
     -- 
     -- 
@@ -165,9 +109,9 @@ renderFrontWall = function(props)
     local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        alignToParentNearEdge = Vector3.new(1, 1, -1),
         moveTowardZero = Vector3.new(-1, 1, 1),
-        alignToChildFarEdge = Vector3.new(-1, -1, -1)
+        alignToChildNearEdge = Vector3.new(-1, -1, -1)
     }
 
     local offsetProps = {
@@ -189,9 +133,9 @@ renderBackWall = function(props)
     local childSize = Vector3.new(parent.Size.X, wallSize.Y, wallSize.Z)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, 1),
+        alignToParentNearEdge = Vector3.new(1, 1, 1),
         moveTowardZero = Vector3.new(-1, 1, -1),
-        alignToChildFarEdge = Vector3.new(-1, -1, 1)
+        alignToChildNearEdge = Vector3.new(-1, -1, 1)
     }
 
     local offsetProps = {
@@ -213,9 +157,9 @@ renderLeftWall = function(props)
     local childSize = Vector3.new(wallSize.X, wallSize.Y, parent.Size.Z)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        alignToParentNearEdge = Vector3.new(1, 1, -1),
         moveTowardZero = Vector3.new(-1, 1, 1),
-        alignToChildFarEdge = Vector3.new(-1, -1, -1)
+        alignToChildNearEdge = Vector3.new(-1, -1, -1)
     }
 
     local offsetProps = {
@@ -236,9 +180,9 @@ renderRightWall = function(props)
     local childSize = Vector3.new(wallSize.X, wallSize.Y, parent.Size.Z)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(-1, 1, -1),
+        alignToParentNearEdge = Vector3.new(-1, 1, -1),
         moveTowardZero = Vector3.new(1, 1, 1),
-        alignToChildFarEdge = Vector3.new(1, -1, -1)
+        alignToChildNearEdge = Vector3.new(1, -1, -1)
     }
 
     local offsetProps = {
