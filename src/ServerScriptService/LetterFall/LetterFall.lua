@@ -45,7 +45,6 @@ function configCouchTrigger(miniGameState)
                     if player then
                         if not miniGameState.sitDownCompleted then
                             miniGameState.sitDownCompleted = true
-                            -- HandleClick.initClickHandler(miniGameState)
                             LetterFallUtils.createBalls(miniGameState)
                         end
                         currentPlayer = player

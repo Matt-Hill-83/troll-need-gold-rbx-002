@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>131.594238</X>
-					<Y>175.859192</Y>
-					<Z>-375.554474</Z>
-					<R00>0.444704711</R00>
-					<R01>-0.0565947033</R01>
-					<R02>0.89388746</R02>
-					<R10>-0</R10>
-					<R11>0.998001695</R11>
-					<R12>0.0631864965</R12>
-					<R20>-0.895677209</R20>
-					<R21>-0.028099332</R21>
-					<R22>0.443816096</R22>
+					<X>-34.3329964</X>
+					<Y>239.332031</Y>
+					<Z>-434.228912</Z>
+					<R00>-0.173821136</R00>
+					<R01>0.670618474</R01>
+					<R02>-0.721149802</R02>
+					<R10>7.4505806e-09</R10>
+					<R11>0.732297421</R11>
+					<R12>0.680984914</R12>
+					<R20>0.984777272</R20>
+					<R21>0.118369564</R21>
+					<R22>-0.127288774</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -48584,8 +48584,10 @@ function configCouchTrigger(miniGameState)
         }
 
         function initGameWrapper(miniGameState)
-            -- return initGame(miniGameState)
-            -- 
+            -- This is a good example of a closure.  Let the :Connect definition
+            -- run the wrapper to
+            -- capture the current state of the miniGameState.  But don't run
+            -- initGame until the :Connect actually fires
 
             function initGame()
                 local cameraPath1 = Utils.getFirstDescendantByName(
@@ -48599,7 +48601,6 @@ function configCouchTrigger(miniGameState)
                     if player then
                         if not miniGameState.sitDownCompleted then
                             miniGameState.sitDownCompleted = true
-                            HandleClick.initClickHandler(miniGameState)
                             LetterFallUtils.createBalls(miniGameState)
                         end
                         currentPlayer = player
@@ -48637,7 +48638,7 @@ function initGameToggle(miniGameState)
         if not miniGameState.initCompleted then
             miniGameState.initCompleted = true
 
-            -- HandleClick.initClickHandler(miniGameState)
+            HandleClick.initClickHandler(miniGameState)
             -- LetterFallUtils.createBalls(miniGameState)
             configCouchTrigger(miniGameState)
         end
