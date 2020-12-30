@@ -122,14 +122,27 @@ function addRemoteObjects()
         local words3 = defaultWords
         if #questConfig.words2 > 0 then words3 = questConfig.words2 end
 
-        MiniGame.addMiniGame({
-            parent = mountPlate,
-            words = words3,
+        local miniGame = MiniGame.addMiniGame(
+                             {
+                parent = mountPlate,
+                words = words3,
+                sceneIndex = 1,
+                questIndex = questIndex,
+                isStartScene = true,
+                questTitle = questConfig.questTitle
+            })
+
+        localTPPositioner = Utils.getFirstDescendantByName(miniGame,
+                                                           "MiniGameTeleporterPositioner")
+        Teleporters.addTeleporters({
+            parent = miniGame,
             sceneIndex = 1,
             questIndex = questIndex,
-            -- letterFallTemplate = letterFallTemplate,
             isStartScene = true,
-            questTitle = questConfig.questTitle
+            isEndScene = falase,
+            questTitle = questConfig.questTitle,
+            skyBoxTeleporter = skyBoxTeleporter,
+            localTPPositioner = localTPPositioner
         })
 
     end

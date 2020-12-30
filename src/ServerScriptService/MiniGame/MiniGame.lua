@@ -36,6 +36,8 @@ function module.addMiniGame(props)
         words = words
     }
 
+    local miniGame = {}
+
     if (isStartScene) then
         local clonedLetterFallModel = letterFallTemplate:Clone()
         clonedLetterFallModel.Name = clonedLetterFallModel.Name .. "Clone" ..
@@ -50,13 +52,7 @@ function module.addMiniGame(props)
         miniGameState.letterBlockTemplateFolder = letterBlockTemplateFolder
         clonedLetterFallModel.Parent = parent
 
-        -- clonedLetterFallModel.PrimaryPart.CFrame =
-        --     parent.CFrame + positionOffset
-
-        -- local redBlock = game.Workspace.RedBlock
-        -- local blueCube = game.Workspace.BlueCube
-
-        local offsetCFrame = CFrame.new(0, 0, -80)
+        local offsetCFrame = CFrame.new(0, 0, -10)
 
         clonedLetterFallModel.PrimaryPart.CFrame =
             parent.CFrame:ToWorldSpace(offsetCFrame)
@@ -65,7 +61,10 @@ function module.addMiniGame(props)
 
         miniGameState.letterFallFolder = letterFallFolder
         InitLetterFall.initLetterFall(miniGameState)
+        miniGame = clonedLetterFallModel
     end
+
+    return miniGame
 end
 
 return module

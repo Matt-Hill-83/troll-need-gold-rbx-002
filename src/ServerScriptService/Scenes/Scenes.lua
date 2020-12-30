@@ -53,48 +53,48 @@ function module.addScenes(props)
         local words = defaultWords
         if #questConfig.words2 > 0 then words = questConfig.words2 end
 
-        MiniGame.addMiniGame({
-            parent = clonedScene.PrimaryPart,
-            words = words,
-            sceneIndex = sceneIndex,
-            questIndex = questIndex,
-            letterFallTemplate = letterFallTemplate,
-            isStartScene = sceneConfig.isStartScene,
-            questTitle = questConfig.questTitle,
-            positionOffset = Vector3.new(25, 50, 50)
-        })
+        -- MiniGame.addMiniGame({
+        --     parent = clonedScene.PrimaryPart,
+        --     words = words,
+        --     sceneIndex = sceneIndex,
+        --     questIndex = questIndex,
+        --     letterFallTemplate = letterFallTemplate,
+        --     isStartScene = sceneConfig.isStartScene,
+        --     questTitle = questConfig.questTitle,
+        --     positionOffset = Vector3.new(25, 50, 50)
+        -- })
 
         -- Add teleporters after MinGame is added, because they could be located
         --  in mini game
-        local localTPPositioner = nil
-        if sceneConfig.isStartScene then
-            localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
-                                                               "MiniGameTeleporterPositioner")
-            Teleporters.addTeleporters({
-                parent = clonedScene,
-                sceneIndex = sceneIndex,
-                questIndex = questIndex,
-                isStartScene = sceneConfig.isStartScene,
-                isEndScene = sceneConfig.isEndScene,
-                questTitle = questConfig.questTitle,
-                skyBoxTeleporter = skyBoxTeleporter,
-                localTPPositioner = localTPPositioner
-            })
-        end
-        if sceneConfig.isEndScene then
-            localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
-                                                               "LocalTeleporterPositioner")
-            Teleporters.addTeleporters({
-                parent = clonedScene,
-                sceneIndex = sceneIndex,
-                questIndex = questIndex,
-                isStartScene = sceneConfig.isStartScene,
-                isEndScene = sceneConfig.isEndScene,
-                questTitle = questConfig.questTitle,
-                skyBoxTeleporter = skyBoxTeleporter,
-                localTPPositioner = localTPPositioner
-            })
-        end
+        -- local localTPPositioner = nil
+        -- if sceneConfig.isStartScene then
+        --     localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
+        --                                                        "MiniGameTeleporterPositioner")
+        --     Teleporters.addTeleporters({
+        --         parent = clonedScene,
+        --         sceneIndex = sceneIndex,
+        --         questIndex = questIndex,
+        --         isStartScene = sceneConfig.isStartScene,
+        --         isEndScene = sceneConfig.isEndScene,
+        --         questTitle = questConfig.questTitle,
+        --         skyBoxTeleporter = skyBoxTeleporter,
+        --         localTPPositioner = localTPPositioner
+        --     })
+        -- end
+        -- if sceneConfig.isEndScene then
+        --     localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
+        --                                                        "LocalTeleporterPositioner")
+        --     Teleporters.addTeleporters({
+        --         parent = clonedScene,
+        --         sceneIndex = sceneIndex,
+        --         questIndex = questIndex,
+        --         isStartScene = sceneConfig.isStartScene,
+        --         isEndScene = sceneConfig.isEndScene,
+        --         questTitle = questConfig.questTitle,
+        --         skyBoxTeleporter = skyBoxTeleporter,
+        --         localTPPositioner = localTPPositioner
+        --     })
+        -- end
 
         function onCorrectItemDropped()
 
