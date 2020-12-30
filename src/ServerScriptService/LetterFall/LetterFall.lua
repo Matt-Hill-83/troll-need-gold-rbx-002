@@ -14,6 +14,12 @@ local letterFallFreezeCameraRE = RS:WaitForChild("LetterFallFreezeCameraRE")
 local module = {}
 
 function configCouchTrigger(miniGameState)
+    print('configCouchTrigger' .. ' - start');
+    print('configCouchTrigger' .. ' - start');
+    print('configCouchTrigger' .. ' - start');
+    print('configCouchTrigger' .. ' - start');
+    print('configCouchTrigger' .. ' - start');
+    print('configCouchTrigger' .. ' - start');
     local letterFallFolder = miniGameState.letterFallFolder
 
     local seats = Utils.getDescendantsByName(letterFallFolder, "LFCouchSeat")
