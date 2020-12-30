@@ -12,7 +12,7 @@ function setCFrameFromDesiredOffset(props)
 
     local defaultOffsetConfig = {
         useParentNearEdge = Vector3.new(0, 1, -1),
-        useParentNearEdge = Vector3.new(0, -1, 1),
+        useChildNearEdge = Vector3.new(0, -1, 1),
         offsetAdder = Vector3.new(0, 0, -10)
     }
 
@@ -55,7 +55,7 @@ renderQuestBlock = function(props)
 
     local offsetConfig = {
         useParentNearEdge = Vector3.new(0, 1, -1),
-        useParentNearEdge = Vector3.new(0, -1, 1),
+        useChildNearEdge = Vector3.new(0, -1, 1),
         offsetAdder = Vector3.new(0, 0, -10)
     }
 
@@ -72,29 +72,29 @@ renderQuestBlock = function(props)
     -- 
     -- 
 
-    dockBase.CFrame = dockPositioner.CFrame
     dockBase.Size = dockPositioner.Size
+    dockBase.CFrame = dockPositioner.CFrame
 
-    renderFrontWall({
-        parent = dockBase,
-        wallSize = wallSize,
-        template = dockWallFront
-    })
-    renderBackWall({
-        parent = dockBase,
-        wallSize = wallSize,
-        template = dockWallBack
-    })
-    renderLeftWall({
-        parent = dockBase,
-        wallSize = wallSize,
-        template = dockWallLeft
-    })
-    renderRightWall({
-        parent = dockBase,
-        wallSize = wallSize,
-        template = dockWallRight
-    })
+    -- renderFrontWall({
+    --     parent = dockBase,
+    --     wallSize = wallSize,
+    --     template = dockWallFront
+    -- })
+    -- renderBackWall({
+    --     parent = dockBase,
+    --     wallSize = wallSize,
+    --     template = dockWallBack
+    -- })
+    -- renderLeftWall({
+    --     parent = dockBase,
+    --     wallSize = wallSize,
+    --     template = dockWallLeft
+    -- })
+    -- renderRightWall({
+    --     parent = dockBase,
+    --     wallSize = wallSize,
+    --     template = dockWallRight
+    -- })
 
     dockPositioner:Destroy()
 
