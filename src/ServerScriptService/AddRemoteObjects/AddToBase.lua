@@ -139,7 +139,7 @@ function addRemoteObjects()
             questIndex = questIndex,
             skyBoxTeleporter = skyBoxTeleporter
         }
-        Scenes.addScenes(addScenesProps)
+        -- Scenes.addScenes(addScenesProps)
 
         sibling = questBlock
     end

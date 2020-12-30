@@ -50,7 +50,9 @@ function setCFrameFromDesiredOffset(props)
                        offsetConfig.offsetAdder
 
     local offsetCFrame = CFrame.new(offset)
-    child.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
+    parent.CFrame:ToWorldSpace(offsetCFrame)
+    return parent.CFrame:ToWorldSpace(offsetCFrame)
+    -- child.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
 end
 
 module.getPartFarEdge = getPartFarEdge
