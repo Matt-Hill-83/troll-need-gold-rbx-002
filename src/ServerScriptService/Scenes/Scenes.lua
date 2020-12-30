@@ -45,7 +45,8 @@ function module.addScenes(props)
         local clonedScene = Utils.cloneModel(
                                 {
                 model = sceneTemplateModel,
-                position = CFrame.new(newPosition + sceneStartPosition),
+                position = CFrame.new(newPosition) * sceneStartPosition,
+                -- position = CFrame.new(newPosition + sceneStartPosition),
                 suffix = "Clone" .. "-Q" .. questIndex .. "-S" .. sceneIndex
             })
 
@@ -158,29 +159,6 @@ function module.addScenes(props)
     sceneTemplateModel:Destroy()
 end
 
-function setCFrameFromDesiredOffset(props)
-    local parent = props.parent
-    local child = props.child
-    local offsetConfig = props.offsetConfig
-
-    local dummyChild = child:Clone()
-
-    local defaultOffsetConfig = {
-        useParentNearEdge = Vector3.new(0, 1, -1),
-        useChildNearEdge = Vector3.new(0, -1, 1),
-        offsetAdder = Vector3.new(0, 0, 0)
-    }
-
-    offsetConfig = offsetConfig or defaultOffsetConfig
-
-    local offset = (offsetConfig.useParentNearEdge * parent.Size -
-                       offsetConfig.useChildNearEdge * dummyChild.Size) / 2 +
-                       offsetConfig.offsetAdder
-
-    local offsetCFrame = CFrame.new(offset)
-    dummyChild.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
-end
-
 getInitialScenePosition = function(props)
     local parent = props.parent
     local child = props.child
@@ -200,8 +178,7 @@ getInitialScenePosition = function(props)
         }
     }
 
-    local newCFrame = setCFrameFromDesiredOffset(translateCFrameProps)
-    -- local newCFrame = Utils3.setCFrameFromDesiredOffset(translateCFrameProps)
+    return Utils3.setCFrameFromDesiredOffset(translateCFrameProps)
 
     -- local itemDuplicationConfig = {
     --     alignToParentFarEdge = Vector3.new(1, 1, 1),
