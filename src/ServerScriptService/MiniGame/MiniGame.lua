@@ -54,7 +54,7 @@ function module.addMiniGame(props)
         local letterFallPart = clonedLetterFallModel.PrimaryPart
 
         -- local offsetX = -(letterFallPart.Size.X - parent.Size.X) / 2
-        local offsetX = 0
+        local offsetX = -2
         local offsetY = -(letterFallPart.Size.Y + parent.Size.Y) / 2
         local offsetZ = -(letterFallPart.Size.Z + parent.Size.Z) / 2
 
