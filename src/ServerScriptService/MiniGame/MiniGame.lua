@@ -9,8 +9,10 @@ function module.addMiniGame(props)
     local sceneIndex = props.sceneIndex
     local questIndex = props.questIndex
     local isStartScene = props.isStartScene
-    local letterFallTemplate = props.letterFallTemplate
+    -- local letterFallTemplate = props.letterFallTemplate
     local words = props.words
+
+    local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
 
     local allLetters = {
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',

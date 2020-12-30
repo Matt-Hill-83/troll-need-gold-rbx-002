@@ -10,6 +10,7 @@ local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
 local Constants = require(Sss.Source.Constants.Constants)
 local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
 local Teleporters = require(Sss.Source.Teleporters.Teleporters)
+local MiniGame = require(Sss.Source.MiniGame.MiniGame)
 
 function addRemoteObjects()
     local questConfigs = SceneConfig.getScenesConfig()
@@ -37,7 +38,6 @@ function addRemoteObjects()
 
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
-
         local mountPlate = mountPlates[questIndex]
         print('mountPlate' .. ' - start');
         print(mountPlate);
@@ -117,6 +117,21 @@ function addRemoteObjects()
         Scenes.addScenes(addScenesProps)
 
         sibling = questBlock
+
+        local defaultWords = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
+        local words3 = defaultWords
+        if #questConfig.words2 > 0 then words3 = questConfig.words2 end
+
+        MiniGame.addMiniGame({
+            parent = mountPlate,
+            words = words3,
+            sceneIndex = 1,
+            questIndex = questIndex,
+            -- letterFallTemplate = letterFallTemplate,
+            isStartScene = true,
+            questTitle = questConfig.questTitle
+        })
+
     end
     questBlockTemplate:Destroy()
     local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")

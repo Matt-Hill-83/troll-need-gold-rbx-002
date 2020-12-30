@@ -41519,6 +41519,7 @@ local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
 local Constants = require(Sss.Source.Constants.Constants)
 local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
 local Teleporters = require(Sss.Source.Teleporters.Teleporters)
+local MiniGame = require(Sss.Source.MiniGame.MiniGame)
 
 function addRemoteObjects()
     local questConfigs = SceneConfig.getScenesConfig()
@@ -41546,7 +41547,6 @@ function addRemoteObjects()
 
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
-
         local mountPlate = mountPlates[questIndex]
         print('mountPlate' .. ' - start');
         print(mountPlate);
@@ -41626,6 +41626,21 @@ function addRemoteObjects()
         Scenes.addScenes(addScenesProps)
 
         sibling = questBlock
+
+        local defaultWords = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
+        local words3 = defaultWords
+        if #questConfig.words2 > 0 then words3 = questConfig.words2 end
+
+        MiniGame.addMiniGame({
+            parent = mountPlate,
+            words = words3,
+            sceneIndex = 1,
+            questIndex = questIndex,
+            -- letterFallTemplate = letterFallTemplate,
+            isStartScene = true,
+            questTitle = questConfig.questTitle
+        })
+
     end
     questBlockTemplate:Destroy()
     local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
@@ -44154,7 +44169,7 @@ function module.addScenes(props)
         if #questConfig.words2 > 0 then words = questConfig.words2 end
 
         MiniGame.addMiniGame({
-            clonedScene = clonedScene.PrimaryPart,
+            parent = clonedScene.PrimaryPart,
             words = words,
             sceneIndex = sceneIndex,
             questIndex = questIndex,
@@ -47212,12 +47227,14 @@ local InitLetterFall = require(Sss.Source.LetterFall.InitLetterFall)
 local module = {}
 
 function module.addMiniGame(props)
-    local clonedScene = props.clonedScene
+    local parent = props.parent
     local sceneIndex = props.sceneIndex
     local questIndex = props.questIndex
     local isStartScene = props.isStartScene
-    local letterFallTemplate = props.letterFallTemplate
+    -- local letterFallTemplate = props.letterFallTemplate
     local words = props.words
+
+    local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
 
     local allLetters = {
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
@@ -47252,10 +47269,10 @@ function module.addMiniGame(props)
             Utils.getFirstDescendantByName(letterFallFolder,
                                            "LetterBlockTemplates")
         miniGameState.letterBlockTemplateFolder = letterBlockTemplateFolder
-        clonedLetterFallModel.Parent = clonedScene
+        clonedLetterFallModel.Parent = parent
 
         clonedLetterFallModel.PrimaryPart.CFrame =
-            clonedScene.CFrame + Vector3.new(25, 50, 50)
+            parent.CFrame + Vector3.new(25, 50, 50)
         clonedLetterFallModel.PrimaryPart.Anchored = true
 
         miniGameState.letterFallFolder = letterFallFolder
