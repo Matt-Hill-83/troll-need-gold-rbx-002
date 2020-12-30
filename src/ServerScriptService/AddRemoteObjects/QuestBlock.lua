@@ -1,36 +1,33 @@
 local Sss = game:GetService("ServerScriptService")
-local Part = require(Sss.Source.AddRemoteObjects.Part)
+-- local Part = require(Sss.Source.AddRemoteObjects.Part)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
+
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local Utils3 = require(Sss.Source.Utils.U003PartsUtils)
 local Constants = require(Sss.Source.Constants.Constants)
 
 local module = {}
 
-function setCFrameFromDesiredOffset(props)
-    local parent = props.parent
-    local child = props.child
+-- function setCFrameFromDesiredOffset(props)
+--     local parent = props.parent
+--     local child = props.child
+--     local offsetConfig = props.offsetConfig
 
-    local defaultOffsetConfig = {
-        useParentNearEdge = Vector3.new(0, 1, -1),
-        useChildNearEdge = Vector3.new(0, -1, 1),
-        offsetAdder = Vector3.new(0, 0, -10)
-    }
+--     local defaultOffsetConfig = {
+--         useParentNearEdge = Vector3.new(0, 1, -1),
+--         useChildNearEdge = Vector3.new(0, -1, 1),
+--         offsetAdder = Vector3.new(0, 0, 0)
+--     }
 
-    offsetConfig = offsetConfig or defaultOffsetConfig
+--     offsetConfig = offsetConfig or defaultOffsetConfig
 
-    local offset = (offsetConfig.useParentNearEdge * parent.Size -
-                       offsetConfig.useChildNearEdge * child.Size) / 2 +
-                       offsetConfig.offsetAdder
+--     local offset = (offsetConfig.useParentNearEdge * parent.Size -
+--                        offsetConfig.useChildNearEdge * child.Size) / 2 +
+--                        offsetConfig.offsetAdder
 
-    local offsetCFrame = CFrame.new(offset)
-
-    local offsetConfig = {
-        parentNearEdge = {x = true, y = true, z = true},
-        childNearEdge = {x = true, y = true, z = true}
-    }
-
-    child.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
-end
+--     local offsetCFrame = CFrame.new(offset)
+--     child.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
+-- end
 
 renderQuestBlock = function(props)
     local parent = props.parent
@@ -66,7 +63,7 @@ renderQuestBlock = function(props)
     }
 
     -- dockPositioner.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
-    local newCFrame = setCFrameFromDesiredOffset(translateCFrameProps)
+    local newCFrame = Utils3.setCFrameFromDesiredOffset(translateCFrameProps)
     -- dockPositioner.CFrame = newCFrame
     -- 
     -- 

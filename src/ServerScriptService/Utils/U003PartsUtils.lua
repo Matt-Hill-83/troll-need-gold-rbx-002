@@ -27,39 +27,33 @@ function tween(props)
     return tween
 end
 
-function module.getCenterPositionForRightOffset(props)
-    local parent = props.parent
-    local child = props.child
-
-    local newVal = parent.Position.X - (child.Size.X + parent.Size.X) / 2
-    return Vector3.new(newVal, child.Position.Y, child.Position.Z)
-end
-
-function module.getCenterPositionForRightFront(props)
-    local parent = props.parent
-    local child = props.child
-
-    local newVal = parent.Position.Z - (child.Size.Z + parent.Size.Z) / 2
-    return Vector3.new(child.Position.X, child.Position.Y, newVal)
-end
-
 function getPartFarEdge(props)
     local part = props.part
     return part.Position + (part.Size / 2) * props.alignToParentFarEdge
 end
 
-function getParentFarEdge(props)
+function setCFrameFromDesiredOffset(props)
     local parent = props.parent
-    local childSizeLength = props.childLength
-    local axis = props.axis or 'X'
+    local child = props.child
+    local offsetConfig = props.offsetConfig
 
-    local parentPosition = parent.CFrame
-    local parentSize = parent.Size
-    local parentFarEdge = parentPosition[axis] + parentSize[axis] / 2
-    local alignedValue = parentFarEdge - childSizeLength / 2
-    return alignedValue
+    local defaultOffsetConfig = {
+        useParentNearEdge = Vector3.new(0, 1, -1),
+        useChildNearEdge = Vector3.new(0, -1, 1),
+        offsetAdder = Vector3.new(0, 0, 0)
+    }
+
+    offsetConfig = offsetConfig or defaultOffsetConfig
+
+    local offset = (offsetConfig.useParentNearEdge * parent.Size -
+                       offsetConfig.useChildNearEdge * child.Size) / 2 +
+                       offsetConfig.offsetAdder
+
+    local offsetCFrame = CFrame.new(offset)
+    child.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
 end
 
 module.getPartFarEdge = getPartFarEdge
+module.setCFrameFromDesiredOffset = setCFrameFromDesiredOffset
 module.tween = tween
 return module
