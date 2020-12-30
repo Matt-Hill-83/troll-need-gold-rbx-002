@@ -163,17 +163,16 @@ getInitialScenePosition = function(props)
     local child = props.child
     local gridPadding = props.gridPadding
 
-    -- local childSize = child.Size
-    local desiredOffsetFromParentEdge = Vector3.new(-gridPadding / 2, 0,
-                                                    -gridPadding / 2)
+    local desiredOffsetFromParentEdge = Vector3.new(0, 0, gridPadding / 2)
 
     local translateCFrameProps = {
         parent = parent,
         child = child,
         offsetConfig = {
             useParentNearEdge = Vector3.new(0, 1, -1),
-            useChildNearEdge = Vector3.new(0, -1, 1),
-            offsetAdder = Vector3.new(0, 0, -10)
+            useChildNearEdge = Vector3.new(0, -1, -1),
+            -- offsetAdder = Vector3.new(0, 0, 0)
+            offsetAdder = desiredOffsetFromParentEdge
         }
     }
 
