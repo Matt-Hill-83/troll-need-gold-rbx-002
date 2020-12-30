@@ -6,6 +6,74 @@ local Constants = require(Sss.Source.Constants.Constants)
 
 local module = {}
 
+function getCFrameFromDesiredOffset(props)
+    local parent = props.parent
+    local child = props.child
+
+    local defaultOffsetConfig = {
+        useParentNearEdge = {true, true, true},
+        useParentNearEdge = {true, true, true},
+        offsetAdder = Vector3.new(0, 0, -10)
+    }
+
+    offsetConfig = offsetConfig or defaultOffsetConfig
+
+    -- local parentFarEdge = -1
+    -- local childFarEdge = -1
+    local useParentFarEdge = Vector3.new(0, 1, -1)
+    local useChildFarEdge = Vector3.new(0, -1, 1)
+
+    -- local offsetX = 0
+    -- local offsetY =
+    --     (childFarEdge * child.Size.Y + parentFarEdge * parent.Size.Y) / 2 - 20
+    -- local offsetZ =
+    --     (childFarEdge * child.Size.Z + parentFarEdge * parent.Size.Z) / 2 - 10
+
+    local offset = (useParentFarEdge * parent.Size - useChildFarEdge *
+                       child.Size) / 2 + offsetConfig.offsetAdder
+
+    local offsetCFrame = CFrame.new(offset)
+    -- local offsetCFrame = CFrame.new(offsetConfig.offsetAdder)
+    -- local offsetCFrame = CFrame.new(offsetX, offsetY, offsetZ)
+
+    local offsetConfig = {
+        parentFarEdge = {x = true, y = true, z = true},
+        childFarEdge = {x = true, y = true, z = true}
+    }
+
+    child.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
+    --  
+    --  
+    --  
+    -- local offsetConfig = props.offsetConfig
+
+    -- local childSize = child.Size
+    -- local childPosition = child.Position
+
+    -- local defaultOffsetConfig = {
+    --     useParentNearEdge = {true, true, true},
+    --     useParentNearEdge = {true, true, true}
+
+    -- }
+
+    -- offsetConfig = offsetConfig or defaultOffsetConfig
+
+    -- local parentFarEdge = -1
+    -- local childFarEdge = -1
+
+    -- local offsetX = 0
+    -- local offsetY = (childFarEdge * dockPositioner.Size.Y + parentFarEdge *
+    --                     parent.Size.Y) / 2 - 20
+    -- local offsetZ = (childFarEdge * dockPositioner.Size.Z + parentFarEdge *
+    --                     parent.Size.Z) / 2 - 10
+
+    -- local offsetCFrame = CFrame.new(offsetX, offsetY, offsetZ)
+
+    -- local output = parent.CFrame:ToWorldSpace(offsetCFrame)
+    -- return output
+
+end
+
 renderQuestBlock = function(props)
     local parent = props.parent
     local size = props.size
@@ -22,22 +90,43 @@ renderQuestBlock = function(props)
                                                          "DockWallRight")
     local dockWallLeft = Utils.getFirstDescendantByName(dockModel,
                                                         "DockWallLeft")
-
+    -- 
+    -- 
     local dockPositioner = Instance.new("Part", parent)
     dockPositioner.Size = size
-    -- local dockPositioner = Part.createPartWithVectors(blockProps)
 
-    local parentFarEdge = -1
-    local childFarEdge = -1
+    -- -- 
+    -- -- 
+    -- -- 
+    -- local parentFarEdge = -1
+    -- local childFarEdge = -1
 
-    local offsetX = 0
-    local offsetY = (childFarEdge * dockPositioner.Size.Y + parentFarEdge *
-                        parent.Size.Y) / 2 - 20
-    local offsetZ = (childFarEdge * dockPositioner.Size.Z + parentFarEdge *
-                        parent.Size.Z) / 2 - 10
+    -- local offsetX = 0
+    -- local offsetY = (childFarEdge * dockPositioner.Size.Y + parentFarEdge *
+    --                     parent.Size.Y) / 2 - 20
+    -- local offsetZ = (childFarEdge * dockPositioner.Size.Z + parentFarEdge *
+    --                     parent.Size.Z) / 2 - 10
 
-    local offsetCFrame = CFrame.new(offsetX, offsetY, offsetZ)
-    dockPositioner.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
+    -- local offsetCFrame = CFrame.new(offsetX, offsetY, offsetZ)
+
+    local offsetConfig = {
+        parentFarEdge = {x = true, y = true, z = true},
+        childFarEdge = {x = true, y = true, z = true},
+        offsetAdder = Vector3.new(0, 0, 0)
+    }
+
+    local translateCFrameProps = {
+        parent = parent,
+        child = dockPositioner,
+        offsetConfig = offsetConfig
+    }
+
+    -- dockPositioner.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
+    local newCFrame = getCFrameFromDesiredOffset(translateCFrameProps)
+    -- dockPositioner.CFrame = newCFrame
+    -- 
+    -- 
+    -- 
 
     dockBase.CFrame = dockPositioner.CFrame
     dockBase.Size = dockPositioner.Size
