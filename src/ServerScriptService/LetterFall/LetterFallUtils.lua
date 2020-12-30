@@ -222,11 +222,22 @@ function createBalls(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local ball = Utils.getFirstDescendantByName(letterFallFolder, "GemTemplate")
 
+    local balls = {}
     for count = 1, 10 do
         local newBall = ball:Clone()
         newBall.Handle.CFrame = newBall.Handle.CFrame + Vector3.new(-0.1, 0, 0)
         newBall.Parent = ball.Parent
         Utils.enableChildWelds({part = newBall, enabled = false})
+        table.insert(balls, newBall)
+    end
+
+    while wait(6) do
+        for i, ball in ipairs(balls) do
+            local vectorForce = Utils.getFirstDescendantByName(ball,
+                                                               "VectorForce")
+            if not vectorForce then break end
+            vectorForce.Force = vectorForce.Force * -1
+        end
     end
     ball:Destroy()
 end

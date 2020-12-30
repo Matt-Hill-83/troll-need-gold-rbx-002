@@ -53,17 +53,6 @@ function module.addScenes(props)
         local words = defaultWords
         if #questConfig.words2 > 0 then words = questConfig.words2 end
 
-        -- MiniGame.addMiniGame({
-        --     parent = clonedScene.PrimaryPart,
-        --     words = words,
-        --     sceneIndex = sceneIndex,
-        --     questIndex = questIndex,
-        --     letterFallTemplate = letterFallTemplate,
-        --     isStartScene = sceneConfig.isStartScene,
-        --     questTitle = questConfig.questTitle,
-        --     positionOffset = Vector3.new(25, 50, 50)
-        -- })
-
         -- Add teleporters after MinGame is added, because they could be located
         --  in mini game
         -- local localTPPositioner = nil

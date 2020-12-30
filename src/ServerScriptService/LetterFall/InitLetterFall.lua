@@ -15,6 +15,7 @@ function initLetterFall(miniGameState)
     LetterFall.initGameToggle(miniGameState)
     InitLetterRack.initLetterRack(miniGameState)
     InitWord.initWord(miniGameState)
+
     LetterFallUtils.styleLetterBlocks({
         miniGameState = miniGameState,
         availWords = miniGameState.words

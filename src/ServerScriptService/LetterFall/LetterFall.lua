@@ -75,6 +75,13 @@ function initGameToggle(miniGameState)
                                                             "StartGameTrigger")
 
     function onPartTouched(otherPart)
+        print('onPartTouched' .. ' - start');
+        print('onPartTouched' .. ' - start');
+        print('onPartTouched' .. ' - start');
+        print('onPartTouched' .. ' - start');
+        print('onPartTouched' .. ' - start');
+        print('onPartTouched' .. ' - start');
+
         if not miniGameState.initCompleted then
             miniGameState.initCompleted = true
 
