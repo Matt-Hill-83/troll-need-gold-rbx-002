@@ -61,14 +61,11 @@ function configCouchTrigger(miniGameState)
             -- run the wrapper to
             -- capture the current state of the miniGameState.  But don't run
             -- initGame until the :Connect actually fires
-
             return initGame
-
         end
 
         seat:GetPropertyChangedSignal("Occupant"):Connect(
             initGameWrapper(miniGameState))
-
     end
 end
 

@@ -39,8 +39,6 @@ function addRemoteObjects()
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
         local mountPlate = mountPlates[questIndex]
-        print('mountPlate' .. ' - start');
-        print(mountPlate);
         local gridSize = questConfig.gridSize
 
         local words = questConfig.words
@@ -130,8 +128,6 @@ function addRemoteObjects()
                 isStartScene = true,
                 questTitle = questConfig.questTitle
             })
-        print('miniGame' .. ' - start');
-        print(miniGame);
         localTPPositioner = Utils.getFirstDescendantByName(miniGame,
                                                            "MiniGameTeleporterPositioner")
         Teleporters.addTeleporters({

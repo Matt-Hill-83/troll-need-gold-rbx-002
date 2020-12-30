@@ -39,6 +39,8 @@ end
 
 function initLetterRack(miniGameState)
     local runTimeLetterFolder = getRunTimeLetterFolder(miniGameState)
+    miniGameState.runTimeLetterFolder = runTimeLetterFolder
+
     local letterFallFolder = miniGameState.letterFallFolder
 
     local letterRackFolder = Utils.getFirstDescendantByName(letterFallFolder,
