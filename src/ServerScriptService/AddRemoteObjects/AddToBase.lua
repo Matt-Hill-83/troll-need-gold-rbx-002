@@ -106,17 +106,17 @@ function addRemoteObjects()
             })
         localTPPositioner = Utils.getFirstDescendantByName(miniGame,
                                                            "MiniGameTeleporterPositioner")
-        Teleporters.addTeleporters({
-            parent = miniGame,
-            sceneIndex = 1,
-            questIndex = questIndex,
-            isStartScene = true,
-            isEndScene = falase,
-            questTitle = questConfig.questTitle,
-            skyBoxTeleporter = skyBoxTeleporter,
-            localTPPositioner = localTPPositioner
-        })
-        -- 
+        -- Teleporters.addTeleporters({
+        --     parent = miniGame,
+        --     sceneIndex = 1,
+        --     questIndex = questIndex,
+        --     isStartScene = true,
+        --     isEndScene = falase,
+        --     questTitle = questConfig.questTitle,
+        --     skyBoxTeleporter = skyBoxTeleporter,
+        --     localTPPositioner = localTPPositioner
+        -- })
+        -- -- 
         -- 
         -- 
         local questBlockProps = {

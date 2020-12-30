@@ -34,7 +34,7 @@ renderQuestBlock = function(props)
         offsetConfig = {
             useParentNearEdge = Vector3.new(0, 1, 1),
             useChildNearEdge = Vector3.new(0, -1, -1),
-            offsetAdder = Vector3.new(0, -10, 0)
+            offsetAdder = Vector3.new(0, -40, 0)
         }
     }
 

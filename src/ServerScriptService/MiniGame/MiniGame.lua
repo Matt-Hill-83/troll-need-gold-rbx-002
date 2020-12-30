@@ -54,13 +54,6 @@ function module.addMiniGame(props)
 
         local letterFallPart = clonedLetterFallModel.PrimaryPart
 
-        -- local offsetX = 0
-        -- local offsetY = -(letterFallPart.Size.Y - parent.Size.Y) / 2 - 4
-        -- local offsetZ = -(letterFallPart.Size.Z - parent.Size.Z) / 2
-
-        -- local offsetCFrame = CFrame.new(offsetX, offsetY, offsetZ)
-        -- letterFallPart.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
-
         local translateCFrameProps = {
             parent = parent,
             child = letterFallPart,

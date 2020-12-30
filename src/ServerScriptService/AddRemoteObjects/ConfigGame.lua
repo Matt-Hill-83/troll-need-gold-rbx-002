@@ -24,8 +24,8 @@ function setVisibility()
     local taggedPartsDestroy = CS:GetTagged("Destroy")
     for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
 
-    -- local taggedPartsTransparent = CS:GetTagged("Transparent")
-    -- for i, item in ipairs(taggedPartsTransparent) do item.Transparency = 1 end
+    local taggedPartsTransparent = CS:GetTagged("Transparent")
+    for i, item in ipairs(taggedPartsTransparent) do item.Transparency = 1 end
 
     local canCollideOff = CS:GetTagged("CanCollideOff")
     for i, item in ipairs(canCollideOff) do item.CanCollide = false end

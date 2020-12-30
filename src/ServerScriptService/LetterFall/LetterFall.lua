@@ -89,12 +89,8 @@ function initGameToggle(miniGameState)
         if humanoid then
             if not miniGameState.initCompleted then
                 miniGameState.initCompleted = true
-                print('onPartTouched' .. ' - start');
-                print('onPartTouched' .. ' - start');
-                print('onPartTouched' .. ' - start');
-                print('onPartTouched' .. ' - start');
-                print('onPartTouched' .. ' - start');
-                print('onPartTouched' .. ' - start');
+                print('onPartTouched' ..
+                          ' - start------------------------------------------>--');
 
                 HandleClick.initClickHandler(miniGameState)
                 LetterFallUtils.createBalls(miniGameState)
