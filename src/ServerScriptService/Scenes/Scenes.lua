@@ -19,7 +19,7 @@ function module.addScenes(props)
     local gridPadding = props.gridPadding
     local questFolder = props.questFolder
     local questIndex = props.questIndex
-    local skyBoxTeleporter = props.skyBoxTeleporter
+    -- local skyBoxTeleporter = props.skyBoxTeleporter
 
     local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
                                                               "SceneTemplate")

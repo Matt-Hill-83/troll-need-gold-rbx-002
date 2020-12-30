@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-26.0057716</X>
-					<Y>138.711487</Y>
-					<Z>141.960541</Z>
-					<R00>0.983268499</R00>
-					<R01>0.0652782321</R01>
-					<R02>-0.170064479</R02>
-					<R10>3.72529074e-09</R10>
-					<R11>0.933586776</R11>
-					<R12>0.358351648</R12>
-					<R20>0.182162508</R20>
-					<R21>-0.352355897</R21>
-					<R22>0.917966306</R22>
+					<X>80.1065903</X>
+					<Y>206.986694</Y>
+					<Z>63.8986855</Z>
+					<R00>-0.88865453</R00>
+					<R01>-0.225069627</R01>
+					<R02>0.399545819</R02>
+					<R10>-0</R10>
+					<R11>0.871272504</R11>
+					<R12>0.490799725</R12>
+					<R20>-0.458577335</R20>
+					<R21>0.436151385</R21>
+					<R22>-0.774260223</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>0.433468819</X>
-					<Y>83</Y>
-					<Z>-0.751982272</Z>
+					<X>79.3074875</X>
+					<Y>206.005081</Y>
+					<Z>65.4472275</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -43980,16 +43980,16 @@ function addRemoteObjects()
             })
         questBlockTemplateClone.Parent = questFolder
 
-        local questBlockProps = {
-            parent = questsOrigin,
-            size = Vector3.new(x, 2, z),
-            sibling = sibling,
-            wallSize = wallSize,
-            sceneHeight = sceneHeight,
-            questBlockTemplate = questBlockTemplateClone,
-            index = questIndex
-        }
-        local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
+        -- local questBlockProps = {
+        --     parent = questsOrigin,
+        --     size = Vector3.new(x, 2, z),
+        --     sibling = sibling,
+        --     wallSize = wallSize,
+        --     sceneHeight = sceneHeight,
+        --     questBlockTemplate = questBlockTemplateClone,
+        --     index = questIndex
+        -- }
+        -- local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
 
         local skyBoxTeleporter = Teleporters.configSkyboxTeleporter(
                                      {
@@ -43998,19 +43998,18 @@ function addRemoteObjects()
                 questFolder = questFolder
             })
 
-        -- questBlock.Transparency = 1
-        local addScenesProps = {
-            parent = questBlock,
-            sceneConfigs = questConfig.sceneConfigs,
-            questConfig = questConfig,
-            gridPadding = gridPadding,
-            questFolder = questFolder,
-            questIndex = questIndex,
-            skyBoxTeleporter = skyBoxTeleporter
-        }
-        Scenes.addScenes(addScenesProps)
+        -- local addScenesProps = {
+        --     parent = questBlock,
+        --     sceneConfigs = questConfig.sceneConfigs,
+        --     questConfig = questConfig,
+        --     gridPadding = gridPadding,
+        --     questFolder = questFolder,
+        --     questIndex = questIndex,
+        --     skyBoxTeleporter = skyBoxTeleporter
+        -- }
+        -- Scenes.addScenes(addScenesProps)
 
-        sibling = questBlock
+        -- sibling = questBlock
 
         local defaultWords = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
         local words3 = defaultWords
@@ -44025,7 +44024,8 @@ function addRemoteObjects()
                 isStartScene = true,
                 questTitle = questConfig.questTitle
             })
-
+        print('miniGame' .. ' - start');
+        print(miniGame);
         localTPPositioner = Utils.getFirstDescendantByName(miniGame,
                                                            "MiniGameTeleporterPositioner")
         Teleporters.addTeleporters({
@@ -44038,7 +44038,41 @@ function addRemoteObjects()
             skyBoxTeleporter = skyBoxTeleporter,
             localTPPositioner = localTPPositioner
         })
+        -- 
+        -- 
+        -- 
+        local questBlockProps = {
+            parent = miniGame.PrimaryPart,
+            -- parent = questsOrigin,
+            size = Vector3.new(x, 2, z),
+            sibling = miniGame.PrimaryPart,
+            -- sibling = sibling,
+            wallSize = wallSize,
+            sceneHeight = sceneHeight,
+            questBlockTemplate = questBlockTemplateClone,
+            index = questIndex
+        }
+        local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
 
+        -- local skyBoxTeleporter = Teleporters.configSkyboxTeleporter(
+        --                              {
+        --         questIndex = questIndex,
+        --         questTitle = questConfig.questTitle,
+        --         questFolder = questFolder
+        --     })
+
+        local addScenesProps = {
+            parent = questBlock,
+            sceneConfigs = questConfig.sceneConfigs,
+            questConfig = questConfig,
+            gridPadding = gridPadding,
+            questFolder = questFolder,
+            questIndex = questIndex,
+            skyBoxTeleporter = skyBoxTeleporter
+        }
+        Scenes.addScenes(addScenesProps)
+
+        sibling = questBlock
     end
     questBlockTemplate:Destroy()
     local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
@@ -44231,15 +44265,15 @@ renderQuestBlock = function(props)
     local dockWallLeft = Utils.getFirstDescendantByName(dockModel,
                                                         "DockWallLeft")
 
-    local offsetX = -100
-    local offsetY = -sceneHeight / 2
+    local offsetX = 0
+    local offsetY = -sceneHeight
     local offsetZ = 0
 
-    if (isFirst) then
-        offsetX = 0
-        offsetY = 0
-        offsetZ = 0
-    end
+    -- if (isFirst) then
+    --     offsetX = 0
+    --     offsetY = 0
+    --     offsetZ = 0
+    -- end
 
     local desiredOffsetFromParentEdge = nil
     local itemDuplicationConfig = nil
@@ -44271,6 +44305,13 @@ renderQuestBlock = function(props)
     }
 
     local dockPositioner = Part.createPartWithVectors(blockProps)
+
+    local offsetX = -dockPositioner.Size.X / 2
+    local offsetY = -dockPositioner.Size.Y / 2
+    local offsetZ = -dockPositioner.Size.Z / 2
+
+    local offsetCFrame = CFrame.new(offsetX, -100, offsetZ)
+    dockPositioner.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
 
     dockBase.CFrame = dockPositioner.CFrame
     dockBase.Size = dockPositioner.Size
@@ -46532,7 +46573,7 @@ function module.addScenes(props)
     local gridPadding = props.gridPadding
     local questFolder = props.questFolder
     local questIndex = props.questIndex
-    local skyBoxTeleporter = props.skyBoxTeleporter
+    -- local skyBoxTeleporter = props.skyBoxTeleporter
 
     local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
                                                               "SceneTemplate")
@@ -49630,7 +49671,6 @@ function module.addMiniGame(props)
     local sceneIndex = props.sceneIndex
     local questIndex = props.questIndex
     local isStartScene = props.isStartScene
-    -- local letterFallTemplate = props.letterFallTemplate
     local words = props.words
     local positionOffset = props.positionOffset or Vector3.new(0, 0, 0)
 
@@ -49673,7 +49713,12 @@ function module.addMiniGame(props)
         miniGameState.letterBlockTemplateFolder = letterBlockTemplateFolder
         clonedLetterFallModel.Parent = parent
 
-        local offsetCFrame = CFrame.new(0, 0, -10)
+        local letterFallPart = clonedLetterFallModel.PrimaryPart
+
+        local offsetZ = -letterFallPart.Size.Z / 2
+        local offsetY = -letterFallPart.Size.Y / 2
+
+        local offsetCFrame = CFrame.new(0, offsetY, offsetZ)
 
         clonedLetterFallModel.PrimaryPart.CFrame =
             parent.CFrame:ToWorldSpace(offsetCFrame)

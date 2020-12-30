@@ -27,15 +27,15 @@ renderQuestBlock = function(props)
     local dockWallLeft = Utils.getFirstDescendantByName(dockModel,
                                                         "DockWallLeft")
 
-    local offsetX = -100
-    local offsetY = -sceneHeight / 2
+    local offsetX = 0
+    local offsetY = -sceneHeight
     local offsetZ = 0
 
-    if (isFirst) then
-        offsetX = 0
-        offsetY = 0
-        offsetZ = 0
-    end
+    -- if (isFirst) then
+    --     offsetX = 0
+    --     offsetY = 0
+    --     offsetZ = 0
+    -- end
 
     local desiredOffsetFromParentEdge = nil
     local itemDuplicationConfig = nil
@@ -67,6 +67,13 @@ renderQuestBlock = function(props)
     }
 
     local dockPositioner = Part.createPartWithVectors(blockProps)
+
+    local offsetX = -dockPositioner.Size.X / 2
+    local offsetY = -dockPositioner.Size.Y / 2
+    local offsetZ = -dockPositioner.Size.Z / 2
+
+    local offsetCFrame = CFrame.new(offsetX, -100, offsetZ)
+    dockPositioner.CFrame = parent.CFrame:ToWorldSpace(offsetCFrame)
 
     dockBase.CFrame = dockPositioner.CFrame
     dockBase.Size = dockPositioner.Size

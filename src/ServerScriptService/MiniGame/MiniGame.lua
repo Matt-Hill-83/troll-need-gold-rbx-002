@@ -9,7 +9,6 @@ function module.addMiniGame(props)
     local sceneIndex = props.sceneIndex
     local questIndex = props.questIndex
     local isStartScene = props.isStartScene
-    -- local letterFallTemplate = props.letterFallTemplate
     local words = props.words
     local positionOffset = props.positionOffset or Vector3.new(0, 0, 0)
 
@@ -52,7 +51,12 @@ function module.addMiniGame(props)
         miniGameState.letterBlockTemplateFolder = letterBlockTemplateFolder
         clonedLetterFallModel.Parent = parent
 
-        local offsetCFrame = CFrame.new(0, 0, -10)
+        local letterFallPart = clonedLetterFallModel.PrimaryPart
+
+        local offsetZ = -letterFallPart.Size.Z / 2
+        local offsetY = -letterFallPart.Size.Y / 2
+
+        local offsetCFrame = CFrame.new(0, offsetY, offsetZ)
 
         clonedLetterFallModel.PrimaryPart.CFrame =
             parent.CFrame:ToWorldSpace(offsetCFrame)
