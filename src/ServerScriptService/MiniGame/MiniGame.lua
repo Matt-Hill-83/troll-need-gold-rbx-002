@@ -47,17 +47,6 @@ function module.addMiniGame(props)
         miniGameState.letterBlockTemplateFolder = letterBlockTemplateFolder
         clonedLetterFallModel.Parent = clonedScene
 
-        -- local attMiniGamePositioner = Utils.getFirstDescendantByName(
-        --                                   clonedScene, "Att-MiniGamePositioner")
-
-        -- local attDropTubeBottom = Utils.getFirstDescendantByName(
-        --                               clonedLetterFallModel,
-        --   "Att-DropTubeBottom")
-
-        -- attDropTubeBottom.CFrame = attMiniGamePositioner.CFrame *
-        --                                CFrame.new(Vector3.new(0, 50, 0))
-        -- attDropTubeBottom.CFrame = attMiniGamePositioner.CFrame +
-        --                                Vector3.new(0, 50, 0)
         clonedLetterFallModel.PrimaryPart.CFrame =
             clonedScene.PrimaryPart.CFrame + Vector3.new(25, 50, 50)
         clonedLetterFallModel.PrimaryPart.Anchored = true
