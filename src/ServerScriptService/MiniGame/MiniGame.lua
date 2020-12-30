@@ -11,6 +11,7 @@ function module.addMiniGame(props)
     local isStartScene = props.isStartScene
     -- local letterFallTemplate = props.letterFallTemplate
     local words = props.words
+    local positionOffset = props.positionOffset or Vector3.new(0, 0, 0)
 
     local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
 
@@ -49,8 +50,17 @@ function module.addMiniGame(props)
         miniGameState.letterBlockTemplateFolder = letterBlockTemplateFolder
         clonedLetterFallModel.Parent = parent
 
+        -- clonedLetterFallModel.PrimaryPart.CFrame =
+        --     parent.CFrame + positionOffset
+
+        -- local redBlock = game.Workspace.RedBlock
+        -- local blueCube = game.Workspace.BlueCube
+
+        local offsetCFrame = CFrame.new(0, 0, -80)
+
         clonedLetterFallModel.PrimaryPart.CFrame =
-            parent.CFrame + Vector3.new(25, 50, 50)
+            parent.CFrame:ToWorldSpace(offsetCFrame)
+
         clonedLetterFallModel.PrimaryPart.Anchored = true
 
         miniGameState.letterFallFolder = letterFallFolder

@@ -60,7 +60,8 @@ function module.addScenes(props)
             questIndex = questIndex,
             letterFallTemplate = letterFallTemplate,
             isStartScene = sceneConfig.isStartScene,
-            questTitle = questConfig.questTitle
+            questTitle = questConfig.questTitle,
+            positionOffset = Vector3.new(25, 50, 50)
         })
 
         -- Add teleporters after MinGame is added, because they could be located
