@@ -27,6 +27,8 @@ function configCouchTrigger(miniGameState)
             sceneFolder = sceneFolder
         }
 
+        local seatTriggerEnabled = false
+
         function initGame()
             local cameraPath1 = Utils.getFirstDescendantByName(letterFallFolder,
                                                                "ScreenCameraPath1")
@@ -37,8 +39,10 @@ function configCouchTrigger(miniGameState)
             if humanoid then
                 local player = Utils.getPlayerFromHumanoid(humanoid)
                 if player then
-                    if not miniGameState.sitDownCompleted then
-                        miniGameState.sitDownCompleted = true
+                    if not seatTriggerEnabled then
+                        seatTriggerEnabled = true
+                        -- if not miniGameState.sitDownCompleted then
+                        --     miniGameState.sitDownCompleted = true
                         LetterFallUtils.createBalls(miniGameState)
                     end
                     currentPlayer = player
@@ -75,19 +79,22 @@ function initGameToggle(miniGameState)
                                                             "StartGameTrigger")
 
     function onPartTouched(otherPart)
-        print('onPartTouched' .. ' - start');
-        print('onPartTouched' .. ' - start');
-        print('onPartTouched' .. ' - start');
-        print('onPartTouched' .. ' - start');
-        print('onPartTouched' .. ' - start');
-        print('onPartTouched' .. ' - start');
+        local humanoid = otherPart.Parent:FindFirstChildWhichIsA("Humanoid")
+        if humanoid then
+            if not miniGameState.initCompleted then
+                print('onPartTouched' .. ' - start');
+                print('onPartTouched' .. ' - start');
+                print('onPartTouched' .. ' - start');
+                print('onPartTouched' .. ' - start');
+                print('onPartTouched' .. ' - start');
+                print('onPartTouched' .. ' - start');
 
-        if not miniGameState.initCompleted then
-            miniGameState.initCompleted = true
+                miniGameState.initCompleted = true
 
-            HandleClick.initClickHandler(miniGameState)
-            -- LetterFallUtils.createBalls(miniGameState)
-            configCouchTrigger(miniGameState)
+                HandleClick.initClickHandler(miniGameState)
+                -- LetterFallUtils.createBalls(miniGameState)
+                configCouchTrigger(miniGameState)
+            end
         end
     end
 
