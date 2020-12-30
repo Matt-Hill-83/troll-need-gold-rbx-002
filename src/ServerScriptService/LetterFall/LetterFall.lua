@@ -27,41 +27,40 @@ function configCouchTrigger(miniGameState)
             sceneFolder = sceneFolder
         }
 
+        function initGame()
+            local cameraPath1 = Utils.getFirstDescendantByName(letterFallFolder,
+                                                               "ScreenCameraPath1")
+            local cameraPath2 = Utils.getFirstDescendantByName(letterFallFolder,
+                                                               "ScreenCameraPath2")
+
+            local humanoid = seat.Occupant
+            if humanoid then
+                local player = Utils.getPlayerFromHumanoid(humanoid)
+                if player then
+                    if not miniGameState.sitDownCompleted then
+                        miniGameState.sitDownCompleted = true
+                        LetterFallUtils.createBalls(miniGameState)
+                    end
+                    currentPlayer = player
+                    letterFallFreezeCameraRE:FireClient(player, cameraPath1,
+                                                        cameraPath2, true)
+                    return
+                end
+            end
+
+            -- player leaves seat
+            if currentPlayer then
+                letterFallFreezeCameraRE:FireClient(currentPlayer, cameraPath1,
+                                                    cameraPath2, false)
+                currentPlayer = nil
+            end
+        end
+
         function initGameWrapper(miniGameState)
             -- This is a good example of a closure.  Let the :Connect definition
             -- run the wrapper to
             -- capture the current state of the miniGameState.  But don't run
             -- initGame until the :Connect actually fires
-
-            function initGame()
-                local cameraPath1 = Utils.getFirstDescendantByName(
-                                        letterFallFolder, "ScreenCameraPath1")
-                local cameraPath2 = Utils.getFirstDescendantByName(
-                                        letterFallFolder, "ScreenCameraPath2")
-
-                local humanoid = seat.Occupant
-                if humanoid then
-                    local player = Utils.getPlayerFromHumanoid(humanoid)
-                    if player then
-                        if not miniGameState.sitDownCompleted then
-                            miniGameState.sitDownCompleted = true
-                            LetterFallUtils.createBalls(miniGameState)
-                        end
-                        currentPlayer = player
-                        letterFallFreezeCameraRE:FireClient(player, cameraPath1,
-                                                            cameraPath2, true)
-                        return
-                    end
-                end
-
-                -- player leaves seat
-                if currentPlayer then
-                    letterFallFreezeCameraRE:FireClient(currentPlayer,
-                                                        cameraPath1,
-                                                        cameraPath2, false)
-                    currentPlayer = nil
-                end
-            end
 
             return initGame
 
