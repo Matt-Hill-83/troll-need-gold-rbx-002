@@ -72,12 +72,6 @@ function addRemoteObjects()
         local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
                       Constants.bridgeLength
 
-        -- --   Stabilize these parts before the cloning begins
-        -- Utils.setPropsByTag({
-        --     tag = "EnableWeldAtRunTime",
-        --     props = {Enabled = true}
-        -- })
-
         local questBlockTemplateClone = Utils.cloneModel(
                                             {
                 model = questBlockTemplate,
@@ -90,13 +84,6 @@ function addRemoteObjects()
                 parent = runtimeQuestsFolder
             })
         questBlockTemplateClone.Parent = questFolder
-
-        -- local skyBoxTeleporter = Teleporters.configSkyboxTeleporter(
-        --                              {
-        --         questIndex = questIndex,
-        --         questTitle = questConfig.questTitle,
-        --         questFolder = questFolder
-        --     })
 
         local defaultWords = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
         local words3 = defaultWords
