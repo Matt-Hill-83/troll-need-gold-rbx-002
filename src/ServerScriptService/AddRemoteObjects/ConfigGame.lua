@@ -30,48 +30,20 @@ function setVisibility()
     local canCollideOff = CS:GetTagged("CanCollideOff")
     for i, item in ipairs(canCollideOff) do item.CanCollide = false end
 
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "DockWalls",
-    --     -- props = {Transparency = 0.5}
-    --     props = {Transparency = 1}
-    -- })
+    local tagBaseWallTransparent = CS:GetTagged("BaseWallTransparent")
+    Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
 
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "DockBase",
-    --     props = {Transparency = 1}
-    -- })
+    Utils.setPropsByTag({
+        tag = "BaseWallTransparent",
+        props = {Transparency = 0.6}
+    })
 
-    Utils.setWallHeightbyParentModelName({name = "BridgeWalls", height = 20})
-    Utils.setWallHeightbyParentModelName({name = "BaseWalls", height = 20})
-
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "BridgeWalls",
-    --     props = {Transparency = 0.8, CanCollide = true, Anchored = true}
-    -- })
-
-    -- Utils.setItemAndChildrenPropsByName({
-    --     name = "BaseWalls",
-    --     props = {Transparency = 0.6, CanCollide = true, Anchored = true}
-    -- })
-
-    -- local tagBaseWallTransparent = CS:GetTagged("BaseWallTransparent")
-    -- Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 4})
-    -- Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
-    -- Utils.setPropsByTag({
-    --     tag = "BaseWallTransparent",
-    --     -- props = {Transparency = 1}
-    --     props = {Transparency = 0.6}
-    -- })
-
-    -- local skyBoxWalls = CS:GetTagged("SkyBoxWalls")
-    -- Utils.setWallHeightByList({items = skyBoxWalls, height = 30})
-    -- Utils.setPropsByTag({
-    --     tag = "SkyBoxWalls",
-    --     props = {Transparency = 0.9}
-    --     -- props = {Transparency = 0.6}
-    -- })
+    local skyBoxWalls = CS:GetTagged("SkyBoxWalls")
+    Utils.setWallHeightByList({items = skyBoxWalls, height = 30})
+    Utils.setPropsByTag({tag = "SkyBoxWalls", props = {Transparency = 0.9}})
 
 end
+
 function module.configGame()
     setVisibility()
     configPlayers()
