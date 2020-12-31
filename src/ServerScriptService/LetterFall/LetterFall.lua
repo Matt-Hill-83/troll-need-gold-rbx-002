@@ -26,7 +26,6 @@ function configCouchTrigger(miniGameState)
     local seats = Utils.getDescendantsByName(letterFallFolder, "LFCouchSeat")
 
     for i, seat in ipairs(seats) do
-
         local seatTriggerEnabled = false
 
         function initGame()
@@ -39,6 +38,9 @@ function configCouchTrigger(miniGameState)
             if humanoid then
                 local player = Utils.getPlayerFromHumanoid(humanoid)
                 if player then
+                    print('player' ..
+                              ' - start-----------------------------------SEAT');
+                    print(player);
                     if not seatTriggerEnabled then
                         seatTriggerEnabled = true
                         -- if not miniGameState.sitDownCompleted then

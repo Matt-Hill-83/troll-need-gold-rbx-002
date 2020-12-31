@@ -1,12 +1,11 @@
 local module = {
-    buffer = 0,
+    -- buffer = 0,
     -- singleScene = true,
     singleScene = false,
     -- isDev = false,
     isDev = true,
     -- 
     entered = {value = false},
-    -- baseWallHeight = 6,
     walkSpeed = 30,
     -- walkSpeed = 16,
     questWallHeight = 4,

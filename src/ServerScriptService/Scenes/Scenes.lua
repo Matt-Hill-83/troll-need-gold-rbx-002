@@ -176,10 +176,9 @@ end
 function getNewSceneOffset(props)
     local coordinates = props.coordinates
     local gapX = Constants.islandLength + Constants.bridgeLength
-    local newX = -(gapX + Constants.buffer) * coordinates.col
+    local newX = -(gapX + 0) * coordinates.col
     local newZ = coordinates.row *
-                     (Constants.islandLength + Constants.bridgeLength +
-                         Constants.buffer)
+                     (Constants.islandLength + Constants.bridgeLength + 0)
     return Vector3.new(newX, 0, -newZ)
 end
 return module

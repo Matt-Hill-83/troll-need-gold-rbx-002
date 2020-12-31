@@ -41,27 +41,27 @@ function setVisibility()
     --     props = {Transparency = 1}
     -- })
 
-    -- Utils.setWallHeightbyParentModelName({name = "BridgeWalls", height = 2})
+    Utils.setWallHeightbyParentModelName({name = "BridgeWalls", height = 20})
+    Utils.setWallHeightbyParentModelName({name = "BaseWalls", height = 20})
+
     -- Utils.setItemAndChildrenPropsByName({
     --     name = "BridgeWalls",
+    --     props = {Transparency = 0.8, CanCollide = true, Anchored = true}
+    -- })
+
+    -- Utils.setItemAndChildrenPropsByName({
+    --     name = "BaseWalls",
     --     props = {Transparency = 0.6, CanCollide = true, Anchored = true}
     -- })
 
-    Utils.setItemAndChildrenPropsByName({
-        name = "BaseWalls",
-        props = {Transparency = 0.6, CanCollide = true, Anchored = true}
-    })
-
-    Utils.setWallHeightbyParentModelName({name = "BaseWalls", height = 2})
-
-    local tagBaseWallTransparent = CS:GetTagged("BaseWallTransparent")
-    Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 4})
+    -- local tagBaseWallTransparent = CS:GetTagged("BaseWallTransparent")
+    -- Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 4})
     -- Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
-    Utils.setPropsByTag({
-        tag = "BaseWallTransparent",
-        -- props = {Transparency = 1}
-        props = {Transparency = 0.6}
-    })
+    -- Utils.setPropsByTag({
+    --     tag = "BaseWallTransparent",
+    --     -- props = {Transparency = 1}
+    --     props = {Transparency = 0.6}
+    -- })
 
     -- local skyBoxWalls = CS:GetTagged("SkyBoxWalls")
     -- Utils.setWallHeightByList({items = skyBoxWalls, height = 30})
@@ -78,8 +78,8 @@ function module.configGame()
     -- Utils.reportPlayerLocation()
 
     if (Constants.isDev) then
-        local taggedPartsDestroy = CS:GetTagged("DestroyDev")
-        for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
+        -- local taggedPartsDestroy = CS:GetTagged("DestroyDev")
+        -- for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
     end
 end
 

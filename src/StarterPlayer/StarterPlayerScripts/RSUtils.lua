@@ -221,14 +221,14 @@ function module.setWallHeightbyParentModelName(props)
     end
 end
 
-function module.setItemAndChildrenPropsByName(myProps)
-    local name = myProps.name
-    local props = myProps.props
+-- function module.setItemAndChildrenPropsByName(myProps)
+--     local name = myProps.name
+--     local props = myProps.props
 
-    local myStuff = workspace:FindFirstChild("MyStuff")
-    local item = getFirstDescendantByName(myStuff, name)
-    setChildrenProps(item, props)
-end
+--     local myStuff = workspace:FindFirstChild("MyStuff")
+--     local item = getFirstDescendantByName(myStuff, name)
+--     setChildrenProps(item, props)
+-- end
 
 function module.setItemAndChildrenPropsByInst(myProps)
     local item = myProps.item
