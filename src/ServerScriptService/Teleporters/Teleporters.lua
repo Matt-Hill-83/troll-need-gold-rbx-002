@@ -32,11 +32,11 @@ end
 function module.configSkyboxTeleporter(props)
     local questIndex = props.questIndex
     local questTitle = props.questTitle
-    local questFolder = props.questFolder
+    local parentFolder = props.parentFolder
 
     local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
     local skyBoxTeleporter = teleporterTemplate:Clone()
-    skyBoxTeleporter.Parent = questFolder
+    skyBoxTeleporter.Parent = parentFolder
 
     local teleporterSpacing = 15
     local labels2 = Utils.getDescendantsByName(skyBoxTeleporter,
@@ -103,12 +103,12 @@ function module.addTeleporters(props)
     local localTeleporter = module.configLocalTeleporter(props)
 
     if isStartScene then
-        setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
-        setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
+        -- setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
+        -- setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
     end
 
     if isEndScene then
-        setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
+        -- setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
         setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
     end
 

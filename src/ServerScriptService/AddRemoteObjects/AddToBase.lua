@@ -36,6 +36,13 @@ function addRemoteObjects()
 
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
 
+    local skyBoxTeleporter = Teleporters.configSkyboxTeleporter(
+                                 {
+            questIndex = 0,
+            questTitle = "allQuests",
+            parentFolder = runtimeQuestsFolder
+        })
+
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
         local miniGameMountPlate = mountPlates[questIndex]
@@ -84,12 +91,12 @@ function addRemoteObjects()
             })
         questBlockTemplateClone.Parent = questFolder
 
-        local skyBoxTeleporter = Teleporters.configSkyboxTeleporter(
-                                     {
-                questIndex = questIndex,
-                questTitle = questConfig.questTitle,
-                questFolder = questFolder
-            })
+        -- local skyBoxTeleporter = Teleporters.configSkyboxTeleporter(
+        --                              {
+        --         questIndex = questIndex,
+        --         questTitle = questConfig.questTitle,
+        --         questFolder = questFolder
+        --     })
 
         local defaultWords = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
         local words3 = defaultWords
@@ -108,23 +115,9 @@ function addRemoteObjects()
 
         localTPPositioner = Utils.getFirstDescendantByName(miniGame,
                                                            "MiniGameTeleporterPositioner")
-        -- Teleporters.addTeleporters({
-        --     parent = miniGame,
-        --     sceneIndex = 1,
-        --     questIndex = questIndex,
-        --     isStartScene = true,
-        --     isEndScene = falase,
-        --     questTitle = questConfig.questTitle,
-        --     skyBoxTeleporter = skyBoxTeleporter,
-        --     localTPPositioner = localTPPositioner
-        -- })
-        -- -- 
-        -- 
-        -- 
+
         local dockMountPlate = Utils.getFirstDescendantByName(miniGame,
                                                               "DockMountPlate")
-        -- Utils.enableChildWelds({part = dockMountPlate, enabled = false})
-        -- dockMountPlate.Anchored = true
         dockMountPlate:Destroy()
 
         local questBlockProps = {
