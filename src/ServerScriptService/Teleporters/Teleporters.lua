@@ -46,9 +46,10 @@ function module.configSkyboxTeleporter(props)
     skyBoxTeleporter.PrimaryPart.Anchored = false
     local teleporterPositioner = Utils.getFirstDescendantByName(workspace,
                                                                 "SkyBoxTeleporterPositioner")
-    skyBoxTeleporter.PrimaryPart.CFrame =
-        teleporterPositioner.CFrame *
-            CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0))
+    -- skyBoxTeleporter.PrimaryPart.CFrame =
+    --     teleporterPositioner.CFrame *
+    --         CFrame.new(Vector3.new(-teleporterSpacing * (questIndex - 1), 0, 0))
+    skyBoxTeleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
 
     skyBoxTeleporter.PrimaryPart.Anchored = true
     skyBoxTeleporter.Name = "teleporter" .. "-sky-Q- " .. questIndex

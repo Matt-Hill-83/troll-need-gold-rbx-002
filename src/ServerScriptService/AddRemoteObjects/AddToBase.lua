@@ -39,7 +39,7 @@ function addRemoteObjects()
     local skyBoxTeleporter = Teleporters.configSkyboxTeleporter(
                                  {
             questIndex = 0,
-            questTitle = "allQuests",
+            questTitle = "All Quests",
             parentFolder = runtimeQuestsFolder
         })
 
