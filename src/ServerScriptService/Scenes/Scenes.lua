@@ -108,20 +108,20 @@ function module.addScenes(props)
             if manHoleCover then manHoleCover:Destroy() end
         end
 
-        local dropBox = Utils.getFirstDescendantByName(clonedScene,
-                                                       "DropBoxModel")
-        local dropBoxItem = sceneConfig.item or {name = "GemTemplate"}
-        DropBox.configDropBox({
-            scene = clonedScene,
-            sceneIndex = sceneIndex,
-            questIndex = questIndex,
-            isStartScene = sceneConfig.isStartScene,
-            isEndScene = sceneConfig.isEndScene,
-            dropBox = dropBox,
-            onCorrectItemDropped = onCorrectItemDropped,
-            item = dropBoxItem
+        -- local dropBox = Utils.getFirstDescendantByName(clonedScene,
+        --                                                "DropBoxModel")
+        -- local dropBoxItem = sceneConfig.item or {name = "GemTemplate"}
+        -- DropBox.configDropBox({
+        --     scene = clonedScene,
+        --     sceneIndex = sceneIndex,
+        --     questIndex = questIndex,
+        --     isStartScene = sceneConfig.isStartScene,
+        --     isEndScene = sceneConfig.isEndScene,
+        --     dropBox = dropBox,
+        --     onCorrectItemDropped = onCorrectItemDropped,
+        --     item = dropBoxItem
 
-        })
+        -- })
 
         local sceneFolder = Utils.getOrCreateFolder(
                                 {

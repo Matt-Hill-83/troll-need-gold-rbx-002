@@ -32,8 +32,8 @@ renderQuestBlock = function(props)
         parent = parent,
         child = dockPositioner,
         offsetConfig = {
-            useParentNearEdge = Vector3.new(0, 1, 1),
-            useChildNearEdge = Vector3.new(0, -1, -1),
+            useParentNearEdge = Vector3.new(-1, 1, 1),
+            useChildNearEdge = Vector3.new(-1, -1, -1),
             offsetAdder = Vector3.new(0, -40, 0)
         }
     }
