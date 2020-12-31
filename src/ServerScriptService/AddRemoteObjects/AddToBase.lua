@@ -104,6 +104,8 @@ function addRemoteObjects()
                 isStartScene = true,
                 questTitle = questConfig.questTitle
             })
+        miniGame.PrimaryPart.Anchored = true
+
         localTPPositioner = Utils.getFirstDescendantByName(miniGame,
                                                            "MiniGameTeleporterPositioner")
         -- Teleporters.addTeleporters({
@@ -121,15 +123,12 @@ function addRemoteObjects()
         -- 
         local dockMountPlate = Utils.getFirstDescendantByName(miniGame,
                                                               "DockMountPlate")
-        Utils.enableChildWelds({part = dockMountPlate, enabled = false})
-        -- local rotatedCFrame2 = CFrame.Angles(0, math.rad(90), 0)
-        -- dockMountPlate.CFrame = dockMountPlate.CFrame:ToWorldSpace(
-        --                             rotatedCFrame2)
-        dockMountPlate.Anchored = true
+        -- Utils.enableChildWelds({part = dockMountPlate, enabled = false})
+        -- dockMountPlate.Anchored = true
+        dockMountPlate:Destroy()
 
         local questBlockProps = {
             parent = dockMountPlate,
-            -- parent = miniGame.PrimaryPart,
             size = Vector3.new(x, 2, z),
             wallSize = wallSize,
             questBlockTemplate = questBlockTemplateClone
@@ -151,10 +150,11 @@ function addRemoteObjects()
             }
         }
 
-        local mountPlateCFrame = Utils3.setCFrameFromDesiredEdgeOffset(
-                                     translateCFrameProps)
+        -- Relocate the scene mountplate, after the dock has bee resized.
+        local sceneMountPlateCFrame = Utils3.setCFrameFromDesiredEdgeOffset(
+                                          translateCFrameProps)
 
-        sceneMountPlate.CFrame = mountPlateCFrame
+        sceneMountPlate.CFrame = sceneMountPlateCFrame
         local rotatedCFrame = CFrame.Angles(0, math.rad(180), 0)
         sceneMountPlate.CFrame = sceneMountPlate.CFrame:ToWorldSpace(
                                      rotatedCFrame)
@@ -170,7 +170,7 @@ function addRemoteObjects()
             skyBoxTeleporter = skyBoxTeleporter
         }
         Scenes.addScenes(addScenesProps)
-        -- sceneMountPlate:Destroy
+        sceneMountPlate:Destroy()
     end
 
     questBlockTemplate:Destroy()
