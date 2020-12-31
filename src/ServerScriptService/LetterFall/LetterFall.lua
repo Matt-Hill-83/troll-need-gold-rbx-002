@@ -104,11 +104,14 @@ function initGameToggle(miniGameState)
             if not miniGameState.initCompleted then
                 miniGameState.initCompleted = true
                 print('onPartTouched' ..
-                          ' - start------------------------------------------>--');
-
+                          ' - start------------------------------------------>->>>>-');
+                print('1')
                 HandleClick.initClickHandler(miniGameState)
+                print('2')
                 LetterFallUtils.createBalls(miniGameState)
+                print('3')
                 configCouchTrigger(miniGameState)
+                print('4')
             end
         end
     end

@@ -231,14 +231,14 @@ function createBalls(miniGameState)
         table.insert(balls, newBall)
     end
 
-    while wait(6) do
-        for i, ball in ipairs(balls) do
-            local vectorForce = Utils.getFirstDescendantByName(ball,
-                                                               "VectorForce")
-            if not vectorForce then break end
-            vectorForce.Force = vectorForce.Force * -1
-        end
-    end
+    -- while wait(6) do
+    --     for i, ball in ipairs(balls) do
+    --         local vectorForce = Utils.getFirstDescendantByName(ball,
+    --                                                            "VectorForce")
+    --         if not vectorForce then break end
+    --         vectorForce.Force = vectorForce.Force * -1
+    --     end
+    -- end
     ball:Destroy()
 end
 
