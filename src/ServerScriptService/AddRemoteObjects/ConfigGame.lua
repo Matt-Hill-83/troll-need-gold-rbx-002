@@ -50,8 +50,8 @@ function module.configGame()
     -- Utils.reportPlayerLocation()
 
     if (Constants.isDev) then
-        -- local taggedPartsDestroy = CS:GetTagged("DestroyDev")
-        -- for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
+        local taggedPartsDestroy = CS:GetTagged("DestroyDev")
+        for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
     end
 end
 

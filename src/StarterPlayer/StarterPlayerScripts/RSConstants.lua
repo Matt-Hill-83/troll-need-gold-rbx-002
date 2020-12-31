@@ -1,10 +1,11 @@
 local module = {
-    buffer = 0,
+    -- buffer = 0,
     -- singleScene = true,
     singleScene = false,
+    -- isDev = false,
+    isDev = true,
     -- 
     entered = {value = false},
-    -- baseWallHeight = 6,
     walkSpeed = 30,
     -- walkSpeed = 16,
     questWallHeight = 4,
@@ -19,8 +20,8 @@ module.dialogColors = {
 }
 
 local islandLength = 36
-local bridgeBaseLength = 66
--- local bridgeBaseLength = 64
+-- local bridgeBaseLength = 66
+local bridgeBaseLength = 63
 local bridgeOverlap = 2
 local bridgeLength = bridgeBaseLength - 2 * bridgeOverlap
 
