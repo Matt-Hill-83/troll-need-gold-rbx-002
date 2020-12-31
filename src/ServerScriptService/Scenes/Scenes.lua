@@ -14,8 +14,14 @@ local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 
 local module = {}
 
+-- TODO mount scene on scene mount plate
+-- TODO mount scene on scene mount plate
+-- TODO mount scene on scene mount plate
+-- TODO mount scene on scene mount plate
+
 function module.addScenes(props)
     local parent = props.parent
+    local mountPlate = props.mountPlate
     local sceneConfigs = props.sceneConfigs
     local questConfig = props.questConfig
     local gridPadding = props.gridPadding
@@ -33,6 +39,10 @@ function module.addScenes(props)
             parent = parent,
             child = sceneBase
         })
+
+    local wordBoxTemplate = Utils.getFromTemplates("WordBoxTemplate")
+    print('wordBoxTemplate' .. ' - start');
+    print(wordBoxTemplate);
 
     local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
     for sceneIndex, sceneConfig in ipairs(sceneConfigs) do
@@ -163,14 +173,14 @@ getInitialScenePosition = function(props)
     local child = props.child
     local gridPadding = props.gridPadding
 
-    local desiredOffsetFromParentEdge = Vector3.new(0, 0, gridPadding / 2)
+    local desiredOffsetFromParentEdge = Vector3.new(0, 0, -gridPadding / 2)
 
     local translateCFrameProps = {
         parent = parent,
         child = child,
         offsetConfig = {
-            useParentNearEdge = Vector3.new(0, 1, -1),
-            useChildNearEdge = Vector3.new(0, -1, -1),
+            useParentNearEdge = Vector3.new(0, -1, 1),
+            useChildNearEdge = Vector3.new(0, -1, 1),
             offsetAdder = desiredOffsetFromParentEdge
         }
     }

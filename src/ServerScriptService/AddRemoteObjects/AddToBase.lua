@@ -4,6 +4,7 @@ local Sss = game:GetService("ServerScriptService")
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
 local HttpService = game:GetService("HttpService")
 
+local Utils3 = require(Sss.Source.Utils.U003PartsUtils)
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Scenes = require(Sss.Source.Scenes.Scenes)
 local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
@@ -33,7 +34,6 @@ function addRemoteObjects()
     local runtimeQuestsFolder = Utils.getOrCreateFolder(
                                     {name = "RunTimeQuests", parent = myStuff})
 
-    local sibling = questsOrigin
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
 
     -- add quests
@@ -122,27 +122,47 @@ function addRemoteObjects()
         local questBlockProps = {
             parent = miniGame.PrimaryPart,
             size = Vector3.new(x, 2, z),
-            sibling = miniGame.PrimaryPart,
             wallSize = wallSize,
-            sceneHeight = sceneHeight,
-            questBlockTemplate = questBlockTemplateClone,
-            index = questIndex
+            questBlockTemplate = questBlockTemplateClone
         }
-        local questBlock = QuestBlock.renderQuestBlock(questBlockProps)
+        local questBlockModel = QuestBlock.renderQuestBlock(questBlockProps)
+        local dockBase = Utils.getFirstDescendantByName(questBlockModel,
+                                                        "DockBase")
+        local sceneMountPlate = Utils.getFirstDescendantByName(questBlockModel,
+                                                               "SceneMountPlate")
+        Utils.enableChildWelds({part = sceneMountPlate, enabled = false})
+
+        local translateCFrameProps = {
+            parent = dockBase,
+            child = sceneMountPlate,
+            offsetConfig = {
+                useParentNearEdge = Vector3.new(0, 1, -1),
+                useChildNearEdge = Vector3.new(0, -1, -1),
+                offsetAdder = Vector3.new(0, 0, 0)
+            }
+        }
+
+        local mountPlateCFrame = Utils3.setCFrameFromDesiredEdgeOffset(
+                                     translateCFrameProps)
+
+        sceneMountPlate.CFrame = mountPlateCFrame
+        local rotatedCFrame = CFrame.Angles(0, math.rad(180), 0)
+        sceneMountPlate.CFrame = sceneMountPlate.CFrame:ToWorldSpace(
+                                     rotatedCFrame)
 
         local addScenesProps = {
-            parent = questBlock,
+            parent = sceneMountPlate,
             sceneConfigs = questConfig.sceneConfigs,
             questConfig = questConfig,
             gridPadding = gridPadding,
             questFolder = questFolder,
             questIndex = questIndex,
+            mountPlate = mountPlate,
             skyBoxTeleporter = skyBoxTeleporter
         }
         Scenes.addScenes(addScenesProps)
-
-        sibling = questBlock
     end
+
     questBlockTemplate:Destroy()
     local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
     letterFallTemplate:Destroy()

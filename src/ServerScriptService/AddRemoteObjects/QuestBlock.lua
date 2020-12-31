@@ -68,7 +68,8 @@ renderQuestBlock = function(props)
 
     dockPositioner:Destroy()
 
-    return dockBase
+    -- return dockBase
+    return dockModel
 end
 
 renderFrontWall = function(props)
