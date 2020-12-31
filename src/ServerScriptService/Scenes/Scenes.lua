@@ -21,7 +21,7 @@ local module = {}
 
 function module.addScenes(props)
     local parent = props.parent
-    local mountPlate = props.mountPlate
+    -- local mountPlate = props.mountPlate
     local sceneConfigs = props.sceneConfigs
     local questConfig = props.questConfig
     local gridPadding = props.gridPadding
@@ -33,7 +33,7 @@ function module.addScenes(props)
                                                               "SceneTemplate")
     local sceneBase = Utils.getFirstDescendantByName(questFolder, "SceneBase")
 
-    local sceneStartCFrame = getInitialScenePosition(
+    local sceneStartCFrame = getInitialSceneCFrame(
                                  {
             gridPadding = gridPadding,
             parent = parent,
@@ -51,15 +51,41 @@ function module.addScenes(props)
                 coordinates = sceneConfig.coordinates,
                 template = sceneBase
             })
+        -- 
+        -- 
+        -- 
+        local clonedScene = sceneTemplateModel:Clone()
+        -- 
+        local translateCFrameProps = {
+            parent = parent,
+            child = clonedScene.PrimaryPart,
+            offsetConfig = {
+                useParentNearEdge = Vector3.new(0, -1, 1),
+                useChildNearEdge = Vector3.new(0, -1, 1),
+                offsetAdder = Vector3.new(0, 0, 0)
+            }
+        }
 
-        local clonedScene = Utils.cloneModel(
-                                {
-                model = sceneTemplateModel,
-                position = CFrame.new(newPosition) * sceneStartCFrame,
-                suffix = "Clone" .. "-Q" .. questIndex .. "-S" .. sceneIndex
-            })
+        local newCFrame = Utils3.setCFrameFromDesiredEdgeOffset(
+                              translateCFrameProps)
 
-        clonedScene.Name = clonedScene.Name .. sceneIndex
+        local cFrame = newCFrame * CFrame.new(newPosition)
+        -- 
+        -- 
+        -- 
+        -- 
+
+        -- local clonedScene = Utils.cloneModel(
+        --                         {
+        --         model = sceneTemplateModel,
+        --         cFrame = CFrame.new(newPosition) * sceneStartCFrame,
+        --         suffix = "Clone" .. "-Q" .. questIndex .. "-S" .. sceneIndex
+        --     })
+
+        clonedScene.Parent = sceneTemplateModel.Parent
+        clonedScene.Name = clonedScene.Name .. "Clone" .. "-Q" .. questIndex ..
+                               "-S" .. sceneIndex
+        clonedScene:SetPrimaryPartCFrame(cFrame)
 
         local defaultWords = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
         local words = defaultWords
@@ -168,7 +194,7 @@ function module.addScenes(props)
     sceneTemplateModel:Destroy()
 end
 
-getInitialScenePosition = function(props)
+getInitialSceneCFrame = function(props)
     local parent = props.parent
     local child = props.child
     local gridPadding = props.gridPadding
@@ -185,7 +211,11 @@ getInitialScenePosition = function(props)
         }
     }
 
-    return Utils3.setCFrameFromDesiredEdgeOffset(translateCFrameProps)
+    local output = Utils3.setCFrameFromDesiredEdgeOffset(translateCFrameProps)
+    return output
+    -- local rotatedCFrame = CFrame.Angles(0, math.rad(180), 0)
+    -- output = output:ToWorldSpace(rotatedCFrame)
+
 end
 
 function getNewScenePosition(props)
