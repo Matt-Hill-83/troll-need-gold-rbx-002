@@ -16,18 +16,13 @@ local module = {}
 
 function configCouchTrigger(miniGameState)
     print('configCouchTrigger' .. ' - start');
-    print('configCouchTrigger' .. ' - start');
-    print('configCouchTrigger' .. ' - start');
-    print('configCouchTrigger' .. ' - start');
-    print('configCouchTrigger' .. ' - start');
-    print('configCouchTrigger' .. ' - start');
     local letterFallFolder = miniGameState.letterFallFolder
 
     local seats = Utils.getDescendantsByName(letterFallFolder, "LFCouchSeat")
 
     for i, seat in ipairs(seats) do
         local seatTriggerEnabled = false
-
+        local currentPlayer = nil
         function initGame()
             local cameraPath1 = Utils.getFirstDescendantByName(letterFallFolder,
                                                                "ScreenCameraPath1")
