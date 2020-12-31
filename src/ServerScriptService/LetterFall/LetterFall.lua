@@ -43,9 +43,6 @@ function configCouchTrigger(miniGameState)
                     print(player);
                     if not seatTriggerEnabled then
                         seatTriggerEnabled = true
-                        -- if not miniGameState.sitDownCompleted then
-                        --     miniGameState.sitDownCompleted = true
-                        -- LetterFallUtils.createBalls(miniGameState)
                     end
                     currentPlayer = player
                     letterFallFreezeCameraRE:FireClient(player, cameraPath1,
@@ -103,15 +100,9 @@ function initGameToggle(miniGameState)
         if humanoid then
             if not miniGameState.initCompleted then
                 miniGameState.initCompleted = true
-                print('onPartTouched' ..
-                          ' - start------------------------------------------>->>>>-');
-                print('1')
                 HandleClick.initClickHandler(miniGameState)
-                print('2')
                 LetterFallUtils.createBalls(miniGameState)
-                print('3')
                 configCouchTrigger(miniGameState)
-                print('4')
             end
         end
     end

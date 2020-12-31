@@ -133,8 +133,6 @@ end
 function styleLetterBlocks(props)
     local miniGameState = props.miniGameState
     local availWords = props.availWords
-    print('availWords' .. ' - start');
-    print(availWords);
     local letterFallFolder = miniGameState.letterFallFolder
     local letterBlockTemplateFolder = miniGameState.letterBlockTemplateFolder
     local availLetters = module.getAvailLettersDict(
@@ -142,8 +140,6 @@ function styleLetterBlocks(props)
             words = availWords,
             currentLetterIndex = miniGameState.currentLetterIndex
         })
-    print('availLetters' .. ' - start');
-    print(availLetters);
     local allLetters = module.getAllLettersInRack()
 
     for i, letterBlock in ipairs(allLetters) do
