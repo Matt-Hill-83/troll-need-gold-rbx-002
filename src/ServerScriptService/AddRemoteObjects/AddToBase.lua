@@ -157,7 +157,6 @@ function addRemoteObjects()
             gridPadding = gridPadding,
             questFolder = questFolder,
             questIndex = questIndex,
-            -- mountPlate = mountPlate,
             skyBoxTeleporter = skyBoxTeleporter
         }
         Scenes.addScenes(addScenesProps)
