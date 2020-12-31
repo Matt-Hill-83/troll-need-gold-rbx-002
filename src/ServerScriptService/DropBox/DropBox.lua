@@ -6,9 +6,6 @@ local module = {}
 function module.configDropBox(props)
     local scene = props.scene
     local sceneIndex = props.sceneIndex
-    local questIndex = props.questIndex
-    local isEndScene = props.isEndScene
-    local isStartScene = props.isStartScene
     local dropBox = props.dropBox
     local item = props.item
     local onCorrectItemDropped = props.onCorrectItemDropped

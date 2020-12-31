@@ -66,27 +66,6 @@ function module.addScenes(props)
                                "-S" .. sceneIndex
         clonedScene:SetPrimaryPartCFrame(cFrame)
 
-        -- local defaultWords = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
-        -- local words = defaultWords
-        -- if #questConfig.words2 > 0 then words = questConfig.words2 end
-
-        -- Add teleporters after MinGame is added, because they could be located
-        --  in mini game
-        -- local localTPPositioner = nil
-        -- if sceneConfig.isStartScene then
-        --     localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
-        --                                                        "MiniGameTeleporterPositioner")
-        --     Teleporters.addTeleporters({
-        --         parent = clonedScene,
-        --         sceneIndex = sceneIndex,
-        --         questIndex = questIndex,
-        --         isStartScene = sceneConfig.isStartScene,
-        --         isEndScene = sceneConfig.isEndScene,
-        --         questTitle = questConfig.questTitle,
-        --         skyBoxTeleporter = skyBoxTeleporter,
-        --         localTPPositioner = localTPPositioner
-        --     })
-        -- end
         if sceneConfig.isEndScene then
             localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
                                                                "LocalTeleporterPositioner")
@@ -103,11 +82,11 @@ function module.addScenes(props)
             })
         end
 
-        function onCorrectItemDropped()
-            local manHoleCover = Utils.getFirstDescendantByName(clonedScene,
-                                                                "ManHoleCover")
-            if manHoleCover then manHoleCover:Destroy() end
-        end
+        -- function onCorrectItemDropped()
+        --     local manHoleCover = Utils.getFirstDescendantByName(clonedScene,
+        --                                                         "ManHoleCover")
+        --     if manHoleCover then manHoleCover:Destroy() end
+        -- end
 
         -- local dropBox = Utils.getFirstDescendantByName(clonedScene,
         --                                                "DropBoxModel")
@@ -192,9 +171,6 @@ getInitialSceneCFrame = function(props)
 
     local output = Utils3.setCFrameFromDesiredEdgeOffset(translateCFrameProps)
     return output
-    -- local rotatedCFrame = CFrame.Angles(0, math.rad(180), 0)
-    -- output = output:ToWorldSpace(rotatedCFrame)
-
 end
 
 function getNewSceneOffset(props)

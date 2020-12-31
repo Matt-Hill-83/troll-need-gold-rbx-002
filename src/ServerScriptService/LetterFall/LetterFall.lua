@@ -7,6 +7,7 @@ local HandleClick = require(Sss.Source.LetterFall.HandleClick)
 local InitLetterRack = require(Sss.Source.LetterFall.InitLetterRack)
 local InitWord = require(Sss.Source.LetterFall.InitWord)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
+local DropBox = require(Sss.Source.DropBox.DropBox)
 
 local remoteEvent = RS:WaitForChild("ClickBlockRE")
 local letterFallFreezeCameraRE = RS:WaitForChild("LetterFallFreezeCameraRE")
@@ -25,13 +26,6 @@ function configCouchTrigger(miniGameState)
     local seats = Utils.getDescendantsByName(letterFallFolder, "LFCouchSeat")
 
     for i, seat in ipairs(seats) do
-        local addSeatProps = {
-            seat = seat,
-            clonedScene = clonedScene,
-            sceneConfig = sceneConfig,
-            addCharactersToScene = addCharactersToScene,
-            sceneFolder = sceneFolder
-        }
 
         local seatTriggerEnabled = false
 
@@ -83,6 +77,24 @@ function initGameToggle(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local startGameTrigger = Utils.getFirstDescendantByName(letterFallFolder,
                                                             "StartGameTrigger")
+
+    function onCorrectItemDropped()
+        local manHoleCover = Utils.getFirstDescendantByName(letterFallFolder,
+                                                            "ManHoleCover")
+        if manHoleCover then manHoleCover:Destroy() end
+    end
+
+    local dropBox = Utils.getFirstDescendantByName(letterFallFolder,
+                                                   "DropBoxModel")
+    local dropBoxItem = {name = "GemTemplate"}
+    DropBox.configDropBox({
+        scene = letterFallFolder,
+        sceneIndex = 0,
+        dropBox = dropBox,
+        onCorrectItemDropped = onCorrectItemDropped,
+        item = dropBoxItem
+
+    })
 
     function onPartTouched(otherPart)
         local humanoid = otherPart.Parent:FindFirstChildWhichIsA("Humanoid")
