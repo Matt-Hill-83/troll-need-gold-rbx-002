@@ -22,7 +22,7 @@ function module.addScenes(props)
     local gridPadding = props.gridPadding
     local questFolder = props.questFolder
     local questIndex = props.questIndex
-    -- local skyBoxTeleporter = props.skyBoxTeleporter
+    local skyBoxTeleporter = props.skyBoxTeleporter
 
     local sceneTemplateModel = Utils.getFirstDescendantByName(questFolder,
                                                               "SceneTemplate")
@@ -87,20 +87,21 @@ function module.addScenes(props)
         --         localTPPositioner = localTPPositioner
         --     })
         -- end
-        -- if sceneConfig.isEndScene then
-        --     localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
-        --                                                        "LocalTeleporterPositioner")
-        --     Teleporters.addTeleporters({
-        --         parent = clonedScene,
-        --         sceneIndex = sceneIndex,
-        --         questIndex = questIndex,
-        --         isStartScene = sceneConfig.isStartScene,
-        --         isEndScene = sceneConfig.isEndScene,
-        --         questTitle = questConfig.questTitle,
-        --         skyBoxTeleporter = skyBoxTeleporter,
-        --         localTPPositioner = localTPPositioner
-        --     })
-        -- end
+        if sceneConfig.isEndScene then
+            localTPPositioner = Utils.getFirstDescendantByName(clonedScene,
+                                                               "LocalTeleporterPositioner")
+
+            Teleporters.addTeleporters({
+                parent = clonedScene,
+                sceneIndex = sceneIndex,
+                questIndex = questIndex,
+                isStartScene = sceneConfig.isStartScene,
+                isEndScene = sceneConfig.isEndScene,
+                questTitle = questConfig.questTitle,
+                skyBoxTeleporter = skyBoxTeleporter,
+                localTPPositioner = localTPPositioner
+            })
+        end
 
         function onCorrectItemDropped()
             local manHoleCover = Utils.getFirstDescendantByName(clonedScene,
