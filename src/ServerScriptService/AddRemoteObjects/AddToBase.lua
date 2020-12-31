@@ -38,7 +38,7 @@ function addRemoteObjects()
 
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
-        local mountPlate = mountPlates[questIndex]
+        local miniGameMountPlate = mountPlates[questIndex]
         local gridSize = questConfig.gridSize
 
         local words = questConfig.words
@@ -97,7 +97,7 @@ function addRemoteObjects()
 
         local miniGame = MiniGame.addMiniGame(
                              {
-                parent = mountPlate,
+                parent = miniGameMountPlate,
                 words = words3,
                 sceneIndex = 1,
                 questIndex = questIndex,
@@ -119,8 +119,17 @@ function addRemoteObjects()
         -- -- 
         -- 
         -- 
+        local dockMountPlate = Utils.getFirstDescendantByName(miniGame,
+                                                              "DockMountPlate")
+        Utils.enableChildWelds({part = dockMountPlate, enabled = false})
+        -- local rotatedCFrame2 = CFrame.Angles(0, math.rad(90), 0)
+        -- dockMountPlate.CFrame = dockMountPlate.CFrame:ToWorldSpace(
+        --                             rotatedCFrame2)
+        dockMountPlate.Anchored = true
+
         local questBlockProps = {
-            parent = miniGame.PrimaryPart,
+            parent = dockMountPlate,
+            -- parent = miniGame.PrimaryPart,
             size = Vector3.new(x, 2, z),
             wallSize = wallSize,
             questBlockTemplate = questBlockTemplateClone
@@ -149,6 +158,7 @@ function addRemoteObjects()
         local rotatedCFrame = CFrame.Angles(0, math.rad(180), 0)
         sceneMountPlate.CFrame = sceneMountPlate.CFrame:ToWorldSpace(
                                      rotatedCFrame)
+        sceneMountPlate.Anchored = true
 
         local addScenesProps = {
             parent = sceneMountPlate,
@@ -160,6 +170,7 @@ function addRemoteObjects()
             skyBoxTeleporter = skyBoxTeleporter
         }
         Scenes.addScenes(addScenesProps)
+        -- sceneMountPlate:Destroy
     end
 
     questBlockTemplate:Destroy()
