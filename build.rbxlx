@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-200.518097</X>
-					<Y>-68.8113098</Y>
-					<Z>-371.528442</Z>
-					<R00>0.96693176</R00>
-					<R01>-0.0697991848</R01>
-					<R02>0.245298252</R02>
-					<R10>-0</R10>
-					<R11>0.961819708</R11>
-					<R12>0.273684055</R12>
-					<R20>-0.255035639</R20>
-					<R21>-0.264633805</R21>
-					<R22>0.930013835</R22>
+					<X>-250.888977</X>
+					<Y>-84.6434479</Y>
+					<Z>-549.640808</Z>
+					<R00>0.375196844</R00>
+					<R01>-0.363445669</R01>
+					<R02>0.85272187</R02>
+					<R10>1.49011612e-08</R10>
+					<R11>0.919927001</R11>
+					<R12>0.392089695</R12>
+					<R20>-0.92694521</R20>
+					<R21>-0.147110805</R21>
+					<R22>0.345153689</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-201.008682</X>
-					<Y>-69.3586655</Y>
-					<Z>-373.388428</Z>
+					<X>-252.594421</X>
+					<Y>-85.4276276</Y>
+					<Z>-550.331116</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -5006,7 +5006,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 													<Z>0</Z>
 												</Vector3>
 												<int64 name="SourceAssetId">-1</int64>
-												<BinaryString name="Tags"></BinaryString>
+												<BinaryString name="Tags">VHJhbnNwYXJlbnQ=</BinaryString>
 												<float name="TopParamA">-0.5</float>
 												<float name="TopParamB">0.5</float>
 												<token name="TopSurface">0</token>
@@ -5871,7 +5871,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 													<Z>0</Z>
 												</Vector3>
 												<int64 name="SourceAssetId">-1</int64>
-												<BinaryString name="Tags"></BinaryString>
+												<BinaryString name="Tags">VHJhbnNwYXJlbnQ=</BinaryString>
 												<float name="TopParamA">-0.5</float>
 												<float name="TopParamB">0.5</float>
 												<token name="TopSurface">0</token>
@@ -45875,6 +45875,7 @@ function addRemoteObjects()
                                                               "DockMountPlate")
         -- Utils.enableChildWelds({part = dockMountPlate, enabled = false})
         -- dockMountPlate.Anchored = true
+        dockMountPlate:Destroy()
 
         local questBlockProps = {
             parent = dockMountPlate,
@@ -45899,10 +45900,11 @@ function addRemoteObjects()
             }
         }
 
-        local mountPlateCFrame = Utils3.setCFrameFromDesiredEdgeOffset(
-                                     translateCFrameProps)
+        -- Relocate the scene mountplate, after the dock has bee resized.
+        local sceneMountPlateCFrame = Utils3.setCFrameFromDesiredEdgeOffset(
+                                          translateCFrameProps)
 
-        sceneMountPlate.CFrame = mountPlateCFrame
+        sceneMountPlate.CFrame = sceneMountPlateCFrame
         local rotatedCFrame = CFrame.Angles(0, math.rad(180), 0)
         sceneMountPlate.CFrame = sceneMountPlate.CFrame:ToWorldSpace(
                                      rotatedCFrame)
@@ -45918,7 +45920,7 @@ function addRemoteObjects()
             skyBoxTeleporter = skyBoxTeleporter
         }
         Scenes.addScenes(addScenesProps)
-        -- sceneMountPlate:Destroy
+        sceneMountPlate:Destroy()
     end
 
     questBlockTemplate:Destroy()
@@ -46653,8 +46655,8 @@ module.dialogColors = {
 }
 
 local islandLength = 36
-local bridgeBaseLength = 66
--- local bridgeBaseLength = 64
+-- local bridgeBaseLength = 66
+local bridgeBaseLength = 63
 local bridgeOverlap = 2
 local bridgeLength = bridgeBaseLength - 2 * bridgeOverlap
 
