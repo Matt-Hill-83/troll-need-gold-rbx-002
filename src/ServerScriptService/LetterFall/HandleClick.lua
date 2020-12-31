@@ -65,12 +65,10 @@ function handleBrick(clickedLetter, miniGameState)
     local runTimeLetterFolder = miniGameState.runTimeLetterFolder
 
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
-    print('isChild' .. ' - start');
-    print(isChild);
-    if not isChild then
-        print('runTimeLetterFolder' .. ' - start');
-        print(runTimeLetterFolder);
+    print('miniGameState.currentLetterIndex' .. ' - start');
+    print(miniGameState.currentLetterIndex);
 
+    if not isChild then
         -- Anchor letters if letter is clicked is a different game instance
         LetterFallUtils.anchorLetters({
             parentFolder = runTimeLetterFolder,

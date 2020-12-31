@@ -135,12 +135,25 @@ function styleLetterBlocks(props)
     local availWords = props.availWords
     local letterFallFolder = miniGameState.letterFallFolder
     local letterBlockTemplateFolder = miniGameState.letterBlockTemplateFolder
+
     local availLetters = module.getAvailLettersDict(
                              {
             words = availWords,
             currentLetterIndex = miniGameState.currentLetterIndex
         })
-    local allLetters = module.getAllLettersInRack()
+
+    print('availLetters' .. ' - start');
+    print(Utils.tableToString({availLetters}));
+    print('availLetters' .. ' - end');
+
+    -- TODO: pass folder into this
+    -- TODO: pass folder into this
+    -- TODO: pass folder into this
+    -- TODO: pass folder into this
+    local allLetters = module.getAllLettersInRack(
+                           {
+            runTimeLetterFolder = miniGameState.runTimeLetterFolder
+        })
 
     for i, letterBlock in ipairs(allLetters) do
         if CS:HasTag(letterBlock, module.tagNames.Found) then
@@ -323,9 +336,10 @@ function anchorLetters(props)
 end
 
 function getAllLettersInRack(props)
+    local runTimeLetterFolder = props.runTimeLetterFolder
     local letters = Utils.getByTagInParent(
                         {
-            parent = parentFolder,
+            parent = runTimeLetterFolder,
             tag = module.tagNames.NotDeadLetter
         })
 
