@@ -10,7 +10,6 @@ local TheaterSeat = require(Sss.Source.TheaterSeat.TheaterSeat)
 local Teleporters = require(Sss.Source.Teleporters.Teleporters)
 local DropBox = require(Sss.Source.DropBox.DropBox)
 local Location = require(Sss.Source.Location.Location)
-local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 
 local module = {}
 
