@@ -14,11 +14,6 @@ local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 
 local module = {}
 
--- TODO mount scene on scene mount plate
--- TODO mount scene on scene mount plate
--- TODO mount scene on scene mount plate
--- TODO mount scene on scene mount plate
-
 function module.addScenes(props)
     local parent = props.parent
     -- local mountPlate = props.mountPlate
@@ -41,55 +36,39 @@ function module.addScenes(props)
         })
 
     local wordBoxTemplate = Utils.getFromTemplates("WordBoxTemplate")
-    print('wordBoxTemplate' .. ' - start');
-    print(wordBoxTemplate);
 
     local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
     for sceneIndex, sceneConfig in ipairs(sceneConfigs) do
-        local newPosition = getNewScenePosition(
-                                {
+        local newSceneOffset = getNewSceneOffset(
+                                   {
                 coordinates = sceneConfig.coordinates,
                 template = sceneBase
             })
-        -- 
-        -- 
-        -- 
         local clonedScene = sceneTemplateModel:Clone()
-        -- 
+
         local translateCFrameProps = {
             parent = parent,
             child = clonedScene.PrimaryPart,
             offsetConfig = {
                 useParentNearEdge = Vector3.new(0, -1, 1),
                 useChildNearEdge = Vector3.new(0, -1, 1),
-                offsetAdder = Vector3.new(0, 0, 0)
+                offsetAdder = Vector3.new(0, 0, -gridPadding / 2)
             }
         }
 
         local newCFrame = Utils3.setCFrameFromDesiredEdgeOffset(
                               translateCFrameProps)
 
-        local cFrame = newCFrame * CFrame.new(newPosition)
-        -- 
-        -- 
-        -- 
-        -- 
-
-        -- local clonedScene = Utils.cloneModel(
-        --                         {
-        --         model = sceneTemplateModel,
-        --         cFrame = CFrame.new(newPosition) * sceneStartCFrame,
-        --         suffix = "Clone" .. "-Q" .. questIndex .. "-S" .. sceneIndex
-        --     })
+        local cFrame = newCFrame * CFrame.new(newSceneOffset)
 
         clonedScene.Parent = sceneTemplateModel.Parent
         clonedScene.Name = clonedScene.Name .. "Clone" .. "-Q" .. questIndex ..
                                "-S" .. sceneIndex
         clonedScene:SetPrimaryPartCFrame(cFrame)
 
-        local defaultWords = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
-        local words = defaultWords
-        if #questConfig.words2 > 0 then words = questConfig.words2 end
+        -- local defaultWords = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
+        -- local words = defaultWords
+        -- if #questConfig.words2 > 0 then words = questConfig.words2 end
 
         -- Add teleporters after MinGame is added, because they could be located
         --  in mini game
@@ -124,7 +103,6 @@ function module.addScenes(props)
         -- end
 
         function onCorrectItemDropped()
-
             local manHoleCover = Utils.getFirstDescendantByName(clonedScene,
                                                                 "ManHoleCover")
             if manHoleCover then manHoleCover:Destroy() end
@@ -218,7 +196,7 @@ getInitialSceneCFrame = function(props)
 
 end
 
-function getNewScenePosition(props)
+function getNewSceneOffset(props)
     local coordinates = props.coordinates
     local gapX = Constants.islandLength + Constants.bridgeLength
     local newX = -(gapX + Constants.buffer) * coordinates.col
