@@ -49,7 +49,8 @@ function setCFrameFromDesiredEdgeOffset(props)
                        offsetConfig.useChildNearEdge * child.Size) / 2 +
                        offsetConfig.offsetAdder
 
-    return parent.CFrame:ToWorldSpace(CFrame.new(offset))
+    local newCFrame = CFrame.new(offset)
+    return parent.CFrame:ToWorldSpace(newCFrame)
 end
 
 module.getPartFarEdge = getPartFarEdge

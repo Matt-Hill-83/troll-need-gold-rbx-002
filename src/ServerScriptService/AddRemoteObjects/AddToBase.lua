@@ -35,12 +35,33 @@ function addRemoteObjects()
     local hexStandPositioner = Utils.getFirstDescendantByName(myStuff,
                                                               "HexStandPositioner")
 
-    hexMount.PrimaryPart.Name = hexMount.PrimaryPart.Name .. "zzzzz"
-    print('hexMount.PrimaryPart.Position' .. ' - start');
-    print(hexMount.PrimaryPart.Position);
-    hexMount.PrimaryPart.Position = hexStandPositioner.Position
-    print('hexMount.PrimaryPart.Position' .. ' - start');
-    print(hexMount.PrimaryPart.Position);
+    hexMount.Name = hexMount.Name .. "-Clone"
+    local hexMountPart = hexMount.PrimaryPart
+
+    local translateCFrameProps = {
+        parent = hexStandPositioner,
+        child = hexMountPart,
+        offsetConfig = {
+            useParentNearEdge = Vector3.new(-1, 1, -1),
+            useChildNearEdge = Vector3.new(-1, -1, -1),
+            offsetAdder = Vector3.new(0, 0, 0)
+        }
+    }
+
+    -- Relocate the scene mountplate, after the dock has bee resized.
+    local newCFrame =
+        Utils3.setCFrameFromDesiredEdgeOffset(translateCFrameProps)
+    print('newCFrame' .. ' - start');
+    print(newCFrame);
+    print('newCFrame.X' .. ' - start');
+    print(newCFrame.X);
+    print('newCFrame.Position' .. ' - start');
+    print(newCFrame.Position);
+    -- hexMountPart.CFrame = newCFrame
+    hexMountPart.Position = hexStandPositioner.Position
+
+    -- 
+    -- 
     local mountPlates = Utils.getDescendantsByName(hexMount, "MountPlate")
 
     local runtimeQuestsFolder = Utils.getOrCreateFolder(
