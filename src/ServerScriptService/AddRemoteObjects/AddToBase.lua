@@ -28,7 +28,19 @@ function addRemoteObjects()
 
     local myStuff = workspace:FindFirstChild("MyStuff")
     local questsOrigin = Utils.getFirstDescendantByName(myStuff, "QuestsOrigin")
-    local hexMount = Utils.getFirstDescendantByName(myStuff, "HexStand")
+    local hexStandTemplate = Utils.getFromTemplates("HexStandTemplate")
+    hexMount = hexStandTemplate:Clone()
+    hexMount.Parent = myStuff
+
+    local hexStandPositioner = Utils.getFirstDescendantByName(myStuff,
+                                                              "HexStandPositioner")
+
+    hexMount.PrimaryPart.Name = hexMount.PrimaryPart.Name .. "zzzzz"
+    print('hexMount.PrimaryPart.Position' .. ' - start');
+    print(hexMount.PrimaryPart.Position);
+    hexMount.PrimaryPart.Position = hexStandPositioner.Position
+    print('hexMount.PrimaryPart.Position' .. ' - start');
+    print(hexMount.PrimaryPart.Position);
     local mountPlates = Utils.getDescendantsByName(hexMount, "MountPlate")
 
     local runtimeQuestsFolder = Utils.getOrCreateFolder(

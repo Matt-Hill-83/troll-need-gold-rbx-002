@@ -142,14 +142,6 @@ function styleLetterBlocks(props)
             currentLetterIndex = miniGameState.currentLetterIndex
         })
 
-    print('availLetters' .. ' - start');
-    print(Utils.tableToString({availLetters}));
-    print('availLetters' .. ' - end');
-
-    -- TODO: pass folder into this
-    -- TODO: pass folder into this
-    -- TODO: pass folder into this
-    -- TODO: pass folder into this
     local allLetters = module.getAllLettersInRack(
                            {
             runTimeLetterFolder = miniGameState.runTimeLetterFolder
