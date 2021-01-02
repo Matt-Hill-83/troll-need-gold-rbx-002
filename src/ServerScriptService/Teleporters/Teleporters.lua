@@ -43,14 +43,14 @@ function module.configSkyboxTeleporter(props)
                                                "TeleporterLabel")
     for i, label in ipairs(labels2) do label.Text = questTitle end
 
-    skyBoxTeleporter.PrimaryPart.Anchored = false
-    local teleporterPositioner = Utils.getFirstDescendantByName(workspace,
+    -- skyBoxTeleporter.PrimaryPart.Anchored = false
+    local teleporterPositioner = Utils.getFirstDescendantByName(parentFolder,
                                                                 "SkyBoxTeleporterPositioner")
 
     skyBoxTeleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
 
-    skyBoxTeleporter.PrimaryPart.Anchored = true
-    skyBoxTeleporter.Name = "teleporter" .. "-sky-Q- " .. questIndex
+    -- skyBoxTeleporter.PrimaryPart.Anchored = true
+    skyBoxTeleporter.Name = "teleporter" .. "-sky-Q- xxx" .. questIndex
 
     return skyBoxTeleporter
 end

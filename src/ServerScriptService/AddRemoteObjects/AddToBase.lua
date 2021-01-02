@@ -48,8 +48,8 @@ function addRemoteObjects()
     questBlockTemplate:Destroy()
     local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
     letterFallTemplate:Destroy()
-    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
-    teleporterTemplate:Destroy()
+    -- local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
+    -- teleporterTemplate:Destroy()
     local hexStandTemplate = Utils.getFromTemplates("HexStandTemplate")
     hexStandTemplate:Destroy()
 
@@ -61,8 +61,6 @@ end
 function addWorld(props)
     local questConfigs = props.questConfigs
     local worldIndex = props.worldIndex
-    print('worldIndex' .. ' - start');
-    print(worldIndex);
 
     local myStuff = workspace:FindFirstChild("MyStuff")
     local hexStandTemplate = Utils.getFromTemplates("HexStandTemplate")
@@ -103,8 +101,14 @@ function addWorld(props)
                                  {
             questIndex = 0,
             questTitle = "All Quests",
-            parentFolder = runtimeQuestsFolder
+            parentFolder = hexMount
         })
+
+    local weld = Instance.new("WeldConstraint")
+    weld.Name = "WeldConstraint-ppp" .. worldIndex
+    weld.Parent = hexMount
+    weld.Part0 = skyBoxTeleporter.PrimaryPart
+    weld.Part1 = hexMountPart
 
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
