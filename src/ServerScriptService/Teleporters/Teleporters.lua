@@ -8,6 +8,8 @@ local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
     localTP.PrimaryPart.Touched:Connect(function(touchPart)
 
         local character = touchPart.Parent
+        -- if not character then return end
+
         local humanoid = character:FindFirstChildWhichIsA("Humanoid")
 
         if humanoid and character.currentlyTeleporting.Value == false then
@@ -38,20 +40,15 @@ function module.configSkyboxTeleporter(props)
     local skyBoxTeleporter = teleporterTemplate:Clone()
     skyBoxTeleporter.Parent = parentFolder
 
-    local teleporterSpacing = 15
     local labels2 = Utils.getDescendantsByName(skyBoxTeleporter,
                                                "TeleporterLabel")
     for i, label in ipairs(labels2) do label.Text = questTitle end
 
-    -- skyBoxTeleporter.PrimaryPart.Anchored = false
     local teleporterPositioner = Utils.getFirstDescendantByName(parentFolder,
                                                                 "SkyBoxTeleporterPositioner")
 
     skyBoxTeleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
-
-    -- skyBoxTeleporter.PrimaryPart.Anchored = true
     skyBoxTeleporter.Name = "teleporter" .. "-sky-Q- xxx" .. questIndex
-
     return skyBoxTeleporter
 end
 
