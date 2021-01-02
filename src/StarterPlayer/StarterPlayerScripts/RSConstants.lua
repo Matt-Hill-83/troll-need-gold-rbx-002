@@ -9,7 +9,9 @@ local module = {
     walkSpeed = 30,
     -- walkSpeed = 16,
     questWallHeight = 4,
-    sceneHeight = 50
+    sceneHeight = 50,
+    -- gameConfig = {transparency = false}
+    gameConfig = {transparency = true}
     -- 
 }
 
@@ -19,8 +21,11 @@ module.dialogColors = {
     Color3.fromRGB(158, 215, 253)
 }
 
+module.colors = {blue = Color3.fromRGB(158, 215, 253)}
+
+module.tagsNames = {BaseWallTransparent = "BaseWallTransparent"}
+
 local islandLength = 36
--- local bridgeBaseLength = 66
 local bridgeBaseLength = 63
 local bridgeOverlap = 2
 local bridgeLength = bridgeBaseLength - 2 * bridgeOverlap

@@ -282,7 +282,7 @@ function module.getOrCreateFolder(props)
 end
 
 function module.reportPlayerLocation()
-    local Players = game:GetService("Players")
+    -- local Players = game:GetService("Players")
     Players.PlayerAdded:Connect(function(player)
         player.CharacterAdded:Connect(function(character)
             local humanoidRootPart = character:WaitForChild("HumanoidRootPart")

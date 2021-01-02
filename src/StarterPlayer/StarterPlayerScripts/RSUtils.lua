@@ -1,7 +1,23 @@
 local StarterPlayer = game:GetService("StarterPlayer")
 local Constants = require(StarterPlayer.Source.StarterPlayerScripts.RSConstants)
-local module = {}
 local CS = game:GetService("CollectionService")
+
+local module = {}
+
+local function getPlayerFromHumanoid(humanoid)
+    local character = humanoid.Parent
+    local player = Players:GetPlayerFromCharacter(character)
+    return player
+end
+
+local function getKeysFromDict(dict)
+    local keyset = {}
+    for k, v in pairs(dict) do
+        keyset[#keyset + 1] = k
+        -- 
+    end
+    return keyset
+end
 
 local function removeFirstMatchFromArray(array, value)
     for i = #array, 1, -1 do
@@ -30,8 +46,8 @@ function enableChildWelds(props)
 end
 
 function genRandom(min, max)
-    local rand = min + math.random() * (max - min)
-    return math.ceil(rand)
+    local rand = min + math.random() * (max - min + 1)
+    return math.floor(rand)
 end
 
 function module.clearTable(tbl) for key in pairs(tbl) do tbl[key] = nil end end
@@ -50,15 +66,10 @@ end
 function module.getByTagInParent(props)
     local tag = props.tag
     local parent = props.parent
-    print('tag' .. ' - start');
-    print(tag);
     local items = CS:GetTagged(tag)
-    print('items' .. ' - start');
-    print(items);
+
     local output = {}
     for i, item in ipairs(items) do
-        print('i' .. ' - start');
-        print(i);
         if item:IsDescendantOf(parent) then
             table.insert(output, item)
             -- 
@@ -163,6 +174,18 @@ function sizeWalls(props)
     end
 end
 
+function setItemHeight(props)
+    local item = props.item
+    local height = props.height
+
+    if item:isA("Part") then
+        local posY = item.Position.Y - item.Size.Y / 2
+        local newPosY = posY + (height / 2)
+        item.Size = Vector3.new(item.Size.X, height, item.Size.Z)
+        item.Position = Vector3.new(item.Position.X, newPosY, item.Position.Z)
+    end
+end
+
 function sizeWalls2(props)
     local items = props.items
     local height = props.height
@@ -212,7 +235,6 @@ function module.setWallHeightbyParentModelName(props)
     local height = props.height
 
     local myStuff = workspace:FindFirstChild("MyStuff")
-    -- local item = getFirstDescendantByName(myStuff, name)
     local items = getDescendantsByName(myStuff, name)
 
     for i, item in ipairs(items) do
@@ -221,14 +243,14 @@ function module.setWallHeightbyParentModelName(props)
     end
 end
 
--- function module.setItemAndChildrenPropsByName(myProps)
---     local name = myProps.name
---     local props = myProps.props
+function module.setItemAndChildrenPropsByName(myProps)
+    local name = myProps.name
+    local props = myProps.props
 
---     local myStuff = workspace:FindFirstChild("MyStuff")
---     local item = getFirstDescendantByName(myStuff, name)
---     setChildrenProps(item, props)
--- end
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local item = getFirstDescendantByName(myStuff, name)
+    setChildrenProps(item, props)
+end
 
 function module.setItemAndChildrenPropsByInst(myProps)
     local item = myProps.item
@@ -258,7 +280,7 @@ function module.getOrCreateFolder(props)
 end
 
 function module.reportPlayerLocation()
-    local Players = game:GetService("Players")
+    -- local Players = game:GetService("Players")
     Players.PlayerAdded:Connect(function(player)
         player.CharacterAdded:Connect(function(character)
             local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
@@ -459,5 +481,8 @@ module.hideItem = hideItem
 module.genRandom = genRandom
 module.enableChildWelds = enableChildWelds
 module.removeFirstMatchFromArray = removeFirstMatchFromArray
+module.getPlayerFromHumanoid = getPlayerFromHumanoid
+module.getKeysFromDict = getKeysFromDict
+module.setItemHeight = setItemHeight
 
 return module
