@@ -27,6 +27,8 @@ function module.addLocation(props)
     local locationLabelBack = Utils.getFirstDescendantByName(scene,
                                                              "LocationLabelBack")
 
+    print('locationLabelBack' .. ' - start');
+    print(locationLabelBack);
     locationLabelBack.Text = locationLabel
     locationLabelFront.Text = locationLabel
 

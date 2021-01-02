@@ -77,17 +77,14 @@ renderCharacters = function(props)
                     props = {Orientation = newOrientation}
                 })
 
-            -- newChar.Parent = charFolder
-
-            Utils.mergeTables(newChar, {
-                Parent = charFolder,
-                -- Parent = characterTemplate.Parent,
-                Name = nameStub .. i
-            })
+            Utils.mergeTables(newChar,
+                              {Parent = charFolder, Name = nameStub .. i})
 
             local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
             applyDecalsToCharacter({part = newChar, decalId = decalId})
-            applyLabelsToCharacter({part = newChar, text = itemConfig.name})
+            local displayName = Utils.getDisplayNameFromName(
+                                    {name = itemConfig.name})
+            applyLabelsToCharacter({part = newChar, text = displayName})
 
             Utils.hideItemAndChildren({item = newChar, hide = false})
             newChar.PrimaryPart.Transparency = 1
