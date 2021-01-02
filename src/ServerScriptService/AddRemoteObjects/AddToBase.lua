@@ -16,15 +16,15 @@ local MiniGame = require(Sss.Source.MiniGame.MiniGame)
 function addRemoteObjects()
     local questConfigs = SceneConfig.getScenesConfig()
 
-    if (Constants.singleScene) then
-        -- slice out a single quest
-        questConfigs = {questConfigs[1]}
-        local sceneConfigs = questConfigs[1].sceneConfigs
-        questConfigs[1].sceneConfigs = {sceneConfigs[1]}
-    else
-        -- slice out the first 6 quests, for the hexagon
-        questConfigs = {unpack(questConfigs, 1, 6)}
-    end
+    -- if (Constants.singleScene) then
+    --     -- slice out a single quest
+    --     questConfigs = {questConfigs[1]}
+    --     local sceneConfigs = questConfigs[1].sceneConfigs
+    --     questConfigs[1].sceneConfigs = {sceneConfigs[1]}
+    -- else
+    --     -- slice out the first 6 quests, for the hexagon
+    --     questConfigs = {unpack(questConfigs, 1, 6)}
+    -- end
 
     local myStuff = workspace:FindFirstChild("MyStuff")
     local worlds = {questConfigs, questConfigs, questConfigs}
@@ -38,12 +38,6 @@ function addRemoteObjects()
         -- 
     end
 
-    -- 
-    -- 
-    -- 
-
-    -- 
-    -- 
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
     questBlockTemplate:Destroy()
     local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
@@ -61,6 +55,16 @@ end
 function addWorld(props)
     local questConfigs = props.questConfigs
     local worldIndex = props.worldIndex
+
+    if (Constants.singleScene) then
+        -- slice out a single quest
+        questConfigs = {questConfigs[1]}
+        local sceneConfigs = questConfigs[1].sceneConfigs
+        questConfigs[1].sceneConfigs = {sceneConfigs[1]}
+    else
+        -- slice out the first 6 quests, for the hexagon
+        questConfigs = {unpack(questConfigs, 1, 6)}
+    end
 
     local myStuff = workspace:FindFirstChild("MyStuff")
     local hexStandTemplate = Utils.getFromTemplates("HexStandTemplate")
