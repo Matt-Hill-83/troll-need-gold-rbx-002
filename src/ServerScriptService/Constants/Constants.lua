@@ -10,7 +10,7 @@ local module = {
     gameConfig = {transparency = true},
 
     entered = {value = false},
-    walkSpeed = 30,
+    walkSpeed = 20,
     questWallHeight = 4,
     sceneHeight = 50
 }
