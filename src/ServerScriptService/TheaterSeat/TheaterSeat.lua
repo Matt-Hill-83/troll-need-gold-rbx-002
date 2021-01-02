@@ -23,6 +23,7 @@ function module.addSeat(props)
     local currentPlayer = nil
     local numPages = #sceneConfig.frames
 
+    -- TODO: numUsersSeated should be happen on a scene level
     local theaterState = {pageNumber = 1, updating = false, numUsersSeated = 0}
 
     function getFrameConfig(sceneConfig)
@@ -53,13 +54,15 @@ function module.addSeat(props)
 
     function onNextPageClick()
         function closure(currentPlayer)
-            print('currentPlayer' .. ' - start');
-            print(currentPlayer);
             local sceneConfig = sceneConfig
             local frameConfig = sceneConfig.frames[theaterState.pageNumber]
+            print(theaterState.updating)
             if theaterState.updating == true then return end
             theaterState.updating = true
-            if theaterState.numUsersSeated == 0 then return end
+            -- if theaterState.numUsersSeated == 0 then return end
+            print('currentPlayer' .. ' - start');
+            print(currentPlayer);
+            print('updating')
 
             if theaterState.pageNumber < numPages then
                 theaterState.pageNumber = theaterState.pageNumber + 1
@@ -93,7 +96,11 @@ function module.addSeat(props)
             local frameConfig = sceneConfig.frames[theaterState.pageNumber]
             if theaterState.updating == true then return end
             theaterState.updating = true
-            if theaterState.numUsersSeated == 0 then return end
+            -- if theaterState.numUsersSeated == 0 then return end
+
+            print('currentPlayer' .. ' - start');
+            print(currentPlayer);
+            print('updating')
 
             if theaterState.pageNumber > 1 then
                 theaterState.pageNumber = theaterState.pageNumber - 1
