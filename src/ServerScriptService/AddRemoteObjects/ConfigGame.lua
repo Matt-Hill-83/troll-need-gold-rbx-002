@@ -34,16 +34,20 @@ function setVisibility()
     Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
 
     for i, wall in ipairs(tagBaseWallTransparent) do
+        local newWallHeight = 2
+
         local newWall = wall:Clone()
         newWall.Parent = wall.Parent
-        newWall.Size = newWall.Size + Vector3.new(0, 3 - newWall.Size.Y, 0)
+        newWall.Size = newWall.Size +
+                           Vector3.new(0, newWallHeight - newWall.Size.Y, 0)
         newWall.Position = newWall.Position +
                                Vector3.new(0,
                                            -(wall.Size.Y - newWall.Size.Y) / 2,
                                            0)
-        newWall.Transparency = 0
+        newWall.Transparency = 0.7
         newWall.CanCollide = false
         newWall.Anchored = true
+        newWall.Color = Constants.colors.blue
         CS:RemoveTag(newWall, "BaseWallTransparent")
 
     end
