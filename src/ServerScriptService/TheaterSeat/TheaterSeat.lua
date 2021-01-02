@@ -34,6 +34,7 @@ function module.addSeat(props)
         local frameConfig = props.frameConfig
         local numPages = props.numPages
         local pageNumber = props.pageNumber
+        local player = props.player
 
         addCharactersToScene(newSceneProps)
 
@@ -43,8 +44,11 @@ function module.addSeat(props)
             Buttons.updateButtonActiveStatus(
                 {pageNum = pageNumber, numPages = numPages, sgui = sgui})
         end
-        -- renderDialogRE:FireClient(player, frameConfig.dialogs)
-        renderDialogRE:FireAllClients(frameConfig.dialogs)
+
+        print('player' .. ' - start');
+        print(player);
+        renderDialogRE:FireClient(player, frameConfig.dialogs)
+        -- renderDialogRE:FireAllClients(frameConfig.dialogs)
     end
 
     function onNextPageClick()
@@ -68,6 +72,7 @@ function module.addSeat(props)
                     sceneFolder = sceneFolder
                 }
                 local frameItemProps = {
+                    player = currentPlayer,
                     newSceneProps = newSceneProps,
                     frameConfig = frameConfig,
                     numPages = numPages,
@@ -102,14 +107,13 @@ function module.addSeat(props)
                 }
 
                 local frameItemProps = {
+                    player = currentPlayer,
                     newSceneProps = newSceneProps,
                     frameConfig = frameConfig,
                     numPages = numPages,
                     pageNumber = theaterState.pageNumber
                 }
                 updateFrameItems(frameItemProps)
-                -- updateFrameItems(newSceneProps, frameConfig, numPages,
-                --                  theaterState.pageNumber)
             end
             theaterState.updating = false
         end
@@ -162,14 +166,13 @@ function module.addSeat(props)
 
                     local frameItemProps =
                         {
+                            player = player,
                             newSceneProps = newSceneProps,
                             frameConfig = frameConfig,
                             numPages = numPages,
                             pageNumber = theaterState.pageNumber
                         }
                     updateFrameItems(frameItemProps)
-                    -- updateFrameItems(newSceneProps, frameConfig, numPages,
-                    --                  theaterState.pageNumber)
 
                     freezeCameraRE:FireClient(currentPlayer, cameraPath1,
                                               cameraPath2, true)
