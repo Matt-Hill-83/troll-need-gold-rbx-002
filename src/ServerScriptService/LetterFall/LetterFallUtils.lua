@@ -1,9 +1,12 @@
 local CS = game:GetService("CollectionService")
 local Sss = game:GetService("ServerScriptService")
+
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local Constants = require(Sss.Source.Constants.Constants)
+
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
-local Constants = require(Sss.Source.Constants.Constants)
+
 local module = {
     tagNames = {
         WordLetter = "WordLetter",
@@ -221,13 +224,23 @@ end
 
 function createBalls(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
+    local questIndex = miniGameState.questIndex
+
     local ball = Utils.getFirstDescendantByName(letterFallFolder, "GemTemplate")
+    local gemColor = Constants.gemColors[questIndex]
+
+    print('gemColor' .. ' - start');
+    print(gemColor);
 
     local balls = {}
     for count = 1, 10 do
         local newBall = ball:Clone()
-        newBall.Handle.CFrame = newBall.Handle.CFrame + Vector3.new(-0.1, 0, 0)
+        local ballPart = newBall.Handle
+
+        newBall.Name = ball.Name .. "-Q-zzzz" .. questIndex
         newBall.Parent = ball.Parent
+        ballPart.CFrame = ballPart.CFrame + Vector3.new(-0.1, 0, 0)
+        ballPart.Color = gemColor
         Utils.enableChildWelds({part = newBall, enabled = false})
         table.insert(balls, newBall)
     end

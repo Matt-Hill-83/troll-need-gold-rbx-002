@@ -11,7 +11,6 @@ function createPartWithVectors(props)
 
     newPart.Size = size
     newPart.Position = position
-    -- newPart.Anchored = true
     newPart.BrickColor = props.color or BrickColor.new("Light blue")
     newPart.Name = name
 

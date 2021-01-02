@@ -33,7 +33,8 @@ function module.addMiniGame(props)
         letterBlockTemplateFolder = nil,
         renderedWords = {},
         wordLetters = {},
-        words = words
+        words = words,
+        questIndex = questIndex
     }
 
     local miniGame = {}
