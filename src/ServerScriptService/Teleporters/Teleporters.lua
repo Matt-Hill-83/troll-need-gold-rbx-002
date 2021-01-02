@@ -8,7 +8,7 @@ local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
     localTP.PrimaryPart.Touched:Connect(function(touchPart)
 
         local character = touchPart.Parent
-        -- if not character then return end
+        if not character then return end
 
         local humanoid = character:FindFirstChildWhichIsA("Humanoid")
 
