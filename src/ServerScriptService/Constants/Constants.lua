@@ -5,6 +5,7 @@ local module = {
 
     -- isDev = false,
     isDev = true,
+
     -- gameConfig = {transparency = false},
     gameConfig = {transparency = true},
 

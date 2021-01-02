@@ -29,7 +29,12 @@ function module.addSeat(props)
         return sceneConfig.frames[theaterState.pageNumber]
     end
 
-    function updateFrameItems(newSceneProps, frameConfig, numPages, pageNumber)
+    function updateFrameItems(props)
+        local newSceneProps = props.newSceneProps
+        local frameConfig = props.frameConfig
+        local numPages = props.numPages
+        local pageNumber = props.pageNumber
+
         addCharactersToScene(newSceneProps)
 
         for i, player in pairs(Players:GetPlayers()) do
@@ -38,11 +43,14 @@ function module.addSeat(props)
             Buttons.updateButtonActiveStatus(
                 {pageNum = pageNumber, numPages = numPages, sgui = sgui})
         end
+        -- renderDialogRE:FireClient(player, frameConfig.dialogs)
         renderDialogRE:FireAllClients(frameConfig.dialogs)
     end
 
     function onNextPageClick()
-        function closure()
+        function closure(currentPlayer)
+            print('currentPlayer' .. ' - start');
+            print(currentPlayer);
             local sceneConfig = sceneConfig
             local frameConfig = sceneConfig.frames[theaterState.pageNumber]
             if theaterState.updating == true then return end
@@ -59,8 +67,13 @@ function module.addSeat(props)
                     clonedScene = clonedScene,
                     sceneFolder = sceneFolder
                 }
-                updateFrameItems(newSceneProps, frameConfig, numPages,
-                                 theaterState.pageNumber)
+                local frameItemProps = {
+                    newSceneProps = newSceneProps,
+                    frameConfig = frameConfig,
+                    numPages = numPages,
+                    pageNumber = theaterState.pageNumber
+                }
+                updateFrameItems(frameItemProps)
             end
             theaterState.updating = false
         end
@@ -87,8 +100,16 @@ function module.addSeat(props)
                     clonedScene = clonedScene,
                     sceneFolder = sceneFolder
                 }
-                updateFrameItems(newSceneProps, frameConfig, numPages,
-                                 theaterState.pageNumber)
+
+                local frameItemProps = {
+                    newSceneProps = newSceneProps,
+                    frameConfig = frameConfig,
+                    numPages = numPages,
+                    pageNumber = theaterState.pageNumber
+                }
+                updateFrameItems(frameItemProps)
+                -- updateFrameItems(newSceneProps, frameConfig, numPages,
+                --                  theaterState.pageNumber)
             end
             theaterState.updating = false
         end
@@ -138,10 +159,21 @@ function module.addSeat(props)
                             clonedScene = clonedScene,
                             sceneFolder = sceneFolder
                         }
-                    updateFrameItems(newSceneProps, frameConfig, numPages,
-                                     theaterState.pageNumber)
 
-                    freezeCameraRE:FireAllClients(cameraPath1, cameraPath2, true)
+                    local frameItemProps =
+                        {
+                            newSceneProps = newSceneProps,
+                            frameConfig = frameConfig,
+                            numPages = numPages,
+                            pageNumber = theaterState.pageNumber
+                        }
+                    updateFrameItems(frameItemProps)
+                    -- updateFrameItems(newSceneProps, frameConfig, numPages,
+                    --                  theaterState.pageNumber)
+
+                    freezeCameraRE:FireClient(currentPlayer, cameraPath1,
+                                              cameraPath2, true)
+                    -- freezeCameraRE:FireAllClients(cameraPath1, cameraPath2, true)
                     return
                 end
             end
@@ -151,7 +183,9 @@ function module.addSeat(props)
                 theaterState.numUsersSeated = theaterState.numUsersSeated - 1
                 currentPlayer.Character:WaitForChild("Humanoid").WalkSpeed =
                     Constants.walkSpeed
-                freezeCameraRE:FireAllClients(cameraPath1, cameraPath2, false)
+                freezeCameraRE:FireClient(currentPlayer, cameraPath1,
+                                          cameraPath2, false)
+                -- freezeCameraRE:FireAllClients(cameraPath1, cameraPath2, false)
                 currentPlayer = nil
             end
         end)
