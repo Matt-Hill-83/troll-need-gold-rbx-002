@@ -33,9 +33,25 @@ function setVisibility()
     local tagBaseWallTransparent = CS:GetTagged("BaseWallTransparent")
     Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
 
+    for i, wall in ipairs(tagBaseWallTransparent) do
+        local newWall = wall:Clone()
+        newWall.Parent = wall.Parent
+        newWall.Size = newWall.Size + Vector3.new(0, 3 - newWall.Size.Y, 0)
+        newWall.Position = newWall.Position +
+                               Vector3.new(0,
+                                           -(wall.Size.Y - newWall.Size.Y) / 2,
+                                           0)
+        newWall.Transparency = 0
+        newWall.CanCollide = false
+        newWall.Anchored = true
+        CS:RemoveTag(newWall, "BaseWallTransparent")
+
+    end
+
     Utils.setPropsByTag({
         tag = "BaseWallTransparent",
-        props = {Transparency = 0.6}
+        -- props = {Transparency = 0.6}
+        props = {Transparency = 1}
     })
 
     local skyBoxWalls = CS:GetTagged("SkyBoxWalls")

@@ -2,8 +2,8 @@ local module = {
     -- buffer = 0,
     -- singleScene = true,
     singleScene = false,
-    isDev = false,
-    -- isDev = true,
+    -- isDev = false,
+    isDev = true,
     -- 
     entered = {value = false},
     walkSpeed = 30,
@@ -18,9 +18,9 @@ module.dialogColors = {
     Color3.fromRGB(253, 228, 158), Color3.fromRGB(158, 253, 179),
     Color3.fromRGB(158, 215, 253)
 }
+module.tagsNames = {BaseWallTransparent = "BaseWallTransparent"}
 
 local islandLength = 36
--- local bridgeBaseLength = 66
 local bridgeBaseLength = 63
 local bridgeOverlap = 2
 local bridgeLength = bridgeBaseLength - 2 * bridgeOverlap
