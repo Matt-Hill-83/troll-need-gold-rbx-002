@@ -27,41 +27,71 @@ function addRemoteObjects()
     end
 
     local myStuff = workspace:FindFirstChild("MyStuff")
-    local questsOrigin = Utils.getFirstDescendantByName(myStuff, "QuestsOrigin")
+    local worlds = {questConfigs, questConfigs, questConfigs}
+
+    for worldIndex, questConfig in ipairs(worlds) do
+        local worldProps = {
+            questConfigs = questConfigs,
+            worldIndex = worldIndex
+        }
+        addWorld(worldProps)
+        -- 
+    end
+
+    -- 
+    -- 
+    -- 
+
+    -- 
+    -- 
+    local questBlockTemplate = Utils.getFromTemplates("QuestBox")
+    questBlockTemplate:Destroy()
+    local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
+    letterFallTemplate:Destroy()
+    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
+    teleporterTemplate:Destroy()
     local hexStandTemplate = Utils.getFromTemplates("HexStandTemplate")
+    hexStandTemplate:Destroy()
+
+    -- Do this last after everything has been created/deleted
+    ConfigGame.configGame()
+
+end
+
+function addWorld(props)
+    local questConfigs = props.questConfigs
+    local worldIndex = props.worldIndex
+    print('worldIndex' .. ' - start');
+    print(worldIndex);
+
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local hexStandTemplate = Utils.getFromTemplates("HexStandTemplate")
+    local hexStandPositioners = Utils.getDescendantsByName(myStuff,
+                                                           "HexStandPositioner")
+
+    local hexStandPositioner = hexStandPositioners[worldIndex]
+
     hexMount = hexStandTemplate:Clone()
     hexMount.Parent = myStuff
 
-    local hexStandPositioner = Utils.getFirstDescendantByName(myStuff,
-                                                              "HexStandPositioner")
-
-    hexMount.Name = hexMount.Name .. "-Clone"
+    hexMount.Name = hexMount.Name .. "-Clone-zzzz"
     local hexMountPart = hexMount.PrimaryPart
 
-    local translateCFrameProps = {
-        parent = hexStandPositioner,
-        child = hexMountPart,
-        offsetConfig = {
-            useParentNearEdge = Vector3.new(-1, 1, -1),
-            useChildNearEdge = Vector3.new(-1, -1, -1),
-            offsetAdder = Vector3.new(0, 0, 0)
-        }
-    }
-
-    -- Relocate the scene mountplate, after the dock has bee resized.
-    local newCFrame =
-        Utils3.setCFrameFromDesiredEdgeOffset(translateCFrameProps)
-    print('newCFrame' .. ' - start');
-    print(newCFrame);
-    print('newCFrame.X' .. ' - start');
-    print(newCFrame.X);
-    print('newCFrame.Position' .. ' - start');
-    print(newCFrame.Position);
+    -- local translateCFrameProps = {
+    --     parent = hexStandPositioner,
+    --     child = hexMountPart,
+    --     offsetConfig = {
+    --         useParentNearEdge = Vector3.new(-1, 1, -1),
+    --         useChildNearEdge = Vector3.new(-1, -1, -1),
+    --         offsetAdder = Vector3.new(0, 0, 0)
+    --     }
+    -- }
+    -- local newCFrame =
+    --     Utils3.setCFrameFromDesiredEdgeOffset(translateCFrameProps)
     -- hexMountPart.CFrame = newCFrame
+
     hexMountPart.Position = hexStandPositioner.Position
 
-    -- 
-    -- 
     local mountPlates = Utils.getDescendantsByName(hexMount, "MountPlate")
 
     local runtimeQuestsFolder = Utils.getOrCreateFolder(
@@ -185,15 +215,6 @@ function addRemoteObjects()
         Scenes.addScenes(addScenesProps)
         sceneMountPlate:Destroy()
     end
-
-    questBlockTemplate:Destroy()
-    local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
-    letterFallTemplate:Destroy()
-    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
-    teleporterTemplate:Destroy()
-
-    -- Do this last after everything has been created/deleted
-    ConfigGame.configGame()
 
 end
 
