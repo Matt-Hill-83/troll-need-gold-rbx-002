@@ -33,9 +33,6 @@ function configCouchTrigger(miniGameState)
             if humanoid then
                 local player = Utils.getPlayerFromHumanoid(humanoid)
                 if player then
-                    print('player' ..
-                              ' - start-----------------------------------SEAT');
-                    print(player);
                     if not seatTriggerEnabled then
                         seatTriggerEnabled = true
                     end

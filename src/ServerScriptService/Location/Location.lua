@@ -8,7 +8,6 @@ function module.addLocation(props)
     local sceneConfig = props.sceneConfig
 
     -- Image
-    -- Image
     local imageId = Utils.getDecalIdFromName({name = sceneConfig.name})
 
     local locationImageFront = Utils.getFirstDescendantByName(scene,
@@ -19,7 +18,6 @@ function module.addLocation(props)
     locationImageBack.Image = 'rbxassetid://' .. imageId
 
     -- Label
-    -- Label
     local locationLabel =
         Utils.getDisplayNameFromName({name = sceneConfig.name})
     local locationLabelFront = Utils.getFirstDescendantByName(scene,
@@ -27,8 +25,6 @@ function module.addLocation(props)
     local locationLabelBack = Utils.getFirstDescendantByName(scene,
                                                              "LocationLabelBack")
 
-    print('locationLabelBack' .. ' - start');
-    print(locationLabelBack);
     locationLabelBack.Text = locationLabel
     locationLabelFront.Text = locationLabel
 

@@ -24,19 +24,29 @@ function setVisibility()
     local taggedPartsDestroy = CS:GetTagged("Destroy")
     for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
 
-    local taggedPartsTransparent = CS:GetTagged("Transparent")
-    for i, item in ipairs(taggedPartsTransparent) do item.Transparency = 1 end
+    if Constants.gameConfig.transparency then
+        local taggedPartsTransparent = CS:GetTagged("Transparent")
+        for i, item in ipairs(taggedPartsTransparent) do
+            item.Transparency = 1
+        end
+    end
 
     local canCollideOff = CS:GetTagged("CanCollideOff")
     for i, item in ipairs(canCollideOff) do item.CanCollide = false end
 
     local tagBaseWallTransparent = CS:GetTagged("BaseWallTransparent")
-    Utils.setWallHeightByList({items = tagBaseWallTransparent, height = 16})
 
     for i, wall in ipairs(tagBaseWallTransparent) do
+        Utils.setItemHeight({item = wall, height = 30})
         local newWallHeight = 2
+        wall.Transparency = 1
+        -- wall.Transparency = 0.9
+        wall.CanCollide = true
+        wall.Anchored = true
+        wall.Color = Constants.colors.blue
 
         local newWall = wall:Clone()
+
         newWall.Parent = wall.Parent
         newWall.Size = newWall.Size +
                            Vector3.new(0, newWallHeight - newWall.Size.Y, 0)
@@ -45,18 +55,8 @@ function setVisibility()
                                            -(wall.Size.Y - newWall.Size.Y) / 2,
                                            0)
         newWall.Transparency = 0.7
-        newWall.CanCollide = false
-        newWall.Anchored = true
-        newWall.Color = Constants.colors.blue
         CS:RemoveTag(newWall, "BaseWallTransparent")
-
     end
-
-    Utils.setPropsByTag({
-        tag = "BaseWallTransparent",
-        -- props = {Transparency = 0.6}
-        props = {Transparency = 1}
-    })
 
     local skyBoxWalls = CS:GetTagged("SkyBoxWalls")
     Utils.setWallHeightByList({items = skyBoxWalls, height = 30})

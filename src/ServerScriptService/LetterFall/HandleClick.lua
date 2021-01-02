@@ -65,8 +65,6 @@ function handleBrick(clickedLetter, miniGameState)
     local runTimeLetterFolder = miniGameState.runTimeLetterFolder
 
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
-    print('miniGameState.currentLetterIndex' .. ' - start');
-    print(miniGameState.currentLetterIndex);
 
     if not isChild then
         -- Anchor letters if letter is clicked is a different game instance
@@ -142,8 +140,6 @@ function handleBrick(clickedLetter, miniGameState)
     end
 
     if targetLetterBlock then
-        print('targetLetterBlock' .. ' - start');
-        print(targetLetterBlock);
         miniGameState.currentLetterIndex = miniGameState.currentLetterIndex + 1
         CS:AddTag(clickedLetter, LetterFallUtils.tagNames.Found)
         CS:RemoveTag(clickedLetter, LetterFallUtils.tagNames.RackLetter)

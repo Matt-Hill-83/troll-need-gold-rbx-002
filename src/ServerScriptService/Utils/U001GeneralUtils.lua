@@ -176,6 +176,18 @@ function sizeWalls(props)
     end
 end
 
+function setItemHeight(props)
+    local item = props.item
+    local height = props.height
+
+    if item:isA("Part") then
+        local posY = item.Position.Y - item.Size.Y / 2
+        local newPosY = posY + (height / 2)
+        item.Size = Vector3.new(item.Size.X, height, item.Size.Z)
+        item.Position = Vector3.new(item.Position.X, newPosY, item.Position.Z)
+    end
+end
+
 function sizeWalls2(props)
     local items = props.items
     local height = props.height
@@ -225,7 +237,6 @@ function module.setWallHeightbyParentModelName(props)
     local height = props.height
 
     local myStuff = workspace:FindFirstChild("MyStuff")
-    -- local item = getFirstDescendantByName(myStuff, name)
     local items = getDescendantsByName(myStuff, name)
 
     for i, item in ipairs(items) do
@@ -474,5 +485,6 @@ module.enableChildWelds = enableChildWelds
 module.removeFirstMatchFromArray = removeFirstMatchFromArray
 module.getPlayerFromHumanoid = getPlayerFromHumanoid
 module.getKeysFromDict = getKeysFromDict
+module.setItemHeight = setItemHeight
 
 return module
