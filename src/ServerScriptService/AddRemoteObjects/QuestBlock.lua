@@ -9,13 +9,10 @@ local module = {}
 renderQuestBlock = function(props)
     local parent = props.parent
     local size = props.size
-    local wallSize = props.wallSize
     local dockModel = props.questBlockTemplate
 
     local dockBase = Utils.getFirstDescendantByName(dockModel, "DockBase")
 
-    -- 
-    -- 
     local dockPositioner = Instance.new("Part", parent)
     dockPositioner.Size = size
 
@@ -23,7 +20,7 @@ renderQuestBlock = function(props)
         parent = parent,
         child = dockPositioner,
         offsetConfig = {
-            useParentNearEdge = Vector3.new(1, -1, 0),
+            useParentNearEdge = Vector3.new(1, 1, 0),
             useChildNearEdge = Vector3.new(-1, -1, 0),
             offsetAdder = Vector3.new(0, 0, 0)
         }
@@ -37,10 +34,8 @@ renderQuestBlock = function(props)
     dockBase.CFrame = dockPositioner.CFrame
 
     dockPositioner:Destroy()
-
     return dockModel
 end
 
 module.renderQuestBlock = renderQuestBlock
-
 return module
