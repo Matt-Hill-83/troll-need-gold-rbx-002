@@ -26,6 +26,9 @@ function addRemoteObjects()
             questConfigs = questConfigs,
             worldIndex = worldIndex
         }
+
+        local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
+
         addWorld(worldProps)
         -- 
     end
@@ -80,7 +83,7 @@ function addWorld(props)
 
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
 
-    local hexTeleporter = Teleporters.configSkyboxTeleporter(
+    local hexTeleporter = Teleporters.configHexTeleporter(
                               {
             questIndex = 0,
             questTitle = "All Quests",

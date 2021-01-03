@@ -31,7 +31,7 @@ local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
     end)
 end
 
-function module.configSkyboxTeleporter(props)
+function module.configHexTeleporter(props)
     local questIndex = props.questIndex
     local questTitle = props.questTitle
     local parentFolder = props.parentFolder
