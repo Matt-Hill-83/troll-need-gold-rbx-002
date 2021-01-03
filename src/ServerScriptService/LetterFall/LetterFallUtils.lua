@@ -273,7 +273,12 @@ function createBalls(miniGameState)
     local questIndex = miniGameState.questIndex
 
     local ball = Utils.getFirstDescendantByName(letterFallFolder, "GemTemplate")
+    local gemHolder = Utils.getFirstDescendantByName(letterFallFolder,
+                                                     "GemHolder")
+    local bigGem = gemHolder:FindFirstChildWhichIsA("Tool", true)
+
     local gemColor = Constants.gemColors[questIndex]
+    bigGem.Handle.Color = gemColor
 
     print('gemColor' .. ' - start');
     print(gemColor);
