@@ -70,19 +70,6 @@ function addWorld(props)
     hexMount.Name = hexMount.Name .. "-Clone-zzzz"
     local hexMountPart = hexMount.PrimaryPart
 
-    -- local translateCFrameProps = {
-    --     parent = hexStandPositioner,
-    --     child = hexMountPart,
-    --     offsetConfig = {
-    --         useParentNearEdge = Vector3.new(-1, 1, -1),
-    --         useChildNearEdge = Vector3.new(-1, -1, -1),
-    --         offsetAdder = Vector3.new(0, 0, 0)
-    --     }
-    -- }
-    -- local newCFrame =
-    --     Utils3.setCFrameFromDesiredEdgeOffset(translateCFrameProps)
-    -- hexMountPart.CFrame = newCFrame
-
     hexMountPart.Position = hexStandPositioner.Position
 
     local mountPlates = Utils.getDescendantsByName(hexMount, "MountPlate")

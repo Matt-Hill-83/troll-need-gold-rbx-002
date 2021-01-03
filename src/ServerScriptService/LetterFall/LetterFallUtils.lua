@@ -239,7 +239,7 @@ function createBalls(miniGameState)
 
         newBall.Name = ball.Name .. "-Q-zzzz" .. questIndex
         newBall.Parent = ball.Parent
-        ballPart.CFrame = ballPart.CFrame + Vector3.new(-0.1, 0, 0)
+        ballPart.CFrame = ballPart.CFrame + Vector3.new(0, 0, 0)
         ballPart.Color = gemColor
         Utils.enableChildWelds({part = newBall, enabled = false})
         table.insert(balls, newBall)
