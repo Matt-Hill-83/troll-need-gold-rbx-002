@@ -294,38 +294,36 @@ function createBalls(miniGameState)
     local ball = Utils.getFirstDescendantByName(letterFallFolder, "GemTemplate")
     local gemColor = Constants.gemColors[questIndex]
 
+    local targetGemName = "Gem-Q-zzzz" .. questIndex
+
     GemHolder.initGem({
         gemHolderName = "GemHolder",
         letterFallFolder = letterFallFolder,
-        gemColor = gemColor
+        questIndex = questIndex,
+        targetGemName = targetGemName,
+        isReceiver = false
     })
-    -- module.styleGemHolder({
-    --     gemHolderName = "GemHolder",
-    --     letterFallFolder = letterFallFolder,
-    --     gemColor = gemColor
-    -- })
 
-    -- module.styleGemHolder({
-    --     gemHolderName = "MiniGemHolder",
-    --     letterFallFolder = letterFallFolder,
-    --     gemColor = gemColor
-    -- })
+    GemHolder.initGem({
+        gemHolderName = "MiniGemHolder",
+        letterFallFolder = letterFallFolder,
+        questIndex = questIndex,
+        targetGemName = targetGemName,
+        isReceiver = true
+    })
 
     local balls = {}
     for count = 1, 8 do
+        -- for count = 1, 8 do
         local newBall = ball:Clone()
         local ballPart = newBall.Handle
 
-        newBall.Name = ball.Name .. "-Q-zzzz" .. questIndex
+        newBall.Name = targetGemName
         newBall.Parent = ball.Parent
         ballPart.CFrame = ballPart.CFrame + Vector3.new(0, 0, 0)
         ballPart.Color = gemColor
         Utils.enableChildWelds({part = newBall, enabled = false})
         table.insert(balls, newBall)
-
-        -- 
-        -- 
-        -- test letter creation
 
         local newBlock = module.createStyledLetterBlock(
                              {
@@ -333,17 +331,8 @@ function createBalls(miniGameState)
                 templateName = "LBDeadLetter"
             })
         newBlock.CFrame = ballPart.CFrame + Vector3.new(10, 30, 0)
-
     end
 
-    -- while wait(6) do
-    --     for i, ball in ipairs(balls) do
-    --         local vectorForce = Utils.getFirstDescendantByName(ball,
-    --                                                            "VectorForce")
-    --         if not vectorForce then break end
-    --         vectorForce.Force = vectorForce.Force * -1
-    --     end
-    -- end
     ball:Destroy()
 end
 
