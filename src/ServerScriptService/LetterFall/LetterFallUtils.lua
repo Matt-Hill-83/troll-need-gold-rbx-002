@@ -313,8 +313,7 @@ function createBalls(miniGameState)
     })
 
     local balls = {}
-    for count = 1, 20 do
-        -- for count = 1, 8 do
+    for count = 1, 8 do
         local newBall = ball:Clone()
         local ballPart = newBall.Handle
 
@@ -324,13 +323,14 @@ function createBalls(miniGameState)
         ballPart.Color = gemColor
         Utils.enableChildWelds({part = newBall, enabled = false})
         table.insert(balls, newBall)
-
-        local newBlock = module.createStyledLetterBlock(
-                             {
-                miniGameState = miniGameState,
-                templateName = "LBDeadLetter"
-            })
-        newBlock.CFrame = ballPart.CFrame + Vector3.new(10, 30, 0)
+        if count == 1 then
+            local newBlock = module.createStyledLetterBlock(
+                                 {
+                    miniGameState = miniGameState,
+                    templateName = "LBDeadLetter"
+                })
+            newBlock.CFrame = ballPart.CFrame + Vector3.new(10, 30, 0)
+        end
     end
 
     ball:Destroy()
