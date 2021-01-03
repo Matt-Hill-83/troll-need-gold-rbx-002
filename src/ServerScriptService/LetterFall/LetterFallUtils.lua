@@ -3,6 +3,7 @@ local Sss = game:GetService("ServerScriptService")
 
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Constants = require(Sss.Source.Constants.Constants)
+local GemHolder = require(Sss.Source.GemHolder.GemHolder)
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
@@ -268,26 +269,47 @@ function isWordComplete(wordLetters)
     return true
 end
 
+function styleGemHolder(props)
+    local gemHolderName = props.gemHolderName
+    local letterFallFolder = props.letterFallFolder
+    local gemColor = props.gemColor
+
+    local grey = Color3.fromRGB(163, 162, 165)
+    local gemHolder = Utils.getFirstDescendantByName(letterFallFolder,
+                                                     gemHolderName)
+    local stand = Utils.getFirstDescendantByName(gemHolder, "Stand")
+    stand.Color = gemColor
+
+    local base = Utils.getFirstDescendantByName(gemHolder, "Base")
+    base.Color = gemColor
+
+    local bigGem = gemHolder:FindFirstChildWhichIsA("Tool", true)
+    bigGem.Handle.Color = grey
+end
+
 function createBalls(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local questIndex = miniGameState.questIndex
 
     local ball = Utils.getFirstDescendantByName(letterFallFolder, "GemTemplate")
-    local gemHolder = Utils.getFirstDescendantByName(letterFallFolder,
-                                                     "GemHolder")
-    local stand = Utils.getFirstDescendantByName(gemHolder, "Stand")
-    print('stand' .. ' - start');
-    print(stand);
-    print(stand.Color);
-    local bigGem = gemHolder:FindFirstChildWhichIsA("Tool", true)
-
     local gemColor = Constants.gemColors[questIndex]
-    bigGem.Handle.Color = gemColor
-    stand.Color = gemColor
-    print(stand.Color);
 
-    print('gemColor' .. ' - start');
-    print(gemColor);
+    GemHolder.initGem({
+        gemHolderName = "GemHolder",
+        letterFallFolder = letterFallFolder,
+        gemColor = gemColor
+    })
+    -- module.styleGemHolder({
+    --     gemHolderName = "GemHolder",
+    --     letterFallFolder = letterFallFolder,
+    --     gemColor = gemColor
+    -- })
+
+    -- module.styleGemHolder({
+    --     gemHolderName = "MiniGemHolder",
+    --     letterFallFolder = letterFallFolder,
+    --     gemColor = gemColor
+    -- })
 
     local balls = {}
     for count = 1, 8 do
@@ -440,4 +462,5 @@ module.getCoordsFromLetterName = getCoordsFromLetterName
 module.filterItemsByTag = filterItemsByTag
 module.createStyledLetterBlock = createStyledLetterBlock
 module.getRunTimeLetterFolder = getRunTimeLetterFolder
+module.styleGemHolder = styleGemHolder
 return module
