@@ -47,6 +47,14 @@ function styleGemHolder(props)
         bigGem = bigGem
     }
 
+    function onCorrectItemDropped()
+        local manHoleCover = Utils.getFirstDescendantByName(letterFallFolder,
+                                                            "ManHoleCover")
+        print('manHoleCover' .. ' - start');
+        print(manHoleCover);
+        if manHoleCover then manHoleCover:Destroy() end
+    end
+
     -- For depositing a gem
     local function onPartTouchedClosure(gemHolderState)
         local function onPartTouched(otherPart)
@@ -81,6 +89,9 @@ function styleGemHolder(props)
                 bg.NotHandle.Color = otherPart.Color
                 bigGem.NotHandle.Transparency = 0
                 partParent:Destroy()
+
+                onCorrectItemDropped()
+
             end
             gemHolderState.leaveGemDebounce = false
         end

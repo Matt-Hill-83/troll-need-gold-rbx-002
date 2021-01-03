@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-876.890503</X>
-					<Y>-221.91684</Y>
-					<Z>-555.865845</Z>
-					<R00>-0.949046433</R00>
-					<R01>0.0166713204</R01>
-					<R02>0.314695269</R02>
-					<R10>-0</R10>
-					<R11>0.998599827</R11>
-					<R12>-0.0529018864</R12>
-					<R20>-0.315136582</R20>
-					<R21>-0.0502063483</R21>
-					<R22>-0.947717428</R22>
+					<X>-827.396545</X>
+					<Y>-222.958344</Y>
+					<Z>-545.485657</Z>
+					<R00>-0.951367259</R00>
+					<R01>-0.139749512</R01>
+					<R02>0.274536878</R02>
+					<R10>7.45057971e-09</R10>
+					<R11>0.891182482</R11>
+					<R12>0.45364514</R12>
+					<R20>-0.308059096</R20>
+					<R21>0.431583136</R21>
+					<R22>-0.847841799</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-877.519897</X>
-					<Y>-221.811035</Y>
-					<Z>-553.970398</Z>
+					<X>-858.711792</X>
+					<Y>-274.703705</Y>
+					<Z>-448.77597</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -22254,18 +22254,44 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 									<Properties>
 										<BinaryString name="AttributesSerialize"></BinaryString>
 										<CoordinateFrame name="CFrame0">
-											<X>0.122741699</X>
-											<Y>12.1051331</Y>
-											<Z>-8.4901123</Z>
-											<R00>0.000294407946</R00>
-											<R01>0.00360774063</R01>
+											<X>0.117919922</X>
+											<Y>29.9468079</Y>
+											<Z>-10.8855896</Z>
+											<R00>0.000294376805</R00>
+											<R01>0.00359936571</R01>
 											<R02>0.999993443</R02>
 											<R10>-0.99137789</R10>
-											<R11>-0.131032288</R11>
-											<R12>0.000764604891</R12>
-											<R20>0.131034181</R20>
+											<R11>-0.131032422</R11>
+											<R12>0.000763477175</R12>
+											<R20>0.13103433</R20>
+											<R21>-0.991371572</R21>
+											<R22>0.00352975819</R22>
+										</CoordinateFrame>
+										<bool name="Enabled">true</bool>
+										<string name="Name">WeldConstraint</string>
+										<Ref name="Part0Internal">RBX9f77023b43f5471f93ff1e8f909e5224</Ref>
+										<Ref name="Part1Internal">RBX9eabc399b7f247079d49cc992c91e602</Ref>
+										<int64 name="SourceAssetId">-1</int64>
+										<int name="State">1</int>
+										<BinaryString name="Tags"></BinaryString>
+									</Properties>
+								</Item>
+								<Item class="WeldConstraint" referent="RBX3b91bc18352042b1a2ac76cbb8e91e08">
+									<Properties>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<CoordinateFrame name="CFrame0">
+											<X>0.117919922</X>
+											<Y>29.9463806</Y>
+											<Z>-10.8854065</Z>
+											<R00>0.000294383062</R00>
+											<R01>0.00360104069</R01>
+											<R02>0.999993443</R02>
+											<R10>-0.99137789</R10>
+											<R11>-0.131032407</R11>
+											<R12>0.000763702672</R12>
+											<R20>0.1310343</R20>
 											<R21>-0.991371632</R21>
-											<R22>0.00353805674</R22>
+											<R22>0.00353141781</R22>
 										</CoordinateFrame>
 										<bool name="Enabled">true</bool>
 										<string name="Name">WeldConstraint</string>
@@ -22449,18 +22475,18 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<token name="BottomSurface">0</token>
 										<token name="BottomSurfaceInput">0</token>
 										<CoordinateFrame name="CFrame">
-											<X>-858.606873</X>
-											<Y>-255.61615</Y>
-											<Z>-455.585907</Z>
-											<R00>2.80370587e-05</R00>
-											<R01>0.00181395584</R01>
+											<X>-858.606934</X>
+											<Y>-237.6147</Y>
+											<Z>-455.586395</Z>
+											<R00>2.80123786e-05</R00>
+											<R01>0.0018072559</R01>
 											<R02>1.0000087</R02>
 											<R10>-1.00000489</R10>
-											<R11>0.00201937556</R11>
-											<R12>2.43768445e-05</R12>
-											<R20>-0.00201930106</R20>
+											<R11>0.00201927125</R11>
+											<R12>2.43659015e-05</R12>
+											<R20>-0.00201918185</R20>
 											<R21>-1.00000691</R21>
-											<R22>0.00181568321</R22>
+											<R22>0.00180898339</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
@@ -50150,24 +50176,6 @@ function isWordComplete(wordLetters)
     return true
 end
 
-function styleGemHolder(props)
-    local gemHolderName = props.gemHolderName
-    local letterFallFolder = props.letterFallFolder
-    local gemColor = props.gemColor
-
-    local grey = Color3.fromRGB(163, 162, 165)
-    local gemHolder = Utils.getFirstDescendantByName(letterFallFolder,
-                                                     gemHolderName)
-    local stand = Utils.getFirstDescendantByName(gemHolder, "Stand")
-    stand.Color = gemColor
-
-    local base = Utils.getFirstDescendantByName(gemHolder, "Base")
-    base.Color = gemColor
-
-    local bigGem = gemHolder:FindFirstChildWhichIsA("Tool", true)
-    bigGem.Handle.Color = grey
-end
-
 function createBalls(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local questIndex = miniGameState.questIndex
@@ -50195,7 +50203,6 @@ function createBalls(miniGameState)
 
     local balls = {}
     for count = 1, 8 do
-        -- for count = 1, 8 do
         local newBall = ball:Clone()
         local ballPart = newBall.Handle
 
@@ -50205,13 +50212,14 @@ function createBalls(miniGameState)
         ballPart.Color = gemColor
         Utils.enableChildWelds({part = newBall, enabled = false})
         table.insert(balls, newBall)
-
-        local newBlock = module.createStyledLetterBlock(
-                             {
-                miniGameState = miniGameState,
-                templateName = "LBDeadLetter"
-            })
-        newBlock.CFrame = ballPart.CFrame + Vector3.new(10, 30, 0)
+        if count == 1 then
+            local newBlock = module.createStyledLetterBlock(
+                                 {
+                    miniGameState = miniGameState,
+                    templateName = "LBDeadLetter"
+                })
+            newBlock.CFrame = ballPart.CFrame + Vector3.new(10, 30, 0)
+        end
     end
 
     ball:Destroy()
@@ -50332,7 +50340,6 @@ module.getCoordsFromLetterName = getCoordsFromLetterName
 module.filterItemsByTag = filterItemsByTag
 module.createStyledLetterBlock = createStyledLetterBlock
 module.getRunTimeLetterFolder = getRunTimeLetterFolder
-module.styleGemHolder = styleGemHolder
 return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
@@ -50799,7 +50806,6 @@ function styleGemHolder(props)
         bigGem.Handle.Color = grey
         bigGem.Enabled = false
         bigGem.Handle.Name = "NotHandle"
-        -- bigGem.Handle.Name = "zzzz"
     else
         print('is not a receiver')
         print('is not a receiver')
@@ -50808,12 +50814,20 @@ function styleGemHolder(props)
     end
 
     local gemHolderState = {
-        hasGem = hasGem,
+        hasGem = not isReceiver,
         takeGemDebounce = false,
         leaveGemDebounce = false,
         targetGemName = targetGemName,
         bigGem = bigGem
     }
+
+    function onCorrectItemDropped()
+        local manHoleCover = Utils.getFirstDescendantByName(letterFallFolder,
+                                                            "ManHoleCover")
+        print('manHoleCover' .. ' - start');
+        print(manHoleCover);
+        if manHoleCover then manHoleCover:Destroy() end
+    end
 
     -- For depositing a gem
     local function onPartTouchedClosure(gemHolderState)
@@ -50839,35 +50853,19 @@ function styleGemHolder(props)
                 -- 
             end
 
-            print('otherPart' .. ' - start');
-            print(otherPart);
             local partParent = otherPart.Parent
-            print('partParent' .. ' - start');
-            print(partParent);
             local match = partParent.Name == gemHolderState.targetGemName
             if match then
-
                 print("correctGem")
-                print("correctGem")
-                print("correctGem")
-                print("correctGem")
-
-                print('gemHolderState' .. ' - start');
-                print(gemHolderState);
-
                 local bg = gemHolderState.bigGem
-                print('bg' .. ' - start');
-                print(bg);
                 bg.Enabled = false
 
-                print('otherPart' .. ' - start');
-                print(otherPart);
                 bg.NotHandle.Color = otherPart.Color
-                -- bg.NotHandle.Color = red
                 bigGem.NotHandle.Transparency = 0
-                -- bigGem.Handle.Name = "NotHandle"
                 partParent:Destroy()
-                -- onCorrectItemDropped()
+
+                onCorrectItemDropped()
+
             end
             gemHolderState.leaveGemDebounce = false
         end
@@ -50888,15 +50886,24 @@ function styleGemHolder(props)
         -- If the gem Handle is touched by a human, disable the hinge and 
         -- stop the rotation so they can take it.
         local detach = function(otherPart)
+            print('detach' .. ' - start');
+            print(detach);
             if gemHolderState.takeGemDebounce == true then return end
             gemHolderState.takeGemDebounce = true
 
             if (gemHolderState.hasGem) then
                 local humanOther = otherPart.Parent:FindFirstChild("Humanoid")
-                if not humanOther then return end
+                if not humanOther then
+                    gemHolderState.takeGemDebounce = false
+                    return
+
+                end
 
                 local hinge = bigGem:FindFirstChildWhichIsA("HingeConstraint",
                                                             true)
+
+                print('hinge' .. ' - start');
+                print(hinge);
                 local torque = bigGem:FindFirstChildWhichIsA("Torque", true)
                 hinge.Enabled = false
                 torque.Enabled = false

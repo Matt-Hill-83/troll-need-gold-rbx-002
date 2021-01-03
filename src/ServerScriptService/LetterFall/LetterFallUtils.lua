@@ -269,24 +269,6 @@ function isWordComplete(wordLetters)
     return true
 end
 
-function styleGemHolder(props)
-    local gemHolderName = props.gemHolderName
-    local letterFallFolder = props.letterFallFolder
-    local gemColor = props.gemColor
-
-    local grey = Color3.fromRGB(163, 162, 165)
-    local gemHolder = Utils.getFirstDescendantByName(letterFallFolder,
-                                                     gemHolderName)
-    local stand = Utils.getFirstDescendantByName(gemHolder, "Stand")
-    stand.Color = gemColor
-
-    local base = Utils.getFirstDescendantByName(gemHolder, "Base")
-    base.Color = gemColor
-
-    local bigGem = gemHolder:FindFirstChildWhichIsA("Tool", true)
-    bigGem.Handle.Color = grey
-end
-
 function createBalls(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local questIndex = miniGameState.questIndex
@@ -451,5 +433,4 @@ module.getCoordsFromLetterName = getCoordsFromLetterName
 module.filterItemsByTag = filterItemsByTag
 module.createStyledLetterBlock = createStyledLetterBlock
 module.getRunTimeLetterFolder = getRunTimeLetterFolder
-module.styleGemHolder = styleGemHolder
 return module
