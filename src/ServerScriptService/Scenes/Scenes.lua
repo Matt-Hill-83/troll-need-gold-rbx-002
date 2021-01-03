@@ -5,6 +5,7 @@ local Utils3 = require(Sss.Source.Utils.U003PartsUtils)
 local Constants = require(Sss.Source.Constants.Constants)
 
 local Bridges = require(Sss.Source.Bridges.Bridges)
+local GemHolder = require(Sss.Source.GemHolder.GemHolder)
 local Characters = require(Sss.Source.Characters.Characters)
 local TheaterSeat = require(Sss.Source.TheaterSeat.TheaterSeat)
 local Teleporters = require(Sss.Source.Teleporters.Teleporters)
@@ -80,6 +81,13 @@ function module.addScenes(props)
                 localTPPositioner = localTPPositioner
             })
         end
+
+        GemHolder.initGem({
+            gemHolderName = "SceneGemHolder",
+            letterFallFolder = clonedScene,
+            questIndex = questIndex,
+            isReceiver = false
+        })
 
         -- function onCorrectItemDropped()
         --     local manHoleCover = Utils.getFirstDescendantByName(clonedScene,
