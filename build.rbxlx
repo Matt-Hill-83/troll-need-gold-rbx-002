@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-827.396545</X>
-					<Y>-222.958344</Y>
-					<Z>-545.485657</Z>
-					<R00>-0.951367259</R00>
-					<R01>-0.139749512</R01>
-					<R02>0.274536878</R02>
-					<R10>7.45057971e-09</R10>
-					<R11>0.891182482</R11>
-					<R12>0.45364514</R12>
-					<R20>-0.308059096</R20>
-					<R21>0.431583136</R21>
-					<R22>-0.847841799</R22>
+					<X>-920.366943</X>
+					<Y>-175.256805</Y>
+					<Z>-526.522644</Z>
+					<R00>0.308987439</R00>
+					<R01>-0.63516134</R01>
+					<R02>0.707881927</R02>
+					<R10>1.49011612e-08</R10>
+					<R11>0.744303584</R11>
+					<R12>0.667841375</R12>
+					<R20>-0.951066136</R20>
+					<R21>-0.206354588</R21>
+					<R22>0.229980454</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-858.711792</X>
-					<Y>-274.703705</Y>
-					<Z>-448.77597</Z>
+					<X>-991.027954</X>
+					<Y>-241.920959</Y>
+					<Z>-549.47937</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -6627,44 +6627,6 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<Z>36</Z>
 										</Vector3>
 									</Properties>
-									<Item class="SpotLight" referent="RBX7af651c841004cc4881884dbbcd38c32">
-										<Properties>
-											<float name="Angle">90</float>
-											<BinaryString name="AttributesSerialize"></BinaryString>
-											<float name="Brightness">1</float>
-											<Color3 name="Color">
-												<R>1</R>
-												<G>1</G>
-												<B>1</B>
-											</Color3>
-											<bool name="Enabled">true</bool>
-											<token name="Face">5</token>
-											<string name="Name">SpotLight</string>
-											<float name="Range">16</float>
-											<bool name="Shadows">false</bool>
-											<int64 name="SourceAssetId">-1</int64>
-											<BinaryString name="Tags"></BinaryString>
-										</Properties>
-									</Item>
-									<Item class="SurfaceLight" referent="RBX342e1279fc1e417d8730c34284df0cb4">
-										<Properties>
-											<float name="Angle">90</float>
-											<BinaryString name="AttributesSerialize"></BinaryString>
-											<float name="Brightness">1</float>
-											<Color3 name="Color">
-												<R>1</R>
-												<G>1</G>
-												<B>1</B>
-											</Color3>
-											<bool name="Enabled">true</bool>
-											<token name="Face">5</token>
-											<string name="Name">SurfaceLight</string>
-											<float name="Range">16</float>
-											<bool name="Shadows">false</bool>
-											<int64 name="SourceAssetId">-1</int64>
-											<BinaryString name="Tags"></BinaryString>
-										</Properties>
-									</Item>
 									<Item class="Model" referent="RBXbbb42429b6f644e2afc9bca825c31f00">
 										<Properties>
 											<BinaryString name="AttributesSerialize"></BinaryString>
@@ -7377,6 +7339,120 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<BinaryString name="Tags"></BinaryString>
 											<bool name="Visible">false</bool>
 										</Properties>
+									</Item>
+									<Item class="SurfaceGui" referent="RBX74742f557cc04d0b9f662e03c40a47c1">
+										<Properties>
+											<bool name="Active">true</bool>
+											<Ref name="Adornee">null</Ref>
+											<bool name="AlwaysOnTop">false</bool>
+											<BinaryString name="AttributesSerialize"></BinaryString>
+											<bool name="AutoLocalize">true</bool>
+											<Vector2 name="CanvasSize">
+												<X>800</X>
+												<Y>600</Y>
+											</Vector2>
+											<bool name="ClipsDescendants">true</bool>
+											<bool name="Enabled">true</bool>
+											<token name="Face">1</token>
+											<float name="LightInfluence">1</float>
+											<string name="Name">SurfaceGui</string>
+											<float name="PixelsPerStud">50</float>
+											<bool name="ResetOnSpawn">true</bool>
+											<Ref name="RootLocalizationTable">null</Ref>
+											<token name="SizingMode">1</token>
+											<int64 name="SourceAssetId">-1</int64>
+											<BinaryString name="Tags"></BinaryString>
+											<float name="ToolPunchThroughDistance">0</float>
+											<token name="ZIndexBehavior">1</token>
+											<float name="ZOffset">0</float>
+										</Properties>
+										<Item class="ImageLabel" referent="RBX5271c27c270c442faf5e5bfeb8407fe1">
+											<Properties>
+												<bool name="Active">false</bool>
+												<Vector2 name="AnchorPoint">
+													<X>0</X>
+													<Y>0</Y>
+												</Vector2>
+												<BinaryString name="AttributesSerialize"></BinaryString>
+												<bool name="AutoLocalize">true</bool>
+												<token name="AutomaticSize">0</token>
+												<Color3 name="BackgroundColor3">
+													<R>1</R>
+													<G>1</G>
+													<B>1</B>
+												</Color3>
+												<float name="BackgroundTransparency">0</float>
+												<Color3 name="BorderColor3">
+													<R>0.105882362</R>
+													<G>0.164705887</G>
+													<B>0.207843155</B>
+												</Color3>
+												<token name="BorderMode">0</token>
+												<int name="BorderSizePixel">1</int>
+												<bool name="ClipsDescendants">false</bool>
+												<bool name="Draggable">false</bool>
+												<Content name="Image"><url>rbxassetid://6185063042</url></Content>
+												<Color3 name="ImageColor3">
+													<R>1</R>
+													<G>1</G>
+													<B>1</B>
+												</Color3>
+												<Vector2 name="ImageRectOffset">
+													<X>0</X>
+													<Y>0</Y>
+												</Vector2>
+												<Vector2 name="ImageRectSize">
+													<X>0</X>
+													<Y>0</Y>
+												</Vector2>
+												<float name="ImageTransparency">0</float>
+												<int name="LayoutOrder">0</int>
+												<string name="Name">ImageLabel</string>
+												<Ref name="NextSelectionDown">null</Ref>
+												<Ref name="NextSelectionLeft">null</Ref>
+												<Ref name="NextSelectionRight">null</Ref>
+												<Ref name="NextSelectionUp">null</Ref>
+												<UDim2 name="Position">
+													<XS>0</XS>
+													<XO>0</XO>
+													<YS>0</YS>
+													<YO>0</YO>
+												</UDim2>
+												<Ref name="RootLocalizationTable">null</Ref>
+												<float name="Rotation">0</float>
+												<token name="ScaleType">0</token>
+												<bool name="Selectable">false</bool>
+												<Ref name="SelectionImageObject">null</Ref>
+												<UDim2 name="Size">
+													<XS>1</XS>
+													<XO>0</XO>
+													<YS>1</YS>
+													<YO>0</YO>
+												</UDim2>
+												<token name="SizeConstraint">0</token>
+												<Rect2D name="SliceCenter">
+													<min>
+														<X>0</X>
+														<Y>0</Y>
+													</min>
+													<max>
+														<X>0</X>
+														<Y>0</Y>
+													</max>
+												</Rect2D>
+												<float name="SliceScale">1</float>
+												<int64 name="SourceAssetId">-1</int64>
+												<BinaryString name="Tags"></BinaryString>
+												<UDim2 name="TileSize">
+													<XS>1</XS>
+													<XO>0</XO>
+													<YS>1</YS>
+													<YO>0</YO>
+												</UDim2>
+												<bool name="Visible">true</bool>
+												<int name="ZIndex">1</int>
+											</Properties>
+										</Item>
 									</Item>
 								</Item>
 							</Item>
@@ -15065,7 +15141,7 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 									</Properties>
 								</Item>
 							</Item>
-							<Item class="Model" referent="RBX7536bb0d73fc4ff7bb07056bc891df37">
+							<Item class="Model" referent="RBX30820df2460e487abccf723e20b8f831">
 								<Properties>
 									<BinaryString name="AttributesSerialize"></BinaryString>
 									<token name="LevelOfDetail">0</token>
@@ -15103,12 +15179,12 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<Y>0</Y>
 										<Z>0</Z>
 									</Vector3>
-									<string name="Name">GemHolder</string>
-									<Ref name="PrimaryPart">RBX19ca5ee45208449d8986b3cdb7459cb5</Ref>
+									<string name="Name">SceneGemHolder</string>
+									<Ref name="PrimaryPart">RBX708d391d4f154533b665d8c1ab46df46</Ref>
 									<int64 name="SourceAssetId">6182213016</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
-								<Item class="Tool" referent="RBX8ee92394dfed4d16b3c0c132148eab34">
+								<Item class="Tool" referent="RBX8ebe4423b93e4740a2f261697efc2f28">
 									<Properties>
 										<BinaryString name="AttributesSerialize"></BinaryString>
 										<bool name="CanBeDropped">true</bool>
@@ -15135,7 +15211,7 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<Content name="TextureId"><null></null></Content>
 										<string name="ToolTip"></string>
 									</Properties>
-									<Item class="MeshPart" referent="RBX5b39fd46163b46afaeb0a6fff8083f88">
+									<Item class="MeshPart" referent="RBX1e8aa5bf3f5a4edabd78508865f34b6b">
 										<Properties>
 											<bool name="Anchored">false</bool>
 											<BinaryString name="AttributesSerialize"></BinaryString>
@@ -15148,18 +15224,18 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<token name="BottomSurface">0</token>
 											<token name="BottomSurfaceInput">0</token>
 											<CoordinateFrame name="CFrame">
-												<X>-1010.02771</X>
-												<Y>-248.727081</Y>
-												<Z>-526.658997</Z>
-												<R00>0.999982536</R00>
-												<R01>0.00637478754</R01>
-												<R02>-8.68621282e-06</R02>
-												<R10>-0.00637478149</R10>
-												<R11>0.999981463</R11>
-												<R12>-9.74652357e-06</R12>
-												<R20>9.04256012e-06</R20>
-												<R21>9.8021701e-06</R21>
-												<R22>1.00000298</R22>
+												<X>-1008.26697</X>
+												<Y>-248.728195</Y>
+												<Z>-525.479065</Z>
+												<R00>0.999988556</R00>
+												<R01>0.0063747731</R01>
+												<R02>-1.11162663e-05</R02>
+												<R10>-0.00637472188</R10>
+												<R11>0.99998039</R11>
+												<R12>-9.84128565e-06</R12>
+												<R20>1.20401382e-05</R20>
+												<R21>9.92126297e-06</R21>
+												<R22>1.00000954</R22>
 											</CoordinateFrame>
 											<bool name="CanCollide">true</bool>
 											<bool name="CastShadow">true</bool>
@@ -15234,7 +15310,7 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 												<Z>3.32495379</Z>
 											</Vector3>
 										</Properties>
-										<Item class="Attachment" referent="RBX12ca4cd7c6d44f8391ecebd8994dcb54">
+										<Item class="Attachment" referent="RBX5a39c93204fd4137a539999fd809f423">
 											<Properties>
 												<BinaryString name="AttributesSerialize"></BinaryString>
 												<CoordinateFrame name="CFrame">
@@ -15257,9 +15333,9 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 												<bool name="Visible">false</bool>
 											</Properties>
 										</Item>
-										<Item class="Torque" referent="RBX50d825a9b5ef4abb881c5e855a73591f">
+										<Item class="Torque" referent="RBX1161a15a46424c7097085aacc49567d2">
 											<Properties>
-												<Ref name="Attachment0">RBX12ca4cd7c6d44f8391ecebd8994dcb54</Ref>
+												<Ref name="Attachment0">RBX5a39c93204fd4137a539999fd809f423</Ref>
 												<Ref name="Attachment1">null</Ref>
 												<BinaryString name="AttributesSerialize"></BinaryString>
 												<int name="Color">23</int>
@@ -15276,10 +15352,10 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 												<bool name="Visible">false</bool>
 											</Properties>
 										</Item>
-										<Item class="Sparkles" referent="RBX54ebbe5d3494406c8c83426e430b1e30">
+										<Item class="Sparkles" referent="RBXa87df86c54904d6ab5491bc87941f259">
 											<Properties>
 												<BinaryString name="AttributesSerialize"></BinaryString>
-												<bool name="Enabled">true</bool>
+												<bool name="Enabled">false</bool>
 												<string name="Name">Sparkles</string>
 												<int64 name="SourceAssetId">-1</int64>
 												<Color3 name="SparkleColor">
@@ -15290,13 +15366,13 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 												<BinaryString name="Tags"></BinaryString>
 											</Properties>
 										</Item>
-										<Item class="HingeConstraint" referent="RBX2d18d595bc334583a869490cfe879361">
+										<Item class="HingeConstraint" referent="RBX6f2d46c7d97a4bd2bfbe28f6a4c39988">
 											<Properties>
 												<token name="ActuatorType">0</token>
 												<float name="AngularSpeed">0</float>
 												<float name="AngularVelocity">0</float>
-												<Ref name="Attachment0">RBXf7629c1a45a847a9a205390649108ccb</Ref>
-												<Ref name="Attachment1">RBX12ca4cd7c6d44f8391ecebd8994dcb54</Ref>
+												<Ref name="Attachment0">RBX5a39c93204fd4137a539999fd809f423</Ref>
+												<Ref name="Attachment1">RBXc8db0125636e4af0bce0087764935820</Ref>
 												<BinaryString name="AttributesSerialize"></BinaryString>
 												<int name="Color">1009</int>
 												<bool name="Enabled">true</bool>
@@ -15317,7 +15393,7 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										</Item>
 									</Item>
 								</Item>
-								<Item class="UnionOperation" referent="RBX41805feabc2e4b03aaf61fc8241c3150">
+								<Item class="UnionOperation" referent="RBX752dbc19acd34b9b970672ed5c50d1f3">
 									<Properties>
 										<bool name="Anchored">false</bool>
 										<Content name="AssetId"><url>https://www.roblox.com//asset/?id=6182198819</url></Content>
@@ -15331,18 +15407,18 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<token name="BottomSurface">0</token>
 										<token name="BottomSurfaceInput">0</token>
 										<CoordinateFrame name="CFrame">
-											<X>-1010.02783</X>
-											<Y>-253.229645</Y>
-											<Z>-526.658813</Z>
-											<R00>0.707049847</R00>
-											<R01>-0.00450080493</R01>
-											<R02>-0.70716244</R02>
-											<R10>-0.000160405718</R10>
+											<X>-1008.26715</X>
+											<Y>-253.230621</Y>
+											<Z>-525.479187</Z>
+											<R00>0.707048655</R00>
+											<R01>-0.0045009302</R01>
+											<R02>-0.707163155</R02>
+											<R10>-0.000160405049</R10>
 											<R11>-0.999981463</R11>
-											<R12>0.00620410126</R12>
-											<R20>-0.707176328</R20>
-											<R21>-0.00427318178</R21>
-											<R22>-0.707037985</R22>
+											<R12>0.00620427215</R12>
+											<R20>-0.707177103</R20>
+											<R21>-0.0042732968</R21>
+											<R22>-0.707036853</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
@@ -15370,7 +15446,7 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<token name="LeftSurfaceInput">0</token>
 										<bool name="Locked">false</bool>
 										<bool name="Massless">false</bool>
-										<token name="Material">784</token>
+										<token name="Material">256</token>
 										<BinaryString name="MeshData"></BinaryString>
 										<SharedString name="MeshData2">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 										<string name="Name">Stand</string>
@@ -15395,7 +15471,7 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<float name="TopParamB">0.5</float>
 										<token name="TopSurface">0</token>
 										<token name="TopSurfaceInput">0</token>
-										<float name="Transparency">0</float>
+										<float name="Transparency">0.5</float>
 										<bool name="UsePartColor">true</bool>
 										<Vector3 name="Velocity">
 											<X>0</X>
@@ -15408,7 +15484,7 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<Z>5.65668964</Z>
 										</Vector3>
 									</Properties>
-									<Item class="Attachment" referent="RBXf7629c1a45a847a9a205390649108ccb">
+									<Item class="Attachment" referent="RBXc8db0125636e4af0bce0087764935820">
 										<Properties>
 											<BinaryString name="AttributesSerialize"></BinaryString>
 											<CoordinateFrame name="CFrame">
@@ -15431,8 +15507,34 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<bool name="Visible">false</bool>
 										</Properties>
 									</Item>
+									<Item class="WeldConstraint" referent="RBXe959dba8f039458d9594151b77299149">
+										<Properties>
+											<BinaryString name="AttributesSerialize"></BinaryString>
+											<CoordinateFrame name="CFrame0">
+												<X>-0.000701904297</X>
+												<Y>-4.50233459</Y>
+												<Z>0.0277099609</Z>
+												<R00>0.707021236</R00>
+												<R01>0.00433978392</R01>
+												<R02>-0.70717907</R02>
+												<R10>0.00187374826</R10>
+												<R11>-0.999989152</R11>
+												<R12>-0.00426335772</R12>
+												<R20>-0.707189858</R20>
+												<R21>0.00168920902</R21>
+												<R22>-0.707021713</R22>
+											</CoordinateFrame>
+											<bool name="Enabled">true</bool>
+											<string name="Name">DestroyThisWeld</string>
+											<Ref name="Part0Internal">RBX752dbc19acd34b9b970672ed5c50d1f3</Ref>
+											<Ref name="Part1Internal">RBX1e8aa5bf3f5a4edabd78508865f34b6b</Ref>
+											<int64 name="SourceAssetId">-1</int64>
+											<int name="State">1</int>
+											<BinaryString name="Tags">RGlzYWJsZQ==</BinaryString>
+										</Properties>
+									</Item>
 								</Item>
-								<Item class="Part" referent="RBX19ca5ee45208449d8986b3cdb7459cb5">
+								<Item class="Part" referent="RBX708d391d4f154533b665d8c1ab46df46">
 									<Properties>
 										<bool name="Anchored">false</bool>
 										<BinaryString name="AttributesSerialize"></BinaryString>
@@ -15445,18 +15547,18 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<token name="BottomSurface">0</token>
 										<token name="BottomSurfaceInput">0</token>
 										<CoordinateFrame name="CFrame">
-											<X>-1010.02783</X>
-											<Y>-256.748627</Y>
-											<Z>-526.658813</Z>
-											<R00>1.00000775</R00>
-											<R01>-1.39698819e-09</R01>
-											<R02>-9.83483687e-07</R02>
-											<R10>4.65663841e-10</R10>
+											<X>-1008.26715</X>
+											<Y>-256.749603</Y>
+											<Z>-525.479187</Z>
+											<R00>1.00000739</R00>
+											<R01>1.20140555e-07</R01>
+											<R02>3.27826456e-07</R02>
+											<R10>-1.20141237e-07</R10>
 											<R11>1.00000048</R11>
-											<R12>-1.86266647e-09</R12>
-											<R20>1.66893801e-06</R20>
-											<R21>3.25962723e-09</R21>
-											<R22>1.00000834</R22>
+											<R12>-1.23401037e-07</R12>
+											<R20>3.27826456e-07</R20>
+											<R21>1.25728477e-07</R21>
+											<R22>1.00000811</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
@@ -15489,7 +15591,7 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<Z>0</Z>
 										</Vector3>
 										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
+										<BinaryString name="Tags">VHJhbnNwYXJlbnQ=</BinaryString>
 										<float name="TopParamA">-0.5</float>
 										<float name="TopParamB">0.5</float>
 										<token name="TopSurface">0</token>
@@ -15508,7 +15610,33 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<Z>6</Z>
 										</Vector3>
 									</Properties>
-									<Item class="Weld" referent="RBX7941e16fdd7842b78b3f7de26cfa1aeb">
+									<Item class="WeldConstraint" referent="RBX700c9d65ccc3404cb528fe9732b407dc">
+										<Properties>
+											<BinaryString name="AttributesSerialize"></BinaryString>
+											<CoordinateFrame name="CFrame0">
+												<X>2.20361328</X>
+												<Y>-18.1425781</Y>
+												<Z>24.0363159</Z>
+												<R00>1.00000238</R00>
+												<R01>6.95442868e-05</R01>
+												<R02>0.00181724597</R02>
+												<R10>-7.3436313e-05</R10>
+												<R11>0.999999642</R11>
+												<R12>0.00214200234</R12>
+												<R20>-0.00181634631</R20>
+												<R21>-0.00214213389</R21>
+												<R22>1</R22>
+											</CoordinateFrame>
+											<bool name="Enabled">true</bool>
+											<string name="Name">WeldConstraint</string>
+											<Ref name="Part0Internal">RBX708d391d4f154533b665d8c1ab46df46</Ref>
+											<Ref name="Part1Internal">null</Ref>
+											<int64 name="SourceAssetId">-1</int64>
+											<int name="State">1</int>
+											<BinaryString name="Tags"></BinaryString>
+										</Properties>
+									</Item>
+									<Item class="Weld" referent="RBX4adc53e15ccf4e21a716c3133877ad97">
 										<Properties>
 											<BinaryString name="AttributesSerialize"></BinaryString>
 											<CoordinateFrame name="C0">
@@ -15541,83 +15669,51 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											</CoordinateFrame>
 											<bool name="Enabled">true</bool>
 											<string name="Name">Weld</string>
-											<Ref name="Part0">RBX19ca5ee45208449d8986b3cdb7459cb5</Ref>
-											<Ref name="Part1">RBX41805feabc2e4b03aaf61fc8241c3150</Ref>
+											<Ref name="Part0">RBX708d391d4f154533b665d8c1ab46df46</Ref>
+											<Ref name="Part1">RBX752dbc19acd34b9b970672ed5c50d1f3</Ref>
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
 									</Item>
-									<Item class="Weld" referent="RBX369590c732d84672a2efef91d6474ca0">
+									<Item class="Weld" referent="RBX0ffdc1611897428fac29ef557e824986">
 										<Properties>
 											<BinaryString name="AttributesSerialize"></BinaryString>
 											<CoordinateFrame name="C0">
 												<X>0</X>
 												<Y>-0.25</Y>
 												<Z>0</Z>
-												<R00>1.00000548</R00>
+												<R00>1.00000525</R00>
 												<R01>0</R01>
-												<R02>8.47032947e-22</R02>
-												<R10>-9.31320687e-10</R10>
-												<R11>2.22044605e-16</R11>
+												<R02>1.41555807e-15</R02>
+												<R10>2.97012415e-13</R10>
+												<R11>0</R11>
 												<R12>-1.00000048</R12>
-												<R20>6.85454665e-07</R20>
-												<R21>1.0000056</R21>
-												<R22>-1.39699163e-09</R22>
+												<R20>6.55652798e-07</R20>
+												<R21>1.00000548</R21>
+												<R22>-2.32857644e-09</R22>
 											</CoordinateFrame>
 											<CoordinateFrame name="C1">
-												<X>-14.9848022</X>
-												<Y>2.5</Y>
-												<Z>5.51385498</Z>
-												<R00>1.0000025</R00>
-												<R01>3.12930183e-07</R01>
-												<R02>4.65658873e-10</R02>
-												<R10>4.65661287e-10</R10>
-												<R11>-3.25964011e-09</R11>
+												<X>-13.2241211</X>
+												<Y>2.49902344</Y>
+												<Z>6.69342041</Z>
+												<R00>1.00000238</R00>
+												<R01>1.65403469e-06</R01>
+												<R02>-1.20140484e-07</R02>
+												<R10>-1.20140612e-07</R10>
+												<R11>-1.25728832e-07</R11>
 												<R12>-1</R12>
-												<R20>-3.12930524e-07</R20>
-												<R21>1.00000298</R21>
-												<R22>-3.25962879e-09</R22>
+												<R20>-1.65403446e-06</R20>
+												<R21>1.00000286</R21>
+												<R22>-1.25728207e-07</R22>
 											</CoordinateFrame>
 											<bool name="Enabled">true</bool>
 											<string name="Name">Weld</string>
-											<Ref name="Part0">RBX19ca5ee45208449d8986b3cdb7459cb5</Ref>
+											<Ref name="Part0">RBX708d391d4f154533b665d8c1ab46df46</Ref>
 											<Ref name="Part1">RBXa3bcf753fde5464899a4f15d57c876c7</Ref>
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
 									</Item>
-								</Item>
-								<Item class="Script" referent="RBXe82993f4d57e49708eb80da44e96ff4d">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<bool name="Disabled">false</bool>
-										<Content name="LinkedSource"><null></null></Content>
-										<string name="Name">Script</string>
-										<string name="ScriptGuid">{f5744bdf-8df5-4ea8-9c62-c61a1fe38e59}</string>
-										<ProtectedString name="Source"><![CDATA[--local model = script.Parent
---local tool = model:FindFirstChildWhichIsA("Tool")
---print(tool)
-
---local detach = function(partOther)
---	local humanOther = partOther.Parent:FindFirstChild("Humanoid")
---	if not humanOther then return end
-
---	local hinge = tool:FindFirstChildWhichIsA("HingeConstraint",true)
---	local torque = tool:FindFirstChildWhichIsA("Torque",true)
---	print(hinge)	
---	print(torque)	
-	
---	local humanOther = partOther.Parent:FindFirstChild("Humanoid")
---	if not humanOther then return end
-
---	hinge.Enabled = false
---	torque.Enabled = false
---end
-
---tool.Handle.Touched:Connect(detach)]]></ProtectedString>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-									</Properties>
 								</Item>
 							</Item>
 						</Item>
@@ -17298,7 +17394,7 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<Z>0</Z>
 										</Vector3>
 										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags">VHJhbnNwYXJlbnQ=</BinaryString>
+										<BinaryString name="Tags"></BinaryString>
 										<float name="TopParamA">-0.5</float>
 										<float name="TopParamB">0.5</float>
 										<token name="TopSurface">0</token>
@@ -17394,6 +17490,120 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 											<int64 name="SourceAssetId">-1</int64>
 											<BinaryString name="Tags"></BinaryString>
 										</Properties>
+									</Item>
+									<Item class="SurfaceGui" referent="RBXe9a9f7ca44d748aeabc169b9adb52fd4">
+										<Properties>
+											<bool name="Active">true</bool>
+											<Ref name="Adornee">null</Ref>
+											<bool name="AlwaysOnTop">false</bool>
+											<BinaryString name="AttributesSerialize"></BinaryString>
+											<bool name="AutoLocalize">true</bool>
+											<Vector2 name="CanvasSize">
+												<X>800</X>
+												<Y>600</Y>
+											</Vector2>
+											<bool name="ClipsDescendants">true</bool>
+											<bool name="Enabled">true</bool>
+											<token name="Face">3</token>
+											<float name="LightInfluence">1</float>
+											<string name="Name">SurfaceGui</string>
+											<float name="PixelsPerStud">50</float>
+											<bool name="ResetOnSpawn">true</bool>
+											<Ref name="RootLocalizationTable">null</Ref>
+											<token name="SizingMode">1</token>
+											<int64 name="SourceAssetId">-1</int64>
+											<BinaryString name="Tags"></BinaryString>
+											<float name="ToolPunchThroughDistance">0</float>
+											<token name="ZIndexBehavior">1</token>
+											<float name="ZOffset">0</float>
+										</Properties>
+										<Item class="ImageLabel" referent="RBX42390112ef094d3ca819ba06fec79b7e">
+											<Properties>
+												<bool name="Active">false</bool>
+												<Vector2 name="AnchorPoint">
+													<X>0</X>
+													<Y>0</Y>
+												</Vector2>
+												<BinaryString name="AttributesSerialize"></BinaryString>
+												<bool name="AutoLocalize">true</bool>
+												<token name="AutomaticSize">0</token>
+												<Color3 name="BackgroundColor3">
+													<R>1</R>
+													<G>1</G>
+													<B>1</B>
+												</Color3>
+												<float name="BackgroundTransparency">0</float>
+												<Color3 name="BorderColor3">
+													<R>0.105882362</R>
+													<G>0.164705887</G>
+													<B>0.207843155</B>
+												</Color3>
+												<token name="BorderMode">0</token>
+												<int name="BorderSizePixel">1</int>
+												<bool name="ClipsDescendants">false</bool>
+												<bool name="Draggable">false</bool>
+												<Content name="Image"><url>rbxassetid://6184999511</url></Content>
+												<Color3 name="ImageColor3">
+													<R>1</R>
+													<G>1</G>
+													<B>1</B>
+												</Color3>
+												<Vector2 name="ImageRectOffset">
+													<X>0</X>
+													<Y>0</Y>
+												</Vector2>
+												<Vector2 name="ImageRectSize">
+													<X>0</X>
+													<Y>0</Y>
+												</Vector2>
+												<float name="ImageTransparency">0</float>
+												<int name="LayoutOrder">0</int>
+												<string name="Name">ImageLabel</string>
+												<Ref name="NextSelectionDown">null</Ref>
+												<Ref name="NextSelectionLeft">null</Ref>
+												<Ref name="NextSelectionRight">null</Ref>
+												<Ref name="NextSelectionUp">null</Ref>
+												<UDim2 name="Position">
+													<XS>0</XS>
+													<XO>0</XO>
+													<YS>0</YS>
+													<YO>0</YO>
+												</UDim2>
+												<Ref name="RootLocalizationTable">null</Ref>
+												<float name="Rotation">0</float>
+												<token name="ScaleType">0</token>
+												<bool name="Selectable">false</bool>
+												<Ref name="SelectionImageObject">null</Ref>
+												<UDim2 name="Size">
+													<XS>1</XS>
+													<XO>0</XO>
+													<YS>0.5</YS>
+													<YO>0</YO>
+												</UDim2>
+												<token name="SizeConstraint">0</token>
+												<Rect2D name="SliceCenter">
+													<min>
+														<X>0</X>
+														<Y>0</Y>
+													</min>
+													<max>
+														<X>0</X>
+														<Y>0</Y>
+													</max>
+												</Rect2D>
+												<float name="SliceScale">1</float>
+												<int64 name="SourceAssetId">-1</int64>
+												<BinaryString name="Tags"></BinaryString>
+												<UDim2 name="TileSize">
+													<XS>1</XS>
+													<XO>0</XO>
+													<YS>1</YS>
+													<YO>0</YO>
+												</UDim2>
+												<bool name="Visible">true</bool>
+												<int name="ZIndex">1</int>
+											</Properties>
+										</Item>
 									</Item>
 								</Item>
 								<Item class="Part" referent="RBXd8c343a102f84cfbba45b71f534ff962">
@@ -19546,6 +19756,120 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 										<int name="Surface1">-1</int>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
+								</Item>
+								<Item class="SurfaceGui" referent="RBXc0204b85458d45a5ac0224d1577c8033">
+									<Properties>
+										<bool name="Active">true</bool>
+										<Ref name="Adornee">null</Ref>
+										<bool name="AlwaysOnTop">false</bool>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<bool name="AutoLocalize">true</bool>
+										<Vector2 name="CanvasSize">
+											<X>800</X>
+											<Y>600</Y>
+										</Vector2>
+										<bool name="ClipsDescendants">true</bool>
+										<bool name="Enabled">true</bool>
+										<token name="Face">5</token>
+										<float name="LightInfluence">1</float>
+										<string name="Name">SurfaceGui</string>
+										<float name="PixelsPerStud">50</float>
+										<bool name="ResetOnSpawn">true</bool>
+										<Ref name="RootLocalizationTable">null</Ref>
+										<token name="SizingMode">1</token>
+										<int64 name="SourceAssetId">-1</int64>
+										<BinaryString name="Tags"></BinaryString>
+										<float name="ToolPunchThroughDistance">0</float>
+										<token name="ZIndexBehavior">1</token>
+										<float name="ZOffset">0</float>
+									</Properties>
+									<Item class="ImageLabel" referent="RBXe9cd49cea6a5462d8041bb13a1607d0d">
+										<Properties>
+											<bool name="Active">false</bool>
+											<Vector2 name="AnchorPoint">
+												<X>0</X>
+												<Y>0</Y>
+											</Vector2>
+											<BinaryString name="AttributesSerialize"></BinaryString>
+											<bool name="AutoLocalize">true</bool>
+											<token name="AutomaticSize">0</token>
+											<Color3 name="BackgroundColor3">
+												<R>1</R>
+												<G>1</G>
+												<B>1</B>
+											</Color3>
+											<float name="BackgroundTransparency">0</float>
+											<Color3 name="BorderColor3">
+												<R>0.105882362</R>
+												<G>0.164705887</G>
+												<B>0.207843155</B>
+											</Color3>
+											<token name="BorderMode">0</token>
+											<int name="BorderSizePixel">1</int>
+											<bool name="ClipsDescendants">false</bool>
+											<bool name="Draggable">false</bool>
+											<Content name="Image"><url>rbxassetid://6184999511</url></Content>
+											<Color3 name="ImageColor3">
+												<R>1</R>
+												<G>1</G>
+												<B>1</B>
+											</Color3>
+											<Vector2 name="ImageRectOffset">
+												<X>0</X>
+												<Y>0</Y>
+											</Vector2>
+											<Vector2 name="ImageRectSize">
+												<X>0</X>
+												<Y>0</Y>
+											</Vector2>
+											<float name="ImageTransparency">0</float>
+											<int name="LayoutOrder">0</int>
+											<string name="Name">ImageLabel</string>
+											<Ref name="NextSelectionDown">null</Ref>
+											<Ref name="NextSelectionLeft">null</Ref>
+											<Ref name="NextSelectionRight">null</Ref>
+											<Ref name="NextSelectionUp">null</Ref>
+											<UDim2 name="Position">
+												<XS>0</XS>
+												<XO>0</XO>
+												<YS>0</YS>
+												<YO>0</YO>
+											</UDim2>
+											<Ref name="RootLocalizationTable">null</Ref>
+											<float name="Rotation">0</float>
+											<token name="ScaleType">0</token>
+											<bool name="Selectable">false</bool>
+											<Ref name="SelectionImageObject">null</Ref>
+											<UDim2 name="Size">
+												<XS>1</XS>
+												<XO>0</XO>
+												<YS>1</YS>
+												<YO>0</YO>
+											</UDim2>
+											<token name="SizeConstraint">0</token>
+											<Rect2D name="SliceCenter">
+												<min>
+													<X>0</X>
+													<Y>0</Y>
+												</min>
+												<max>
+													<X>0</X>
+													<Y>0</Y>
+												</max>
+											</Rect2D>
+											<float name="SliceScale">1</float>
+											<int64 name="SourceAssetId">-1</int64>
+											<BinaryString name="Tags"></BinaryString>
+											<UDim2 name="TileSize">
+												<XS>1</XS>
+												<XO>0</XO>
+												<YS>1</YS>
+												<YO>0</YO>
+											</UDim2>
+											<bool name="Visible">true</bool>
+											<int name="ZIndex">1</int>
+										</Properties>
+									</Item>
 								</Item>
 							</Item>
 							<Item class="Part" referent="RBXd0f83af278cd4eda903e510ae6313184">
@@ -33856,7 +34180,7 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 								</Vector2>
 								<bool name="ClipsDescendants">true</bool>
 								<bool name="Enabled">true</bool>
-								<token name="Face">5</token>
+								<token name="Face">1</token>
 								<float name="LightInfluence">1</float>
 								<string name="Name">SurfaceGui</string>
 								<float name="PixelsPerStud">50</float>
@@ -33886,6 +34210,93 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 									<bool name="Shadows">false</bool>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
+								</Properties>
+							</Item>
+							<Item class="ImageLabel" referent="RBX7b8d65f2475249538d6cb4cc0a0a22ba">
+								<Properties>
+									<bool name="Active">false</bool>
+									<Vector2 name="AnchorPoint">
+										<X>0</X>
+										<Y>0</Y>
+									</Vector2>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<bool name="AutoLocalize">true</bool>
+									<token name="AutomaticSize">0</token>
+									<Color3 name="BackgroundColor3">
+										<R>1</R>
+										<G>1</G>
+										<B>1</B>
+									</Color3>
+									<float name="BackgroundTransparency">0</float>
+									<Color3 name="BorderColor3">
+										<R>0.105882362</R>
+										<G>0.164705887</G>
+										<B>0.207843155</B>
+									</Color3>
+									<token name="BorderMode">0</token>
+									<int name="BorderSizePixel">1</int>
+									<bool name="ClipsDescendants">false</bool>
+									<bool name="Draggable">false</bool>
+									<Content name="Image"><url>rbxassetid://6184999511</url></Content>
+									<Color3 name="ImageColor3">
+										<R>1</R>
+										<G>1</G>
+										<B>1</B>
+									</Color3>
+									<Vector2 name="ImageRectOffset">
+										<X>0</X>
+										<Y>0</Y>
+									</Vector2>
+									<Vector2 name="ImageRectSize">
+										<X>0</X>
+										<Y>0</Y>
+									</Vector2>
+									<float name="ImageTransparency">0</float>
+									<int name="LayoutOrder">0</int>
+									<string name="Name">ImageLabel</string>
+									<Ref name="NextSelectionDown">null</Ref>
+									<Ref name="NextSelectionLeft">null</Ref>
+									<Ref name="NextSelectionRight">null</Ref>
+									<Ref name="NextSelectionUp">null</Ref>
+									<UDim2 name="Position">
+										<XS>0</XS>
+										<XO>0</XO>
+										<YS>0</YS>
+										<YO>0</YO>
+									</UDim2>
+									<Ref name="RootLocalizationTable">null</Ref>
+									<float name="Rotation">0</float>
+									<token name="ScaleType">0</token>
+									<bool name="Selectable">false</bool>
+									<Ref name="SelectionImageObject">null</Ref>
+									<UDim2 name="Size">
+										<XS>1</XS>
+										<XO>0</XO>
+										<YS>1</YS>
+										<YO>0</YO>
+									</UDim2>
+									<token name="SizeConstraint">0</token>
+									<Rect2D name="SliceCenter">
+										<min>
+											<X>0</X>
+											<Y>0</Y>
+										</min>
+										<max>
+											<X>0</X>
+											<Y>0</Y>
+										</max>
+									</Rect2D>
+									<float name="SliceScale">1</float>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<UDim2 name="TileSize">
+										<XS>1</XS>
+										<XO>0</XO>
+										<YS>1</YS>
+										<YO>0</YO>
+									</UDim2>
+									<bool name="Visible">true</bool>
+									<int name="ZIndex">1</int>
 								</Properties>
 							</Item>
 						</Item>
@@ -34109,6 +34520,120 @@ wQUHgBfBBQeAF8EFB4AXwQUHgBfBBQeA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
+						</Item>
+						<Item class="SurfaceGui" referent="RBX4fac2ee6c39d4dd9b18c96f3865b9b76">
+							<Properties>
+								<bool name="Active">true</bool>
+								<Ref name="Adornee">null</Ref>
+								<bool name="AlwaysOnTop">false</bool>
+								<BinaryString name="AttributesSerialize"></BinaryString>
+								<bool name="AutoLocalize">true</bool>
+								<Vector2 name="CanvasSize">
+									<X>800</X>
+									<Y>600</Y>
+								</Vector2>
+								<bool name="ClipsDescendants">true</bool>
+								<bool name="Enabled">true</bool>
+								<token name="Face">2</token>
+								<float name="LightInfluence">1</float>
+								<string name="Name">SurfaceGui</string>
+								<float name="PixelsPerStud">50</float>
+								<bool name="ResetOnSpawn">true</bool>
+								<Ref name="RootLocalizationTable">null</Ref>
+								<token name="SizingMode">1</token>
+								<int64 name="SourceAssetId">-1</int64>
+								<BinaryString name="Tags"></BinaryString>
+								<float name="ToolPunchThroughDistance">0</float>
+								<token name="ZIndexBehavior">1</token>
+								<float name="ZOffset">0</float>
+							</Properties>
+							<Item class="ImageLabel" referent="RBXe509bee404c94cf68af1225a0a2c7af1">
+								<Properties>
+									<bool name="Active">false</bool>
+									<Vector2 name="AnchorPoint">
+										<X>0</X>
+										<Y>0</Y>
+									</Vector2>
+									<BinaryString name="AttributesSerialize"></BinaryString>
+									<bool name="AutoLocalize">true</bool>
+									<token name="AutomaticSize">0</token>
+									<Color3 name="BackgroundColor3">
+										<R>1</R>
+										<G>1</G>
+										<B>1</B>
+									</Color3>
+									<float name="BackgroundTransparency">0</float>
+									<Color3 name="BorderColor3">
+										<R>0.105882362</R>
+										<G>0.164705887</G>
+										<B>0.207843155</B>
+									</Color3>
+									<token name="BorderMode">0</token>
+									<int name="BorderSizePixel">1</int>
+									<bool name="ClipsDescendants">false</bool>
+									<bool name="Draggable">false</bool>
+									<Content name="Image"><url>rbxassetid://6185038782</url></Content>
+									<Color3 name="ImageColor3">
+										<R>1</R>
+										<G>1</G>
+										<B>1</B>
+									</Color3>
+									<Vector2 name="ImageRectOffset">
+										<X>0</X>
+										<Y>0</Y>
+									</Vector2>
+									<Vector2 name="ImageRectSize">
+										<X>0</X>
+										<Y>0</Y>
+									</Vector2>
+									<float name="ImageTransparency">0</float>
+									<int name="LayoutOrder">0</int>
+									<string name="Name">ImageLabel</string>
+									<Ref name="NextSelectionDown">null</Ref>
+									<Ref name="NextSelectionLeft">null</Ref>
+									<Ref name="NextSelectionRight">null</Ref>
+									<Ref name="NextSelectionUp">null</Ref>
+									<UDim2 name="Position">
+										<XS>0</XS>
+										<XO>0</XO>
+										<YS>0</YS>
+										<YO>0</YO>
+									</UDim2>
+									<Ref name="RootLocalizationTable">null</Ref>
+									<float name="Rotation">0</float>
+									<token name="ScaleType">0</token>
+									<bool name="Selectable">false</bool>
+									<Ref name="SelectionImageObject">null</Ref>
+									<UDim2 name="Size">
+										<XS>1</XS>
+										<XO>0</XO>
+										<YS>1</YS>
+										<YO>0</YO>
+									</UDim2>
+									<token name="SizeConstraint">0</token>
+									<Rect2D name="SliceCenter">
+										<min>
+											<X>0</X>
+											<Y>0</Y>
+										</min>
+										<max>
+											<X>0</X>
+											<Y>0</Y>
+										</max>
+									</Rect2D>
+									<float name="SliceScale">1</float>
+									<int64 name="SourceAssetId">-1</int64>
+									<BinaryString name="Tags"></BinaryString>
+									<UDim2 name="TileSize">
+										<XS>1</XS>
+										<XO>0</XO>
+										<YS>1</YS>
+										<YO>0</YO>
+									</UDim2>
+									<bool name="Visible">true</bool>
+									<int name="ZIndex">1</int>
+								</Properties>
+							</Item>
 						</Item>
 					</Item>
 					<Item class="Part" referent="RBX7aa9fa5dbf7448b5adb78a999d5be32e">
@@ -41530,7 +42055,7 @@ remoteCode.addRemoteObjects()
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>519.5</X>
+						<X>34.5</X>
 						<Y>-223.999939</Y>
 						<Z>-147.5</Z>
 						<R00>0</R00>
@@ -44824,7 +45349,8 @@ function addRemoteObjects()
     local questConfigs = SceneConfig.getScenesConfig()
 
     local myStuff = workspace:FindFirstChild("MyStuff")
-    local worlds = {questConfigs}
+    -- local worlds = {questConfigs}
+    local worlds = {questConfigs, questConfigs}
     -- local worlds = {questConfigs, questConfigs, questConfigs}
 
     for worldIndex, questConfig in ipairs(worlds) do
@@ -46583,788 +47109,7 @@ return module
 						<string name="ScriptGuid">{170bc94f-0420-444b-a5a1-c740c944d3ed}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
-module.questConfigs = {
-    {
-        questTitle = "RX-004 - A Frog on a Log",
-        words = "BOG,DOG,FOG,HOG,JOG,LOG",
-        startSceneCoords = {row = 0, col = 0},
-        endSceneCoords = {row = 0, col = 0},
-        sceneConfigs = {
-            {
-                name = "log",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "katHappy", text = "Hi kid!"},
-                            {
-                                char = "lizOptimistic",
-                                text = "Will you play with me?"
-                            }, {char = "katHappy", text = "Yes?"},
-                            {char = "lizOptimistic", text = "Yay!"}
-                        },
-                        characters01 = {
-                            {name = "katHappy"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "lizUnsure", text = "I see a hat."},
-                            {
-                                char = "katSurprised",
-                                text = "I see a hat... on a mat!"
-                            }, {char = "lizUnsure", text = "Tee hee hee."}
-                        },
-                        characters01 = {
-                            {name = "katSurprised"}, {name = "lizUnsure"}
-                        },
-                        characters02 = {{name = "hat"}, {name = "mat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizOptimistic", text = "I see a cat."},
-                            {
-                                char = "lizOptimistic",
-                                text = "I see a cat... on a hat!"
-                            }, {char = "katDismayed", text = "Not a cat!!!"}
-                        },
-                        characters01 = {
-                            {name = "katDismayed"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "hat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizSurprised", text = "Hi kitty kitty..."},
-                            {char = "katCringing", text = "That is not a cat!"},
-                            {char = "lizSurprised", text = "Good kitty.."},
-                            {char = "katCringing", text = "That is a rat!"},
-                            {char = "lizSurprised", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "lizSurprised",
-                                text = "We can pat the cat."
-                            }, {char = "katCringing", text = "Not that cat!"},
-                            {
-                                char = "lizSurprised",
-                                text = "We can chat with the cat."
-                            },
-                            {
-                                char = "katCringing",
-                                text = "Do not chat with that cat!"
-                            }
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizDismayed", text = "Bye kitty!"},
-                            {char = "rat", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katLoud"}, {name = "lizDismayed"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }
-                },
-                coordinates = {row = 0, col = 0},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = false,
-                isEndScene = true,
-                isStartScene = true,
-                maxRow = 0,
-                maxCol = 0
-            }
-        },
-        gridSize = {rows = 1, cols = 1}
-    }, {
-        questTitle = "RX-001 - A Cat on a Hat",
-        startSceneCoords = {row = 0, col = 0},
-        endSceneCoords = {row = 0, col = 0},
-        sceneConfigs = {
-            {
-                name = "tree01",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "katHappy", text = "Hi kid!"},
-                            {
-                                char = "lizOptimistic",
-                                text = "Will you play with me?"
-                            }, {char = "katHappy", text = "Yes?"},
-                            {char = "lizOptimistic", text = "Yay!"}
-                        },
-                        characters01 = {
-                            {name = "katHappy"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "lizUnsure", text = "I see a hat."},
-                            {
-                                char = "katSurprised",
-                                text = "I see a hat... on a mat!"
-                            }, {char = "lizUnsure", text = "Tee hee hee."}
-                        },
-                        characters01 = {
-                            {name = "katSurprised"}, {name = "lizUnsure"}
-                        },
-                        characters02 = {{name = "hat"}, {name = "mat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizOptimistic", text = "I see a cat."},
-                            {
-                                char = "lizOptimistic",
-                                text = "I see a cat... on a hat!"
-                            }, {char = "katDismayed", text = "Not a cat!!!"}
-                        },
-                        characters01 = {
-                            {name = "katDismayed"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "hat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizSurprised", text = "Hi kitty kitty..."},
-                            {char = "katCringing", text = "That is not a cat!"},
-                            {char = "lizSurprised", text = "Good kitty.."},
-                            {char = "katCringing", text = "That is a rat!"},
-                            {char = "lizSurprised", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {char = "rat", text = "We can pat the cat."},
-                            {char = "katCringing", text = "Not that cat!"},
-                            {
-                                char = "lizSurprised",
-                                text = "We can chat with the cat."
-                            },
-                            {
-                                char = "katCringing",
-                                text = "Do not chat with that cat!"
-                            }
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizDismayed", text = "Bye kitty!"},
-                            {char = "rat", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katLoud"}, {name = "lizDismayed"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }
-                },
-                coordinates = {row = 0, col = 0},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = false,
-                isEndScene = true,
-                isStartScene = true,
-                maxRow = 0,
-                maxCol = 0
-            }
-        },
-        gridSize = {rows = 1, cols = 1}
-    }, {
-        questTitle = "RX-002 - A Bee in a Tree",
-        words = "ME,WE,SEE,BEE,HEE,WEE,PEE,FEE,TEE",
-        startSceneCoords = {col = 0, row = 0},
-        endSceneCoords = {col = 0, row = 0},
-        sceneConfigs = {
-            {
-                name = "bee01",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "katHappy", text = "Hi kid!"},
-                            {
-                                char = "lizOptimistic",
-                                text = "Will you play with me?"
-                            }, {char = "katHappy", text = "Yes?"},
-                            {char = "lizOptimistic", text = "Yay!"}
-                        },
-                        characters01 = {
-                            {name = "katHappy"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "lizUnsure", text = "I see a hat."},
-                            {
-                                char = "katSurprised",
-                                text = "I see a hat... on a mat!"
-                            }, {char = "lizUnsure", text = "Tee hee hee."}
-                        },
-                        characters01 = {
-                            {name = "katSurprised"}, {name = "lizUnsure"}
-                        },
-                        characters02 = {{name = "hat"}, {name = "mat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizOptimistic", text = "I see a cat."},
-                            {
-                                char = "lizOptimistic",
-                                text = "I see a cat... on a hat!"
-                            }, {char = "katDismayed", text = "Not a cat!!!"}
-                        },
-                        characters01 = {
-                            {name = "katDismayed"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "hat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizSurprised", text = "Hi kitty kitty..."},
-                            {char = "katCringing", text = "That is not a cat!"},
-                            {char = "lizSurprised", text = "Good kitty.."},
-                            {char = "katCringing", text = "That is a rat!"},
-                            {char = "lizSurprised", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "lizSurprised",
-                                text = "We can pat the cat."
-                            }, {char = "katCringing", text = "Not that cat!"},
-                            {
-                                char = "lizSurprised",
-                                text = "We can chat with the cat."
-                            },
-                            {
-                                char = "katCringing",
-                                text = "Do not chat with that cat!"
-                            }
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizDismayed", text = "Bye kitty!"},
-                            {char = "rat", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katLoud"}, {name = "lizDismayed"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }
-                },
-                coordinates = {col = 0, row = 0},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = false,
-                isEndScene = true,
-                isStartScene = true,
-                maxRow = 0,
-                maxCol = 0
-            }
-        },
-        gridSize = {rows = 1, cols = 1}
-    }, {
-        questTitle = "RX-003 - A Pug on a Rug",
-        words = "I,SEE,A,CAT,IN,A,HAT",
-        startSceneCoords = {col = 1, row = 0},
-        endSceneCoords = {col = 0, row = 0},
-        sceneConfigs = {
-            {
-                name = "pringle01",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "katHappy", text = "Hi kid!"},
-                            {
-                                char = "lizOptimistic",
-                                text = "Will you play with me?"
-                            }, {char = "katHappy", text = "Yes?"},
-                            {char = "lizOptimistic", text = "Yay!"}
-                        },
-                        characters01 = {
-                            {name = "katHappy"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "lizUnsure", text = "I see a hat."},
-                            {
-                                char = "katSurprised",
-                                text = "I see a hat... on a mat!"
-                            }, {char = "lizUnsure", text = "Tee hee hee."}
-                        },
-                        characters01 = {
-                            {name = "katSurprised"}, {name = "lizUnsure"}
-                        },
-                        characters02 = {{name = "hat"}, {name = "mat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizOptimistic", text = "I see a cat."},
-                            {
-                                char = "lizOptimistic",
-                                text = "I see a cat... on a hat!"
-                            }, {char = "katDismayed", text = "Not a cat!!!"}
-                        },
-                        characters01 = {
-                            {name = "katDismayed"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "hat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizSurprised", text = "Hi kitty kitty..."},
-                            {char = "katCringing", text = "That is not a cat!"},
-                            {char = "lizSurprised", text = "Good kitty.."},
-                            {char = "katCringing", text = "That is a rat!"},
-                            {char = "lizSurprised", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "lizSurprised",
-                                text = "We can pat the cat."
-                            }, {char = "katCringing", text = "Not that cat!"},
-                            {
-                                char = "lizSurprised",
-                                text = "We can chat with the cat."
-                            },
-                            {
-                                char = "katCringing",
-                                text = "Do not chat with that cat!"
-                            }
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizDismayed", text = "Bye kitty!"},
-                            {char = "rat", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katLoud"}, {name = "lizDismayed"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }
-                },
-                coordinates = {col = 2, row = 0},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = true,
-                isEndScene = false,
-                isStartScene = false,
-                maxRow = 0,
-                maxCol = 2
-            }, {
-                name = "stump",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "katHappy", text = "Hi kid!"},
-                            {
-                                char = "lizOptimistic",
-                                text = "Will you play with me?"
-                            }, {char = "katHappy", text = "Yes?"},
-                            {char = "lizOptimistic", text = "Yay!"}
-                        },
-                        characters01 = {
-                            {name = "katHappy"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "lizUnsure", text = "I see a hat."},
-                            {
-                                char = "katSurprised",
-                                text = "I see a hat... on a mat!"
-                            }, {char = "lizUnsure", text = "Tee hee hee."}
-                        },
-                        characters01 = {
-                            {name = "katSurprised"}, {name = "lizUnsure"}
-                        },
-                        characters02 = {{name = "hat"}, {name = "mat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizOptimistic", text = "I see a cat."},
-                            {
-                                char = "lizOptimistic",
-                                text = "I see a cat... on a hat!"
-                            }, {char = "katDismayed", text = "Not a cat!!!"}
-                        },
-                        characters01 = {
-                            {name = "katDismayed"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "hat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizSurprised", text = "Hi kitty kitty..."},
-                            {char = "katCringing", text = "That is not a cat!"},
-                            {char = "lizSurprised", text = "Good kitty.."},
-                            {char = "katCringing", text = "That is a rat!"},
-                            {char = "lizSurprised", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "lizSurprised",
-                                text = "We can pat the cat."
-                            }, {char = "katCringing", text = "Not that cat!"},
-                            {
-                                char = "lizSurprised",
-                                text = "We can chat with the cat."
-                            },
-                            {
-                                char = "katCringing",
-                                text = "Do not chat with that cat!"
-                            }
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizDismayed", text = "Bye kitty!"},
-                            {char = "rat", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katLoud"}, {name = "lizDismayed"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }
-                },
-                coordinates = {col = 0, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = false,
-                isEndScene = true,
-                isStartScene = false,
-                maxRow = 0,
-                maxCol = 2
-            }, {
-                name = "mat",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "katHappy", text = "Hi kid!"},
-                            {
-                                char = "lizOptimistic",
-                                text = "Will you play with me?"
-                            }, {char = "katHappy", text = "Yes?"},
-                            {char = "lizOptimistic", text = "Yay!"}
-                        },
-                        characters01 = {
-                            {name = "katHappy"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "lizUnsure", text = "I see a hat."},
-                            {
-                                char = "katSurprised",
-                                text = "I see a hat... on a mat!"
-                            }, {char = "lizUnsure", text = "Tee hee hee."}
-                        },
-                        characters01 = {
-                            {name = "katSurprised"}, {name = "lizUnsure"}
-                        },
-                        characters02 = {{name = "hat"}, {name = "mat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizOptimistic", text = "I see a cat."},
-                            {
-                                char = "lizOptimistic",
-                                text = "I see a cat... on a hat!"
-                            }, {char = "katDismayed", text = "Not a cat!!!"}
-                        },
-                        characters01 = {
-                            {name = "katDismayed"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "hat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizSurprised", text = "Hi kitty kitty..."},
-                            {char = "katCringing", text = "That is not a cat!"},
-                            {char = "lizSurprised", text = "Good kitty.."},
-                            {char = "katCringing", text = "That is a rat!"},
-                            {char = "lizSurprised", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "lizSurprised",
-                                text = "We can pat the cat."
-                            }, {char = "katCringing", text = "Not that cat!"},
-                            {
-                                char = "lizSurprised",
-                                text = "We can chat with the cat."
-                            },
-                            {
-                                char = "katCringing",
-                                text = "Do not chat with that cat!"
-                            }
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizDismayed", text = "Bye kitty!"},
-                            {char = "rat", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katLoud"}, {name = "lizDismayed"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }
-                },
-                coordinates = {col = 1, row = 0},
-                showBottomPath = false,
-                showRightPath = true,
-                showTopPath = false,
-                showLeftPath = true,
-                isEndScene = false,
-                isStartScene = true,
-                maxRow = 0,
-                maxCol = 2
-            }
-        },
-        gridSize = {rows = 1, cols = 3}
-    }, {
-        questTitle = "RX-005 - A Pig in a Wig",
-        words = "BIG,DIG,FIG,JIG,PIG,RIG,WIG,ZIG",
-        startSceneCoords = {col = 0, row = 0},
-        endSceneCoords = {col = 0, row = 0},
-        sceneConfigs = {
-            {
-                name = "log",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "katHappy", text = "Hi kid!"},
-                            {
-                                char = "lizOptimistic",
-                                text = "Will you play with me?"
-                            }, {char = "katHappy", text = "Yes?"},
-                            {char = "lizOptimistic", text = "Yay!"}
-                        },
-                        characters01 = {
-                            {name = "katHappy"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "lizUnsure", text = "I see a hat."},
-                            {
-                                char = "katSurprised",
-                                text = "I see a hat... on a mat!"
-                            }, {char = "lizUnsure", text = "Tee hee hee."}
-                        },
-                        characters01 = {
-                            {name = "katSurprised"}, {name = "lizUnsure"}
-                        },
-                        characters02 = {{name = "hat"}, {name = "mat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizOptimistic", text = "I see a cat."},
-                            {
-                                char = "lizOptimistic",
-                                text = "I see a cat... on a hat!"
-                            }, {char = "katDismayed", text = "Not a cat!!!"}
-                        },
-                        characters01 = {
-                            {name = "katDismayed"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "hat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizSurprised", text = "Hi kitty kitty..."},
-                            {char = "katCringing", text = "That is not a cat!"},
-                            {char = "lizSurprised", text = "Good kitty.."},
-                            {char = "katCringing", text = "That is a rat!"},
-                            {char = "lizSurprised", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "lizSurprised",
-                                text = "We can pat the cat."
-                            }, {char = "katCringing", text = "Not that cat!"},
-                            {
-                                char = "lizSurprised",
-                                text = "We can chat with the cat."
-                            },
-                            {
-                                char = "katCringing",
-                                text = "Do not chat with that cat!"
-                            }
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizDismayed", text = "Bye kitty!"},
-                            {char = "rat", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katLoud"}, {name = "lizDismayed"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }
-                },
-                coordinates = {col = 0, row = 0},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = false,
-                isEndScene = true,
-                isStartScene = true,
-                maxRow = 0,
-                maxCol = 0
-            }
-        },
-        gridSize = {rows = 1, cols = 1}
-    }, {
-        questTitle = "RX-006 - A Map in my Cap",
-        words = "CAP,GAP,LAP,MAP,NAP,RAP,SAP,TAP,ZAP",
-        startSceneCoords = {col = 0, row = 0},
-        endSceneCoords = {col = 0, row = 0},
-        sceneConfigs = {
-            {
-                name = "log",
-                frames = {
-                    {
-                        dialogs = {
-                            {char = "katHappy", text = "Hi kid!"},
-                            {
-                                char = "lizOptimistic",
-                                text = "Will you play with me?"
-                            }, {char = "katHappy", text = "Yes?"},
-                            {char = "lizOptimistic", text = "Yay!"}
-                        },
-                        characters01 = {
-                            {name = "katHappy"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {}
-                    }, {
-                        dialogs = {
-                            {char = "lizUnsure", text = "I see a hat."},
-                            {
-                                char = "katSurprised",
-                                text = "I see a hat... on a mat!"
-                            }, {char = "lizUnsure", text = "Tee hee hee."}
-                        },
-                        characters01 = {
-                            {name = "katSurprised"}, {name = "lizUnsure"}
-                        },
-                        characters02 = {{name = "hat"}, {name = "mat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizOptimistic", text = "I see a cat."},
-                            {
-                                char = "lizOptimistic",
-                                text = "I see a cat... on a hat!"
-                            }, {char = "katDismayed", text = "Not a cat!!!"}
-                        },
-                        characters01 = {
-                            {name = "katDismayed"}, {name = "lizOptimistic"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "hat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizSurprised", text = "Hi kitty kitty..."},
-                            {char = "katCringing", text = "That is not a cat!"},
-                            {char = "lizSurprised", text = "Good kitty.."},
-                            {char = "katCringing", text = "That is a rat!"},
-                            {char = "lizSurprised", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {
-                                char = "lizSurprised",
-                                text = "We can pat the cat."
-                            }, {char = "katCringing", text = "Not that cat!"},
-                            {
-                                char = "lizSurprised",
-                                text = "We can chat with the cat."
-                            },
-                            {
-                                char = "katCringing",
-                                text = "Do not chat with that cat!"
-                            }
-                        },
-                        characters01 = {
-                            {name = "katCringing"}, {name = "lizSurprised"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }, {
-                        dialogs = {
-                            {char = "lizDismayed", text = "Bye kitty!"},
-                            {char = "rat", text = "Meow."}
-                        },
-                        characters01 = {
-                            {name = "katLoud"}, {name = "lizDismayed"}
-                        },
-                        characters02 = {{name = "rat"}, {name = "rat"}}
-                    }
-                },
-                coordinates = {col = 0, row = 0},
-                showBottomPath = false,
-                showRightPath = false,
-                showTopPath = false,
-                showLeftPath = false,
-                isEndScene = true,
-                isStartScene = true,
-                maxRow = 0,
-                maxCol = 0
-            }
-        },
-        gridSize = {rows = 1, cols = 1}
-    }
-}
+module.questConfigs = {{questTitle="The Boys from Connecticut - part 01",words="BOG,DOG,FOG,HOG,JOG,LOG",startSceneCoords={row=0,col=0},endSceneCoords={row=0,col=3},sceneConfigs={{name="mop",frames={{dialogs={{char="lucky",text="And once I deliver this 4 leaf clover to my Grand Mama..."},{char="lucky",text="She will tell me the answer to elf's riddle."},{char="lucky",text="And you and I can unlock the treasure chest..."},{char="cow01",text="Mooo."},{char="lucky",text="But alas... I need just one more gold to pay for the journey..."}},characters01={},characters02={{name="lucky"},{name="cow01"},{name="chick01"}}},{dialogs={{char="goat01",text="Baaaaa..."},{char="lucky",text="Oh my poor Grand Mama..."},{char="cow01",text="Baaaa."},{char="lucky",text="My poor, old Grand Mama..."}},characters01={},characters02={{name="lucky"},{name="cow01"},{name="goat01"}}},{dialogs={{char="cow01",text="Listen! What is this I hear?"},{char="lucky",text="Did I just hear a... ... a giggle?"},{char="cow01",text="Moooo..."},{char="chick01",text="Peep. Peep."}},characters01={},characters02={{name="lucky"},{name="cow01"},{name="chick01"}}},{dialogs={{char="lucky",text="Why yes.  Yes inded!"},{char="lucky",text="Lady Luck has smiled upon us!"},{char="cow01",text="Moooo..."},{char="lucky",text="and sent us a whole platter of fresh..."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="lucky"},{name="cow01"}}},{dialogs={{char="luke01",text="Where are we?"},{char="hudson01",text="I have no idea."},{char="hudson01",text="Mom said this was a game..."},{char="luke01",text="Nope..."},{char="lucky",text="a whole platter of fresh...  ...faces!"}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="lucky"},{name="cow01"}}},{dialogs={{char="lucky01",text="Well hello lads..."},{char="hudson01",text="We are from Connecticut."},{char="lucky01",text="Hello Boys from Connecticut."},{char="lucky01",text="What brightly colored tunics you wear."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="lucky01"},{name="cow01"}}},{dialogs={{char="luke01",text="Our mom bought them for us."},{char="lucky01",text="I can see your mom has excellent taste."},{char="lucky01",text="Does every child in Connecticut have a shirt like that?"},{char="hudson01",text="I think so."},{char="lucky01",text="Well, perhaps you could lend it to me one day."},{char="lucky01",text="I could use it to scare the chickens out of my pea patch."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="lucky01"},{name="cow01"}}},{dialogs={{char="hudson01",text="You have a pea patch?"},{char="luke01",text="Cool!"}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="lucky01"},{name="cow01"}}},{dialogs={{char="lucky01",text="Forgive my manners, let me introduce myself."},{char="lucky01",text="My friends call me Lucky."},{char="hudson01",text="Our mom is making us do this."},{char="lucky01",text="But alas, my Luck seems to have run out"},{char="luke01",text="Can we play MineCraft?"}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="lucky01"},{name="cow01"}}},{dialogs={{char="lucky01",text="Mine Craft?"},{char="lucky01",text="Pish-Posh."},{char="lucky01",text="Be off with you then."},{char="lucky01",text="Go play your video games."},{char="lucky01",text="You don't look like the sort of fellows who would be interested in old riddles and buried treasure."},{char="lucky01",text="You would probably just laugh at me like all the rest..."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="lucky01"},{name="cow01"}}},{dialogs={{char="luke01",text="I like riddles!"},{char="hudson01",text="Buried treasure?"},{char="lucky01",text="Besides, I must be off now, I need to get to the Rap Battle..."},{char="luke01",text="Rap Battle?"}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="lucky01"},{name="cow01"}}},{dialogs={{char="luke01",text="Tell us your riddle Lucky!"},{char="lucky01",text="Ah, perhaps you boys are more clever than you look..."},{char="lucky01",text="Quickly then, and lean in close!"},{char="lucky01",text="If one of the Trolls hears the riddle, they will dig it up themselves."},{char="cow01",text="<cut to Troll Tricker quest>"}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="lucky01"},{name="cow01"}}}},coordinates={row=0,col=0},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=false,isEndScene=false,isStartScene=true,maxRow=0,maxCol=0},{name="mat",frames={{dialogs={{char="trollKing01",text="I am Troll King!"},{char="trollKing01",text="Who goes there?"},{char="luke01",text="I'm Luke."},{char="hudson01",text="I'm Hudson."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="trollKing01"},{name="bun"}}},{dialogs={{char="trollKing01",text="What fancy shirts Luke and Hudson..."},{char="luke01",text="We are from Connecticut."},{char="trollKing01",text="Have you come to steal my Jam?"},{char="hudson01",text="No."},{char="luke01",text="Maybe..."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="trollKing01"}}},{dialogs={{char="trollKing01",text="Or are you here to do the Zam???"},{char="hudson01",text="Neither"},{char="luke01",text="Both."},{char="luke01",text="What's the Zam?"},{char="trollKing01",text="Hold on.  Let me take this thing off... Someone start the music..."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="trollKing01"}}},{dialogs={{char="luke01",text="What's the Zam?"},{char="trollKing",text="The Zam is the dance you do"},{char="trollKing",text="If you're a fancy dude"},{char="fancyDudeFromFrance01",text="from France"},{char="trollKing",text="and you"},{char="trollKing",text="just got"},{char="trollKing",text="jam on your hands"},{char="trollKing",text="But you gotta go dance"},{char="trollKing",text="So you flap em in the air"},{char="fancyDudeFromFrance01",text="Like a couple of fans"},{char="trollKing",text="That are covered with ants!"}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="trollKing"},{name="fancyDudeFromFrance01"}}},{dialogs={{char="hudson01",text="We like the Zam man..."},{char="luke01",text="But we need to scram!"},{char="trollKing",text="Can I come with you?"}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="trollKing"},{name="fancyDudeFromFrance01"}}}},coordinates={row=0,col=1},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=true,isEndScene=false,isStartScene=false,maxRow=0,maxCol=1},{name="cap",frames={{dialogs={{char="britta01",text="Wow.  Are those space shirts?"},{char="hudson01",text="Our mom bought them."},{char="britta01",text="Your mom is cool!"},{char="luke01",text="Are you Sid the Science Kid?"},{char="britta01",text="No."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="britta01"},{name="raven05"}}},{dialogs={{char="hudson01",text="How do we get out of here?"},{char="britta01",text="Ha!"},{char="britta01",text="Good question."},{char="britta01",text="There is only one way out."},{char="hudson01",text="We'll take it!"},{char="luke01",text="Are you Dora?"}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="britta01"}}},{dialogs={{char="britta01",text="You need to go through Mount Dracmore."},{char="hudson01",text="ok..."},{char="britta01",text="But first, you need to bring the bun to the pan."},{char="luke01",text="What are you talking about?"}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="britta01"}}},{dialogs={{char="britta01",text="Did you get the bun?"},{char="luke01",text="What?"},{char="hudson01",text="Are you talking to us?"},{char="britta01",text="Did you see this sign that said= \"You got the bun\"?"},{char="hudson01",text="No."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="britta01"}}},{dialogs={{char="britta01",text="Never mind.  It's not important."},{char="britta01",text="Just go to the pan."},{char="britta01",text="You will earn 5 gold."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="britta01"}}},{dialogs={{char="hudson01",text="We can give one gold to the Leprechaun."},{char="britta01",text="What? No, no no!"},{char="britta01",text="Never give the Leprechaun any gold, ever!"},{char="hudson01",text="But, his Grand Ma-Ma..."},{char="britta01",text="Don't even talk to him."},{char="luke01",text="I like him..."}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="britta01"}}},{dialogs={{char="hudson01",text="How do we get home?"},{char="luke01",text="Our mom said this was a game."},{char="britta01",text="Look, I am on a dress quest."},{char="britta01",text="I can help you.  Meet me at the pig in the wig."},{char="britta01",text="But you have to bring Hopps!"}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="britta01"}}}},coordinates={row=0,col=2},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=true,isEndScene=false,isStartScene=false,maxRow=0,maxCol=2},{name="pan",frames={{dialogs={{char="elf",text="DO NOT GO IN THE CAVE!!!"},{char="luke01",text="Are you a licensed character?"},{char="elf",text="Huh? What?  Look, a giant monster!"}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="elf"}}},{dialogs={{char="elf",text="DO NOT GO IN THE CAVE!!!"},{char="luke01",text="Let's go in the cave."},{char="hudson01",text="No way!"},{char="luke01",text="I'm going to the rap battle!"}},characters01={{name="luke01"},{name="hudson01"}},characters02={{name="elf"}}}},coordinates={row=0,col=3},showBottomPath=false,showRightPath=false,showTopPath=false,showLeftPath=true,isEndScene=true,isStartScene=false,maxRow=0,maxCol=3}},gridSize={rows=1,cols=4}}, {questTitle="News From Seuss Ville",words="ME,WE,SEE,BEE,HEE,WEE,FEE,TEE",startSceneCoords={row=0,col=0},endSceneCoords={col=2,row=0},sceneConfigs={{name="cap",frames={{dialogs={{char="goblinKing01",text="Tell us the news!"},{char="will01",text="Yes the news!"},{char="angus01",text="News from Seuss Ville?"}},characters01={{name="snurtch01"},{name="will01"},{name="goblinKing01"}},characters02={{name="looney01"},{name="sillyGoose01"},{name="smallGoose01"},{name="empty"}}},{dialogs={{char="looney01",text="I refuse!"},{char="vesper01",text="There's new news?"},{char="looney01",text="There's NO news!"},{char="will01",text="If you wont, then the goose will!"}},characters01={{name="vesper01"},{name="will01"},{name="goblinKing01"}},characters02={{name="looney01"},{name="sillyGoose01"},{name="smallGoose01"},{name="empty"}}},{dialogs={{char="goblinKing01",text="Sorry goose, to intrude"},{char="will01",text="On your grickle grass gobbling."},{char="goblinKing01",text="But gosh, I'm a goblin"},{char="will01",text="And something's all wobbling."}},characters01={{name="will01"},{name="goblinKing01"}},characters02={{name="sillyGoose01"},{name="smallGoose01"},{name="empty"}}},{dialogs={{char="sillyGoose01",text="I like grass"},{char="sillyGoose01",text="Do you guys like grass?"},{char="empty",text="We need the new news, Goose!"},{char="empty",text="The new news from Seuss Ville!"}},characters01={{name="will01"},{name="goblinKing01"}},characters02={{name="sillyGoose01"},{name="smallGoose01"},{name="empty"}}},{dialogs={{char="sillyGoose01",text="Look at this, there is grass..."},{char="sillyGoose01",text="...literally  like... ...every where!"}},characters01={{name="will01"},{name="goblinKing01"}},characters02={{name="sillyGoose01"},{name="smallGoose01"},{name="empty"}}},{dialogs={{char="goblinKing01",text="Goose..."},{char="empty",text="Do not eat this grass over here."},{char="empty",text="Did I tell you about the wet grass?"}},characters01={{name="will01"},{name="goblinKing01"}},characters02={{name="sillyGoose01"},{name="smallGoose01"},{name="empty"}}},{dialogs={{char="goblinKing01",text="GOOSE!!!"},{char="empty",text="Oh hey sorry...  um, what's up."},{char="empty",text="Hey do you guys like grass?"}},characters01={{name="will01"},{name="goblinKing01"}},characters02={{name="sillyGoose01"},{name="smallGoose01"},{name="empty"}}},{dialogs={{char="goblinKing01",text="Goose, what is the new news from Seuss Ville?"},{char="empty",text="The what what?"},{char="empty",text="The new news from Seuss Ville!!!"},{char="empty",text="ummm... ...grass?"}},characters01={{name="will01"},{name="goblinKing01"}},characters02={{name="sillyGoose01"},{name="smallGoose01"},{name="empty"}}},{dialogs={{char="empty",text="The thing we practiced!"},{char="empty",text="..."},{char="empty",text="Oh right!"},{char="empty",text="..right right right..."}},characters01={{name="will01"},{name="goblinKing01"}},characters02={{name="sillyGoose01"},{name="smallGoose01"},{name="empty"}}}},coordinates={row=0,col=0},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=false,isEndScene=false,isStartScene=true,maxRow=0,maxCol=0},{name="stump",frames={{dialogs={{char="looney01",text="It was late one dark night"},{char="looney01",text="And I slept by the stump."},{char="looney01",text="Not a critter was creeping."},{char="goblinKing01",text="Not a WHAP, WIMP, or WHUMP?"}},characters01={{name="empty"},{name="looney01"}},characters02={{name="goblinKing01"},{name="empty"},{name="empty"}}},{dialogs={{char="looney01",text="When a WHOMP from the woods"},{char="looney01",text="Made me leap from my bed"},{char="goblinKing01",text="In the cave where you slept?"},{char="looney01",text="Where I rested my head."}},characters01={{name="empty"},{name="looney01"}},characters02={{name="goblinKing01"},{name="empty"},{name="empty"}}},{dialogs={{char="looney01",text="Two yellow eyes peered in from the dark."},{char="looney01",text="\"Um hello... this is my cave!\""},{char="looney01",text="I said with some snark"}},characters01={{name="empty"},{name="looney01"}},characters02={{name="goblinKing01"},{name="empty"},{name="empty"}}},{dialogs={{char="empty",text="And flipped on the light."},{char="empty",text="It was only a shark"},{char="empty",text="And alone in the dark with the shark"},{char="empty",text="I remarked="}},characters01={{name="empty"},{name="looney01"}},characters02={{name="goblinKing01"},{name="empty"},{name="empty"}}}},coordinates={col=1,row=0},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=true,isEndScene=false,isStartScene=false,maxRow=0,maxCol=1},{name="goose01",frames={{dialogs={{char="goblinKing02",text="Ah ha ha ha ha ha!"},{char="slicerDicer01",text="What's so funny frog boy?"},{char="goblinKing02",text="It's your... it's that..."}},characters01={{name="slicerDicer01"},{name="trollKing01"}},characters02={{name="hopps01"},{name="drake"}}},{dialogs={{char="goblinKing02",text="...oh my gosh I can't even say it, because I'm laughing so hard."},{char="goblinKing02",text="...it's that puny... light... thingy you are waving at me"},{char="slicerDicer01",text="Ha Ha..."},{char="slicerDicer01",text="Laugh it up Lizard Legs!"},{char="slicerDicer01",text="I'm here for the bounty, not for your B roll antics"}},characters01={{name="slicerDicer01"},{name="trollKing01"}},characters02={{name="hopps01"},{name="drake"}}},{dialogs={{char="goblinKing02",text="YOUR TOY IS NO MATCH FOR THE TROLL STICK!!!"},{char="slicerDicer01",text="Come at me you bog bunny!"},{char="goblinKing02",text="Oooooh, spicy..."}},characters01={{name="slicerDicer01"},{name="trollKing01"}},characters02={{name="hopps01"},{name="drake"}}},{dialogs={{char="hopps01",text="And all my life, it's all I ever wanted to do..."},{char="empty",text="To be a babysitter?"},{char="empty",text="Yeah...   it's like... it's my destiny."},{char="empty",text="Wow. Hey, wanna see me spin this green thing around?"},{char="empty",text="Ok."}},characters01={{name="slicerDicer01"},{name="trollKing01"}},characters02={{name="hopps01"},{name="drake"}}},{dialogs={{char="empty",text="I wrote a letter to my mom."},{char="empty",text="Can I read it?"},{char="empty",text="Sure, here you go. I used my best guess spelling."}},characters01={{name="slicerDicer01"},{name="trollKing01"}},characters02={{name="hopps01"},{name="drake"}}},{dialogs={{char="empty",text="DeeR MoM"},{char="empty",text="Horse lollipop tuna fish?"},{char="empty",text="those are some umm... pretty creative guesses..."}},characters01={{name="slicerDicer01"},{name="trollKing01"}},characters02={{name="hopps01"},{name="drake"}}},{dialogs={{char="drake",text="Thanks!  Do you think my mom will understand it?"},{char="empty",text="Not in a million years."},{char="empty",text="Oh rats..."}},characters01={{name="slicerDicer01"},{name="trollKing01"}},characters02={{name="hopps01"},{name="drake"}}},{dialogs={{char="goblinKing02",text="You!  Strange grey boy!  Say that again!"},{char="drake",text="Huh?"},{char="goblinKing02",text="That thing you said!  Say it again!"},{char="drake",text="Horse lollipop tuna fish?"}},characters01={{name="slicerDicer01"},{name="empty"}},characters02={{name="goblinKing02"},{name="hopps01"},{name="drake"}}},{dialogs={{char="empty",text="That's it.  That's the secret code!"},{char="empty",text="It is real!"},{char="empty",text="When drake was writing his letter, the system saved his password in it's autocomplete index!"},{char="empty",text="Now it just auto-completed the answer to Zorblat's riddle!"},{char="slicerDicer01",text="Now, we can finally open the portal!"},{char="empty",text="Hey guys!  Watch me spin this green thing around!"}},characters01={{name="slicerDicer01"},{name="empty"}},characters02={{name="goblinKing02"},{name="hopps01"},{name="drake"}}}},coordinates={col=2,row=0},showBottomPath=false,showRightPath=false,showTopPath=false,showLeftPath=true,isEndScene=true,isStartScene=false,maxRow=0,maxCol=2}},gridSize={rows=1,cols=3}}, {questTitle="The Bad Baby Sitter",words="STINK,THINK,WINK,DRINK",startSceneCoords={row=0,col=0},endSceneCoords={row=0,col=0},sceneConfigs={{name="home",frames={{dialogs={{char="lucy07",text="Well well well..."},{char="freckle01",text="Hi."},{char="lucy07",text="What do we have here?"},{char="freckle01",text="My name is Elanor."}},characters01={{name="scribbleDragon01"},{name="lucy07"},{name="freckle01"}},characters02={{name="empty"}}},{dialogs={{char="lucy07",text="Hello Elanor."},{char="lucy07",text="Well aren't you a perky little peanut!"},{char="freckle01",text="Tee Hee Hee..."}},characters01={{name="scribbleDragon01"},{name="lucy07"},{name="freckle01"}},characters02={{name="empty"}}},{dialogs={{char="lucy07",text="Now get out of my way, you perky little peanut..."},{char="freckle01",text="...<sniffle> ..."},{char="lucy07",text="or I'll chop you into pieces with my sword!"},{char="freckle01",text="Waaaaaaah!!!!!!!"},{char="freckle01",text="Mommmmyyyyyyyyyyyy!!!"}},characters01={{name="scribbleDragon01"},{name="lucy07"},{name="freckle01"}},characters02={{name="empty"}}},{dialogs={{char="hopps01",text="I can't make that!  You know I have to babysit until 8=00!"},{char="hopps01",text="No no no!"},{char="hopps01",text="...I want to go with you guys..."}},characters01={{name="empty"}},characters02={{name="hopps01"},{name="barkPhone01"}}},{dialogs={{char="freckle01",text="Mommmmyyyyyyyyyyyy!!!"},{char="hopps01",text="Ugghhh!  Hold on...  These kids are a night mare..."},{char="hopps01",text="Can you little monsters stop hurting each other for 2 minutes so I can talk on the phone?"},{char="lucy07small",text="We want you to play with us!"},{char="hopps01",text="You are such brats..."}},characters01={{name="lucy07small"},{name="freckle01"}},characters02={{name="empty"},{name="hopps01"},{name="barkPhone01"},{name="empty"}}},{dialogs={{char="freckle01",text="Lucinda hurt me."},{char="hopps01",text="Lucy!  What did I say about that sword???"},{char="lucy07",text="Stab your sister?"},{char="hopps01",text="Give it to me right now!"},{char="lucy07",text="You're not the boss of me!"}},characters01={{name="lucy07"},{name="freckle01"}},characters02={{name="empty"},{name="hopps01"},{name="barkPhone01"},{name="empty"}}},{dialogs={{char="freckle01",text="She hurt my feelings."},{char="hopps01",text="Oh why me?"},{char="hopps01",text="Brandon, give me a sec!"},{char="hopps01",text="Lucy! Do a repair with your little sister right now!"},{char="hopps01",text="No Brandon, I don't need to go... just give me a sec."}},characters01={{name="lucy07"},{name="freckle01"},{name="empty"},{name="empty"},{name="empty"}},characters02={{name="empty"},{name="hopps01"},{name="barkPhone01"},{name="empty"}}},{dialogs={{char="hopps01",text="Lucinda Liverwurst LemonCake! You do a repair with your sister this instant!"},{char="hopps01",text="...or will make the call!"},{char="lucy07",text="..."},{char="freckle01",text="..."}},characters01={{name="lucy07"},{name="freckle01"},{name="empty"},{name="empty"},{name="empty"}},characters02={{name="empty"},{name="hopps01"},{name="barkPhone01"},{name="empty"}}},{dialogs={{char="empty",text="Yeah."},{char="empty",text="I'll do it.  I'll call Bugflix and tell them to stop work on the new Prancin Ponies movie..."},{char="empty",text="That's the one you like right? Keeper of the Emerald Dragon..."},{char="empty",text="I'll call Brad.  I'll tell him to cancel it."}},characters01={{name="lucy07"},{name="freckle01"},{name="empty"},{name="empty"},{name="empty"}},characters02={{name="empty"},{name="hopps01"},{name="barkPhone01"},{name="empty"}}},{dialogs={{char="empty",text="I miss Brad!   I think I'll call him right now."},{char="empty",text="Nooooooo!!!!"},{char="empty",text="Noooooooo!!!!!"},{char="empty",text="We'll be good!!! We'll be good!!!"}},characters01={{name="lucy07"},{name="freckle01"},{name="empty"},{name="empty"},{name="empty"}},characters02={{name="empty"},{name="hopps01"},{name="barkPhone01"},{name="empty"}}},{dialogs={{char="hopps01",text="Not another peep!"},{char="empty",text="Zip!"},{char="empty",text="Zip!"}},characters01={{name="lucy07"},{name="freckle01"},{name="empty"},{name="empty"},{name="empty"}},characters02={{name="empty"},{name="hopps01"},{name="barkPhone01"},{name="empty"}}},{dialogs={{char="hopps01",text="Now go do your repair while I call Brandon back."},{char="empty",text="We forget how..."},{char="empty",text="Then you should stop hurting each other!"},{char="empty",text="Uggghhh, just ask Alexa."},{char="empty",text="Yay Alexa!"}},characters01={{name="lucy07"},{name="freckle01"},{name="empty"},{name="empty"},{name="empty"}},characters02={{name="empty"},{name="hopps01"},{name="barkPhone01"},{name="empty"}}},{dialogs={{char="lucy07",text="You're mean."},{char="empty",text="Wow, you figured it out."},{char="empty",text="Congratulations, Albert Einstein."},{char="empty",text="You should have your own detective show.  Ha!"}},characters01={{name="lucy07"},{name="freckle01"},{name="empty"},{name="empty"},{name="empty"}},characters02={{name="hopps01"},{name="barkPhone01"},{name="empty"}}}},coordinates={row=0,col=0},showBottomPath=false,showRightPath=false,showTopPath=false,showLeftPath=false,isEndScene=true,isStartScene=true,maxRow=0,maxCol=0}},gridSize={rows=1,cols=1}}, {questTitle="Gilbert Gossington is Gone!",words="KING,SING,SWING,PING,RING,STING",startSceneCoords={row=0,col=0},endSceneCoords={col=2,row=1},sceneConfigs={{name="barn",frames={{dialogs={{char="goose01",text="Giillll-beeeeert....."},{char="goose01",text="Giiiiil-beeeeert....."},{char="goose01",text="oh, Gilbert, my grubby grey-eyed gosling..."},{char="goose01",text="..where in the world have you mis-placed your self?"},{char="chick01",text="Peep!  Peep!"},{char="goat01",text="Me-ee-ee-eh!"}},characters01={{name="goose01"}},characters02={{name="chick01"},{name="goat01"}}}},coordinates={row=0,col=0},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=false,isEndScene=false,isStartScene=true,maxRow=0,maxCol=0},{name="coop",frames={{dialogs={{char="goose01",text="Oh good-ness!  A person."},{char="hopps01",text="...Brandon, I know!  I know that!  But the trip..."},{char="hopps01",text="LUCY!"},{char="hopps01",text="Put that sword back in that.. that.. other thing... or I will..."}},characters01={{name="goose01"}},characters02={{name="hopps01"},{name="barkPhone01"},{name="lucy07small"},{name="britta04"}}},{dialogs={{char="lucy07small",text="You don't know the name of this!"},{char="lucy07small",text="I'm smarter than you!"},{char="goose01",text="Oh dear friend!"}},characters01={{name="goose01"}},characters02={{name="hopps01"},{name="barkPhone01"},{name="lucy07small"},{name="britta04"}}},{dialogs={{char="hopps01",text="And stop hurting your sister!"},{char="freckle01",text="Ooooooowwwwww!  She hurt me!!!"},{char="lucy07small",text="You said you would play with us!"}},characters01={{name="goose01"}},characters02={{name="hopps01"},{name="barkPhone01"},{name="lucy07small"},{name="freckle01"}}},{dialogs={{char="goose01",text="oh Sweet salvation!"},{char="hopps01",text="<please don't be talking to me...>"},{char="goose01",text="Oh dear friend!"},{char="hopps01",text="<please, please please, please puh-leeeeeeease...  don't be talking to me...>"},{char="goose01",text="Kind stranger!  I'm so fortunate to have found you."}},characters01={{name="goose01"}},characters02={{name="hopps01"},{name="barkPhone01"},{name="lucy07small"},{name="freckle01"}}},{dialogs={{char="hopps01",text="...oh come ON!!!!!!"},{char="hopps01",text="Brandon... hold on for literally just 3 seconds..."},{char="hopps01",text="I don't want to call you back!"},{char="hopps01",text="Sweet mother monkey milk!  What can possibly be so important????"}},characters01={{name="goose01"}},characters02={{name="hopps01"},{name="barkPhone01"},{name="lucy07small"},{name="freckle01"}}},{dialogs={{char="goose01",text="It's Gilbert..."},{char="lucy07small",text="Who's Gilbert?"},{char="goose01",text="He's... He's..."},{char="goose01",text="He's what? What is Gilbert?"},{char="lucy07small",text="Spit it out mother goose!"}},characters01={{name="goose01"}},characters02={{name="hopps01"},{name="barkPhone01"},{name="lucy07small"},{name="freckle01"}}},{dialogs={{char="goose01",text="Gilbert Gossington... is gone!"},{char="lucy07small",text="<gasp>"},{char="freckle01",text="<gasp>"}},characters01={{name="goose01"}},characters02={{name="hopps01"},{name="barkPhone01"},{name="lucy07small"},{name="freckle01"}}},{dialogs={{char="empty",text="We can find him!  We can find him!"},{char="empty",text="Please Franny, please!"},{char="empty",text="Franny, are you there?  Rhino just pulled up in his Jeep.  We can pick you up in 10 minutes."},{char="barkPhone01",text="Can we! Can we!"},{char="empty",text="Ugggh... Stop it!  Everybody stop it!"},{char="empty",text="Lucy, you can go help find Gilbert Gargamel Goose-hopper, but be back in ten minutes."},{char="empty",text="Brandon.  Come pick me up.  I'm ready."},{char="empty",text="-----------"},{char="empty",text="-----------"},{char="empty",text="-----------"}},characters01={{name="goose01"}},characters02={{name="hopps01"},{name="barkPhone01"},{name="lucy07small"},{name="maldara01"}}}},coordinates={row=0,col=1},showBottomPath=true,showRightPath=false,showTopPath=false,showLeftPath=true,isEndScene=false,isStartScene=false,maxRow=0,maxCol=1},{name="well01",frames={{dialogs={{char="hopps01",text="Hey Franny!"},{char="scramper01",text="Never babysit!  Ever! No matter how much they pay you..."},{char="hopps01",text="Those kids are adorable!"},{char="hopps01",text="...don't even get me started..."},{char="skink01",text="...they are a couple of ticks in pig tails..."},{char="saki",text="To the lake!"},{char="empty",text="Tally ho!"}},characters01={{name="empty"},{name="empty"},{name="hopps01"}},characters02={{name="scramper01"},{name="skink01"},{name="saki"}}},{dialogs={{char="hopps01",text="Did you bring it?"},{char="scramper01",text="Yup.  Take a look!"},{char="hopps01",text="...the Staff of Truth..."},{char="hopps01",text="...it's... it's so......."},{char="saki",text="...enchanting.....?"}},characters01={{name="empty"},{name="empty"},{name="hopps01"},{name="staffOfTruth01"}},characters02={{name="scramper01"},{name="skink01"},{name="saki"}}}},coordinates={row=1,col=1},showBottomPath=false,showRightPath=true,showTopPath=true,showLeftPath=false,isEndScene=false,isStartScene=false,maxRow=1,maxCol=1},{name="lake",frames={{dialogs={{char="looney01cu",text="That's quite a trophy..."},{char="hopps01",text="Creepy old leperchaun!"},{char="scramper01",text="Wha... What are you doing here?"},{char="looney01cu",text="Ha. Funny story. It was choice time, and I happened to be walking by with my water color set and easel, so I thought I might stop and paint the sun set."},{char="hopps01",text="oh... I didn't know you... wait. ...you don't have any water colors..."},{char="saki",text="Where is the Staff small rabbit?"},{char="looney01cu",text="Shall we do this the easy way of the hard way?"}},characters01={{name="empty"},{name="empty"},{name="hopps01"}},characters02={{name="scramper01"},{name="looney01cu"},{name="whammer01"}}}},coordinates={col=2,row=1},showBottomPath=false,showRightPath=false,showTopPath=false,showLeftPath=true,isEndScene=true,isStartScene=false,maxRow=1,maxCol=2}},gridSize={rows=2,cols=3}}, {questTitle="105 - Hey look! Grass!",words="ROBLOX,ROBUX,ROBOT,ROPE",startSceneCoords={col=0,row=0},endSceneCoords={col=3,row=0},sceneConfigs={{name="hill",frames={{dialogs={{char="sillyGoose01",text="Oh wow!"},{char="cow01",text="Mooo!  Mooo!"},{char="sillyGoose01",text="Hold on a sec..."},{char="cow01",text="Yuuuummm!"},{char="sillyGoose01",text="This is..."},{char="sillyGoose01",text="This is... grass..."}},characters01={{name="sillyGoose01"}},characters02={{name="cow01"}}},{dialogs={{char="sillyGoose01",text="I love grass!"},{char="cow01",text="Me too!"},{char="sillyGoose01",text="Grass is the best!"},{char="cow01",text="Buuuurrrp!"},{char="sillyGoose01",text="I just..."},{char="sillyGoose01",text="I just... love grass!"}},characters01={{name="sillyGoose01"}},characters02={{name="cow01"}}},{dialogs={{char="littleGoose",text="Mom, mom!  Can we eat grass?"},{char="queenGoose01",text="Oh! No no no no!"},{char="queenGoose01",text="We do not eat grass!"},{char="littleGoose",text="But moooooooommmmm!!!"},{char="littleGoose",text="I want to eat grass!"},{char="queenGoose01",text="You are not a grass goose."}},characters01={{name="sillyGoose01"}},characters02={{name="littleGoose"},{name="queenGoose01"}}},{dialogs={{char="littleGoose",text="But that goose eats grass..."},{char="queenGoose01",text="Do not look at that silly goose, you silly goose!"},{char="queenGoose01",text="Eat your worms."},{char="littleGoose",text="I do not like worms."}},characters01={{name="sillyGoose01"}},characters02={{name="littleGoose"},{name="queenGoose01"}}},{dialogs={{char="queenGoose01",text="Fine.  Go eat grass."},{char="littleGoose",text="Yay!"}},characters01={{name="sillyGoose01"}},characters02={{name="littleGoose"},{name="queenGoose01"}}}},coordinates={col=0,row=0},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=false,isEndScene=false,isStartScene=true,maxRow=0,maxCol=0},{name="stump",frames={{dialogs={{char="littleGoose",text="I like grass too!"},{char="sillyGoose01",text="Wait, you like grass?"},{char="littleGoose",text="I love grass!"},{char="sillyGoose01",text="Me too!"},{char="littleGoose",text="And mom says I can eat it!"},{char="sillyGoose01",text="Me too!"}},characters01={{name="sillyGoose01"},{name="littleGoose"}},characters02={{name="empty"}}},{dialogs={{char="littleGoose",text="This grass is wet."},{char="sillyGoose01",text="That grass is wet?"},{char="littleGoose",text="Yes, it is all wet."},{char="sillyGoose01",text="Stop.  Do not eat the wet grass!"}},characters01={{name="sillyGoose01"},{name="littleGoose"}},characters02={{name="empty"}}},{dialogs={{char="littleGoose",text="Why not?"},{char="sillyGoose01",text="I went pee pee on that grass."},{char="littleGoose",text="Um gross..."},{char="sillyGoose01",text="Yes.  I just... I just kinda had to go."}},characters01={{name="sillyGoose01"},{name="littleGoose"}},characters02={{name="empty"}}},{dialogs={{char="littleGoose",text="Yuck.  Maybe say that at the start next time.."},{char="sillyGoose01",text="Yes.  Right. Good idea."},{char="littleGoose",text="Did you go pee pee anywhere else?"},{char="sillyGoose01",text="Well, now that I think about it, I go pee..."},{char="sillyGoose01",text="um.... kinda every where...."}},characters01={{name="sillyGoose01"},{name="littleGoose"}},characters02={{name="empty"}}},{dialogs={{char="littleGoose",text="Wow... and gross."},{char="sillyGoose01",text="Yeah... like... every day..."},{char="littleGoose",text="<gasp>"},{char="sillyGoose01",text="...all day long..."}},characters01={{name="sillyGoose01"},{name="littleGoose"}},characters02={{name="empty"}}},{dialogs={{char="littleGoose",text="Let's pretend we never talked about this."},{char="sillyGoose01",text="Good idea."},{char="littleGoose",text="I love grass!"},{char="sillyGoose01",text="Me too!"}},characters01={{name="sillyGoose01"},{name="littleGoose"}},characters02={{name="empty"}}},{dialogs={{char="littleGoose",text="Want to go look for baby troll?"},{char="sillyGoose01",text="Ok."},{char="littleGoose",text="He lives in the bog."},{char="sillyGoose01",text="I love the bog!"}},characters01={{name="sillyGoose01"},{name="littleGoose"}},characters02={{name="empty"}}}},coordinates={row=0,col=1},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=true,isEndScene=false,isStartScene=false,maxRow=0,maxCol=1},{name="bog",frames={{dialogs={{char="littleGoose",text="I see a bug..."},{char="sillyGoose01",text="I see a bug... in a bog!"},{char="littleGoose",text="A big bug?"},{char="sillyGoose01",text="A bog bug."}},characters01={{name="sillyGoose01"},{name="littleGoose"}},characters02={{name="bug"}}},{dialogs={{char="littleGoose",text="Put the bog bug in the big bag!"},{char="sillyGoose01",text="Ok."}},characters01={{name="sillyGoose01"},{name="littleGoose"}},characters02={{name="bug"}}}},coordinates={row=0,col=2},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=true,isEndScene=false,isStartScene=false,maxRow=0,maxCol=2},{name="log",frames={{dialogs={{char="sillyGoose01",text="I see a dog..."},{char="littleGoose",text="I see a dog... on a log..."},{char="sillyGoose01",text="Hi little doggy."},{char="littleGoose",text="Are you lost?"},{char="angus01",text="bark! bark!"}},characters01={{name="sillyGoose01"},{name="littleGoose"}},characters02={{name="angus01"}}},{dialogs={{char="littleGoose",text="Little doggy, you can play with us."},{char="angus01",text="Ruff Ruff!"},{char="angus01",text="Me want mommy!"},{char="sillyGoose01",text="We will find your mommy!"}},characters01={{name="sillyGoose01"},{name="littleGoose"}},characters02={{name="angus01"}}}},coordinates={col=3,row=0},showBottomPath=false,showRightPath=false,showTopPath=false,showLeftPath=true,isEndScene=true,isStartScene=false,maxRow=0,maxCol=3}},gridSize={rows=1,cols=4}}, {questTitle="001 - Troll Need Pet",startSceneCoords={col=0,row=0},endSceneCoords={col=2,row=2},sceneConfigs={{name="home",frames={{dialogs={{char="troll02",text="GOLD! GOLD!"},{char="babyTroll01",text="Daddy! Daddy!"},{char="troll02",text="TROLL NEED GOLD!"},{char="babyTroll01",text="Baby Troll want pet!"},{char="troll02",text="BABY TROLL WANT PET?"},{char="babyTroll01",text="Me want pet!"}},characters01={{name="troll02"},{name="babyTroll01"}},characters02={{name="empty"}}},{dialogs={{char="troll02",text="BABY TROLL GET FROG."},{char="babyTroll01",text="Me want dog!"},{char="troll02",text="FROG GOOD PET."},{char="troll02",text="BABY TROLL GET FROG."}},characters01={{name="troll02"},{name="babyTroll01"}},characters02={{name="empty"}}},{dialogs={{char="babyTroll01",text="Waaaa!  Me want dog!"},{char="troll02",text="FROG GOOD PET."},{char="babyTroll01",text="Me want dog!"},{char="troll02",text="BABY TROLL GO TO BOG."},{char="troll02",text="GET FROG IN BOG."},{char="babyTroll01",text="Uuuuugh.... Fine."}},characters01={{name="troll02"},{name="babyTroll01"}},characters02={{name="empty"}}}},coordinates={col=0,row=0},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=false,isEndScene=false,isStartScene=true,maxRow=0,maxCol=0},{name="log",frames={{dialogs={{char="babyTroll01",text="Me find bun!"},{char="cow01",text="Moooooo!"},{char="babyTroll01",text="Me run with bun!"},{char="cow01",text="Moooooo!"},{char="babyTroll01",text="Fun Fun Fun!"}},characters01={{name="babyTroll01"}},characters02={{name="bun"},{name="cow01"}}}},coordinates={row=0,col=1},showBottomPath=true,showRightPath=true,showTopPath=false,showLeftPath=true,isEndScene=false,isStartScene=false,maxRow=0,maxCol=1},{name="stump",frames={{dialogs={{char="babyTroll01",text="Run run run!"},{char="elf",text="DO NOT GO IN THE CAVE!!!"},{char="babyTroll01",text="Fun fun fun!"},{char="elf",text="DO NOT GO IN THE CAVE!!!"}},characters01={{name="babyTroll01"}},characters02={{name="elf"},{name="dress06"}}}},coordinates={row=0,col=2},showBottomPath=false,showRightPath=true,showTopPath=false,showLeftPath=true,isEndScene=false,isStartScene=false,maxRow=0,maxCol=2},{name="pond",frames={{dialogs={{char="babyTroll01",text="I see a cub!"},{char="cub",text="I need my Mommy!"},{char="babyTroll01",text="Me need frog!"},{char="cub",text="Mommy!!!"},{char="babyTroll01",text="Froggy!!!"}},characters01={{name="babyTroll01"}},characters02={{name="cub"}}}},coordinates={row=0,col=3},showBottomPath=false,showRightPath=false,showTopPath=false,showLeftPath=true,isEndScene=false,isStartScene=false,maxRow=0,maxCol=3}},gridSize={rows=1,cols=4}}, }
 
 return module
 
