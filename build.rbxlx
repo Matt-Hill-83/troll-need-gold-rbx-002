@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-915.70575</X>
-					<Y>-233.613922</Y>
-					<Z>-600.689331</Z>
-					<R00>-0.940683246</R00>
-					<R01>0.106110059</R01>
-					<R02>-0.322266549</R02>
+					<X>-931.855469</X>
+					<Y>-215.635956</Y>
+					<Z>-581.33136</Z>
+					<R00>-0.760276198</R00>
+					<R01>0.360764176</R01>
+					<R02>-0.540212274</R02>
 					<R10>-0</R10>
-					<R11>0.949837148</R11>
-					<R12>0.312745064</R12>
-					<R20>0.339286119</R20>
-					<R21>0.294194043</R21>
-					<R22>-0.893495858</R22>
+					<R11>0.83160764</R11>
+					<R12>0.555363655</R12>
+					<R20>0.64959991</R20>
+					<R21>0.422229767</R21>
+					<R22>-0.632251561</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -32154,7 +32154,7 @@ tool.Handle.Touched:Connect(detach)]]></ProtectedString>
 								<float name="TopParamB">0.5</float>
 								<token name="TopSurface">0</token>
 								<token name="TopSurfaceInput">0</token>
-								<float name="Transparency">0.699999988</float>
+								<float name="Transparency">1</float>
 								<Vector3 name="Velocity">
 									<X>0</X>
 									<Y>0</Y>
@@ -32213,7 +32213,7 @@ tool.Handle.Touched:Connect(detach)]]></ProtectedString>
 							<token name="LeftSurfaceInput">0</token>
 							<bool name="Locked">false</bool>
 							<bool name="Massless">false</bool>
-							<token name="Material">288</token>
+							<token name="Material">256</token>
 							<string name="Name">LetterFallBase</string>
 							<float name="Reflectance">0</float>
 							<float name="RightParamA">-0.5</float>
@@ -51515,7 +51515,7 @@ function createStyledLetterBlock(props)
     local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                              "LetterBlockTemplates")
     local letterBlockTemplate = Utils.getFirstDescendantByName(
-                                    letterBlockFolder, "LBRack")
+                                    letterBlockFolder, "LBDeadLetter")
 
     local newLetter = letterBlockTemplate:Clone()
 

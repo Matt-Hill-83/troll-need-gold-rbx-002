@@ -117,7 +117,7 @@ function createStyledLetterBlock(props)
     local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                              "LetterBlockTemplates")
     local letterBlockTemplate = Utils.getFirstDescendantByName(
-                                    letterBlockFolder, "LBRack")
+                                    letterBlockFolder, "LBDeadLetter")
 
     local newLetter = letterBlockTemplate:Clone()
 
