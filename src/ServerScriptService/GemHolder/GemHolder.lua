@@ -32,7 +32,6 @@ function styleGemHolder(props)
         bigGem.Handle.Color = grey
         bigGem.Enabled = false
         bigGem.Handle.Name = "NotHandle"
-        -- bigGem.Handle.Name = "zzzz"
     else
         print('is not a receiver')
         print('is not a receiver')
@@ -41,7 +40,7 @@ function styleGemHolder(props)
     end
 
     local gemHolderState = {
-        hasGem = hasGem,
+        hasGem = not isReceiver,
         takeGemDebounce = false,
         leaveGemDebounce = false,
         targetGemName = targetGemName,
@@ -72,35 +71,16 @@ function styleGemHolder(props)
                 -- 
             end
 
-            print('otherPart' .. ' - start');
-            print(otherPart);
             local partParent = otherPart.Parent
-            print('partParent' .. ' - start');
-            print(partParent);
             local match = partParent.Name == gemHolderState.targetGemName
             if match then
-
                 print("correctGem")
-                print("correctGem")
-                print("correctGem")
-                print("correctGem")
-
-                print('gemHolderState' .. ' - start');
-                print(gemHolderState);
-
                 local bg = gemHolderState.bigGem
-                print('bg' .. ' - start');
-                print(bg);
                 bg.Enabled = false
 
-                print('otherPart' .. ' - start');
-                print(otherPart);
                 bg.NotHandle.Color = otherPart.Color
-                -- bg.NotHandle.Color = red
                 bigGem.NotHandle.Transparency = 0
-                -- bigGem.Handle.Name = "NotHandle"
                 partParent:Destroy()
-                -- onCorrectItemDropped()
             end
             gemHolderState.leaveGemDebounce = false
         end
@@ -121,15 +101,24 @@ function styleGemHolder(props)
         -- If the gem Handle is touched by a human, disable the hinge and 
         -- stop the rotation so they can take it.
         local detach = function(otherPart)
+            print('detach' .. ' - start');
+            print(detach);
             if gemHolderState.takeGemDebounce == true then return end
             gemHolderState.takeGemDebounce = true
 
             if (gemHolderState.hasGem) then
                 local humanOther = otherPart.Parent:FindFirstChild("Humanoid")
-                if not humanOther then return end
+                if not humanOther then
+                    gemHolderState.takeGemDebounce = false
+                    return
+
+                end
 
                 local hinge = bigGem:FindFirstChildWhichIsA("HingeConstraint",
                                                             true)
+
+                print('hinge' .. ' - start');
+                print(hinge);
                 local torque = bigGem:FindFirstChildWhichIsA("Torque", true)
                 hinge.Enabled = false
                 torque.Enabled = false

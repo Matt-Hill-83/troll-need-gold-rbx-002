@@ -1,7 +1,7 @@
 local module = {
 
-    -- singleScene = true,
-    singleScene = false,
+    singleScene = true,
+    -- singleScene = false,
 
     isDev = false,
     -- isDev = true,

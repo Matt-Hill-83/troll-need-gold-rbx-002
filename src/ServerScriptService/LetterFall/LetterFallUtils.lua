@@ -313,7 +313,7 @@ function createBalls(miniGameState)
     })
 
     local balls = {}
-    for count = 1, 8 do
+    for count = 1, 20 do
         -- for count = 1, 8 do
         local newBall = ball:Clone()
         local ballPart = newBall.Handle
