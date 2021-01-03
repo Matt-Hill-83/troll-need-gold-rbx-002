@@ -24,6 +24,9 @@ function setVisibility()
     local taggedPartsDestroy = CS:GetTagged("Destroy")
     for i, item in ipairs(taggedPartsDestroy) do item:Destroy() end
 
+    local taggedPartsDestroy = CS:GetTagged("Disable")
+    for i, item in ipairs(taggedPartsDestroy) do item.Enabled = false end
+
     if Constants.gameConfig.transparency then
         local taggedPartsTransparent = CS:GetTagged("Transparent")
         for i, item in ipairs(taggedPartsTransparent) do
@@ -60,21 +63,21 @@ function setVisibility()
     local hexTag = "HexWallTransparent"
     local taggedWalls = CS:GetTagged(hexTag)
     for i, wall in ipairs(taggedWalls) do
-        Utils.setItemHeight({item = wall, height = 4})
+        Utils.setItemHeight({item = wall, height = 2})
         local newWallHeight = 4
-        wall.Transparency = 1
+        wall.Transparency = 0
 
-        local newWall = wall:Clone()
+        -- local newWall = wall:Clone()
 
-        newWall.Parent = wall.Parent
-        newWall.Size = newWall.Size +
-                           Vector3.new(0, newWallHeight - newWall.Size.Y, 0)
-        newWall.Position = newWall.Position +
-                               Vector3.new(0,
-                                           -(wall.Size.Y - newWall.Size.Y) / 2,
-                                           0)
-        newWall.Transparency = 0
-        CS:RemoveTag(newWall, hexTag)
+        -- newWall.Parent = wall.Parent
+        -- newWall.Size = newWall.Size +
+        --                    Vector3.new(0, newWallHeight - newWall.Size.Y, 0)
+        -- newWall.Position = newWall.Position +
+        --                        Vector3.new(0,
+        --                                    -(wall.Size.Y - newWall.Size.Y) / 2,
+        --                                    0)
+        -- newWall.Transparency = 0
+        -- CS:RemoveTag(newWall, hexTag)
     end
 
     local skyBoxWalls = CS:GetTagged("SkyBoxWalls")
