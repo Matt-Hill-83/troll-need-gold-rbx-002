@@ -37,19 +37,18 @@ function module.configSkyboxTeleporter(props)
     local parentFolder = props.parentFolder
 
     local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
-    local skyBoxTeleporter = teleporterTemplate:Clone()
-    skyBoxTeleporter.Parent = parentFolder
+    local hexTeleporter = teleporterTemplate:Clone()
+    hexTeleporter.Parent = parentFolder
 
-    local labels2 = Utils.getDescendantsByName(skyBoxTeleporter,
-                                               "TeleporterLabel")
+    local labels2 = Utils.getDescendantsByName(hexTeleporter, "TeleporterLabel")
     for i, label in ipairs(labels2) do label.Text = questTitle end
 
     local teleporterPositioner = Utils.getFirstDescendantByName(parentFolder,
                                                                 "SkyBoxTeleporterPositioner")
 
-    skyBoxTeleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
-    skyBoxTeleporter.Name = "teleporter" .. "-sky-Q- xxx" .. questIndex
-    return skyBoxTeleporter
+    hexTeleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
+    hexTeleporter.Name = "teleporter" .. "-sky-Q- xxx" .. questIndex
+    return hexTeleporter
 end
 
 function module.configLocalTeleporter(props)
@@ -84,7 +83,7 @@ function module.addTeleporters(props)
     local questTitle = props.questTitle
     local isStartScene = props.isStartScene
     local isEndScene = props.isEndScene
-    local skyBoxTeleporter = props.skyBoxTeleporter
+    local hexTeleporter = props.hexTeleporter
     local localTPPositioner = props.localTPPositioner
 
     if (not isStartScene and not isEndScene) then return end
@@ -99,13 +98,13 @@ function module.addTeleporters(props)
     local localTeleporter = module.configLocalTeleporter(props)
 
     if isStartScene then
-        -- setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
-        -- setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
+        -- setLocalTPTargetToRemoteTP(hexTeleporter, localTeleporter)
+        -- setLocalTPTargetToRemoteTP(localTeleporter, hexTeleporter)
     end
 
     if isEndScene then
-        -- setLocalTPTargetToRemoteTP(skyBoxTeleporter, localTeleporter)
-        setLocalTPTargetToRemoteTP(localTeleporter, skyBoxTeleporter)
+        -- setLocalTPTargetToRemoteTP(hexTeleporter, localTeleporter)
+        setLocalTPTargetToRemoteTP(localTeleporter, hexTeleporter)
     end
 
     localTeleporter.PrimaryPart.Anchored = true

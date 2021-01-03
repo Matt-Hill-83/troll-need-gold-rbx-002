@@ -102,11 +102,7 @@ function styleLetterBlock(letterBlock, labelProps)
         Utils.mergeTables(label, labelProps)
     end
 end
--- 
--- 
--- 
--- 
--- zzz
+
 function createStyledLetterBlock(props)
     local miniGameState = props.miniGameState
     local templateName = props.templateName

@@ -79,8 +79,8 @@ function addWorld(props)
 
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
 
-    local skyBoxTeleporter = Teleporters.configSkyboxTeleporter(
-                                 {
+    local hexTeleporter = Teleporters.configSkyboxTeleporter(
+                              {
             questIndex = 0,
             questTitle = "All Quests",
             parentFolder = hexMount
@@ -89,7 +89,7 @@ function addWorld(props)
     local weld = Instance.new("WeldConstraint")
     weld.Name = "WeldConstraint-ppp" .. worldIndex
     weld.Parent = hexMount
-    weld.Part0 = skyBoxTeleporter.PrimaryPart
+    weld.Part0 = hexTeleporter.PrimaryPart
     weld.Part1 = hexMountPart
 
     -- add quests
@@ -196,7 +196,7 @@ function addWorld(props)
             gridPadding = gridPadding,
             questFolder = questFolder,
             questIndex = questIndex,
-            skyBoxTeleporter = skyBoxTeleporter
+            hexTeleporter = hexTeleporter
         }
         Scenes.addScenes(addScenesProps)
         sceneMountPlate:Destroy()
