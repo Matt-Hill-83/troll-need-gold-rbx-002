@@ -38,20 +38,17 @@ function generateDeadLetters(props)
 end
 
 function initLetterRack(miniGameState)
-    local runTimeLetterFolder = getRunTimeLetterFolder(miniGameState)
+    local runTimeLetterFolder = LetterFallUtils.getRunTimeLetterFolder(
+                                    miniGameState)
     miniGameState.runTimeLetterFolder = runTimeLetterFolder
 
     local letterFallFolder = miniGameState.letterFallFolder
-
     local letterRackFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                             "LetterRackFolder")
-
     local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                              "LetterBlockTemplates")
-
     local letterBlockTemplate = Utils.getFirstDescendantByName(
                                     letterBlockFolder, "LBRack")
-
     local letterPositioner = Utils.getFirstDescendantByName(letterRackFolder,
                                                             "RackLetterBlockPositioner")
 
@@ -137,19 +134,19 @@ function initLetterRack(miniGameState)
     })
 end
 
-function getRunTimeLetterFolder(miniGameState)
-    local letterFallFolder = miniGameState.letterFallFolder
-    local runtimeFolder = Utils.getOrCreateFolder(
-                              {
-            name = "RunTimeFolder",
-            parent = letterFallFolder
-        })
+-- function getRunTimeLetterFolder(miniGameState)
+--     local letterFallFolder = miniGameState.letterFallFolder
+--     local runtimeFolder = Utils.getOrCreateFolder(
+--                               {
+--             name = "RunTimeFolder",
+--             parent = letterFallFolder
+--         })
 
-    return Utils.getOrCreateFolder({
-        name = "RunTimeLetterRackFolder",
-        parent = runtimeFolder
-    })
-end
+--     return Utils.getOrCreateFolder({
+--         name = "RunTimeLetterRackFolder",
+--         parent = runtimeFolder
+--     })
+-- end
 
 module.initLetterRack = initLetterRack
 

@@ -82,11 +82,63 @@ function anchorColumn(props)
     end
 end
 
+function getRunTimeLetterFolder(miniGameState)
+    local letterFallFolder = miniGameState.letterFallFolder
+    local runtimeFolder = Utils.getOrCreateFolder(
+                              {
+            name = "RunTimeFolder",
+            parent = letterFallFolder
+        })
+
+    return Utils.getOrCreateFolder({
+        name = "RunTimeLetterRackFolder",
+        parent = runtimeFolder
+    })
+end
+
 function styleLetterBlock(letterBlock, labelProps)
     local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
     for i, label in ipairs(textLabels) do
         Utils.mergeTables(label, labelProps)
     end
+end
+-- 
+-- 
+-- 
+-- 
+-- zzz
+function createStyledLetterBlock(props)
+    local miniGameState = props.miniGameState
+    local allLetters = miniGameState.allLetters
+    local letterFallFolder = miniGameState.letterFallFolder
+    -- -- local templateName = miniGameState.templateName
+
+    local runTimeLetterFolder = module.getRunTimeLetterFolder(miniGameState)
+    local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
+                                                             "LetterBlockTemplates")
+    local letterBlockTemplate = Utils.getFirstDescendantByName(
+                                    letterBlockFolder, "LBRack")
+
+    local newLetter = letterBlockTemplate:Clone()
+
+    local rand = Utils.genRandom(1, #allLetters)
+
+    local char = allLetters[rand]
+    print('char' .. ' - start');
+    print(char);
+    module.applyLetterText({letterBlock = newLetter, char = char})
+    newLetter.Parent = letterFallFolder.Parent
+    newLetter.Anchored = false
+
+    -- module.applyStyleFromTemplate({
+    --     targetLetterBlock = newLetter,
+    --     templateName = "LBPurpleLight",
+    --     miniGameState = miniGameState
+    -- })
+    local letterId = "none"
+    local name = "randomLetter-" .. char .. "-" .. letterId
+    newLetter.Name = name
+    return newLetter
 end
 
 function applyStyleFromTemplate(props)
@@ -233,7 +285,7 @@ function createBalls(miniGameState)
     print(gemColor);
 
     local balls = {}
-    for count = 1, 10 do
+    for count = 1, 8 do
         local newBall = ball:Clone()
         local ballPart = newBall.Handle
 
@@ -243,6 +295,15 @@ function createBalls(miniGameState)
         ballPart.Color = gemColor
         Utils.enableChildWelds({part = newBall, enabled = false})
         table.insert(balls, newBall)
+
+        -- 
+        -- 
+        -- test letter creation
+
+        local newBlock = module.createStyledLetterBlock(
+                             {miniGameState = miniGameState})
+        newBlock.CFrame = ballPart.CFrame + Vector3.new(10, 30, 0)
+
     end
 
     -- while wait(6) do
@@ -369,4 +430,6 @@ module.applyStyleFromTemplate = applyStyleFromTemplate
 module.anchorColumn = anchorColumn
 module.getCoordsFromLetterName = getCoordsFromLetterName
 module.filterItemsByTag = filterItemsByTag
+module.createStyledLetterBlock = createStyledLetterBlock
+module.getRunTimeLetterFolder = getRunTimeLetterFolder
 return module
