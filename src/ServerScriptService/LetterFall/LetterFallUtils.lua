@@ -112,7 +112,6 @@ function createStyledLetterBlock(props)
     local templateName = props.templateName
     local allLetters = miniGameState.allLetters
     local letterFallFolder = miniGameState.letterFallFolder
-    -- -- local templateName = miniGameState.templateName
 
     local runTimeLetterFolder = module.getRunTimeLetterFolder(miniGameState)
     local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
@@ -125,8 +124,6 @@ function createStyledLetterBlock(props)
     local rand = Utils.genRandom(1, #allLetters)
 
     local char = allLetters[rand]
-    print('char' .. ' - start');
-    print(char);
     module.applyLetterText({letterBlock = newLetter, char = char})
     newLetter.Parent = letterFallFolder.Parent
     newLetter.Anchored = false
