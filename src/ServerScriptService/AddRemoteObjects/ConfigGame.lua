@@ -60,13 +60,9 @@ function setVisibility()
     local hexTag = "HexWallTransparent"
     local taggedWalls = CS:GetTagged(hexTag)
     for i, wall in ipairs(taggedWalls) do
-        Utils.setItemHeight({item = wall, height = 10})
-        local newWallHeight = 6
+        Utils.setItemHeight({item = wall, height = 4})
+        local newWallHeight = 4
         wall.Transparency = 1
-        -- wall.Transparency = 0.9
-        -- wall.CanCollide = true
-        -- wall.Anchored = true
-        -- wall.Color = Constants.colors.blue
 
         local newWall = wall:Clone()
 
