@@ -44,7 +44,7 @@ function module.configSkyboxTeleporter(props)
     for i, label in ipairs(labels2) do label.Text = questTitle end
 
     local teleporterPositioner = Utils.getFirstDescendantByName(parentFolder,
-                                                                "SkyBoxTeleporterPositioner")
+                                                                "HexTeleporterPositioner")
 
     hexTeleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
     hexTeleporter.Name = "teleporter" .. "-sky-Q- xxx" .. questIndex
