@@ -47,7 +47,7 @@ function module.configHexTeleporter(props)
                                                                 "HexTeleporterPositioner")
 
     hexTeleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
-    hexTeleporter.Name = "teleporter" .. "-sky-Q- xxx" .. questIndex
+    hexTeleporter.Name = "teleporter" .. "-hex-Q- xxx" .. questIndex
     return hexTeleporter
 end
 
