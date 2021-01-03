@@ -17,8 +17,8 @@ function addRemoteObjects()
     local questConfigs = SceneConfig.getScenesConfig()
 
     local myStuff = workspace:FindFirstChild("MyStuff")
-    -- local worlds = {questConfigs}
-    local worlds = {questConfigs, questConfigs}
+    local worlds = {questConfigs}
+    -- local worlds = {questConfigs, questConfigs}
     -- local worlds = {questConfigs, questConfigs, questConfigs}
 
     for worldIndex, questConfig in ipairs(worlds) do
