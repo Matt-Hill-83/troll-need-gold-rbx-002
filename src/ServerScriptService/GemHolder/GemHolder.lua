@@ -27,14 +27,10 @@ function styleGemHolder(props)
 
     if isReceiver then
 
-        print('is a receiver')
-        print('is a receiver')
         bigGem.Handle.Color = grey
         bigGem.Enabled = false
         bigGem.Handle.Name = "NotHandle"
     else
-        print('is not a receiver')
-        print('is not a receiver')
         local gemColor = Constants.gemColors[questIndex]
         bigGem.Handle.Color = gemColor
     end
@@ -50,15 +46,12 @@ function styleGemHolder(props)
     function onCorrectItemDropped()
         local manHoleCover = Utils.getFirstDescendantByName(letterFallFolder,
                                                             "ManHoleCover")
-        print('manHoleCover' .. ' - start');
-        print(manHoleCover);
         if manHoleCover then manHoleCover:Destroy() end
     end
 
     -- For depositing a gem
     local function onPartTouchedClosure(gemHolderState)
         local function onPartTouched(otherPart)
-            print('onPartTouched' .. ' - start');
 
             if gemHolderState.leaveGemDebounce == true then return end
             gemHolderState.leaveGemDebounce = true
@@ -82,7 +75,6 @@ function styleGemHolder(props)
             local partParent = otherPart.Parent
             local match = partParent.Name == gemHolderState.targetGemName
             if match then
-                print("correctGem")
                 local bg = gemHolderState.bigGem
                 bg.Enabled = false
 
@@ -100,11 +92,6 @@ function styleGemHolder(props)
     end
 
     if isReceiver then
-        print('is a receiver')
-        print('is a receiver')
-        print('is a receiver')
-        print('is a receiver')
-        print('is a receiver')
         stand.Touched:Connect(onPartTouchedClosure(gemHolderState))
     end
 
@@ -112,8 +99,6 @@ function styleGemHolder(props)
         -- If the gem Handle is touched by a human, disable the hinge and 
         -- stop the rotation so they can take it.
         local detach = function(otherPart)
-            print('detach' .. ' - start');
-            print(detach);
             if gemHolderState.takeGemDebounce == true then return end
             gemHolderState.takeGemDebounce = true
 
@@ -128,8 +113,6 @@ function styleGemHolder(props)
                 local hinge = bigGem:FindFirstChildWhichIsA("HingeConstraint",
                                                             true)
 
-                print('hinge' .. ' - start');
-                print(hinge);
                 local torque = bigGem:FindFirstChildWhichIsA("Torque", true)
                 hinge.Enabled = false
                 torque.Enabled = false
@@ -143,10 +126,6 @@ function styleGemHolder(props)
     -- If there is no gem initially, do not allow the gem to be taken
     if not isReceiver then
 
-        print('not a receiver')
-        print('not a receiver')
-        print('not a receiver')
-        print('not a receiver')
         bigGem.Handle.Touched:Connect(detachClosure(gemHolderState))
     end
 end
