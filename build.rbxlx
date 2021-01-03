@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-931.855469</X>
-					<Y>-215.635956</Y>
-					<Z>-581.33136</Z>
-					<R00>-0.760276198</R00>
-					<R01>0.360764176</R01>
-					<R02>-0.540212274</R02>
-					<R10>-0</R10>
-					<R11>0.83160764</R11>
-					<R12>0.555363655</R12>
-					<R20>0.64959991</R20>
-					<R21>0.422229767</R21>
-					<R22>-0.632251561</R22>
+					<X>-839.302856</X>
+					<Y>-210.323288</Y>
+					<Z>-558.420898</Z>
+					<R00>-0.414735138</R00>
+					<R01>-0.57058835</R01>
+					<R02>0.708818495</R02>
+					<R10>-1.4901163e-08</R10>
+					<R11>0.778970957</R11>
+					<R12>0.627059937</R12>
+					<R20>-0.909942269</R20>
+					<R21>0.260063797</R21>
+					<R22>-0.323066562</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -51507,6 +51507,7 @@ end
 -- zzz
 function createStyledLetterBlock(props)
     local miniGameState = props.miniGameState
+    local templateName = props.templateName
     local allLetters = miniGameState.allLetters
     local letterFallFolder = miniGameState.letterFallFolder
     -- -- local templateName = miniGameState.templateName
@@ -51515,7 +51516,7 @@ function createStyledLetterBlock(props)
     local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                              "LetterBlockTemplates")
     local letterBlockTemplate = Utils.getFirstDescendantByName(
-                                    letterBlockFolder, "LBDeadLetter")
+                                    letterBlockFolder, templateName)
 
     local newLetter = letterBlockTemplate:Clone()
 
@@ -51699,7 +51700,10 @@ function createBalls(miniGameState)
         -- test letter creation
 
         local newBlock = module.createStyledLetterBlock(
-                             {miniGameState = miniGameState})
+                             {
+                miniGameState = miniGameState,
+                templateName = "LBDeadLetter"
+            })
         newBlock.CFrame = ballPart.CFrame + Vector3.new(10, 30, 0)
 
     end

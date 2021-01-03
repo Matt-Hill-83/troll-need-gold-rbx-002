@@ -109,6 +109,7 @@ end
 -- zzz
 function createStyledLetterBlock(props)
     local miniGameState = props.miniGameState
+    local templateName = props.templateName
     local allLetters = miniGameState.allLetters
     local letterFallFolder = miniGameState.letterFallFolder
     -- -- local templateName = miniGameState.templateName
@@ -117,7 +118,7 @@ function createStyledLetterBlock(props)
     local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                              "LetterBlockTemplates")
     local letterBlockTemplate = Utils.getFirstDescendantByName(
-                                    letterBlockFolder, "LBDeadLetter")
+                                    letterBlockFolder, templateName)
 
     local newLetter = letterBlockTemplate:Clone()
 
@@ -301,7 +302,10 @@ function createBalls(miniGameState)
         -- test letter creation
 
         local newBlock = module.createStyledLetterBlock(
-                             {miniGameState = miniGameState})
+                             {
+                miniGameState = miniGameState,
+                templateName = "LBDeadLetter"
+            })
         newBlock.CFrame = ballPart.CFrame + Vector3.new(10, 30, 0)
 
     end
