@@ -278,11 +278,13 @@ function createBalls(miniGameState)
     local stand = Utils.getFirstDescendantByName(gemHolder, "Stand")
     print('stand' .. ' - start');
     print(stand);
+    print(stand.Color);
     local bigGem = gemHolder:FindFirstChildWhichIsA("Tool", true)
 
     local gemColor = Constants.gemColors[questIndex]
     bigGem.Handle.Color = gemColor
     stand.Color = gemColor
+    print(stand.Color);
 
     print('gemColor' .. ' - start');
     print(gemColor);

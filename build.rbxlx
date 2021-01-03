@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-946.29895</X>
-					<Y>-172.053467</Y>
-					<Z>-568.845398</Z>
-					<R00>-0.334705889</R00>
-					<R01>0.776947439</R01>
-					<R02>-0.533221185</R02>
-					<R10>1.49011612e-08</R10>
-					<R11>0.565858424</R11>
-					<R12>0.824502468</R12>
-					<R20>0.942322731</R20>
-					<R21>0.27596584</R21>
-					<R22>-0.189396128</R22>
+					<X>-867.407959</X>
+					<Y>-230.91835</Y>
+					<Z>-545.923828</Z>
+					<R00>-0.982160509</R00>
+					<R01>0.0775112659</R01>
+					<R02>-0.171326712</R02>
+					<R10>-0</R10>
+					<R11>0.911095321</R11>
+					<R12>0.412195742</R12>
+					<R20>0.188044801</R20>
+					<R21>0.404842377</R21>
+					<R22>-0.894841731</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-894.027893</X>
-					<Y>-252.878494</Y>
-					<Z>-550.279114</Z>
+					<X>-867.065308</X>
+					<Y>-231.742737</Y>
+					<Z>-544.134155</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -22291,6 +22291,32 @@ tool.Handle.Touched:Connect(detach)]]></ProtectedString>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
 								</Item>
+								<Item class="WeldConstraint" referent="RBX9f8276d4fd82407cb9171d9d97689a41">
+									<Properties>
+										<BinaryString name="AttributesSerialize"></BinaryString>
+										<CoordinateFrame name="CFrame0">
+											<X>0.123962402</X>
+											<Y>8.63485718</Y>
+											<Z>-8.03103638</Z>
+											<R00>0.000294426631</R00>
+											<R01>0.00361276674</R01>
+											<R02>0.999993443</R02>
+											<R10>-0.99137789</R10>
+											<R11>-0.131032199</R11>
+											<R12>0.000765281729</R12>
+											<R20>0.131034091</R20>
+											<R21>-0.991371632</R21>
+											<R22>0.00354303722</R22>
+										</CoordinateFrame>
+										<bool name="Enabled">true</bool>
+										<string name="Name">WeldConstraint</string>
+										<Ref name="Part0Internal">RBX9f77023b43f5471f93ff1e8f909e5224</Ref>
+										<Ref name="Part1Internal">RBX9eabc399b7f247079d49cc992c91e602</Ref>
+										<int64 name="SourceAssetId">-1</int64>
+										<int name="State">1</int>
+										<BinaryString name="Tags"></BinaryString>
+									</Properties>
+								</Item>
 							</Item>
 							<Item class="Model" referent="RBX37b7e81feaa94fd984baae1724844595">
 								<Properties>
@@ -22464,18 +22490,18 @@ tool.Handle.Touched:Connect(detach)]]></ProtectedString>
 										<token name="BottomSurface">0</token>
 										<token name="BottomSurfaceInput">0</token>
 										<CoordinateFrame name="CFrame">
-											<X>-858.606506</X>
-											<Y>-250.886826</Y>
-											<Z>-455.592468</Z>
-											<R00>2.80615604e-05</R00>
-											<R01>0.00182063784</R01>
-											<R02>0.999998331</R02>
-											<R10>-0.999997973</R10>
-											<R11>0.00201945566</R11>
-											<R12>2.43848444e-05</R12>
-											<R20>-0.00201940793</R20>
-											<R21>-0.999996305</R21>
-											<R22>0.00182069081</R22>
+											<X>-858.606567</X>
+											<Y>-259.116669</Y>
+											<Z>-455.59259</Z>
+											<R00>2.80555832e-05</R00>
+											<R01>0.00181898195</R01>
+											<R02>1.0000087</R02>
+											<R10>-1.00000489</R10>
+											<R11>0.00201946497</R11>
+											<R12>2.438511e-05</R12>
+											<R20>-0.00201939046</R20>
+											<R21>-1.00000691</R21>
+											<R22>0.00182070944</R22>
 										</CoordinateFrame>
 										<bool name="CanCollide">true</bool>
 										<bool name="CastShadow">true</bool>
@@ -52167,11 +52193,13 @@ function createBalls(miniGameState)
     local stand = Utils.getFirstDescendantByName(gemHolder, "Stand")
     print('stand' .. ' - start');
     print(stand);
+    print(stand.Color);
     local bigGem = gemHolder:FindFirstChildWhichIsA("Tool", true)
 
     local gemColor = Constants.gemColors[questIndex]
     bigGem.Handle.Color = gemColor
     stand.Color = gemColor
+    print(stand.Color);
 
     print('gemColor' .. ' - start');
     print(gemColor);
