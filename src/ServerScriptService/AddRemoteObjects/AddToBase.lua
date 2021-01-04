@@ -82,11 +82,10 @@ function addHexTeleporter(hexStand, worldIndex)
     local hexTeleporter = Teleporters.configTeleporter(
                               {
             worldIndex = worldIndex,
-            questTitle = "Island " .. worldIndex,
+            label = "Island " .. worldIndex,
             parentFolder = hexStand,
             positionerName = "HexTeleporterPositioner"
         })
-    -- hexTeleporter.PrimaryPart.Anchored = true
     return hexTeleporter
 end
 
@@ -94,21 +93,21 @@ function addHexReturnTeleporter(hexStand, worldIndex)
     local hexTeleporter = Teleporters.configTeleporter(
                               {
             worldIndex = worldIndex,
-            questTitle = "Cloud Ship",
+            label = "Cloud Ship",
             parentFolder = hexStand,
             positionerName = "HexReturnTPPositioner"
         })
-    -- hexTeleporter.PrimaryPart.Anchored = true
     return hexTeleporter
 end
 
 function addSkyBoxTeleporter(worldIndex)
     local myStuff = workspace:FindFirstChild("MyStuff")
-    local teleporter = Teleporters.configSkyBoxTeleporter(
+    local teleporter = Teleporters.configTeleporter(
                            {
             worldIndex = worldIndex,
-            worldTitle = "Island " .. worldIndex,
-            parentFolder = myStuff
+            label = "Island " .. worldIndex,
+            parentFolder = myStuff,
+            positionerName = "SkyBoxTeleporterPositioner"
         })
     teleporter.PrimaryPart.Anchored = true
     return teleporter

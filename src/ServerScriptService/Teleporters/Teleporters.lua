@@ -33,7 +33,7 @@ end
 
 function module.configTeleporter(props)
     local worldIndex = props.worldIndex
-    local questTitle = props.questTitle
+    local label = props.label
     local parentFolder = props.parentFolder
     local positionerName = props.positionerName
 
@@ -42,7 +42,7 @@ function module.configTeleporter(props)
     teleporter.Parent = parentFolder
 
     local labels2 = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
-    for i, label in ipairs(labels2) do label.Text = questTitle end
+    for i, label in ipairs(labels2) do label.Text = label end
 
     local positioner = Utils.getFirstDescendantByName(parentFolder,
                                                       positionerName)
@@ -88,12 +88,7 @@ function module.configLocalTeleporter(props)
     local localTeleporter = teleporterTemplate:Clone()
     localTeleporter.Parent = parent
 
-    local offsetY = (localTeleporter.PrimaryPart.Size.Y +
-                        localTPPositioner.Size.Y) / 2
-
     localTeleporter.PrimaryPart.CFrame = localTPPositioner.CFrame
-    -- localTeleporter.PrimaryPart.CFrame =
-    --     localTPPositioner.CFrame * CFrame.new(Vector3.new(0, offsetY, 0))
 
     local labels =
         Utils.getDescendantsByName(localTeleporter, "TeleporterLabel")
