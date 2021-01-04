@@ -125,8 +125,9 @@ function styleGemHolder(props)
 
     -- If there is no gem initially, do not allow the gem to be taken
     if not isReceiver then
-
-        bigGem.Handle.Touched:Connect(detachClosure(gemHolderState))
+        if bigGem then
+            bigGem.Handle.Touched:Connect(detachClosure(gemHolderState))
+        end
     end
 end
 
