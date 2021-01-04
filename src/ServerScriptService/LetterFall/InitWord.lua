@@ -31,8 +31,10 @@ function initWord(miniGameState)
         local wordBox = Utils.getFirstDescendantByName(newWordBoxFolder,
                                                        "WordBox")
 
-        local letterBlockFolder = Utils.getFirstDescendantByName(
-                                      letterFallFolder, "LetterBlockTemplates")
+        -- local letterBlockFolder = Utils.getFirstDescendantByName(
+        --                               letterFallFolder, "LetterBlockTemplates")
+
+        local letterBlockFolder = Utils.getFromTemplates("LetterBlockTemplates")
 
         local letterBlockTemplate = Utils.getFirstDescendantByName(
                                         letterBlockFolder, "LBPurpleLight")

@@ -30,7 +30,6 @@ function module.addMiniGame(props)
         foundLetters = {},
         foundWords = {},
         initCompleted = false,
-        letterBlockTemplateFolder = nil,
         renderedWords = {},
         wordLetters = {},
         words = words,
@@ -47,12 +46,9 @@ function module.addMiniGame(props)
 
         local letterFallFolder = Utils.getFirstDescendantByName(
                                      clonedLetterFallModel, "LetterFallFolder")
-        local letterBlockTemplateFolder =
-            Utils.getFirstDescendantByName(letterFallFolder,
-                                           "LetterBlockTemplates")
-        miniGameState.letterBlockTemplateFolder = letterBlockTemplateFolder
-        clonedLetterFallModel.Parent = parent
+        miniGameState.letterFallFolder = letterFallFolder
 
+        clonedLetterFallModel.Parent = parent
         local letterFallPart = clonedLetterFallModel.PrimaryPart
 
         local translateCFrameProps = {
@@ -71,7 +67,6 @@ function module.addMiniGame(props)
         letterFallPart.CFrame = newCFrame
         letterFallPart.Anchored = true
 
-        miniGameState.letterFallFolder = letterFallFolder
         InitLetterFall.initLetterFall(miniGameState)
         miniGame = clonedLetterFallModel
     end

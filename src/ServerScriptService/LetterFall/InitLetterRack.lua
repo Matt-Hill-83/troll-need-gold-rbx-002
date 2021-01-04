@@ -45,8 +45,9 @@ function initLetterRack(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local letterRackFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                             "LetterRackFolder")
-    local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
-                                                             "LetterBlockTemplates")
+
+    local letterBlockFolder = Utils.getFromTemplates("LetterBlockTemplates")
+
     local letterBlockTemplate = Utils.getFirstDescendantByName(
                                     letterBlockFolder, "LBRack")
     local letterPositioner = Utils.getFirstDescendantByName(letterRackFolder,

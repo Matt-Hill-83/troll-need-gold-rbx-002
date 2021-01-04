@@ -111,13 +111,14 @@ function createStyledLetterBlock(props)
     local letterFallFolder = miniGameState.letterFallFolder
 
     local runTimeLetterFolder = module.getRunTimeLetterFolder(miniGameState)
-    local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
-                                                             "LetterBlockTemplates")
+    -- local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
+    --                                                          "LetterBlockTemplates")
+
+    local letterBlockFolder = Utils.getFromTemplates("LetterBlockTemplates")
     local letterBlockTemplate = Utils.getFirstDescendantByName(
                                     letterBlockFolder, templateName)
 
     local newLetter = letterBlockTemplate:Clone()
-
     local rand = Utils.genRandom(1, #allLetters)
 
     local char = allLetters[rand]
@@ -141,7 +142,8 @@ function applyStyleFromTemplate(props)
     local templateName = props.templateName
     local miniGameState = props.miniGameState
 
-    local letterBlockTemplateFolder = miniGameState.letterBlockTemplateFolder
+    local letterBlockTemplateFolder = Utils.getFromTemplates(
+                                          "LetterBlockTemplates")
 
     local template = Utils.getFirstDescendantByName(letterBlockTemplateFolder,
                                                     templateName)
@@ -184,7 +186,6 @@ function styleLetterBlocks(props)
     local miniGameState = props.miniGameState
     local availWords = props.availWords
     local letterFallFolder = miniGameState.letterFallFolder
-    local letterBlockTemplateFolder = miniGameState.letterBlockTemplateFolder
 
     local availLetters = module.getAvailLettersDict(
                              {
