@@ -111,9 +111,6 @@ function createStyledLetterBlock(props)
     local letterFallFolder = miniGameState.letterFallFolder
 
     local runTimeLetterFolder = module.getRunTimeLetterFolder(miniGameState)
-    -- local letterBlockFolder = Utils.getFirstDescendantByName(letterFallFolder,
-    --                                                          "LetterBlockTemplates")
-
     local letterBlockFolder = Utils.getFromTemplates("LetterBlockTemplates")
     local letterBlockTemplate = Utils.getFirstDescendantByName(
                                     letterBlockFolder, templateName)
