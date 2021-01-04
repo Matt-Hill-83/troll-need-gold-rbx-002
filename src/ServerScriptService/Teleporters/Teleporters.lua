@@ -37,19 +37,62 @@ function module.configHexTeleporter(props)
     local parentFolder = props.parentFolder
 
     local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
-    local hexTeleporter = teleporterTemplate:Clone()
-    hexTeleporter.Parent = parentFolder
+    local teleporter = teleporterTemplate:Clone()
+    teleporter.Parent = parentFolder
 
-    local labels2 = Utils.getDescendantsByName(hexTeleporter, "TeleporterLabel")
+    local labels2 = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
     for i, label in ipairs(labels2) do label.Text = questTitle end
 
     local teleporterPositioner = Utils.getFirstDescendantByName(parentFolder,
                                                                 "HexTeleporterPositioner")
 
-    hexTeleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
-    hexTeleporter.Name = "teleporter" .. "-hex-W-xxx" .. worldIndex
-    return hexTeleporter
+    teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
+    teleporter.Name = "teleporter" .. "-hex-W" .. worldIndex
+    return teleporter
 end
+
+function module.configTeleporter(props)
+    local worldIndex = props.worldIndex
+    local questTitle = props.questTitle
+    local parentFolder = props.parentFolder
+    local positionerName = props.positionerName
+
+    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
+    local teleporter = teleporterTemplate:Clone()
+    teleporter.Parent = parentFolder
+
+    local labels2 = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
+    for i, label in ipairs(labels2) do label.Text = questTitle end
+
+    local positioner = Utils.getFirstDescendantByName(parentFolder,
+                                                      positionerName)
+
+    teleporter.PrimaryPart.CFrame = positioner.CFrame
+    teleporter.Name = "teleporter" .. "-hex-W" .. worldIndex
+    positioner:Destroy()
+    return teleporter
+end
+
+-- function module.configHexReturnTeleporter(props)
+--     local worldIndex = props.worldIndex
+--     local questTitle = props.questTitle
+--     local parentFolder = props.parentFolder
+
+--     local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
+--     local teleporter = teleporterTemplate:Clone()
+--     teleporter.Parent = parentFolder
+
+--     local labels2 = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
+--     for i, label in ipairs(labels2) do label.Text = questTitle end
+
+--     local teleporterPositioner = Utils.getFirstDescendantByName(parentFolder,
+--                                                                 "HexReturnTPPositioner")
+
+--     teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
+--     teleporter.Name = "teleporter" .. "-hex-ret-W" .. worldIndex
+--     teleporter.Anchored = true
+--     return teleporter
+-- end
 
 function module.configSkyBoxTeleporter(props)
     local worldIndex = props.worldIndex

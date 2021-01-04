@@ -2,7 +2,6 @@ local module = {}
 local CS = game:GetService("CollectionService")
 local Sss = game:GetService("ServerScriptService")
 local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
-local HttpService = game:GetService("HttpService")
 
 local Utils3 = require(Sss.Source.Utils.U003PartsUtils)
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
@@ -80,12 +79,24 @@ function cloneHexStand(worldIndex)
 end
 
 function addHexTeleporter(hexStand, worldIndex)
-    local hexTeleporter = Teleporters.configHexTeleporter(
+    local hexTeleporter = Teleporters.configTeleporter(
                               {
             worldIndex = worldIndex,
             questTitle = "Island " .. worldIndex,
-            -- questTitle = "All Quests",
-            parentFolder = hexStand
+            parentFolder = hexStand,
+            positionerName = "HexTeleporterPositioner"
+        })
+    hexTeleporter.PrimaryPart.Anchored = true
+    return hexTeleporter
+end
+
+function addHexReturnTeleporter(hexStand, worldIndex)
+    local hexTeleporter = Teleporters.configTeleporter(
+                              {
+            worldIndex = worldIndex,
+            questTitle = "Sky Box",
+            parentFolder = hexStand,
+            positionerName = "HexReturnTPPositioner"
         })
     hexTeleporter.PrimaryPart.Anchored = true
     return hexTeleporter
@@ -96,7 +107,6 @@ function addSkyBoxTeleporter(worldIndex)
     local teleporter = Teleporters.configSkyBoxTeleporter(
                            {
             worldIndex = worldIndex,
-            -- questTitle = "All Worlds",
             worldTitle = "Island " .. worldIndex,
             parentFolder = myStuff
         })
@@ -228,7 +238,9 @@ function addWorld(props)
     sliceQuestConfigs(questConfigs)
     local hexStand = cloneHexStand(worldIndex)
     local mountPlates = Utils.getDescendantsByName(hexStand, "MountPlate")
+
     local hexTeleporter = addHexTeleporter(hexStand, worldIndex)
+    local hexReturnTeleporter = addHexReturnTeleporter(hexStand, worldIndex)
     local skyTeleporter = addSkyBoxTeleporter(worldIndex)
     Teleporters.setLocalTPTargetToRemoteTP(skyTeleporter, hexTeleporter)
 
