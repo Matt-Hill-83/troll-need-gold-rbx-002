@@ -78,7 +78,6 @@ function cloneHexStand(worldIndex)
 end
 
 function addHexTeleporter(hexStand, worldIndex)
-
     local hexTeleporter = Teleporters.configHexTeleporter(
                               {
             worldIndex = 0,
@@ -102,6 +101,22 @@ function sliceQuestConfigs(questConfigs)
     return questConfigs
 end
 
+function getWords(questConfig)
+
+    local words = questConfig.words
+    local newWords = {}
+    if words then
+        local output
+        words = words .. ','
+        for w in words:gmatch("(.-),") do table.insert(newWords, w) end
+    end
+    questConfig.words2 = newWords
+    local defaultWords = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
+    local words3 = defaultWords
+    if #questConfig.words2 > 0 then words3 = questConfig.words2 end
+    return words3
+end
+
 function addWorld(props)
     local questConfigs = props.questConfigs
     local worldIndex = props.worldIndex
@@ -114,13 +129,6 @@ function addWorld(props)
     local hexStand = cloneHexStand(worldIndex)
     local hexTeleporter = addHexTeleporter(hexStand, worldIndex)
 
-    -- hexTeleporter.PrimaryPart.Anchored = true
-    -- local weld = Instance.new("WeldConstraint")
-    -- weld.Name = "WeldConstraint-ppp" .. worldIndex
-    -- weld.Parent = hexStand
-    -- weld.Part0 = hexTeleporter.PrimaryPart
-    -- weld.Part1 = hexMountPart
-
     local mountPlates = Utils.getDescendantsByName(hexStand, "MountPlate")
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
     -- add quests
@@ -128,16 +136,10 @@ function addWorld(props)
         local miniGameMountPlate = mountPlates[questIndex]
         local gridSize = questConfig.gridSize
 
-        local words = questConfig.words
-        local newWords = {}
-        if words then
-            local output
-            words = words .. ','
-            for w in words:gmatch("(.-),") do
-                table.insert(newWords, w)
-            end
-        end
-        questConfig.words2 = newWords
+        local words4 = getWords(questConfig)
+
+        print('words4' .. ' - start');
+        print(words4);
 
         local desiredPadding = 12
         local wallWidth = 1
@@ -164,14 +166,10 @@ function addWorld(props)
         --     })
         -- questBlockTemplateClone.Parent = questFolder
 
-        -- local defaultWords = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
-        -- local words3 = defaultWords
-        -- if #questConfig.words2 > 0 then words3 = questConfig.words2 end
-
         -- local miniGame = MiniGame.addMiniGame(
         --                      {
         --         parent = miniGameMountPlate,
-        --         words = words3,
+        --         words = words4,
         --         sceneIndex = 1,
         --         questIndex = questIndex,
         --         isStartScene = true,
