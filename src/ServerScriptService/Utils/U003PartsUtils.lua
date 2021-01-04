@@ -37,17 +37,19 @@ function setCFrameFromDesiredEdgeOffset(props)
     local child = props.child
     local offsetConfig = props.offsetConfig
 
+    local defaultOffsetAdder = Vector3.new(0, 0, 0)
+
     local defaultOffsetConfig = {
         useParentNearEdge = Vector3.new(0, 1, -1),
         useChildNearEdge = Vector3.new(0, -1, 1),
-        offsetAdder = Vector3.new(0, 0, 0)
+        offsetAdder = defaultOffsetAdder
     }
 
     offsetConfig = offsetConfig or defaultOffsetConfig
 
     local offset = (offsetConfig.useParentNearEdge * parent.Size -
                        offsetConfig.useChildNearEdge * child.Size) / 2 +
-                       offsetConfig.offsetAdder
+                       (offsetConfig.offsetAdder or defaultOffsetAdder)
 
     local newCFrame = CFrame.new(offset)
     return parent.CFrame:ToWorldSpace(newCFrame)
