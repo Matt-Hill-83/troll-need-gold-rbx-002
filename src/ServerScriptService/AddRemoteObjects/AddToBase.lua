@@ -82,20 +82,22 @@ end
 function addHexTeleporter(hexStand, worldIndex)
     local hexTeleporter = Teleporters.configHexTeleporter(
                               {
-            worldIndex = 0,
-            questTitle = "All Quests",
+            worldIndex = worldIndex,
+            questTitle = "Island " .. worldIndex,
+            -- questTitle = "All Quests",
             parentFolder = hexStand
         })
     hexTeleporter.PrimaryPart.Anchored = true
     return hexTeleporter
 end
 
-function addSkyBoxTeleporter(hexStand, worldIndex)
+function addSkyBoxTeleporter(worldIndex)
     local myStuff = workspace:FindFirstChild("MyStuff")
     local teleporter = Teleporters.configSkyBoxTeleporter(
                            {
             worldIndex = worldIndex,
-            questTitle = "All Worlds",
+            -- questTitle = "All Worlds",
+            worldTitle = "Island " .. worldIndex,
             parentFolder = myStuff
         })
     teleporter.PrimaryPart.Anchored = true
@@ -227,7 +229,8 @@ function addWorld(props)
     local hexStand = cloneHexStand(worldIndex)
     local mountPlates = Utils.getDescendantsByName(hexStand, "MountPlate")
     local hexTeleporter = addHexTeleporter(hexStand, worldIndex)
-    local skyTeleporter = addSkyBoxTeleporter(hexStand, worldIndex)
+    local skyTeleporter = addSkyBoxTeleporter(worldIndex)
+    Teleporters.setLocalTPTargetToRemoteTP(skyTeleporter, hexTeleporter)
 
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do

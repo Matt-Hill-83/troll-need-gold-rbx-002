@@ -63,10 +63,12 @@ function module.configSkyBoxTeleporter(props)
     local labels = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
     for i, label in ipairs(labels) do label.Text = worldTitle end
 
+    local tPOffsetX = 10
+
     local teleporterPositioner = Utils.getFirstDescendantByName(parentFolder,
                                                                 "SkyBoxTeleporterPositioner")
     teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame +
-                                        Vector3.new(worldIndex * 15, 0, 0)
+                                        Vector3.new(worldIndex * tPOffsetX, 0, 0)
     teleporter.Name = "teleporter" .. "-sky-W-zzz" .. worldIndex
     return teleporter
 end
@@ -82,10 +84,10 @@ function module.configLocalTeleporter(props)
     local localTeleporter = teleporterTemplate:Clone()
     localTeleporter.Parent = parent
 
-    local offsetY = (localTeleporter.PrimaryPart.Size.Y +
-                        localTPPositioner.Size.Y) / 2
-    localTeleporter.PrimaryPart.CFrame =
-        localTPPositioner.CFrame * CFrame.new(Vector3.new(0, offsetY, 0))
+    -- local offsetY = (localTeleporter.PrimaryPart.Size.Y +
+    --                     localTPPositioner.Size.Y) / 2
+    -- localTeleporter.PrimaryPart.CFrame =
+    --     localTPPositioner.CFrame * CFrame.new(Vector3.new(0, offsetY, 0))
 
     local labels =
         Utils.getDescendantsByName(localTeleporter, "TeleporterLabel")
@@ -125,4 +127,5 @@ function module.addTeleporters(props)
     localTeleporter.PrimaryPart.Anchored = true
     -- localTPPositioner:Destroy()
 end
+module.setLocalTPTargetToRemoteTP = setLocalTPTargetToRemoteTP
 return module
