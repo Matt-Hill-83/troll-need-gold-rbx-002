@@ -281,7 +281,7 @@ function createBalls(miniGameState)
         letterFallFolder = letterFallFolder,
         questIndex = questIndex,
         targetGemName = targetGemName,
-        isReceiver = false
+        isReceiver = true
     })
 
     GemHolder.initGem({
