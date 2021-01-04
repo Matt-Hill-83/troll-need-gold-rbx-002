@@ -39,8 +39,8 @@ function setVisibility()
 
     local tagBaseWallTransparent = CS:GetTagged("BaseWallTransparent")
     for i, wall in ipairs(tagBaseWallTransparent) do
-        Utils.setItemHeight({item = wall, height = 24})
-        local newWallHeight = 2
+        Utils.setItemHeight({item = wall, height = 20})
+        local newWallHeight = 1
         wall.Transparency = 1
         -- wall.Transparency = 0.9
         wall.CanCollide = true

@@ -86,7 +86,7 @@ function addHexTeleporter(hexStand, worldIndex)
             parentFolder = hexStand,
             positionerName = "HexTeleporterPositioner"
         })
-    hexTeleporter.PrimaryPart.Anchored = true
+    -- hexTeleporter.PrimaryPart.Anchored = true
     return hexTeleporter
 end
 
@@ -94,11 +94,11 @@ function addHexReturnTeleporter(hexStand, worldIndex)
     local hexTeleporter = Teleporters.configTeleporter(
                               {
             worldIndex = worldIndex,
-            questTitle = "Sky Box",
+            questTitle = "Cloud Ship",
             parentFolder = hexStand,
             positionerName = "HexReturnTPPositioner"
         })
-    hexTeleporter.PrimaryPart.Anchored = true
+    -- hexTeleporter.PrimaryPart.Anchored = true
     return hexTeleporter
 end
 

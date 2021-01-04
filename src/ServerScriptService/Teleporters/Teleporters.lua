@@ -31,26 +31,6 @@ local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
     end)
 end
 
-function module.configHexTeleporter(props)
-    local worldIndex = props.worldIndex
-    local questTitle = props.questTitle
-    local parentFolder = props.parentFolder
-
-    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
-    local teleporter = teleporterTemplate:Clone()
-    teleporter.Parent = parentFolder
-
-    local labels2 = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
-    for i, label in ipairs(labels2) do label.Text = questTitle end
-
-    local teleporterPositioner = Utils.getFirstDescendantByName(parentFolder,
-                                                                "HexTeleporterPositioner")
-
-    teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
-    teleporter.Name = "teleporter" .. "-hex-W" .. worldIndex
-    return teleporter
-end
-
 function module.configTeleporter(props)
     local worldIndex = props.worldIndex
     local questTitle = props.questTitle
@@ -68,31 +48,12 @@ function module.configTeleporter(props)
                                                       positionerName)
 
     teleporter.PrimaryPart.CFrame = positioner.CFrame
+    teleporter.PrimaryPart.Anchored = false
+    -- teleporter.PrimaryPart.Anchored = true
     teleporter.Name = "teleporter" .. "-hex-W" .. worldIndex
     positioner:Destroy()
     return teleporter
 end
-
--- function module.configHexReturnTeleporter(props)
---     local worldIndex = props.worldIndex
---     local questTitle = props.questTitle
---     local parentFolder = props.parentFolder
-
---     local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
---     local teleporter = teleporterTemplate:Clone()
---     teleporter.Parent = parentFolder
-
---     local labels2 = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
---     for i, label in ipairs(labels2) do label.Text = questTitle end
-
---     local teleporterPositioner = Utils.getFirstDescendantByName(parentFolder,
---                                                                 "HexReturnTPPositioner")
-
---     teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
---     teleporter.Name = "teleporter" .. "-hex-ret-W" .. worldIndex
---     teleporter.Anchored = true
---     return teleporter
--- end
 
 function module.configSkyBoxTeleporter(props)
     local worldIndex = props.worldIndex
@@ -127,8 +88,10 @@ function module.configLocalTeleporter(props)
     local localTeleporter = teleporterTemplate:Clone()
     localTeleporter.Parent = parent
 
-    -- local offsetY = (localTeleporter.PrimaryPart.Size.Y +
-    --                     localTPPositioner.Size.Y) / 2
+    local offsetY = (localTeleporter.PrimaryPart.Size.Y +
+                        localTPPositioner.Size.Y) / 2
+
+    localTeleporter.PrimaryPart.CFrame = localTPPositioner.CFrame
     -- localTeleporter.PrimaryPart.CFrame =
     --     localTPPositioner.CFrame * CFrame.new(Vector3.new(0, offsetY, 0))
 
