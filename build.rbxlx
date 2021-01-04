@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-825.386414</X>
-					<Y>1395.54053</Y>
-					<Z>-1254.76807</Z>
-					<R00>-0.844392896</R00>
-					<R01>0.44646737</R01>
-					<R02>-0.296087176</R02>
-					<R10>-1.49011612e-08</R10>
-					<R11>0.552685559</R11>
-					<R12>0.833389938</R12>
-					<R20>0.535724461</R20>
-					<R21>0.703708529</R21>
-					<R22>-0.466683745</R22>
+					<X>-311.625305</X>
+					<Y>1100.2627</Y>
+					<Z>-1780.00464</Z>
+					<R00>-0.998049974</R00>
+					<R01>0.0430207662</R01>
+					<R02>-0.0452272259</R02>
+					<R10>3.7252903e-09</R10>
+					<R11>0.724560201</R11>
+					<R12>0.689211547</R12>
+					<R20>0.0624202564</R20>
+					<R21>0.687867582</R21>
+					<R22>-0.723147213</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -46792,8 +46792,8 @@ remoteCode.addRemoteObjects()
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>5.5</X>
-						<Y>-223.999939</Y>
+						<X>1133.5</X>
+						<Y>-275.242615</Y>
 						<Z>-632.5</Z>
 						<R00>0</R00>
 						<R01>0</R01>
@@ -46855,6 +46855,45 @@ remoteCode.addRemoteObjects()
 						<Z>16</Z>
 					</Vector3>
 				</Properties>
+				<Item class="Weld" referent="RBXa0dc4b7fa9934aedb7c3934b7c777c46">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>0</X>
+							<Y>-30</Y>
+							<Z>0</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>0</R11>
+							<R12>-1</R12>
+							<R20>0</R20>
+							<R21>1</R21>
+							<R22>0</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>333.5</X>
+							<Y>5.99914551</Y>
+							<Z>-695.499146</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>0</R11>
+							<R12>-1</R12>
+							<R20>0</R20>
+							<R21>-1</R21>
+							<R22>0</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Weld</string>
+						<Ref name="Part0">RBXe015746cf7be483bb3516ef61547bf7e</Ref>
+						<Ref name="Part1">RBX5b9fdbc326294e7f931877461e2c3f04</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
 			</Item>
 			<Item class="Part" referent="RBX1fcc1d435b294d32be1a017eb9c4a624">
 				<Properties>
@@ -46869,8 +46908,8 @@ remoteCode.addRemoteObjects()
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>34.5</X>
-						<Y>-223.999939</Y>
+						<X>1162.5</X>
+						<Y>-275.242615</Y>
 						<Z>-147.5</Z>
 						<R00>0</R00>
 						<R01>0</R01>
@@ -46932,6 +46971,45 @@ remoteCode.addRemoteObjects()
 						<Z>16</Z>
 					</Vector3>
 				</Properties>
+				<Item class="Weld" referent="RBX42aa3bf30f0b46b89a8fbe4c1fdecc29">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>0</X>
+							<Y>-30</Y>
+							<Z>0</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>0</R11>
+							<R12>-1</R12>
+							<R20>0</R20>
+							<R21>1</R21>
+							<R22>0</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>-151.5</X>
+							<Y>5.99914551</Y>
+							<Z>-666.499146</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>0</R11>
+							<R12>-1</R12>
+							<R20>0</R20>
+							<R21>-1</R21>
+							<R22>0</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Weld</string>
+						<Ref name="Part0">RBX1fcc1d435b294d32be1a017eb9c4a624</Ref>
+						<Ref name="Part1">RBX5b9fdbc326294e7f931877461e2c3f04</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
 			</Item>
 			<Item class="Part" referent="RBX5b9fdbc326294e7f931877461e2c3f04">
 				<Properties>
