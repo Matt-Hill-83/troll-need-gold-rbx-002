@@ -118,6 +118,28 @@ function getWords(questConfig)
     return output
 end
 
+function cloneQuestBlock(worldIndex, questIndex)
+    local questBlockTemplate = Utils.getFromTemplates("QuestBox")
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local runtimeQuestsFolder = Utils.getOrCreateFolder(
+                                    {name = "RunTimeQuests", parent = myStuff})
+
+    local questBlockTemplateClone = Utils.cloneModel(
+                                        {
+            model = questBlockTemplate,
+            suffix = "Clone-W" .. worldIndex .. "-Q" .. questIndex
+        })
+
+    local questFolder = Utils.getOrCreateFolder(
+                            {
+            name = questBlockTemplateClone.Name,
+            parent = runtimeQuestsFolder
+        })
+
+    questBlockTemplateClone.Parent = questFolder
+    return questBlockTemplateClone
+end
+
 function addWorld(props)
     local questConfigs = props.questConfigs
     local worldIndex = props.worldIndex
@@ -131,22 +153,14 @@ function addWorld(props)
     local hexTeleporter = addHexTeleporter(hexStand, worldIndex)
 
     local mountPlates = Utils.getDescendantsByName(hexStand, "MountPlate")
-    local questBlockTemplate = Utils.getFromTemplates("QuestBox")
+    -- local questBlockTemplate = Utils.getFromTemplates("QuestBox")
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
         local miniGameMountPlate = mountPlates[questIndex]
         local gridSize = questConfig.gridSize
 
-        local words = getWords(questConfig)
-
-        print('words' .. ' - start');
-        print(words);
-
         local desiredPadding = 12
         local wallWidth = 1
-        local wallHeight = Constants.questWallHeight
-        local sceneHeight = Constants.sceneHeight
-
         local gridPadding = desiredPadding + wallWidth * 2
 
         local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
@@ -154,29 +168,19 @@ function addWorld(props)
         local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
                       Constants.bridgeLength
 
-        -- local questBlockTemplateClone = Utils.cloneModel(
-        --                                     {
-        --         model = questBlockTemplate,
-        --         suffix = "Clone-Q" .. questIndex
-        --     })
+        local questBlockTemplateClone = cloneQuestBlock(worldIndex, questIndex)
 
-        -- local questFolder = Utils.getOrCreateFolder(
-        --                         {
-        --         name = questBlockTemplateClone.Name,
-        --         parent = runtimeQuestsFolder
-        --     })
-        -- questBlockTemplateClone.Parent = questFolder
-
-        -- local miniGame = MiniGame.addMiniGame(
-        --                      {
-        --         parent = miniGameMountPlate,
-        --         words = words,
-        --         sceneIndex = 1,
-        --         questIndex = questIndex,
-        --         isStartScene = true,
-        --         questTitle = questConfig.questTitle
-        --     })
-        -- miniGame.PrimaryPart.Anchored = true
+        -- local words = getWords(questConfig)
+        local miniGame = MiniGame.addMiniGame(
+                             {
+                parent = miniGameMountPlate,
+                words = getWords(questConfig),
+                sceneIndex = 1,
+                questIndex = questIndex,
+                isStartScene = true,
+                questTitle = questConfig.questTitle
+            })
+        miniGame.PrimaryPart.Anchored = true
 
         -- localTPPositioner = Utils.getFirstDescendantByName(miniGame,
         --                                                    "MiniGameTeleporterPositioner")
