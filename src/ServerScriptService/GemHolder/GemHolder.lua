@@ -32,7 +32,7 @@ function styleGemHolder(props)
         bigGem.Handle.Name = "NotHandle"
     else
         local gemColor = Constants.gemColors[questIndex]
-        bigGem.Handle.Color = gemColor
+        if bigGem then bigGem.Handle.Color = gemColor end
     end
 
     local gemHolderState = {

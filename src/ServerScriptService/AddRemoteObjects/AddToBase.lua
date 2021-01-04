@@ -242,7 +242,7 @@ function addWorld(props)
     local hexReturnTeleporter = addHexReturnTeleporter(hexStand, worldIndex)
     local skyTeleporter = addSkyBoxTeleporter(worldIndex)
     Teleporters.setLocalTPTargetToRemoteTP(skyTeleporter, hexTeleporter)
-    -- Teleporters.setLocalTPTargetToRemoteTP(hexReturnTeleporter, skyTeleporter)
+    Teleporters.setLocalTPTargetToRemoteTP(hexReturnTeleporter, skyTeleporter)
 
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
