@@ -6,8 +6,8 @@ local module = {
     isDev = false,
     -- isDev = true,
 
-    gameConfig = {transparency = false},
-    -- gameConfig = {transparency = true},
+    -- gameConfig = {transparency = false},
+    gameConfig = {transparency = true},
 
     entered = {value = false},
     walkSpeed = 20,

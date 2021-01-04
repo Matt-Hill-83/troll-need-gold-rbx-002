@@ -74,6 +74,8 @@ function cloneHexStand(worldIndex)
     hexMountPart.CFrame = Utils3.setCFrameFromDesiredEdgeOffset(
                               translateCFrameProps)
     hexMountPart.Anchored = true
+
+    hexStandPositioner:Destroy()
     return hexStand
 end
 
@@ -153,7 +155,7 @@ function renderQuestBlock(props)
         gridPadding = getGridPadding()
     }
     local questBlockModel = QuestBlock.renderQuestBlock(questBlockProps)
-    -- dockMountPlate:Destroy()
+    dockMountPlate:Destroy()
     return questBlockModel
 end
 
@@ -197,7 +199,7 @@ function addScenes(props)
         sceneConfigs = questConfig.sceneConfigs
     }
     Scenes.addScenes(addScenesProps)
-    -- sceneMountPlate:Destroy()
+    sceneMountPlate:Destroy()
 
 end
 
