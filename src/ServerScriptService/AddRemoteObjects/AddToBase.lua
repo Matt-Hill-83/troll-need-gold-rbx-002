@@ -142,9 +142,6 @@ function renderQuestBlock(props)
     local gridSize = props.gridSize
     local questFolder = props.questFolder
 
-    -- local dockMountPlate = Utils.getFirstDescendantByName(miniGame,
-    --                                                       "DockMountPlate")
-
     local questBlockTemplateClone = cloneQuestBlock(worldIndex, questIndex)
 
     local questBlockProps = {
