@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-58.7590637</X>
-					<Y>-108.274887</Y>
-					<Z>-820.892395</Z>
-					<R00>-0.910858989</R00>
-					<R01>-0.135898098</R01>
-					<R02>0.389702052</R02>
-					<R10>-1.49011612e-08</R10>
-					<R11>0.944233775</R11>
-					<R12>0.329276055</R12>
-					<R20>-0.412717789</R20>
-					<R21>0.299924046</R21>
-					<R22>-0.860063732</R22>
+					<X>-253.722321</X>
+					<Y>342.090515</Y>
+					<Z>-1192.17883</Z>
+					<R00>-1</R00>
+					<R01>-0.000210683516</R01>
+					<R02>0.000274657621</R02>
+					<R10>-0</R10>
+					<R11>0.793449283</R11>
+					<R12>0.608636558</R12>
+					<R20>-0.000346156536</R20>
+					<R21>0.608636558</R21>
+					<R22>-0.793449163</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -37217,7 +37217,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 								<bool name="CanCollide">true</bool>
 								<bool name="CastShadow">true</bool>
 								<int name="CollisionGroupId">0</int>
-								<Color3uint8 name="Color3uint8">4289848742</Color3uint8>
+								<Color3uint8 name="Color3uint8">4293782250</Color3uint8>
 								<PhysicalProperties name="CustomPhysicalProperties">
 									<CustomPhysics>false</CustomPhysics>
 								</PhysicalProperties>
@@ -37231,7 +37231,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 								<token name="LeftSurfaceInput">0</token>
 								<bool name="Locked">false</bool>
 								<bool name="Massless">false</bool>
-								<token name="Material">1280</token>
+								<token name="Material">880</token>
 								<string name="Name">Tower</string>
 								<float name="Reflectance">0</float>
 								<float name="RightParamA">-0.5</float>
@@ -37679,7 +37679,7 @@ remoteCode.addRemoteObjects()
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-496.5</X>
+							<X>-3.5</X>
 							<Y>-183.241776</Y>
 							<Z>-375.5</Z>
 							<R00>-1</R00>
@@ -37742,45 +37742,6 @@ remoteCode.addRemoteObjects()
 							<Z>16</Z>
 						</Vector3>
 					</Properties>
-					<Item class="Weld" referent="RBX2559523785954196ad2e520d9269977f">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<CoordinateFrame name="C0">
-								<X>0</X>
-								<Y>-119.999985</Y>
-								<Z>0</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>-1</R12>
-								<R20>0</R20>
-								<R21>1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>76.5</X>
-								<Y>6</Y>
-								<Z>-264.499146</Z>
-								<R00>0</R00>
-								<R01>1</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>-1</R12>
-								<R20>-1</R20>
-								<R21>0</R21>
-								<R22>-0</R22>
-							</CoordinateFrame>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Weld</string>
-							<Ref name="Part0">RBX1fcc1d435b294d32be1a017eb9c4a624</Ref>
-							<Ref name="Part1">RBX5b9fdbc326294e7f931877461e2c3f04</Ref>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
 				</Item>
 				<Item class="Part" referent="RBX5b9fdbc326294e7f931877461e2c3f04">
 					<Properties>
@@ -37795,7 +37756,7 @@ remoteCode.addRemoteObjects()
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-232.000854</X>
+							<X>260.999146</X>
 							<Y>-309.24176</Y>
 							<Z>-299</Z>
 							<R00>0</R00>
@@ -37855,9 +37816,87 @@ remoteCode.addRemoteObjects()
 						<Vector3 name="size">
 							<X>1122</X>
 							<Y>12</Y>
-							<Z>816</Z>
+							<Z>1666</Z>
 						</Vector3>
 					</Properties>
+					<Item class="Weld" referent="RBXb5c080e0412d45389c3f4695821589f5">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>0</X>
+								<Y>6</Y>
+								<Z>0</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>0</R11>
+								<R12>1</R12>
+								<R20>0</R20>
+								<R21>-1</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>220.500854</X>
+								<Y>-119.999985</Y>
+								<Z>-105.5</Z>
+								<R00>0</R00>
+								<R01>1</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>0</R11>
+								<R12>1</R12>
+								<R20>1</R20>
+								<R21>0</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<bool name="Enabled">true</bool>
+							<string name="Name">Weld</string>
+							<Ref name="Part0">RBX5b9fdbc326294e7f931877461e2c3f04</Ref>
+							<Ref name="Part1">RBXe015746cf7be483bb3516ef61547bf7e</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+					<Item class="Weld" referent="RBXa613aba473d940f58a4a092a643c0a78">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>0</X>
+								<Y>6</Y>
+								<Z>0</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>0</R11>
+								<R12>1</R12>
+								<R20>0</R20>
+								<R21>-1</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>-264.499146</X>
+								<Y>-119.999985</Y>
+								<Z>-76.5</Z>
+								<R00>0</R00>
+								<R01>1</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>0</R11>
+								<R12>1</R12>
+								<R20>1</R20>
+								<R21>0</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<bool name="Enabled">true</bool>
+							<string name="Name">Weld</string>
+							<Ref name="Part0">RBX5b9fdbc326294e7f931877461e2c3f04</Ref>
+							<Ref name="Part1">RBX1fcc1d435b294d32be1a017eb9c4a624</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
 				</Item>
 				<Item class="Part" referent="RBXe015746cf7be483bb3516ef61547bf7e">
 					<Properties>
@@ -37872,7 +37911,7 @@ remoteCode.addRemoteObjects()
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-11.5</X>
+							<X>481.5</X>
 							<Y>-183.241776</Y>
 							<Z>-404.5</Z>
 							<R00>-1</R00>
@@ -37935,45 +37974,6 @@ remoteCode.addRemoteObjects()
 							<Z>16</Z>
 						</Vector3>
 					</Properties>
-					<Item class="Weld" referent="RBX5fdf6a5db9a34c688b1e22e6e8f67416">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<CoordinateFrame name="C0">
-								<X>0</X>
-								<Y>-119.999985</Y>
-								<Z>0</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>-1</R12>
-								<R20>0</R20>
-								<R21>1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>105.5</X>
-								<Y>6</Y>
-								<Z>220.500854</Z>
-								<R00>0</R00>
-								<R01>1</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>-1</R12>
-								<R20>-1</R20>
-								<R21>0</R21>
-								<R22>-0</R22>
-							</CoordinateFrame>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Weld</string>
-							<Ref name="Part0">RBXe015746cf7be483bb3516ef61547bf7e</Ref>
-							<Ref name="Part1">RBX5b9fdbc326294e7f931877461e2c3f04</Ref>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
 				</Item>
 				<Item class="Model" referent="RBX68c1d4425b694794be1f0edf876c5fd7">
 					<Properties>
@@ -38031,7 +38031,7 @@ remoteCode.addRemoteObjects()
 							<token name="BottomSurface">0</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>-246.880127</X>
+								<X>246.119873</X>
 								<Y>183.419983</Y>
 								<Z>146.246521</Z>
 								<R00>1.00000954</R00>
@@ -38216,7 +38216,7 @@ remoteCode.addRemoteObjects()
 								<token name="BottomSurface">0</token>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
-									<X>-136.87915</X>
+									<X>356.12085</X>
 									<Y>191.919006</Y>
 									<Z>146.246643</Z>
 									<R00>1.00000954</R00>
@@ -38293,7 +38293,7 @@ remoteCode.addRemoteObjects()
 								<token name="BottomSurface">0</token>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
-									<X>-246.880127</X>
+									<X>246.119873</X>
 									<Y>191.919006</Y>
 									<Z>162.746643</Z>
 									<R00>1.00000954</R00>
@@ -38370,7 +38370,7 @@ remoteCode.addRemoteObjects()
 								<token name="BottomSurface">0</token>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
-									<X>-356.881226</X>
+									<X>136.118774</X>
 									<Y>191.918945</Y>
 									<Z>146.246582</Z>
 									<R00>1.00000954</R00>
@@ -38486,7 +38486,7 @@ remoteCode.addRemoteObjects()
 								<token name="BottomSurface">0</token>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
-									<X>-246.630127</X>
+									<X>246.369873</X>
 									<Y>191.918945</Y>
 									<Z>129.746399</Z>
 									<R00>1.00000954</R00>
@@ -38603,7 +38603,7 @@ remoteCode.addRemoteObjects()
 							<token name="BottomSurface">0</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>-246.880127</X>
+								<X>246.119873</X>
 								<Y>-60.2427139</Y>
 								<Z>146.246521</Z>
 								<R00>1.00000954</R00>
@@ -38680,7 +38680,7 @@ remoteCode.addRemoteObjects()
 							<token name="BottomSurface">0</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>-273.261475</X>
+								<X>219.738525</X>
 								<Y>184.16922</Y>
 								<Z>158.645142</Z>
 								<R00>1.84774433e-06</R00>
@@ -42474,20 +42474,7 @@ function addRemoteObjects()
 
 end
 
-function addWorld(props)
-    local questConfigs = props.questConfigs
-    local worldIndex = props.worldIndex
-
-    if (Constants.singleScene) then
-        -- slice out a single quest
-        questConfigs = {questConfigs[1]}
-        local sceneConfigs = questConfigs[1].sceneConfigs
-        questConfigs[1].sceneConfigs = {sceneConfigs[1]}
-    else
-        -- slice out the first 6 quests, for the hexagon
-        questConfigs = {unpack(questConfigs, 1, 6)}
-    end
-
+function cloneHexStand(worldIndex)
     local myStuff = workspace:FindFirstChild("MyStuff")
     local hexStandTemplate = Utils.getFromTemplates("HexStandTemplate")
     local hexStandPositioners = Utils.getDescendantsByName(myStuff,
@@ -42508,103 +42495,128 @@ function addWorld(props)
         offsetConfig = {
             useParentNearEdge = Vector3.new(0, -1, 0),
             useChildNearEdge = Vector3.new(0, -1, 0)
-            -- offsetAdder = Vector3.new(0, 0, 0)
         }
     }
 
-    local newCFrame =
-        Utils3.setCFrameFromDesiredEdgeOffset(translateCFrameProps)
-
-    hexMountPart.CFrame = newCFrame
-    -- hexMountPart.CFrame = hexStandPositioner.CFrame
+    hexMountPart.CFrame = Utils3.setCFrameFromDesiredEdgeOffset(
+                              translateCFrameProps)
     hexMountPart.Anchored = true
+    return hexStand
+end
 
-    local mountPlates = Utils.getDescendantsByName(hexStand, "MountPlate")
-
+function addHexTeleporter(hexStand, worldIndex)
     local hexTeleporter = Teleporters.configHexTeleporter(
                               {
-            questIndex = 0,
+            worldIndex = 0,
             questTitle = "All Quests",
             parentFolder = hexStand
         })
-
     hexTeleporter.PrimaryPart.Anchored = true
-    -- local weld = Instance.new("WeldConstraint")
-    -- weld.Name = "WeldConstraint-ppp" .. worldIndex
-    -- weld.Parent = hexStand
-    -- weld.Part0 = hexTeleporter.PrimaryPart
-    -- weld.Part1 = hexMountPart
+    return hexTeleporter
+end
 
+function sliceQuestConfigs(questConfigs)
+    if (Constants.singleScene) then
+        -- slice out a single quest
+        questConfigs = {questConfigs[1]}
+        local sceneConfigs = questConfigs[1].sceneConfigs
+        questConfigs[1].sceneConfigs = {sceneConfigs[1]}
+    else
+        -- slice out the first 6 quests, for the hexagon
+        questConfigs = {unpack(questConfigs, 1, 6)}
+    end
+    return questConfigs
+end
+
+function getWords(questConfig)
+    local words = questConfig.words
+
+    -- add comma to last word
+    local newWords = {}
+    if words then
+        words = words .. ','
+        for w in words:gmatch("(.-),") do table.insert(newWords, w) end
+    end
+
+    local defaultWords = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
+    local output = defaultWords
+
+    if #newWords > 0 then output = newWords end
+    return output
+end
+
+function cloneQuestBlock(worldIndex, questIndex)
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local runtimeQuestsFolder = Utils.getOrCreateFolder(
+                                    {name = "RunTimeQuests", parent = myStuff})
+
+    local questBlockTemplateClone = Utils.cloneModel(
+                                        {
+            model = questBlockTemplate,
+            suffix = "Clone-W" .. worldIndex .. "-Q" .. questIndex
+        })
+
+    local questFolder = Utils.getOrCreateFolder(
+                            {
+            name = questBlockTemplateClone.Name,
+            parent = runtimeQuestsFolder
+        })
+
+    questBlockTemplateClone.Parent = questFolder
+    return questBlockTemplateClone
+end
+
+function addWorld(props)
+    local questConfigs = props.questConfigs
+    local worldIndex = props.worldIndex
+
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local runtimeQuestsFolder = Utils.getOrCreateFolder(
+                                    {name = "RunTimeQuests", parent = myStuff})
+
+    sliceQuestConfigs(questConfigs)
+    local hexStand = cloneHexStand(worldIndex)
+    local hexTeleporter = addHexTeleporter(hexStand, worldIndex)
+
+    local mountPlates = Utils.getDescendantsByName(hexStand, "MountPlate")
+    -- local questBlockTemplate = Utils.getFromTemplates("QuestBox")
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
         local miniGameMountPlate = mountPlates[questIndex]
         local gridSize = questConfig.gridSize
 
-        local words = questConfig.words
-        local newWords = {}
-        if words then
-            local output
-            words = words .. ','
-            for w in words:gmatch("(.-),") do
-                table.insert(newWords, w)
-            end
-        end
-        questConfig.words2 = newWords
+        local miniGame = MiniGame.addMiniGame(
+                             {
+                parent = miniGameMountPlate,
+                words = getWords(questConfig),
+                sceneIndex = 1,
+                questIndex = questIndex,
+                isStartScene = true,
+                questTitle = questConfig.questTitle
+            })
+        miniGame.PrimaryPart.Anchored = true
+
+        local dockMountPlate = Utils.getFirstDescendantByName(miniGame,
+                                                              "DockMountPlate")
 
         local desiredPadding = 12
         local wallWidth = 1
-        local wallHeight = Constants.questWallHeight
-        local sceneHeight = Constants.sceneHeight
-
         local gridPadding = desiredPadding + wallWidth * 2
-
+        local questBlockTemplateClone = cloneQuestBlock(worldIndex, questIndex)
         local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
                       Constants.bridgeLength
         local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
                       Constants.bridgeLength
 
-        -- local questBlockTemplateClone = Utils.cloneModel(
-        --                                     {
-        --         model = questBlockTemplate,
-        --         suffix = "Clone-Q" .. questIndex
-        --     })
-
-        -- local questFolder = Utils.getOrCreateFolder(
-        --                         {
-        --         name = questBlockTemplateClone.Name,
-        --         parent = runtimeQuestsFolder
-        --     })
-        -- questBlockTemplateClone.Parent = questFolder
-
-        -- local defaultWords = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
-        -- local words3 = defaultWords
-        -- if #questConfig.words2 > 0 then words3 = questConfig.words2 end
-
-        -- local miniGame = MiniGame.addMiniGame(
-        --                      {
-        --         parent = miniGameMountPlate,
-        --         words = words3,
-        --         sceneIndex = 1,
-        --         questIndex = questIndex,
-        --         isStartScene = true,
-        --         questTitle = questConfig.questTitle
-        --     })
-        -- miniGame.PrimaryPart.Anchored = true
-
-        -- localTPPositioner = Utils.getFirstDescendantByName(miniGame,
-        --                                                    "MiniGameTeleporterPositioner")
-
-        -- local dockMountPlate = Utils.getFirstDescendantByName(miniGame,
-        --                                                       "DockMountPlate")
+        local questBlockProps = {
+            parent = dockMountPlate,
+            size = Vector3.new(x, 2, z),
+            questBlockTemplate = questBlockTemplateClone
+        }
+        local questBlockModel = QuestBlock.renderQuestBlock(questBlockProps)
         -- dockMountPlate:Destroy()
 
-        -- local questBlockProps = {
-        --     parent = dockMountPlate,
-        --     size = Vector3.new(x, 2, z),
-        --     questBlockTemplate = questBlockTemplateClone
-        -- }
-        -- local questBlockModel = QuestBlock.renderQuestBlock(questBlockProps)
         -- local dockBase = Utils.getFirstDescendantByName(questBlockModel,
         --                                                 "DockBase")
         -- local sceneMountPlate = Utils.getFirstDescendantByName(questBlockModel,
@@ -42621,7 +42633,7 @@ function addWorld(props)
         --     }
         -- }
 
-        -- -- Relocate the scene mountplate, after the dock has bee resized.
+        -- -- Relocate the scene mountplate, after the dock has been resized.
         -- local sceneMountPlateCFrame = Utils3.setCFrameFromDesiredEdgeOffset(
         --                                   translateCFrameProps)
 
@@ -44507,7 +44519,7 @@ local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
 end
 
 function module.configHexTeleporter(props)
-    local questIndex = props.questIndex
+    local worldIndex = props.worldIndex
     local questTitle = props.questTitle
     local parentFolder = props.parentFolder
 
@@ -44522,7 +44534,7 @@ function module.configHexTeleporter(props)
                                                                 "HexTeleporterPositioner")
 
     hexTeleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
-    hexTeleporter.Name = "teleporter" .. "-hex-Q- xxx" .. questIndex
+    hexTeleporter.Name = "teleporter" .. "-hex-W-xxx" .. worldIndex
     return hexTeleporter
 end
 
@@ -46322,17 +46334,19 @@ function setCFrameFromDesiredEdgeOffset(props)
     local child = props.child
     local offsetConfig = props.offsetConfig
 
+    local defaultOffsetAdder = Vector3.new(0, 0, 0)
+
     local defaultOffsetConfig = {
         useParentNearEdge = Vector3.new(0, 1, -1),
         useChildNearEdge = Vector3.new(0, -1, 1),
-        offsetAdder = Vector3.new(0, 0, 0)
+        offsetAdder = defaultOffsetAdder
     }
 
     offsetConfig = offsetConfig or defaultOffsetConfig
 
     local offset = (offsetConfig.useParentNearEdge * parent.Size -
                        offsetConfig.useChildNearEdge * child.Size) / 2 +
-                       offsetConfig.offsetAdder
+                       (offsetConfig.offsetAdder or defaultOffsetAdder)
 
     local newCFrame = CFrame.new(offset)
     return parent.CFrame:ToWorldSpace(newCFrame)

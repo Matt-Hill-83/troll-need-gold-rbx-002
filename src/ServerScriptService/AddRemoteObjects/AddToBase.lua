@@ -140,6 +140,41 @@ function cloneQuestBlock(worldIndex, questIndex)
     return questBlockTemplateClone
 end
 
+function getGridPadding()
+    local desiredPadding = 12
+    local wallWidth = 1
+    local gridPadding = desiredPadding + wallWidth * 2
+
+    return gridPadding
+end
+
+function renderQuestBlock(props)
+    local miniGame = props.miniGame
+    local worldIndex = props.worldIndex
+    local questIndex = props.questIndex
+    local gridSize = props.gridSize
+
+    local dockMountPlate = Utils.getFirstDescendantByName(miniGame,
+                                                          "DockMountPlate")
+
+    local gridPadding = getGridPadding()
+    local questBlockTemplateClone = cloneQuestBlock(worldIndex, questIndex)
+    local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
+                  Constants.bridgeLength
+    local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
+                  Constants.bridgeLength
+
+    local questBlockProps = {
+        parent = dockMountPlate,
+        size = Vector3.new(x, 2, z),
+        questBlockTemplate = questBlockTemplateClone,
+        worldIndex = worldIndex,
+        questIndex = questIndex
+    }
+    local questBlockModel = QuestBlock.renderQuestBlock(questBlockProps)
+    -- dockMountPlate:Destroy()
+end
+
 function addWorld(props)
     local questConfigs = props.questConfigs
     local worldIndex = props.worldIndex
@@ -150,27 +185,14 @@ function addWorld(props)
 
     sliceQuestConfigs(questConfigs)
     local hexStand = cloneHexStand(worldIndex)
+    local mountPlates = Utils.getDescendantsByName(hexStand, "MountPlate")
     local hexTeleporter = addHexTeleporter(hexStand, worldIndex)
 
-    local mountPlates = Utils.getDescendantsByName(hexStand, "MountPlate")
-    -- local questBlockTemplate = Utils.getFromTemplates("QuestBox")
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
         local miniGameMountPlate = mountPlates[questIndex]
         local gridSize = questConfig.gridSize
 
-        local desiredPadding = 12
-        local wallWidth = 1
-        local gridPadding = desiredPadding + wallWidth * 2
-
-        local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
-                      Constants.bridgeLength
-        local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
-                      Constants.bridgeLength
-
-        local questBlockTemplateClone = cloneQuestBlock(worldIndex, questIndex)
-
-        -- local words = getWords(questConfig)
         local miniGame = MiniGame.addMiniGame(
                              {
                 parent = miniGameMountPlate,
@@ -182,19 +204,14 @@ function addWorld(props)
             })
         miniGame.PrimaryPart.Anchored = true
 
-        -- localTPPositioner = Utils.getFirstDescendantByName(miniGame,
-        --                                                    "MiniGameTeleporterPositioner")
+        local questBlockModel = renderQuestBlock(
+                                    {
+                miniGame = miniGame,
+                worldIndex = worldIndex,
+                questIndex = questIndex,
+                gridSize = gridSize
+            })
 
-        -- local dockMountPlate = Utils.getFirstDescendantByName(miniGame,
-        --                                                       "DockMountPlate")
-        -- dockMountPlate:Destroy()
-
-        -- local questBlockProps = {
-        --     parent = dockMountPlate,
-        --     size = Vector3.new(x, 2, z),
-        --     questBlockTemplate = questBlockTemplateClone
-        -- }
-        -- local questBlockModel = QuestBlock.renderQuestBlock(questBlockProps)
         -- local dockBase = Utils.getFirstDescendantByName(questBlockModel,
         --                                                 "DockBase")
         -- local sceneMountPlate = Utils.getFirstDescendantByName(questBlockModel,
@@ -211,7 +228,7 @@ function addWorld(props)
         --     }
         -- }
 
-        -- -- Relocate the scene mountplate, after the dock has bee resized.
+        -- -- Relocate the scene mountplate, after the dock has been resized.
         -- local sceneMountPlateCFrame = Utils3.setCFrameFromDesiredEdgeOffset(
         --                                   translateCFrameProps)
 
@@ -220,7 +237,7 @@ function addWorld(props)
         -- sceneMountPlate.CFrame = sceneMountPlate.CFrame:ToWorldSpace(
         --                              rotatedCFrame)
         -- sceneMountPlate.Anchored = true
-
+        -- local gridPadding = getGridPadding()
         -- local addScenesProps = {
         --     parent = sceneMountPlate,
         --     sceneConfigs = questConfig.sceneConfigs,
