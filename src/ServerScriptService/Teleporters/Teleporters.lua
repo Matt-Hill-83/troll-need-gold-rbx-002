@@ -60,12 +60,13 @@ function module.configSkyBoxTeleporter(props)
     local teleporter = teleporterTemplate:Clone()
     teleporter.Parent = parentFolder
 
-    local labels2 = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
-    for i, label in ipairs(labels2) do label.Text = worldTitle end
+    local labels = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
+    for i, label in ipairs(labels) do label.Text = worldTitle end
 
     local teleporterPositioner = Utils.getFirstDescendantByName(parentFolder,
                                                                 "SkyBoxTeleporterPositioner")
-    teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
+    teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame +
+                                        Vector3.new(worldIndex * 15, 0, 0)
     teleporter.Name = "teleporter" .. "-sky-W-zzz" .. worldIndex
     return teleporter
 end

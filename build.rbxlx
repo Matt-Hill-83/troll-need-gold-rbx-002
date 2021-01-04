@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-1012.72406</X>
-					<Y>-99.6564941</Y>
-					<Z>-296.031647</Z>
-					<R00>0.310054183</R00>
-					<R01>-0.786042929</R01>
-					<R02>0.534792423</R02>
+					<X>151.332916</X>
+					<Y>-8.01174164</Y>
+					<Z>148.801132</Z>
+					<R00>0.0269413032</R00>
+					<R01>0.895121753</R01>
+					<R02>-0.445007294</R02>
 					<R10>-0</R10>
-					<R11>0.562513769</R11>
-					<R12>0.826787889</R12>
-					<R20>-0.950718939</R20>
-					<R21>-0.256349057</R21>
-					<R22>0.174409732</R22>
+					<R11>0.445168912</R11>
+					<R12>0.895446718</R12>
+					<R20>0.999637067</R20>
+					<R21>-0.0241245013</R21>
+					<R22>0.0119934287</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-1071.28394</X>
-					<Y>-190.189926</Y>
-					<Z>-315.129547</Z>
+					<X>246.119873</X>
+					<Y>-198.742706</Y>
+					<Z>146.246521</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -40640,9 +40640,9 @@ remoteCode.addRemoteObjects()
 							<token name="BottomSurface">0</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>219.738525</X>
+								<X>273.737488</X>
 								<Y>-90.9944763</Y>
-								<Z>158.645142</Z>
+								<Z>138.145309</Z>
 								<R00>1.84774433e-06</R00>
 								<R01>7.7784108e-08</R01>
 								<R02>1.00000954</R02>
@@ -40703,7 +40703,7 @@ remoteCode.addRemoteObjects()
 								<Z>4</Z>
 							</Vector3>
 						</Properties>
-						<Item class="Weld" referent="RBX7180df2908a2400fa018b8dc47b37fbc">
+						<Item class="Weld" referent="RBX45b2abb0d1a14c628b3411d6b8ea34b8">
 							<Properties>
 								<BinaryString name="AttributesSerialize"></BinaryString>
 								<CoordinateFrame name="C0">
@@ -40711,27 +40711,27 @@ remoteCode.addRemoteObjects()
 									<Y>-0.25</Y>
 									<Z>0</Z>
 									<R00>1</R00>
-									<R01>0</R01>
-									<R02>-9.89571597e-13</R02>
-									<R10>-9.89571706e-13</R10>
-									<R11>-1.12499146e-25</R11>
+									<R01>-1.13684669e-13</R01>
+									<R02>-9.91188251e-13</R02>
+									<R10>-9.91188251e-13</R10>
+									<R11>2.85450103e-15</R11>
 									<R12>-1</R12>
-									<R20>0</R20>
+									<R20>1.13684669e-13</R20>
 									<R21>1</R21>
-									<R22>0</R22>
+									<R22>2.8544879e-15</R22>
 								</CoordinateFrame>
 								<CoordinateFrame name="C1">
-									<X>-26.381073</X>
+									<X>27.6173401</X>
 									<Y>0.499237061</Y>
-									<Z>12.3985291</Z>
-									<R00>5.96029167e-07</R00>
+									<Z>-8.10116577</Z>
+									<R00>5.96029281e-07</R00>
 									<R01>1</R01>
 									<R02>-7.7783433e-08</R02>
 									<R10>5.15342471e-08</R10>
 									<R11>-7.77834614e-08</R11>
 									<R12>-1</R12>
 									<R20>-1</R20>
-									<R21>5.96029167e-07</R21>
+									<R21>5.96029281e-07</R21>
 									<R22>-5.15342968e-08</R22>
 								</CoordinateFrame>
 								<bool name="Enabled">true</bool>
@@ -44190,8 +44190,8 @@ function deleteTemplates()
     questBlockTemplate:Destroy()
     local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
     letterFallTemplate:Destroy()
-    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
-    teleporterTemplate:Destroy()
+    -- local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
+    -- teleporterTemplate:Destroy()
     local hexStandTemplate = Utils.getFromTemplates("HexStandTemplate")
     hexStandTemplate:Destroy()
 end
@@ -44200,8 +44200,8 @@ function addRemoteObjects()
     local questConfigs = SceneConfig.getScenesConfig()
 
     local myStuff = workspace:FindFirstChild("MyStuff")
-    local worlds = {questConfigs}
-    -- local worlds = {questConfigs, questConfigs}
+    -- local worlds = {questConfigs}
+    local worlds = {questConfigs, questConfigs}
     -- local worlds = {questConfigs, questConfigs, questConfigs}
 
     for worldIndex, questConfig in ipairs(worlds) do
@@ -44210,7 +44210,6 @@ function addRemoteObjects()
             worldIndex = worldIndex
         }
 
-        local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
         addWorld(worldProps)
     end
 
@@ -44228,6 +44227,7 @@ function cloneHexStand(worldIndex)
                                     {name = "RunTimeQuests", parent = myStuff})
 
     local hexStandPositioner = hexStandPositioners[worldIndex]
+
     hexStand = hexStandTemplate:Clone()
     hexStand.Parent = myStuff
 
@@ -44247,7 +44247,7 @@ function cloneHexStand(worldIndex)
                               translateCFrameProps)
     hexMountPart.Anchored = true
 
-    hexStandPositioner:Destroy()
+    -- hexStandPositioner:Destroy()
     return hexStand
 end
 
@@ -44978,8 +44978,8 @@ return module
     -- singleScene = true,
     singleScene = false,
 
-    isDev = false,
-    -- isDev = true,
+    -- isDev = false,
+    isDev = true,
 
     -- gameConfig = {transparency = false},
     gameConfig = {transparency = true},
@@ -46342,12 +46342,13 @@ function module.configSkyBoxTeleporter(props)
     local teleporter = teleporterTemplate:Clone()
     teleporter.Parent = parentFolder
 
-    local labels2 = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
-    for i, label in ipairs(labels2) do label.Text = worldTitle end
+    local labels = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
+    for i, label in ipairs(labels) do label.Text = worldTitle end
 
     local teleporterPositioner = Utils.getFirstDescendantByName(parentFolder,
                                                                 "SkyBoxTeleporterPositioner")
-    teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
+    teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame +
+                                        Vector3.new(worldIndex * 15, 0, 0)
     teleporter.Name = "teleporter" .. "-sky-W-zzz" .. worldIndex
     return teleporter
 end

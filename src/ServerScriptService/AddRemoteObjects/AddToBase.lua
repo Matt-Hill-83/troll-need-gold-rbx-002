@@ -18,8 +18,8 @@ function deleteTemplates()
     questBlockTemplate:Destroy()
     local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
     letterFallTemplate:Destroy()
-    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
-    teleporterTemplate:Destroy()
+    -- local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
+    -- teleporterTemplate:Destroy()
     local hexStandTemplate = Utils.getFromTemplates("HexStandTemplate")
     hexStandTemplate:Destroy()
 end
@@ -28,8 +28,8 @@ function addRemoteObjects()
     local questConfigs = SceneConfig.getScenesConfig()
 
     local myStuff = workspace:FindFirstChild("MyStuff")
-    local worlds = {questConfigs}
-    -- local worlds = {questConfigs, questConfigs}
+    -- local worlds = {questConfigs}
+    local worlds = {questConfigs, questConfigs}
     -- local worlds = {questConfigs, questConfigs, questConfigs}
 
     for worldIndex, questConfig in ipairs(worlds) do
@@ -38,7 +38,6 @@ function addRemoteObjects()
             worldIndex = worldIndex
         }
 
-        local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
         addWorld(worldProps)
     end
 
@@ -56,6 +55,7 @@ function cloneHexStand(worldIndex)
                                     {name = "RunTimeQuests", parent = myStuff})
 
     local hexStandPositioner = hexStandPositioners[worldIndex]
+
     hexStand = hexStandTemplate:Clone()
     hexStand.Parent = myStuff
 
@@ -75,7 +75,7 @@ function cloneHexStand(worldIndex)
                               translateCFrameProps)
     hexMountPart.Anchored = true
 
-    hexStandPositioner:Destroy()
+    -- hexStandPositioner:Destroy()
     return hexStand
 end
 
