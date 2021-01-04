@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>461.976379</X>
-					<Y>79.6525574</Y>
-					<Z>35.6244431</Z>
-					<R00>-0.456076503</R00>
-					<R01>-0.444631875</R01>
-					<R02>0.770906448</R02>
-					<R10>1.49011612e-08</R10>
-					<R11>0.866244853</R11>
-					<R12>0.499619752</R12>
-					<R20>-0.88994056</R20>
-					<R21>0.227864847</R21>
-					<R22>-0.39507392</R22>
+					<X>-1012.72406</X>
+					<Y>-99.6564941</Y>
+					<Z>-296.031647</Z>
+					<R00>0.310054183</R00>
+					<R01>-0.786042929</R01>
+					<R02>0.534792423</R02>
+					<R10>-0</R10>
+					<R11>0.562513769</R11>
+					<R12>0.826787889</R12>
+					<R20>-0.950718939</R20>
+					<R21>-0.256349057</R21>
+					<R22>0.174409732</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>246.119873</X>
-					<Y>-60.2427216</Y>
-					<Z>146.246521</Z>
+					<X>-1071.28394</X>
+					<Y>-190.189926</Y>
+					<Z>-315.129547</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -32472,7 +32472,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4Bu]]></BinaryString>
 								<Z>0</Z>
 							</Vector3>
 							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
+							<BinaryString name="Tags">RGVzdHJveURldg==</BinaryString>
 							<int name="TeamColor">194</int>
 							<float name="TopParamA">-0.5</float>
 							<float name="TopParamB">0.5</float>
@@ -44262,6 +44262,18 @@ function addHexTeleporter(hexStand, worldIndex)
     return hexTeleporter
 end
 
+function addSkyBoxTeleporter(hexStand, worldIndex)
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local teleporter = Teleporters.configSkyBoxTeleporter(
+                           {
+            worldIndex = worldIndex,
+            questTitle = "All Worlds",
+            parentFolder = myStuff
+        })
+    teleporter.PrimaryPart.Anchored = true
+    return teleporter
+end
+
 function sliceQuestConfigs(questConfigs)
     if (Constants.singleScene) then
         -- slice out a single quest
@@ -44387,6 +44399,7 @@ function addWorld(props)
     local hexStand = cloneHexStand(worldIndex)
     local mountPlates = Utils.getDescendantsByName(hexStand, "MountPlate")
     local hexTeleporter = addHexTeleporter(hexStand, worldIndex)
+    local skyTeleporter = addSkyBoxTeleporter(hexStand, worldIndex)
 
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
@@ -46320,6 +46333,25 @@ function module.configHexTeleporter(props)
     return hexTeleporter
 end
 
+function module.configSkyBoxTeleporter(props)
+    local worldIndex = props.worldIndex
+    local worldTitle = props.worldTitle or ""
+    local parentFolder = props.parentFolder
+
+    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
+    local teleporter = teleporterTemplate:Clone()
+    teleporter.Parent = parentFolder
+
+    local labels2 = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
+    for i, label in ipairs(labels2) do label.Text = worldTitle end
+
+    local teleporterPositioner = Utils.getFirstDescendantByName(parentFolder,
+                                                                "SkyBoxTeleporterPositioner")
+    teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
+    teleporter.Name = "teleporter" .. "-sky-W-zzz" .. worldIndex
+    return teleporter
+end
+
 function module.configLocalTeleporter(props)
     local questIndex = props.questIndex
     local questTitle = props.questTitle
@@ -46366,11 +46398,6 @@ function module.addTeleporters(props)
     }
     local localTeleporter = module.configLocalTeleporter(props)
 
-    if isStartScene then
-        -- setLocalTPTargetToRemoteTP(hexTeleporter, localTeleporter)
-        -- setLocalTPTargetToRemoteTP(localTeleporter, hexTeleporter)
-    end
-
     if isEndScene then
         -- setLocalTPTargetToRemoteTP(hexTeleporter, localTeleporter)
         setLocalTPTargetToRemoteTP(localTeleporter, hexTeleporter)
@@ -46379,7 +46406,6 @@ function module.addTeleporters(props)
     localTeleporter.PrimaryPart.Anchored = true
     -- localTPPositioner:Destroy()
 end
-
 return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>

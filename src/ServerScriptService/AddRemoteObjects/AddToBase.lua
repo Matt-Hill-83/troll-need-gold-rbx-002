@@ -90,6 +90,18 @@ function addHexTeleporter(hexStand, worldIndex)
     return hexTeleporter
 end
 
+function addSkyBoxTeleporter(hexStand, worldIndex)
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local teleporter = Teleporters.configSkyBoxTeleporter(
+                           {
+            worldIndex = worldIndex,
+            questTitle = "All Worlds",
+            parentFolder = myStuff
+        })
+    teleporter.PrimaryPart.Anchored = true
+    return teleporter
+end
+
 function sliceQuestConfigs(questConfigs)
     if (Constants.singleScene) then
         -- slice out a single quest
@@ -215,6 +227,7 @@ function addWorld(props)
     local hexStand = cloneHexStand(worldIndex)
     local mountPlates = Utils.getDescendantsByName(hexStand, "MountPlate")
     local hexTeleporter = addHexTeleporter(hexStand, worldIndex)
+    local skyTeleporter = addSkyBoxTeleporter(hexStand, worldIndex)
 
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do

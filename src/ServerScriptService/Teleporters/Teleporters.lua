@@ -51,6 +51,25 @@ function module.configHexTeleporter(props)
     return hexTeleporter
 end
 
+function module.configSkyBoxTeleporter(props)
+    local worldIndex = props.worldIndex
+    local worldTitle = props.worldTitle or ""
+    local parentFolder = props.parentFolder
+
+    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
+    local teleporter = teleporterTemplate:Clone()
+    teleporter.Parent = parentFolder
+
+    local labels2 = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
+    for i, label in ipairs(labels2) do label.Text = worldTitle end
+
+    local teleporterPositioner = Utils.getFirstDescendantByName(parentFolder,
+                                                                "SkyBoxTeleporterPositioner")
+    teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
+    teleporter.Name = "teleporter" .. "-sky-W-zzz" .. worldIndex
+    return teleporter
+end
+
 function module.configLocalTeleporter(props)
     local questIndex = props.questIndex
     local questTitle = props.questTitle
@@ -97,11 +116,6 @@ function module.addTeleporters(props)
     }
     local localTeleporter = module.configLocalTeleporter(props)
 
-    if isStartScene then
-        -- setLocalTPTargetToRemoteTP(hexTeleporter, localTeleporter)
-        -- setLocalTPTargetToRemoteTP(localTeleporter, hexTeleporter)
-    end
-
     if isEndScene then
         -- setLocalTPTargetToRemoteTP(hexTeleporter, localTeleporter)
         setLocalTPTargetToRemoteTP(localTeleporter, hexTeleporter)
@@ -110,5 +124,4 @@ function module.addTeleporters(props)
     localTeleporter.PrimaryPart.Anchored = true
     -- localTPPositioner:Destroy()
 end
-
 return module
