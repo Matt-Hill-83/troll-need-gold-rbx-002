@@ -36,6 +36,7 @@ function module.configTeleporter(props)
     local label = props.label
     local parentFolder = props.parentFolder
     local positionerName = props.positionerName
+    local positionOffset = props.positionOffset or Vector3.new(0, 0, 0)
 
     local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
     local teleporter = teleporterTemplate:Clone()
@@ -47,9 +48,11 @@ function module.configTeleporter(props)
     local positioner = Utils.getFirstDescendantByName(parentFolder,
                                                       positionerName)
 
-    teleporter.PrimaryPart.CFrame = positioner.CFrame
-    teleporter.PrimaryPart.Anchored = true
+    teleporter.PrimaryPart.CFrame = positioner.CFrame + positionOffset
+
     teleporter.Name = "teleporter" .. "-hex-W" .. worldIndex
+
+    teleporter.PrimaryPart.Anchored = true
     positioner.CanCollide = false
     positioner.Transparency = 1
     return teleporter

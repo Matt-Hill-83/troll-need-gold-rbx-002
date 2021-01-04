@@ -102,17 +102,18 @@ end
 
 function addSkyBoxTeleporter(worldIndex)
     local myStuff = workspace:FindFirstChild("MyStuff")
+    local tPOffsetX = 10
     local teleporter = Teleporters.configTeleporter(
                            {
             worldIndex = worldIndex,
             label = "Island " .. worldIndex,
             parentFolder = myStuff,
-            positionerName = "SkyBoxTeleporterPositioner"
+            positionerName = "SkyBoxTeleporterPositioner",
+            positionOffset = Vector3.new(worldIndex * tPOffsetX, 0, 0)
         })
 
-    local tPOffsetX = 10
-    teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame +
-                                        Vector3.new(worldIndex * tPOffsetX, 0, 0)
+    -- teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame +
+    --                                     Vector3.new(worldIndex * tPOffsetX, 0, 0)
     -- teleporter.PrimaryPart.Anchored = true
     return teleporter
 end

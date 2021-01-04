@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-948.630249</X>
-					<Y>-128.456436</Y>
-					<Z>-200.63446</Z>
-					<R00>0.682376802</R00>
-					<R01>-0.331067026</R01>
-					<R02>0.651733458</R02>
-					<R10>-0</R10>
-					<R11>0.891563535</R11>
-					<R12>0.452895641</R12>
-					<R20>-0.731000662</R20>
-					<R21>-0.309045494</R21>
-					<R22>0.608382225</R22>
+					<X>-991.658875</X>
+					<Y>-130.216553</Y>
+					<Z>-166.435608</Z>
+					<R00>0.881559849</R00>
+					<R01>-0.209384292</R01>
+					<R02>0.423096269</R02>
+					<R10>1.49011594e-08</R10>
+					<R11>0.896253228</R11>
+					<R12>0.443542868</R12>
+					<R20>-0.472072244</R20>
+					<R21>-0.391009569</R21>
+					<R22>0.790100873</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -45960,14 +45960,19 @@ end
 
 function addSkyBoxTeleporter(worldIndex)
     local myStuff = workspace:FindFirstChild("MyStuff")
+    local tPOffsetX = 10
     local teleporter = Teleporters.configTeleporter(
                            {
             worldIndex = worldIndex,
             label = "Island " .. worldIndex,
             parentFolder = myStuff,
-            positionerName = "SkyBoxTeleporterPositioner"
+            positionerName = "SkyBoxTeleporterPositioner",
+            positionOffset = Vector3.new(worldIndex * tPOffsetX, 0, 0)
         })
-    teleporter.PrimaryPart.Anchored = true
+
+    -- teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame +
+    --                                     Vector3.new(worldIndex * tPOffsetX, 0, 0)
+    -- teleporter.PrimaryPart.Anchored = true
     return teleporter
 end
 
@@ -46100,7 +46105,7 @@ function addWorld(props)
     local hexReturnTeleporter = addHexReturnTeleporter(hexStand, worldIndex)
     local skyTeleporter = addSkyBoxTeleporter(worldIndex)
     Teleporters.setLocalTPTargetToRemoteTP(skyTeleporter, hexTeleporter)
-    -- Teleporters.setLocalTPTargetToRemoteTP(hexReturnTeleporter, skyTeleporter)
+    Teleporters.setLocalTPTargetToRemoteTP(hexReturnTeleporter, skyTeleporter)
 
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
@@ -48019,6 +48024,7 @@ function module.configTeleporter(props)
     local label = props.label
     local parentFolder = props.parentFolder
     local positionerName = props.positionerName
+    local positionOffset = props.positionOffset or Vector3.new(0, 0, 0)
 
     local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
     local teleporter = teleporterTemplate:Clone()
@@ -48031,34 +48037,14 @@ function module.configTeleporter(props)
                                                       positionerName)
 
     teleporter.PrimaryPart.CFrame = positioner.CFrame
-    -- teleporter.PrimaryPart.Anchored = false
+    if positionOffset then
+        teleporter.PrimaryPart.CFrame = positioner.CFrame + positionOffset
+    end
+
     teleporter.PrimaryPart.Anchored = true
     teleporter.Name = "teleporter" .. "-hex-W" .. worldIndex
     positioner.CanCollide = false
     positioner.Transparency = 1
-    -- positioner:Destroy()
-    return teleporter
-end
-
-function module.configSkyBoxTeleporter(props)
-    local worldIndex = props.worldIndex
-    local worldTitle = props.worldTitle or ""
-    local parentFolder = props.parentFolder
-
-    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
-    local teleporter = teleporterTemplate:Clone()
-    teleporter.Parent = parentFolder
-
-    local labels = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
-    for i, label in ipairs(labels) do label.Text = worldTitle end
-
-    local tPOffsetX = 10
-
-    local teleporterPositioner = Utils.getFirstDescendantByName(parentFolder,
-                                                                "SkyBoxTeleporterPositioner")
-    teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame +
-                                        Vector3.new(worldIndex * tPOffsetX, 0, 0)
-    teleporter.Name = "teleporter" .. "-sky-W-zzz" .. worldIndex
     return teleporter
 end
 
