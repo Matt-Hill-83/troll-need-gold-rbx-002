@@ -109,7 +109,11 @@ function addSkyBoxTeleporter(worldIndex)
             parentFolder = myStuff,
             positionerName = "SkyBoxTeleporterPositioner"
         })
-    teleporter.PrimaryPart.Anchored = true
+
+    local tPOffsetX = 10
+    teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame +
+                                        Vector3.new(worldIndex * tPOffsetX, 0, 0)
+    -- teleporter.PrimaryPart.Anchored = true
     return teleporter
 end
 

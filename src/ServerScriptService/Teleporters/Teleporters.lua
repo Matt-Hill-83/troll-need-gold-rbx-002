@@ -48,34 +48,10 @@ function module.configTeleporter(props)
                                                       positionerName)
 
     teleporter.PrimaryPart.CFrame = positioner.CFrame
-    -- teleporter.PrimaryPart.Anchored = false
     teleporter.PrimaryPart.Anchored = true
     teleporter.Name = "teleporter" .. "-hex-W" .. worldIndex
     positioner.CanCollide = false
     positioner.Transparency = 1
-    -- positioner:Destroy()
-    return teleporter
-end
-
-function module.configSkyBoxTeleporter(props)
-    local worldIndex = props.worldIndex
-    local worldTitle = props.worldTitle or ""
-    local parentFolder = props.parentFolder
-
-    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
-    local teleporter = teleporterTemplate:Clone()
-    teleporter.Parent = parentFolder
-
-    local labels = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
-    for i, label in ipairs(labels) do label.Text = worldTitle end
-
-    local tPOffsetX = 10
-
-    local teleporterPositioner = Utils.getFirstDescendantByName(parentFolder,
-                                                                "SkyBoxTeleporterPositioner")
-    teleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame +
-                                        Vector3.new(worldIndex * tPOffsetX, 0, 0)
-    teleporter.Name = "teleporter" .. "-sky-W-zzz" .. worldIndex
     return teleporter
 end
 
