@@ -148,21 +148,15 @@ function renderQuestBlock(props)
     local dockMountPlate = Utils.getFirstDescendantByName(miniGame,
                                                           "DockMountPlate")
 
-    local gridPadding = getGridPadding()
     local questBlockTemplateClone = cloneQuestBlock(worldIndex, questIndex,
                                                     questFolder)
-
-    local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
-                  Constants.bridgeLength
-    local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
-                  Constants.bridgeLength
-
     local questBlockProps = {
         parent = dockMountPlate,
-        size = Vector3.new(x, 2, z),
         questBlockTemplate = questBlockTemplateClone,
         worldIndex = worldIndex,
-        questIndex = questIndex
+        questIndex = questIndex,
+        gridSize = gridSize,
+        gridPadding = getGridPadding()
     }
     local questBlockModel = QuestBlock.renderQuestBlock(questBlockProps)
     -- dockMountPlate:Destroy()

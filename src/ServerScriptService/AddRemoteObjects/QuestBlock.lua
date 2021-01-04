@@ -8,8 +8,16 @@ local module = {}
 
 renderQuestBlock = function(props)
     local parent = props.parent
-    local size = props.size
     local questBlockTemplate = props.questBlockTemplate
+    local gridSize = props.gridSize
+    local gridPadding = props.gridPadding
+
+    local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
+                  Constants.bridgeLength
+    local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
+                  Constants.bridgeLength
+
+    local size = Vector3.new(x, 2, z)
 
     local dockBase = Utils.getFirstDescendantByName(questBlockTemplate,
                                                     "DockBase")
