@@ -17,8 +17,8 @@ function addRemoteObjects()
     local questConfigs = SceneConfig.getScenesConfig()
 
     local myStuff = workspace:FindFirstChild("MyStuff")
-    -- local worlds = {questConfigs}
-    local worlds = {questConfigs, questConfigs}
+    local worlds = {questConfigs}
+    -- local worlds = {questConfigs, questConfigs}
     -- local worlds = {questConfigs, questConfigs, questConfigs}
 
     for worldIndex, questConfig in ipairs(worlds) do
@@ -226,31 +226,34 @@ function addWorld(props)
             })
         questBlockModel.Parent = questFolder
 
+        -- 
+        -- 
+        -- 
         local dockBase = Utils.getFirstDescendantByName(questBlockModel,
                                                         "DockBase")
         local sceneMountPlate = Utils.getFirstDescendantByName(questBlockModel,
                                                                "SceneMountPlate")
-        -- Utils.enableChildWelds({part = sceneMountPlate, enabled = false})
+        Utils.enableChildWelds({part = sceneMountPlate, enabled = false})
 
-        -- local translateCFrameProps = {
-        --     parent = dockBase,
-        --     child = sceneMountPlate,
-        --     offsetConfig = {
-        --         useParentNearEdge = Vector3.new(-1, 1, -1),
-        --         useChildNearEdge = Vector3.new(-1, -1, -1),
-        --         offsetAdder = Vector3.new(0, 0, 0)
-        --     }
-        -- }
+        local translateCFrameProps = {
+            parent = dockBase,
+            child = sceneMountPlate,
+            offsetConfig = {
+                useParentNearEdge = Vector3.new(-1, 1, -1),
+                useChildNearEdge = Vector3.new(-1, -1, -1)
+                -- offsetAdder = Vector3.new(0, 0, 0)
+            }
+        }
 
-        -- -- Relocate the scene mountplate, after the dock has been resized.
-        -- local sceneMountPlateCFrame = Utils3.setCFrameFromDesiredEdgeOffset(
-        --                                   translateCFrameProps)
+        -- Relocate the scene mountplate, after the dock has been resized.
+        local sceneMountPlateCFrame = Utils3.setCFrameFromDesiredEdgeOffset(
+                                          translateCFrameProps)
 
-        -- sceneMountPlate.CFrame = sceneMountPlateCFrame
-        -- local rotatedCFrame = CFrame.Angles(0, math.rad(180), 0)
-        -- sceneMountPlate.CFrame = sceneMountPlate.CFrame:ToWorldSpace(
-        --                              rotatedCFrame)
-        -- sceneMountPlate.Anchored = true
+        sceneMountPlate.CFrame = sceneMountPlateCFrame
+        local rotatedCFrame = CFrame.Angles(0, math.rad(180), 0)
+        sceneMountPlate.CFrame = sceneMountPlate.CFrame:ToWorldSpace(
+                                     rotatedCFrame)
+        sceneMountPlate.Anchored = true
         local gridPadding = getGridPadding()
         local addScenesProps = {
             parent = sceneMountPlate,
