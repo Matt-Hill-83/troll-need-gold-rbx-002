@@ -26,10 +26,25 @@ function styleGemHolder(props)
     local bigGem = gemHolder:FindFirstChildWhichIsA("Tool", true)
 
     if isReceiver then
+        print('isReceiver ' .. ' - start');
+        print('isReceiver ' .. ' - start');
+        print('isReceiver ' .. ' - start');
+        print('isReceiver ' .. ' - start');
         if bigGem then
-            bigGem.Handle.Color = grey
             bigGem.Enabled = false
-            bigGem.Handle.Name = "NotHandle"
+            if bigGem.Handle then
+                bigGem.Handle.Color = grey
+                bigGem.Handle.CanCollide = false
+                bigGem.Handle.Name = "NotHandle"
+            end
+
+            if bigGem.NotHandle then
+                -- 
+            end
+
+            local torque = bigGem:FindFirstChildWhichIsA("Torque", true)
+            torque.Torque = Vector3.new(0, 0, 0)
+            torque.Enabled = false
         end
     else
         local gemColor = Constants.gemColors[questIndex]
