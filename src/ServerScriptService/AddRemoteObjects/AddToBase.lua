@@ -102,19 +102,20 @@ function sliceQuestConfigs(questConfigs)
 end
 
 function getWords(questConfig)
-
     local words = questConfig.words
+
+    -- add comma to last word
     local newWords = {}
     if words then
-        local output
         words = words .. ','
         for w in words:gmatch("(.-),") do table.insert(newWords, w) end
     end
-    questConfig.words2 = newWords
+
     local defaultWords = {'CAT', 'HAT', 'MAT', 'PAT', 'RAT', 'SAT', "CHAT"}
-    local words3 = defaultWords
-    if #questConfig.words2 > 0 then words3 = questConfig.words2 end
-    return words3
+    local output = defaultWords
+
+    if #newWords > 0 then output = newWords end
+    return output
 end
 
 function addWorld(props)
@@ -136,10 +137,10 @@ function addWorld(props)
         local miniGameMountPlate = mountPlates[questIndex]
         local gridSize = questConfig.gridSize
 
-        local words4 = getWords(questConfig)
+        local words = getWords(questConfig)
 
-        print('words4' .. ' - start');
-        print(words4);
+        print('words' .. ' - start');
+        print(words);
 
         local desiredPadding = 12
         local wallWidth = 1
@@ -169,7 +170,7 @@ function addWorld(props)
         -- local miniGame = MiniGame.addMiniGame(
         --                      {
         --         parent = miniGameMountPlate,
-        --         words = words4,
+        --         words = words,
         --         sceneIndex = 1,
         --         questIndex = questIndex,
         --         isStartScene = true,
