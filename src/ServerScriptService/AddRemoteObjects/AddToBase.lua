@@ -142,11 +142,11 @@ function renderQuestBlock(props)
     local gridSize = props.gridSize
     local questFolder = props.questFolder
 
-    local questBlockTemplateClone = cloneQuestBlock(worldIndex, questIndex)
+    local questBlockClone = cloneQuestBlock(worldIndex, questIndex)
 
     local questBlockProps = {
         parent = dockMountPlate,
-        questBlockTemplate = questBlockTemplateClone,
+        questBlockTemplate = questBlockClone,
         worldIndex = worldIndex,
         questIndex = questIndex,
         gridSize = gridSize,
