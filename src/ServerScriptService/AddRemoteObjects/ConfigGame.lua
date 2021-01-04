@@ -66,18 +66,6 @@ function setVisibility()
         Utils.setItemHeight({item = wall, height = 2})
         local newWallHeight = 4
         wall.Transparency = 0
-
-        -- local newWall = wall:Clone()
-
-        -- newWall.Parent = wall.Parent
-        -- newWall.Size = newWall.Size +
-        --                    Vector3.new(0, newWallHeight - newWall.Size.Y, 0)
-        -- newWall.Position = newWall.Position +
-        --                        Vector3.new(0,
-        --                                    -(wall.Size.Y - newWall.Size.Y) / 2,
-        --                                    0)
-        -- newWall.Transparency = 0
-        -- CS:RemoveTag(newWall, hexTag)
     end
 
     local skyBoxWalls = CS:GetTagged("SkyBoxWalls")
