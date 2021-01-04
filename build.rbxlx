@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-253.722321</X>
-					<Y>342.090515</Y>
-					<Z>-1192.17883</Z>
-					<R00>-1</R00>
-					<R01>-0.000210683516</R01>
-					<R02>0.000274657621</R02>
+					<X>241.148911</X>
+					<Y>400.079254</Y>
+					<Z>-777.114685</Z>
+					<R00>-0.976768374</R00>
+					<R01>0.170026556</R01>
+					<R02>-0.130439892</R02>
 					<R10>-0</R10>
-					<R11>0.793449283</R11>
-					<R12>0.608636558</R12>
-					<R20>-0.000346156536</R20>
-					<R21>0.608636558</R21>
-					<R22>-0.793449163</R22>
+					<R11>0.608684838</R11>
+					<R12>0.793412089</R12>
+					<R20>0.214297906</R20>
+					<R21>0.77497983</R21>
+					<R22>-0.594544113</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-254</X>
-					<Y>-273.242371</Y>
-					<Z>-390</Z>
+					<X>241.40979</X>
+					<Y>398.492432</Y>
+					<Z>-775.925598</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -31271,434 +31271,6 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 								</Item>
 							</Item>
 						</Item>
-						<Item class="Model" referent="RBXf7c17c57505e4c2586ad0d417b759f03">
-							<Properties>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<token name="LevelOfDetail">0</token>
-								<CoordinateFrame name="ModelInPrimary">
-									<X>0</X>
-									<Y>0</Y>
-									<Z>0</Z>
-									<R00>1</R00>
-									<R01>0</R01>
-									<R02>0</R02>
-									<R10>0</R10>
-									<R11>1</R11>
-									<R12>0</R12>
-									<R20>0</R20>
-									<R21>0</R21>
-									<R22>1</R22>
-								</CoordinateFrame>
-								<CoordinateFrame name="ModelMeshCFrame">
-									<X>0</X>
-									<Y>0</Y>
-									<Z>0</Z>
-									<R00>1</R00>
-									<R01>0</R01>
-									<R02>0</R02>
-									<R10>0</R10>
-									<R11>1</R11>
-									<R12>0</R12>
-									<R20>0</R20>
-									<R21>0</R21>
-									<R22>1</R22>
-								</CoordinateFrame>
-								<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
-								<Vector3 name="ModelMeshSize">
-									<X>0</X>
-									<Y>0</Y>
-									<Z>0</Z>
-								</Vector3>
-								<string name="Name">ReturnLadder</string>
-								<Ref name="PrimaryPart">null</Ref>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-							</Properties>
-							<Item class="TrussPart" referent="RBXb04a3b07e41a4fbe849e006ea7b1bf25">
-								<Properties>
-									<bool name="Anchored">false</bool>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<float name="BackParamA">-0.5</float>
-									<float name="BackParamB">0.5</float>
-									<token name="BackSurface">0</token>
-									<token name="BackSurfaceInput">0</token>
-									<float name="BottomParamA">-0.5</float>
-									<float name="BottomParamB">0.5</float>
-									<token name="BottomSurface">0</token>
-									<token name="BottomSurfaceInput">0</token>
-									<CoordinateFrame name="CFrame">
-										<X>-863.63092</X>
-										<Y>-278.609619</Y>
-										<Z>-398.119629</Z>
-										<R00>0.999998331</R00>
-										<R01>0.000498876208</R01>
-										<R02>0.00173846143</R02>
-										<R10>-0.00112259644</R10>
-										<R11>0.924844861</R11>
-										<R12>0.380342931</R12>
-										<R20>-0.00141806318</R20>
-										<R21>-0.380344272</R21>
-										<R22>0.924843907</R22>
-									</CoordinateFrame>
-									<bool name="CanCollide">true</bool>
-									<bool name="CastShadow">true</bool>
-									<int name="CollisionGroupId">0</int>
-									<Color3uint8 name="Color3uint8">4291045404</Color3uint8>
-									<PhysicalProperties name="CustomPhysicalProperties">
-										<CustomPhysics>false</CustomPhysics>
-									</PhysicalProperties>
-									<float name="FrontParamA">-0.5</float>
-									<float name="FrontParamB">0.5</float>
-									<token name="FrontSurface">0</token>
-									<token name="FrontSurfaceInput">0</token>
-									<float name="LeftParamA">-0.5</float>
-									<float name="LeftParamB">0.5</float>
-									<token name="LeftSurface">0</token>
-									<token name="LeftSurfaceInput">0</token>
-									<bool name="Locked">false</bool>
-									<bool name="Massless">false</bool>
-									<token name="Material">256</token>
-									<string name="Name">Truss</string>
-									<float name="Reflectance">0</float>
-									<float name="RightParamA">-0.5</float>
-									<float name="RightParamB">0.5</float>
-									<token name="RightSurface">0</token>
-									<token name="RightSurfaceInput">0</token>
-									<int name="RootPriority">0</int>
-									<Vector3 name="RotVelocity">
-										<X>0</X>
-										<Y>0</Y>
-										<Z>0</Z>
-									</Vector3>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-									<float name="TopParamA">-0.5</float>
-									<float name="TopParamB">0.5</float>
-									<token name="TopSurface">0</token>
-									<token name="TopSurfaceInput">0</token>
-									<float name="Transparency">0</float>
-									<Vector3 name="Velocity">
-										<X>0</X>
-										<Y>0</Y>
-										<Z>0</Z>
-									</Vector3>
-									<Vector3 name="size">
-										<X>2</X>
-										<Y>46.04319</Y>
-										<Z>2</Z>
-									</Vector3>
-									<token name="style">0</token>
-								</Properties>
-							</Item>
-							<Item class="TrussPart" referent="RBXde6edee3375c4cafbf0778f7121e2b3f">
-								<Properties>
-									<bool name="Anchored">false</bool>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<float name="BackParamA">-0.5</float>
-									<float name="BackParamB">0.5</float>
-									<token name="BackSurface">0</token>
-									<token name="BackSurfaceInput">0</token>
-									<float name="BottomParamA">-0.5</float>
-									<float name="BottomParamB">0.5</float>
-									<token name="BottomSurface">0</token>
-									<token name="BottomSurfaceInput">0</token>
-									<CoordinateFrame name="CFrame">
-										<X>-863.630615</X>
-										<Y>-278.113831</Y>
-										<Z>-396.183502</Z>
-										<R00>1.00000894</R00>
-										<R01>0.00049867318</R01>
-										<R02>0.00174014026</R02>
-										<R10>-0.000717330782</R10>
-										<R11>0.991778731</R11>
-										<R12>0.128016263</R12>
-										<R20>-0.0016603109</R20>
-										<R21>-0.128017813</R21>
-										<R22>0.991781116</R22>
-									</CoordinateFrame>
-									<bool name="CanCollide">true</bool>
-									<bool name="CastShadow">true</bool>
-									<int name="CollisionGroupId">0</int>
-									<Color3uint8 name="Color3uint8">4291045404</Color3uint8>
-									<PhysicalProperties name="CustomPhysicalProperties">
-										<CustomPhysics>false</CustomPhysics>
-									</PhysicalProperties>
-									<float name="FrontParamA">-0.5</float>
-									<float name="FrontParamB">0.5</float>
-									<token name="FrontSurface">0</token>
-									<token name="FrontSurfaceInput">0</token>
-									<float name="LeftParamA">-0.5</float>
-									<float name="LeftParamB">0.5</float>
-									<token name="LeftSurface">0</token>
-									<token name="LeftSurfaceInput">0</token>
-									<bool name="Locked">false</bool>
-									<bool name="Massless">false</bool>
-									<token name="Material">256</token>
-									<string name="Name">Truss</string>
-									<float name="Reflectance">0</float>
-									<float name="RightParamA">-0.5</float>
-									<float name="RightParamB">0.5</float>
-									<token name="RightSurface">0</token>
-									<token name="RightSurfaceInput">0</token>
-									<int name="RootPriority">0</int>
-									<Vector3 name="RotVelocity">
-										<X>0</X>
-										<Y>0</Y>
-										<Z>0</Z>
-									</Vector3>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-									<float name="TopParamA">-0.5</float>
-									<float name="TopParamB">0.5</float>
-									<token name="TopSurface">0</token>
-									<token name="TopSurfaceInput">0</token>
-									<float name="Transparency">0</float>
-									<Vector3 name="Velocity">
-										<X>0</X>
-										<Y>0</Y>
-										<Z>0</Z>
-									</Vector3>
-									<Vector3 name="size">
-										<X>2</X>
-										<Y>47.04319</Y>
-										<Z>2</Z>
-									</Vector3>
-									<token name="style">0</token>
-								</Properties>
-								<Item class="Weld" referent="RBXc6af0eff1aec42488d6c5e894a4fba02">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<CoordinateFrame name="C0">
-											<X>1</X>
-											<Y>-3.05175781e-05</Y>
-											<Z>0</Z>
-											<R00>0</R00>
-											<R01>1.45519152e-11</R01>
-											<R02>1.00000024</R02>
-											<R10>1.49011612e-08</R10>
-											<R11>-1</R11>
-											<R12>0</R12>
-											<R20>0.99999994</R20>
-											<R21>1.49011612e-08</R21>
-											<R22>0</R22>
-										</CoordinateFrame>
-										<CoordinateFrame name="C1">
-											<X>-0.526489258</X>
-											<Y>-7.83389282</Y>
-											<Z>53.8694763</Z>
-											<R00>-7.43523997e-05</R00>
-											<R01>-0.000439179596</R01>
-											<R02>1</R02>
-											<R10>0.258809716</R10>
-											<R11>-0.965928257</R11>
-											<R12>-0.000404972903</R12>
-											<R20>0.965928316</R20>
-											<R21>0.258809686</R21>
-											<R22>0.000185483048</R22>
-										</CoordinateFrame>
-										<bool name="Enabled">true</bool>
-										<string name="Name">Weld</string>
-										<Ref name="Part0">RBXde6edee3375c4cafbf0778f7121e2b3f</Ref>
-										<Ref name="Part1">RBXd529a5e4205248919d89dcc1159f1dae</Ref>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-									</Properties>
-								</Item>
-								<Item class="Weld" referent="RBX5793722b55cf48ee9c167fb7fe416e8a">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<CoordinateFrame name="C0">
-											<X>1</X>
-											<Y>-3.05175781e-05</Y>
-											<Z>0</Z>
-											<R00>0</R00>
-											<R01>1.45519152e-11</R01>
-											<R02>1.00000024</R02>
-											<R10>1.49011612e-08</R10>
-											<R11>-1</R11>
-											<R12>0</R12>
-											<R20>0.99999994</R20>
-											<R21>1.49011612e-08</R21>
-											<R22>0</R22>
-										</CoordinateFrame>
-										<CoordinateFrame name="C1">
-											<X>-4.00164795</X>
-											<Y>-2.2928772</Y>
-											<Z>53.3680115</Z>
-											<R00>-7.30936299e-05</R00>
-											<R01>-0.000467786245</R01>
-											<R02>0.999999881</R02>
-											<R10>0.258818686</R10>
-											<R11>-0.965925813</R11>
-											<R12>-0.000432928908</R12>
-											<R20>0.965925992</R20>
-											<R21>0.258818597</R21>
-											<R22>0.000191674844</R22>
-										</CoordinateFrame>
-										<bool name="Enabled">true</bool>
-										<string name="Name">Weld</string>
-										<Ref name="Part0">RBXde6edee3375c4cafbf0778f7121e2b3f</Ref>
-										<Ref name="Part1">RBX9f77023b43f5471f93ff1e8f909e5224</Ref>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-									</Properties>
-								</Item>
-							</Item>
-							<Item class="TrussPart" referent="RBX31086cc0564b45a6b5dc1a41edf12b0c">
-								<Properties>
-									<bool name="Anchored">false</bool>
-									<BinaryString name="AttributesSerialize"></BinaryString>
-									<float name="BackParamA">-0.5</float>
-									<float name="BackParamB">0.5</float>
-									<token name="BackSurface">0</token>
-									<token name="BackSurfaceInput">0</token>
-									<float name="BottomParamA">-0.5</float>
-									<float name="BottomParamB">0.5</float>
-									<token name="BottomSurface">0</token>
-									<token name="BottomSurfaceInput">0</token>
-									<CoordinateFrame name="CFrame">
-										<X>-863.631287</X>
-										<Y>-279.60614</Y>
-										<Z>-398.164246</Z>
-										<R00>1.0000087</R00>
-										<R01>0.000498902285</R01>
-										<R02>0.00174179883</R02>
-										<R10>-0.0002627426</R10>
-										<R11>0.991118014</R11>
-										<R12>-0.133036733</R12>
-										<R20>-0.00179101422</R20>
-										<R21>0.133036509</R21>
-										<R22>0.99112016</R22>
-									</CoordinateFrame>
-									<bool name="CanCollide">true</bool>
-									<bool name="CastShadow">true</bool>
-									<int name="CollisionGroupId">0</int>
-									<Color3uint8 name="Color3uint8">4291045404</Color3uint8>
-									<PhysicalProperties name="CustomPhysicalProperties">
-										<CustomPhysics>false</CustomPhysics>
-									</PhysicalProperties>
-									<float name="FrontParamA">-0.5</float>
-									<float name="FrontParamB">0.5</float>
-									<token name="FrontSurface">0</token>
-									<token name="FrontSurfaceInput">0</token>
-									<float name="LeftParamA">-0.5</float>
-									<float name="LeftParamB">0.5</float>
-									<token name="LeftSurface">0</token>
-									<token name="LeftSurfaceInput">0</token>
-									<bool name="Locked">false</bool>
-									<bool name="Massless">false</bool>
-									<token name="Material">256</token>
-									<string name="Name">Truss</string>
-									<float name="Reflectance">0</float>
-									<float name="RightParamA">-0.5</float>
-									<float name="RightParamB">0.5</float>
-									<token name="RightSurface">0</token>
-									<token name="RightSurfaceInput">0</token>
-									<int name="RootPriority">0</int>
-									<Vector3 name="RotVelocity">
-										<X>0</X>
-										<Y>0</Y>
-										<Z>0</Z>
-									</Vector3>
-									<int64 name="SourceAssetId">-1</int64>
-									<BinaryString name="Tags"></BinaryString>
-									<float name="TopParamA">-0.5</float>
-									<float name="TopParamB">0.5</float>
-									<token name="TopSurface">0</token>
-									<token name="TopSurfaceInput">0</token>
-									<float name="Transparency">0</float>
-									<Vector3 name="Velocity">
-										<X>0</X>
-										<Y>0</Y>
-										<Z>0</Z>
-									</Vector3>
-									<Vector3 name="size">
-										<X>2</X>
-										<Y>44.04319</Y>
-										<Z>2</Z>
-									</Vector3>
-									<token name="style">0</token>
-								</Properties>
-								<Item class="Weld" referent="RBX69e21d09e10b4345988277093775b858">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<CoordinateFrame name="C0">
-											<X>0.999938965</X>
-											<Y>-3.05175781e-05</Y>
-											<Z>-3.05175781e-05</Z>
-											<R00>0</R00>
-											<R01>-2.91038305e-11</R01>
-											<R02>1</R02>
-											<R10>1.49011612e-08</R10>
-											<R11>-1</R11>
-											<R12>0</R12>
-											<R20>1</R20>
-											<R21>1.49011612e-08</R21>
-											<R22>0</R22>
-										</CoordinateFrame>
-										<CoordinateFrame name="C1">
-											<X>-0.523254395</X>
-											<Y>-9.57592773</Y>
-											<Z>52.1046143</Z>
-											<R00>4.52967197e-06</R00>
-											<R01>2.81847697e-05</R01>
-											<R02>1</R02>
-											<R10>-9.31312661e-06</R10>
-											<R11>-1</R11>
-											<R12>2.81848115e-05</R12>
-											<R20>1</R20>
-											<R21>-9.31325394e-06</R21>
-											<R22>-4.52940958e-06</R22>
-										</CoordinateFrame>
-										<bool name="Enabled">true</bool>
-										<string name="Name">Weld</string>
-										<Ref name="Part0">RBX31086cc0564b45a6b5dc1a41edf12b0c</Ref>
-										<Ref name="Part1">RBXd529a5e4205248919d89dcc1159f1dae</Ref>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-									</Properties>
-								</Item>
-								<Item class="Weld" referent="RBX4896a97e2867499a9a9ab4d058ebcc09">
-									<Properties>
-										<BinaryString name="AttributesSerialize"></BinaryString>
-										<CoordinateFrame name="C0">
-											<X>0.999938965</X>
-											<Y>-3.05175781e-05</Y>
-											<Z>-3.05175781e-05</Z>
-											<R00>0</R00>
-											<R01>-2.91038305e-11</R01>
-											<R02>1</R02>
-											<R10>1.49011612e-08</R10>
-											<R11>-1</R11>
-											<R12>0</R12>
-											<R20>1</R20>
-											<R21>1.49011612e-08</R21>
-											<R22>0</R22>
-										</CoordinateFrame>
-										<CoordinateFrame name="C1">
-											<X>-3.99841309</X>
-											<Y>-4.03497314</Y>
-											<Z>51.6031799</Z>
-											<R00>-1.65843528e-06</R00>
-											<R01>2.27225016e-07</R01>
-											<R02>1</R02>
-											<R10>-2.98020097e-08</R10>
-											<R11>-1</R11>
-											<R12>2.27224959e-07</R12>
-											<R20>1</R20>
-											<R21>-2.98016616e-08</R21>
-											<R22>1.65843528e-06</R22>
-										</CoordinateFrame>
-										<bool name="Enabled">true</bool>
-										<string name="Name">Weld</string>
-										<Ref name="Part0">RBX31086cc0564b45a6b5dc1a41edf12b0c</Ref>
-										<Ref name="Part1">RBX9f77023b43f5471f93ff1e8f909e5224</Ref>
-										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
-									</Properties>
-								</Item>
-							</Item>
-						</Item>
 					</Item>
 					<Item class="Part" referent="RBXeefd83e73c1840acb0d06ed008017a1b">
 						<Properties>
@@ -34901,13 +34473,13 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<Y>-111.589798</Y>
 									<Z>-260.002869</Z>
 									<R00>1.00000858</R00>
-									<R01>6.76436684e-12</R01>
-									<R02>2.38418579e-07</R02>
-									<R10>-6.76436684e-12</R10>
+									<R01>8.08597633e-12</R01>
+									<R02>2.08616257e-07</R02>
+									<R10>-8.08597633e-12</R10>
 									<R11>1</R11>
-									<R12>-4.48352466e-12</R12>
-									<R20>-2.98023224e-07</R20>
-									<R21>4.48707738e-12</R21>
+									<R12>-3.63442609e-12</R12>
+									<R20>-2.68220901e-07</R20>
+									<R21>3.63442609e-12</R21>
 									<R22>1.00000858</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
@@ -35030,13 +34602,13 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<Y>-114.589798</Y>
 									<Z>-324.009247</Z>
 									<R00>-1.00000858</R00>
-									<R01>2.03561126e-11</R01>
-									<R02>-2.38418579e-07</R02>
-									<R10>2.03560033e-11</R10>
+									<R01>2.16777239e-11</R01>
+									<R02>-2.08616257e-07</R02>
+									<R10>2.16776128e-11</R10>
 									<R11>1</R11>
-									<R12>-2.23871026e-11</R12>
-									<R20>2.98023224e-07</R20>
-									<R21>-2.23837841e-11</R21>
+									<R12>-2.32362012e-11</R12>
+									<R20>2.68220901e-07</R20>
+									<R21>-2.32364353e-11</R21>
 									<R22>-1.00000858</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
@@ -35253,13 +34825,13 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<Y>-107.589798</Y>
 									<Z>-259.50174</Z>
 									<R00>1.00000858</R00>
-									<R01>6.76436684e-12</R01>
-									<R02>2.38418579e-07</R02>
-									<R10>-6.76436684e-12</R10>
+									<R01>8.08597633e-12</R01>
+									<R02>2.08616257e-07</R02>
+									<R10>-8.08597633e-12</R10>
 									<R11>1</R11>
-									<R12>-4.48352466e-12</R12>
-									<R20>-2.98023224e-07</R20>
-									<R21>4.48707738e-12</R21>
+									<R12>-3.63442609e-12</R12>
+									<R20>-2.68220901e-07</R20>
+									<R21>3.63442609e-12</R21>
 									<R22>1.00000858</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
@@ -35447,13 +35019,13 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<Y>-114.589798</Y>
 									<Z>-195.993317</Z>
 									<R00>1.00000858</R00>
-									<R01>2.03564301e-11</R01>
-									<R02>2.68220901e-07</R02>
-									<R10>-2.03563208e-11</R10>
+									<R01>2.16780413e-11</R01>
+									<R02>2.38418579e-07</R02>
+									<R10>-2.16779303e-11</R10>
 									<R11>1</R11>
-									<R12>2.23868962e-11</R12>
-									<R20>-3.27825546e-07</R20>
-									<R21>-2.23835776e-11</R21>
+									<R12>2.32359947e-11</R12>
+									<R20>-2.98023224e-07</R20>
+									<R21>-2.32362289e-11</R21>
 									<R22>1.00000858</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
@@ -35714,13 +35286,13 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<Y>-114.589798</Y>
 									<Z>-292.006744</Z>
 									<R00>-0.500004053</R00>
-									<R01>2.03561109e-11</R01>
+									<R01>2.16777204e-11</R01>
 									<R02>-0.866033018</R02>
-									<R10>2.95657804e-11</R10>
+									<R10>3.0961924e-11</R10>
 									<R11>1</R11>
-									<R12>6.43527592e-12</R12>
+									<R12>7.15527464e-12</R12>
 									<R20>0.866033018</R20>
-									<R21>-2.23837615e-11</R21>
+									<R21>-2.32364128e-11</R21>
 									<R22>-0.500003994</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
@@ -35937,13 +35509,13 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<Y>-114.589798</Y>
 									<Z>-227.997757</Z>
 									<R00>0.500004053</R00>
-									<R01>2.03561109e-11</R01>
+									<R01>2.16777204e-11</R01>
 									<R02>0.866033018</R02>
-									<R10>-2.95657804e-11</R10>
+									<R10>-3.0961924e-11</R10>
 									<R11>1</R11>
-									<R12>-6.43527592e-12</R12>
+									<R12>-7.15527464e-12</R12>
 									<R20>-0.866033018</R20>
-									<R21>-2.23837615e-11</R21>
+									<R21>-2.32364128e-11</R21>
 									<R22>0.500003994</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
@@ -36160,13 +35732,13 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<Y>-111.589798</Y>
 									<Z>-260.002594</Z>
 									<R00>0.500004053</R00>
-									<R01>6.76436684e-12</R01>
+									<R01>8.08597633e-12</R01>
 									<R02>0.866033018</R02>
-									<R10>5.00663313e-13</R10>
+									<R10>-8.95482256e-13</R10>
 									<R11>1</R11>
-									<R12>-8.0998758e-12</R12>
+									<R12>-8.81987452e-12</R12>
 									<R20>-0.866033018</R20>
-									<R21>4.48707738e-12</R21>
+									<R21>3.63442609e-12</R21>
 									<R22>0.500003994</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
@@ -36346,13 +35918,13 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<Y>-111.589798</Y>
 									<Z>-260.002014</Z>
 									<R00>-0.50000459</R00>
-									<R01>6.76436684e-12</R01>
+									<R01>8.08597633e-12</R01>
 									<R02>0.86603272</R02>
-									<R10>7.26503059e-12</R10>
+									<R10>7.19049429e-12</R10>
 									<R11>1</R11>
-									<R12>-3.61635071e-12</R12>
-									<R20>-0.86603266</R20>
-									<R21>4.48707738e-12</R21>
+									<R12>-5.18544712e-12</R12>
+									<R20>-0.86603272</R20>
+									<R21>3.63442609e-12</R21>
 									<R22>-0.500004649</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
@@ -36462,13 +36034,13 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<Y>-114.589798</Y>
 									<Z>-227.997803</Z>
 									<R00>0.50000459</R00>
-									<R01>2.03561161e-11</R01>
+									<R01>2.16777256e-11</R01>
 									<R02>-0.86603272</R02>
-									<R10>9.20945611e-12</R10>
+									<R10>9.28399198e-12</R10>
 									<R11>1</R11>
-									<R12>2.88221738e-11</R12>
-									<R20>0.86603266</R20>
-									<R21>-2.23833937e-11</R21>
+									<R12>3.03912694e-11</R12>
+									<R20>0.86603272</R20>
+									<R21>-2.32360485e-11</R21>
 									<R22>0.500004649</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
@@ -36685,13 +36257,13 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<Y>-114.589798</Y>
 									<Z>-292.006714</Z>
 									<R00>-0.50000459</R00>
-									<R01>2.03561161e-11</R01>
+									<R01>2.16777256e-11</R01>
 									<R02>0.86603272</R02>
-									<R10>-9.20945611e-12</R10>
+									<R10>-9.28399198e-12</R10>
 									<R11>1</R11>
-									<R12>-2.88221738e-11</R12>
-									<R20>-0.86603266</R20>
-									<R21>-2.23833937e-11</R21>
+									<R12>-3.03912694e-11</R12>
+									<R20>-0.86603272</R20>
+									<R21>-2.32360485e-11</R21>
 									<R22>-0.500004649</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
@@ -36909,14 +36481,14 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 								<X>-1090.27832</X>
 								<Y>-60.5922813</Y>
 								<Z>-260.13092</Z>
-								<R00>-0.866033196</R00>
-								<R01>-8.35240286e-08</R01>
+								<R00>-0.866033256</R00>
+								<R01>-8.35227141e-08</R01>
 								<R02>0.500003695</R02>
-								<R10>-5.15350465e-08</R10>
+								<R10>-5.15343253e-08</R10>
 								<R11>1</R11>
-								<R12>7.77853799e-08</R12>
+								<R12>7.77839873e-08</R12>
 								<R20>-0.500003695</R20>
-								<R21>4.15970156e-08</R21>
+								<R21>4.1596163e-08</R21>
 								<R22>-0.866033196</R22>
 							</CoordinateFrame>
 							<bool name="CanCollide">true</bool>
@@ -37045,14 +36617,14 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 								<X>-1090.27832</X>
 								<Y>-22.3429985</Y>
 								<Z>-260.130951</Z>
-								<R00>0.866031885</R00>
-								<R01>-8.35255491e-08</R01>
+								<R00>0.866031945</R00>
+								<R01>-8.35242346e-08</R01>
 								<R02>-0.50000596</R02>
-								<R10>5.1536599e-08</R10>
+								<R10>5.15358778e-08</R10>
 								<R11>1</R11>
-								<R12>-7.77855149e-08</R12>
+								<R12>-7.77841223e-08</R12>
 								<R20>0.50000596</R20>
-								<R21>4.15961381e-08</R21>
+								<R21>4.15952854e-08</R21>
 								<R22>0.866031885</R22>
 							</CoordinateFrame>
 							<bool name="CanCollide">true</bool>
@@ -37283,13 +36855,13 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 									<Y>-114.589806</Y>
 									<Z>-260.130859</Z>
 									<R00>-0.50000459</R00>
-									<R01>-8.23656521e-08</R01>
-									<R02>0.86603266</R02>
-									<R10>-4.58464688e-09</R10>
+									<R01>-8.23643376e-08</R01>
+									<R02>0.86603272</R02>
+									<R10>-4.58472149e-09</R10>
 									<R11>1</R11>
-									<R12>9.24599206e-08</R12>
-									<R20>-0.8660326</R20>
-									<R21>4.22599342e-08</R21>
+									<R12>9.24583503e-08</R12>
+									<R20>-0.86603266</R20>
+									<R21>4.22590816e-08</R21>
 									<R22>-0.50000459</R22>
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
@@ -37679,7 +37251,7 @@ remoteCode.addRemoteObjects()
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-3.5</X>
+							<X>-129.5</X>
 							<Y>-183.241776</Y>
 							<Z>-375.5</Z>
 							<R00>-1</R00>
@@ -37742,6 +37314,45 @@ remoteCode.addRemoteObjects()
 							<Z>16</Z>
 						</Vector3>
 					</Properties>
+					<Item class="Weld" referent="RBXc5a33fb23335477c8a42d7a9441c8fe8">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>0</X>
+								<Y>-119.999985</Y>
+								<Z>0</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>0</R11>
+								<R12>-1</R12>
+								<R20>0</R20>
+								<R21>1</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>76.5</X>
+								<Y>6</Y>
+								<Z>-390.499146</Z>
+								<R00>0</R00>
+								<R01>1</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>0</R11>
+								<R12>-1</R12>
+								<R20>-1</R20>
+								<R21>0</R21>
+								<R22>-0</R22>
+							</CoordinateFrame>
+							<bool name="Enabled">true</bool>
+							<string name="Name">Weld</string>
+							<Ref name="Part0">RBX1fcc1d435b294d32be1a017eb9c4a624</Ref>
+							<Ref name="Part1">RBX5b9fdbc326294e7f931877461e2c3f04</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
 				</Item>
 				<Item class="Part" referent="RBX5b9fdbc326294e7f931877461e2c3f04">
 					<Properties>
@@ -37819,84 +37430,6 @@ remoteCode.addRemoteObjects()
 							<Z>1666</Z>
 						</Vector3>
 					</Properties>
-					<Item class="Weld" referent="RBXb5c080e0412d45389c3f4695821589f5">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<CoordinateFrame name="C0">
-								<X>0</X>
-								<Y>6</Y>
-								<Z>0</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>1</R12>
-								<R20>0</R20>
-								<R21>-1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>220.500854</X>
-								<Y>-119.999985</Y>
-								<Z>-105.5</Z>
-								<R00>0</R00>
-								<R01>1</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>1</R12>
-								<R20>1</R20>
-								<R21>0</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Weld</string>
-							<Ref name="Part0">RBX5b9fdbc326294e7f931877461e2c3f04</Ref>
-							<Ref name="Part1">RBXe015746cf7be483bb3516ef61547bf7e</Ref>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-					<Item class="Weld" referent="RBXa613aba473d940f58a4a092a643c0a78">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<CoordinateFrame name="C0">
-								<X>0</X>
-								<Y>6</Y>
-								<Z>0</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>1</R12>
-								<R20>0</R20>
-								<R21>-1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>-264.499146</X>
-								<Y>-119.999985</Y>
-								<Z>-76.5</Z>
-								<R00>0</R00>
-								<R01>1</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>1</R12>
-								<R20>1</R20>
-								<R21>0</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Weld</string>
-							<Ref name="Part0">RBX5b9fdbc326294e7f931877461e2c3f04</Ref>
-							<Ref name="Part1">RBX1fcc1d435b294d32be1a017eb9c4a624</Ref>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
 				</Item>
 				<Item class="Part" referent="RBXe015746cf7be483bb3516ef61547bf7e">
 					<Properties>
@@ -37911,7 +37444,7 @@ remoteCode.addRemoteObjects()
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>481.5</X>
+							<X>637.5</X>
 							<Y>-183.241776</Y>
 							<Z>-404.5</Z>
 							<R00>-1</R00>
@@ -37974,6 +37507,45 @@ remoteCode.addRemoteObjects()
 							<Z>16</Z>
 						</Vector3>
 					</Properties>
+					<Item class="Weld" referent="RBXe4e35939b060435687cbe648e3d88410">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>0</X>
+								<Y>-119.999985</Y>
+								<Z>0</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>0</R11>
+								<R12>-1</R12>
+								<R20>0</R20>
+								<R21>1</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>105.5</X>
+								<Y>6</Y>
+								<Z>376.500854</Z>
+								<R00>0</R00>
+								<R01>1</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>0</R11>
+								<R12>-1</R12>
+								<R20>-1</R20>
+								<R21>0</R21>
+								<R22>-0</R22>
+							</CoordinateFrame>
+							<bool name="Enabled">true</bool>
+							<string name="Name">Weld</string>
+							<Ref name="Part0">RBXe015746cf7be483bb3516ef61547bf7e</Ref>
+							<Ref name="Part1">RBX5b9fdbc326294e7f931877461e2c3f04</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
 				</Item>
 				<Item class="Model" referent="RBX68c1d4425b694794be1f0edf876c5fd7">
 					<Properties>
@@ -42440,12 +42012,23 @@ local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
 local Teleporters = require(Sss.Source.Teleporters.Teleporters)
 local MiniGame = require(Sss.Source.MiniGame.MiniGame)
 
+function deleteTemplates()
+    local questBlockTemplate = Utils.getFromTemplates("QuestBox")
+    questBlockTemplate:Destroy()
+    local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
+    letterFallTemplate:Destroy()
+    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
+    teleporterTemplate:Destroy()
+    local hexStandTemplate = Utils.getFromTemplates("HexStandTemplate")
+    hexStandTemplate:Destroy()
+end
+
 function addRemoteObjects()
     local questConfigs = SceneConfig.getScenesConfig()
 
     local myStuff = workspace:FindFirstChild("MyStuff")
-    -- local worlds = {questConfigs}
-    local worlds = {questConfigs, questConfigs}
+    local worlds = {questConfigs}
+    -- local worlds = {questConfigs, questConfigs}
     -- local worlds = {questConfigs, questConfigs, questConfigs}
 
     for worldIndex, questConfig in ipairs(worlds) do
@@ -42455,23 +42038,12 @@ function addRemoteObjects()
         }
 
         local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
-
         addWorld(worldProps)
-        -- 
     end
 
-    local questBlockTemplate = Utils.getFromTemplates("QuestBox")
-    questBlockTemplate:Destroy()
-    local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
-    letterFallTemplate:Destroy()
-    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
-    teleporterTemplate:Destroy()
-    local hexStandTemplate = Utils.getFromTemplates("HexStandTemplate")
-    hexStandTemplate:Destroy()
-
+    deleteTemplates()
     -- Do this last after everything has been created/deleted
     ConfigGame.configGame()
-
 end
 
 function cloneHexStand(worldIndex)
@@ -42486,7 +42058,7 @@ function cloneHexStand(worldIndex)
     hexStand = hexStandTemplate:Clone()
     hexStand.Parent = myStuff
 
-    hexStand.Name = hexStand.Name .. "-Clone-zzzz"
+    hexStand.Name = hexStand.Name .. "-Clone-W" .. worldIndex
     local hexMountPart = hexStand.PrimaryPart
 
     local translateCFrameProps = {
@@ -42546,25 +42118,89 @@ function getWords(questConfig)
 end
 
 function cloneQuestBlock(worldIndex, questIndex)
-    local questBlockTemplate = Utils.getFromTemplates("QuestBox")
     local myStuff = workspace:FindFirstChild("MyStuff")
     local runtimeQuestsFolder = Utils.getOrCreateFolder(
                                     {name = "RunTimeQuests", parent = myStuff})
 
-    local questBlockTemplateClone = Utils.cloneModel(
-                                        {
-            model = questBlockTemplate,
-            suffix = "Clone-W" .. worldIndex .. "-Q" .. questIndex
-        })
+    return Utils.cloneModel({
+        model = Utils.getFromTemplates("QuestBox"),
+        suffix = "Clone-W" .. worldIndex .. "-Q" .. questIndex
+    })
+end
 
-    local questFolder = Utils.getOrCreateFolder(
-                            {
-            name = questBlockTemplateClone.Name,
-            parent = runtimeQuestsFolder
-        })
+function getGridPadding()
+    local desiredPadding = 12
+    local wallWidth = 1
+    return desiredPadding + wallWidth * 2
+end
 
-    questBlockTemplateClone.Parent = questFolder
-    return questBlockTemplateClone
+function renderQuestBlock(props)
+    local dockMountPlate = props.dockMountPlate
+    local worldIndex = props.worldIndex
+    local questIndex = props.questIndex
+    local gridSize = props.gridSize
+    local questFolder = props.questFolder
+
+    -- local dockMountPlate = Utils.getFirstDescendantByName(miniGame,
+    --                                                       "DockMountPlate")
+
+    local questBlockTemplateClone = cloneQuestBlock(worldIndex, questIndex)
+
+    local questBlockProps = {
+        parent = dockMountPlate,
+        questBlockTemplate = questBlockTemplateClone,
+        worldIndex = worldIndex,
+        questIndex = questIndex,
+        gridSize = gridSize,
+        gridPadding = getGridPadding()
+    }
+    local questBlockModel = QuestBlock.renderQuestBlock(questBlockProps)
+    -- dockMountPlate:Destroy()
+    return questBlockModel
+end
+
+function addScenes(props)
+    local questBlockModel = props.questBlockModel
+    local hexTeleporter = props.hexTeleporter
+    local questIndex = props.questIndex
+    local questConfig = props.questConfig
+    local questFolder = props.questFolder
+
+    local dockBase = Utils.getFirstDescendantByName(questBlockModel, "DockBase")
+    local sceneMountPlate = Utils.getFirstDescendantByName(questBlockModel,
+                                                           "SceneMountPlate")
+    Utils.enableChildWelds({part = sceneMountPlate, enabled = false})
+
+    local translateCFrameProps = {
+        parent = dockBase,
+        child = sceneMountPlate,
+        offsetConfig = {
+            useParentNearEdge = Vector3.new(-1, 1, -1),
+            useChildNearEdge = Vector3.new(-1, -1, -1)
+        }
+    }
+
+    -- Relocate the scene mountplate, after the dock has been resized.
+    local sceneMountPlateCFrame = Utils3.setCFrameFromDesiredEdgeOffset(
+                                      translateCFrameProps)
+
+    sceneMountPlate.CFrame = sceneMountPlateCFrame
+    local rotatedCFrame = CFrame.Angles(0, math.rad(180), 0)
+    sceneMountPlate.CFrame = sceneMountPlate.CFrame:ToWorldSpace(rotatedCFrame)
+
+    local gridPadding = getGridPadding()
+    local addScenesProps = {
+        gridPadding = gridPadding,
+        hexTeleporter = hexTeleporter,
+        parent = sceneMountPlate,
+        questConfig = questConfig,
+        questFolder = questFolder,
+        questIndex = questIndex,
+        sceneConfigs = questConfig.sceneConfigs
+    }
+    Scenes.addScenes(addScenesProps)
+    -- sceneMountPlate:Destroy()
+
 end
 
 function addWorld(props)
@@ -42577,14 +42213,19 @@ function addWorld(props)
 
     sliceQuestConfigs(questConfigs)
     local hexStand = cloneHexStand(worldIndex)
+    local mountPlates = Utils.getDescendantsByName(hexStand, "MountPlate")
     local hexTeleporter = addHexTeleporter(hexStand, worldIndex)
 
-    local mountPlates = Utils.getDescendantsByName(hexStand, "MountPlate")
-    -- local questBlockTemplate = Utils.getFromTemplates("QuestBox")
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
         local miniGameMountPlate = mountPlates[questIndex]
         local gridSize = questConfig.gridSize
+
+        local questFolder = Utils.getOrCreateFolder(
+                                {
+                name = "QuestBloc-Clone-" .. questIndex,
+                parent = runtimeQuestsFolder
+            })
 
         local miniGame = MiniGame.addMiniGame(
                              {
@@ -42597,65 +42238,25 @@ function addWorld(props)
             })
         miniGame.PrimaryPart.Anchored = true
 
-        local dockMountPlate = Utils.getFirstDescendantByName(miniGame,
-                                                              "DockMountPlate")
+        local questBlockModel = renderQuestBlock(
+                                    {
+                dockMountPlate = Utils.getFirstDescendantByName(miniGame,
+                                                                "DockMountPlate"),
+                worldIndex = worldIndex,
+                questIndex = questIndex,
+                gridSize = gridSize
+            })
+        questBlockModel.Parent = questFolder
 
-        local desiredPadding = 12
-        local wallWidth = 1
-        local gridPadding = desiredPadding + wallWidth * 2
-        local questBlockTemplateClone = cloneQuestBlock(worldIndex, questIndex)
-        local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
-                      Constants.bridgeLength
-        local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
-                      Constants.bridgeLength
-
-        local questBlockProps = {
-            parent = dockMountPlate,
-            size = Vector3.new(x, 2, z),
-            questBlockTemplate = questBlockTemplateClone
-        }
-        local questBlockModel = QuestBlock.renderQuestBlock(questBlockProps)
-        -- dockMountPlate:Destroy()
-
-        -- local dockBase = Utils.getFirstDescendantByName(questBlockModel,
-        --                                                 "DockBase")
-        -- local sceneMountPlate = Utils.getFirstDescendantByName(questBlockModel,
-        --                                                        "SceneMountPlate")
-        -- Utils.enableChildWelds({part = sceneMountPlate, enabled = false})
-
-        -- local translateCFrameProps = {
-        --     parent = dockBase,
-        --     child = sceneMountPlate,
-        --     offsetConfig = {
-        --         useParentNearEdge = Vector3.new(-1, 1, -1),
-        --         useChildNearEdge = Vector3.new(-1, -1, -1),
-        --         offsetAdder = Vector3.new(0, 0, 0)
-        --     }
-        -- }
-
-        -- -- Relocate the scene mountplate, after the dock has been resized.
-        -- local sceneMountPlateCFrame = Utils3.setCFrameFromDesiredEdgeOffset(
-        --                                   translateCFrameProps)
-
-        -- sceneMountPlate.CFrame = sceneMountPlateCFrame
-        -- local rotatedCFrame = CFrame.Angles(0, math.rad(180), 0)
-        -- sceneMountPlate.CFrame = sceneMountPlate.CFrame:ToWorldSpace(
-        --                              rotatedCFrame)
-        -- sceneMountPlate.Anchored = true
-
-        -- local addScenesProps = {
-        --     parent = sceneMountPlate,
-        --     sceneConfigs = questConfig.sceneConfigs,
-        --     questConfig = questConfig,
-        --     gridPadding = gridPadding,
-        --     questFolder = questFolder,
-        --     questIndex = questIndex,
-        --     hexTeleporter = hexTeleporter
-        -- }
-        -- Scenes.addScenes(addScenesProps)
-        -- sceneMountPlate:Destroy()
+        addScenes({
+            gridPadding = gridPadding,
+            hexTeleporter = hexTeleporter,
+            questBlockModel = questBlockModel,
+            questConfig = questConfig,
+            questFolder = questFolder,
+            questIndex = questIndex
+        })
     end
-
 end
 
 module.addRemoteObjects = addRemoteObjects
@@ -42814,10 +42415,19 @@ local module = {}
 
 renderQuestBlock = function(props)
     local parent = props.parent
-    local size = props.size
-    local dockModel = props.questBlockTemplate
+    local questBlockTemplate = props.questBlockTemplate
+    local gridSize = props.gridSize
+    local gridPadding = props.gridPadding
 
-    local dockBase = Utils.getFirstDescendantByName(dockModel, "DockBase")
+    local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
+                  Constants.bridgeLength
+    local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
+                  Constants.bridgeLength
+
+    local size = Vector3.new(x, 2, z)
+
+    local dockBase = Utils.getFirstDescendantByName(questBlockTemplate,
+                                                    "DockBase")
 
     local dockPositioner = Instance.new("Part", parent)
     dockPositioner.Size = size
@@ -42827,8 +42437,7 @@ renderQuestBlock = function(props)
         child = dockPositioner,
         offsetConfig = {
             useParentNearEdge = Vector3.new(1, -1, 0),
-            useChildNearEdge = Vector3.new(-1, -1, 0),
-            offsetAdder = Vector3.new(0, 0, 0)
+            useChildNearEdge = Vector3.new(-1, -1, 0)
         }
     }
 
@@ -42840,7 +42449,7 @@ renderQuestBlock = function(props)
     dockBase.CFrame = dockPositioner.CFrame
 
     dockPositioner:Destroy()
-    return dockModel
+    return questBlockTemplate
 end
 
 module.renderQuestBlock = renderQuestBlock

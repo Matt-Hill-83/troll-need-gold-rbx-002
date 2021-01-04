@@ -119,17 +119,14 @@ function getWords(questConfig)
 end
 
 function cloneQuestBlock(worldIndex, questIndex)
-    local questBlockTemplate = Utils.getFromTemplates("QuestBox")
     local myStuff = workspace:FindFirstChild("MyStuff")
     local runtimeQuestsFolder = Utils.getOrCreateFolder(
                                     {name = "RunTimeQuests", parent = myStuff})
 
-    local questBlockTemplateClone = Utils.cloneModel(
-                                        {
-            model = questBlockTemplate,
-            suffix = "Clone-W" .. worldIndex .. "-Q" .. questIndex
-        })
-    return questBlockTemplateClone
+    return Utils.cloneModel({
+        model = Utils.getFromTemplates("QuestBox"),
+        suffix = "Clone-W" .. worldIndex .. "-Q" .. questIndex
+    })
 end
 
 function getGridPadding()
@@ -139,17 +136,17 @@ function getGridPadding()
 end
 
 function renderQuestBlock(props)
-    local miniGame = props.miniGame
+    local dockMountPlate = props.dockMountPlate
     local worldIndex = props.worldIndex
     local questIndex = props.questIndex
     local gridSize = props.gridSize
     local questFolder = props.questFolder
 
-    local dockMountPlate = Utils.getFirstDescendantByName(miniGame,
-                                                          "DockMountPlate")
+    -- local dockMountPlate = Utils.getFirstDescendantByName(miniGame,
+    --                                                       "DockMountPlate")
 
-    local questBlockTemplateClone = cloneQuestBlock(worldIndex, questIndex,
-                                                    questFolder)
+    local questBlockTemplateClone = cloneQuestBlock(worldIndex, questIndex)
+
     local questBlockProps = {
         parent = dockMountPlate,
         questBlockTemplate = questBlockTemplateClone,
@@ -244,7 +241,8 @@ function addWorld(props)
 
         local questBlockModel = renderQuestBlock(
                                     {
-                miniGame = miniGame,
+                dockMountPlate = Utils.getFirstDescendantByName(miniGame,
+                                                                "DockMountPlate"),
                 worldIndex = worldIndex,
                 questIndex = questIndex,
                 gridSize = gridSize
