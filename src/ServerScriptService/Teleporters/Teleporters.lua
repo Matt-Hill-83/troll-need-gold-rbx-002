@@ -41,17 +41,19 @@ function module.configTeleporter(props)
     local teleporter = teleporterTemplate:Clone()
     teleporter.Parent = parentFolder
 
-    local labels2 = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
-    for i, label in ipairs(labels2) do label.Text = label end
+    local labels = Utils.getDescendantsByName(teleporter, "TeleporterLabel")
+    for i, lab in ipairs(labels) do lab.Text = label end
 
     local positioner = Utils.getFirstDescendantByName(parentFolder,
                                                       positionerName)
 
     teleporter.PrimaryPart.CFrame = positioner.CFrame
-    teleporter.PrimaryPart.Anchored = false
-    -- teleporter.PrimaryPart.Anchored = true
+    -- teleporter.PrimaryPart.Anchored = false
+    teleporter.PrimaryPart.Anchored = true
     teleporter.Name = "teleporter" .. "-hex-W" .. worldIndex
-    positioner:Destroy()
+    positioner.CanCollide = false
+    positioner.Transparency = 1
+    -- positioner:Destroy()
     return teleporter
 end
 
