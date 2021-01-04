@@ -32,7 +32,7 @@ local function setLocalTPTargetToRemoteTP(localTP, remoteTP)
 end
 
 function module.configHexTeleporter(props)
-    local questIndex = props.questIndex
+    local worldIndex = props.worldIndex
     local questTitle = props.questTitle
     local parentFolder = props.parentFolder
 
@@ -47,7 +47,7 @@ function module.configHexTeleporter(props)
                                                                 "HexTeleporterPositioner")
 
     hexTeleporter.PrimaryPart.CFrame = teleporterPositioner.CFrame
-    hexTeleporter.Name = "teleporter" .. "-hex-Q- xxx" .. questIndex
+    hexTeleporter.Name = "teleporter" .. "-hex-W-xxx" .. worldIndex
     return hexTeleporter
 end
 
