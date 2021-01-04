@@ -180,6 +180,51 @@ function renderQuestBlock(props)
     -- dockMountPlate:Destroy()
 end
 
+function addScenes(props)
+    local questBlockModel = props.questBlockModel
+    local hexTeleporter = props.hexTeleporter
+    local questIndex = props.questIndex
+    local questConfig = props.questConfig
+    local questFolder = props.questFolder
+
+    local dockBase = Utils.getFirstDescendantByName(questBlockModel, "DockBase")
+    local sceneMountPlate = Utils.getFirstDescendantByName(questBlockModel,
+                                                           "SceneMountPlate")
+    Utils.enableChildWelds({part = sceneMountPlate, enabled = false})
+
+    local translateCFrameProps = {
+        parent = dockBase,
+        child = sceneMountPlate,
+        offsetConfig = {
+            useParentNearEdge = Vector3.new(-1, 1, -1),
+            useChildNearEdge = Vector3.new(-1, -1, -1)
+        }
+    }
+
+    -- Relocate the scene mountplate, after the dock has been resized.
+    local sceneMountPlateCFrame = Utils3.setCFrameFromDesiredEdgeOffset(
+                                      translateCFrameProps)
+
+    sceneMountPlate.CFrame = sceneMountPlateCFrame
+    local rotatedCFrame = CFrame.Angles(0, math.rad(180), 0)
+    sceneMountPlate.CFrame = sceneMountPlate.CFrame:ToWorldSpace(rotatedCFrame)
+    -- sceneMountPlate.Anchored = true
+
+    local gridPadding = getGridPadding()
+    local addScenesProps = {
+        gridPadding = gridPadding,
+        hexTeleporter = hexTeleporter,
+        parent = sceneMountPlate,
+        questConfig = questConfig,
+        questFolder = questFolder,
+        questIndex = questIndex,
+        sceneConfigs = questConfig.sceneConfigs
+    }
+    Scenes.addScenes(addScenesProps)
+    sceneMountPlate:Destroy()
+
+end
+
 function addWorld(props)
     local questConfigs = props.questConfigs
     local worldIndex = props.worldIndex
@@ -222,52 +267,18 @@ function addWorld(props)
                 worldIndex = worldIndex,
                 questIndex = questIndex,
                 gridSize = gridSize
-                -- questFolder = questFolder
             })
         questBlockModel.Parent = questFolder
 
-        -- 
-        -- 
-        -- 
-        local dockBase = Utils.getFirstDescendantByName(questBlockModel,
-                                                        "DockBase")
-        local sceneMountPlate = Utils.getFirstDescendantByName(questBlockModel,
-                                                               "SceneMountPlate")
-        Utils.enableChildWelds({part = sceneMountPlate, enabled = false})
-
-        local translateCFrameProps = {
-            parent = dockBase,
-            child = sceneMountPlate,
-            offsetConfig = {
-                useParentNearEdge = Vector3.new(-1, 1, -1),
-                useChildNearEdge = Vector3.new(-1, -1, -1)
-                -- offsetAdder = Vector3.new(0, 0, 0)
-            }
-        }
-
-        -- Relocate the scene mountplate, after the dock has been resized.
-        local sceneMountPlateCFrame = Utils3.setCFrameFromDesiredEdgeOffset(
-                                          translateCFrameProps)
-
-        sceneMountPlate.CFrame = sceneMountPlateCFrame
-        local rotatedCFrame = CFrame.Angles(0, math.rad(180), 0)
-        sceneMountPlate.CFrame = sceneMountPlate.CFrame:ToWorldSpace(
-                                     rotatedCFrame)
-        sceneMountPlate.Anchored = true
-        local gridPadding = getGridPadding()
-        local addScenesProps = {
-            parent = sceneMountPlate,
-            sceneConfigs = questConfig.sceneConfigs,
-            questConfig = questConfig,
+        addScenes({
             gridPadding = gridPadding,
+            hexTeleporter = hexTeleporter,
+            questBlockModel = questBlockModel,
+            questConfig = questConfig,
             questFolder = questFolder,
-            questIndex = questIndex,
-            hexTeleporter = hexTeleporter
-        }
-        Scenes.addScenes(addScenesProps)
-        -- sceneMountPlate:Destroy()
+            questIndex = questIndex
+        })
     end
-
 end
 
 module.addRemoteObjects = addRemoteObjects
