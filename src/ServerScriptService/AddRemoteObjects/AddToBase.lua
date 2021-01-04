@@ -13,6 +13,17 @@ local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
 local Teleporters = require(Sss.Source.Teleporters.Teleporters)
 local MiniGame = require(Sss.Source.MiniGame.MiniGame)
 
+function deleteTemplates()
+    local questBlockTemplate = Utils.getFromTemplates("QuestBox")
+    questBlockTemplate:Destroy()
+    local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
+    letterFallTemplate:Destroy()
+    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
+    teleporterTemplate:Destroy()
+    local hexStandTemplate = Utils.getFromTemplates("HexStandTemplate")
+    hexStandTemplate:Destroy()
+end
+
 function addRemoteObjects()
     local questConfigs = SceneConfig.getScenesConfig()
 
@@ -28,23 +39,12 @@ function addRemoteObjects()
         }
 
         local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
-
         addWorld(worldProps)
-        -- 
     end
 
-    local questBlockTemplate = Utils.getFromTemplates("QuestBox")
-    questBlockTemplate:Destroy()
-    local letterFallTemplate = Utils.getFromTemplates("LetterFallTemplate")
-    letterFallTemplate:Destroy()
-    local teleporterTemplate = Utils.getFromTemplates("TeleporterTemplate")
-    teleporterTemplate:Destroy()
-    local hexStandTemplate = Utils.getFromTemplates("HexStandTemplate")
-    hexStandTemplate:Destroy()
-
+    deleteTemplates()
     -- Do this last after everything has been created/deleted
     ConfigGame.configGame()
-
 end
 
 function cloneHexStand(worldIndex)
@@ -59,7 +59,7 @@ function cloneHexStand(worldIndex)
     hexStand = hexStandTemplate:Clone()
     hexStand.Parent = myStuff
 
-    hexStand.Name = hexStand.Name .. "-Clone-zzzz"
+    hexStand.Name = hexStand.Name .. "-Clone-W" .. worldIndex
     local hexMountPart = hexStand.PrimaryPart
 
     local translateCFrameProps = {
@@ -129,23 +129,13 @@ function cloneQuestBlock(worldIndex, questIndex)
             model = questBlockTemplate,
             suffix = "Clone-W" .. worldIndex .. "-Q" .. questIndex
         })
-
-    -- local questFolder = Utils.getOrCreateFolder(
-    --                         {
-    --         name = questBlockTemplateClone.Name,
-    --         parent = runtimeQuestsFolder
-    --     })
-
-    -- questBlockTemplateClone.Parent = questFolder
     return questBlockTemplateClone
 end
 
 function getGridPadding()
     local desiredPadding = 12
     local wallWidth = 1
-    local gridPadding = desiredPadding + wallWidth * 2
-
-    return gridPadding
+    return desiredPadding + wallWidth * 2
 end
 
 function renderQuestBlock(props)
@@ -161,7 +151,6 @@ function renderQuestBlock(props)
     local gridPadding = getGridPadding()
     local questBlockTemplateClone = cloneQuestBlock(worldIndex, questIndex,
                                                     questFolder)
-    -- questBlockTemplateClone.Parent = questFolder
 
     local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
                   Constants.bridgeLength
@@ -176,8 +165,8 @@ function renderQuestBlock(props)
         questIndex = questIndex
     }
     local questBlockModel = QuestBlock.renderQuestBlock(questBlockProps)
-    return questBlockModel
     -- dockMountPlate:Destroy()
+    return questBlockModel
 end
 
 function addScenes(props)
@@ -208,7 +197,6 @@ function addScenes(props)
     sceneMountPlate.CFrame = sceneMountPlateCFrame
     local rotatedCFrame = CFrame.Angles(0, math.rad(180), 0)
     sceneMountPlate.CFrame = sceneMountPlate.CFrame:ToWorldSpace(rotatedCFrame)
-    -- sceneMountPlate.Anchored = true
 
     local gridPadding = getGridPadding()
     local addScenesProps = {
@@ -221,7 +209,7 @@ function addScenes(props)
         sceneConfigs = questConfig.sceneConfigs
     }
     Scenes.addScenes(addScenesProps)
-    sceneMountPlate:Destroy()
+    -- sceneMountPlate:Destroy()
 
 end
 
@@ -246,7 +234,6 @@ function addWorld(props)
         local questFolder = Utils.getOrCreateFolder(
                                 {
                 name = "QuestBloc-Clone-" .. questIndex,
-                -- name = questBlockTemplateClone.Name,
                 parent = runtimeQuestsFolder
             })
 
