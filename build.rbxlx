@@ -75371,10 +75371,11 @@ function styleGemHolder(props)
     local bigGem = gemHolder:FindFirstChildWhichIsA("Tool", true)
 
     if isReceiver then
-
-        bigGem.Handle.Color = grey
-        bigGem.Enabled = false
-        bigGem.Handle.Name = "NotHandle"
+        if bigGem then
+            bigGem.Handle.Color = grey
+            bigGem.Enabled = false
+            bigGem.Handle.Name = "NotHandle"
+        end
     else
         local gemColor = Constants.gemColors[questIndex]
         if bigGem then bigGem.Handle.Color = gemColor end
