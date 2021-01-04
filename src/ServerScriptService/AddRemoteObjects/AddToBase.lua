@@ -130,13 +130,13 @@ function cloneQuestBlock(worldIndex, questIndex)
             suffix = "Clone-W" .. worldIndex .. "-Q" .. questIndex
         })
 
-    local questFolder = Utils.getOrCreateFolder(
-                            {
-            name = questBlockTemplateClone.Name,
-            parent = runtimeQuestsFolder
-        })
+    -- local questFolder = Utils.getOrCreateFolder(
+    --                         {
+    --         name = questBlockTemplateClone.Name,
+    --         parent = runtimeQuestsFolder
+    --     })
 
-    questBlockTemplateClone.Parent = questFolder
+    -- questBlockTemplateClone.Parent = questFolder
     return questBlockTemplateClone
 end
 
@@ -153,12 +153,16 @@ function renderQuestBlock(props)
     local worldIndex = props.worldIndex
     local questIndex = props.questIndex
     local gridSize = props.gridSize
+    local questFolder = props.questFolder
 
     local dockMountPlate = Utils.getFirstDescendantByName(miniGame,
                                                           "DockMountPlate")
 
     local gridPadding = getGridPadding()
-    local questBlockTemplateClone = cloneQuestBlock(worldIndex, questIndex)
+    local questBlockTemplateClone = cloneQuestBlock(worldIndex, questIndex,
+                                                    questFolder)
+    -- questBlockTemplateClone.Parent = questFolder
+
     local x = gridSize.cols * Constants.totalIslandLength + gridPadding -
                   Constants.bridgeLength
     local z = gridSize.rows * Constants.totalIslandLength + gridPadding -
@@ -172,6 +176,7 @@ function renderQuestBlock(props)
         questIndex = questIndex
     }
     local questBlockModel = QuestBlock.renderQuestBlock(questBlockProps)
+    return questBlockModel
     -- dockMountPlate:Destroy()
 end
 
@@ -193,6 +198,13 @@ function addWorld(props)
         local miniGameMountPlate = mountPlates[questIndex]
         local gridSize = questConfig.gridSize
 
+        local questFolder = Utils.getOrCreateFolder(
+                                {
+                name = "QuestBloc-Clone-" .. questIndex,
+                -- name = questBlockTemplateClone.Name,
+                parent = runtimeQuestsFolder
+            })
+
         local miniGame = MiniGame.addMiniGame(
                              {
                 parent = miniGameMountPlate,
@@ -210,12 +222,14 @@ function addWorld(props)
                 worldIndex = worldIndex,
                 questIndex = questIndex,
                 gridSize = gridSize
+                -- questFolder = questFolder
             })
+        questBlockModel.Parent = questFolder
 
-        -- local dockBase = Utils.getFirstDescendantByName(questBlockModel,
-        --                                                 "DockBase")
-        -- local sceneMountPlate = Utils.getFirstDescendantByName(questBlockModel,
-        --                                                        "SceneMountPlate")
+        local dockBase = Utils.getFirstDescendantByName(questBlockModel,
+                                                        "DockBase")
+        local sceneMountPlate = Utils.getFirstDescendantByName(questBlockModel,
+                                                               "SceneMountPlate")
         -- Utils.enableChildWelds({part = sceneMountPlate, enabled = false})
 
         -- local translateCFrameProps = {
@@ -237,17 +251,17 @@ function addWorld(props)
         -- sceneMountPlate.CFrame = sceneMountPlate.CFrame:ToWorldSpace(
         --                              rotatedCFrame)
         -- sceneMountPlate.Anchored = true
-        -- local gridPadding = getGridPadding()
-        -- local addScenesProps = {
-        --     parent = sceneMountPlate,
-        --     sceneConfigs = questConfig.sceneConfigs,
-        --     questConfig = questConfig,
-        --     gridPadding = gridPadding,
-        --     questFolder = questFolder,
-        --     questIndex = questIndex,
-        --     hexTeleporter = hexTeleporter
-        -- }
-        -- Scenes.addScenes(addScenesProps)
+        local gridPadding = getGridPadding()
+        local addScenesProps = {
+            parent = sceneMountPlate,
+            sceneConfigs = questConfig.sceneConfigs,
+            questConfig = questConfig,
+            gridPadding = gridPadding,
+            questFolder = questFolder,
+            questIndex = questIndex,
+            hexTeleporter = hexTeleporter
+        }
+        Scenes.addScenes(addScenesProps)
         -- sceneMountPlate:Destroy()
     end
 

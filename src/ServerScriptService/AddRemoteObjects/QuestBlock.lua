@@ -9,9 +9,10 @@ local module = {}
 renderQuestBlock = function(props)
     local parent = props.parent
     local size = props.size
-    local dockModel = props.questBlockTemplate
+    local questBlockTemplate = props.questBlockTemplate
 
-    local dockBase = Utils.getFirstDescendantByName(dockModel, "DockBase")
+    local dockBase = Utils.getFirstDescendantByName(questBlockTemplate,
+                                                    "DockBase")
 
     local dockPositioner = Instance.new("Part", parent)
     dockPositioner.Size = size
@@ -34,7 +35,7 @@ renderQuestBlock = function(props)
     dockBase.CFrame = dockPositioner.CFrame
 
     dockPositioner:Destroy()
-    return dockModel
+    return questBlockTemplate
 end
 
 module.renderQuestBlock = renderQuestBlock
