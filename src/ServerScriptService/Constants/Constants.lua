@@ -3,11 +3,17 @@ local module = {
     -- singleScene = true,
     singleScene = false,
 
-    -- isDev = false,
-    isDev = true,
+    isDev = false,
+    -- isDev = true,
 
-    -- gameConfig = {transparency = false},
-    gameConfig = {transparency = true},
+    gameConfig = {
+        transparency = true,
+        -- transparency = false,
+
+        showScenes = true
+        -- showScenes = false
+        ---
+    },
 
     entered = {value = false},
     walkSpeed = 20,

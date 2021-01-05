@@ -277,15 +277,16 @@ function addWorld(props)
                 gridSize = gridSize
             })
         questBlockModel.Parent = questFolder
-
-        addScenes({
-            gridPadding = gridPadding,
-            hexTeleporter = hexTeleporter,
-            questBlockModel = questBlockModel,
-            questConfig = questConfig,
-            questFolder = questFolder,
-            questIndex = questIndex
-        })
+        if Constants.gameConfig.showScenes then
+            addScenes({
+                gridPadding = gridPadding,
+                hexTeleporter = hexTeleporter,
+                questBlockModel = questBlockModel,
+                questConfig = questConfig,
+                questFolder = questFolder,
+                questIndex = questIndex
+            })
+        end
     end
 end
 
