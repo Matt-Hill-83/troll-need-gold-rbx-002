@@ -45,10 +45,6 @@ function addRemoteObjects()
         -- local letterGrid = Utils.getFirstDescendantByName(myStuff, "LetterGrid")
         local plaques = Utils.getDescendantsByName(LetterWheel2, "Plaque")
 
-        for i, plaque in ipairs(plaques) do
-            print(plaque.Name)
-            -- plaque:Destroy()
-        end
         local cubes = Utils.getDescendantsByName(LetterWheel2, "BlockChar")
         print('cubes' .. ' - start');
         print(cubes);
@@ -71,7 +67,6 @@ function addRemoteObjects()
                                                               frictionWeight,
                                                               elasticityWeight)
                 cube.CustomPhysicalProperties = physProperties
-                -- cube:Destroy()
             end
             -- 
         end
