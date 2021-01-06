@@ -302,7 +302,7 @@ function addWorld(props)
     if true then
         local props = {}
         configWWI(props)
-        return
+        -- return
     end
 
     -- add quests

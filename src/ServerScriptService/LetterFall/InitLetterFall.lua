@@ -14,7 +14,7 @@ local module = {}
 function initLetterFall(miniGameState)
     LetterFall.initGameToggle(miniGameState)
     InitLetterRack.initLetterRack(miniGameState)
-    InitWord.initWord(miniGameState)
+    InitWord.initWords(miniGameState)
 
     LetterFallUtils.styleLetterBlocks({
         miniGameState = miniGameState,

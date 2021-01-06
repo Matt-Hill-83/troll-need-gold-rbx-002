@@ -5,7 +5,6 @@ local RS = game:GetService("ReplicatedStorage")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local HandleClick = require(Sss.Source.LetterFall.HandleClick)
 local InitLetterRack = require(Sss.Source.LetterFall.InitLetterRack)
-local InitWord = require(Sss.Source.LetterFall.InitWord)
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 local DropBox = require(Sss.Source.DropBox.DropBox)
 

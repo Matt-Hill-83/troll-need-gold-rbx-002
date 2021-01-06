@@ -5,7 +5,7 @@ local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 
 local module = {}
 
-function initWord(miniGameState)
+function initWords(miniGameState)
     local letterFallFolder = miniGameState.letterFallFolder
     local wordLetters = miniGameState.wordLetters
     local wordFolder = getWordFolder(miniGameState)
@@ -30,10 +30,6 @@ function initWord(miniGameState)
         local newWordBoxFolder = wordBoxFolder
         local wordBox = Utils.getFirstDescendantByName(newWordBoxFolder,
                                                        "WordBox")
-
-        -- local letterBlockFolder = Utils.getFirstDescendantByName(
-        --                               letterFallFolder, "LetterBlockTemplates")
-
         local letterBlockFolder = Utils.getFromTemplates("LetterBlockTemplates")
 
         local letterBlockTemplate = Utils.getFirstDescendantByName(
@@ -125,6 +121,6 @@ end
 
 module.initGameToggle = initGameToggle
 module.initLetterRack = initLetterRack
-module.initWord = initWord
+module.initWords = initWords
 
 return module
