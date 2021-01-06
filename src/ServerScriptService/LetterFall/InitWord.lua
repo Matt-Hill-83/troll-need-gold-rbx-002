@@ -5,13 +5,97 @@ local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 
 local module = {}
 
+function initWord(props)
+    local miniGameState = props.miniGameState
+    local wordIndex = props.wordIndex
+    local word = props.word
+    local wordLetters = props.wordLetters
+
+    local letterFallFolder = miniGameState.letterFallFolder
+    local wordBoxFolder = Utils.getFirstDescendantByName(letterFallFolder,
+                                                         "WordBoxFolder")
+
+    local newWordBoxFolder = wordBoxFolder
+    local wordBox = Utils.getFirstDescendantByName(newWordBoxFolder, "WordBox")
+    local letterBlockFolder = Utils.getFromTemplates("LetterBlockTemplates")
+
+    local letterBlockTemplate = Utils.getFirstDescendantByName(
+                                    letterBlockFolder, "LBPurpleLight")
+
+    local newWord = wordBox:Clone()
+    local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
+    local letterPositioner = Utils.getFirstDescendantByName(newWord,
+                                                            "WordLetterBlockPositioner")
+
+    newWord.Parent = wordBox.Parent
+
+    Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
+
+    local spacingFactorY = 1.25
+    local spacingFactorZ = 1.0
+    local wordSpacingY = letterBlockTemplate.Size.Y * spacingFactorY
+
+    wordBench.CFrame = wordBench.CFrame +
+                           Vector3.new(0, wordSpacingY * wordIndex, 0)
+
+    local wordNameStub = "-W" .. wordIndex
+    newWord.Name = newWord.Name .. "zzz" .. wordNameStub
+    wordBench.Anchored = true
+
+    letterPositioner.Name = letterPositioner.Name .. wordNameStub
+
+    local lettersInWord = {}
+    for letterIndex = 1, #word do
+        local letterNameStub = wordNameStub .. "-L" .. letterIndex
+        local letter = string.sub(word, letterIndex, letterIndex)
+
+        local newLetter = letterBlockTemplate:Clone()
+
+        newLetter.Name = "wordLetter-" .. letterNameStub
+
+        local letterPositionZ = newLetter.Size.Z * (letterIndex - 2) *
+                                    spacingFactorZ
+
+        CS:AddTag(newLetter, LetterFallUtils.tagNames.WordLetter)
+        LetterFallUtils.applyLetterText({letterBlock = newLetter, char = letter})
+
+        newLetter.CFrame = letterPositioner.CFrame *
+                               CFrame.new(Vector3.new(0, 0, letterPositionZ))
+        local weld = Instance.new("WeldConstraint")
+        weld.Name = "WeldConstraint" .. letterNameStub
+        weld.Parent = wordBench.Parent
+        weld.Part0 = wordBench
+        weld.Part1 = newLetter
+
+        -- Do this last to avoid tweening
+        newLetter.Parent = newWord
+
+        table.insert(wordLetters,
+                     {char = letter, found = false, instance = newLetter})
+        table.insert(lettersInWord,
+                     {char = letter, found = false, instance = newLetter})
+    end
+    local wordBenchSizeX = #word * letterBlockTemplate.Size.X * spacingFactorZ
+
+    local wordBenchPosX = wordBench.Position.X
+    wordBench.Size = Vector3.new(wordBenchSizeX, wordBench.Size.Y,
+                                 wordBench.Size.Z)
+    wordBench.Position = Vector3.new(wordBenchPosX, wordBench.Position.Y,
+                                     wordBench.Position.Z)
+
+    local newWordObj = {
+        word = newWord,
+        letters = lettersInWord,
+        wordChars = word
+    }
+    return newWordObj
+end
+
 function initWords(miniGameState)
+
     local letterFallFolder = miniGameState.letterFallFolder
     local wordLetters = miniGameState.wordLetters
     local wordFolder = getWordFolder(miniGameState)
-
-    local wordBoxFolder = Utils.getFirstDescendantByName(letterFallFolder,
-                                                         "WordBoxFolder")
 
     local putItemsToBeClonedHere = Utils.getFirstDescendantByName(
                                        letterFallFolder,
@@ -27,82 +111,89 @@ function initWords(miniGameState)
     Utils.clearTable(wordLetters)
 
     for wordIndex, word in ipairs(miniGameState.words) do
-        local newWordBoxFolder = wordBoxFolder
-        local wordBox = Utils.getFirstDescendantByName(newWordBoxFolder,
-                                                       "WordBox")
-        local letterBlockFolder = Utils.getFromTemplates("LetterBlockTemplates")
+        local wordProps = {
+            miniGameState = miniGameState,
 
-        local letterBlockTemplate = Utils.getFirstDescendantByName(
-                                        letterBlockFolder, "LBPurpleLight")
+            wordIndex = wordIndex,
+            wordLetters = wordLetters,
+            word = word
+        }
 
-        local newWord = wordBox:Clone()
-        local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
-        local letterPositioner = Utils.getFirstDescendantByName(newWord,
-                                                                "WordLetterBlockPositioner")
+        local newWordObj = initWord(wordProps)
 
-        newWord.Parent = wordBox.Parent
+        table.insert(miniGameState.renderedWords, newWordObj)
+        -- local newWordBoxFolder = wordBoxFolder
+        -- local wordBox = Utils.getFirstDescendantByName(newWordBoxFolder,
+        --                                                "WordBox")
+        -- local letterBlockFolder = Utils.getFromTemplates("LetterBlockTemplates")
 
-        Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
+        -- local letterBlockTemplate = Utils.getFirstDescendantByName(
+        --                                 letterBlockFolder, "LBPurpleLight")
 
-        local spacingFactorY = 1.25
-        local spacingFactorZ = 1.0
-        local wordSpacingY = letterBlockTemplate.Size.Y * spacingFactorY
+        -- local newWord = wordBox:Clone()
+        -- local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
+        -- local letterPositioner = Utils.getFirstDescendantByName(newWord,
+        --                                                         "WordLetterBlockPositioner")
 
-        wordBench.CFrame = wordBench.CFrame +
-                               Vector3.new(0, wordSpacingY * wordIndex, 0)
+        -- newWord.Parent = wordBox.Parent
 
-        local wordNameStub = "-W" .. wordIndex
-        newWord.Name = newWord.Name .. "zzz" .. wordNameStub
-        wordBench.Anchored = true
+        -- Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
 
-        letterPositioner.Name = letterPositioner.Name .. wordNameStub
+        -- local spacingFactorY = 1.25
+        -- local spacingFactorZ = 1.0
+        -- local wordSpacingY = letterBlockTemplate.Size.Y * spacingFactorY
 
-        local lettersInWord = {}
-        for letterIndex = 1, #word do
-            local letterNameStub = wordNameStub .. "-L" .. letterIndex
-            local letter = string.sub(word, letterIndex, letterIndex)
+        -- wordBench.CFrame = wordBench.CFrame +
+        --                        Vector3.new(0, wordSpacingY * wordIndex, 0)
 
-            local newLetter = letterBlockTemplate:Clone()
+        -- local wordNameStub = "-W" .. wordIndex
+        -- newWord.Name = newWord.Name .. "zzz" .. wordNameStub
+        -- wordBench.Anchored = true
 
-            newLetter.Name = "wordLetter-" .. letterNameStub
+        -- letterPositioner.Name = letterPositioner.Name .. wordNameStub
 
-            local letterPositionZ = newLetter.Size.Z * (letterIndex - 2) *
-                                        spacingFactorZ
+        -- local lettersInWord = {}
+        -- for letterIndex = 1, #word do
+        --     local letterNameStub = wordNameStub .. "-L" .. letterIndex
+        --     local letter = string.sub(word, letterIndex, letterIndex)
 
-            CS:AddTag(newLetter, LetterFallUtils.tagNames.WordLetter)
-            LetterFallUtils.applyLetterText(
-                {letterBlock = newLetter, char = letter})
+        --     local newLetter = letterBlockTemplate:Clone()
 
-            newLetter.CFrame = letterPositioner.CFrame *
-                                   CFrame.new(Vector3.new(0, 0, letterPositionZ))
-            local weld = Instance.new("WeldConstraint")
-            weld.Name = "WeldConstraint" .. letterNameStub
-            weld.Parent = wordBench.Parent
-            weld.Part0 = wordBench
-            weld.Part1 = newLetter
+        --     newLetter.Name = "wordLetter-" .. letterNameStub
 
-            -- Do this last to avoid tweening
-            newLetter.Parent = newWord
+        --     local letterPositionZ = newLetter.Size.Z * (letterIndex - 2) *
+        --                                 spacingFactorZ
 
-            table.insert(wordLetters,
-                         {char = letter, found = false, instance = newLetter})
-            table.insert(lettersInWord,
-                         {char = letter, found = false, instance = newLetter})
-        end
-        table.insert(miniGameState.renderedWords, {
-            word = newWord,
-            letters = lettersInWord,
-            wordChars = word
-        })
-        local wordBenchSizeX = #word * letterBlockTemplate.Size.X *
-                                   spacingFactorZ
+        --     CS:AddTag(newLetter, LetterFallUtils.tagNames.WordLetter)
+        --     LetterFallUtils.applyLetterText(
+        --         {letterBlock = newLetter, char = letter})
 
-        local wordBenchPosX = wordBench.Position.X
-        wordBench.Size = Vector3.new(wordBenchSizeX, wordBench.Size.Y,
-                                     wordBench.Size.Z)
-        wordBench.Position = Vector3.new(wordBenchPosX, wordBench.Position.Y,
-                                         wordBench.Position.Z)
+        --     newLetter.CFrame = letterPositioner.CFrame *
+        --                            CFrame.new(Vector3.new(0, 0, letterPositionZ))
+        --     local weld = Instance.new("WeldConstraint")
+        --     weld.Name = "WeldConstraint" .. letterNameStub
+        --     weld.Parent = wordBench.Parent
+        --     weld.Part0 = wordBench
+        --     weld.Part1 = newLetter
+
+        --     -- Do this last to avoid tweening
+        --     newLetter.Parent = newWord
+
+        --     table.insert(wordLetters,
+        --                  {char = letter, found = false, instance = newLetter})
+        --     table.insert(lettersInWord,
+        --                  {char = letter, found = false, instance = newLetter})
+        -- end
+        -- local wordBenchSizeX = #word * letterBlockTemplate.Size.X *
+        --                            spacingFactorZ
+
+        -- local wordBenchPosX = wordBench.Position.X
+        -- wordBench.Size = Vector3.new(wordBenchSizeX, wordBench.Size.Y,
+        --                              wordBench.Size.Z)
+        -- wordBench.Position = Vector3.new(wordBenchPosX, wordBench.Position.Y,
+        --                                  wordBench.Position.Z)
     end
+
 end
 
 function getWordFolder(miniGameState)
