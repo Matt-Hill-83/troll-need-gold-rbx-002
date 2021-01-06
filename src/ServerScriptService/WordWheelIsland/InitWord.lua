@@ -1,6 +1,8 @@
 local CS = game:GetService("CollectionService")
 local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+local Utils3 = require(Sss.Source.Utils.U003PartsUtils)
+
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 
 local module = {}
@@ -20,40 +22,39 @@ function initWord(props)
     local letterBlockTemplate = Utils.getFirstDescendantByName(
                                     letterBlockFolder, "LBPurpleLight")
 
-    local wordComp = Utils.getFirstDescendantByName(wordWheelIsland,
-                                                    "WordTemplate")
-    local newWord = wordComp:Clone()
-    local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
+    local wordTemplate = Utils.getFirstDescendantByName(wordWheelIsland,
+                                                        "WordTemplate")
+    local newWord = wordTemplate:Clone()
+    -- local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
+    local wordBench = Utils.getFirstDescendantByName(newWord, "WordPositioner")
 
     local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
                                                            "WordWheelIsland")
     local sentencePositioner = Utils.getFirstDescendantByName(wordWheelIsland,
                                                               "SentencePositioner")
+    local sentencePositioner = Utils.getFirstDescendantByName(wordWheelIsland,
+                                                              "SentencePositioner")
     print('sentencePositioner' .. ' - start--------------------->>>>');
     print(sentencePositioner);
 
-    -- local letterPositioner = Utils.getFirstDescendantByName(newWord,
-    --                                                         "WordLetterBlockPositioner")
-
-    local letterPositioner = Utils.getFirstDescendantByName(wordWheelIsland,
-                                                            "SentencePositioner")
-
-    newWord.Parent = wordComp.Parent
+    newWord.Parent = wordTemplate.Parent
 
     Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
 
     local spacingFactorY = 1.25
-    local spacingFactorZ = 1.0
-    local wordSpacingY = letterBlockTemplate.Size.Y * spacingFactorY
+    local spacingFactorX = 1.0
+    local wordSpacingX = letterBlockTemplate.Size.X
+    -- local wordSpacingX = letterBlockTemplate.Size.Y * spacingFactorY
 
-    wordBench.CFrame = wordBench.CFrame +
-                           Vector3.new(0, wordSpacingY * wordIndex, 0)
+    newWord.PrimaryPart.CFrame = sentencePositioner.CFrame +
+                                     Vector3.new(wordSpacingX * wordIndex, 0, 0)
+
+    local letterPositioner = Utils.getFirstDescendantByName(newWord,
+                                                            "LetterPositioner")
 
     local wordNameStub = "-W" .. wordIndex
     newWord.Name = newWord.Name .. "zzz" .. wordNameStub
     wordBench.Anchored = true
-
-    -- letterPositioner.Name = letterPositioner.Name .. wordNameStub
 
     local lettersInWord = {}
     for letterIndex = 1, #word do
@@ -64,14 +65,29 @@ function initWord(props)
 
         newLetter.Name = "wordLetter-" .. letterNameStub .. "xxxx"
 
-        local letterPositionZ = newLetter.Size.Z * (letterIndex - 2) *
-                                    spacingFactorZ
+        local letterPositionX = -newLetter.Size.X * (letterIndex - 2) *
+                                    spacingFactorX
 
         CS:AddTag(newLetter, LetterFallUtils.tagNames.WordLetter)
         LetterFallUtils.applyLetterText({letterBlock = newLetter, char = letter})
 
-        newLetter.CFrame = letterPositioner.CFrame *
-                               CFrame.new(Vector3.new(0, 0, letterPositionZ))
+        local translateCFrameProps = {
+            parent = letterPositioner,
+            child = newLetter,
+            offsetConfig = {
+                useParentNearEdge = Vector3.new(0, -1, 1),
+                useChildNearEdge = Vector3.new(0, -1, 1),
+                offsetAdder = Vector3.new(letterPositionX, 0, 0)
+            }
+        }
+
+        local output = Utils3.setCFrameFromDesiredEdgeOffset(
+                           translateCFrameProps)
+
+        newLetter.CFrame = output
+        -- newLetter.CFrame = letterPositioner.CFrame *
+        --                        CFrame.new(Vector3.new(letterPositionX, 0, 0))
+
         local weld = Instance.new("WeldConstraint")
         weld.Name = "WeldConstraint" .. letterNameStub
         weld.Parent = wordBench.Parent
@@ -86,7 +102,7 @@ function initWord(props)
         table.insert(lettersInWord,
                      {char = letter, found = false, instance = newLetter})
     end
-    local wordBenchSizeX = #word * letterBlockTemplate.Size.X * spacingFactorZ
+    local wordBenchSizeX = #word * letterBlockTemplate.Size.X * spacingFactorX
 
     local wordBenchPosX = wordBench.Position.X
     wordBench.Size = Vector3.new(wordBenchSizeX, wordBench.Size.Y,
@@ -99,6 +115,8 @@ function initWord(props)
         letters = lettersInWord,
         wordChars = word
     }
+
+    letterPositioner:Destroy()
     return newWordObj
 end
 
