@@ -23,6 +23,37 @@ function applyDecalsToCharacter(props)
     decalBack.Image = decalUri
 end
 
+function onToggle(word)
+
+    local word = word
+
+    print('word' .. ' - start');
+    print(word);
+    local closure = function()
+        print('word' .. ' - start');
+        print(word);
+        local soundId = ""
+        if Constants.wordConfigs[word] then
+            soundId = Constants.wordConfigs[word]['soundId']
+        end
+
+        if (soundId) then
+            -- if (false and soundId) then
+            local sound = Instance.new("Sound", workspace)
+            sound.SoundId = "rbxassetid://" .. soundId
+            sound.EmitterSize = 5
+            sound.Looped = false
+            if not sound.IsPlaying then sound:Play() end
+        end
+
+        print('clicked')
+        print('clicked')
+        print('clicked')
+        print('clicked')
+    end
+    return closure
+end
+
 function initWord(props)
     local wordIndex = props.wordIndex
     local word = props.word
@@ -104,6 +135,9 @@ function initWord(props)
         local letter = string.sub(word, letterIndex, letterIndex)
 
         local newLetter = letterBlockTemplate:Clone()
+
+        local cd = Instance.new("ClickDetector", newLetter)
+        cd.MouseClick:Connect(onToggle(word))
 
         newLetter.Name = "wordLetter-" .. letterNameStub .. "xxxx"
 

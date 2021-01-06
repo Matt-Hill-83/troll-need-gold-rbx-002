@@ -59,7 +59,9 @@ module.wordConfigs = {
     MAT = {soundId = "6145991865", imageId = "xxx"},
     PAT = {soundId = "6145992548", imageId = "xxx"},
     RAT = {soundId = "6145992816", imageId = "xxx"},
-    SAT = {soundId = "6145993194", imageId = "xxx"}
+    SAT = {soundId = "6145993194", imageId = "xxx"},
+    MOM = {soundId = "6199537750", imageId = "xxx"},
+    YES = {soundId = "6199538408", imageId = "xxx"}
 }
 
 -- 

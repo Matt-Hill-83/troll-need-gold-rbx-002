@@ -28,8 +28,14 @@ function initWWI()
     local statueTemplate = Utils.getFirstDescendantByName(wordWheelIsland,
                                                           "StatueTemplate")
 
-    for statueIndex, statuePositioner in ipairs(statuePositioners) do
+    local statusDefs = {
+        {sentence = {"YES", "MOM", "OK", "MOM"}, character = "raven"},
+        {sentence = {"NOT", "A", "CAT"}, character = "katScared"}
+    }
 
+    for statueIndex, statusDef in ipairs(statusDefs) do
+
+        local statuePositioner = statuePositioners[statueIndex]
         local newStatueScene = statueTemplate:Clone()
         newStatueScene.Parent = statuePositioner.Parent
         newStatueScene.PrimaryPart.CFrame =
@@ -38,12 +44,7 @@ function initWWI()
         local sentencePositioner = Utils.getFirstDescendantByName(
                                        newStatueScene, "SentencePositioner")
 
-        print('sentencePositioner' .. ' - start');
-        print(sentencePositioner);
-
-        local word = "CATAPILLAR"
-
-        local sentence = {"A", "CAT", "DOG"}
+        local sentence = statusDef.sentence
         -- local sentence = {"OK", "MOM", "YES", "MOM"}
         local wordLetters = {}
 
