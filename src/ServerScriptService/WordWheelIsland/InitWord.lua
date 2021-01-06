@@ -112,8 +112,8 @@ function initWord(props)
         parent = sentencePositioner,
         child = newWord.PrimaryPart,
         offsetConfig = {
-            useParentNearEdge = Vector3.new(0, -1, 1),
-            useChildNearEdge = Vector3.new(0, -1, 1),
+            useParentNearEdge = Vector3.new(1, -1, 1),
+            useChildNearEdge = Vector3.new(1, -1, 1),
             offsetAdder = Vector3.new(wordSpacingX * wordIndex, 0, 0)
         }
     }
@@ -151,8 +151,8 @@ function initWord(props)
             parent = letterPositioner,
             child = newLetter,
             offsetConfig = {
-                useParentNearEdge = Vector3.new(0, -1, 1),
-                useChildNearEdge = Vector3.new(0, -1, 1),
+                useParentNearEdge = Vector3.new(-1, -1, -1),
+                useChildNearEdge = Vector3.new(-1, -1, -1),
                 offsetAdder = Vector3.new(letterPositionX, 0, 0)
             }
         }

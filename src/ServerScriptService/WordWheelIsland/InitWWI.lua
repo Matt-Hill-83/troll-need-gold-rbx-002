@@ -30,7 +30,9 @@ function initWWI()
 
     local statusDefs = {
         {sentence = {"YES", "MOM", "OK", "MOM"}, character = "raven"},
-        {sentence = {"NOT", "A", "CAT"}, character = "katScared"}
+        {sentence = {"NOT", "A", "CAT"}, character = "katScared"},
+        {sentence = {"TROLL", "NEED", "GOLD"}, character = "troll02"},
+        {sentence = {"I", "SEE", "A", "BEE"}, character = "lizFunny"}
     }
 
     for statueIndex, statusDef in ipairs(statusDefs) do
@@ -38,8 +40,7 @@ function initWWI()
         local statuePositioner = statuePositioners[statueIndex]
         local newStatueScene = statueTemplate:Clone()
         newStatueScene.Parent = statuePositioner.Parent
-        newStatueScene.PrimaryPart.CFrame =
-            statuePositioner.CFrame + Vector3.new(5, 5, 5)
+        newStatueScene.PrimaryPart.CFrame = statuePositioner.CFrame
 
         local sentencePositioner = Utils.getFirstDescendantByName(
                                        newStatueScene, "SentencePositioner")
