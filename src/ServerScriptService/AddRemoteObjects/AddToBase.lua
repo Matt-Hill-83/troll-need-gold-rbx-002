@@ -222,6 +222,21 @@ function renderQuestBlock(props)
     return questBlockModel
 end
 
+function configWWI(props)
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local runtimeQuestsFolder = Utils.getOrCreateFolder(
+                                    {name = "WWIRuntime", parent = myStuff})
+
+    local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
+                                                           "WordWheelIsland")
+    local sentencePositioner = Utils.getFirstDescendantByName(myStuff,
+                                                              "SentencePositioner")
+
+    print('sentencePositioner' .. ' - start');
+    print(sentencePositioner);
+
+end
+
 function addScenes(props)
     local questBlockModel = props.questBlockModel
     local hexTeleporter = props.hexTeleporter
@@ -283,6 +298,12 @@ function addWorld(props)
     local skyTeleporter = addSkyBoxTeleporter(worldIndex)
     Teleporters.setLocalTPTargetToRemoteTP(skyTeleporter, hexTeleporter)
     Teleporters.setLocalTPTargetToRemoteTP(hexReturnTeleporter, skyTeleporter)
+
+    if true then
+        local props = {}
+        configWWI(props)
+        return
+    end
 
     -- add quests
     for questIndex, questConfig in ipairs(questConfigs) do
