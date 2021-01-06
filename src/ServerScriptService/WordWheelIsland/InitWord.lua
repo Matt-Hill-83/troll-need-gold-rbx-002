@@ -49,8 +49,6 @@ function initWord(props)
                                                            "WordWheelIsland")
     local sentencePositioner = Utils.getFirstDescendantByName(wordWheelIsland,
                                                               "SentencePositioner")
-    local sentencePositioner = Utils.getFirstDescendantByName(wordWheelIsland,
-                                                              "SentencePositioner")
 
     if Constants.wordConfigs[word] then
         print('Constants.wordConfigs[word]' ..

@@ -11,40 +11,59 @@ local InitWord = require(Sss.Source.WordWheelIsland.InitWord)
 
 local module = {}
 
-function initWWI(miniGameState)
+function initWWIStatue()
+    -- 
+end
+
+function initWWI()
     local myStuff = workspace:FindFirstChild("MyStuff")
     local runtimeWWIFolder = Utils.getOrCreateFolder(
                                  {name = "WWIRuntime", parent = myStuff})
 
     local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
                                                            "WordWheelIsland")
-    local sentencePositioner = Utils.getFirstDescendantByName(wordWheelIsland,
-                                                              "SentencePositioner")
-    print('sentencePositioner' .. ' - start');
-    print(sentencePositioner);
 
-    local word = "CATAPILLAR"
+    local statuePositioners = Utils.getDescendantsByName(myStuff,
+                                                         "StatuePositioner")
+    local statueTemplate = Utils.getFirstDescendantByName(wordWheelIsland,
+                                                          "StatueTemplate")
 
-    local sentence = {"A", "CAT", "cat"}
-    -- local sentence = {"OK", "MOM", "YES", "MOM"}
-    local wordLetters = {}
+    for statueIndex, statuePositioner in ipairs(statuePositioners) do
 
-    for wordIndex, word in ipairs(sentence) do
+        local newStatueScene = statueTemplate:Clone()
+        newStatueScene.Parent = statuePositioner.Parent
+        newStatueScene.PrimaryPart.CFrame =
+            statuePositioner.CFrame + Vector3.new(5, 5, 5)
 
-        local wordProps = {
-            wordIndex = wordIndex,
-            wordLetters = wordLetters,
-            word = word
-        }
+        local sentencePositioner = Utils.getFirstDescendantByName(
+                                       newStatueScene, "SentencePositioner")
 
-        local newWordObj = InitWord.initWord(wordProps)
+        print('sentencePositioner' .. ' - start');
+        print(sentencePositioner);
 
-        print('newWordObj' .. ' - start');
-        print(newWordObj);
-        -- local newWord = InitWord.initWord()
+        local word = "CATAPILLAR"
+
+        local sentence = {"A", "CAT", "DOG"}
+        -- local sentence = {"OK", "MOM", "YES", "MOM"}
+        local wordLetters = {}
+
+        for wordIndex, word in ipairs(sentence) do
+
+            local wordProps = {
+                wordIndex = wordIndex,
+                wordLetters = wordLetters,
+                word = word
+            }
+
+            local newWordObj = InitWord.initWord(wordProps)
+
+            print('newWordObj' .. ' - start');
+            print(newWordObj);
+            -- local newWord = InitWord.initWord()
+        end
+
+        sentencePositioner:Destroy()
     end
-
-    sentencePositioner:Destroy()
     -- LetterFall.initGameToggle(miniGameState)
     -- InitLetterRack.initLetterRack(miniGameState)
     -- InitWord.initWords(miniGameState)
