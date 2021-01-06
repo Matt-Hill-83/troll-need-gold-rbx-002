@@ -58,7 +58,8 @@ function initWWI()
         local characterImage = Utils.getFirstDescendantByName(wordGirl,
                                                               "CharacterImage")
 
-        Utils.applyDecalsToCharacter({part = characterImage, word = character})
+        Utils.applyDecalsToCharacterFromConfigName(
+            {part = characterImage, configName = character})
 
         local wordLetters = {}
 

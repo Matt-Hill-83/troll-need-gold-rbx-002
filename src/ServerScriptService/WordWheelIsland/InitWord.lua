@@ -43,7 +43,7 @@ function configWord(props)
     local sentencePositioner = Utils.getFirstDescendantByName(wordWheelIsland,
                                                               "SentencePositioner")
 
-    Utils.applyDecalsToCharacter({part = newWord, word = word})
+    Utils.applyDecalsToCharacterFromWord({part = newWord, word = word})
 
     newWord.Parent = wordTemplate.Parent
 
