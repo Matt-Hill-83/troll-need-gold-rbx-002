@@ -42,6 +42,8 @@ function initWWI(miniGameState)
         print(newWordObj);
         -- local newWord = InitWord.initWord()
     end
+
+    sentencePositioner:Destroy()
     -- LetterFall.initGameToggle(miniGameState)
     -- InitLetterRack.initLetterRack(miniGameState)
     -- InitWord.initWords(miniGameState)

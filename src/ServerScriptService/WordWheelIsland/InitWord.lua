@@ -12,7 +12,6 @@ function initWord(props)
     local word = props.word
     local wordLetters = props.wordLetters
 
-    -- local letterFallFolder = miniGameState.letterFallFolder
     local myStuff = workspace:FindFirstChild("MyStuff")
     local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
                                                            "WordWheelIsland")
