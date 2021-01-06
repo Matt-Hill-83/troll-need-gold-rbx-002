@@ -50,20 +50,6 @@ module.totalIslandLength = islandLength + bridgeLength
 
 module.buttonLabels = {PrevPage = "Prev Page", NextPage = "Next Page"}
 
-module.wordConfigs = {
-    BAT = {soundId = "6145991240", imageId = "xxx"},
-    BOG = {soundId = "6149925692", imageId = "xxx"},
-    CAT = {soundId = "6145990934", imageId = "5976876671"},
-    DOG = {soundId = "6145990934", imageId = "5991277363"},
-    HAT = {soundId = "6145991587", imageId = "xxx"},
-    MAT = {soundId = "6145991865", imageId = "xxx"},
-    PAT = {soundId = "6145992548", imageId = "xxx"},
-    RAT = {soundId = "6145992816", imageId = "xxx"},
-    SAT = {soundId = "6145993194", imageId = "xxx"},
-    MOM = {soundId = "6199537750", imageId = "xxx"},
-    YES = {soundId = "6199538408", imageId = "xxx"}
-}
-
 -- 
 -- 
 local raven = {
@@ -634,6 +620,24 @@ module.characters = {
     mitzy02 = mitzy02,
     kat = {displayName = "Kat", decalId = '5977951764', backgroundColorIdx = 3},
     liz2 = {displayName = "Liz", decalId = '5981806423', backgroundColorIdx = 2}
+}
+
+module.wordConfigs = {
+    BAT = {soundId = "6145991240", imageId = "xxx"},
+    BOG = {soundId = "6149925692", imageId = "xxx"},
+    BEE = {soundId = "6149925692", imageId = module.characters.bee.decalId},
+    CAT = {
+        soundId = "6145990934",
+        imageId = module.characters.missyMeow01.decalId
+    },
+    DOG = {soundId = "6145990934", imageId = module.characters.angus01.decalId},
+    HAT = {soundId = "6145991587", imageId = "xxx"},
+    MAT = {soundId = "6145991865", imageId = "xxx"},
+    PAT = {soundId = "6145992548", imageId = "xxx"},
+    RAT = {soundId = "6145992816", imageId = "xxx"},
+    SAT = {soundId = "6145993194", imageId = "xxx"},
+    MOM = {soundId = "6199537750", imageId = "xxx"},
+    YES = {soundId = "6199538408", imageId = "xxx"}
 }
 
 return module

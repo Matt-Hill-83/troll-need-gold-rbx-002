@@ -24,6 +24,17 @@ function applyDecalsToCharacterFromWord(props)
     end
 end
 
+function applyLabelsToCharacter(props)
+    local part = props.part
+    local text = props.text or "no label"
+
+    local charLabelFront = module.getFirstDescendantByName(part,
+                                                           "CharLabelFront")
+    local charLabelBack = module.getFirstDescendantByName(part, "CharLabelBack")
+    charLabelFront.Text = text
+    charLabelBack.Text = text
+end
+
 function applyDecalsToCharacterFromConfigName(props)
     local part = props.part
     local configName = props.configName
@@ -37,6 +48,10 @@ function applyDecalsToCharacterFromConfigName(props)
         decalFront.Image = decalUri
         decalBack.Image = decalUri
     end
+
+    local displayName = module.getDisplayNameFromName({name = configName})
+    applyLabelsToCharacter({part = part, text = displayName})
+
 end
 
 local function getPlayerFromHumanoid(humanoid)

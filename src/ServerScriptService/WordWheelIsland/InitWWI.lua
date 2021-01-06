@@ -37,7 +37,7 @@ function initWWI()
         {sentence = {"YES", "MOM", "OK", "MOM"}, character = "raven"},
         {sentence = {"NOT", "A", "CAT"}, character = "katScared"},
         {sentence = {"TROLL", "NEED", "GOLD"}, character = "troll02"},
-        {sentence = {"I", "SEE", "A", "BEE"}, character = "lizFunny"}
+        {sentence = {"I", "SEE", "A", "BEE"}, character = "lizHappy"}
     }
 
     for statueIndex, statusDef in ipairs(statusDefs) do

@@ -186,22 +186,6 @@ function renderQuestBlock(props)
     return questBlockModel
 end
 
--- function initWWI(props)
---     WordWheelIsland.initWWI(props)
---     -- local myStuff = workspace:FindFirstChild("MyStuff")
---     -- local runtimeQuestsFolder = Utils.getOrCreateFolder(
---     --                                 {name = "WWIRuntime", parent = myStuff})
-
---     -- local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
---     --                                                        "WordWheelIsland")
---     -- local sentencePositioner = Utils.getFirstDescendantByName(myStuff,
---     --                                                           "SentencePositioner")
-
---     -- print('sentencePositioner' .. ' - start');
---     -- print(sentencePositioner);
-
--- end
-
 function addScenes(props)
     local questBlockModel = props.questBlockModel
     local hexTeleporter = props.hexTeleporter
@@ -267,7 +251,7 @@ function addWorld(props)
     if true then
         local props = {}
         InitWWI.initWWI(props)
-        return
+        -- return
     end
 
     -- add quests
