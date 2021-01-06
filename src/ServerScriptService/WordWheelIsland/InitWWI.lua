@@ -41,6 +41,8 @@ function initWWI()
     }
 
     for statueIndex, statusDef in ipairs(statusDefs) do
+        local sentence = statusDef.sentence
+        local character = statusDef.character
 
         local statuePositioner = statuePositioners[statueIndex]
         local newStatueScene = statueTemplate:Clone()
@@ -56,9 +58,8 @@ function initWWI()
         local characterImage = Utils.getFirstDescendantByName(wordGirl,
                                                               "CharacterImage")
 
-        Utils.applyDecalsToCharacter({part = newWord, imageId = imageId})
+        Utils.applyDecalsToCharacter({part = characterImage, word = character})
 
-        local sentence = statusDef.sentence
         local wordLetters = {}
 
         configStatue()

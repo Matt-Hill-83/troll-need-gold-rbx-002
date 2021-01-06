@@ -9,7 +9,6 @@ local module = {}
 function applyDecalsToCharacter(props)
     local part = props.part
     local word = props.word
-    -- local imageId = props.imageId
 
     if Constants.wordConfigs[word] then
         local imageId = Constants.wordConfigs[word]['imageId']

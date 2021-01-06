@@ -44,12 +44,6 @@ function configWord(props)
                                                               "SentencePositioner")
 
     Utils.applyDecalsToCharacter({part = newWord, word = word})
-    -- if Constants.wordConfigs[word] then
-    --     local imageId = Constants.wordConfigs[word]['imageId']
-    --     if imageId then
-    --         Utils.applyDecalsToCharacter({part = newWord, imageId = imageId})
-    --     end
-    -- end
 
     newWord.Parent = wordTemplate.Parent
 
