@@ -10,6 +10,7 @@ local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
 local Constants = require(Sss.Source.Constants.Constants)
 local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
 local Teleporters = require(Sss.Source.Teleporters.Teleporters)
+local InitWWI = require(Sss.Source.WordWheelIsland.InitWWI)
 local MiniGame = require(Sss.Source.MiniGame.MiniGame)
 
 function deleteTemplates()
@@ -185,20 +186,21 @@ function renderQuestBlock(props)
     return questBlockModel
 end
 
-function configWWI(props)
-    local myStuff = workspace:FindFirstChild("MyStuff")
-    local runtimeQuestsFolder = Utils.getOrCreateFolder(
-                                    {name = "WWIRuntime", parent = myStuff})
+-- function initWWI(props)
+--     WordWheelIsland.initWWI(props)
+--     -- local myStuff = workspace:FindFirstChild("MyStuff")
+--     -- local runtimeQuestsFolder = Utils.getOrCreateFolder(
+--     --                                 {name = "WWIRuntime", parent = myStuff})
 
-    local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
-                                                           "WordWheelIsland")
-    local sentencePositioner = Utils.getFirstDescendantByName(myStuff,
-                                                              "SentencePositioner")
+--     -- local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
+--     --                                                        "WordWheelIsland")
+--     -- local sentencePositioner = Utils.getFirstDescendantByName(myStuff,
+--     --                                                           "SentencePositioner")
 
-    print('sentencePositioner' .. ' - start');
-    print(sentencePositioner);
+--     -- print('sentencePositioner' .. ' - start');
+--     -- print(sentencePositioner);
 
-end
+-- end
 
 function addScenes(props)
     local questBlockModel = props.questBlockModel
@@ -264,7 +266,7 @@ function addWorld(props)
 
     if true then
         local props = {}
-        configWWI(props)
+        InitWWI.initWWI(props)
         -- return
     end
 
