@@ -159,7 +159,7 @@ function handleBrick(clickedLetter, miniGameState)
         local wordComplete = table.find(words, currentWord)
 
         if (wordComplete) then
-            local soundId = Constants.soundIds[currentWord]
+            local soundId = Constants.wordConfigs[currentWord][soundId]
             if (soundId) then
                 -- if (false and soundId) then
                 local sound = Instance.new("Sound", workspace)

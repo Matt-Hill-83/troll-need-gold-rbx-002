@@ -50,16 +50,27 @@ module.totalIslandLength = islandLength + bridgeLength
 
 module.buttonLabels = {PrevPage = "Prev Page", NextPage = "Next Page"}
 
-module.soundIds = {
-    SAT = "6145993194",
-    CAT = "6145990934",
-    BAT = "6145991240",
-    HAT = "6145991587",
-    MAT = "6145991865",
-    PAT = "6145992548",
-    RAT = "6145992816",
-    BOG = "6149925692"
+module.wordConfigs = {
+    SAT = {soundId = "6145993194", imageId = "5991277363"},
+    CAT = {soundId = "6145990934", imageId = "5991277363"},
+    BAT = {soundId = "6145991240", imageId = "5991277363"},
+    HAT = {soundId = "6145991587", imageId = "5991277363"},
+    MAT = {soundId = "6145991865", imageId = "5991277363"},
+    PAT = {soundId = "6145992548", imageId = "5991277363"},
+    RAT = {soundId = "6145992816", imageId = "5991277363"},
+    BOG = {soundId = "6149925692", imageId = "5991277363"}
 }
+
+-- module.soundIds = {
+--     SAT = "6145993194",
+--     CAT = "6145990934",
+--     BAT = "6145991240",
+--     HAT = "6145991587",
+--     MAT = "6145991865",
+--     PAT = "6145992548",
+--     RAT = "6145992816",
+--     BOG = "6149925692"
+-- }
 -- 
 -- 
 -- 

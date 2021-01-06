@@ -2,10 +2,28 @@ local CS = game:GetService("CollectionService")
 local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Utils3 = require(Sss.Source.Utils.U003PartsUtils)
+local Constants = require(Sss.Source.Constants.Constants)
 
 local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 
 local module = {}
+
+function applyDecalsToCharacter(props)
+    local part = props.part
+    local imageId = props.imageId
+
+    if not imageId then return end
+
+    local decalUri = 'rbxassetid://' .. imageId
+    print('decalUri' .. ' - start------------------------------>>>>>>>>');
+    print(decalUri);
+    local decalFront = Utils.getFirstDescendantByName(part,
+                                                      "CharacterDecalFront")
+    local decalBack = Utils.getFirstDescendantByName(part, "CharacterDecalBack")
+
+    decalFront.Image = decalUri
+    decalBack.Image = decalUri
+end
 
 function initWord(props)
     local wordIndex = props.wordIndex
@@ -24,7 +42,10 @@ function initWord(props)
     local wordTemplate = Utils.getFirstDescendantByName(wordWheelIsland,
                                                         "WordTemplate")
     local newWord = wordTemplate:Clone()
-    local wordBench = Utils.getFirstDescendantByName(newWord, "WordPositioner")
+
+    local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
+    local charImageBlock = Utils.getFirstDescendantByName(newWord,
+                                                          "CharacterImage")
 
     local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
                                                            "WordWheelIsland")
@@ -32,8 +53,20 @@ function initWord(props)
                                                               "SentencePositioner")
     local sentencePositioner = Utils.getFirstDescendantByName(wordWheelIsland,
                                                               "SentencePositioner")
-    print('sentencePositioner' .. ' - start--------------------->>>>');
-    print(sentencePositioner);
+
+    -- local imageId = Utils.getDecalIdFromName({name = word})
+    local imageId = ""
+    if Constants.wordConfigs[word] then
+        imageId = Constants.wordConfigs[word][imageId]
+        if imageId then
+            applyDecalsToCharacter({part = newWord, imageId = imageId})
+        end
+    end
+
+    local soundId = ""
+    if Constants.wordConfigs[word] then
+        soundId = Constants.wordConfigs[word][soundId]
+    end
 
     newWord.Parent = wordTemplate.Parent
 

@@ -96,11 +96,6 @@ function module.addSeat(props)
             local frameConfig = sceneConfig.frames[theaterState.pageNumber]
             if theaterState.updating == true then return end
             theaterState.updating = true
-            -- if theaterState.numUsersSeated == 0 then return end
-
-            print('currentPlayer' .. ' - start');
-            print(currentPlayer);
-            print('updating')
 
             if theaterState.pageNumber > 1 then
                 theaterState.pageNumber = theaterState.pageNumber - 1
