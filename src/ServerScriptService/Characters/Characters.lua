@@ -80,26 +80,14 @@ renderCharacters = function(props)
             Utils.mergeTables(newChar,
                               {Parent = charFolder, Name = nameStub .. i})
 
-            -- 
-
             Utils.applyDecalsToCharacterFromConfigName(
                 {part = newChar, configName = itemConfig.name})
-            -- local decalId = Utils.getDecalIdFromName({name = itemConfig.name})
-            -- applyDecalsToCharacter({part = newChar, decalId = decalId})
-
-            -- 
-            -- 
-            -- local displayName = Utils.getDisplayNameFromName(
-            --                         {name = itemConfig.name})
-            -- applyLabelsToCharacter({part = newChar, text = displayName})
-
             Utils.hideItemAndChildren({item = newChar, hide = false})
             newChar.PrimaryPart.Transparency = 1
         end
     end
 
     Utils.hideItemAndChildren({item = characterTemplate, hide = true})
-
 end
 
 function applyDecalsToCharacter(props)
