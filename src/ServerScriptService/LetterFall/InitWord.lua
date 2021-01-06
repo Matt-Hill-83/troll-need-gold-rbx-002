@@ -15,8 +15,7 @@ function initWord(props)
     local wordBoxFolder = Utils.getFirstDescendantByName(letterFallFolder,
                                                          "WordBoxFolder")
 
-    local newWordBoxFolder = wordBoxFolder
-    local wordBox = Utils.getFirstDescendantByName(newWordBoxFolder, "WordBox")
+    local wordBox = Utils.getFirstDescendantByName(wordBoxFolder, "WordBox")
     local letterBlockFolder = Utils.getFromTemplates("LetterBlockTemplates")
 
     local letterBlockTemplate = Utils.getFirstDescendantByName(
@@ -92,7 +91,6 @@ function initWord(props)
 end
 
 function initWords(miniGameState)
-
     local letterFallFolder = miniGameState.letterFallFolder
     local wordLetters = miniGameState.wordLetters
     local wordFolder = getWordFolder(miniGameState)
@@ -113,14 +111,12 @@ function initWords(miniGameState)
     for wordIndex, word in ipairs(miniGameState.words) do
         local wordProps = {
             miniGameState = miniGameState,
-
             wordIndex = wordIndex,
             wordLetters = wordLetters,
             word = word
         }
 
         local newWordObj = initWord(wordProps)
-
         table.insert(miniGameState.renderedWords, newWordObj)
     end
 end
@@ -142,5 +138,6 @@ end
 module.initGameToggle = initGameToggle
 module.initLetterRack = initLetterRack
 module.initWords = initWords
+module.initWord = initWord
 
 return module

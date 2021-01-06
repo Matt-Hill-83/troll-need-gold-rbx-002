@@ -39,43 +39,6 @@ function addRemoteObjects()
 
         addWorld(worldProps)
 
-        local LetterWheel2 = Utils.getFirstDescendantByName(myStuff,
-                                                            "LetterWheel2")
-
-        -- -- local letterGrid = Utils.getFirstDescendantByName(myStuff, "LetterGrid")
-        -- local plaques = Utils.getDescendantsByName(LetterWheel2, "Plaque")
-
-        -- local cubes = Utils.getDescendantsByName(LetterWheel2, "BlockChar")
-        -- print('cubes' .. ' - start');
-        -- print(cubes);
-
-        -- for i, label in ipairs(cubes) do
-        --     local sgui = label.Parent
-        --     if sgui then
-        --         local cube = sgui.Parent
-        --         print(cube.Name)
-
-        --         local density = 0
-        --         local friction = 0.1
-        --         local elasticity = 1
-        --         local frictionWeight = 1
-        --         local elasticityWeight = 1
-
-        --         -- Construct new PhysicalProperties and set
-        --         local physProperties = PhysicalProperties.new(density, friction,
-        --                                                       elasticity,
-        --                                                       frictionWeight,
-        --                                                       elasticityWeight)
-        --         cube.CustomPhysicalProperties = physProperties
-        --     end
-        --     -- 
-        -- end
-
-        -- TODO: make all letters massless
-        -- TODO: make all letters massless
-        -- TODO: make all letters massless
-        -- TODO: make all letters massless
-        -- TODO: make all letters massless
     end
 
     deleteTemplates()
