@@ -111,10 +111,8 @@ renderTexts = function(props)
 
             local absoluteHeight = outerLabel.AbsoluteSize.Y
             dialogY = dialogY + (absoluteHeight + rowGap)
-
         end
     end
-
 end
 
 module.renderTexts = renderTexts

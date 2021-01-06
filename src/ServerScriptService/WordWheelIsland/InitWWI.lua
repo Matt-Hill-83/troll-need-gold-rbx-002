@@ -41,12 +41,12 @@ function initWWI()
         local newStatueScene = statueTemplate:Clone()
         newStatueScene.Parent = statuePositioner.Parent
         newStatueScene.PrimaryPart.CFrame = statuePositioner.CFrame
+        newStatueScene.PrimaryPart.Anchored = true
 
         local sentencePositioner = Utils.getFirstDescendantByName(
                                        newStatueScene, "SentencePositioner")
 
         local sentence = statusDef.sentence
-        -- local sentence = {"OK", "MOM", "YES", "MOM"}
         local wordLetters = {}
 
         for wordIndex, word in ipairs(sentence) do
@@ -58,10 +58,6 @@ function initWWI()
             }
 
             local newWordObj = InitWord.initWord(wordProps)
-
-            print('newWordObj' .. ' - start');
-            print(newWordObj);
-            -- local newWord = InitWord.initWord()
         end
 
         sentencePositioner:Destroy()

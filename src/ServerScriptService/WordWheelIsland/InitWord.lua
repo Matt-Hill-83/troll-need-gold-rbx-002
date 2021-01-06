@@ -118,9 +118,9 @@ function initWord(props)
         }
     }
 
-    local output = Utils3.setCFrameFromDesiredEdgeOffset(translateWordProps)
-
-    newWord.PrimaryPart.CFrame = output
+    newWord.PrimaryPart.CFrame = Utils3.setCFrameFromDesiredEdgeOffset(
+                                     translateWordProps)
+    newWord.PrimaryPart.Anchored = true
 
     local letterPositioner = Utils.getFirstDescendantByName(newWord,
                                                             "LetterPositioner")
@@ -157,16 +157,9 @@ function initWord(props)
             }
         }
 
-        local output = Utils3.setCFrameFromDesiredEdgeOffset(
-                           translateCFrameProps)
-
-        newLetter.CFrame = output
-
-        local weld = Instance.new("WeldConstraint")
-        weld.Name = "WeldConstraint" .. letterNameStub
-        weld.Parent = wordBench.Parent
-        weld.Part0 = wordBench
-        weld.Part1 = newLetter
+        newLetter.CFrame = Utils3.setCFrameFromDesiredEdgeOffset(
+                               translateCFrameProps)
+        newLetter.Anchored = true
 
         -- Do this last to avoid tweening
         newLetter.Parent = newWord
