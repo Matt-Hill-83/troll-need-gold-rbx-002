@@ -8,16 +8,21 @@ local module = {}
 
 function applyDecalsToCharacter(props)
     local part = props.part
-    local imageId = props.imageId
+    local word = props.word
+    -- local imageId = props.imageId
 
-    if not imageId then return end
-
-    local decalUri = 'rbxassetid://' .. imageId
-    local decalFront = getFirstDescendantByName(part, "CharacterDecalFront")
-    local decalBack = getFirstDescendantByName(part, "CharacterDecalBack")
-
-    decalFront.Image = decalUri
-    decalBack.Image = decalUri
+    if Constants.wordConfigs[word] then
+        local imageId = Constants.wordConfigs[word]['imageId']
+        if imageId then
+            local decalUri = 'rbxassetid://' .. imageId
+            local decalFront = getFirstDescendantByName(part,
+                                                        "CharacterDecalFront")
+            local decalBack = getFirstDescendantByName(part,
+                                                       "CharacterDecalBack")
+            decalFront.Image = decalUri
+            decalBack.Image = decalUri
+        end
+    end
 end
 
 local function getPlayerFromHumanoid(humanoid)
@@ -323,12 +328,6 @@ function module.getDecalIdFromName(props)
     end
 end
 
--- TODO
--- TODO
--- TODO
--- TODO
--- TODO
--- TODO
 function module.getDisplayNameFromName(props)
     local name = props.name
     if (Constants.characters[name] and Constants.characters[name]["displayName"]) then

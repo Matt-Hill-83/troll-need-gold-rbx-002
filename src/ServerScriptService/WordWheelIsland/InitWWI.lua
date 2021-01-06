@@ -15,6 +15,11 @@ function initWWIStatue()
     -- 
 end
 
+function configStatue(props)
+    -- 
+
+end
+
 function initWWI()
     local myStuff = workspace:FindFirstChild("MyStuff")
     local runtimeWWIFolder = Utils.getOrCreateFolder(
@@ -46,9 +51,17 @@ function initWWI()
         local sentencePositioner = Utils.getFirstDescendantByName(
                                        newStatueScene, "SentencePositioner")
 
+        local wordGirl = Utils.getFirstDescendantByName(newStatueScene,
+                                                        "WordGirl")
+        local characterImage = Utils.getFirstDescendantByName(wordGirl,
+                                                              "CharacterImage")
+
+        Utils.applyDecalsToCharacter({part = newWord, imageId = imageId})
+
         local sentence = statusDef.sentence
         local wordLetters = {}
 
+        configStatue()
         for wordIndex, word in ipairs(sentence) do
 
             local wordProps = {

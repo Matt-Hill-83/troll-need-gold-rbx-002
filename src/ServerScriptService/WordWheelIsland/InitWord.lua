@@ -8,21 +8,6 @@ local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 
 local module = {}
 
--- function applyDecalsToCharacter(props)
---     local part = props.part
---     local imageId = props.imageId
-
---     if not imageId then return end
-
---     local decalUri = 'rbxassetid://' .. imageId
---     local decalFront = Utils.getFirstDescendantByName(part,
---                                                       "CharacterDecalFront")
---     local decalBack = Utils.getFirstDescendantByName(part, "CharacterDecalBack")
-
---     decalFront.Image = decalUri
---     decalBack.Image = decalUri
--- end
-
 function playWordSound(word)
     local closure = function()
         if Constants.wordConfigs[word] then
@@ -38,11 +23,6 @@ function playWordSound(word)
         end
     end
     return closure
-end
-
-function configStatue(props)
-    -- 
-
 end
 
 function configWord(props)
@@ -63,12 +43,13 @@ function configWord(props)
     local sentencePositioner = Utils.getFirstDescendantByName(wordWheelIsland,
                                                               "SentencePositioner")
 
-    if Constants.wordConfigs[word] then
-        local imageId = Constants.wordConfigs[word]['imageId']
-        if imageId then
-            Utils.applyDecalsToCharacter({part = newWord, imageId = imageId})
-        end
-    end
+    Utils.applyDecalsToCharacter({part = newWord, word = word})
+    -- if Constants.wordConfigs[word] then
+    --     local imageId = Constants.wordConfigs[word]['imageId']
+    --     if imageId then
+    --         Utils.applyDecalsToCharacter({part = newWord, imageId = imageId})
+    --     end
+    -- end
 
     newWord.Parent = wordTemplate.Parent
 
@@ -119,10 +100,6 @@ function initWord(props)
     }
 
     local newWord = configWord(newWordProps)
-    -- configStatue(newWordProps)
-
-    -- CharacterImage
-    -- WordGirl
 
     -- 
     local letterPositioner = Utils.getFirstDescendantByName(newWord,
