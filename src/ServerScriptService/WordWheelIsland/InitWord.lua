@@ -15,8 +15,6 @@ function applyDecalsToCharacter(props)
     if not imageId then return end
 
     local decalUri = 'rbxassetid://' .. imageId
-    print('decalUri' .. ' - start------------------------------>>>>>>>>');
-    print(decalUri);
     local decalFront = Utils.getFirstDescendantByName(part,
                                                       "CharacterDecalFront")
     local decalBack = Utils.getFirstDescendantByName(part, "CharacterDecalBack")
@@ -54,10 +52,15 @@ function initWord(props)
     local sentencePositioner = Utils.getFirstDescendantByName(wordWheelIsland,
                                                               "SentencePositioner")
 
-    -- local imageId = Utils.getDecalIdFromName({name = word})
-    local imageId = ""
     if Constants.wordConfigs[word] then
-        imageId = Constants.wordConfigs[word][imageId]
+        print('Constants.wordConfigs[word]' ..
+                  ' - start----------------------->>>>>>');
+        print('Constants.wordConfigs[word]' ..
+                  ' - start----------------------->>>>>>');
+        print('Constants.wordConfigs[word]' ..
+                  ' - start----------------------->>>>>>');
+        print(Constants.wordConfigs[word]);
+        local imageId = Constants.wordConfigs[word]['imageId']
         if imageId then
             applyDecalsToCharacter({part = newWord, imageId = imageId})
         end
