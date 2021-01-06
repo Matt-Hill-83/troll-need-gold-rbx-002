@@ -25,7 +25,6 @@ function initWord(props)
     local wordTemplate = Utils.getFirstDescendantByName(wordWheelIsland,
                                                         "WordTemplate")
     local newWord = wordTemplate:Clone()
-    -- local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
     local wordBench = Utils.getFirstDescendantByName(newWord, "WordPositioner")
 
     local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
@@ -43,11 +42,21 @@ function initWord(props)
 
     local spacingFactorY = 1.25
     local spacingFactorX = 1.0
-    local wordSpacingX = letterBlockTemplate.Size.X
-    -- local wordSpacingX = letterBlockTemplate.Size.Y * spacingFactorY
+    local wordSpacingX = -letterBlockTemplate.Size.X * 4
 
-    newWord.PrimaryPart.CFrame = sentencePositioner.CFrame +
-                                     Vector3.new(wordSpacingX * wordIndex, 0, 0)
+    local translateWordProps = {
+        parent = sentencePositioner,
+        child = newWord.PrimaryPart,
+        offsetConfig = {
+            useParentNearEdge = Vector3.new(0, -1, 1),
+            useChildNearEdge = Vector3.new(0, -1, 1),
+            offsetAdder = Vector3.new(wordSpacingX * wordIndex, 0, 0)
+        }
+    }
+
+    local output = Utils3.setCFrameFromDesiredEdgeOffset(translateWordProps)
+
+    newWord.PrimaryPart.CFrame = output
 
     local letterPositioner = Utils.getFirstDescendantByName(newWord,
                                                             "LetterPositioner")
@@ -65,7 +74,7 @@ function initWord(props)
 
         newLetter.Name = "wordLetter-" .. letterNameStub .. "xxxx"
 
-        local letterPositionX = -newLetter.Size.X * (letterIndex - 2) *
+        local letterPositionX = -newLetter.Size.X * (letterIndex - 1) *
                                     spacingFactorX
 
         CS:AddTag(newLetter, LetterFallUtils.tagNames.WordLetter)
@@ -85,8 +94,6 @@ function initWord(props)
                            translateCFrameProps)
 
         newLetter.CFrame = output
-        -- newLetter.CFrame = letterPositioner.CFrame *
-        --                        CFrame.new(Vector3.new(letterPositionX, 0, 0))
 
         local weld = Instance.new("WeldConstraint")
         weld.Name = "WeldConstraint" .. letterNameStub
