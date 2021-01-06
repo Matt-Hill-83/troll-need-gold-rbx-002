@@ -25,7 +25,8 @@ function initWWI(miniGameState)
 
     local word = "CATAPILLAR"
 
-    local sentence = {"OK", "MOM", "YES", "MOM"}
+    local sentence = {"A", "CAT"}
+    -- local sentence = {"OK", "MOM", "YES", "MOM"}
     local wordLetters = {}
 
     for wordIndex, word in ipairs(sentence) do
