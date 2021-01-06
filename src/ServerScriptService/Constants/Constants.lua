@@ -628,7 +628,7 @@ module.wordConfigs = {
     BEE = {soundId = "6149925692", imageId = module.characters.bee.decalId},
     CAT = {
         soundId = "6145990934",
-        imageId = module.characters.missyMeow01.decalId
+        imageId = module.characters.mitzyMeow01.decalId
     },
     DOG = {soundId = "6145990934", imageId = module.characters.angus01.decalId},
     HAT = {soundId = "6145991587", imageId = "xxx"},
