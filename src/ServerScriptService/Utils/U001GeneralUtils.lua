@@ -6,6 +6,20 @@ local Players = game:GetService("Players")
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 
+function applyDecalsToCharacter(props)
+    local part = props.part
+    local imageId = props.imageId
+
+    if not imageId then return end
+
+    local decalUri = 'rbxassetid://' .. imageId
+    local decalFront = getFirstDescendantByName(part, "CharacterDecalFront")
+    local decalBack = getFirstDescendantByName(part, "CharacterDecalBack")
+
+    decalFront.Image = decalUri
+    decalBack.Image = decalUri
+end
+
 local function getPlayerFromHumanoid(humanoid)
     local character = humanoid.Parent
     local player = Players:GetPlayerFromCharacter(character)
@@ -486,5 +500,6 @@ module.removeFirstMatchFromArray = removeFirstMatchFromArray
 module.getPlayerFromHumanoid = getPlayerFromHumanoid
 module.getKeysFromDict = getKeysFromDict
 module.setItemHeight = setItemHeight
+module.applyDecalsToCharacter = applyDecalsToCharacter
 
 return module

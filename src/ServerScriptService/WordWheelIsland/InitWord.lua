@@ -8,20 +8,20 @@ local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 
 local module = {}
 
-function applyDecalsToCharacter(props)
-    local part = props.part
-    local imageId = props.imageId
+-- function applyDecalsToCharacter(props)
+--     local part = props.part
+--     local imageId = props.imageId
 
-    if not imageId then return end
+--     if not imageId then return end
 
-    local decalUri = 'rbxassetid://' .. imageId
-    local decalFront = Utils.getFirstDescendantByName(part,
-                                                      "CharacterDecalFront")
-    local decalBack = Utils.getFirstDescendantByName(part, "CharacterDecalBack")
+--     local decalUri = 'rbxassetid://' .. imageId
+--     local decalFront = Utils.getFirstDescendantByName(part,
+--                                                       "CharacterDecalFront")
+--     local decalBack = Utils.getFirstDescendantByName(part, "CharacterDecalBack")
 
-    decalFront.Image = decalUri
-    decalBack.Image = decalUri
-end
+--     decalFront.Image = decalUri
+--     decalBack.Image = decalUri
+-- end
 
 function playWordSound(word)
     local closure = function()
@@ -40,6 +40,11 @@ function playWordSound(word)
     return closure
 end
 
+function configStatue(props)
+    -- 
+
+end
+
 function configWord(props)
     local letterBlockTemplate = props.letterBlockTemplate
     local word = props.word
@@ -49,8 +54,6 @@ function configWord(props)
 
     local newWord = wordTemplate:Clone()
 
-    -- local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
-    -- wordBench.Anchored = true
     local charImageBlock = Utils.getFirstDescendantByName(newWord,
                                                           "CharacterImage")
 
@@ -63,16 +66,13 @@ function configWord(props)
     if Constants.wordConfigs[word] then
         local imageId = Constants.wordConfigs[word]['imageId']
         if imageId then
-            applyDecalsToCharacter({part = newWord, imageId = imageId})
+            Utils.applyDecalsToCharacter({part = newWord, imageId = imageId})
         end
     end
 
     newWord.Parent = wordTemplate.Parent
 
-    -- Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
-
     local spacingFactorY = 1.25
-    -- local spacingFactorX = 1.0
     local wordSpacingX = -letterBlockTemplate.Size.X * 4
 
     local translateWordProps = {
@@ -103,15 +103,11 @@ function initWord(props)
     local myStuff = workspace:FindFirstChild("MyStuff")
     local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
                                                            "WordWheelIsland")
-
     local letterBlockFolder = Utils.getFromTemplates("LetterBlockTemplates")
-
     local letterBlockTemplate = Utils.getFirstDescendantByName(
                                     letterBlockFolder, "LBPurpleLight")
-
     local wordTemplate = Utils.getFirstDescendantByName(wordWheelIsland,
                                                         "WordTemplate")
-
     local wordNameStub = "-W" .. wordIndex
 
     local newWordProps = {
@@ -120,10 +116,15 @@ function initWord(props)
         letterBlockTemplate = letterBlockTemplate,
         wordIndex = wordIndex,
         wordNameStub = wordNameStub
-        -- 
     }
 
     local newWord = configWord(newWordProps)
+    -- configStatue(newWordProps)
+
+    -- CharacterImage
+    -- WordGirl
+
+    -- 
     local letterPositioner = Utils.getFirstDescendantByName(newWord,
                                                             "LetterPositioner")
 
@@ -187,51 +188,6 @@ function initWord(props)
 
     letterPositioner:Destroy()
     return newWordObj
-end
-
-function initWords(miniGameState)
-    local letterFallFolder = miniGameState.letterFallFolder
-    local wordLetters = miniGameState.wordLetters
-    local wordFolder = getWordFolder(miniGameState)
-
-    local putItemsToBeClonedHere = Utils.getFirstDescendantByName(
-                                       letterFallFolder,
-                                       "PutItemsToBeClonedHere")
-
-    Utils.enableChildWelds({part = putItemsToBeClonedHere, enabled = false})
-    putItemsToBeClonedHere:Destroy()
-
-    for i, letter in ipairs(wordLetters) do
-        if letter.instance then letter.instance:Destroy() end
-        wordLetters[i] = nil
-    end
-    Utils.clearTable(wordLetters)
-
-    for wordIndex, word in ipairs(miniGameState.words) do
-        local wordProps = {
-            miniGameState = miniGameState,
-            wordIndex = wordIndex,
-            wordLetters = wordLetters,
-            word = word
-        }
-
-        local newWordObj = initWord(wordProps)
-        table.insert(miniGameState.renderedWords, newWordObj)
-    end
-end
-
-function getWordFolder(miniGameState)
-    local letterFallFolder = miniGameState.letterFallFolder
-    local runtimeFolder = Utils.getOrCreateFolder(
-                              {
-            name = "RunTimeFolder",
-            parent = letterFallFolder
-        })
-
-    return (Utils.getOrCreateFolder({
-        name = "RunTimeWordBoxFolder",
-        parent = runtimeFolder
-    }))
 end
 
 module.initWords = initWords
