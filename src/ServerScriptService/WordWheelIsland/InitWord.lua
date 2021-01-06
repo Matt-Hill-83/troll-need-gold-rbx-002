@@ -6,27 +6,39 @@ local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 local module = {}
 
 function initWord(props)
-    local miniGameState = props.miniGameState
     local wordIndex = props.wordIndex
     local word = props.word
     local wordLetters = props.wordLetters
 
-    local letterFallFolder = miniGameState.letterFallFolder
-    local wordBoxFolder = Utils.getFirstDescendantByName(letterFallFolder,
-                                                         "WordBoxFolder")
+    -- local letterFallFolder = miniGameState.letterFallFolder
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
+                                                           "WordWheelIsland")
 
-    local wordBox = Utils.getFirstDescendantByName(wordBoxFolder, "WordBox")
     local letterBlockFolder = Utils.getFromTemplates("LetterBlockTemplates")
 
     local letterBlockTemplate = Utils.getFirstDescendantByName(
                                     letterBlockFolder, "LBPurpleLight")
 
-    local newWord = wordBox:Clone()
+    local wordComp = Utils.getFirstDescendantByName(wordWheelIsland,
+                                                    "WordTemplate")
+    local newWord = wordComp:Clone()
     local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
-    local letterPositioner = Utils.getFirstDescendantByName(newWord,
-                                                            "WordLetterBlockPositioner")
 
-    newWord.Parent = wordBox.Parent
+    local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
+                                                           "WordWheelIsland")
+    local sentencePositioner = Utils.getFirstDescendantByName(wordWheelIsland,
+                                                              "SentencePositioner")
+    print('sentencePositioner' .. ' - start--------------------->>>>');
+    print(sentencePositioner);
+
+    -- local letterPositioner = Utils.getFirstDescendantByName(newWord,
+    --                                                         "WordLetterBlockPositioner")
+
+    local letterPositioner = Utils.getFirstDescendantByName(wordWheelIsland,
+                                                            "SentencePositioner")
+
+    newWord.Parent = wordComp.Parent
 
     Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
 
@@ -41,7 +53,7 @@ function initWord(props)
     newWord.Name = newWord.Name .. "zzz" .. wordNameStub
     wordBench.Anchored = true
 
-    letterPositioner.Name = letterPositioner.Name .. wordNameStub
+    -- letterPositioner.Name = letterPositioner.Name .. wordNameStub
 
     local lettersInWord = {}
     for letterIndex = 1, #word do
@@ -50,7 +62,7 @@ function initWord(props)
 
         local newLetter = letterBlockTemplate:Clone()
 
-        newLetter.Name = "wordLetter-" .. letterNameStub
+        newLetter.Name = "wordLetter-" .. letterNameStub .. "xxxx"
 
         local letterPositionZ = newLetter.Size.Z * (letterIndex - 2) *
                                     spacingFactorZ
@@ -135,8 +147,6 @@ function getWordFolder(miniGameState)
     }))
 end
 
-module.initGameToggle = initGameToggle
-module.initLetterRack = initLetterRack
 module.initWords = initWords
 module.initWord = initWord
 

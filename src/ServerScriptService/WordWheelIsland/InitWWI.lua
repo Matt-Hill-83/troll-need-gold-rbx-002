@@ -7,24 +7,41 @@ local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 -- local LetterFallUtils = require(Sss.Source.LetterFall.LetterFallUtils)
 -- local HandleClick = require(Sss.Source.LetterFall.HandleClick)
 -- local InitLetterRack = require(Sss.Source.LetterFall.InitLetterRack)
--- local InitWord = require(Sss.Source.LetterFall.InitWord)
+local InitWord = require(Sss.Source.WordWheelIsland.InitWord)
 
 local module = {}
 
 function initWWI(miniGameState)
-
     local myStuff = workspace:FindFirstChild("MyStuff")
-    local runtimeQuestsFolder = Utils.getOrCreateFolder(
-                                    {name = "WWIRuntime", parent = myStuff})
+    local runtimeWWIFolder = Utils.getOrCreateFolder(
+                                 {name = "WWIRuntime", parent = myStuff})
 
     local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
                                                            "WordWheelIsland")
-    local sentencePositioner = Utils.getFirstDescendantByName(myStuff,
+    local sentencePositioner = Utils.getFirstDescendantByName(wordWheelIsland,
                                                               "SentencePositioner")
-
     print('sentencePositioner' .. ' - start');
     print(sentencePositioner);
 
+    local word = "CATAPILLAR"
+
+    local sentence = {"OK", "MOM", "YES", "MOM"}
+    local wordLetters = {}
+
+    for wordIndex, word in ipairs(sentence) do
+
+        local wordProps = {
+            wordIndex = wordIndex,
+            wordLetters = wordLetters,
+            word = word
+        }
+
+        local newWordObj = InitWord.initWord(wordProps)
+
+        print('newWordObj' .. ' - start');
+        print(newWordObj);
+        -- local newWord = InitWord.initWord()
+    end
     -- LetterFall.initGameToggle(miniGameState)
     -- InitLetterRack.initLetterRack(miniGameState)
     -- InitWord.initWords(miniGameState)

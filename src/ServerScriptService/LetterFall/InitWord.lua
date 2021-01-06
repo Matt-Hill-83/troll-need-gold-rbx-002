@@ -135,8 +135,8 @@ function getWordFolder(miniGameState)
     }))
 end
 
-module.initGameToggle = initGameToggle
-module.initLetterRack = initLetterRack
+-- module.initGameToggle = initGameToggle
+-- -- module.initLetterRack = initLetterRack
 module.initWords = initWords
 module.initWord = initWord
 
