@@ -40,58 +40,39 @@ function playWordSound(word)
     return closure
 end
 
-function initWord(props)
-    local wordIndex = props.wordIndex
+function configWord(props)
+    local letterBlockTemplate = props.letterBlockTemplate
     local word = props.word
-    local wordLetters = props.wordLetters
+    local wordIndex = props.wordIndex
+    local wordTemplate = props.wordTemplate
+    local wordNameStub = props.wordNameStub
 
-    local myStuff = workspace:FindFirstChild("MyStuff")
-    local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
-                                                           "WordWheelIsland")
-
-    local letterBlockFolder = Utils.getFromTemplates("LetterBlockTemplates")
-
-    local letterBlockTemplate = Utils.getFirstDescendantByName(
-                                    letterBlockFolder, "LBPurpleLight")
-
-    local wordTemplate = Utils.getFirstDescendantByName(wordWheelIsland,
-                                                        "WordTemplate")
     local newWord = wordTemplate:Clone()
 
-    local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
+    -- local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
+    -- wordBench.Anchored = true
     local charImageBlock = Utils.getFirstDescendantByName(newWord,
                                                           "CharacterImage")
 
+    local myStuff = workspace:FindFirstChild("MyStuff")
     local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
                                                            "WordWheelIsland")
     local sentencePositioner = Utils.getFirstDescendantByName(wordWheelIsland,
                                                               "SentencePositioner")
 
     if Constants.wordConfigs[word] then
-        print('Constants.wordConfigs[word]' ..
-                  ' - start----------------------->>>>>>');
-        print('Constants.wordConfigs[word]' ..
-                  ' - start----------------------->>>>>>');
-        print('Constants.wordConfigs[word]' ..
-                  ' - start----------------------->>>>>>');
-        print(Constants.wordConfigs[word]);
         local imageId = Constants.wordConfigs[word]['imageId']
         if imageId then
             applyDecalsToCharacter({part = newWord, imageId = imageId})
         end
     end
 
-    local soundId = ""
-    if Constants.wordConfigs[word] then
-        soundId = Constants.wordConfigs[word][soundId]
-    end
-
     newWord.Parent = wordTemplate.Parent
 
-    Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
+    -- Utils.enableChildWelds({part = letterBlockTemplate, enabled = false})
 
     local spacingFactorY = 1.25
-    local spacingFactorX = 1.0
+    -- local spacingFactorX = 1.0
     local wordSpacingX = -letterBlockTemplate.Size.X * 4
 
     local translateWordProps = {
@@ -108,12 +89,43 @@ function initWord(props)
                                      translateWordProps)
     newWord.PrimaryPart.Anchored = true
 
-    local letterPositioner = Utils.getFirstDescendantByName(newWord,
-                                                            "LetterPositioner")
+    newWord.Name = newWord.Name .. "zzz" .. wordNameStub
+
+    return newWord
+end
+
+function initWord(props)
+    local wordIndex = props.wordIndex
+    local word = props.word
+    local wordLetters = props.wordLetters
+
+    local spacingFactorX = 1.0
+    local myStuff = workspace:FindFirstChild("MyStuff")
+    local wordWheelIsland = Utils.getFirstDescendantByName(myStuff,
+                                                           "WordWheelIsland")
+
+    local letterBlockFolder = Utils.getFromTemplates("LetterBlockTemplates")
+
+    local letterBlockTemplate = Utils.getFirstDescendantByName(
+                                    letterBlockFolder, "LBPurpleLight")
+
+    local wordTemplate = Utils.getFirstDescendantByName(wordWheelIsland,
+                                                        "WordTemplate")
 
     local wordNameStub = "-W" .. wordIndex
-    newWord.Name = newWord.Name .. "zzz" .. wordNameStub
-    wordBench.Anchored = true
+
+    local newWordProps = {
+        wordTemplate = wordTemplate,
+        word = word,
+        letterBlockTemplate = letterBlockTemplate,
+        wordIndex = wordIndex,
+        wordNameStub = wordNameStub
+        -- 
+    }
+
+    local newWord = configWord(newWordProps)
+    local letterPositioner = Utils.getFirstDescendantByName(newWord,
+                                                            "LetterPositioner")
 
     local lettersInWord = {}
     for letterIndex = 1, #word do
@@ -155,6 +167,10 @@ function initWord(props)
         table.insert(lettersInWord,
                      {char = letter, found = false, instance = newLetter})
     end
+
+    local wordBench = Utils.getFirstDescendantByName(newWord, "WordBench")
+    wordBench.Anchored = true
+
     local wordBenchSizeX = #word * letterBlockTemplate.Size.X * spacingFactorX
 
     local wordBenchPosX = wordBench.Position.X
