@@ -16,7 +16,6 @@ local module = {}
 
 function module.addScenes(props)
     local parent = props.parent
-    -- local mountPlate = props.mountPlate
     local sceneConfigs = props.sceneConfigs
     local questConfig = props.questConfig
     local gridPadding = props.gridPadding

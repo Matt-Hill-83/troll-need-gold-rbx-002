@@ -5,6 +5,7 @@ local RS = game:GetService("ReplicatedStorage")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Buttons = require(Sss.Source.Buttons.Buttons)
 local Constants = require(Sss.Source.Constants.Constants)
+local Texts = require(Sss.Source.Texts.NewTexts)
 
 local freezeCameraRE = RS:WaitForChild("FreezeCameraRE")
 local renderDialogRE = RS:WaitForChild("RenderDialogRE")
@@ -46,10 +47,21 @@ function module.addSeat(props)
                 {pageNum = pageNumber, numPages = numPages, sgui = sgui})
         end
 
+        local dialogScreenDialogScreen =
+            Utils.getFirstDescendantByName(newSceneProps.clonedScene,
+                                           "DialogScreenDialogScreen")
+        local sgui = Utils.getFirstDescendantByName(dialogScreenDialogScreen,
+                                                    "SceneDialogGui")
+
+        print('sgui' .. ' - start');
+        print(sgui);
+        Utils.Texts.renderTexts({
+            dialogConfigs = frameConfig.dialogs,
+            sgui = playerGui
+        })
         print('player' .. ' - start');
         print(player);
         renderDialogRE:FireClient(player, frameConfig.dialogs)
-        -- renderDialogRE:FireAllClients(frameConfig.dialogs)
     end
 
     function onNextPageClick()
