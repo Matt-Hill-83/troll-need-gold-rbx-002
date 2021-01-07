@@ -40,36 +40,23 @@ function module.addSeat(props)
 
         addCharactersToScene(newSceneProps)
 
-        for i, player in pairs(Players:GetPlayers()) do
-            local sgui = player.PlayerGui.SceneDialogGui
-
-            Buttons.updateButtonActiveStatus(
-                {pageNum = pageNumber, numPages = numPages, sgui = sgui})
-        end
-
         local dialogScreen = Utils.getFirstDescendantByName(
                                  newSceneProps.clonedScene, "DialogScreen")
         local sgui = Utils.getFirstDescendantByName(dialogScreen,
                                                     "SceneDialogGui")
 
-        print('sgui' .. ' - start');
-        print(sgui);
+        Buttons.updateButtonActiveStatus(
+            {pageNum = pageNumber, numPages = numPages, sgui = sgui})
         Texts.renderTexts({dialogConfigs = frameConfig.dialogs, sgui = sgui})
-        print('player' .. ' - start');
-        print(player);
     end
 
     function onNextPageClick()
         function closure(currentPlayer)
             local sceneConfig = sceneConfig
             local frameConfig = sceneConfig.frames[theaterState.pageNumber]
-            print(theaterState.updating)
             if theaterState.updating == true then return end
             theaterState.updating = true
             -- if theaterState.numUsersSeated == 0 then return end
-            print('currentPlayer' .. ' - start');
-            print(currentPlayer);
-            print('updating')
 
             if theaterState.pageNumber < numPages then
                 theaterState.pageNumber = theaterState.pageNumber + 1
@@ -194,7 +181,6 @@ function module.addSeat(props)
 
                     freezeCameraRE:FireClient(currentPlayer, cameraPath1,
                                               cameraPath2, true)
-                    -- freezeCameraRE:FireAllClients(cameraPath1, cameraPath2, true)
                     return
                 end
             end
@@ -206,7 +192,6 @@ function module.addSeat(props)
                     Constants.walkSpeed
                 freezeCameraRE:FireClient(currentPlayer, cameraPath1,
                                           cameraPath2, false)
-                -- freezeCameraRE:FireAllClients(cameraPath1, cameraPath2, false)
                 currentPlayer = nil
             end
         end)

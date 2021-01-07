@@ -3,8 +3,8 @@ local module = {
     isDev = false,
     -- isDev = true,
 
-    singleScene = true,
-    -- singleScene = false,
+    -- singleScene = true,
+    singleScene = false,
 
     gameConfig = {
         transparency = true,
