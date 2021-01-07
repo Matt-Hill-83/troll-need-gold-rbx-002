@@ -240,7 +240,7 @@ function addWorld(props)
     local runtimeQuestsFolder = Utils.getOrCreateFolder(
                                     {name = "RunTimeQuests", parent = myStuff})
 
-    sliceQuestConfigs(questConfigs)
+    questConfigs = sliceQuestConfigs(questConfigs)
     local hexStand = cloneHexStand(worldIndex)
     local mountPlates = Utils.getDescendantsByName(hexStand, "MountPlate")
 
