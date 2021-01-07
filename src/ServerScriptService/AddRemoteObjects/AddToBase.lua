@@ -250,7 +250,7 @@ function addWorld(props)
 
     if true then
         local props = {}
-        InitWWI.initWWI(props)
+        -- InitWWI.initWWI(props)
         -- return
     end
 

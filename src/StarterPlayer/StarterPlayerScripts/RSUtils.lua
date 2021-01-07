@@ -1,8 +1,58 @@
-local StarterPlayer = game:GetService("StarterPlayer")
-local Constants = require(StarterPlayer.Source.StarterPlayerScripts.RSConstants)
+local Sss = game:GetService("ServerScriptService")
 local CS = game:GetService("CollectionService")
+local RS = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
 
+local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
+
+function applyDecalsToCharacterFromWord(props)
+    local part = props.part
+    local word = props.word
+
+    if Constants.wordConfigs[word] then
+        local imageId = Constants.wordConfigs[word]['imageId']
+        if imageId then
+            local decalUri = 'rbxassetid://' .. imageId
+            local decalFront = getFirstDescendantByName(part,
+                                                        "CharacterDecalFront")
+            local decalBack = getFirstDescendantByName(part,
+                                                       "CharacterDecalBack")
+            decalFront.Image = decalUri
+            decalBack.Image = decalUri
+        end
+    end
+end
+
+function applyLabelsToCharacter(props)
+    local part = props.part
+    local text = props.text or "no label"
+
+    local charLabelFront = module.getFirstDescendantByName(part,
+                                                           "CharLabelFront")
+    local charLabelBack = module.getFirstDescendantByName(part, "CharLabelBack")
+    charLabelFront.Text = text
+    charLabelBack.Text = text
+end
+
+function applyDecalsToCharacterFromConfigName(props)
+    local part = props.part
+    local configName = props.configName
+
+    local imageId = module.getDecalIdFromName({name = configName})
+
+    if imageId then
+        local decalUri = 'rbxassetid://' .. imageId
+        local decalFront = getFirstDescendantByName(part, "CharacterDecalFront")
+        local decalBack = getFirstDescendantByName(part, "CharacterDecalBack")
+        decalFront.Image = decalUri
+        decalBack.Image = decalUri
+    end
+
+    local displayName = module.getDisplayNameFromName({name = configName})
+    applyLabelsToCharacter({part = part, text = displayName})
+
+end
 
 local function getPlayerFromHumanoid(humanoid)
     local character = humanoid.Parent
@@ -307,12 +357,6 @@ function module.getDecalIdFromName(props)
     end
 end
 
--- TODO
--- TODO
--- TODO
--- TODO
--- TODO
--- TODO
 function module.getDisplayNameFromName(props)
     local name = props.name
     if (Constants.characters[name] and Constants.characters[name]["displayName"]) then
@@ -484,5 +528,8 @@ module.removeFirstMatchFromArray = removeFirstMatchFromArray
 module.getPlayerFromHumanoid = getPlayerFromHumanoid
 module.getKeysFromDict = getKeysFromDict
 module.setItemHeight = setItemHeight
+module.applyDecalsToCharacterFromWord = applyDecalsToCharacterFromWord
+module.applyDecalsToCharacterFromConfigName =
+    applyDecalsToCharacterFromConfigName
 
 return module
