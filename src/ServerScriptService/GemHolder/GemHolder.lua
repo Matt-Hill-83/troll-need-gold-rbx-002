@@ -27,9 +27,6 @@ function styleGemHolder(props)
 
     if isReceiver then
         print('isReceiver ' .. ' - start');
-        print('isReceiver ' .. ' - start');
-        print('isReceiver ' .. ' - start');
-        print('isReceiver ' .. ' - start');
         if bigGem then
             bigGem.Enabled = false
             if bigGem.Handle then

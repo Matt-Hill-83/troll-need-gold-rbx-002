@@ -77,7 +77,7 @@ function cloneHexStand(worldIndex)
                               translateCFrameProps)
     hexMountPart.Anchored = true
 
-    -- hexStandPositioner:Destroy()
+    hexStandPositioner:Destroy()
     return hexStand
 end
 
