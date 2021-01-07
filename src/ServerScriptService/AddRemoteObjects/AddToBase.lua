@@ -118,6 +118,8 @@ function addSkyBoxTeleporter(worldIndex)
 end
 
 function sliceQuestConfigs(questConfigs)
+    print('Constants.singleScene' .. ' - start');
+    print(Constants.singleScene);
     if (Constants.singleScene) then
         -- slice out a single quest
         questConfigs = {questConfigs[1]}

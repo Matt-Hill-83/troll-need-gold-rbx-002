@@ -1,9 +1,7 @@
-local Sss = game:GetService("ServerScriptService")
+local StarterPlayer = game:GetService("StarterPlayer")
+local Constants = require(StarterPlayer.Source.StarterPlayerScripts.RSConstants)
 local CS = game:GetService("CollectionService")
-local RS = game:GetService("ReplicatedStorage")
-local Players = game:GetService("Players")
 
-local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 
 function applyDecalsToCharacterFromWord(props)
