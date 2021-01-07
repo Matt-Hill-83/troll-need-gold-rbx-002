@@ -47,21 +47,16 @@ function module.addSeat(props)
                 {pageNum = pageNumber, numPages = numPages, sgui = sgui})
         end
 
-        local dialogScreenDialogScreen =
-            Utils.getFirstDescendantByName(newSceneProps.clonedScene,
-                                           "DialogScreenDialogScreen")
-        local sgui = Utils.getFirstDescendantByName(dialogScreenDialogScreen,
+        local dialogScreen = Utils.getFirstDescendantByName(
+                                 newSceneProps.clonedScene, "DialogScreen")
+        local sgui = Utils.getFirstDescendantByName(dialogScreen,
                                                     "SceneDialogGui")
 
         print('sgui' .. ' - start');
         print(sgui);
-        Utils.Texts.renderTexts({
-            dialogConfigs = frameConfig.dialogs,
-            sgui = playerGui
-        })
+        Texts.renderTexts({dialogConfigs = frameConfig.dialogs, sgui = sgui})
         print('player' .. ' - start');
         print(player);
-        renderDialogRE:FireClient(player, frameConfig.dialogs)
     end
 
     function onNextPageClick()
@@ -100,7 +95,14 @@ function module.addSeat(props)
         return closure
     end
 
-    nextPageButtonClickRE.OnServerEvent:Connect(onNextPageClick())
+    local dialogScreen = Utils.getFirstDescendantByName(clonedScene,
+                                                        "DialogScreen")
+    -- local sgui = Utils.getFirstDescendantByName(newSceneProps.clonedScene,
+    --                                             "SceneDialogGui")
+    local sgui = Utils.getFirstDescendantByName(dialogScreen, "SceneDialogGui")
+    local nextPageButton =
+        Utils.getFirstDescendantByName(sgui, "NextPageButton")
+    nextPageButton.MouseButton1Click:Connect(onNextPageClick())
 
     function onPrevPageClick()
         function closure()
@@ -134,7 +136,9 @@ function module.addSeat(props)
         return closure
     end
 
-    prevPageButtonClickRE.OnServerEvent:Connect(onPrevPageClick())
+    local prevPageButton =
+        Utils.getFirstDescendantByName(sgui, "PrevPageButton")
+    prevPageButton.MouseButton1Click:Connect(onPrevPageClick())
 
     function openBridgeDoor(props)
         local clonedScene2 = props.clonedScene
