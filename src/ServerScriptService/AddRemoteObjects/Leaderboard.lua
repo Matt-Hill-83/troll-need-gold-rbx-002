@@ -11,16 +11,6 @@ local globalLeaderboard = globalLeaderboards[1]
 
 print('globalLeaderboard' .. ' - start');
 print(globalLeaderboard);
-print('globalLeaderboard' .. ' - start');
-print(globalLeaderboard);
-print('globalLeaderboard' .. ' - start');
-print(globalLeaderboard);
-print('globalLeaderboard' .. ' - start');
-print(globalLeaderboard);
-print('globalLeaderboard' .. ' - start');
-print(globalLeaderboard);
-print('globalLeaderboard' .. ' - start');
-print(globalLeaderboard);
 
 local function updateLeaderboard()
     local success, errorMessage = pcall(function()
