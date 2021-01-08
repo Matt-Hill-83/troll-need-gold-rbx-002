@@ -71,10 +71,6 @@ function handleBrick(clickedLetter, miniGameState, player)
     local letterFallFolder = miniGameState.letterFallFolder
     local runTimeLetterFolder = miniGameState.runTimeLetterFolder
 
-    local wins = player.leaderstats.Wins
-    wins.Value = wins.Value + 1
-    Leaderboard.updateLB()
-
     local isChild = clickedLetter:IsDescendantOf(letterFallFolder)
 
     if not isChild then
@@ -87,8 +83,6 @@ function handleBrick(clickedLetter, miniGameState, player)
     end
     if isDeadLetter(clickedLetter) then return end
 
-    -- 
-    -- 
     local activeWord = miniGameState.activeWord
     local currentLetterIndex = miniGameState.currentLetterIndex
     local words = miniGameState.words
@@ -121,8 +115,7 @@ function handleBrick(clickedLetter, miniGameState, player)
     clickedLetter.Anchored = true
 
     if not miniGameState.gemsStarted then
-        --   
-        miniGameState.gemsStarted = true
+        -- miniGameState.gemsStarted = true
     end
 
     local foundChar = LetterFallUtils.getCharFromLetterBlock(clickedLetter)
@@ -171,9 +164,8 @@ function handleBrick(clickedLetter, miniGameState, player)
         local wordComplete = table.find(words, currentWord)
 
         if (wordComplete) then
-            local soundId = Constants.wordConfigs[currentWord][soundId]
+            local soundId = Constants.wordConfigs[currentWord]['soundId']
             if (soundId) then
-                -- if (false and soundId) then
                 local sound = Instance.new("Sound", workspace)
                 sound.SoundId = "rbxassetid://" .. soundId
                 sound.EmitterSize = 5
@@ -185,6 +177,10 @@ function handleBrick(clickedLetter, miniGameState, player)
             miniGameState.foundLetters = {}
             miniGameState.currentLetterIndex = 1
             miniGameState.activeWord = nil
+
+            local wins = player.leaderstats.Wins
+            wins.Value = wins.Value + 1
+            Leaderboard.updateLB()
         end
 
         LetterFallUtils.styleLetterBlocks(

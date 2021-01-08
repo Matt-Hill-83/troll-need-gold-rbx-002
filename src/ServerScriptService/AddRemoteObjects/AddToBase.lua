@@ -41,7 +41,6 @@ function addRemoteObjects()
         }
 
         addWorld(worldProps)
-
     end
 
     deleteTemplates()
@@ -254,7 +253,7 @@ function addWorld(props)
 
     print('Leaderboard' .. ' - start');
     print(Leaderboard);
-    Leaderboard.updateLB()
+    -- Leaderboard.updateLB()
 
     if Constants.gameConfig.showWWI then
         local props = {}
