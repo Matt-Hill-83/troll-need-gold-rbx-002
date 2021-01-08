@@ -10,7 +10,7 @@ local function freezeCamera(cameraPath1, cameraPath2, freeze)
     local camera = workspace.CurrentCamera
     if freeze then
         -- playerGui.Enabled = true
-        local cameraOffset = Vector3.new(0, 0, 2)
+        local cameraOffset = Vector3.new(0, 0, -1)
 
         if camera.CameraType ~= Enum.CameraType.Scriptable then
             camera.CameraType = Enum.CameraType.Scriptable
