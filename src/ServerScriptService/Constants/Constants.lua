@@ -10,6 +10,9 @@ local module = {
         transparency = true,
         -- transparency = false,
 
+        showWWI = true,
+        -- showWWI = false,
+
         showScenes = true
         -- showScenes = false
         ---

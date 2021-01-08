@@ -255,7 +255,7 @@ function addWorld(props)
     print('Leaderboard' .. ' - start');
     print(Leaderboard);
 
-    if true then
+    if Constants.gameConfig.showWWI then
         local props = {}
         InitWWI.initWWI(props)
     end
