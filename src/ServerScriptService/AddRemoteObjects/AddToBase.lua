@@ -10,7 +10,7 @@ local Constants = require(Sss.Source.Constants.Constants)
 local Scenes = require(Sss.Source.Scenes.Scenes)
 local QuestBlock = require(Sss.Source.AddRemoteObjects.QuestBlock)
 local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
--- local Leaderboard = require(Sss.Source.AddRemoteObjects.Leaderboard)
+local Leaderboard = require(Sss.Source.AddRemoteObjects.Leaderboard)
 local Teleporters = require(Sss.Source.Teleporters.Teleporters)
 local InitWWI = require(Sss.Source.WordWheelIsland.InitWWI)
 local MiniGame = require(Sss.Source.MiniGame.MiniGame)
@@ -254,6 +254,7 @@ function addWorld(props)
 
     print('Leaderboard' .. ' - start');
     print(Leaderboard);
+    Leaderboard.updateLB()
 
     if Constants.gameConfig.showWWI then
         local props = {}
