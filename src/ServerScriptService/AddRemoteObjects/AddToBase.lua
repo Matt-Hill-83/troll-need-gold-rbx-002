@@ -257,8 +257,7 @@ function addWorld(props)
 
     if true then
         local props = {}
-        -- InitWWI.initWWI(props)
-        -- return
+        InitWWI.initWWI(props)
     end
 
     -- add quests
