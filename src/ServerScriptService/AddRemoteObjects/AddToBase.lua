@@ -31,6 +31,7 @@ function addRemoteObjects()
 
     local myStuff = workspace:FindFirstChild("MyStuff")
     local worlds = {questConfigs}
+    -- local worlds = questConfigs
     -- local worlds = {questConfigs, questConfigs}
     -- local worlds = {questConfigs, questConfigs, questConfigs}
 
