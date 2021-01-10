@@ -257,10 +257,6 @@ function addWorld(props)
     -- print(Leaderboard);
     Leaderboard.updateLB()
 
-
-if worldIndex == 1 then
-    BlockDash.addBlockDash()
-
     if Constants.gameConfig.showWWI then
         local props = {}
         InitWWI.initWWI(props)
@@ -288,25 +284,38 @@ if worldIndex == 1 then
             })
         miniGame.PrimaryPart.Anchored = true
 
-        local questBlockModel = renderQuestBlock(
-                                    {
-                dockMountPlate = Utils.getFirstDescendantByName(miniGame,
-                                                                "DockMountPlate"),
-                worldIndex = worldIndex,
+        if questIndex == 1 then
+
+            local blockDashProps = {
+                -- parent = miniGameMountPlate,
+                words = getWords(questConfig),
                 questIndex = questIndex,
-                gridSize = gridSize
-            })
-        questBlockModel.Parent = questFolder
-        if Constants.gameConfig.showScenes then
-            addScenes({
-                gridPadding = gridPadding,
-                hexTeleporter = hexTeleporter,
-                questBlockModel = questBlockModel,
-                questConfig = questConfig,
-                questFolder = questFolder,
-                questIndex = questIndex
-            })
+                questTitle = questConfig.questTitle
+            }
+
+            BlockDash.addBlockDash(blockDashProps)
+
         end
+    end
+
+    local questBlockModel = renderQuestBlock(
+                                {
+            dockMountPlate = Utils.getFirstDescendantByName(miniGame,
+                                                            "DockMountPlate"),
+            worldIndex = worldIndex,
+            questIndex = questIndex,
+            gridSize = gridSize
+        })
+    questBlockModel.Parent = questFolder
+    if Constants.gameConfig.showScenes then
+        addScenes({
+            gridPadding = gridPadding,
+            hexTeleporter = hexTeleporter,
+            questBlockModel = questBlockModel,
+            questConfig = questConfig,
+            questFolder = questFolder,
+            questIndex = questIndex
+        })
     end
 end
 
