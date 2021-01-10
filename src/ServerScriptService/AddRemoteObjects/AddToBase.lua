@@ -14,6 +14,7 @@ local Leaderboard = require(Sss.Source.AddRemoteObjects.Leaderboard)
 local Teleporters = require(Sss.Source.Teleporters.Teleporters)
 local InitWWI = require(Sss.Source.WordWheelIsland.InitWWI)
 local MiniGame = require(Sss.Source.MiniGame.MiniGame)
+local BlockDash = require(Sss.Source.BlockDash.BlockDash)
 
 function deleteTemplates()
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
@@ -252,9 +253,13 @@ function addWorld(props)
     Teleporters.setLocalTPTargetToRemoteTP(skyTeleporter, hexTeleporter)
     Teleporters.setLocalTPTargetToRemoteTP(hexReturnTeleporter, skyTeleporter)
 
-    print('Leaderboard' .. ' - start');
-    print(Leaderboard);
-    -- Leaderboard.updateLB()
+    -- print('Leaderboard' .. ' - start');
+    -- print(Leaderboard);
+    Leaderboard.updateLB()
+
+
+if worldIndex == 1 then
+    BlockDash.addBlockDash()
 
     if Constants.gameConfig.showWWI then
         local props = {}
