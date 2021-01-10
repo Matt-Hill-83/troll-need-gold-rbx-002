@@ -10,7 +10,7 @@ function configPlayers()
     Players.RespawnTime = 0
 
     local function onCharacterAdded(character)
-        character:WaitForChild("Humanoid").WalkSpeed = 50
+        character:WaitForChild("Humanoid").WalkSpeed = 30
     end
 
     local function onPlayerAdded(player)
