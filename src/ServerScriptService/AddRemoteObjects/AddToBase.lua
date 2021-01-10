@@ -14,7 +14,6 @@ local Leaderboard = require(Sss.Source.AddRemoteObjects.Leaderboard)
 local Teleporters = require(Sss.Source.Teleporters.Teleporters)
 local InitWWI = require(Sss.Source.WordWheelIsland.InitWWI)
 local MiniGame = require(Sss.Source.MiniGame.MiniGame)
-local BlockDash = require(Sss.Source.BlockDash.BlockDash)
 
 function deleteTemplates()
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
@@ -253,9 +252,9 @@ function addWorld(props)
     Teleporters.setLocalTPTargetToRemoteTP(skyTeleporter, hexTeleporter)
     Teleporters.setLocalTPTargetToRemoteTP(hexReturnTeleporter, skyTeleporter)
 
-    -- print('Leaderboard' .. ' - start');
-    -- print(Leaderboard);
-    Leaderboard.updateLB()
+    print('Leaderboard' .. ' - start');
+    print(Leaderboard);
+    -- Leaderboard.updateLB()
 
     if Constants.gameConfig.showWWI then
         local props = {}
@@ -284,38 +283,25 @@ function addWorld(props)
             })
         miniGame.PrimaryPart.Anchored = true
 
-        if questIndex == 1 then
-
-            local blockDashProps = {
-                -- parent = miniGameMountPlate,
-                words = getWords(questConfig),
+        local questBlockModel = renderQuestBlock(
+                                    {
+                dockMountPlate = Utils.getFirstDescendantByName(miniGame,
+                                                                "DockMountPlate"),
+                worldIndex = worldIndex,
                 questIndex = questIndex,
-                questTitle = questConfig.questTitle
-            }
-
-            BlockDash.addBlockDash(blockDashProps)
-
+                gridSize = gridSize
+            })
+        questBlockModel.Parent = questFolder
+        if Constants.gameConfig.showScenes then
+            addScenes({
+                gridPadding = gridPadding,
+                hexTeleporter = hexTeleporter,
+                questBlockModel = questBlockModel,
+                questConfig = questConfig,
+                questFolder = questFolder,
+                questIndex = questIndex
+            })
         end
-    end
-
-    local questBlockModel = renderQuestBlock(
-                                {
-            dockMountPlate = Utils.getFirstDescendantByName(miniGame,
-                                                            "DockMountPlate"),
-            worldIndex = worldIndex,
-            questIndex = questIndex,
-            gridSize = gridSize
-        })
-    questBlockModel.Parent = questFolder
-    if Constants.gameConfig.showScenes then
-        addScenes({
-            gridPadding = gridPadding,
-            hexTeleporter = hexTeleporter,
-            questBlockModel = questBlockModel,
-            questConfig = questConfig,
-            questFolder = questFolder,
-            questIndex = questIndex
-        })
     end
 end
 
