@@ -31,10 +31,6 @@ function initClickHandler(miniGameState)
     -- Gets arguments from EventHandler in StarterPack
     function brickClickHandler(player, clickedLetter)
         handleBrick(clickedLetter, miniGameState, player)
-
-        -- local wins = player.leaderstats.Wins
-        -- wins.Value = wins.Value + 1
-        -- Leaderboard.updateLB()
     end
     clickBlockEvent.OnServerEvent:Connect(brickClickHandler)
 end

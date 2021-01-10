@@ -56,15 +56,9 @@ local function updateLeaderboard()
 end
 
 function updateLB()
-    print('updateLB' .. ' - start');
-    print('updateLB' .. ' - start');
-    print('updateLB' .. ' - start');
     for _, player in pairs(game.Players:GetPlayers()) do
         WinsLeaderboard:SetAsync(player.UserId, player.leaderstats.Wins.Value)
     end
-    -- for _, frame in pairs(globalLeaderboard.LeaderboardGUI.Holder:GetChildren()) do
-    --     frame:Destroy()
-    -- end
     updateLeaderboard()
     print("Updated!")
 end

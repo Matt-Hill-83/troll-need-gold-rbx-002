@@ -255,6 +255,7 @@ function addWorld(props)
 
     print('Leaderboard' .. ' - start');
     print(Leaderboard);
+    -- This messes up the floor for some reason
     -- Leaderboard.updateLB()
 
     if Constants.gameConfig.showWWI then
@@ -287,7 +288,6 @@ function addWorld(props)
         if questIndex == 1 then
 
             local blockDashProps = {
-                -- parent = miniGameMountPlate,
                 words = getWords(questConfig),
                 questIndex = questIndex,
                 questTitle = questConfig.questTitle
