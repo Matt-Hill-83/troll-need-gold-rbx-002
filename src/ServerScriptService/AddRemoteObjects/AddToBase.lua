@@ -14,6 +14,7 @@ local Leaderboard = require(Sss.Source.AddRemoteObjects.Leaderboard)
 local Teleporters = require(Sss.Source.Teleporters.Teleporters)
 local InitWWI = require(Sss.Source.WordWheelIsland.InitWWI)
 local MiniGame = require(Sss.Source.MiniGame.MiniGame)
+local BlockDash = require(Sss.Source.BlockDash.BlockDash)
 
 function deleteTemplates()
     local questBlockTemplate = Utils.getFromTemplates("QuestBox")
@@ -282,6 +283,19 @@ function addWorld(props)
                 questTitle = questConfig.questTitle
             })
         miniGame.PrimaryPart.Anchored = true
+
+        if questIndex == 1 then
+
+            local blockDashProps = {
+                -- parent = miniGameMountPlate,
+                words = getWords(questConfig),
+                questIndex = questIndex,
+                questTitle = questConfig.questTitle
+            }
+
+            -- BlockDash.addBlockDash(blockDashProps)
+
+        end
 
         local questBlockModel = renderQuestBlock(
                                     {
